@@ -1,0 +1,33 @@
+@font-face {
+  font-family: spray;
+  src: url(../assets/fonts/Spray\ Letters.otf);
+}
+@font-face {
+  font-family: network;
+  src: url(../assets/fonts/Network.ttf);
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  width: 100%;
+  background-color: #000000;
+}
+
+body div:has(nav):has(footer):has(main) {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
