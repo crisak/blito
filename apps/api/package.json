@@ -1,10 +1,9 @@
 {
-  "name": "blitoner-app",
+  "name": "api",
   "version": "1.0.0",
-  "description": "Serverless aws-nodejs-typescript template",
+  "description": "API Rest for Blito app",
   "main": "serverless.ts",
   "scripts": {
-    "prepare": "husky install",
     "dev": "serverless offline --reloadHandler",
     "dev:start": "serverless offline start --reloadHandler",
     "deploy:dev": "serverless deploy --org=crisak --stage dev",
@@ -20,8 +19,7 @@
     "@middy/http-json-body-parser": "^3.6.2",
     "@middy/http-multipart-body-parser": "^3.6.2",
     "@middy/http-router": "^3.6.2",
-    "husky": "^8.0.2",
-    "lint-staged": "^13.0.3",
+    "aws-sdk": "^2.1318.0",
     "source-map-support": "^0.5.21",
     "uuid": "^8.3.2",
     "yup": "^0.32.11"
@@ -30,9 +28,7 @@
     "@serverless/typescript": "^3.21.0",
     "@types/aws-lambda": "^8.10.71",
     "@types/node": "^14.18.31",
-    "@typescript-eslint/eslint-plugin": "^5.0.0",
     "esbuild": "^0.15.13",
-    "eslint": "^8.0.1",
     "eslint-config-custom": "workspace:*",
     "json-schema-to-ts": "^1.5.0",
     "serverless": "^3.24.1",
@@ -42,12 +38,10 @@
     "serverless-offline": "^11.3.0",
     "ts-loader": "^8.0.15",
     "ts-node": "^10.9.1",
+    "tsconfig": "workspace:*",
     "tsconfig-paths": "^3.9.0",
     "typescript": "^4.8.4"
   },
-  "lint-staged": {
-    "*.{ts,tsx}": "eslint --fix"
-  },
-  "author": "The serverless webpack authors (https://github.com/elastic-coders/serverless-webpack)",
+  "author": "Crisak",
   "license": "MIT"
 }

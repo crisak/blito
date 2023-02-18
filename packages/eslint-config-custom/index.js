@@ -6,5 +6,6 @@ module.exports = {
     "react/jsx-key": "off",
 
     /** Rules generals */
+    "no-console": ["error", { allow: ["error"] }],
   },
 };

@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-
 import { AWSFunction } from '@/types'
 import { handlerPath } from '@/utils'
 

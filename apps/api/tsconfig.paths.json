@@ -1,10 +1,9 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "tsconfig/base-config.json",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@functions/*": ["src/functions/*"],
-      "@libs/*": ["src/libs/*"],
       "@/*": ["src/*"]
     }
   }

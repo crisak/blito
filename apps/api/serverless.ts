@@ -3,7 +3,7 @@ import type { AWS } from '@serverless/typescript'
 import * as functions from '@/functions'
 
 const serverlessConfiguration: AWS = {
-  service: 'blitoner-app',
+  service: 'blito-api',
   frameworkVersion: '3',
   useDotenv: true,
   plugins: [
@@ -27,7 +27,7 @@ const serverlessConfiguration: AWS = {
     }
   },
 
-  functions,
+  functions: functions as any,
   package: { individually: true },
   custom: {
     esbuild: {
