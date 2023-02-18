@@ -43,7 +43,7 @@ function RootLayout({ children }: RootLayoutProps): JSX.Element {
   return (
     <html>
       <head>
-        <title>Blitoner - Blog</title>
+        <title>Blitoner</title>
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0"
