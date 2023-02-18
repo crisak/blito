@@ -32,3 +32,13 @@ yarn-error.log*
 
 # turbo
 .turbo
+
+# Serverless directories
+.serverless
+
+# Webpack directories
+.webpack
+.esbuild
+
+# Others
+.DS_Store
