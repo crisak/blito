@@ -1,0 +1,54 @@
+type Position {
+  latitude: String!
+  longitude: String!
+}
+
+type Collaborator @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  fullName: String!
+  username: String!
+  email: String
+  socials: SocialNetwork
+  photoUrl: String
+  projects: [Project] @manyToMany(relationName: "ProjectCollaborator")
+}
+
+enum TypeSocialNetwork {
+  FACEBOOK
+  INSTAGRAM
+  YOUTUBE
+  TIKTOK
+}
+
+type SocialNetwork {
+  type: TypeSocialNetwork!
+  url: String!
+  username: String!
+}
+
+type Category @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  description: String!
+}
+
+type Location {
+  country: String
+  state: String
+  city: String
+  street: String
+  position: Position
+}
+
+type Project @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  date: AWSDateTime!
+  banner: String
+  description: String!
+  location: Position
+  userID: String
+  tags: [String]
+  category: Category @hasOne
+  collaborators: [Collaborator] @manyToMany(relationName: "ProjectCollaborator")
+}

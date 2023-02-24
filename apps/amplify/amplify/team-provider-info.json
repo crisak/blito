@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-blito-staging-44547-authRole",
+      "UnauthRoleArn": "arn:aws:iam::957950463642:role/amplify-blito-staging-44547-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::957950463642:role/amplify-blito-staging-44547-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-blito-staging-44547-deployment",
+      "UnauthRoleName": "amplify-blito-staging-44547-unauthRole",
+      "StackName": "amplify-blito-staging-44547",
+      "StackId": "arn:aws:cloudformation:us-east-1:957950463642:stack/amplify-blito-staging-44547/f0ecde80-b334-11ed-80f0-12e4641f457d",
+      "AmplifyAppId": "d3ekfn0rvjyyle"
+    },
+    "categories": {
+      "auth": {
+        "Blito": {}
+      }
+    }
+  }
+}
