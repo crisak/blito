@@ -42,7 +42,7 @@ const bodyValidator = (schema: BaseSchema) => {
 
       const errorMap: Record<string, string> = {}
 
-      for (const error of errors.inner || []) {
+      for (const error of errors?.inner || []) {
         let property = error.path
 
         if (error.type === 'noUnknown') {

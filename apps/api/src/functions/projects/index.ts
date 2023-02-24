@@ -5,40 +5,12 @@ const RESOURCE = 'projects'
 
 export default {
   name: RESOURCE,
-  handler: `${handlerPath(__dirname)}/handler.main`,
+  handler: `${handlerPath(__dirname)}/router.main`,
   events: [
-    {
-      http: {
-        method: 'get',
-        path: RESOURCE,
-        cors: true
-      }
-    },
-    {
-      http: {
-        method: 'get',
-        path: `${RESOURCE}/{id}`,
-        cors: true
-      }
-    },
-    {
-      http: {
-        method: 'get',
-        path: `${RESOURCE}/{id}/contents`,
-        cors: true
-      }
-    },
     {
       http: {
         method: 'post',
         path: RESOURCE,
-        cors: true
-      }
-    },
-    {
-      http: {
-        method: 'get',
-        path: 'categories/summary-contents',
         cors: true
       }
     }
