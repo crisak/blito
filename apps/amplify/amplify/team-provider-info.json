@@ -14,6 +14,9 @@
     "categories": {
       "auth": {
         "Blito": {}
+      },
+      "storage": {
+        "s3blitostoragef45ca4aa": {}
       }
     }
   }

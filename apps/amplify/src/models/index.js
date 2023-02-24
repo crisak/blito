@@ -9,12 +9,14 @@ const TypeSocialNetwork = {
   "TIKTOK": "TIKTOK"
 };
 
-const { Collaborator, Project, Category, ProjectCollaborator, Position, SocialNetwork, Location } = initSchema(schema);
+const { Tags, Project, Category, Collaborator, ProjectTags, ProjectCollaborator, Position, SocialNetwork, Location } = initSchema(schema);
 
 export {
-  Collaborator,
+  Tags,
   Project,
   Category,
+  Collaborator,
+  ProjectTags,
   ProjectCollaborator,
   TypeSocialNetwork,
   Position,

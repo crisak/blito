@@ -1,3 +1,9 @@
+type Tags @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  projects: [Project] @manyToMany(relationName: "ProjectTags")
+}
+
 type Position {
   latitude: String!
   longitude: String!
@@ -48,7 +54,8 @@ type Project @model @auth(rules: [{allow: public}]) {
   description: String!
   location: Position
   userID: String
-  tags: [String]
   category: Category @hasOne
   collaborators: [Collaborator] @manyToMany(relationName: "ProjectCollaborator")
+  tags: [Tags] @manyToMany(relationName: "ProjectTags")
 }
+ 

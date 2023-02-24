@@ -59,42 +59,34 @@ export declare type Location = LazyLoading extends LazyLoadingDisabled ? EagerLo
 
 export declare const Location: (new (init: ModelInit<Location>) => Location)
 
-type EagerCollaborator = {
+type EagerTags = {
   readonly [__modelMeta__]: {
-    identifier: ManagedIdentifier<Collaborator, 'id'>;
+    identifier: ManagedIdentifier<Tags, 'id'>;
     readOnlyFields: 'createdAt' | 'updatedAt';
   };
   readonly id: string;
-  readonly fullName: string;
-  readonly username: string;
-  readonly email?: string | null;
-  readonly socials?: SocialNetwork | null;
-  readonly photoUrl?: string | null;
-  readonly projects?: (ProjectCollaborator | null)[] | null;
+  readonly name?: string | null;
+  readonly projects?: (ProjectTags | null)[] | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
 
-type LazyCollaborator = {
+type LazyTags = {
   readonly [__modelMeta__]: {
-    identifier: ManagedIdentifier<Collaborator, 'id'>;
+    identifier: ManagedIdentifier<Tags, 'id'>;
     readOnlyFields: 'createdAt' | 'updatedAt';
   };
   readonly id: string;
-  readonly fullName: string;
-  readonly username: string;
-  readonly email?: string | null;
-  readonly socials?: SocialNetwork | null;
-  readonly photoUrl?: string | null;
-  readonly projects: AsyncCollection<ProjectCollaborator>;
+  readonly name?: string | null;
+  readonly projects: AsyncCollection<ProjectTags>;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
 
-export declare type Collaborator = LazyLoading extends LazyLoadingDisabled ? EagerCollaborator : LazyCollaborator
+export declare type Tags = LazyLoading extends LazyLoadingDisabled ? EagerTags : LazyTags
 
-export declare const Collaborator: (new (init: ModelInit<Collaborator>) => Collaborator) & {
-  copyOf(source: Collaborator, mutator: (draft: MutableModel<Collaborator>) => MutableModel<Collaborator> | void): Collaborator;
+export declare const Tags: (new (init: ModelInit<Tags>) => Tags) & {
+  copyOf(source: Tags, mutator: (draft: MutableModel<Tags>) => MutableModel<Tags> | void): Tags;
 }
 
 type EagerProject = {
@@ -109,9 +101,9 @@ type EagerProject = {
   readonly description: string;
   readonly location?: Position | null;
   readonly userID?: string | null;
-  readonly tags?: (string | null)[] | null;
   readonly category?: Category | null;
   readonly collaborators?: (ProjectCollaborator | null)[] | null;
+  readonly tags?: (ProjectTags | null)[] | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   readonly projectCategoryId?: string | null;
@@ -129,9 +121,9 @@ type LazyProject = {
   readonly description: string;
   readonly location?: Position | null;
   readonly userID?: string | null;
-  readonly tags?: (string | null)[] | null;
   readonly category: AsyncItem<Category | undefined>;
   readonly collaborators: AsyncCollection<ProjectCollaborator>;
+  readonly tags: AsyncCollection<ProjectTags>;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   readonly projectCategoryId?: string | null;
@@ -173,16 +165,88 @@ export declare const Category: (new (init: ModelInit<Category>) => Category) & {
   copyOf(source: Category, mutator: (draft: MutableModel<Category>) => MutableModel<Category> | void): Category;
 }
 
+type EagerCollaborator = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Collaborator, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly fullName: string;
+  readonly username: string;
+  readonly email?: string | null;
+  readonly socials?: SocialNetwork | null;
+  readonly photoUrl?: string | null;
+  readonly projects?: (ProjectCollaborator | null)[] | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+type LazyCollaborator = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Collaborator, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly fullName: string;
+  readonly username: string;
+  readonly email?: string | null;
+  readonly socials?: SocialNetwork | null;
+  readonly photoUrl?: string | null;
+  readonly projects: AsyncCollection<ProjectCollaborator>;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+export declare type Collaborator = LazyLoading extends LazyLoadingDisabled ? EagerCollaborator : LazyCollaborator
+
+export declare const Collaborator: (new (init: ModelInit<Collaborator>) => Collaborator) & {
+  copyOf(source: Collaborator, mutator: (draft: MutableModel<Collaborator>) => MutableModel<Collaborator> | void): Collaborator;
+}
+
+type EagerProjectTags = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<ProjectTags, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly tagsId?: string | null;
+  readonly projectId?: string | null;
+  readonly tags: Tags;
+  readonly project: Project;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+type LazyProjectTags = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<ProjectTags, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly tagsId?: string | null;
+  readonly projectId?: string | null;
+  readonly tags: AsyncItem<Tags>;
+  readonly project: AsyncItem<Project>;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+export declare type ProjectTags = LazyLoading extends LazyLoadingDisabled ? EagerProjectTags : LazyProjectTags
+
+export declare const ProjectTags: (new (init: ModelInit<ProjectTags>) => ProjectTags) & {
+  copyOf(source: ProjectTags, mutator: (draft: MutableModel<ProjectTags>) => MutableModel<ProjectTags> | void): ProjectTags;
+}
+
 type EagerProjectCollaborator = {
   readonly [__modelMeta__]: {
     identifier: ManagedIdentifier<ProjectCollaborator, 'id'>;
     readOnlyFields: 'createdAt' | 'updatedAt';
   };
   readonly id: string;
-  readonly collaboratorId?: string | null;
   readonly projectId?: string | null;
-  readonly collaborator: Collaborator;
+  readonly collaboratorId?: string | null;
   readonly project: Project;
+  readonly collaborator: Collaborator;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -193,10 +257,10 @@ type LazyProjectCollaborator = {
     readOnlyFields: 'createdAt' | 'updatedAt';
   };
   readonly id: string;
-  readonly collaboratorId?: string | null;
   readonly projectId?: string | null;
-  readonly collaborator: AsyncItem<Collaborator>;
+  readonly collaboratorId?: string | null;
   readonly project: AsyncItem<Project>;
+  readonly collaborator: AsyncItem<Collaborator>;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
