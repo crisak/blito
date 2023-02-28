@@ -1,7 +1,59 @@
-type Tags @model @auth(rules: [{allow: public}]) {
+enum TypeFile {
+  VIDEO
+  IMAGE
+  GIF
+  VIDEO_YOUTUBE
+  BASE64
+}
+
+type File {
+  data: String!
+  type: TypeFile!
+  mimeType: String!
+  caption: String
+  size: Int
+  isBanner: Boolean
+}
+
+type ContentProject {
+  name: String!
+  description: String!
+}
+
+enum Sizes {
+  XS
+  S
+  M
+  L
+  XL
+}
+
+enum ContentType {
+  ALBUM
+  PROJECT
+  GALLERY
+}
+
+type Content @model @auth(rules: [{allow: public}]) {
   id: ID!
-  name: String
-  projects: [Project] @manyToMany(relationName: "ProjectTags")
+  type: ContentType!
+  time: Int!
+  size: Sizes!
+  project: ContentProject
+  files: [File]!
+  date: AWSDateTime!
+  location: Location
+  colors: [String]
+  userID: String!
+  Tags: [Tag] @manyToMany(relationName: "ContentTag")
+  Category: Category @hasOne
+  Collaborators: [Collaborator] @manyToMany(relationName: "ContentCollaborator")
+}
+
+type Tag @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  contents: [Content] @manyToMany(relationName: "ContentTag")
 }
 
 type Position {
@@ -11,12 +63,13 @@ type Position {
 
 type Collaborator @model @auth(rules: [{allow: public}]) {
   id: ID!
-  fullName: String!
   username: String!
   email: String
-  socials: SocialNetwork
+  phone: String
+  socials: [SocialNetwork]!
+  fullName: String
   photoUrl: String
-  projects: [Project] @manyToMany(relationName: "ProjectCollaborator")
+  contents: [Content] @manyToMany(relationName: "ContentCollaborator")
 }
 
 enum TypeSocialNetwork {
@@ -24,12 +77,14 @@ enum TypeSocialNetwork {
   INSTAGRAM
   YOUTUBE
   TIKTOK
+  TWITTER
+  PINTEREST
 }
 
 type SocialNetwork {
   type: TypeSocialNetwork!
   url: String!
-  username: String!
+  username: String
 }
 
 type Category @model @auth(rules: [{allow: public}]) {
@@ -39,23 +94,10 @@ type Category @model @auth(rules: [{allow: public}]) {
 }
 
 type Location {
-  country: String
-  state: String
-  city: String
+  country: String!
+  state: String!
+  city: String!
   street: String
-  position: Position
-}
-
-type Project @model @auth(rules: [{allow: public}]) {
-  id: ID!
-  name: String!
-  date: AWSDateTime!
-  banner: String
-  description: String!
-  location: Position
-  userID: String
-  category: Category @hasOne
-  collaborators: [Collaborator] @manyToMany(relationName: "ProjectCollaborator")
-  tags: [Tags] @manyToMany(relationName: "ProjectTags")
+  position: Position!
 }
  

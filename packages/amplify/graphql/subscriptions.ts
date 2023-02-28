@@ -2,33 +2,129 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateTags = /* GraphQL */ `
-  subscription OnCreateTags($filter: ModelSubscriptionTagsFilterInput) {
-    onCreateTags(filter: $filter) {
+export const onCreateContent = /* GraphQL */ `
+  subscription OnCreateContent($filter: ModelSubscriptionContentFilterInput) {
+    onCreateContent(filter: $filter) {
       id
-      name
-      projects {
+      type
+      time
+      size
+      project {
+        name
+        description
+      }
+      files {
+        data
+        type
+        mimeType
+        caption
+        size
+        isBanner
+      }
+      date
+      location {
+        country
+        state
+        city
+        street
+        position {
+          latitude
+          longitude
+        }
+      }
+      colors
+      userID
+      Tags {
         items {
           id
-          tagsId
-          projectId
-          tags {
+          contentId
+          tagId
+          content {
             id
-            name
-            projects {
+            type
+            time
+            size
+            project {
+              name
+              description
+            }
+            files {
+              data
+              type
+              mimeType
+              caption
+              size
+              isBanner
+            }
+            date
+            location {
+              country
+              state
+              city
+              street
+              position {
+                latitude
+                longitude
+              }
+            }
+            colors
+            userID
+            Tags {
               items {
                 id
-                tagsId
-                projectId
-                tags {
+                contentId
+                tagId
+                content {
                   id
-                  name
-                  projects {
+                  type
+                  time
+                  size
+                  project {
+                    name
+                    description
+                  }
+                  files {
+                    data
+                    type
+                    mimeType
+                    caption
+                    size
+                    isBanner
+                  }
+                  date
+                  location {
+                    country
+                    state
+                    city
+                    street
+                    position {
+                      latitude
+                      longitude
+                    }
+                  }
+                  colors
+                  userID
+                  Tags {
                     items {
                       id
-                      tagsId
-                      projectId
-                      tags {
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
                         id
                         name
                         createdAt
@@ -37,19 +133,105 @@ export const onCreateTags = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                       }
-                      project {
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  Category {
+                    id
+                    name
+                    description
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  Collaborators {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
                         id
-                        name
+                        type
+                        time
+                        size
                         date
-                        banner
-                        description
+                        colors
                         userID
                         createdAt
                         updatedAt
                         _version
                         _deleted
                         _lastChangedAt
-                        projectCategoryId
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                  contentCategoryId
+                }
+                tag {
+                  id
+                  name
+                  contents {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
                       }
                       createdAt
                       updatedAt
@@ -66,57 +248,88 @@ export const onCreateTags = /* GraphQL */ `
                   _deleted
                   _lastChangedAt
                 }
-                project {
+                createdAt
+                updatedAt
+                _version
+                _deleted
+                _lastChangedAt
+              }
+              nextToken
+              startedAt
+            }
+            Category {
+              id
+              name
+              description
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+            }
+            Collaborators {
+              items {
+                id
+                contentId
+                collaboratorId
+                content {
                   id
-                  name
-                  date
-                  banner
-                  description
-                  location {
-                    latitude
-                    longitude
-                  }
-                  userID
-                  category {
-                    id
+                  type
+                  time
+                  size
+                  project {
                     name
                     description
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
                   }
-                  collaborators {
+                  files {
+                    data
+                    type
+                    mimeType
+                    caption
+                    size
+                    isBanner
+                  }
+                  date
+                  location {
+                    country
+                    state
+                    city
+                    street
+                    position {
+                      latitude
+                      longitude
+                    }
+                  }
+                  colors
+                  userID
+                  Tags {
                     items {
                       id
-                      collaboratorId
-                      projectId
-                      collaborator {
+                      contentId
+                      tagId
+                      content {
                         id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
+                        type
+                        time
+                        size
                         date
-                        banner
-                        description
+                        colors
                         userID
                         createdAt
                         updatedAt
                         _version
                         _deleted
                         _lastChangedAt
-                        projectCategoryId
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
                       }
                       createdAt
                       updatedAt
@@ -127,33 +340,48 @@ export const onCreateTags = /* GraphQL */ `
                     nextToken
                     startedAt
                   }
-                  tags {
+                  Category {
+                    id
+                    name
+                    description
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  Collaborators {
                     items {
                       id
-                      tagsId
-                      projectId
-                      tags {
+                      contentId
+                      collaboratorId
+                      content {
                         id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
+                        type
+                        time
+                        size
                         date
-                        banner
-                        description
+                        colors
                         userID
                         createdAt
                         updatedAt
                         _version
                         _deleted
                         _lastChangedAt
-                        projectCategoryId
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
                       }
                       createdAt
                       updatedAt
@@ -169,7 +397,265 @@ export const onCreateTags = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
-                  projectCategoryId
+                  contentCategoryId
+                }
+                collaborator {
+                  id
+                  username
+                  email
+                  phone
+                  socials {
+                    type
+                    url
+                    username
+                  }
+                  fullName
+                  photoUrl
+                  contents {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                createdAt
+                updatedAt
+                _version
+                _deleted
+                _lastChangedAt
+              }
+              nextToken
+              startedAt
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            contentCategoryId
+          }
+          tag {
+            id
+            name
+            contents {
+              items {
+                id
+                contentId
+                tagId
+                content {
+                  id
+                  type
+                  time
+                  size
+                  project {
+                    name
+                    description
+                  }
+                  files {
+                    data
+                    type
+                    mimeType
+                    caption
+                    size
+                    isBanner
+                  }
+                  date
+                  location {
+                    country
+                    state
+                    city
+                    street
+                    position {
+                      latitude
+                      longitude
+                    }
+                  }
+                  colors
+                  userID
+                  Tags {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  Category {
+                    id
+                    name
+                    description
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  Collaborators {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                  contentCategoryId
+                }
+                tag {
+                  id
+                  name
+                  contents {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
                 }
                 createdAt
                 updatedAt
@@ -186,73 +672,123 @@ export const onCreateTags = /* GraphQL */ `
             _deleted
             _lastChangedAt
           }
-          project {
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
+      Category {
+        id
+        name
+        description
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      Collaborators {
+        items {
+          id
+          contentId
+          collaboratorId
+          content {
             id
-            name
-            date
-            banner
-            description
-            location {
-              latitude
-              longitude
-            }
-            userID
-            category {
-              id
+            type
+            time
+            size
+            project {
               name
               description
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
             }
-            collaborators {
+            files {
+              data
+              type
+              mimeType
+              caption
+              size
+              isBanner
+            }
+            date
+            location {
+              country
+              state
+              city
+              street
+              position {
+                latitude
+                longitude
+              }
+            }
+            colors
+            userID
+            Tags {
               items {
                 id
-                collaboratorId
-                projectId
-                collaborator {
+                contentId
+                tagId
+                content {
                   id
-                  fullName
-                  username
-                  email
-                  socials {
-                    type
-                    url
-                    username
+                  type
+                  time
+                  size
+                  project {
+                    name
+                    description
                   }
-                  photoUrl
-                  projects {
+                  files {
+                    data
+                    type
+                    mimeType
+                    caption
+                    size
+                    isBanner
+                  }
+                  date
+                  location {
+                    country
+                    state
+                    city
+                    street
+                    position {
+                      latitude
+                      longitude
+                    }
+                  }
+                  colors
+                  userID
+                  Tags {
                     items {
                       id
-                      collaboratorId
-                      projectId
-                      collaborator {
+                      contentId
+                      tagId
+                      content {
                         id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
+                        type
+                        time
+                        size
                         date
-                        banner
-                        description
+                        colors
                         userID
                         createdAt
                         updatedAt
                         _version
                         _deleted
                         _lastChangedAt
-                        projectCategoryId
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
                       }
                       createdAt
                       updatedAt
@@ -263,24 +799,7 @@ export const onCreateTags = /* GraphQL */ `
                     nextToken
                     startedAt
                   }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                project {
-                  id
-                  name
-                  date
-                  banner
-                  description
-                  location {
-                    latitude
-                    longitude
-                  }
-                  userID
-                  category {
+                  Category {
                     id
                     name
                     description
@@ -290,73 +809,38 @@ export const onCreateTags = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                   }
-                  collaborators {
+                  Collaborators {
                     items {
                       id
+                      contentId
                       collaboratorId
-                      projectId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
                       collaborator {
                         id
-                        fullName
                         username
                         email
+                        phone
+                        fullName
                         photoUrl
                         createdAt
                         updatedAt
                         _version
                         _deleted
                         _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  tags {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
                       }
                       createdAt
                       updatedAt
@@ -372,7 +856,54 @@ export const onCreateTags = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
-                  projectCategoryId
+                  contentCategoryId
+                }
+                tag {
+                  id
+                  name
+                  contents {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
                 }
                 createdAt
                 updatedAt
@@ -383,41 +914,79 @@ export const onCreateTags = /* GraphQL */ `
               nextToken
               startedAt
             }
-            tags {
+            Category {
+              id
+              name
+              description
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+            }
+            Collaborators {
               items {
                 id
-                tagsId
-                projectId
-                tags {
+                contentId
+                collaboratorId
+                content {
                   id
-                  name
-                  projects {
+                  type
+                  time
+                  size
+                  project {
+                    name
+                    description
+                  }
+                  files {
+                    data
+                    type
+                    mimeType
+                    caption
+                    size
+                    isBanner
+                  }
+                  date
+                  location {
+                    country
+                    state
+                    city
+                    street
+                    position {
+                      latitude
+                      longitude
+                    }
+                  }
+                  colors
+                  userID
+                  Tags {
                     items {
                       id
-                      tagsId
-                      projectId
-                      tags {
+                      contentId
+                      tagId
+                      content {
                         id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
+                        type
+                        time
+                        size
                         date
-                        banner
-                        description
+                        colors
                         userID
                         createdAt
                         updatedAt
                         _version
                         _deleted
                         _lastChangedAt
-                        projectCategoryId
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
                       }
                       createdAt
                       updatedAt
@@ -428,24 +997,7 @@ export const onCreateTags = /* GraphQL */ `
                     nextToken
                     startedAt
                   }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                project {
-                  id
-                  name
-                  date
-                  banner
-                  description
-                  location {
-                    latitude
-                    longitude
-                  }
-                  userID
-                  category {
+                  Category {
                     id
                     name
                     description
@@ -455,73 +1007,38 @@ export const onCreateTags = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                   }
-                  collaborators {
+                  Collaborators {
                     items {
                       id
+                      contentId
                       collaboratorId
-                      projectId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
                       collaborator {
                         id
-                        fullName
                         username
                         email
+                        phone
+                        fullName
                         photoUrl
                         createdAt
                         updatedAt
                         _version
                         _deleted
                         _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  tags {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
                       }
                       createdAt
                       updatedAt
@@ -537,7 +1054,67 @@ export const onCreateTags = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
-                  projectCategoryId
+                  contentCategoryId
+                }
+                collaborator {
+                  id
+                  username
+                  email
+                  phone
+                  socials {
+                    type
+                    url
+                    username
+                  }
+                  fullName
+                  photoUrl
+                  contents {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
                 }
                 createdAt
                 updatedAt
@@ -553,7 +1130,3621 @@ export const onCreateTags = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
-            projectCategoryId
+            contentCategoryId
+          }
+          collaborator {
+            id
+            username
+            email
+            phone
+            socials {
+              type
+              url
+              username
+            }
+            fullName
+            photoUrl
+            contents {
+              items {
+                id
+                contentId
+                collaboratorId
+                content {
+                  id
+                  type
+                  time
+                  size
+                  project {
+                    name
+                    description
+                  }
+                  files {
+                    data
+                    type
+                    mimeType
+                    caption
+                    size
+                    isBanner
+                  }
+                  date
+                  location {
+                    country
+                    state
+                    city
+                    street
+                    position {
+                      latitude
+                      longitude
+                    }
+                  }
+                  colors
+                  userID
+                  Tags {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  Category {
+                    id
+                    name
+                    description
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  Collaborators {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                  contentCategoryId
+                }
+                collaborator {
+                  id
+                  username
+                  email
+                  phone
+                  socials {
+                    type
+                    url
+                    username
+                  }
+                  fullName
+                  photoUrl
+                  contents {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                createdAt
+                updatedAt
+                _version
+                _deleted
+                _lastChangedAt
+              }
+              nextToken
+              startedAt
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      contentCategoryId
+    }
+  }
+`;
+export const onUpdateContent = /* GraphQL */ `
+  subscription OnUpdateContent($filter: ModelSubscriptionContentFilterInput) {
+    onUpdateContent(filter: $filter) {
+      id
+      type
+      time
+      size
+      project {
+        name
+        description
+      }
+      files {
+        data
+        type
+        mimeType
+        caption
+        size
+        isBanner
+      }
+      date
+      location {
+        country
+        state
+        city
+        street
+        position {
+          latitude
+          longitude
+        }
+      }
+      colors
+      userID
+      Tags {
+        items {
+          id
+          contentId
+          tagId
+          content {
+            id
+            type
+            time
+            size
+            project {
+              name
+              description
+            }
+            files {
+              data
+              type
+              mimeType
+              caption
+              size
+              isBanner
+            }
+            date
+            location {
+              country
+              state
+              city
+              street
+              position {
+                latitude
+                longitude
+              }
+            }
+            colors
+            userID
+            Tags {
+              items {
+                id
+                contentId
+                tagId
+                content {
+                  id
+                  type
+                  time
+                  size
+                  project {
+                    name
+                    description
+                  }
+                  files {
+                    data
+                    type
+                    mimeType
+                    caption
+                    size
+                    isBanner
+                  }
+                  date
+                  location {
+                    country
+                    state
+                    city
+                    street
+                    position {
+                      latitude
+                      longitude
+                    }
+                  }
+                  colors
+                  userID
+                  Tags {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  Category {
+                    id
+                    name
+                    description
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  Collaborators {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                  contentCategoryId
+                }
+                tag {
+                  id
+                  name
+                  contents {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                createdAt
+                updatedAt
+                _version
+                _deleted
+                _lastChangedAt
+              }
+              nextToken
+              startedAt
+            }
+            Category {
+              id
+              name
+              description
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+            }
+            Collaborators {
+              items {
+                id
+                contentId
+                collaboratorId
+                content {
+                  id
+                  type
+                  time
+                  size
+                  project {
+                    name
+                    description
+                  }
+                  files {
+                    data
+                    type
+                    mimeType
+                    caption
+                    size
+                    isBanner
+                  }
+                  date
+                  location {
+                    country
+                    state
+                    city
+                    street
+                    position {
+                      latitude
+                      longitude
+                    }
+                  }
+                  colors
+                  userID
+                  Tags {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  Category {
+                    id
+                    name
+                    description
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  Collaborators {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                  contentCategoryId
+                }
+                collaborator {
+                  id
+                  username
+                  email
+                  phone
+                  socials {
+                    type
+                    url
+                    username
+                  }
+                  fullName
+                  photoUrl
+                  contents {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                createdAt
+                updatedAt
+                _version
+                _deleted
+                _lastChangedAt
+              }
+              nextToken
+              startedAt
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            contentCategoryId
+          }
+          tag {
+            id
+            name
+            contents {
+              items {
+                id
+                contentId
+                tagId
+                content {
+                  id
+                  type
+                  time
+                  size
+                  project {
+                    name
+                    description
+                  }
+                  files {
+                    data
+                    type
+                    mimeType
+                    caption
+                    size
+                    isBanner
+                  }
+                  date
+                  location {
+                    country
+                    state
+                    city
+                    street
+                    position {
+                      latitude
+                      longitude
+                    }
+                  }
+                  colors
+                  userID
+                  Tags {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  Category {
+                    id
+                    name
+                    description
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  Collaborators {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                  contentCategoryId
+                }
+                tag {
+                  id
+                  name
+                  contents {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                createdAt
+                updatedAt
+                _version
+                _deleted
+                _lastChangedAt
+              }
+              nextToken
+              startedAt
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
+      Category {
+        id
+        name
+        description
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      Collaborators {
+        items {
+          id
+          contentId
+          collaboratorId
+          content {
+            id
+            type
+            time
+            size
+            project {
+              name
+              description
+            }
+            files {
+              data
+              type
+              mimeType
+              caption
+              size
+              isBanner
+            }
+            date
+            location {
+              country
+              state
+              city
+              street
+              position {
+                latitude
+                longitude
+              }
+            }
+            colors
+            userID
+            Tags {
+              items {
+                id
+                contentId
+                tagId
+                content {
+                  id
+                  type
+                  time
+                  size
+                  project {
+                    name
+                    description
+                  }
+                  files {
+                    data
+                    type
+                    mimeType
+                    caption
+                    size
+                    isBanner
+                  }
+                  date
+                  location {
+                    country
+                    state
+                    city
+                    street
+                    position {
+                      latitude
+                      longitude
+                    }
+                  }
+                  colors
+                  userID
+                  Tags {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  Category {
+                    id
+                    name
+                    description
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  Collaborators {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                  contentCategoryId
+                }
+                tag {
+                  id
+                  name
+                  contents {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                createdAt
+                updatedAt
+                _version
+                _deleted
+                _lastChangedAt
+              }
+              nextToken
+              startedAt
+            }
+            Category {
+              id
+              name
+              description
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+            }
+            Collaborators {
+              items {
+                id
+                contentId
+                collaboratorId
+                content {
+                  id
+                  type
+                  time
+                  size
+                  project {
+                    name
+                    description
+                  }
+                  files {
+                    data
+                    type
+                    mimeType
+                    caption
+                    size
+                    isBanner
+                  }
+                  date
+                  location {
+                    country
+                    state
+                    city
+                    street
+                    position {
+                      latitude
+                      longitude
+                    }
+                  }
+                  colors
+                  userID
+                  Tags {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  Category {
+                    id
+                    name
+                    description
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  Collaborators {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                  contentCategoryId
+                }
+                collaborator {
+                  id
+                  username
+                  email
+                  phone
+                  socials {
+                    type
+                    url
+                    username
+                  }
+                  fullName
+                  photoUrl
+                  contents {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                createdAt
+                updatedAt
+                _version
+                _deleted
+                _lastChangedAt
+              }
+              nextToken
+              startedAt
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            contentCategoryId
+          }
+          collaborator {
+            id
+            username
+            email
+            phone
+            socials {
+              type
+              url
+              username
+            }
+            fullName
+            photoUrl
+            contents {
+              items {
+                id
+                contentId
+                collaboratorId
+                content {
+                  id
+                  type
+                  time
+                  size
+                  project {
+                    name
+                    description
+                  }
+                  files {
+                    data
+                    type
+                    mimeType
+                    caption
+                    size
+                    isBanner
+                  }
+                  date
+                  location {
+                    country
+                    state
+                    city
+                    street
+                    position {
+                      latitude
+                      longitude
+                    }
+                  }
+                  colors
+                  userID
+                  Tags {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  Category {
+                    id
+                    name
+                    description
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  Collaborators {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                  contentCategoryId
+                }
+                collaborator {
+                  id
+                  username
+                  email
+                  phone
+                  socials {
+                    type
+                    url
+                    username
+                  }
+                  fullName
+                  photoUrl
+                  contents {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                createdAt
+                updatedAt
+                _version
+                _deleted
+                _lastChangedAt
+              }
+              nextToken
+              startedAt
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      contentCategoryId
+    }
+  }
+`;
+export const onDeleteContent = /* GraphQL */ `
+  subscription OnDeleteContent($filter: ModelSubscriptionContentFilterInput) {
+    onDeleteContent(filter: $filter) {
+      id
+      type
+      time
+      size
+      project {
+        name
+        description
+      }
+      files {
+        data
+        type
+        mimeType
+        caption
+        size
+        isBanner
+      }
+      date
+      location {
+        country
+        state
+        city
+        street
+        position {
+          latitude
+          longitude
+        }
+      }
+      colors
+      userID
+      Tags {
+        items {
+          id
+          contentId
+          tagId
+          content {
+            id
+            type
+            time
+            size
+            project {
+              name
+              description
+            }
+            files {
+              data
+              type
+              mimeType
+              caption
+              size
+              isBanner
+            }
+            date
+            location {
+              country
+              state
+              city
+              street
+              position {
+                latitude
+                longitude
+              }
+            }
+            colors
+            userID
+            Tags {
+              items {
+                id
+                contentId
+                tagId
+                content {
+                  id
+                  type
+                  time
+                  size
+                  project {
+                    name
+                    description
+                  }
+                  files {
+                    data
+                    type
+                    mimeType
+                    caption
+                    size
+                    isBanner
+                  }
+                  date
+                  location {
+                    country
+                    state
+                    city
+                    street
+                    position {
+                      latitude
+                      longitude
+                    }
+                  }
+                  colors
+                  userID
+                  Tags {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  Category {
+                    id
+                    name
+                    description
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  Collaborators {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                  contentCategoryId
+                }
+                tag {
+                  id
+                  name
+                  contents {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                createdAt
+                updatedAt
+                _version
+                _deleted
+                _lastChangedAt
+              }
+              nextToken
+              startedAt
+            }
+            Category {
+              id
+              name
+              description
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+            }
+            Collaborators {
+              items {
+                id
+                contentId
+                collaboratorId
+                content {
+                  id
+                  type
+                  time
+                  size
+                  project {
+                    name
+                    description
+                  }
+                  files {
+                    data
+                    type
+                    mimeType
+                    caption
+                    size
+                    isBanner
+                  }
+                  date
+                  location {
+                    country
+                    state
+                    city
+                    street
+                    position {
+                      latitude
+                      longitude
+                    }
+                  }
+                  colors
+                  userID
+                  Tags {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  Category {
+                    id
+                    name
+                    description
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  Collaborators {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                  contentCategoryId
+                }
+                collaborator {
+                  id
+                  username
+                  email
+                  phone
+                  socials {
+                    type
+                    url
+                    username
+                  }
+                  fullName
+                  photoUrl
+                  contents {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                createdAt
+                updatedAt
+                _version
+                _deleted
+                _lastChangedAt
+              }
+              nextToken
+              startedAt
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            contentCategoryId
+          }
+          tag {
+            id
+            name
+            contents {
+              items {
+                id
+                contentId
+                tagId
+                content {
+                  id
+                  type
+                  time
+                  size
+                  project {
+                    name
+                    description
+                  }
+                  files {
+                    data
+                    type
+                    mimeType
+                    caption
+                    size
+                    isBanner
+                  }
+                  date
+                  location {
+                    country
+                    state
+                    city
+                    street
+                    position {
+                      latitude
+                      longitude
+                    }
+                  }
+                  colors
+                  userID
+                  Tags {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  Category {
+                    id
+                    name
+                    description
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  Collaborators {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                  contentCategoryId
+                }
+                tag {
+                  id
+                  name
+                  contents {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                createdAt
+                updatedAt
+                _version
+                _deleted
+                _lastChangedAt
+              }
+              nextToken
+              startedAt
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
+      Category {
+        id
+        name
+        description
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      Collaborators {
+        items {
+          id
+          contentId
+          collaboratorId
+          content {
+            id
+            type
+            time
+            size
+            project {
+              name
+              description
+            }
+            files {
+              data
+              type
+              mimeType
+              caption
+              size
+              isBanner
+            }
+            date
+            location {
+              country
+              state
+              city
+              street
+              position {
+                latitude
+                longitude
+              }
+            }
+            colors
+            userID
+            Tags {
+              items {
+                id
+                contentId
+                tagId
+                content {
+                  id
+                  type
+                  time
+                  size
+                  project {
+                    name
+                    description
+                  }
+                  files {
+                    data
+                    type
+                    mimeType
+                    caption
+                    size
+                    isBanner
+                  }
+                  date
+                  location {
+                    country
+                    state
+                    city
+                    street
+                    position {
+                      latitude
+                      longitude
+                    }
+                  }
+                  colors
+                  userID
+                  Tags {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  Category {
+                    id
+                    name
+                    description
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  Collaborators {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                  contentCategoryId
+                }
+                tag {
+                  id
+                  name
+                  contents {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                createdAt
+                updatedAt
+                _version
+                _deleted
+                _lastChangedAt
+              }
+              nextToken
+              startedAt
+            }
+            Category {
+              id
+              name
+              description
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+            }
+            Collaborators {
+              items {
+                id
+                contentId
+                collaboratorId
+                content {
+                  id
+                  type
+                  time
+                  size
+                  project {
+                    name
+                    description
+                  }
+                  files {
+                    data
+                    type
+                    mimeType
+                    caption
+                    size
+                    isBanner
+                  }
+                  date
+                  location {
+                    country
+                    state
+                    city
+                    street
+                    position {
+                      latitude
+                      longitude
+                    }
+                  }
+                  colors
+                  userID
+                  Tags {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  Category {
+                    id
+                    name
+                    description
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  Collaborators {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                  contentCategoryId
+                }
+                collaborator {
+                  id
+                  username
+                  email
+                  phone
+                  socials {
+                    type
+                    url
+                    username
+                  }
+                  fullName
+                  photoUrl
+                  contents {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                createdAt
+                updatedAt
+                _version
+                _deleted
+                _lastChangedAt
+              }
+              nextToken
+              startedAt
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            contentCategoryId
+          }
+          collaborator {
+            id
+            username
+            email
+            phone
+            socials {
+              type
+              url
+              username
+            }
+            fullName
+            photoUrl
+            contents {
+              items {
+                id
+                contentId
+                collaboratorId
+                content {
+                  id
+                  type
+                  time
+                  size
+                  project {
+                    name
+                    description
+                  }
+                  files {
+                    data
+                    type
+                    mimeType
+                    caption
+                    size
+                    isBanner
+                  }
+                  date
+                  location {
+                    country
+                    state
+                    city
+                    street
+                    position {
+                      latitude
+                      longitude
+                    }
+                  }
+                  colors
+                  userID
+                  Tags {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  Category {
+                    id
+                    name
+                    description
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  Collaborators {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                  contentCategoryId
+                }
+                collaborator {
+                  id
+                  username
+                  email
+                  phone
+                  socials {
+                    type
+                    url
+                    username
+                  }
+                  fullName
+                  photoUrl
+                  contents {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                createdAt
+                updatedAt
+                _version
+                _deleted
+                _lastChangedAt
+              }
+              nextToken
+              startedAt
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      contentCategoryId
+    }
+  }
+`;
+export const onCreateTag = /* GraphQL */ `
+  subscription OnCreateTag($filter: ModelSubscriptionTagFilterInput) {
+    onCreateTag(filter: $filter) {
+      id
+      name
+      contents {
+        items {
+          id
+          contentId
+          tagId
+          content {
+            id
+            type
+            time
+            size
+            project {
+              name
+              description
+            }
+            files {
+              data
+              type
+              mimeType
+              caption
+              size
+              isBanner
+            }
+            date
+            location {
+              country
+              state
+              city
+              street
+              position {
+                latitude
+                longitude
+              }
+            }
+            colors
+            userID
+            Tags {
+              items {
+                id
+                contentId
+                tagId
+                content {
+                  id
+                  type
+                  time
+                  size
+                  project {
+                    name
+                    description
+                  }
+                  files {
+                    data
+                    type
+                    mimeType
+                    caption
+                    size
+                    isBanner
+                  }
+                  date
+                  location {
+                    country
+                    state
+                    city
+                    street
+                    position {
+                      latitude
+                      longitude
+                    }
+                  }
+                  colors
+                  userID
+                  Tags {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  Category {
+                    id
+                    name
+                    description
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  Collaborators {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                  contentCategoryId
+                }
+                tag {
+                  id
+                  name
+                  contents {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                createdAt
+                updatedAt
+                _version
+                _deleted
+                _lastChangedAt
+              }
+              nextToken
+              startedAt
+            }
+            Category {
+              id
+              name
+              description
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+            }
+            Collaborators {
+              items {
+                id
+                contentId
+                collaboratorId
+                content {
+                  id
+                  type
+                  time
+                  size
+                  project {
+                    name
+                    description
+                  }
+                  files {
+                    data
+                    type
+                    mimeType
+                    caption
+                    size
+                    isBanner
+                  }
+                  date
+                  location {
+                    country
+                    state
+                    city
+                    street
+                    position {
+                      latitude
+                      longitude
+                    }
+                  }
+                  colors
+                  userID
+                  Tags {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  Category {
+                    id
+                    name
+                    description
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  Collaborators {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                  contentCategoryId
+                }
+                collaborator {
+                  id
+                  username
+                  email
+                  phone
+                  socials {
+                    type
+                    url
+                    username
+                  }
+                  fullName
+                  photoUrl
+                  contents {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                createdAt
+                updatedAt
+                _version
+                _deleted
+                _lastChangedAt
+              }
+              nextToken
+              startedAt
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            contentCategoryId
+          }
+          tag {
+            id
+            name
+            contents {
+              items {
+                id
+                contentId
+                tagId
+                content {
+                  id
+                  type
+                  time
+                  size
+                  project {
+                    name
+                    description
+                  }
+                  files {
+                    data
+                    type
+                    mimeType
+                    caption
+                    size
+                    isBanner
+                  }
+                  date
+                  location {
+                    country
+                    state
+                    city
+                    street
+                    position {
+                      latitude
+                      longitude
+                    }
+                  }
+                  colors
+                  userID
+                  Tags {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  Category {
+                    id
+                    name
+                    description
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  Collaborators {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                  contentCategoryId
+                }
+                tag {
+                  id
+                  name
+                  contents {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                createdAt
+                updatedAt
+                _version
+                _deleted
+                _lastChangedAt
+              }
+              nextToken
+              startedAt
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
           }
           createdAt
           updatedAt
@@ -572,54 +4763,109 @@ export const onCreateTags = /* GraphQL */ `
     }
   }
 `;
-export const onUpdateTags = /* GraphQL */ `
-  subscription OnUpdateTags($filter: ModelSubscriptionTagsFilterInput) {
-    onUpdateTags(filter: $filter) {
+export const onUpdateTag = /* GraphQL */ `
+  subscription OnUpdateTag($filter: ModelSubscriptionTagFilterInput) {
+    onUpdateTag(filter: $filter) {
       id
       name
-      projects {
+      contents {
         items {
           id
-          tagsId
-          projectId
-          tags {
+          contentId
+          tagId
+          content {
             id
-            name
-            projects {
+            type
+            time
+            size
+            project {
+              name
+              description
+            }
+            files {
+              data
+              type
+              mimeType
+              caption
+              size
+              isBanner
+            }
+            date
+            location {
+              country
+              state
+              city
+              street
+              position {
+                latitude
+                longitude
+              }
+            }
+            colors
+            userID
+            Tags {
               items {
                 id
-                tagsId
-                projectId
-                tags {
+                contentId
+                tagId
+                content {
                   id
-                  name
-                  projects {
+                  type
+                  time
+                  size
+                  project {
+                    name
+                    description
+                  }
+                  files {
+                    data
+                    type
+                    mimeType
+                    caption
+                    size
+                    isBanner
+                  }
+                  date
+                  location {
+                    country
+                    state
+                    city
+                    street
+                    position {
+                      latitude
+                      longitude
+                    }
+                  }
+                  colors
+                  userID
+                  Tags {
                     items {
                       id
-                      tagsId
-                      projectId
-                      tags {
+                      contentId
+                      tagId
+                      content {
                         id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
+                        type
+                        time
+                        size
                         date
-                        banner
-                        description
+                        colors
                         userID
                         createdAt
                         updatedAt
                         _version
                         _deleted
                         _lastChangedAt
-                        projectCategoryId
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
                       }
                       createdAt
                       updatedAt
@@ -630,24 +4876,7 @@ export const onUpdateTags = /* GraphQL */ `
                     nextToken
                     startedAt
                   }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                project {
-                  id
-                  name
-                  date
-                  banner
-                  description
-                  location {
-                    latitude
-                    longitude
-                  }
-                  userID
-                  category {
+                  Category {
                     id
                     name
                     description
@@ -657,73 +4886,38 @@ export const onUpdateTags = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                   }
-                  collaborators {
+                  Collaborators {
                     items {
                       id
+                      contentId
                       collaboratorId
-                      projectId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
                       collaborator {
                         id
-                        fullName
                         username
                         email
+                        phone
+                        fullName
                         photoUrl
                         createdAt
                         updatedAt
                         _version
                         _deleted
                         _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  tags {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
                       }
                       createdAt
                       updatedAt
@@ -739,7 +4933,54 @@ export const onUpdateTags = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
-                  projectCategoryId
+                  contentCategoryId
+                }
+                tag {
+                  id
+                  name
+                  contents {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
                 }
                 createdAt
                 updatedAt
@@ -750,24 +4991,7 @@ export const onUpdateTags = /* GraphQL */ `
               nextToken
               startedAt
             }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-          }
-          project {
-            id
-            name
-            date
-            banner
-            description
-            location {
-              latitude
-              longitude
-            }
-            userID
-            category {
+            Category {
               id
               name
               description
@@ -777,32 +5001,176 @@ export const onUpdateTags = /* GraphQL */ `
               _deleted
               _lastChangedAt
             }
-            collaborators {
+            Collaborators {
               items {
                 id
+                contentId
                 collaboratorId
-                projectId
+                content {
+                  id
+                  type
+                  time
+                  size
+                  project {
+                    name
+                    description
+                  }
+                  files {
+                    data
+                    type
+                    mimeType
+                    caption
+                    size
+                    isBanner
+                  }
+                  date
+                  location {
+                    country
+                    state
+                    city
+                    street
+                    position {
+                      latitude
+                      longitude
+                    }
+                  }
+                  colors
+                  userID
+                  Tags {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  Category {
+                    id
+                    name
+                    description
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  Collaborators {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                  contentCategoryId
+                }
                 collaborator {
                   id
-                  fullName
                   username
                   email
+                  phone
                   socials {
                     type
                     url
                     username
                   }
+                  fullName
                   photoUrl
-                  projects {
+                  contents {
                     items {
                       id
+                      contentId
                       collaboratorId
-                      projectId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
                       collaborator {
                         id
-                        fullName
                         username
                         email
+                        phone
+                        fullName
                         photoUrl
                         createdAt
                         updatedAt
@@ -810,20 +5178,6 @@ export const onUpdateTags = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                       }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
                       createdAt
                       updatedAt
                       _version
@@ -838,276 +5192,6 @@ export const onUpdateTags = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
-                }
-                project {
-                  id
-                  name
-                  date
-                  banner
-                  description
-                  location {
-                    latitude
-                    longitude
-                  }
-                  userID
-                  category {
-                    id
-                    name
-                    description
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  collaborators {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  tags {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                  projectCategoryId
-                }
-                createdAt
-                updatedAt
-                _version
-                _deleted
-                _lastChangedAt
-              }
-              nextToken
-              startedAt
-            }
-            tags {
-              items {
-                id
-                tagsId
-                projectId
-                tags {
-                  id
-                  name
-                  projects {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                project {
-                  id
-                  name
-                  date
-                  banner
-                  description
-                  location {
-                    latitude
-                    longitude
-                  }
-                  userID
-                  category {
-                    id
-                    name
-                    description
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  collaborators {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  tags {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                  projectCategoryId
                 }
                 createdAt
                 updatedAt
@@ -1123,7 +5207,204 @@ export const onUpdateTags = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
-            projectCategoryId
+            contentCategoryId
+          }
+          tag {
+            id
+            name
+            contents {
+              items {
+                id
+                contentId
+                tagId
+                content {
+                  id
+                  type
+                  time
+                  size
+                  project {
+                    name
+                    description
+                  }
+                  files {
+                    data
+                    type
+                    mimeType
+                    caption
+                    size
+                    isBanner
+                  }
+                  date
+                  location {
+                    country
+                    state
+                    city
+                    street
+                    position {
+                      latitude
+                      longitude
+                    }
+                  }
+                  colors
+                  userID
+                  Tags {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  Category {
+                    id
+                    name
+                    description
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  Collaborators {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                  contentCategoryId
+                }
+                tag {
+                  id
+                  name
+                  contents {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                createdAt
+                updatedAt
+                _version
+                _deleted
+                _lastChangedAt
+              }
+              nextToken
+              startedAt
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
           }
           createdAt
           updatedAt
@@ -1142,54 +5423,109 @@ export const onUpdateTags = /* GraphQL */ `
     }
   }
 `;
-export const onDeleteTags = /* GraphQL */ `
-  subscription OnDeleteTags($filter: ModelSubscriptionTagsFilterInput) {
-    onDeleteTags(filter: $filter) {
+export const onDeleteTag = /* GraphQL */ `
+  subscription OnDeleteTag($filter: ModelSubscriptionTagFilterInput) {
+    onDeleteTag(filter: $filter) {
       id
       name
-      projects {
+      contents {
         items {
           id
-          tagsId
-          projectId
-          tags {
+          contentId
+          tagId
+          content {
             id
-            name
-            projects {
+            type
+            time
+            size
+            project {
+              name
+              description
+            }
+            files {
+              data
+              type
+              mimeType
+              caption
+              size
+              isBanner
+            }
+            date
+            location {
+              country
+              state
+              city
+              street
+              position {
+                latitude
+                longitude
+              }
+            }
+            colors
+            userID
+            Tags {
               items {
                 id
-                tagsId
-                projectId
-                tags {
+                contentId
+                tagId
+                content {
                   id
-                  name
-                  projects {
+                  type
+                  time
+                  size
+                  project {
+                    name
+                    description
+                  }
+                  files {
+                    data
+                    type
+                    mimeType
+                    caption
+                    size
+                    isBanner
+                  }
+                  date
+                  location {
+                    country
+                    state
+                    city
+                    street
+                    position {
+                      latitude
+                      longitude
+                    }
+                  }
+                  colors
+                  userID
+                  Tags {
                     items {
                       id
-                      tagsId
-                      projectId
-                      tags {
+                      contentId
+                      tagId
+                      content {
                         id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
+                        type
+                        time
+                        size
                         date
-                        banner
-                        description
+                        colors
                         userID
                         createdAt
                         updatedAt
                         _version
                         _deleted
                         _lastChangedAt
-                        projectCategoryId
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
                       }
                       createdAt
                       updatedAt
@@ -1200,24 +5536,7 @@ export const onDeleteTags = /* GraphQL */ `
                     nextToken
                     startedAt
                   }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                project {
-                  id
-                  name
-                  date
-                  banner
-                  description
-                  location {
-                    latitude
-                    longitude
-                  }
-                  userID
-                  category {
+                  Category {
                     id
                     name
                     description
@@ -1227,73 +5546,38 @@ export const onDeleteTags = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                   }
-                  collaborators {
+                  Collaborators {
                     items {
                       id
+                      contentId
                       collaboratorId
-                      projectId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
                       collaborator {
                         id
-                        fullName
                         username
                         email
+                        phone
+                        fullName
                         photoUrl
                         createdAt
                         updatedAt
                         _version
                         _deleted
                         _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  tags {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
                       }
                       createdAt
                       updatedAt
@@ -1309,7 +5593,54 @@ export const onDeleteTags = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
-                  projectCategoryId
+                  contentCategoryId
+                }
+                tag {
+                  id
+                  name
+                  contents {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
                 }
                 createdAt
                 updatedAt
@@ -1320,24 +5651,7 @@ export const onDeleteTags = /* GraphQL */ `
               nextToken
               startedAt
             }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-          }
-          project {
-            id
-            name
-            date
-            banner
-            description
-            location {
-              latitude
-              longitude
-            }
-            userID
-            category {
+            Category {
               id
               name
               description
@@ -1347,32 +5661,176 @@ export const onDeleteTags = /* GraphQL */ `
               _deleted
               _lastChangedAt
             }
-            collaborators {
+            Collaborators {
               items {
                 id
+                contentId
                 collaboratorId
-                projectId
+                content {
+                  id
+                  type
+                  time
+                  size
+                  project {
+                    name
+                    description
+                  }
+                  files {
+                    data
+                    type
+                    mimeType
+                    caption
+                    size
+                    isBanner
+                  }
+                  date
+                  location {
+                    country
+                    state
+                    city
+                    street
+                    position {
+                      latitude
+                      longitude
+                    }
+                  }
+                  colors
+                  userID
+                  Tags {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  Category {
+                    id
+                    name
+                    description
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  Collaborators {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                  contentCategoryId
+                }
                 collaborator {
                   id
-                  fullName
                   username
                   email
+                  phone
                   socials {
                     type
                     url
                     username
                   }
+                  fullName
                   photoUrl
-                  projects {
+                  contents {
                     items {
                       id
+                      contentId
                       collaboratorId
-                      projectId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
                       collaborator {
                         id
-                        fullName
                         username
                         email
+                        phone
+                        fullName
                         photoUrl
                         createdAt
                         updatedAt
@@ -1380,20 +5838,6 @@ export const onDeleteTags = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                       }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
                       createdAt
                       updatedAt
                       _version
@@ -1408,276 +5852,6 @@ export const onDeleteTags = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
-                }
-                project {
-                  id
-                  name
-                  date
-                  banner
-                  description
-                  location {
-                    latitude
-                    longitude
-                  }
-                  userID
-                  category {
-                    id
-                    name
-                    description
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  collaborators {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  tags {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                  projectCategoryId
-                }
-                createdAt
-                updatedAt
-                _version
-                _deleted
-                _lastChangedAt
-              }
-              nextToken
-              startedAt
-            }
-            tags {
-              items {
-                id
-                tagsId
-                projectId
-                tags {
-                  id
-                  name
-                  projects {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                project {
-                  id
-                  name
-                  date
-                  banner
-                  description
-                  location {
-                    latitude
-                    longitude
-                  }
-                  userID
-                  category {
-                    id
-                    name
-                    description
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  collaborators {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  tags {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                  projectCategoryId
                 }
                 createdAt
                 updatedAt
@@ -1693,7 +5867,204 @@ export const onDeleteTags = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
-            projectCategoryId
+            contentCategoryId
+          }
+          tag {
+            id
+            name
+            contents {
+              items {
+                id
+                contentId
+                tagId
+                content {
+                  id
+                  type
+                  time
+                  size
+                  project {
+                    name
+                    description
+                  }
+                  files {
+                    data
+                    type
+                    mimeType
+                    caption
+                    size
+                    isBanner
+                  }
+                  date
+                  location {
+                    country
+                    state
+                    city
+                    street
+                    position {
+                      latitude
+                      longitude
+                    }
+                  }
+                  colors
+                  userID
+                  Tags {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  Category {
+                    id
+                    name
+                    description
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  Collaborators {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                  contentCategoryId
+                }
+                tag {
+                  id
+                  name
+                  contents {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                createdAt
+                updatedAt
+                _version
+                _deleted
+                _lastChangedAt
+              }
+              nextToken
+              startedAt
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
           }
           createdAt
           updatedAt
@@ -1718,77 +6089,114 @@ export const onCreateCollaborator = /* GraphQL */ `
   ) {
     onCreateCollaborator(filter: $filter) {
       id
-      fullName
       username
       email
+      phone
       socials {
         type
         url
         username
       }
+      fullName
       photoUrl
-      projects {
+      contents {
         items {
           id
+          contentId
           collaboratorId
-          projectId
-          collaborator {
+          content {
             id
-            fullName
-            username
-            email
-            socials {
-              type
-              url
-              username
+            type
+            time
+            size
+            project {
+              name
+              description
             }
-            photoUrl
-            projects {
+            files {
+              data
+              type
+              mimeType
+              caption
+              size
+              isBanner
+            }
+            date
+            location {
+              country
+              state
+              city
+              street
+              position {
+                latitude
+                longitude
+              }
+            }
+            colors
+            userID
+            Tags {
               items {
                 id
-                collaboratorId
-                projectId
-                collaborator {
+                contentId
+                tagId
+                content {
                   id
-                  fullName
-                  username
-                  email
-                  socials {
-                    type
-                    url
-                    username
+                  type
+                  time
+                  size
+                  project {
+                    name
+                    description
                   }
-                  photoUrl
-                  projects {
+                  files {
+                    data
+                    type
+                    mimeType
+                    caption
+                    size
+                    isBanner
+                  }
+                  date
+                  location {
+                    country
+                    state
+                    city
+                    street
+                    position {
+                      latitude
+                      longitude
+                    }
+                  }
+                  colors
+                  userID
+                  Tags {
                     items {
                       id
-                      collaboratorId
-                      projectId
-                      collaborator {
+                      contentId
+                      tagId
+                      content {
                         id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
+                        type
+                        time
+                        size
                         date
-                        banner
-                        description
+                        colors
                         userID
                         createdAt
                         updatedAt
                         _version
                         _deleted
                         _lastChangedAt
-                        projectCategoryId
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
                       }
                       createdAt
                       updatedAt
@@ -1799,24 +6207,7 @@ export const onCreateCollaborator = /* GraphQL */ `
                     nextToken
                     startedAt
                   }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                project {
-                  id
-                  name
-                  date
-                  banner
-                  description
-                  location {
-                    latitude
-                    longitude
-                  }
-                  userID
-                  category {
+                  Category {
                     id
                     name
                     description
@@ -1826,73 +6217,38 @@ export const onCreateCollaborator = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                   }
-                  collaborators {
+                  Collaborators {
                     items {
                       id
+                      contentId
                       collaboratorId
-                      projectId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
                       collaborator {
                         id
-                        fullName
                         username
                         email
+                        phone
+                        fullName
                         photoUrl
                         createdAt
                         updatedAt
                         _version
                         _deleted
                         _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  tags {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
                       }
                       createdAt
                       updatedAt
@@ -1908,7 +6264,54 @@ export const onCreateCollaborator = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
-                  projectCategoryId
+                  contentCategoryId
+                }
+                tag {
+                  id
+                  name
+                  contents {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
                 }
                 createdAt
                 updatedAt
@@ -1919,24 +6322,7 @@ export const onCreateCollaborator = /* GraphQL */ `
               nextToken
               startedAt
             }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-          }
-          project {
-            id
-            name
-            date
-            banner
-            description
-            location {
-              latitude
-              longitude
-            }
-            userID
-            category {
+            Category {
               id
               name
               description
@@ -1946,32 +6332,176 @@ export const onCreateCollaborator = /* GraphQL */ `
               _deleted
               _lastChangedAt
             }
-            collaborators {
+            Collaborators {
               items {
                 id
+                contentId
                 collaboratorId
-                projectId
+                content {
+                  id
+                  type
+                  time
+                  size
+                  project {
+                    name
+                    description
+                  }
+                  files {
+                    data
+                    type
+                    mimeType
+                    caption
+                    size
+                    isBanner
+                  }
+                  date
+                  location {
+                    country
+                    state
+                    city
+                    street
+                    position {
+                      latitude
+                      longitude
+                    }
+                  }
+                  colors
+                  userID
+                  Tags {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  Category {
+                    id
+                    name
+                    description
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  Collaborators {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                  contentCategoryId
+                }
                 collaborator {
                   id
-                  fullName
                   username
                   email
+                  phone
                   socials {
                     type
                     url
                     username
                   }
+                  fullName
                   photoUrl
-                  projects {
+                  contents {
                     items {
                       id
+                      contentId
                       collaboratorId
-                      projectId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
                       collaborator {
                         id
-                        fullName
                         username
                         email
+                        phone
+                        fullName
                         photoUrl
                         createdAt
                         updatedAt
@@ -1979,20 +6509,6 @@ export const onCreateCollaborator = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                       }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
                       createdAt
                       updatedAt
                       _version
@@ -2007,276 +6523,6 @@ export const onCreateCollaborator = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
-                }
-                project {
-                  id
-                  name
-                  date
-                  banner
-                  description
-                  location {
-                    latitude
-                    longitude
-                  }
-                  userID
-                  category {
-                    id
-                    name
-                    description
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  collaborators {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  tags {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                  projectCategoryId
-                }
-                createdAt
-                updatedAt
-                _version
-                _deleted
-                _lastChangedAt
-              }
-              nextToken
-              startedAt
-            }
-            tags {
-              items {
-                id
-                tagsId
-                projectId
-                tags {
-                  id
-                  name
-                  projects {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                project {
-                  id
-                  name
-                  date
-                  banner
-                  description
-                  location {
-                    latitude
-                    longitude
-                  }
-                  userID
-                  category {
-                    id
-                    name
-                    description
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  collaborators {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  tags {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                  projectCategoryId
                 }
                 createdAt
                 updatedAt
@@ -2292,7 +6538,226 @@ export const onCreateCollaborator = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
-            projectCategoryId
+            contentCategoryId
+          }
+          collaborator {
+            id
+            username
+            email
+            phone
+            socials {
+              type
+              url
+              username
+            }
+            fullName
+            photoUrl
+            contents {
+              items {
+                id
+                contentId
+                collaboratorId
+                content {
+                  id
+                  type
+                  time
+                  size
+                  project {
+                    name
+                    description
+                  }
+                  files {
+                    data
+                    type
+                    mimeType
+                    caption
+                    size
+                    isBanner
+                  }
+                  date
+                  location {
+                    country
+                    state
+                    city
+                    street
+                    position {
+                      latitude
+                      longitude
+                    }
+                  }
+                  colors
+                  userID
+                  Tags {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  Category {
+                    id
+                    name
+                    description
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  Collaborators {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                  contentCategoryId
+                }
+                collaborator {
+                  id
+                  username
+                  email
+                  phone
+                  socials {
+                    type
+                    url
+                    username
+                  }
+                  fullName
+                  photoUrl
+                  contents {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                createdAt
+                updatedAt
+                _version
+                _deleted
+                _lastChangedAt
+              }
+              nextToken
+              startedAt
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
           }
           createdAt
           updatedAt
@@ -2317,77 +6782,114 @@ export const onUpdateCollaborator = /* GraphQL */ `
   ) {
     onUpdateCollaborator(filter: $filter) {
       id
-      fullName
       username
       email
+      phone
       socials {
         type
         url
         username
       }
+      fullName
       photoUrl
-      projects {
+      contents {
         items {
           id
+          contentId
           collaboratorId
-          projectId
-          collaborator {
+          content {
             id
-            fullName
-            username
-            email
-            socials {
-              type
-              url
-              username
+            type
+            time
+            size
+            project {
+              name
+              description
             }
-            photoUrl
-            projects {
+            files {
+              data
+              type
+              mimeType
+              caption
+              size
+              isBanner
+            }
+            date
+            location {
+              country
+              state
+              city
+              street
+              position {
+                latitude
+                longitude
+              }
+            }
+            colors
+            userID
+            Tags {
               items {
                 id
-                collaboratorId
-                projectId
-                collaborator {
+                contentId
+                tagId
+                content {
                   id
-                  fullName
-                  username
-                  email
-                  socials {
-                    type
-                    url
-                    username
+                  type
+                  time
+                  size
+                  project {
+                    name
+                    description
                   }
-                  photoUrl
-                  projects {
+                  files {
+                    data
+                    type
+                    mimeType
+                    caption
+                    size
+                    isBanner
+                  }
+                  date
+                  location {
+                    country
+                    state
+                    city
+                    street
+                    position {
+                      latitude
+                      longitude
+                    }
+                  }
+                  colors
+                  userID
+                  Tags {
                     items {
                       id
-                      collaboratorId
-                      projectId
-                      collaborator {
+                      contentId
+                      tagId
+                      content {
                         id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
+                        type
+                        time
+                        size
                         date
-                        banner
-                        description
+                        colors
                         userID
                         createdAt
                         updatedAt
                         _version
                         _deleted
                         _lastChangedAt
-                        projectCategoryId
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
                       }
                       createdAt
                       updatedAt
@@ -2398,24 +6900,7 @@ export const onUpdateCollaborator = /* GraphQL */ `
                     nextToken
                     startedAt
                   }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                project {
-                  id
-                  name
-                  date
-                  banner
-                  description
-                  location {
-                    latitude
-                    longitude
-                  }
-                  userID
-                  category {
+                  Category {
                     id
                     name
                     description
@@ -2425,73 +6910,38 @@ export const onUpdateCollaborator = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                   }
-                  collaborators {
+                  Collaborators {
                     items {
                       id
+                      contentId
                       collaboratorId
-                      projectId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
                       collaborator {
                         id
-                        fullName
                         username
                         email
+                        phone
+                        fullName
                         photoUrl
                         createdAt
                         updatedAt
                         _version
                         _deleted
                         _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  tags {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
                       }
                       createdAt
                       updatedAt
@@ -2507,7 +6957,54 @@ export const onUpdateCollaborator = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
-                  projectCategoryId
+                  contentCategoryId
+                }
+                tag {
+                  id
+                  name
+                  contents {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
                 }
                 createdAt
                 updatedAt
@@ -2518,24 +7015,7 @@ export const onUpdateCollaborator = /* GraphQL */ `
               nextToken
               startedAt
             }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-          }
-          project {
-            id
-            name
-            date
-            banner
-            description
-            location {
-              latitude
-              longitude
-            }
-            userID
-            category {
+            Category {
               id
               name
               description
@@ -2545,32 +7025,176 @@ export const onUpdateCollaborator = /* GraphQL */ `
               _deleted
               _lastChangedAt
             }
-            collaborators {
+            Collaborators {
               items {
                 id
+                contentId
                 collaboratorId
-                projectId
+                content {
+                  id
+                  type
+                  time
+                  size
+                  project {
+                    name
+                    description
+                  }
+                  files {
+                    data
+                    type
+                    mimeType
+                    caption
+                    size
+                    isBanner
+                  }
+                  date
+                  location {
+                    country
+                    state
+                    city
+                    street
+                    position {
+                      latitude
+                      longitude
+                    }
+                  }
+                  colors
+                  userID
+                  Tags {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  Category {
+                    id
+                    name
+                    description
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  Collaborators {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                  contentCategoryId
+                }
                 collaborator {
                   id
-                  fullName
                   username
                   email
+                  phone
                   socials {
                     type
                     url
                     username
                   }
+                  fullName
                   photoUrl
-                  projects {
+                  contents {
                     items {
                       id
+                      contentId
                       collaboratorId
-                      projectId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
                       collaborator {
                         id
-                        fullName
                         username
                         email
+                        phone
+                        fullName
                         photoUrl
                         createdAt
                         updatedAt
@@ -2578,20 +7202,6 @@ export const onUpdateCollaborator = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                       }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
                       createdAt
                       updatedAt
                       _version
@@ -2606,276 +7216,6 @@ export const onUpdateCollaborator = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
-                }
-                project {
-                  id
-                  name
-                  date
-                  banner
-                  description
-                  location {
-                    latitude
-                    longitude
-                  }
-                  userID
-                  category {
-                    id
-                    name
-                    description
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  collaborators {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  tags {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                  projectCategoryId
-                }
-                createdAt
-                updatedAt
-                _version
-                _deleted
-                _lastChangedAt
-              }
-              nextToken
-              startedAt
-            }
-            tags {
-              items {
-                id
-                tagsId
-                projectId
-                tags {
-                  id
-                  name
-                  projects {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                project {
-                  id
-                  name
-                  date
-                  banner
-                  description
-                  location {
-                    latitude
-                    longitude
-                  }
-                  userID
-                  category {
-                    id
-                    name
-                    description
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  collaborators {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  tags {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                  projectCategoryId
                 }
                 createdAt
                 updatedAt
@@ -2891,7 +7231,226 @@ export const onUpdateCollaborator = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
-            projectCategoryId
+            contentCategoryId
+          }
+          collaborator {
+            id
+            username
+            email
+            phone
+            socials {
+              type
+              url
+              username
+            }
+            fullName
+            photoUrl
+            contents {
+              items {
+                id
+                contentId
+                collaboratorId
+                content {
+                  id
+                  type
+                  time
+                  size
+                  project {
+                    name
+                    description
+                  }
+                  files {
+                    data
+                    type
+                    mimeType
+                    caption
+                    size
+                    isBanner
+                  }
+                  date
+                  location {
+                    country
+                    state
+                    city
+                    street
+                    position {
+                      latitude
+                      longitude
+                    }
+                  }
+                  colors
+                  userID
+                  Tags {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  Category {
+                    id
+                    name
+                    description
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  Collaborators {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                  contentCategoryId
+                }
+                collaborator {
+                  id
+                  username
+                  email
+                  phone
+                  socials {
+                    type
+                    url
+                    username
+                  }
+                  fullName
+                  photoUrl
+                  contents {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                createdAt
+                updatedAt
+                _version
+                _deleted
+                _lastChangedAt
+              }
+              nextToken
+              startedAt
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
           }
           createdAt
           updatedAt
@@ -2916,77 +7475,114 @@ export const onDeleteCollaborator = /* GraphQL */ `
   ) {
     onDeleteCollaborator(filter: $filter) {
       id
-      fullName
       username
       email
+      phone
       socials {
         type
         url
         username
       }
+      fullName
       photoUrl
-      projects {
+      contents {
         items {
           id
+          contentId
           collaboratorId
-          projectId
-          collaborator {
+          content {
             id
-            fullName
-            username
-            email
-            socials {
-              type
-              url
-              username
+            type
+            time
+            size
+            project {
+              name
+              description
             }
-            photoUrl
-            projects {
+            files {
+              data
+              type
+              mimeType
+              caption
+              size
+              isBanner
+            }
+            date
+            location {
+              country
+              state
+              city
+              street
+              position {
+                latitude
+                longitude
+              }
+            }
+            colors
+            userID
+            Tags {
               items {
                 id
-                collaboratorId
-                projectId
-                collaborator {
+                contentId
+                tagId
+                content {
                   id
-                  fullName
-                  username
-                  email
-                  socials {
-                    type
-                    url
-                    username
+                  type
+                  time
+                  size
+                  project {
+                    name
+                    description
                   }
-                  photoUrl
-                  projects {
+                  files {
+                    data
+                    type
+                    mimeType
+                    caption
+                    size
+                    isBanner
+                  }
+                  date
+                  location {
+                    country
+                    state
+                    city
+                    street
+                    position {
+                      latitude
+                      longitude
+                    }
+                  }
+                  colors
+                  userID
+                  Tags {
                     items {
                       id
-                      collaboratorId
-                      projectId
-                      collaborator {
+                      contentId
+                      tagId
+                      content {
                         id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
+                        type
+                        time
+                        size
                         date
-                        banner
-                        description
+                        colors
                         userID
                         createdAt
                         updatedAt
                         _version
                         _deleted
                         _lastChangedAt
-                        projectCategoryId
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
                       }
                       createdAt
                       updatedAt
@@ -2997,24 +7593,7 @@ export const onDeleteCollaborator = /* GraphQL */ `
                     nextToken
                     startedAt
                   }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                project {
-                  id
-                  name
-                  date
-                  banner
-                  description
-                  location {
-                    latitude
-                    longitude
-                  }
-                  userID
-                  category {
+                  Category {
                     id
                     name
                     description
@@ -3024,73 +7603,38 @@ export const onDeleteCollaborator = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                   }
-                  collaborators {
+                  Collaborators {
                     items {
                       id
+                      contentId
                       collaboratorId
-                      projectId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
                       collaborator {
                         id
-                        fullName
                         username
                         email
+                        phone
+                        fullName
                         photoUrl
                         createdAt
                         updatedAt
                         _version
                         _deleted
                         _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  tags {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
                       }
                       createdAt
                       updatedAt
@@ -3106,7 +7650,54 @@ export const onDeleteCollaborator = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
-                  projectCategoryId
+                  contentCategoryId
+                }
+                tag {
+                  id
+                  name
+                  contents {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
                 }
                 createdAt
                 updatedAt
@@ -3117,24 +7708,7 @@ export const onDeleteCollaborator = /* GraphQL */ `
               nextToken
               startedAt
             }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-          }
-          project {
-            id
-            name
-            date
-            banner
-            description
-            location {
-              latitude
-              longitude
-            }
-            userID
-            category {
+            Category {
               id
               name
               description
@@ -3144,32 +7718,176 @@ export const onDeleteCollaborator = /* GraphQL */ `
               _deleted
               _lastChangedAt
             }
-            collaborators {
+            Collaborators {
               items {
                 id
+                contentId
                 collaboratorId
-                projectId
+                content {
+                  id
+                  type
+                  time
+                  size
+                  project {
+                    name
+                    description
+                  }
+                  files {
+                    data
+                    type
+                    mimeType
+                    caption
+                    size
+                    isBanner
+                  }
+                  date
+                  location {
+                    country
+                    state
+                    city
+                    street
+                    position {
+                      latitude
+                      longitude
+                    }
+                  }
+                  colors
+                  userID
+                  Tags {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  Category {
+                    id
+                    name
+                    description
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  Collaborators {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                  contentCategoryId
+                }
                 collaborator {
                   id
-                  fullName
                   username
                   email
+                  phone
                   socials {
                     type
                     url
                     username
                   }
+                  fullName
                   photoUrl
-                  projects {
+                  contents {
                     items {
                       id
+                      contentId
                       collaboratorId
-                      projectId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
                       collaborator {
                         id
-                        fullName
                         username
                         email
+                        phone
+                        fullName
                         photoUrl
                         createdAt
                         updatedAt
@@ -3177,20 +7895,6 @@ export const onDeleteCollaborator = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                       }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
                       createdAt
                       updatedAt
                       _version
@@ -3205,276 +7909,6 @@ export const onDeleteCollaborator = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
-                }
-                project {
-                  id
-                  name
-                  date
-                  banner
-                  description
-                  location {
-                    latitude
-                    longitude
-                  }
-                  userID
-                  category {
-                    id
-                    name
-                    description
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  collaborators {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  tags {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                  projectCategoryId
-                }
-                createdAt
-                updatedAt
-                _version
-                _deleted
-                _lastChangedAt
-              }
-              nextToken
-              startedAt
-            }
-            tags {
-              items {
-                id
-                tagsId
-                projectId
-                tags {
-                  id
-                  name
-                  projects {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                project {
-                  id
-                  name
-                  date
-                  banner
-                  description
-                  location {
-                    latitude
-                    longitude
-                  }
-                  userID
-                  category {
-                    id
-                    name
-                    description
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  collaborators {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  tags {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                  projectCategoryId
                 }
                 createdAt
                 updatedAt
@@ -3490,7 +7924,226 @@ export const onDeleteCollaborator = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
-            projectCategoryId
+            contentCategoryId
+          }
+          collaborator {
+            id
+            username
+            email
+            phone
+            socials {
+              type
+              url
+              username
+            }
+            fullName
+            photoUrl
+            contents {
+              items {
+                id
+                contentId
+                collaboratorId
+                content {
+                  id
+                  type
+                  time
+                  size
+                  project {
+                    name
+                    description
+                  }
+                  files {
+                    data
+                    type
+                    mimeType
+                    caption
+                    size
+                    isBanner
+                  }
+                  date
+                  location {
+                    country
+                    state
+                    city
+                    street
+                    position {
+                      latitude
+                      longitude
+                    }
+                  }
+                  colors
+                  userID
+                  Tags {
+                    items {
+                      id
+                      contentId
+                      tagId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      tag {
+                        id
+                        name
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  Category {
+                    id
+                    name
+                    description
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  Collaborators {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                  contentCategoryId
+                }
+                collaborator {
+                  id
+                  username
+                  email
+                  phone
+                  socials {
+                    type
+                    url
+                    username
+                  }
+                  fullName
+                  photoUrl
+                  contents {
+                    items {
+                      id
+                      contentId
+                      collaboratorId
+                      content {
+                        id
+                        type
+                        time
+                        size
+                        date
+                        colors
+                        userID
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                        contentCategoryId
+                      }
+                      collaborator {
+                        id
+                        username
+                        email
+                        phone
+                        fullName
+                        photoUrl
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    nextToken
+                    startedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                createdAt
+                updatedAt
+                _version
+                _deleted
+                _lastChangedAt
+              }
+              nextToken
+              startedAt
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
           }
           createdAt
           updatedAt
@@ -3551,3533 +8204,119 @@ export const onDeleteCategory = /* GraphQL */ `
     }
   }
 `;
-export const onCreateProject = /* GraphQL */ `
-  subscription OnCreateProject($filter: ModelSubscriptionProjectFilterInput) {
-    onCreateProject(filter: $filter) {
-      id
-      name
-      date
-      banner
-      description
-      location {
-        latitude
-        longitude
-      }
-      userID
-      category {
-        id
-        name
-        description
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      collaborators {
-        items {
-          id
-          collaboratorId
-          projectId
-          collaborator {
-            id
-            fullName
-            username
-            email
-            socials {
-              type
-              url
-              username
-            }
-            photoUrl
-            projects {
-              items {
-                id
-                collaboratorId
-                projectId
-                collaborator {
-                  id
-                  fullName
-                  username
-                  email
-                  socials {
-                    type
-                    url
-                    username
-                  }
-                  photoUrl
-                  projects {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                project {
-                  id
-                  name
-                  date
-                  banner
-                  description
-                  location {
-                    latitude
-                    longitude
-                  }
-                  userID
-                  category {
-                    id
-                    name
-                    description
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  collaborators {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  tags {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                  projectCategoryId
-                }
-                createdAt
-                updatedAt
-                _version
-                _deleted
-                _lastChangedAt
-              }
-              nextToken
-              startedAt
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-          }
-          project {
-            id
-            name
-            date
-            banner
-            description
-            location {
-              latitude
-              longitude
-            }
-            userID
-            category {
-              id
-              name
-              description
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-            }
-            collaborators {
-              items {
-                id
-                collaboratorId
-                projectId
-                collaborator {
-                  id
-                  fullName
-                  username
-                  email
-                  socials {
-                    type
-                    url
-                    username
-                  }
-                  photoUrl
-                  projects {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                project {
-                  id
-                  name
-                  date
-                  banner
-                  description
-                  location {
-                    latitude
-                    longitude
-                  }
-                  userID
-                  category {
-                    id
-                    name
-                    description
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  collaborators {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  tags {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                  projectCategoryId
-                }
-                createdAt
-                updatedAt
-                _version
-                _deleted
-                _lastChangedAt
-              }
-              nextToken
-              startedAt
-            }
-            tags {
-              items {
-                id
-                tagsId
-                projectId
-                tags {
-                  id
-                  name
-                  projects {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                project {
-                  id
-                  name
-                  date
-                  banner
-                  description
-                  location {
-                    latitude
-                    longitude
-                  }
-                  userID
-                  category {
-                    id
-                    name
-                    description
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  collaborators {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  tags {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                  projectCategoryId
-                }
-                createdAt
-                updatedAt
-                _version
-                _deleted
-                _lastChangedAt
-              }
-              nextToken
-              startedAt
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            projectCategoryId
-          }
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        nextToken
-        startedAt
-      }
-      tags {
-        items {
-          id
-          tagsId
-          projectId
-          tags {
-            id
-            name
-            projects {
-              items {
-                id
-                tagsId
-                projectId
-                tags {
-                  id
-                  name
-                  projects {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                project {
-                  id
-                  name
-                  date
-                  banner
-                  description
-                  location {
-                    latitude
-                    longitude
-                  }
-                  userID
-                  category {
-                    id
-                    name
-                    description
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  collaborators {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  tags {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                  projectCategoryId
-                }
-                createdAt
-                updatedAt
-                _version
-                _deleted
-                _lastChangedAt
-              }
-              nextToken
-              startedAt
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-          }
-          project {
-            id
-            name
-            date
-            banner
-            description
-            location {
-              latitude
-              longitude
-            }
-            userID
-            category {
-              id
-              name
-              description
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-            }
-            collaborators {
-              items {
-                id
-                collaboratorId
-                projectId
-                collaborator {
-                  id
-                  fullName
-                  username
-                  email
-                  socials {
-                    type
-                    url
-                    username
-                  }
-                  photoUrl
-                  projects {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                project {
-                  id
-                  name
-                  date
-                  banner
-                  description
-                  location {
-                    latitude
-                    longitude
-                  }
-                  userID
-                  category {
-                    id
-                    name
-                    description
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  collaborators {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  tags {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                  projectCategoryId
-                }
-                createdAt
-                updatedAt
-                _version
-                _deleted
-                _lastChangedAt
-              }
-              nextToken
-              startedAt
-            }
-            tags {
-              items {
-                id
-                tagsId
-                projectId
-                tags {
-                  id
-                  name
-                  projects {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                project {
-                  id
-                  name
-                  date
-                  banner
-                  description
-                  location {
-                    latitude
-                    longitude
-                  }
-                  userID
-                  category {
-                    id
-                    name
-                    description
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  collaborators {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  tags {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                  projectCategoryId
-                }
-                createdAt
-                updatedAt
-                _version
-                _deleted
-                _lastChangedAt
-              }
-              nextToken
-              startedAt
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            projectCategoryId
-          }
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        nextToken
-        startedAt
-      }
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-      projectCategoryId
-    }
-  }
-`;
-export const onUpdateProject = /* GraphQL */ `
-  subscription OnUpdateProject($filter: ModelSubscriptionProjectFilterInput) {
-    onUpdateProject(filter: $filter) {
-      id
-      name
-      date
-      banner
-      description
-      location {
-        latitude
-        longitude
-      }
-      userID
-      category {
-        id
-        name
-        description
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      collaborators {
-        items {
-          id
-          collaboratorId
-          projectId
-          collaborator {
-            id
-            fullName
-            username
-            email
-            socials {
-              type
-              url
-              username
-            }
-            photoUrl
-            projects {
-              items {
-                id
-                collaboratorId
-                projectId
-                collaborator {
-                  id
-                  fullName
-                  username
-                  email
-                  socials {
-                    type
-                    url
-                    username
-                  }
-                  photoUrl
-                  projects {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                project {
-                  id
-                  name
-                  date
-                  banner
-                  description
-                  location {
-                    latitude
-                    longitude
-                  }
-                  userID
-                  category {
-                    id
-                    name
-                    description
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  collaborators {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  tags {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                  projectCategoryId
-                }
-                createdAt
-                updatedAt
-                _version
-                _deleted
-                _lastChangedAt
-              }
-              nextToken
-              startedAt
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-          }
-          project {
-            id
-            name
-            date
-            banner
-            description
-            location {
-              latitude
-              longitude
-            }
-            userID
-            category {
-              id
-              name
-              description
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-            }
-            collaborators {
-              items {
-                id
-                collaboratorId
-                projectId
-                collaborator {
-                  id
-                  fullName
-                  username
-                  email
-                  socials {
-                    type
-                    url
-                    username
-                  }
-                  photoUrl
-                  projects {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                project {
-                  id
-                  name
-                  date
-                  banner
-                  description
-                  location {
-                    latitude
-                    longitude
-                  }
-                  userID
-                  category {
-                    id
-                    name
-                    description
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  collaborators {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  tags {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                  projectCategoryId
-                }
-                createdAt
-                updatedAt
-                _version
-                _deleted
-                _lastChangedAt
-              }
-              nextToken
-              startedAt
-            }
-            tags {
-              items {
-                id
-                tagsId
-                projectId
-                tags {
-                  id
-                  name
-                  projects {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                project {
-                  id
-                  name
-                  date
-                  banner
-                  description
-                  location {
-                    latitude
-                    longitude
-                  }
-                  userID
-                  category {
-                    id
-                    name
-                    description
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  collaborators {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  tags {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                  projectCategoryId
-                }
-                createdAt
-                updatedAt
-                _version
-                _deleted
-                _lastChangedAt
-              }
-              nextToken
-              startedAt
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            projectCategoryId
-          }
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        nextToken
-        startedAt
-      }
-      tags {
-        items {
-          id
-          tagsId
-          projectId
-          tags {
-            id
-            name
-            projects {
-              items {
-                id
-                tagsId
-                projectId
-                tags {
-                  id
-                  name
-                  projects {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                project {
-                  id
-                  name
-                  date
-                  banner
-                  description
-                  location {
-                    latitude
-                    longitude
-                  }
-                  userID
-                  category {
-                    id
-                    name
-                    description
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  collaborators {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  tags {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                  projectCategoryId
-                }
-                createdAt
-                updatedAt
-                _version
-                _deleted
-                _lastChangedAt
-              }
-              nextToken
-              startedAt
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-          }
-          project {
-            id
-            name
-            date
-            banner
-            description
-            location {
-              latitude
-              longitude
-            }
-            userID
-            category {
-              id
-              name
-              description
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-            }
-            collaborators {
-              items {
-                id
-                collaboratorId
-                projectId
-                collaborator {
-                  id
-                  fullName
-                  username
-                  email
-                  socials {
-                    type
-                    url
-                    username
-                  }
-                  photoUrl
-                  projects {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                project {
-                  id
-                  name
-                  date
-                  banner
-                  description
-                  location {
-                    latitude
-                    longitude
-                  }
-                  userID
-                  category {
-                    id
-                    name
-                    description
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  collaborators {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  tags {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                  projectCategoryId
-                }
-                createdAt
-                updatedAt
-                _version
-                _deleted
-                _lastChangedAt
-              }
-              nextToken
-              startedAt
-            }
-            tags {
-              items {
-                id
-                tagsId
-                projectId
-                tags {
-                  id
-                  name
-                  projects {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                project {
-                  id
-                  name
-                  date
-                  banner
-                  description
-                  location {
-                    latitude
-                    longitude
-                  }
-                  userID
-                  category {
-                    id
-                    name
-                    description
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  collaborators {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  tags {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                  projectCategoryId
-                }
-                createdAt
-                updatedAt
-                _version
-                _deleted
-                _lastChangedAt
-              }
-              nextToken
-              startedAt
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            projectCategoryId
-          }
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        nextToken
-        startedAt
-      }
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-      projectCategoryId
-    }
-  }
-`;
-export const onDeleteProject = /* GraphQL */ `
-  subscription OnDeleteProject($filter: ModelSubscriptionProjectFilterInput) {
-    onDeleteProject(filter: $filter) {
-      id
-      name
-      date
-      banner
-      description
-      location {
-        latitude
-        longitude
-      }
-      userID
-      category {
-        id
-        name
-        description
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      collaborators {
-        items {
-          id
-          collaboratorId
-          projectId
-          collaborator {
-            id
-            fullName
-            username
-            email
-            socials {
-              type
-              url
-              username
-            }
-            photoUrl
-            projects {
-              items {
-                id
-                collaboratorId
-                projectId
-                collaborator {
-                  id
-                  fullName
-                  username
-                  email
-                  socials {
-                    type
-                    url
-                    username
-                  }
-                  photoUrl
-                  projects {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                project {
-                  id
-                  name
-                  date
-                  banner
-                  description
-                  location {
-                    latitude
-                    longitude
-                  }
-                  userID
-                  category {
-                    id
-                    name
-                    description
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  collaborators {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  tags {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                  projectCategoryId
-                }
-                createdAt
-                updatedAt
-                _version
-                _deleted
-                _lastChangedAt
-              }
-              nextToken
-              startedAt
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-          }
-          project {
-            id
-            name
-            date
-            banner
-            description
-            location {
-              latitude
-              longitude
-            }
-            userID
-            category {
-              id
-              name
-              description
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-            }
-            collaborators {
-              items {
-                id
-                collaboratorId
-                projectId
-                collaborator {
-                  id
-                  fullName
-                  username
-                  email
-                  socials {
-                    type
-                    url
-                    username
-                  }
-                  photoUrl
-                  projects {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                project {
-                  id
-                  name
-                  date
-                  banner
-                  description
-                  location {
-                    latitude
-                    longitude
-                  }
-                  userID
-                  category {
-                    id
-                    name
-                    description
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  collaborators {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  tags {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                  projectCategoryId
-                }
-                createdAt
-                updatedAt
-                _version
-                _deleted
-                _lastChangedAt
-              }
-              nextToken
-              startedAt
-            }
-            tags {
-              items {
-                id
-                tagsId
-                projectId
-                tags {
-                  id
-                  name
-                  projects {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                project {
-                  id
-                  name
-                  date
-                  banner
-                  description
-                  location {
-                    latitude
-                    longitude
-                  }
-                  userID
-                  category {
-                    id
-                    name
-                    description
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  collaborators {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  tags {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                  projectCategoryId
-                }
-                createdAt
-                updatedAt
-                _version
-                _deleted
-                _lastChangedAt
-              }
-              nextToken
-              startedAt
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            projectCategoryId
-          }
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        nextToken
-        startedAt
-      }
-      tags {
-        items {
-          id
-          tagsId
-          projectId
-          tags {
-            id
-            name
-            projects {
-              items {
-                id
-                tagsId
-                projectId
-                tags {
-                  id
-                  name
-                  projects {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                project {
-                  id
-                  name
-                  date
-                  banner
-                  description
-                  location {
-                    latitude
-                    longitude
-                  }
-                  userID
-                  category {
-                    id
-                    name
-                    description
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  collaborators {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  tags {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                  projectCategoryId
-                }
-                createdAt
-                updatedAt
-                _version
-                _deleted
-                _lastChangedAt
-              }
-              nextToken
-              startedAt
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-          }
-          project {
-            id
-            name
-            date
-            banner
-            description
-            location {
-              latitude
-              longitude
-            }
-            userID
-            category {
-              id
-              name
-              description
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-            }
-            collaborators {
-              items {
-                id
-                collaboratorId
-                projectId
-                collaborator {
-                  id
-                  fullName
-                  username
-                  email
-                  socials {
-                    type
-                    url
-                    username
-                  }
-                  photoUrl
-                  projects {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                project {
-                  id
-                  name
-                  date
-                  banner
-                  description
-                  location {
-                    latitude
-                    longitude
-                  }
-                  userID
-                  category {
-                    id
-                    name
-                    description
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  collaborators {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  tags {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                  projectCategoryId
-                }
-                createdAt
-                updatedAt
-                _version
-                _deleted
-                _lastChangedAt
-              }
-              nextToken
-              startedAt
-            }
-            tags {
-              items {
-                id
-                tagsId
-                projectId
-                tags {
-                  id
-                  name
-                  projects {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                project {
-                  id
-                  name
-                  date
-                  banner
-                  description
-                  location {
-                    latitude
-                    longitude
-                  }
-                  userID
-                  category {
-                    id
-                    name
-                    description
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  collaborators {
-                    items {
-                      id
-                      collaboratorId
-                      projectId
-                      collaborator {
-                        id
-                        fullName
-                        username
-                        email
-                        photoUrl
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  tags {
-                    items {
-                      id
-                      tagsId
-                      projectId
-                      tags {
-                        id
-                        name
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      project {
-                        id
-                        name
-                        date
-                        banner
-                        description
-                        userID
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                        projectCategoryId
-                      }
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    nextToken
-                    startedAt
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                  projectCategoryId
-                }
-                createdAt
-                updatedAt
-                _version
-                _deleted
-                _lastChangedAt
-              }
-              nextToken
-              startedAt
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            projectCategoryId
-          }
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        nextToken
-        startedAt
-      }
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-      projectCategoryId
-    }
-  }
-`;
-export const onCreateProjectTags = /* GraphQL */ `
-  subscription OnCreateProjectTags(
-    $filter: ModelSubscriptionProjectTagsFilterInput
+export const onCreateContentTag = /* GraphQL */ `
+  subscription OnCreateContentTag(
+    $filter: ModelSubscriptionContentTagFilterInput
   ) {
-    onCreateProjectTags(filter: $filter) {
+    onCreateContentTag(filter: $filter) {
       id
-      tagsId
-      projectId
-      tags {
+      contentId
+      tagId
+      content {
         id
-        name
-        projects {
+        type
+        time
+        size
+        project {
+          name
+          description
+        }
+        files {
+          data
+          type
+          mimeType
+          caption
+          size
+          isBanner
+        }
+        date
+        location {
+          country
+          state
+          city
+          street
+          position {
+            latitude
+            longitude
+          }
+        }
+        colors
+        userID
+        Tags {
           items {
             id
-            tagsId
-            projectId
-            tags {
+            contentId
+            tagId
+            content {
               id
-              name
-              projects {
+              type
+              time
+              size
+              project {
+                name
+                description
+              }
+              files {
+                data
+                type
+                mimeType
+                caption
+                size
+                isBanner
+              }
+              date
+              location {
+                country
+                state
+                city
+                street
+                position {
+                  latitude
+                  longitude
+                }
+              }
+              colors
+              userID
+              Tags {
                 items {
                   id
-                  tagsId
-                  projectId
-                  tags {
+                  contentId
+                  tagId
+                  content {
                     id
-                    name
-                    projects {
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
                       items {
                         id
-                        tagsId
-                        projectId
+                        contentId
+                        tagId
                         createdAt
                         updatedAt
                         _version
@@ -7087,24 +8326,7 @@ export const onCreateProjectTags = /* GraphQL */ `
                       nextToken
                       startedAt
                     }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
+                    Category {
                       id
                       name
                       description
@@ -7114,25 +8336,11 @@ export const onCreateProjectTags = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                     }
-                    collaborators {
+                    Collaborators {
                       items {
                         id
+                        contentId
                         collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
                         createdAt
                         updatedAt
                         _version
@@ -7147,7 +8355,30 @@ export const onCreateProjectTags = /* GraphQL */ `
                     _version
                     _deleted
                     _lastChangedAt
-                    projectCategoryId
+                    contentCategoryId
+                  }
+                  tag {
+                    id
+                    name
+                    contents {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
                   }
                   createdAt
                   updatedAt
@@ -7158,24 +8389,7 @@ export const onCreateProjectTags = /* GraphQL */ `
                 nextToken
                 startedAt
               }
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-            }
-            project {
-              id
-              name
-              date
-              banner
-              description
-              location {
-                latitude
-                longitude
-              }
-              userID
-              category {
+              Category {
                 id
                 name
                 description
@@ -7185,27 +8399,103 @@ export const onCreateProjectTags = /* GraphQL */ `
                 _deleted
                 _lastChangedAt
               }
-              collaborators {
+              Collaborators {
                 items {
                   id
+                  contentId
                   collaboratorId
-                  projectId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
                   collaborator {
                     id
-                    fullName
                     username
                     email
+                    phone
                     socials {
                       type
                       url
                       username
                     }
+                    fullName
                     photoUrl
-                    projects {
+                    contents {
                       items {
                         id
+                        contentId
                         collaboratorId
-                        projectId
                         createdAt
                         updatedAt
                         _version
@@ -7220,155 +8510,6 @@ export const onCreateProjectTags = /* GraphQL */ `
                     _version
                     _deleted
                     _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              tags {
-                items {
-                  id
-                  tagsId
-                  projectId
-                  tags {
-                    id
-                    name
-                    projects {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
                   }
                   createdAt
                   updatedAt
@@ -7384,7 +8525,128 @@ export const onCreateProjectTags = /* GraphQL */ `
               _version
               _deleted
               _lastChangedAt
-              projectCategoryId
+              contentCategoryId
+            }
+            tag {
+              id
+              name
+              contents {
+                items {
+                  id
+                  contentId
+                  tagId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  tag {
+                    id
+                    name
+                    contents {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
             }
             createdAt
             updatedAt
@@ -7395,24 +8657,7 @@ export const onCreateProjectTags = /* GraphQL */ `
           nextToken
           startedAt
         }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      project {
-        id
-        name
-        date
-        banner
-        description
-        location {
-          latitude
-          longitude
-        }
-        userID
-        category {
+        Category {
           id
           name
           description
@@ -7422,171 +8667,400 @@ export const onCreateProjectTags = /* GraphQL */ `
           _deleted
           _lastChangedAt
         }
-        collaborators {
+        Collaborators {
           items {
             id
+            contentId
             collaboratorId
-            projectId
+            content {
+              id
+              type
+              time
+              size
+              project {
+                name
+                description
+              }
+              files {
+                data
+                type
+                mimeType
+                caption
+                size
+                isBanner
+              }
+              date
+              location {
+                country
+                state
+                city
+                street
+                position {
+                  latitude
+                  longitude
+                }
+              }
+              colors
+              userID
+              Tags {
+                items {
+                  id
+                  contentId
+                  tagId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  tag {
+                    id
+                    name
+                    contents {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              Category {
+                id
+                name
+                description
+                createdAt
+                updatedAt
+                _version
+                _deleted
+                _lastChangedAt
+              }
+              Collaborators {
+                items {
+                  id
+                  contentId
+                  collaboratorId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  collaborator {
+                    id
+                    username
+                    email
+                    phone
+                    socials {
+                      type
+                      url
+                      username
+                    }
+                    fullName
+                    photoUrl
+                    contents {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              contentCategoryId
+            }
             collaborator {
               id
-              fullName
               username
               email
+              phone
               socials {
                 type
                 url
                 username
               }
+              fullName
               photoUrl
-              projects {
+              contents {
                 items {
                   id
+                  contentId
                   collaboratorId
-                  projectId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
                   collaborator {
                     id
-                    fullName
                     username
                     email
+                    phone
                     socials {
                       type
                       url
                       username
                     }
-                    photoUrl
-                    projects {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-            }
-            project {
-              id
-              name
-              date
-              banner
-              description
-              location {
-                latitude
-                longitude
-              }
-              userID
-              category {
-                id
-                name
-                description
-                createdAt
-                updatedAt
-                _version
-                _deleted
-                _lastChangedAt
-              }
-              collaborators {
-                items {
-                  id
-                  collaboratorId
-                  projectId
-                  collaborator {
-                    id
                     fullName
-                    username
-                    email
-                    socials {
-                      type
-                      url
-                      username
-                    }
                     photoUrl
-                    projects {
+                    contents {
                       items {
                         id
+                        contentId
                         collaboratorId
-                        projectId
                         createdAt
                         updatedAt
                         _version
@@ -7601,155 +9075,6 @@ export const onCreateProjectTags = /* GraphQL */ `
                     _version
                     _deleted
                     _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              tags {
-                items {
-                  id
-                  tagsId
-                  projectId
-                  tags {
-                    id
-                    name
-                    projects {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
                   }
                   createdAt
                   updatedAt
@@ -7765,345 +9090,6 @@ export const onCreateProjectTags = /* GraphQL */ `
               _version
               _deleted
               _lastChangedAt
-              projectCategoryId
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-          }
-          nextToken
-          startedAt
-        }
-        tags {
-          items {
-            id
-            tagsId
-            projectId
-            tags {
-              id
-              name
-              projects {
-                items {
-                  id
-                  tagsId
-                  projectId
-                  tags {
-                    id
-                    name
-                    projects {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-            }
-            project {
-              id
-              name
-              date
-              banner
-              description
-              location {
-                latitude
-                longitude
-              }
-              userID
-              category {
-                id
-                name
-                description
-                createdAt
-                updatedAt
-                _version
-                _deleted
-                _lastChangedAt
-              }
-              collaborators {
-                items {
-                  id
-                  collaboratorId
-                  projectId
-                  collaborator {
-                    id
-                    fullName
-                    username
-                    email
-                    socials {
-                      type
-                      url
-                      username
-                    }
-                    photoUrl
-                    projects {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              tags {
-                items {
-                  id
-                  tagsId
-                  projectId
-                  tags {
-                    id
-                    name
-                    projects {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              projectCategoryId
             }
             createdAt
             updatedAt
@@ -8119,7 +9105,431 @@ export const onCreateProjectTags = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        projectCategoryId
+        contentCategoryId
+      }
+      tag {
+        id
+        name
+        contents {
+          items {
+            id
+            contentId
+            tagId
+            content {
+              id
+              type
+              time
+              size
+              project {
+                name
+                description
+              }
+              files {
+                data
+                type
+                mimeType
+                caption
+                size
+                isBanner
+              }
+              date
+              location {
+                country
+                state
+                city
+                street
+                position {
+                  latitude
+                  longitude
+                }
+              }
+              colors
+              userID
+              Tags {
+                items {
+                  id
+                  contentId
+                  tagId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  tag {
+                    id
+                    name
+                    contents {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              Category {
+                id
+                name
+                description
+                createdAt
+                updatedAt
+                _version
+                _deleted
+                _lastChangedAt
+              }
+              Collaborators {
+                items {
+                  id
+                  contentId
+                  collaboratorId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  collaborator {
+                    id
+                    username
+                    email
+                    phone
+                    socials {
+                      type
+                      url
+                      username
+                    }
+                    fullName
+                    photoUrl
+                    contents {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              contentCategoryId
+            }
+            tag {
+              id
+              name
+              contents {
+                items {
+                  id
+                  contentId
+                  tagId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  tag {
+                    id
+                    name
+                    contents {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
       }
       createdAt
       updatedAt
@@ -8129,38 +9539,119 @@ export const onCreateProjectTags = /* GraphQL */ `
     }
   }
 `;
-export const onUpdateProjectTags = /* GraphQL */ `
-  subscription OnUpdateProjectTags(
-    $filter: ModelSubscriptionProjectTagsFilterInput
+export const onUpdateContentTag = /* GraphQL */ `
+  subscription OnUpdateContentTag(
+    $filter: ModelSubscriptionContentTagFilterInput
   ) {
-    onUpdateProjectTags(filter: $filter) {
+    onUpdateContentTag(filter: $filter) {
       id
-      tagsId
-      projectId
-      tags {
+      contentId
+      tagId
+      content {
         id
-        name
-        projects {
+        type
+        time
+        size
+        project {
+          name
+          description
+        }
+        files {
+          data
+          type
+          mimeType
+          caption
+          size
+          isBanner
+        }
+        date
+        location {
+          country
+          state
+          city
+          street
+          position {
+            latitude
+            longitude
+          }
+        }
+        colors
+        userID
+        Tags {
           items {
             id
-            tagsId
-            projectId
-            tags {
+            contentId
+            tagId
+            content {
               id
-              name
-              projects {
+              type
+              time
+              size
+              project {
+                name
+                description
+              }
+              files {
+                data
+                type
+                mimeType
+                caption
+                size
+                isBanner
+              }
+              date
+              location {
+                country
+                state
+                city
+                street
+                position {
+                  latitude
+                  longitude
+                }
+              }
+              colors
+              userID
+              Tags {
                 items {
                   id
-                  tagsId
-                  projectId
-                  tags {
+                  contentId
+                  tagId
+                  content {
                     id
-                    name
-                    projects {
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
                       items {
                         id
-                        tagsId
-                        projectId
+                        contentId
+                        tagId
                         createdAt
                         updatedAt
                         _version
@@ -8170,24 +9661,7 @@ export const onUpdateProjectTags = /* GraphQL */ `
                       nextToken
                       startedAt
                     }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
+                    Category {
                       id
                       name
                       description
@@ -8197,25 +9671,11 @@ export const onUpdateProjectTags = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                     }
-                    collaborators {
+                    Collaborators {
                       items {
                         id
+                        contentId
                         collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
                         createdAt
                         updatedAt
                         _version
@@ -8230,7 +9690,30 @@ export const onUpdateProjectTags = /* GraphQL */ `
                     _version
                     _deleted
                     _lastChangedAt
-                    projectCategoryId
+                    contentCategoryId
+                  }
+                  tag {
+                    id
+                    name
+                    contents {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
                   }
                   createdAt
                   updatedAt
@@ -8241,24 +9724,7 @@ export const onUpdateProjectTags = /* GraphQL */ `
                 nextToken
                 startedAt
               }
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-            }
-            project {
-              id
-              name
-              date
-              banner
-              description
-              location {
-                latitude
-                longitude
-              }
-              userID
-              category {
+              Category {
                 id
                 name
                 description
@@ -8268,27 +9734,103 @@ export const onUpdateProjectTags = /* GraphQL */ `
                 _deleted
                 _lastChangedAt
               }
-              collaborators {
+              Collaborators {
                 items {
                   id
+                  contentId
                   collaboratorId
-                  projectId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
                   collaborator {
                     id
-                    fullName
                     username
                     email
+                    phone
                     socials {
                       type
                       url
                       username
                     }
+                    fullName
                     photoUrl
-                    projects {
+                    contents {
                       items {
                         id
+                        contentId
                         collaboratorId
-                        projectId
                         createdAt
                         updatedAt
                         _version
@@ -8303,155 +9845,6 @@ export const onUpdateProjectTags = /* GraphQL */ `
                     _version
                     _deleted
                     _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              tags {
-                items {
-                  id
-                  tagsId
-                  projectId
-                  tags {
-                    id
-                    name
-                    projects {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
                   }
                   createdAt
                   updatedAt
@@ -8467,7 +9860,128 @@ export const onUpdateProjectTags = /* GraphQL */ `
               _version
               _deleted
               _lastChangedAt
-              projectCategoryId
+              contentCategoryId
+            }
+            tag {
+              id
+              name
+              contents {
+                items {
+                  id
+                  contentId
+                  tagId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  tag {
+                    id
+                    name
+                    contents {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
             }
             createdAt
             updatedAt
@@ -8478,24 +9992,7 @@ export const onUpdateProjectTags = /* GraphQL */ `
           nextToken
           startedAt
         }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      project {
-        id
-        name
-        date
-        banner
-        description
-        location {
-          latitude
-          longitude
-        }
-        userID
-        category {
+        Category {
           id
           name
           description
@@ -8505,171 +10002,400 @@ export const onUpdateProjectTags = /* GraphQL */ `
           _deleted
           _lastChangedAt
         }
-        collaborators {
+        Collaborators {
           items {
             id
+            contentId
             collaboratorId
-            projectId
+            content {
+              id
+              type
+              time
+              size
+              project {
+                name
+                description
+              }
+              files {
+                data
+                type
+                mimeType
+                caption
+                size
+                isBanner
+              }
+              date
+              location {
+                country
+                state
+                city
+                street
+                position {
+                  latitude
+                  longitude
+                }
+              }
+              colors
+              userID
+              Tags {
+                items {
+                  id
+                  contentId
+                  tagId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  tag {
+                    id
+                    name
+                    contents {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              Category {
+                id
+                name
+                description
+                createdAt
+                updatedAt
+                _version
+                _deleted
+                _lastChangedAt
+              }
+              Collaborators {
+                items {
+                  id
+                  contentId
+                  collaboratorId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  collaborator {
+                    id
+                    username
+                    email
+                    phone
+                    socials {
+                      type
+                      url
+                      username
+                    }
+                    fullName
+                    photoUrl
+                    contents {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              contentCategoryId
+            }
             collaborator {
               id
-              fullName
               username
               email
+              phone
               socials {
                 type
                 url
                 username
               }
+              fullName
               photoUrl
-              projects {
+              contents {
                 items {
                   id
+                  contentId
                   collaboratorId
-                  projectId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
                   collaborator {
                     id
-                    fullName
                     username
                     email
+                    phone
                     socials {
                       type
                       url
                       username
                     }
-                    photoUrl
-                    projects {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-            }
-            project {
-              id
-              name
-              date
-              banner
-              description
-              location {
-                latitude
-                longitude
-              }
-              userID
-              category {
-                id
-                name
-                description
-                createdAt
-                updatedAt
-                _version
-                _deleted
-                _lastChangedAt
-              }
-              collaborators {
-                items {
-                  id
-                  collaboratorId
-                  projectId
-                  collaborator {
-                    id
                     fullName
-                    username
-                    email
-                    socials {
-                      type
-                      url
-                      username
-                    }
                     photoUrl
-                    projects {
+                    contents {
                       items {
                         id
+                        contentId
                         collaboratorId
-                        projectId
                         createdAt
                         updatedAt
                         _version
@@ -8684,155 +10410,6 @@ export const onUpdateProjectTags = /* GraphQL */ `
                     _version
                     _deleted
                     _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              tags {
-                items {
-                  id
-                  tagsId
-                  projectId
-                  tags {
-                    id
-                    name
-                    projects {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
                   }
                   createdAt
                   updatedAt
@@ -8848,345 +10425,6 @@ export const onUpdateProjectTags = /* GraphQL */ `
               _version
               _deleted
               _lastChangedAt
-              projectCategoryId
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-          }
-          nextToken
-          startedAt
-        }
-        tags {
-          items {
-            id
-            tagsId
-            projectId
-            tags {
-              id
-              name
-              projects {
-                items {
-                  id
-                  tagsId
-                  projectId
-                  tags {
-                    id
-                    name
-                    projects {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-            }
-            project {
-              id
-              name
-              date
-              banner
-              description
-              location {
-                latitude
-                longitude
-              }
-              userID
-              category {
-                id
-                name
-                description
-                createdAt
-                updatedAt
-                _version
-                _deleted
-                _lastChangedAt
-              }
-              collaborators {
-                items {
-                  id
-                  collaboratorId
-                  projectId
-                  collaborator {
-                    id
-                    fullName
-                    username
-                    email
-                    socials {
-                      type
-                      url
-                      username
-                    }
-                    photoUrl
-                    projects {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              tags {
-                items {
-                  id
-                  tagsId
-                  projectId
-                  tags {
-                    id
-                    name
-                    projects {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              projectCategoryId
             }
             createdAt
             updatedAt
@@ -9202,7 +10440,431 @@ export const onUpdateProjectTags = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        projectCategoryId
+        contentCategoryId
+      }
+      tag {
+        id
+        name
+        contents {
+          items {
+            id
+            contentId
+            tagId
+            content {
+              id
+              type
+              time
+              size
+              project {
+                name
+                description
+              }
+              files {
+                data
+                type
+                mimeType
+                caption
+                size
+                isBanner
+              }
+              date
+              location {
+                country
+                state
+                city
+                street
+                position {
+                  latitude
+                  longitude
+                }
+              }
+              colors
+              userID
+              Tags {
+                items {
+                  id
+                  contentId
+                  tagId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  tag {
+                    id
+                    name
+                    contents {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              Category {
+                id
+                name
+                description
+                createdAt
+                updatedAt
+                _version
+                _deleted
+                _lastChangedAt
+              }
+              Collaborators {
+                items {
+                  id
+                  contentId
+                  collaboratorId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  collaborator {
+                    id
+                    username
+                    email
+                    phone
+                    socials {
+                      type
+                      url
+                      username
+                    }
+                    fullName
+                    photoUrl
+                    contents {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              contentCategoryId
+            }
+            tag {
+              id
+              name
+              contents {
+                items {
+                  id
+                  contentId
+                  tagId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  tag {
+                    id
+                    name
+                    contents {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
       }
       createdAt
       updatedAt
@@ -9212,38 +10874,119 @@ export const onUpdateProjectTags = /* GraphQL */ `
     }
   }
 `;
-export const onDeleteProjectTags = /* GraphQL */ `
-  subscription OnDeleteProjectTags(
-    $filter: ModelSubscriptionProjectTagsFilterInput
+export const onDeleteContentTag = /* GraphQL */ `
+  subscription OnDeleteContentTag(
+    $filter: ModelSubscriptionContentTagFilterInput
   ) {
-    onDeleteProjectTags(filter: $filter) {
+    onDeleteContentTag(filter: $filter) {
       id
-      tagsId
-      projectId
-      tags {
+      contentId
+      tagId
+      content {
         id
-        name
-        projects {
+        type
+        time
+        size
+        project {
+          name
+          description
+        }
+        files {
+          data
+          type
+          mimeType
+          caption
+          size
+          isBanner
+        }
+        date
+        location {
+          country
+          state
+          city
+          street
+          position {
+            latitude
+            longitude
+          }
+        }
+        colors
+        userID
+        Tags {
           items {
             id
-            tagsId
-            projectId
-            tags {
+            contentId
+            tagId
+            content {
               id
-              name
-              projects {
+              type
+              time
+              size
+              project {
+                name
+                description
+              }
+              files {
+                data
+                type
+                mimeType
+                caption
+                size
+                isBanner
+              }
+              date
+              location {
+                country
+                state
+                city
+                street
+                position {
+                  latitude
+                  longitude
+                }
+              }
+              colors
+              userID
+              Tags {
                 items {
                   id
-                  tagsId
-                  projectId
-                  tags {
+                  contentId
+                  tagId
+                  content {
                     id
-                    name
-                    projects {
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
                       items {
                         id
-                        tagsId
-                        projectId
+                        contentId
+                        tagId
                         createdAt
                         updatedAt
                         _version
@@ -9253,24 +10996,7 @@ export const onDeleteProjectTags = /* GraphQL */ `
                       nextToken
                       startedAt
                     }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
+                    Category {
                       id
                       name
                       description
@@ -9280,25 +11006,11 @@ export const onDeleteProjectTags = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                     }
-                    collaborators {
+                    Collaborators {
                       items {
                         id
+                        contentId
                         collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
                         createdAt
                         updatedAt
                         _version
@@ -9313,7 +11025,30 @@ export const onDeleteProjectTags = /* GraphQL */ `
                     _version
                     _deleted
                     _lastChangedAt
-                    projectCategoryId
+                    contentCategoryId
+                  }
+                  tag {
+                    id
+                    name
+                    contents {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
                   }
                   createdAt
                   updatedAt
@@ -9324,24 +11059,7 @@ export const onDeleteProjectTags = /* GraphQL */ `
                 nextToken
                 startedAt
               }
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-            }
-            project {
-              id
-              name
-              date
-              banner
-              description
-              location {
-                latitude
-                longitude
-              }
-              userID
-              category {
+              Category {
                 id
                 name
                 description
@@ -9351,27 +11069,103 @@ export const onDeleteProjectTags = /* GraphQL */ `
                 _deleted
                 _lastChangedAt
               }
-              collaborators {
+              Collaborators {
                 items {
                   id
+                  contentId
                   collaboratorId
-                  projectId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
                   collaborator {
                     id
-                    fullName
                     username
                     email
+                    phone
                     socials {
                       type
                       url
                       username
                     }
+                    fullName
                     photoUrl
-                    projects {
+                    contents {
                       items {
                         id
+                        contentId
                         collaboratorId
-                        projectId
                         createdAt
                         updatedAt
                         _version
@@ -9386,155 +11180,6 @@ export const onDeleteProjectTags = /* GraphQL */ `
                     _version
                     _deleted
                     _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              tags {
-                items {
-                  id
-                  tagsId
-                  projectId
-                  tags {
-                    id
-                    name
-                    projects {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
                   }
                   createdAt
                   updatedAt
@@ -9550,7 +11195,128 @@ export const onDeleteProjectTags = /* GraphQL */ `
               _version
               _deleted
               _lastChangedAt
-              projectCategoryId
+              contentCategoryId
+            }
+            tag {
+              id
+              name
+              contents {
+                items {
+                  id
+                  contentId
+                  tagId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  tag {
+                    id
+                    name
+                    contents {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
             }
             createdAt
             updatedAt
@@ -9561,24 +11327,7 @@ export const onDeleteProjectTags = /* GraphQL */ `
           nextToken
           startedAt
         }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      project {
-        id
-        name
-        date
-        banner
-        description
-        location {
-          latitude
-          longitude
-        }
-        userID
-        category {
+        Category {
           id
           name
           description
@@ -9588,171 +11337,400 @@ export const onDeleteProjectTags = /* GraphQL */ `
           _deleted
           _lastChangedAt
         }
-        collaborators {
+        Collaborators {
           items {
             id
+            contentId
             collaboratorId
-            projectId
+            content {
+              id
+              type
+              time
+              size
+              project {
+                name
+                description
+              }
+              files {
+                data
+                type
+                mimeType
+                caption
+                size
+                isBanner
+              }
+              date
+              location {
+                country
+                state
+                city
+                street
+                position {
+                  latitude
+                  longitude
+                }
+              }
+              colors
+              userID
+              Tags {
+                items {
+                  id
+                  contentId
+                  tagId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  tag {
+                    id
+                    name
+                    contents {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              Category {
+                id
+                name
+                description
+                createdAt
+                updatedAt
+                _version
+                _deleted
+                _lastChangedAt
+              }
+              Collaborators {
+                items {
+                  id
+                  contentId
+                  collaboratorId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  collaborator {
+                    id
+                    username
+                    email
+                    phone
+                    socials {
+                      type
+                      url
+                      username
+                    }
+                    fullName
+                    photoUrl
+                    contents {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              contentCategoryId
+            }
             collaborator {
               id
-              fullName
               username
               email
+              phone
               socials {
                 type
                 url
                 username
               }
+              fullName
               photoUrl
-              projects {
+              contents {
                 items {
                   id
+                  contentId
                   collaboratorId
-                  projectId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
                   collaborator {
                     id
-                    fullName
                     username
                     email
+                    phone
                     socials {
                       type
                       url
                       username
                     }
-                    photoUrl
-                    projects {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-            }
-            project {
-              id
-              name
-              date
-              banner
-              description
-              location {
-                latitude
-                longitude
-              }
-              userID
-              category {
-                id
-                name
-                description
-                createdAt
-                updatedAt
-                _version
-                _deleted
-                _lastChangedAt
-              }
-              collaborators {
-                items {
-                  id
-                  collaboratorId
-                  projectId
-                  collaborator {
-                    id
                     fullName
-                    username
-                    email
-                    socials {
-                      type
-                      url
-                      username
-                    }
                     photoUrl
-                    projects {
+                    contents {
                       items {
                         id
+                        contentId
                         collaboratorId
-                        projectId
                         createdAt
                         updatedAt
                         _version
@@ -9767,155 +11745,6 @@ export const onDeleteProjectTags = /* GraphQL */ `
                     _version
                     _deleted
                     _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              tags {
-                items {
-                  id
-                  tagsId
-                  projectId
-                  tags {
-                    id
-                    name
-                    projects {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
                   }
                   createdAt
                   updatedAt
@@ -9931,345 +11760,6 @@ export const onDeleteProjectTags = /* GraphQL */ `
               _version
               _deleted
               _lastChangedAt
-              projectCategoryId
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-          }
-          nextToken
-          startedAt
-        }
-        tags {
-          items {
-            id
-            tagsId
-            projectId
-            tags {
-              id
-              name
-              projects {
-                items {
-                  id
-                  tagsId
-                  projectId
-                  tags {
-                    id
-                    name
-                    projects {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-            }
-            project {
-              id
-              name
-              date
-              banner
-              description
-              location {
-                latitude
-                longitude
-              }
-              userID
-              category {
-                id
-                name
-                description
-                createdAt
-                updatedAt
-                _version
-                _deleted
-                _lastChangedAt
-              }
-              collaborators {
-                items {
-                  id
-                  collaboratorId
-                  projectId
-                  collaborator {
-                    id
-                    fullName
-                    username
-                    email
-                    socials {
-                      type
-                      url
-                      username
-                    }
-                    photoUrl
-                    projects {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              tags {
-                items {
-                  id
-                  tagsId
-                  projectId
-                  tags {
-                    id
-                    name
-                    projects {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              projectCategoryId
             }
             createdAt
             updatedAt
@@ -10285,7 +11775,431 @@ export const onDeleteProjectTags = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        projectCategoryId
+        contentCategoryId
+      }
+      tag {
+        id
+        name
+        contents {
+          items {
+            id
+            contentId
+            tagId
+            content {
+              id
+              type
+              time
+              size
+              project {
+                name
+                description
+              }
+              files {
+                data
+                type
+                mimeType
+                caption
+                size
+                isBanner
+              }
+              date
+              location {
+                country
+                state
+                city
+                street
+                position {
+                  latitude
+                  longitude
+                }
+              }
+              colors
+              userID
+              Tags {
+                items {
+                  id
+                  contentId
+                  tagId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  tag {
+                    id
+                    name
+                    contents {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              Category {
+                id
+                name
+                description
+                createdAt
+                updatedAt
+                _version
+                _deleted
+                _lastChangedAt
+              }
+              Collaborators {
+                items {
+                  id
+                  contentId
+                  collaboratorId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  collaborator {
+                    id
+                    username
+                    email
+                    phone
+                    socials {
+                      type
+                      url
+                      username
+                    }
+                    fullName
+                    photoUrl
+                    contents {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              contentCategoryId
+            }
+            tag {
+              id
+              name
+              contents {
+                items {
+                  id
+                  contentId
+                  tagId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  tag {
+                    id
+                    name
+                    contents {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
       }
       createdAt
       updatedAt
@@ -10295,62 +12209,996 @@ export const onDeleteProjectTags = /* GraphQL */ `
     }
   }
 `;
-export const onCreateProjectCollaborator = /* GraphQL */ `
-  subscription OnCreateProjectCollaborator(
-    $filter: ModelSubscriptionProjectCollaboratorFilterInput
+export const onCreateContentCollaborator = /* GraphQL */ `
+  subscription OnCreateContentCollaborator(
+    $filter: ModelSubscriptionContentCollaboratorFilterInput
   ) {
-    onCreateProjectCollaborator(filter: $filter) {
+    onCreateContentCollaborator(filter: $filter) {
       id
+      contentId
       collaboratorId
-      projectId
+      content {
+        id
+        type
+        time
+        size
+        project {
+          name
+          description
+        }
+        files {
+          data
+          type
+          mimeType
+          caption
+          size
+          isBanner
+        }
+        date
+        location {
+          country
+          state
+          city
+          street
+          position {
+            latitude
+            longitude
+          }
+        }
+        colors
+        userID
+        Tags {
+          items {
+            id
+            contentId
+            tagId
+            content {
+              id
+              type
+              time
+              size
+              project {
+                name
+                description
+              }
+              files {
+                data
+                type
+                mimeType
+                caption
+                size
+                isBanner
+              }
+              date
+              location {
+                country
+                state
+                city
+                street
+                position {
+                  latitude
+                  longitude
+                }
+              }
+              colors
+              userID
+              Tags {
+                items {
+                  id
+                  contentId
+                  tagId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  tag {
+                    id
+                    name
+                    contents {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              Category {
+                id
+                name
+                description
+                createdAt
+                updatedAt
+                _version
+                _deleted
+                _lastChangedAt
+              }
+              Collaborators {
+                items {
+                  id
+                  contentId
+                  collaboratorId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  collaborator {
+                    id
+                    username
+                    email
+                    phone
+                    socials {
+                      type
+                      url
+                      username
+                    }
+                    fullName
+                    photoUrl
+                    contents {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              contentCategoryId
+            }
+            tag {
+              id
+              name
+              contents {
+                items {
+                  id
+                  contentId
+                  tagId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  tag {
+                    id
+                    name
+                    contents {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        Category {
+          id
+          name
+          description
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        Collaborators {
+          items {
+            id
+            contentId
+            collaboratorId
+            content {
+              id
+              type
+              time
+              size
+              project {
+                name
+                description
+              }
+              files {
+                data
+                type
+                mimeType
+                caption
+                size
+                isBanner
+              }
+              date
+              location {
+                country
+                state
+                city
+                street
+                position {
+                  latitude
+                  longitude
+                }
+              }
+              colors
+              userID
+              Tags {
+                items {
+                  id
+                  contentId
+                  tagId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  tag {
+                    id
+                    name
+                    contents {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              Category {
+                id
+                name
+                description
+                createdAt
+                updatedAt
+                _version
+                _deleted
+                _lastChangedAt
+              }
+              Collaborators {
+                items {
+                  id
+                  contentId
+                  collaboratorId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  collaborator {
+                    id
+                    username
+                    email
+                    phone
+                    socials {
+                      type
+                      url
+                      username
+                    }
+                    fullName
+                    photoUrl
+                    contents {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              contentCategoryId
+            }
+            collaborator {
+              id
+              username
+              email
+              phone
+              socials {
+                type
+                url
+                username
+              }
+              fullName
+              photoUrl
+              contents {
+                items {
+                  id
+                  contentId
+                  collaboratorId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  collaborator {
+                    id
+                    username
+                    email
+                    phone
+                    socials {
+                      type
+                      url
+                      username
+                    }
+                    fullName
+                    photoUrl
+                    contents {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        contentCategoryId
+      }
       collaborator {
         id
-        fullName
         username
         email
+        phone
         socials {
           type
           url
           username
         }
+        fullName
         photoUrl
-        projects {
+        contents {
           items {
             id
+            contentId
             collaboratorId
-            projectId
-            collaborator {
+            content {
               id
-              fullName
-              username
-              email
-              socials {
-                type
-                url
-                username
+              type
+              time
+              size
+              project {
+                name
+                description
               }
-              photoUrl
-              projects {
+              files {
+                data
+                type
+                mimeType
+                caption
+                size
+                isBanner
+              }
+              date
+              location {
+                country
+                state
+                city
+                street
+                position {
+                  latitude
+                  longitude
+                }
+              }
+              colors
+              userID
+              Tags {
                 items {
                   id
-                  collaboratorId
-                  projectId
-                  collaborator {
+                  contentId
+                  tagId
+                  content {
                     id
-                    fullName
-                    username
-                    email
-                    socials {
-                      type
-                      url
-                      username
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
                     }
-                    photoUrl
-                    projects {
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
                       items {
                         id
-                        collaboratorId
-                        projectId
+                        contentId
+                        tagId
                         createdAt
                         updatedAt
                         _version
@@ -10360,24 +13208,7 @@ export const onCreateProjectCollaborator = /* GraphQL */ `
                       nextToken
                       startedAt
                     }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
+                    Category {
                       id
                       name
                       description
@@ -10387,25 +13218,11 @@ export const onCreateProjectCollaborator = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                     }
-                    collaborators {
+                    Collaborators {
                       items {
                         id
+                        contentId
                         collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
                         createdAt
                         updatedAt
                         _version
@@ -10420,7 +13237,30 @@ export const onCreateProjectCollaborator = /* GraphQL */ `
                     _version
                     _deleted
                     _lastChangedAt
-                    projectCategoryId
+                    contentCategoryId
+                  }
+                  tag {
+                    id
+                    name
+                    contents {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
                   }
                   createdAt
                   updatedAt
@@ -10431,24 +13271,7 @@ export const onCreateProjectCollaborator = /* GraphQL */ `
                 nextToken
                 startedAt
               }
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-            }
-            project {
-              id
-              name
-              date
-              banner
-              description
-              location {
-                latitude
-                longitude
-              }
-              userID
-              category {
+              Category {
                 id
                 name
                 description
@@ -10458,27 +13281,103 @@ export const onCreateProjectCollaborator = /* GraphQL */ `
                 _deleted
                 _lastChangedAt
               }
-              collaborators {
+              Collaborators {
                 items {
                   id
+                  contentId
                   collaboratorId
-                  projectId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
                   collaborator {
                     id
-                    fullName
                     username
                     email
+                    phone
                     socials {
                       type
                       url
                       username
                     }
+                    fullName
                     photoUrl
-                    projects {
+                    contents {
                       items {
                         id
+                        contentId
                         collaboratorId
-                        projectId
                         createdAt
                         updatedAt
                         _version
@@ -10493,155 +13392,6 @@ export const onCreateProjectCollaborator = /* GraphQL */ `
                     _version
                     _deleted
                     _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              tags {
-                items {
-                  id
-                  tagsId
-                  projectId
-                  tags {
-                    id
-                    name
-                    projects {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
                   }
                   createdAt
                   updatedAt
@@ -10657,7 +13407,146 @@ export const onCreateProjectCollaborator = /* GraphQL */ `
               _version
               _deleted
               _lastChangedAt
-              projectCategoryId
+              contentCategoryId
+            }
+            collaborator {
+              id
+              username
+              email
+              phone
+              socials {
+                type
+                url
+                username
+              }
+              fullName
+              photoUrl
+              contents {
+                items {
+                  id
+                  contentId
+                  collaboratorId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  collaborator {
+                    id
+                    username
+                    email
+                    phone
+                    socials {
+                      type
+                      url
+                      username
+                    }
+                    fullName
+                    photoUrl
+                    contents {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
             }
             createdAt
             updatedAt
@@ -10673,726 +13562,6 @@ export const onCreateProjectCollaborator = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-      }
-      project {
-        id
-        name
-        date
-        banner
-        description
-        location {
-          latitude
-          longitude
-        }
-        userID
-        category {
-          id
-          name
-          description
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        collaborators {
-          items {
-            id
-            collaboratorId
-            projectId
-            collaborator {
-              id
-              fullName
-              username
-              email
-              socials {
-                type
-                url
-                username
-              }
-              photoUrl
-              projects {
-                items {
-                  id
-                  collaboratorId
-                  projectId
-                  collaborator {
-                    id
-                    fullName
-                    username
-                    email
-                    socials {
-                      type
-                      url
-                      username
-                    }
-                    photoUrl
-                    projects {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-            }
-            project {
-              id
-              name
-              date
-              banner
-              description
-              location {
-                latitude
-                longitude
-              }
-              userID
-              category {
-                id
-                name
-                description
-                createdAt
-                updatedAt
-                _version
-                _deleted
-                _lastChangedAt
-              }
-              collaborators {
-                items {
-                  id
-                  collaboratorId
-                  projectId
-                  collaborator {
-                    id
-                    fullName
-                    username
-                    email
-                    socials {
-                      type
-                      url
-                      username
-                    }
-                    photoUrl
-                    projects {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              tags {
-                items {
-                  id
-                  tagsId
-                  projectId
-                  tags {
-                    id
-                    name
-                    projects {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              projectCategoryId
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-          }
-          nextToken
-          startedAt
-        }
-        tags {
-          items {
-            id
-            tagsId
-            projectId
-            tags {
-              id
-              name
-              projects {
-                items {
-                  id
-                  tagsId
-                  projectId
-                  tags {
-                    id
-                    name
-                    projects {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-            }
-            project {
-              id
-              name
-              date
-              banner
-              description
-              location {
-                latitude
-                longitude
-              }
-              userID
-              category {
-                id
-                name
-                description
-                createdAt
-                updatedAt
-                _version
-                _deleted
-                _lastChangedAt
-              }
-              collaborators {
-                items {
-                  id
-                  collaboratorId
-                  projectId
-                  collaborator {
-                    id
-                    fullName
-                    username
-                    email
-                    socials {
-                      type
-                      url
-                      username
-                    }
-                    photoUrl
-                    projects {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              tags {
-                items {
-                  id
-                  tagsId
-                  projectId
-                  tags {
-                    id
-                    name
-                    projects {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              projectCategoryId
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-          }
-          nextToken
-          startedAt
-        }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        projectCategoryId
       }
       createdAt
       updatedAt
@@ -11402,62 +13571,119 @@ export const onCreateProjectCollaborator = /* GraphQL */ `
     }
   }
 `;
-export const onUpdateProjectCollaborator = /* GraphQL */ `
-  subscription OnUpdateProjectCollaborator(
-    $filter: ModelSubscriptionProjectCollaboratorFilterInput
+export const onUpdateContentCollaborator = /* GraphQL */ `
+  subscription OnUpdateContentCollaborator(
+    $filter: ModelSubscriptionContentCollaboratorFilterInput
   ) {
-    onUpdateProjectCollaborator(filter: $filter) {
+    onUpdateContentCollaborator(filter: $filter) {
       id
+      contentId
       collaboratorId
-      projectId
-      collaborator {
+      content {
         id
-        fullName
-        username
-        email
-        socials {
-          type
-          url
-          username
+        type
+        time
+        size
+        project {
+          name
+          description
         }
-        photoUrl
-        projects {
+        files {
+          data
+          type
+          mimeType
+          caption
+          size
+          isBanner
+        }
+        date
+        location {
+          country
+          state
+          city
+          street
+          position {
+            latitude
+            longitude
+          }
+        }
+        colors
+        userID
+        Tags {
           items {
             id
-            collaboratorId
-            projectId
-            collaborator {
+            contentId
+            tagId
+            content {
               id
-              fullName
-              username
-              email
-              socials {
-                type
-                url
-                username
+              type
+              time
+              size
+              project {
+                name
+                description
               }
-              photoUrl
-              projects {
+              files {
+                data
+                type
+                mimeType
+                caption
+                size
+                isBanner
+              }
+              date
+              location {
+                country
+                state
+                city
+                street
+                position {
+                  latitude
+                  longitude
+                }
+              }
+              colors
+              userID
+              Tags {
                 items {
                   id
-                  collaboratorId
-                  projectId
-                  collaborator {
+                  contentId
+                  tagId
+                  content {
                     id
-                    fullName
-                    username
-                    email
-                    socials {
-                      type
-                      url
-                      username
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
                     }
-                    photoUrl
-                    projects {
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
                       items {
                         id
-                        collaboratorId
-                        projectId
+                        contentId
+                        tagId
                         createdAt
                         updatedAt
                         _version
@@ -11467,24 +13693,7 @@ export const onUpdateProjectCollaborator = /* GraphQL */ `
                       nextToken
                       startedAt
                     }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
+                    Category {
                       id
                       name
                       description
@@ -11494,25 +13703,11 @@ export const onUpdateProjectCollaborator = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                     }
-                    collaborators {
+                    Collaborators {
                       items {
                         id
+                        contentId
                         collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
                         createdAt
                         updatedAt
                         _version
@@ -11527,7 +13722,30 @@ export const onUpdateProjectCollaborator = /* GraphQL */ `
                     _version
                     _deleted
                     _lastChangedAt
-                    projectCategoryId
+                    contentCategoryId
+                  }
+                  tag {
+                    id
+                    name
+                    contents {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
                   }
                   createdAt
                   updatedAt
@@ -11538,24 +13756,7 @@ export const onUpdateProjectCollaborator = /* GraphQL */ `
                 nextToken
                 startedAt
               }
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-            }
-            project {
-              id
-              name
-              date
-              banner
-              description
-              location {
-                latitude
-                longitude
-              }
-              userID
-              category {
+              Category {
                 id
                 name
                 description
@@ -11565,27 +13766,103 @@ export const onUpdateProjectCollaborator = /* GraphQL */ `
                 _deleted
                 _lastChangedAt
               }
-              collaborators {
+              Collaborators {
                 items {
                   id
+                  contentId
                   collaboratorId
-                  projectId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
                   collaborator {
                     id
-                    fullName
                     username
                     email
+                    phone
                     socials {
                       type
                       url
                       username
                     }
+                    fullName
                     photoUrl
-                    projects {
+                    contents {
                       items {
                         id
+                        contentId
                         collaboratorId
-                        projectId
                         createdAt
                         updatedAt
                         _version
@@ -11600,155 +13877,6 @@ export const onUpdateProjectCollaborator = /* GraphQL */ `
                     _version
                     _deleted
                     _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              tags {
-                items {
-                  id
-                  tagsId
-                  projectId
-                  tags {
-                    id
-                    name
-                    projects {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
                   }
                   createdAt
                   updatedAt
@@ -11764,7 +13892,128 @@ export const onUpdateProjectCollaborator = /* GraphQL */ `
               _version
               _deleted
               _lastChangedAt
-              projectCategoryId
+              contentCategoryId
+            }
+            tag {
+              id
+              name
+              contents {
+                items {
+                  id
+                  contentId
+                  tagId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  tag {
+                    id
+                    name
+                    contents {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
             }
             createdAt
             updatedAt
@@ -11775,24 +14024,7 @@ export const onUpdateProjectCollaborator = /* GraphQL */ `
           nextToken
           startedAt
         }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      project {
-        id
-        name
-        date
-        banner
-        description
-        location {
-          latitude
-          longitude
-        }
-        userID
-        category {
+        Category {
           id
           name
           description
@@ -11802,171 +14034,400 @@ export const onUpdateProjectCollaborator = /* GraphQL */ `
           _deleted
           _lastChangedAt
         }
-        collaborators {
+        Collaborators {
           items {
             id
+            contentId
             collaboratorId
-            projectId
+            content {
+              id
+              type
+              time
+              size
+              project {
+                name
+                description
+              }
+              files {
+                data
+                type
+                mimeType
+                caption
+                size
+                isBanner
+              }
+              date
+              location {
+                country
+                state
+                city
+                street
+                position {
+                  latitude
+                  longitude
+                }
+              }
+              colors
+              userID
+              Tags {
+                items {
+                  id
+                  contentId
+                  tagId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  tag {
+                    id
+                    name
+                    contents {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              Category {
+                id
+                name
+                description
+                createdAt
+                updatedAt
+                _version
+                _deleted
+                _lastChangedAt
+              }
+              Collaborators {
+                items {
+                  id
+                  contentId
+                  collaboratorId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  collaborator {
+                    id
+                    username
+                    email
+                    phone
+                    socials {
+                      type
+                      url
+                      username
+                    }
+                    fullName
+                    photoUrl
+                    contents {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              contentCategoryId
+            }
             collaborator {
               id
-              fullName
               username
               email
+              phone
               socials {
                 type
                 url
                 username
               }
+              fullName
               photoUrl
-              projects {
+              contents {
                 items {
                   id
+                  contentId
                   collaboratorId
-                  projectId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
                   collaborator {
                     id
-                    fullName
                     username
                     email
+                    phone
                     socials {
                       type
                       url
                       username
                     }
-                    photoUrl
-                    projects {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-            }
-            project {
-              id
-              name
-              date
-              banner
-              description
-              location {
-                latitude
-                longitude
-              }
-              userID
-              category {
-                id
-                name
-                description
-                createdAt
-                updatedAt
-                _version
-                _deleted
-                _lastChangedAt
-              }
-              collaborators {
-                items {
-                  id
-                  collaboratorId
-                  projectId
-                  collaborator {
-                    id
                     fullName
-                    username
-                    email
-                    socials {
-                      type
-                      url
-                      username
-                    }
                     photoUrl
-                    projects {
+                    contents {
                       items {
                         id
+                        contentId
                         collaboratorId
-                        projectId
                         createdAt
                         updatedAt
                         _version
@@ -11981,155 +14442,6 @@ export const onUpdateProjectCollaborator = /* GraphQL */ `
                     _version
                     _deleted
                     _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              tags {
-                items {
-                  id
-                  tagsId
-                  projectId
-                  tags {
-                    id
-                    name
-                    projects {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
                   }
                   createdAt
                   updatedAt
@@ -12145,345 +14457,6 @@ export const onUpdateProjectCollaborator = /* GraphQL */ `
               _version
               _deleted
               _lastChangedAt
-              projectCategoryId
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-          }
-          nextToken
-          startedAt
-        }
-        tags {
-          items {
-            id
-            tagsId
-            projectId
-            tags {
-              id
-              name
-              projects {
-                items {
-                  id
-                  tagsId
-                  projectId
-                  tags {
-                    id
-                    name
-                    projects {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-            }
-            project {
-              id
-              name
-              date
-              banner
-              description
-              location {
-                latitude
-                longitude
-              }
-              userID
-              category {
-                id
-                name
-                description
-                createdAt
-                updatedAt
-                _version
-                _deleted
-                _lastChangedAt
-              }
-              collaborators {
-                items {
-                  id
-                  collaboratorId
-                  projectId
-                  collaborator {
-                    id
-                    fullName
-                    username
-                    email
-                    socials {
-                      type
-                      url
-                      username
-                    }
-                    photoUrl
-                    projects {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              tags {
-                items {
-                  id
-                  tagsId
-                  projectId
-                  tags {
-                    id
-                    name
-                    projects {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              projectCategoryId
             }
             createdAt
             updatedAt
@@ -12499,7 +14472,458 @@ export const onUpdateProjectCollaborator = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        projectCategoryId
+        contentCategoryId
+      }
+      collaborator {
+        id
+        username
+        email
+        phone
+        socials {
+          type
+          url
+          username
+        }
+        fullName
+        photoUrl
+        contents {
+          items {
+            id
+            contentId
+            collaboratorId
+            content {
+              id
+              type
+              time
+              size
+              project {
+                name
+                description
+              }
+              files {
+                data
+                type
+                mimeType
+                caption
+                size
+                isBanner
+              }
+              date
+              location {
+                country
+                state
+                city
+                street
+                position {
+                  latitude
+                  longitude
+                }
+              }
+              colors
+              userID
+              Tags {
+                items {
+                  id
+                  contentId
+                  tagId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  tag {
+                    id
+                    name
+                    contents {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              Category {
+                id
+                name
+                description
+                createdAt
+                updatedAt
+                _version
+                _deleted
+                _lastChangedAt
+              }
+              Collaborators {
+                items {
+                  id
+                  contentId
+                  collaboratorId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  collaborator {
+                    id
+                    username
+                    email
+                    phone
+                    socials {
+                      type
+                      url
+                      username
+                    }
+                    fullName
+                    photoUrl
+                    contents {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              contentCategoryId
+            }
+            collaborator {
+              id
+              username
+              email
+              phone
+              socials {
+                type
+                url
+                username
+              }
+              fullName
+              photoUrl
+              contents {
+                items {
+                  id
+                  contentId
+                  collaboratorId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  collaborator {
+                    id
+                    username
+                    email
+                    phone
+                    socials {
+                      type
+                      url
+                      username
+                    }
+                    fullName
+                    photoUrl
+                    contents {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
       }
       createdAt
       updatedAt
@@ -12509,62 +14933,119 @@ export const onUpdateProjectCollaborator = /* GraphQL */ `
     }
   }
 `;
-export const onDeleteProjectCollaborator = /* GraphQL */ `
-  subscription OnDeleteProjectCollaborator(
-    $filter: ModelSubscriptionProjectCollaboratorFilterInput
+export const onDeleteContentCollaborator = /* GraphQL */ `
+  subscription OnDeleteContentCollaborator(
+    $filter: ModelSubscriptionContentCollaboratorFilterInput
   ) {
-    onDeleteProjectCollaborator(filter: $filter) {
+    onDeleteContentCollaborator(filter: $filter) {
       id
+      contentId
       collaboratorId
-      projectId
-      collaborator {
+      content {
         id
-        fullName
-        username
-        email
-        socials {
-          type
-          url
-          username
+        type
+        time
+        size
+        project {
+          name
+          description
         }
-        photoUrl
-        projects {
+        files {
+          data
+          type
+          mimeType
+          caption
+          size
+          isBanner
+        }
+        date
+        location {
+          country
+          state
+          city
+          street
+          position {
+            latitude
+            longitude
+          }
+        }
+        colors
+        userID
+        Tags {
           items {
             id
-            collaboratorId
-            projectId
-            collaborator {
+            contentId
+            tagId
+            content {
               id
-              fullName
-              username
-              email
-              socials {
-                type
-                url
-                username
+              type
+              time
+              size
+              project {
+                name
+                description
               }
-              photoUrl
-              projects {
+              files {
+                data
+                type
+                mimeType
+                caption
+                size
+                isBanner
+              }
+              date
+              location {
+                country
+                state
+                city
+                street
+                position {
+                  latitude
+                  longitude
+                }
+              }
+              colors
+              userID
+              Tags {
                 items {
                   id
-                  collaboratorId
-                  projectId
-                  collaborator {
+                  contentId
+                  tagId
+                  content {
                     id
-                    fullName
-                    username
-                    email
-                    socials {
-                      type
-                      url
-                      username
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
                     }
-                    photoUrl
-                    projects {
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
                       items {
                         id
-                        collaboratorId
-                        projectId
+                        contentId
+                        tagId
                         createdAt
                         updatedAt
                         _version
@@ -12574,24 +15055,7 @@ export const onDeleteProjectCollaborator = /* GraphQL */ `
                       nextToken
                       startedAt
                     }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
+                    Category {
                       id
                       name
                       description
@@ -12601,25 +15065,11 @@ export const onDeleteProjectCollaborator = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                     }
-                    collaborators {
+                    Collaborators {
                       items {
                         id
+                        contentId
                         collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
                         createdAt
                         updatedAt
                         _version
@@ -12634,7 +15084,30 @@ export const onDeleteProjectCollaborator = /* GraphQL */ `
                     _version
                     _deleted
                     _lastChangedAt
-                    projectCategoryId
+                    contentCategoryId
+                  }
+                  tag {
+                    id
+                    name
+                    contents {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
                   }
                   createdAt
                   updatedAt
@@ -12645,24 +15118,7 @@ export const onDeleteProjectCollaborator = /* GraphQL */ `
                 nextToken
                 startedAt
               }
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-            }
-            project {
-              id
-              name
-              date
-              banner
-              description
-              location {
-                latitude
-                longitude
-              }
-              userID
-              category {
+              Category {
                 id
                 name
                 description
@@ -12672,27 +15128,103 @@ export const onDeleteProjectCollaborator = /* GraphQL */ `
                 _deleted
                 _lastChangedAt
               }
-              collaborators {
+              Collaborators {
                 items {
                   id
+                  contentId
                   collaboratorId
-                  projectId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
                   collaborator {
                     id
-                    fullName
                     username
                     email
+                    phone
                     socials {
                       type
                       url
                       username
                     }
+                    fullName
                     photoUrl
-                    projects {
+                    contents {
                       items {
                         id
+                        contentId
                         collaboratorId
-                        projectId
                         createdAt
                         updatedAt
                         _version
@@ -12707,155 +15239,6 @@ export const onDeleteProjectCollaborator = /* GraphQL */ `
                     _version
                     _deleted
                     _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              tags {
-                items {
-                  id
-                  tagsId
-                  projectId
-                  tags {
-                    id
-                    name
-                    projects {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
                   }
                   createdAt
                   updatedAt
@@ -12871,7 +15254,128 @@ export const onDeleteProjectCollaborator = /* GraphQL */ `
               _version
               _deleted
               _lastChangedAt
-              projectCategoryId
+              contentCategoryId
+            }
+            tag {
+              id
+              name
+              contents {
+                items {
+                  id
+                  contentId
+                  tagId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  tag {
+                    id
+                    name
+                    contents {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
             }
             createdAt
             updatedAt
@@ -12882,24 +15386,7 @@ export const onDeleteProjectCollaborator = /* GraphQL */ `
           nextToken
           startedAt
         }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      project {
-        id
-        name
-        date
-        banner
-        description
-        location {
-          latitude
-          longitude
-        }
-        userID
-        category {
+        Category {
           id
           name
           description
@@ -12909,171 +15396,400 @@ export const onDeleteProjectCollaborator = /* GraphQL */ `
           _deleted
           _lastChangedAt
         }
-        collaborators {
+        Collaborators {
           items {
             id
+            contentId
             collaboratorId
-            projectId
+            content {
+              id
+              type
+              time
+              size
+              project {
+                name
+                description
+              }
+              files {
+                data
+                type
+                mimeType
+                caption
+                size
+                isBanner
+              }
+              date
+              location {
+                country
+                state
+                city
+                street
+                position {
+                  latitude
+                  longitude
+                }
+              }
+              colors
+              userID
+              Tags {
+                items {
+                  id
+                  contentId
+                  tagId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  tag {
+                    id
+                    name
+                    contents {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              Category {
+                id
+                name
+                description
+                createdAt
+                updatedAt
+                _version
+                _deleted
+                _lastChangedAt
+              }
+              Collaborators {
+                items {
+                  id
+                  contentId
+                  collaboratorId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  collaborator {
+                    id
+                    username
+                    email
+                    phone
+                    socials {
+                      type
+                      url
+                      username
+                    }
+                    fullName
+                    photoUrl
+                    contents {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              contentCategoryId
+            }
             collaborator {
               id
-              fullName
               username
               email
+              phone
               socials {
                 type
                 url
                 username
               }
+              fullName
               photoUrl
-              projects {
+              contents {
                 items {
                   id
+                  contentId
                   collaboratorId
-                  projectId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
                   collaborator {
                     id
-                    fullName
                     username
                     email
+                    phone
                     socials {
                       type
                       url
                       username
                     }
-                    photoUrl
-                    projects {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-            }
-            project {
-              id
-              name
-              date
-              banner
-              description
-              location {
-                latitude
-                longitude
-              }
-              userID
-              category {
-                id
-                name
-                description
-                createdAt
-                updatedAt
-                _version
-                _deleted
-                _lastChangedAt
-              }
-              collaborators {
-                items {
-                  id
-                  collaboratorId
-                  projectId
-                  collaborator {
-                    id
                     fullName
-                    username
-                    email
-                    socials {
-                      type
-                      url
-                      username
-                    }
                     photoUrl
-                    projects {
+                    contents {
                       items {
                         id
+                        contentId
                         collaboratorId
-                        projectId
                         createdAt
                         updatedAt
                         _version
@@ -13088,155 +15804,6 @@ export const onDeleteProjectCollaborator = /* GraphQL */ `
                     _version
                     _deleted
                     _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              tags {
-                items {
-                  id
-                  tagsId
-                  projectId
-                  tags {
-                    id
-                    name
-                    projects {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
                   }
                   createdAt
                   updatedAt
@@ -13252,345 +15819,6 @@ export const onDeleteProjectCollaborator = /* GraphQL */ `
               _version
               _deleted
               _lastChangedAt
-              projectCategoryId
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-          }
-          nextToken
-          startedAt
-        }
-        tags {
-          items {
-            id
-            tagsId
-            projectId
-            tags {
-              id
-              name
-              projects {
-                items {
-                  id
-                  tagsId
-                  projectId
-                  tags {
-                    id
-                    name
-                    projects {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-            }
-            project {
-              id
-              name
-              date
-              banner
-              description
-              location {
-                latitude
-                longitude
-              }
-              userID
-              category {
-                id
-                name
-                description
-                createdAt
-                updatedAt
-                _version
-                _deleted
-                _lastChangedAt
-              }
-              collaborators {
-                items {
-                  id
-                  collaboratorId
-                  projectId
-                  collaborator {
-                    id
-                    fullName
-                    username
-                    email
-                    socials {
-                      type
-                      url
-                      username
-                    }
-                    photoUrl
-                    projects {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              tags {
-                items {
-                  id
-                  tagsId
-                  projectId
-                  tags {
-                    id
-                    name
-                    projects {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                  }
-                  project {
-                    id
-                    name
-                    date
-                    banner
-                    description
-                    location {
-                      latitude
-                      longitude
-                    }
-                    userID
-                    category {
-                      id
-                      name
-                      description
-                      createdAt
-                      updatedAt
-                      _version
-                      _deleted
-                      _lastChangedAt
-                    }
-                    collaborators {
-                      items {
-                        id
-                        collaboratorId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    tags {
-                      items {
-                        id
-                        tagsId
-                        projectId
-                        createdAt
-                        updatedAt
-                        _version
-                        _deleted
-                        _lastChangedAt
-                      }
-                      nextToken
-                      startedAt
-                    }
-                    createdAt
-                    updatedAt
-                    _version
-                    _deleted
-                    _lastChangedAt
-                    projectCategoryId
-                  }
-                  createdAt
-                  updatedAt
-                  _version
-                  _deleted
-                  _lastChangedAt
-                }
-                nextToken
-                startedAt
-              }
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              projectCategoryId
             }
             createdAt
             updatedAt
@@ -13606,7 +15834,458 @@ export const onDeleteProjectCollaborator = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        projectCategoryId
+        contentCategoryId
+      }
+      collaborator {
+        id
+        username
+        email
+        phone
+        socials {
+          type
+          url
+          username
+        }
+        fullName
+        photoUrl
+        contents {
+          items {
+            id
+            contentId
+            collaboratorId
+            content {
+              id
+              type
+              time
+              size
+              project {
+                name
+                description
+              }
+              files {
+                data
+                type
+                mimeType
+                caption
+                size
+                isBanner
+              }
+              date
+              location {
+                country
+                state
+                city
+                street
+                position {
+                  latitude
+                  longitude
+                }
+              }
+              colors
+              userID
+              Tags {
+                items {
+                  id
+                  contentId
+                  tagId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  tag {
+                    id
+                    name
+                    contents {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              Category {
+                id
+                name
+                description
+                createdAt
+                updatedAt
+                _version
+                _deleted
+                _lastChangedAt
+              }
+              Collaborators {
+                items {
+                  id
+                  contentId
+                  collaboratorId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  collaborator {
+                    id
+                    username
+                    email
+                    phone
+                    socials {
+                      type
+                      url
+                      username
+                    }
+                    fullName
+                    photoUrl
+                    contents {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              contentCategoryId
+            }
+            collaborator {
+              id
+              username
+              email
+              phone
+              socials {
+                type
+                url
+                username
+              }
+              fullName
+              photoUrl
+              contents {
+                items {
+                  id
+                  contentId
+                  collaboratorId
+                  content {
+                    id
+                    type
+                    time
+                    size
+                    project {
+                      name
+                      description
+                    }
+                    files {
+                      data
+                      type
+                      mimeType
+                      caption
+                      size
+                      isBanner
+                    }
+                    date
+                    location {
+                      country
+                      state
+                      city
+                      street
+                      position {
+                        latitude
+                        longitude
+                      }
+                    }
+                    colors
+                    userID
+                    Tags {
+                      items {
+                        id
+                        contentId
+                        tagId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    Category {
+                      id
+                      name
+                      description
+                      createdAt
+                      updatedAt
+                      _version
+                      _deleted
+                      _lastChangedAt
+                    }
+                    Collaborators {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                    contentCategoryId
+                  }
+                  collaborator {
+                    id
+                    username
+                    email
+                    phone
+                    socials {
+                      type
+                      url
+                      username
+                    }
+                    fullName
+                    photoUrl
+                    contents {
+                      items {
+                        id
+                        contentId
+                        collaboratorId
+                        createdAt
+                        updatedAt
+                        _version
+                        _deleted
+                        _lastChangedAt
+                      }
+                      nextToken
+                      startedAt
+                    }
+                    createdAt
+                    updatedAt
+                    _version
+                    _deleted
+                    _lastChangedAt
+                  }
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                  _lastChangedAt
+                }
+                nextToken
+                startedAt
+              }
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
       }
       createdAt
       updatedAt

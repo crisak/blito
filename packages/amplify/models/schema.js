@@ -1,7 +1,7 @@
 export const schema = {
     "models": {
-        "Tags": {
-            "name": "Tags",
+        "Content": {
+            "name": "Content",
             "fields": {
                 "id": {
                     "name": "id",
@@ -10,18 +10,86 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "name": {
-                    "name": "name",
+                "type": {
+                    "name": "type",
                     "isArray": false,
-                    "type": "String",
+                    "type": {
+                        "enum": "ContentType"
+                    },
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "time": {
+                    "name": "time",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "size": {
+                    "name": "size",
+                    "isArray": false,
+                    "type": {
+                        "enum": "Sizes"
+                    },
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "project": {
+                    "name": "project",
+                    "isArray": false,
+                    "type": {
+                        "nonModel": "ContentProject"
+                    },
                     "isRequired": false,
                     "attributes": []
                 },
-                "projects": {
-                    "name": "projects",
+                "files": {
+                    "name": "files",
                     "isArray": true,
                     "type": {
-                        "model": "ProjectTags"
+                        "nonModel": "File"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": false
+                },
+                "date": {
+                    "name": "date",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "location": {
+                    "name": "location",
+                    "isArray": false,
+                    "type": {
+                        "nonModel": "Location"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "colors": {
+                    "name": "colors",
+                    "isArray": true,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true
+                },
+                "userID": {
+                    "name": "userID",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "Tags": {
+                    "name": "Tags",
+                    "isArray": true,
+                    "type": {
+                        "model": "ContentTag"
                     },
                     "isRequired": false,
                     "attributes": [],
@@ -29,7 +97,41 @@ export const schema = {
                     "association": {
                         "connectionType": "HAS_MANY",
                         "associatedWith": [
-                            "tags"
+                            "content"
+                        ]
+                    }
+                },
+                "Category": {
+                    "name": "Category",
+                    "isArray": false,
+                    "type": {
+                        "model": "Category"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "association": {
+                        "connectionType": "HAS_ONE",
+                        "associatedWith": [
+                            "id"
+                        ],
+                        "targetNames": [
+                            "contentCategoryId"
+                        ]
+                    }
+                },
+                "Collaborators": {
+                    "name": "Collaborators",
+                    "isArray": true,
+                    "type": {
+                        "model": "ContentCollaborator"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": [
+                            "content"
                         ]
                     }
                 },
@@ -48,10 +150,17 @@ export const schema = {
                     "isRequired": false,
                     "attributes": [],
                     "isReadOnly": true
+                },
+                "contentCategoryId": {
+                    "name": "contentCategoryId",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": false,
+                    "attributes": []
                 }
             },
             "syncable": true,
-            "pluralName": "Tags",
+            "pluralName": "Contents",
             "attributes": [
                 {
                     "type": "model",
@@ -75,8 +184,8 @@ export const schema = {
                 }
             ]
         },
-        "Project": {
-            "name": "Project",
+        "Tag": {
+            "name": "Tag",
             "fields": {
                 "id": {
                     "name": "id",
@@ -92,66 +201,11 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "date": {
-                    "name": "date",
-                    "isArray": false,
-                    "type": "AWSDateTime",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "banner": {
-                    "name": "banner",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "description": {
-                    "name": "description",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "location": {
-                    "name": "location",
-                    "isArray": false,
-                    "type": {
-                        "nonModel": "Position"
-                    },
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "userID": {
-                    "name": "userID",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "category": {
-                    "name": "category",
-                    "isArray": false,
-                    "type": {
-                        "model": "Category"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "association": {
-                        "connectionType": "HAS_ONE",
-                        "associatedWith": [
-                            "id"
-                        ],
-                        "targetNames": [
-                            "projectCategoryId"
-                        ]
-                    }
-                },
-                "collaborators": {
-                    "name": "collaborators",
+                "contents": {
+                    "name": "contents",
                     "isArray": true,
                     "type": {
-                        "model": "ProjectCollaborator"
+                        "model": "ContentTag"
                     },
                     "isRequired": false,
                     "attributes": [],
@@ -159,23 +213,7 @@ export const schema = {
                     "association": {
                         "connectionType": "HAS_MANY",
                         "associatedWith": [
-                            "project"
-                        ]
-                    }
-                },
-                "tags": {
-                    "name": "tags",
-                    "isArray": true,
-                    "type": {
-                        "model": "ProjectTags"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "isArrayNullable": true,
-                    "association": {
-                        "connectionType": "HAS_MANY",
-                        "associatedWith": [
-                            "project"
+                            "tag"
                         ]
                     }
                 },
@@ -194,17 +232,10 @@ export const schema = {
                     "isRequired": false,
                     "attributes": [],
                     "isReadOnly": true
-                },
-                "projectCategoryId": {
-                    "name": "projectCategoryId",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": false,
-                    "attributes": []
                 }
             },
             "syncable": true,
-            "pluralName": "Projects",
+            "pluralName": "Tags",
             "attributes": [
                 {
                     "type": "model",
@@ -304,13 +335,6 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "fullName": {
-                    "name": "fullName",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": true,
-                    "attributes": []
-                },
                 "username": {
                     "name": "username",
                     "isArray": false,
@@ -325,12 +349,27 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "phone": {
+                    "name": "phone",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "socials": {
                     "name": "socials",
-                    "isArray": false,
+                    "isArray": true,
                     "type": {
                         "nonModel": "SocialNetwork"
                     },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": false
+                },
+                "fullName": {
+                    "name": "fullName",
+                    "isArray": false,
+                    "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
@@ -341,11 +380,11 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "projects": {
-                    "name": "projects",
+                "contents": {
+                    "name": "contents",
                     "isArray": true,
                     "type": {
-                        "model": "ProjectCollaborator"
+                        "model": "ContentCollaborator"
                     },
                     "isRequired": false,
                     "attributes": [],
@@ -399,8 +438,8 @@ export const schema = {
                 }
             ]
         },
-        "ProjectTags": {
-            "name": "ProjectTags",
+        "ContentTag": {
+            "name": "ContentTag",
             "fields": {
                 "id": {
                     "name": "id",
@@ -409,47 +448,47 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "tagsId": {
-                    "name": "tagsId",
+                "contentId": {
+                    "name": "contentId",
                     "isArray": false,
                     "type": "ID",
                     "isRequired": false,
                     "attributes": []
                 },
-                "projectId": {
-                    "name": "projectId",
+                "tagId": {
+                    "name": "tagId",
                     "isArray": false,
                     "type": "ID",
                     "isRequired": false,
                     "attributes": []
                 },
-                "tags": {
-                    "name": "tags",
+                "content": {
+                    "name": "content",
                     "isArray": false,
                     "type": {
-                        "model": "Tags"
+                        "model": "Content"
                     },
                     "isRequired": true,
                     "attributes": [],
                     "association": {
                         "connectionType": "BELONGS_TO",
                         "targetNames": [
-                            "tagsId"
+                            "contentId"
                         ]
                     }
                 },
-                "project": {
-                    "name": "project",
+                "tag": {
+                    "name": "tag",
                     "isArray": false,
                     "type": {
-                        "model": "Project"
+                        "model": "Tag"
                     },
                     "isRequired": true,
                     "attributes": [],
                     "association": {
                         "connectionType": "BELONGS_TO",
                         "targetNames": [
-                            "projectId"
+                            "tagId"
                         ]
                     }
                 },
@@ -471,7 +510,7 @@ export const schema = {
                 }
             },
             "syncable": true,
-            "pluralName": "ProjectTags",
+            "pluralName": "ContentTags",
             "attributes": [
                 {
                     "type": "model",
@@ -480,25 +519,25 @@ export const schema = {
                 {
                     "type": "key",
                     "properties": {
-                        "name": "byTags",
+                        "name": "byContent",
                         "fields": [
-                            "tagsId"
+                            "contentId"
                         ]
                     }
                 },
                 {
                     "type": "key",
                     "properties": {
-                        "name": "byProject",
+                        "name": "byTag",
                         "fields": [
-                            "projectId"
+                            "tagId"
                         ]
                     }
                 }
             ]
         },
-        "ProjectCollaborator": {
-            "name": "ProjectCollaborator",
+        "ContentCollaborator": {
+            "name": "ContentCollaborator",
             "fields": {
                 "id": {
                     "name": "id",
@@ -507,8 +546,8 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "projectId": {
-                    "name": "projectId",
+                "contentId": {
+                    "name": "contentId",
                     "isArray": false,
                     "type": "ID",
                     "isRequired": false,
@@ -521,18 +560,18 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "project": {
-                    "name": "project",
+                "content": {
+                    "name": "content",
                     "isArray": false,
                     "type": {
-                        "model": "Project"
+                        "model": "Content"
                     },
                     "isRequired": true,
                     "attributes": [],
                     "association": {
                         "connectionType": "BELONGS_TO",
                         "targetNames": [
-                            "projectId"
+                            "contentId"
                         ]
                     }
                 },
@@ -569,7 +608,7 @@ export const schema = {
                 }
             },
             "syncable": true,
-            "pluralName": "ProjectCollaborators",
+            "pluralName": "ContentCollaborators",
             "attributes": [
                 {
                     "type": "model",
@@ -578,9 +617,9 @@ export const schema = {
                 {
                     "type": "key",
                     "properties": {
-                        "name": "byProject",
+                        "name": "byContent",
                         "fields": [
-                            "projectId"
+                            "contentId"
                         ]
                     }
                 },
@@ -597,17 +636,157 @@ export const schema = {
         }
     },
     "enums": {
+        "TypeFile": {
+            "name": "TypeFile",
+            "values": [
+                "VIDEO",
+                "IMAGE",
+                "GIF",
+                "VIDEO_YOUTUBE",
+                "BASE64"
+            ]
+        },
+        "Sizes": {
+            "name": "Sizes",
+            "values": [
+                "XS",
+                "S",
+                "M",
+                "L",
+                "XL"
+            ]
+        },
+        "ContentType": {
+            "name": "ContentType",
+            "values": [
+                "ALBUM",
+                "PROJECT",
+                "GALLERY"
+            ]
+        },
         "TypeSocialNetwork": {
             "name": "TypeSocialNetwork",
             "values": [
                 "FACEBOOK",
                 "INSTAGRAM",
                 "YOUTUBE",
-                "TIKTOK"
+                "TIKTOK",
+                "TWITTER",
+                "PINTEREST"
             ]
         }
     },
     "nonModels": {
+        "File": {
+            "name": "File",
+            "fields": {
+                "data": {
+                    "name": "data",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "type": {
+                    "name": "type",
+                    "isArray": false,
+                    "type": {
+                        "enum": "TypeFile"
+                    },
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "mimeType": {
+                    "name": "mimeType",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "caption": {
+                    "name": "caption",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "size": {
+                    "name": "size",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "isBanner": {
+                    "name": "isBanner",
+                    "isArray": false,
+                    "type": "Boolean",
+                    "isRequired": false,
+                    "attributes": []
+                }
+            }
+        },
+        "ContentProject": {
+            "name": "ContentProject",
+            "fields": {
+                "name": {
+                    "name": "name",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "description": {
+                    "name": "description",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                }
+            }
+        },
+        "Location": {
+            "name": "Location",
+            "fields": {
+                "country": {
+                    "name": "country",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "state": {
+                    "name": "state",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "city": {
+                    "name": "city",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "street": {
+                    "name": "street",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "position": {
+                    "name": "position",
+                    "isArray": false,
+                    "type": {
+                        "nonModel": "Position"
+                    },
+                    "isRequired": true,
+                    "attributes": []
+                }
+            }
+        },
         "Position": {
             "name": "Position",
             "fields": {
@@ -650,48 +829,6 @@ export const schema = {
                     "name": "username",
                     "isArray": false,
                     "type": "String",
-                    "isRequired": true,
-                    "attributes": []
-                }
-            }
-        },
-        "Location": {
-            "name": "Location",
-            "fields": {
-                "country": {
-                    "name": "country",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "state": {
-                    "name": "state",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "city": {
-                    "name": "city",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "street": {
-                    "name": "street",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "position": {
-                    "name": "position",
-                    "isArray": false,
-                    "type": {
-                        "nonModel": "Position"
-                    },
                     "isRequired": false,
                     "attributes": []
                 }
@@ -699,5 +836,5 @@ export const schema = {
         }
     },
     "codegenVersion": "3.3.5",
-    "version": "b5643a6d2bb9c792cf4d6d95ff9dce24"
+    "version": "a13ba95819113c412e37392233fc2309"
 };
