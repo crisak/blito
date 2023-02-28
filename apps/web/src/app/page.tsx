@@ -1,5 +1,9 @@
+import { API, Amplify } from 'aws-amplify'
 import { categoryService } from '@/services'
 import Home from './components/Home'
+import { awsExports } from 'amplify'
+
+Amplify.configure({ ...awsExports, ssr: true })
 
 const HomePage = async () => {
   const { data: categories, error } =

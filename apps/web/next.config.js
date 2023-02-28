@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  transpilePackages: ['amplify'],
   experimental: {
-    appDir: true,
+    appDir: true
   },
   reactStrictMode: false,
   images: {

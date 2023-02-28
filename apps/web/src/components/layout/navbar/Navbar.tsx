@@ -15,7 +15,7 @@ const collapseItems = [
   {
     label: 'Contacto',
     route: '/contacto'
-  }
+  },
   // {
   //   label: 'Login',
   //   route: '/login'
@@ -76,9 +76,15 @@ const NavbarComponent = () => {
         <Link href="/contacto">Contacto</Link>
       </Navbar.Content>
       <Navbar.Content>
-        {/* <Link color="inherit" href="/login">
+        <Link color="inherit" href="/configuracion">
+          Configuración
+        </Link>
+        <Link color="inherit" href="/login">
           Login
-        </Link> */}
+        </Link>
+        <Link color="inherit" href="/login">
+          Logout
+        </Link>
       </Navbar.Content>
 
       <Navbar.Collapse>
