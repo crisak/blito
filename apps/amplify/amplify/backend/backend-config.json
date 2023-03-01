@@ -80,6 +80,14 @@
           "resourceName": "testCloudFormationTest"
         }
       ]
+    },
+    "AMPLIFY_function_testCloudFormationTest_tableNameTest": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "testCloudFormationTest"
+        }
+      ]
     }
   },
   "storage": {

@@ -22,7 +22,8 @@
         "testCloudformationRemoveFuture": {},
         "testCloudFormationTest": {
           "deploymentBucketName": "amplify-blito-staging-44547-deployment",
-          "s3Key": "amplify-builds/testCloudFormationTest-563276417656596f4e47-build.zip"
+          "s3Key": "amplify-builds/testCloudFormationTest-563276417656596f4e47-build.zip",
+          "tableNameTest": "User-removetablefuture-dev"
         }
       },
       "api": {

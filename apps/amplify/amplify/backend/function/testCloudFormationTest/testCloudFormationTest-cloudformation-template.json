@@ -15,6 +15,9 @@
     },
     "s3Key": {
       "Type": "String"
+    },
+    "tableNameTest": {
+      "Type": "String"
     }
   },
   "Conditions": {
@@ -69,6 +72,9 @@
             },
             "REGION": {
               "Ref": "AWS::Region"
+            },
+            "TABLE_NAME_TEST": {
+              "Ref": "tableNameTest"
             }
           }
         },

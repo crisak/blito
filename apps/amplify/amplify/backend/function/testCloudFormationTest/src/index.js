@@ -6,11 +6,12 @@ const docClient = new AWS.DynamoDB.DocumentClient()
  */
 exports.handler = async (event) => {
   console.log(`EVENT: ${JSON.stringify(event)}`)
+  console.log('variables=', process.env)
 
   const id = 'idRandom' // Se asume que se pasa el id como parámetro en el evento
 
   const params = {
-    TableName: 'nombre-de-tu-tabla',
+    TableName: process.env.TABLE_NAME_TEST,
     Key: {
       id: id
     }
