@@ -57,6 +57,31 @@
       "service": "Cognito"
     }
   },
+  "function": {
+    "testCloudFormationTest": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_testCloudFormationTest_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "testCloudFormationTest"
+        }
+      ]
+    },
+    "AMPLIFY_function_testCloudFormationTest_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "testCloudFormationTest"
+        }
+      ]
+    }
+  },
   "storage": {
     "s3blitostoragef45ca4aa": {
       "dependsOn": [],

@@ -17,6 +17,16 @@
       },
       "storage": {
         "s3blitostoragef45ca4aa": {}
+      },
+      "function": {
+        "testCloudformationRemoveFuture": {},
+        "testCloudFormationTest": {
+          "deploymentBucketName": "amplify-blito-staging-44547-deployment",
+          "s3Key": "amplify-builds/testCloudFormationTest-563276417656596f4e47-build.zip"
+        }
+      },
+      "api": {
+        "Blito": {}
       }
     }
   }
