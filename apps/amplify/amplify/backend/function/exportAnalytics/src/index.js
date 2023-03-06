@@ -5,12 +5,7 @@ class InvalidInputDataCristian extends Error {
   }
 }
 
-/**
- * @type {import('@types/aws-lambda').APIGatewayProxyHandler}
- */
-exports.handler = async (event) => {
-  console.log(`EVENT: ${JSON.stringify(event)}`)
-
+const errorTestInvocation = () => {
   if (process.env.TYPE_ERROR === 'error') {
     throw new Error('Error internal server by Cristian')
   }
@@ -24,20 +19,15 @@ exports.handler = async (event) => {
       name: 'my custom name'
     })
   }
+}
 
-  if (process.env.TYPE_ERROR === 'apiError') {
-    return {
-      statusCode: 400,
-      body: JSON.stringify({
-        data: 'Error data'
-      }),
-      //  Uncomment below to enable CORS requests
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': '*'
-      }
-    }
-  }
+/**
+ * @type {import('@types/aws-lambda').APIGatewayProxyHandler}
+ */
+exports.handler = async (event) => {
+  console.log(`EVENT: ${JSON.stringify(event)}`)
+
+  errorTestInvocation()
 
   return {
     url: 'http://localhost:3000',

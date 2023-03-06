@@ -27,7 +27,7 @@
         },
         "exportAnalytics": {
           "deploymentBucketName": "amplify-blito-staging-44547-deployment",
-          "s3Key": "amplify-builds/exportAnalytics-65387468327958665736-build.zip",
+          "s3Key": "amplify-builds/exportAnalytics-62376561504a51355751-build.zip",
           "typeError": "throwCustom"
         }
       },
