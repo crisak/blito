@@ -1,3 +1,9 @@
 {
-  "lambdaLayers": []
+  "lambdaLayers": [],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "typeError",
+      "environmentVariableName": "TYPE_ERROR"
+    }
+  ]
 }

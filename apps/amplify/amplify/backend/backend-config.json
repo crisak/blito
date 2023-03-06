@@ -86,6 +86,14 @@
         }
       ]
     },
+    "AMPLIFY_function_exportAnalytics_typeError": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "exportAnalytics"
+        }
+      ]
+    },
     "AMPLIFY_function_testCloudFormationTest_deploymentBucketName": {
       "usedBy": [
         {
