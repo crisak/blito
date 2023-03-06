@@ -833,8 +833,27 @@ export const schema = {
                     "attributes": []
                 }
             }
+        },
+        "Analytics": {
+            "name": "Analytics",
+            "fields": {
+                "url": {
+                    "name": "url",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "status": {
+                    "name": "status",
+                    "isArray": false,
+                    "type": "Boolean",
+                    "isRequired": true,
+                    "attributes": []
+                }
+            }
         }
     },
     "codegenVersion": "3.3.6",
-    "version": "a13ba95819113c412e37392233fc2309"
+    "version": "14465190fd0e1b4f45427431fbb5452f"
 };

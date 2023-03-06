@@ -2,6 +2,14 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const getAnalytics = /* GraphQL */ `
+  query GetAnalytics($filter: ModelAnalyticsFilterInput) {
+    getAnalytics(filter: $filter) {
+      url
+      status
+    }
+  }
+`;
 export const getContent = /* GraphQL */ `
   query GetContent($id: ID!) {
     getContent(id: $id) {

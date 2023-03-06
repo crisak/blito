@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  transpilePackages: ['amplify'],
+  transpilePackages: ['models'],
   experimental: {
     appDir: true
   },

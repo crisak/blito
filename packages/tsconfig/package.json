@@ -6,6 +6,7 @@
     "base.json",
     "nextjs.json",
     "base-config.json",
-    "react-library.json"
+    "react-library.json",
+    "amplify-config.json"
   ]
 }

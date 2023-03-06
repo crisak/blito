@@ -11,28 +11,29 @@ import {
   Table
 } from '@nextui-org/react'
 import Link from 'next/link'
-import { BsArrowClockwise } from 'react-icons/bs'
-import { BsPlus } from 'react-icons/bs'
+import { BsArrowClockwise, BsPlus } from 'react-icons/bs'
 import { API } from 'aws-amplify'
-import { createCategory } from 'amplify'
+import { createCategory } from 'models'
 
-const SettingsPage = async () => {
-  const handleCreateCategory = async (
-    event: React.FormEvent<HTMLButtonElement>
-  ) => {
-    event?.preventDefault()
-    await API.graphql({
-      authMode: 'API_KEY',
-      query: createCategory,
-      variables: {
-        input: {
-          name: 'Interiores',
-          description: 'Diseño y arte artístico dentro de casas'
+const SettingsPage = () => {
+  const handleCreateCategory = async () => {
+    try {
+      const data = await API.graphql({
+        query: createCategory,
+        variables: {
+          input: {
+            name: 'Interiores',
+            description: 'Diseño y arte artístico dentro de casas'
+          }
         }
-      }
-    })
+      })
 
-    alert('Categoric agregada')
+      console.log('data->', data)
+
+      alert('Categoric agregada')
+    } catch (error) {
+      console.log('error->', error)
+    }
   }
 
   return (

@@ -33,7 +33,7 @@ const TypeSocialNetwork = {
   "PINTEREST": "PINTEREST"
 };
 
-const { Content, Tag, Collaborator, Category, ContentTag, ContentCollaborator, File, ContentProject, Position, SocialNetwork, Location } = initSchema(schema);
+const { Content, Tag, Collaborator, Category, ContentTag, ContentCollaborator, File, ContentProject, Position, SocialNetwork, Location, Analytics } = initSchema(schema);
 
 export {
   Content,
@@ -50,5 +50,6 @@ export {
   ContentProject,
   Position,
   SocialNetwork,
-  Location
+  Location,
+  Analytics
 };

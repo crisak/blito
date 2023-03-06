@@ -483,6 +483,16 @@ export type DeleteContentCollaboratorInput = {
   _version?: number | null,
 };
 
+export type ModelAnalyticsFilterInput = {
+  data: string,
+};
+
+export type Analytics = {
+  __typename: "Analytics",
+  url: string,
+  status: boolean,
+};
+
 export type ModelContentFilterInput = {
   id?: ModelIDInput | null,
   type?: ModelContentTypeInput | null,
@@ -18995,6 +19005,18 @@ export type DeleteContentCollaboratorMutation = {
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,
+  } | null,
+};
+
+export type GetAnalyticsQueryVariables = {
+  filter?: ModelAnalyticsFilterInput | null,
+};
+
+export type GetAnalyticsQuery = {
+  getAnalytics?:  {
+    __typename: "Analytics",
+    url: string,
+    status: boolean,
   } | null,
 };
 

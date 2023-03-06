@@ -119,6 +119,20 @@ export declare type Location = LazyLoading extends LazyLoadingDisabled ? EagerLo
 
 export declare const Location: (new (init: ModelInit<Location>) => Location)
 
+type EagerAnalytics = {
+  readonly url: string;
+  readonly status: boolean;
+}
+
+type LazyAnalytics = {
+  readonly url: string;
+  readonly status: boolean;
+}
+
+export declare type Analytics = LazyLoading extends LazyLoadingDisabled ? EagerAnalytics : LazyAnalytics
+
+export declare const Analytics: (new (init: ModelInit<Analytics>) => Analytics)
+
 type EagerContent = {
   readonly [__modelMeta__]: {
     identifier: ManagedIdentifier<Content, 'id'>;
