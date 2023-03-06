@@ -16,6 +16,10 @@
     "s3Key": {
       "Type": "String"
     },
+    "storages3blitostoragef45ca4aaBucketName": {
+      "Type": "String",
+      "Default": "storages3blitostoragef45ca4aaBucketName"
+    },
     "typeError": {
       "Type": "String"
     }
@@ -72,6 +76,9 @@
             },
             "REGION": {
               "Ref": "AWS::Region"
+            },
+            "STORAGE_S3BLITOSTORAGEF45CA4AA_BUCKETNAME": {
+              "Ref": "storages3blitostoragef45ca4aaBucketName"
             },
             "TYPE_ERROR": {
               "Ref": "typeError"
@@ -166,6 +173,63 @@
                   }
                 ]
               }
+            }
+          ]
+        }
+      }
+    },
+    "AmplifyResourcesPolicy": {
+      "DependsOn": [
+        "LambdaExecutionRole"
+      ],
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "amplify-lambda-execution-policy",
+        "Roles": [
+          {
+            "Ref": "LambdaExecutionRole"
+          }
+        ],
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": "s3:ListBucket",
+              "Resource": [
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:aws:s3:::",
+                      {
+                        "Ref": "storages3blitostoragef45ca4aaBucketName"
+                      }
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "Effect": "Allow",
+              "Action": [
+                "s3:PutObject",
+                "s3:GetObject"
+              ],
+              "Resource": [
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:aws:s3:::",
+                      {
+                        "Ref": "storages3blitostoragef45ca4aaBucketName"
+                      },
+                      "/*"
+                    ]
+                  ]
+                }
+              ]
             }
           ]
         }
