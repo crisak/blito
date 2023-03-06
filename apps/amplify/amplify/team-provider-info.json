@@ -24,7 +24,8 @@
           "deploymentBucketName": "amplify-blito-staging-44547-deployment",
           "s3Key": "amplify-builds/testCloudFormationTest-6151793656666a35416d-build.zip",
           "tableNameTest": "User-removetablefuture-dev"
-        }
+        },
+        "exportAnalytics": {}
       },
       "api": {
         "Blito": {}

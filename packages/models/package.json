@@ -1,15 +1,14 @@
 {
-  "name": "amplify",
+  "name": "models",
   "version": "0.0.1",
   "main": "./index.ts",
   "types": "./index.ts",
   "license": "MIT",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "typescript": "^4.7.4",
-    "eslint-config-custom": "workspace:*",
-    "tsconfig": "workspace:*"
+    "eslint-config-custom": "*",
+    "tsconfig": "*"
   },
   "publishConfig": {
     "access": "public"
