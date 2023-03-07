@@ -1,0 +1,20 @@
+version: 1
+applications:
+  - frontend:
+      phases:
+        preBuild:
+          commands:
+            - yarn install
+        build:
+          commands:
+            - if [ "${AWS_BRANCH}" = "main" ]; then echo "NEXT_PUBLIC_ENV=PROD"; fi
+            - if [ "${AWS_BRANCH}" = "develop" ]; then echo "NEXT_PUBLIC_ENV=DEV"; fi
+            - cd ../.. && npx turbo build:${AWS_BRANCH} --filter=docs
+      artifacts:
+        baseDirectory: .next
+        files:
+          - '**/*'
+      cache:
+        paths:
+          - node_modules/**/*
+    appRoot: apps/web

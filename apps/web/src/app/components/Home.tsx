@@ -22,6 +22,8 @@ const ImageSplash = styled(Image, {
 const Home = ({ categories }: { categories: CategoriesSummaryContents }) => {
   useEffect(() => {
     console.log('ENV->>>', process.env.NEXT_PUBLIC_ENV_TEST)
+    console.log('NODE_ENV->>', process.env.NODE_ENV);
+    
   }, [])
 
   return (
