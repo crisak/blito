@@ -37,6 +37,7 @@ export const createContent = /* GraphQL */ `
       }
       colors
       userID
+      views
       Tags {
         items {
           id
@@ -72,6 +73,7 @@ export const createContent = /* GraphQL */ `
             }
             colors
             userID
+            views
             Tags {
               items {
                 id
@@ -107,6 +109,7 @@ export const createContent = /* GraphQL */ `
                   }
                   colors
                   userID
+                  views
                   Tags {
                     items {
                       id
@@ -120,6 +123,7 @@ export const createContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -168,6 +172,7 @@ export const createContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -220,6 +225,7 @@ export const createContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -305,6 +311,7 @@ export const createContent = /* GraphQL */ `
                   }
                   colors
                   userID
+                  views
                   Tags {
                     items {
                       id
@@ -318,6 +325,7 @@ export const createContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -366,6 +374,7 @@ export const createContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -427,6 +436,7 @@ export const createContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -516,6 +526,7 @@ export const createContent = /* GraphQL */ `
                   }
                   colors
                   userID
+                  views
                   Tags {
                     items {
                       id
@@ -529,6 +540,7 @@ export const createContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -577,6 +589,7 @@ export const createContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -629,6 +642,7 @@ export const createContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -729,6 +743,7 @@ export const createContent = /* GraphQL */ `
             }
             colors
             userID
+            views
             Tags {
               items {
                 id
@@ -764,6 +779,7 @@ export const createContent = /* GraphQL */ `
                   }
                   colors
                   userID
+                  views
                   Tags {
                     items {
                       id
@@ -777,6 +793,7 @@ export const createContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -825,6 +842,7 @@ export const createContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -877,6 +895,7 @@ export const createContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -962,6 +981,7 @@ export const createContent = /* GraphQL */ `
                   }
                   colors
                   userID
+                  views
                   Tags {
                     items {
                       id
@@ -975,6 +995,7 @@ export const createContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -1023,6 +1044,7 @@ export const createContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -1084,6 +1106,7 @@ export const createContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -1182,6 +1205,7 @@ export const createContent = /* GraphQL */ `
                   }
                   colors
                   userID
+                  views
                   Tags {
                     items {
                       id
@@ -1195,6 +1219,7 @@ export const createContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -1243,6 +1268,7 @@ export const createContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -1304,6 +1330,7 @@ export const createContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -1407,6 +1434,7 @@ export const updateContent = /* GraphQL */ `
       }
       colors
       userID
+      views
       Tags {
         items {
           id
@@ -1442,6 +1470,7 @@ export const updateContent = /* GraphQL */ `
             }
             colors
             userID
+            views
             Tags {
               items {
                 id
@@ -1477,6 +1506,7 @@ export const updateContent = /* GraphQL */ `
                   }
                   colors
                   userID
+                  views
                   Tags {
                     items {
                       id
@@ -1490,6 +1520,7 @@ export const updateContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -1538,6 +1569,7 @@ export const updateContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -1590,6 +1622,7 @@ export const updateContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -1675,6 +1708,7 @@ export const updateContent = /* GraphQL */ `
                   }
                   colors
                   userID
+                  views
                   Tags {
                     items {
                       id
@@ -1688,6 +1722,7 @@ export const updateContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -1736,6 +1771,7 @@ export const updateContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -1797,6 +1833,7 @@ export const updateContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -1886,6 +1923,7 @@ export const updateContent = /* GraphQL */ `
                   }
                   colors
                   userID
+                  views
                   Tags {
                     items {
                       id
@@ -1899,6 +1937,7 @@ export const updateContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -1947,6 +1986,7 @@ export const updateContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -1999,6 +2039,7 @@ export const updateContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -2099,6 +2140,7 @@ export const updateContent = /* GraphQL */ `
             }
             colors
             userID
+            views
             Tags {
               items {
                 id
@@ -2134,6 +2176,7 @@ export const updateContent = /* GraphQL */ `
                   }
                   colors
                   userID
+                  views
                   Tags {
                     items {
                       id
@@ -2147,6 +2190,7 @@ export const updateContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -2195,6 +2239,7 @@ export const updateContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -2247,6 +2292,7 @@ export const updateContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -2332,6 +2378,7 @@ export const updateContent = /* GraphQL */ `
                   }
                   colors
                   userID
+                  views
                   Tags {
                     items {
                       id
@@ -2345,6 +2392,7 @@ export const updateContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -2393,6 +2441,7 @@ export const updateContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -2454,6 +2503,7 @@ export const updateContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -2552,6 +2602,7 @@ export const updateContent = /* GraphQL */ `
                   }
                   colors
                   userID
+                  views
                   Tags {
                     items {
                       id
@@ -2565,6 +2616,7 @@ export const updateContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -2613,6 +2665,7 @@ export const updateContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -2674,6 +2727,7 @@ export const updateContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -2777,6 +2831,7 @@ export const deleteContent = /* GraphQL */ `
       }
       colors
       userID
+      views
       Tags {
         items {
           id
@@ -2812,6 +2867,7 @@ export const deleteContent = /* GraphQL */ `
             }
             colors
             userID
+            views
             Tags {
               items {
                 id
@@ -2847,6 +2903,7 @@ export const deleteContent = /* GraphQL */ `
                   }
                   colors
                   userID
+                  views
                   Tags {
                     items {
                       id
@@ -2860,6 +2917,7 @@ export const deleteContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -2908,6 +2966,7 @@ export const deleteContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -2960,6 +3019,7 @@ export const deleteContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -3045,6 +3105,7 @@ export const deleteContent = /* GraphQL */ `
                   }
                   colors
                   userID
+                  views
                   Tags {
                     items {
                       id
@@ -3058,6 +3119,7 @@ export const deleteContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -3106,6 +3168,7 @@ export const deleteContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -3167,6 +3230,7 @@ export const deleteContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -3256,6 +3320,7 @@ export const deleteContent = /* GraphQL */ `
                   }
                   colors
                   userID
+                  views
                   Tags {
                     items {
                       id
@@ -3269,6 +3334,7 @@ export const deleteContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -3317,6 +3383,7 @@ export const deleteContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -3369,6 +3436,7 @@ export const deleteContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -3469,6 +3537,7 @@ export const deleteContent = /* GraphQL */ `
             }
             colors
             userID
+            views
             Tags {
               items {
                 id
@@ -3504,6 +3573,7 @@ export const deleteContent = /* GraphQL */ `
                   }
                   colors
                   userID
+                  views
                   Tags {
                     items {
                       id
@@ -3517,6 +3587,7 @@ export const deleteContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -3565,6 +3636,7 @@ export const deleteContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -3617,6 +3689,7 @@ export const deleteContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -3702,6 +3775,7 @@ export const deleteContent = /* GraphQL */ `
                   }
                   colors
                   userID
+                  views
                   Tags {
                     items {
                       id
@@ -3715,6 +3789,7 @@ export const deleteContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -3763,6 +3838,7 @@ export const deleteContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -3824,6 +3900,7 @@ export const deleteContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -3922,6 +3999,7 @@ export const deleteContent = /* GraphQL */ `
                   }
                   colors
                   userID
+                  views
                   Tags {
                     items {
                       id
@@ -3935,6 +4013,7 @@ export const deleteContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -3983,6 +4062,7 @@ export const deleteContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -4044,6 +4124,7 @@ export const deleteContent = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -4155,6 +4236,7 @@ export const createTag = /* GraphQL */ `
             }
             colors
             userID
+            views
             Tags {
               items {
                 id
@@ -4190,6 +4272,7 @@ export const createTag = /* GraphQL */ `
                   }
                   colors
                   userID
+                  views
                   Tags {
                     items {
                       id
@@ -4203,6 +4286,7 @@ export const createTag = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -4251,6 +4335,7 @@ export const createTag = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -4303,6 +4388,7 @@ export const createTag = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -4388,6 +4474,7 @@ export const createTag = /* GraphQL */ `
                   }
                   colors
                   userID
+                  views
                   Tags {
                     items {
                       id
@@ -4401,6 +4488,7 @@ export const createTag = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -4449,6 +4537,7 @@ export const createTag = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -4510,6 +4599,7 @@ export const createTag = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -4599,6 +4689,7 @@ export const createTag = /* GraphQL */ `
                   }
                   colors
                   userID
+                  views
                   Tags {
                     items {
                       id
@@ -4612,6 +4703,7 @@ export const createTag = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -4660,6 +4752,7 @@ export const createTag = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -4712,6 +4805,7 @@ export const createTag = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -4818,6 +4912,7 @@ export const updateTag = /* GraphQL */ `
             }
             colors
             userID
+            views
             Tags {
               items {
                 id
@@ -4853,6 +4948,7 @@ export const updateTag = /* GraphQL */ `
                   }
                   colors
                   userID
+                  views
                   Tags {
                     items {
                       id
@@ -4866,6 +4962,7 @@ export const updateTag = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -4914,6 +5011,7 @@ export const updateTag = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -4966,6 +5064,7 @@ export const updateTag = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -5051,6 +5150,7 @@ export const updateTag = /* GraphQL */ `
                   }
                   colors
                   userID
+                  views
                   Tags {
                     items {
                       id
@@ -5064,6 +5164,7 @@ export const updateTag = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -5112,6 +5213,7 @@ export const updateTag = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -5173,6 +5275,7 @@ export const updateTag = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -5262,6 +5365,7 @@ export const updateTag = /* GraphQL */ `
                   }
                   colors
                   userID
+                  views
                   Tags {
                     items {
                       id
@@ -5275,6 +5379,7 @@ export const updateTag = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -5323,6 +5428,7 @@ export const updateTag = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -5375,6 +5481,7 @@ export const updateTag = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -5481,6 +5588,7 @@ export const deleteTag = /* GraphQL */ `
             }
             colors
             userID
+            views
             Tags {
               items {
                 id
@@ -5516,6 +5624,7 @@ export const deleteTag = /* GraphQL */ `
                   }
                   colors
                   userID
+                  views
                   Tags {
                     items {
                       id
@@ -5529,6 +5638,7 @@ export const deleteTag = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -5577,6 +5687,7 @@ export const deleteTag = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -5629,6 +5740,7 @@ export const deleteTag = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -5714,6 +5826,7 @@ export const deleteTag = /* GraphQL */ `
                   }
                   colors
                   userID
+                  views
                   Tags {
                     items {
                       id
@@ -5727,6 +5840,7 @@ export const deleteTag = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -5775,6 +5889,7 @@ export const deleteTag = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -5836,6 +5951,7 @@ export const deleteTag = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -5925,6 +6041,7 @@ export const deleteTag = /* GraphQL */ `
                   }
                   colors
                   userID
+                  views
                   Tags {
                     items {
                       id
@@ -5938,6 +6055,7 @@ export const deleteTag = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -5986,6 +6104,7 @@ export const deleteTag = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -6038,6 +6157,7 @@ export const deleteTag = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -6153,6 +6273,7 @@ export const createCollaborator = /* GraphQL */ `
             }
             colors
             userID
+            views
             Tags {
               items {
                 id
@@ -6188,6 +6309,7 @@ export const createCollaborator = /* GraphQL */ `
                   }
                   colors
                   userID
+                  views
                   Tags {
                     items {
                       id
@@ -6201,6 +6323,7 @@ export const createCollaborator = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -6249,6 +6372,7 @@ export const createCollaborator = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -6301,6 +6425,7 @@ export const createCollaborator = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -6386,6 +6511,7 @@ export const createCollaborator = /* GraphQL */ `
                   }
                   colors
                   userID
+                  views
                   Tags {
                     items {
                       id
@@ -6399,6 +6525,7 @@ export const createCollaborator = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -6447,6 +6574,7 @@ export const createCollaborator = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -6508,6 +6636,7 @@ export const createCollaborator = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -6606,6 +6735,7 @@ export const createCollaborator = /* GraphQL */ `
                   }
                   colors
                   userID
+                  views
                   Tags {
                     items {
                       id
@@ -6619,6 +6749,7 @@ export const createCollaborator = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -6667,6 +6798,7 @@ export const createCollaborator = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -6728,6 +6860,7 @@ export const createCollaborator = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -6847,6 +6980,7 @@ export const updateCollaborator = /* GraphQL */ `
             }
             colors
             userID
+            views
             Tags {
               items {
                 id
@@ -6882,6 +7016,7 @@ export const updateCollaborator = /* GraphQL */ `
                   }
                   colors
                   userID
+                  views
                   Tags {
                     items {
                       id
@@ -6895,6 +7030,7 @@ export const updateCollaborator = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -6943,6 +7079,7 @@ export const updateCollaborator = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -6995,6 +7132,7 @@ export const updateCollaborator = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -7080,6 +7218,7 @@ export const updateCollaborator = /* GraphQL */ `
                   }
                   colors
                   userID
+                  views
                   Tags {
                     items {
                       id
@@ -7093,6 +7232,7 @@ export const updateCollaborator = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -7141,6 +7281,7 @@ export const updateCollaborator = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -7202,6 +7343,7 @@ export const updateCollaborator = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -7300,6 +7442,7 @@ export const updateCollaborator = /* GraphQL */ `
                   }
                   colors
                   userID
+                  views
                   Tags {
                     items {
                       id
@@ -7313,6 +7456,7 @@ export const updateCollaborator = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -7361,6 +7505,7 @@ export const updateCollaborator = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -7422,6 +7567,7 @@ export const updateCollaborator = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -7541,6 +7687,7 @@ export const deleteCollaborator = /* GraphQL */ `
             }
             colors
             userID
+            views
             Tags {
               items {
                 id
@@ -7576,6 +7723,7 @@ export const deleteCollaborator = /* GraphQL */ `
                   }
                   colors
                   userID
+                  views
                   Tags {
                     items {
                       id
@@ -7589,6 +7737,7 @@ export const deleteCollaborator = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -7637,6 +7786,7 @@ export const deleteCollaborator = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -7689,6 +7839,7 @@ export const deleteCollaborator = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -7774,6 +7925,7 @@ export const deleteCollaborator = /* GraphQL */ `
                   }
                   colors
                   userID
+                  views
                   Tags {
                     items {
                       id
@@ -7787,6 +7939,7 @@ export const deleteCollaborator = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -7835,6 +7988,7 @@ export const deleteCollaborator = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -7896,6 +8050,7 @@ export const deleteCollaborator = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -7994,6 +8149,7 @@ export const deleteCollaborator = /* GraphQL */ `
                   }
                   colors
                   userID
+                  views
                   Tags {
                     items {
                       id
@@ -8007,6 +8163,7 @@ export const deleteCollaborator = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -8055,6 +8212,7 @@ export const deleteCollaborator = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -8116,6 +8274,7 @@ export const deleteCollaborator = /* GraphQL */ `
                         date
                         colors
                         userID
+                        views
                         createdAt
                         updatedAt
                         _version
@@ -8273,6 +8432,7 @@ export const createContentTag = /* GraphQL */ `
         }
         colors
         userID
+        views
         Tags {
           items {
             id
@@ -8308,6 +8468,7 @@ export const createContentTag = /* GraphQL */ `
               }
               colors
               userID
+              views
               Tags {
                 items {
                   id
@@ -8343,6 +8504,7 @@ export const createContentTag = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -8465,6 +8627,7 @@ export const createContentTag = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -8596,6 +8759,7 @@ export const createContentTag = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -8733,6 +8897,7 @@ export const createContentTag = /* GraphQL */ `
               }
               colors
               userID
+              views
               Tags {
                 items {
                   id
@@ -8768,6 +8933,7 @@ export const createContentTag = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -8890,6 +9056,7 @@ export const createContentTag = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -9030,6 +9197,7 @@ export const createContentTag = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -9176,6 +9344,7 @@ export const createContentTag = /* GraphQL */ `
               }
               colors
               userID
+              views
               Tags {
                 items {
                   id
@@ -9211,6 +9380,7 @@ export const createContentTag = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -9333,6 +9503,7 @@ export const createContentTag = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -9464,6 +9635,7 @@ export const createContentTag = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -9609,6 +9781,7 @@ export const updateContentTag = /* GraphQL */ `
         }
         colors
         userID
+        views
         Tags {
           items {
             id
@@ -9644,6 +9817,7 @@ export const updateContentTag = /* GraphQL */ `
               }
               colors
               userID
+              views
               Tags {
                 items {
                   id
@@ -9679,6 +9853,7 @@ export const updateContentTag = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -9801,6 +9976,7 @@ export const updateContentTag = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -9932,6 +10108,7 @@ export const updateContentTag = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -10069,6 +10246,7 @@ export const updateContentTag = /* GraphQL */ `
               }
               colors
               userID
+              views
               Tags {
                 items {
                   id
@@ -10104,6 +10282,7 @@ export const updateContentTag = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -10226,6 +10405,7 @@ export const updateContentTag = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -10366,6 +10546,7 @@ export const updateContentTag = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -10512,6 +10693,7 @@ export const updateContentTag = /* GraphQL */ `
               }
               colors
               userID
+              views
               Tags {
                 items {
                   id
@@ -10547,6 +10729,7 @@ export const updateContentTag = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -10669,6 +10852,7 @@ export const updateContentTag = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -10800,6 +10984,7 @@ export const updateContentTag = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -10945,6 +11130,7 @@ export const deleteContentTag = /* GraphQL */ `
         }
         colors
         userID
+        views
         Tags {
           items {
             id
@@ -10980,6 +11166,7 @@ export const deleteContentTag = /* GraphQL */ `
               }
               colors
               userID
+              views
               Tags {
                 items {
                   id
@@ -11015,6 +11202,7 @@ export const deleteContentTag = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -11137,6 +11325,7 @@ export const deleteContentTag = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -11268,6 +11457,7 @@ export const deleteContentTag = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -11405,6 +11595,7 @@ export const deleteContentTag = /* GraphQL */ `
               }
               colors
               userID
+              views
               Tags {
                 items {
                   id
@@ -11440,6 +11631,7 @@ export const deleteContentTag = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -11562,6 +11754,7 @@ export const deleteContentTag = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -11702,6 +11895,7 @@ export const deleteContentTag = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -11848,6 +12042,7 @@ export const deleteContentTag = /* GraphQL */ `
               }
               colors
               userID
+              views
               Tags {
                 items {
                   id
@@ -11883,6 +12078,7 @@ export const deleteContentTag = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -12005,6 +12201,7 @@ export const deleteContentTag = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -12136,6 +12333,7 @@ export const deleteContentTag = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -12281,6 +12479,7 @@ export const createContentCollaborator = /* GraphQL */ `
         }
         colors
         userID
+        views
         Tags {
           items {
             id
@@ -12316,6 +12515,7 @@ export const createContentCollaborator = /* GraphQL */ `
               }
               colors
               userID
+              views
               Tags {
                 items {
                   id
@@ -12351,6 +12551,7 @@ export const createContentCollaborator = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -12473,6 +12674,7 @@ export const createContentCollaborator = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -12604,6 +12806,7 @@ export const createContentCollaborator = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -12741,6 +12944,7 @@ export const createContentCollaborator = /* GraphQL */ `
               }
               colors
               userID
+              views
               Tags {
                 items {
                   id
@@ -12776,6 +12980,7 @@ export const createContentCollaborator = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -12898,6 +13103,7 @@ export const createContentCollaborator = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -13038,6 +13244,7 @@ export const createContentCollaborator = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -13193,6 +13400,7 @@ export const createContentCollaborator = /* GraphQL */ `
               }
               colors
               userID
+              views
               Tags {
                 items {
                   id
@@ -13228,6 +13436,7 @@ export const createContentCollaborator = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -13350,6 +13559,7 @@ export const createContentCollaborator = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -13490,6 +13700,7 @@ export const createContentCollaborator = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -13644,6 +13855,7 @@ export const updateContentCollaborator = /* GraphQL */ `
         }
         colors
         userID
+        views
         Tags {
           items {
             id
@@ -13679,6 +13891,7 @@ export const updateContentCollaborator = /* GraphQL */ `
               }
               colors
               userID
+              views
               Tags {
                 items {
                   id
@@ -13714,6 +13927,7 @@ export const updateContentCollaborator = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -13836,6 +14050,7 @@ export const updateContentCollaborator = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -13967,6 +14182,7 @@ export const updateContentCollaborator = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -14104,6 +14320,7 @@ export const updateContentCollaborator = /* GraphQL */ `
               }
               colors
               userID
+              views
               Tags {
                 items {
                   id
@@ -14139,6 +14356,7 @@ export const updateContentCollaborator = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -14261,6 +14479,7 @@ export const updateContentCollaborator = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -14401,6 +14620,7 @@ export const updateContentCollaborator = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -14556,6 +14776,7 @@ export const updateContentCollaborator = /* GraphQL */ `
               }
               colors
               userID
+              views
               Tags {
                 items {
                   id
@@ -14591,6 +14812,7 @@ export const updateContentCollaborator = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -14713,6 +14935,7 @@ export const updateContentCollaborator = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -14853,6 +15076,7 @@ export const updateContentCollaborator = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -15007,6 +15231,7 @@ export const deleteContentCollaborator = /* GraphQL */ `
         }
         colors
         userID
+        views
         Tags {
           items {
             id
@@ -15042,6 +15267,7 @@ export const deleteContentCollaborator = /* GraphQL */ `
               }
               colors
               userID
+              views
               Tags {
                 items {
                   id
@@ -15077,6 +15303,7 @@ export const deleteContentCollaborator = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -15199,6 +15426,7 @@ export const deleteContentCollaborator = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -15330,6 +15558,7 @@ export const deleteContentCollaborator = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -15467,6 +15696,7 @@ export const deleteContentCollaborator = /* GraphQL */ `
               }
               colors
               userID
+              views
               Tags {
                 items {
                   id
@@ -15502,6 +15732,7 @@ export const deleteContentCollaborator = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -15624,6 +15855,7 @@ export const deleteContentCollaborator = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -15764,6 +15996,7 @@ export const deleteContentCollaborator = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -15919,6 +16152,7 @@ export const deleteContentCollaborator = /* GraphQL */ `
               }
               colors
               userID
+              views
               Tags {
                 items {
                   id
@@ -15954,6 +16188,7 @@ export const deleteContentCollaborator = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -16076,6 +16311,7 @@ export const deleteContentCollaborator = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id
@@ -16216,6 +16452,7 @@ export const deleteContentCollaborator = /* GraphQL */ `
                     }
                     colors
                     userID
+                    views
                     Tags {
                       items {
                         id

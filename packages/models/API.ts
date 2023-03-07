@@ -13,6 +13,7 @@ export type CreateContentInput = {
   location?: LocationInput | null,
   colors?: Array< string | null > | null,
   userID: string,
+  views?: number | null,
   _version?: number | null,
   contentCategoryId?: string | null,
 };
@@ -76,6 +77,7 @@ export type ModelContentConditionInput = {
   date?: ModelStringInput | null,
   colors?: ModelStringInput | null,
   userID?: ModelStringInput | null,
+  views?: ModelIntInput | null,
   and?: Array< ModelContentConditionInput | null > | null,
   or?: Array< ModelContentConditionInput | null > | null,
   not?: ModelContentConditionInput | null,
@@ -172,6 +174,7 @@ export type Content = {
   location?: Location | null,
   colors?: Array< string | null > | null,
   userID: string,
+  views?: number | null,
   Tags?: ModelContentTagConnection | null,
   Category?: Category | null,
   Collaborators?: ModelContentCollaboratorConnection | null,
@@ -325,6 +328,7 @@ export type UpdateContentInput = {
   location?: LocationInput | null,
   colors?: Array< string | null > | null,
   userID?: string | null,
+  views?: number | null,
   _version?: number | null,
   contentCategoryId?: string | null,
 };
@@ -501,6 +505,7 @@ export type ModelContentFilterInput = {
   date?: ModelStringInput | null,
   colors?: ModelStringInput | null,
   userID?: ModelStringInput | null,
+  views?: ModelIntInput | null,
   and?: Array< ModelContentFilterInput | null > | null,
   or?: Array< ModelContentFilterInput | null > | null,
   not?: ModelContentFilterInput | null,
@@ -596,6 +601,7 @@ export type ModelSubscriptionContentFilterInput = {
   date?: ModelSubscriptionStringInput | null,
   colors?: ModelSubscriptionStringInput | null,
   userID?: ModelSubscriptionStringInput | null,
+  views?: ModelSubscriptionIntInput | null,
   and?: Array< ModelSubscriptionContentFilterInput | null > | null,
   or?: Array< ModelSubscriptionContentFilterInput | null > | null,
 };
@@ -725,6 +731,7 @@ export type CreateContentMutation = {
     } | null,
     colors?: Array< string | null > | null,
     userID: string,
+    views?: number | null,
     Tags?:  {
       __typename: "ModelContentTagConnection",
       items:  Array< {
@@ -767,6 +774,7 @@ export type CreateContentMutation = {
           } | null,
           colors?: Array< string | null > | null,
           userID: string,
+          views?: number | null,
           Tags?:  {
             __typename: "ModelContentTagConnection",
             items:  Array< {
@@ -809,6 +817,7 @@ export type CreateContentMutation = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -825,6 +834,7 @@ export type CreateContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -878,6 +888,7 @@ export type CreateContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -935,6 +946,7 @@ export type CreateContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -1029,6 +1041,7 @@ export type CreateContentMutation = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -1045,6 +1058,7 @@ export type CreateContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -1098,6 +1112,7 @@ export type CreateContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -1165,6 +1180,7 @@ export type CreateContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -1263,6 +1279,7 @@ export type CreateContentMutation = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -1279,6 +1296,7 @@ export type CreateContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -1332,6 +1350,7 @@ export type CreateContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -1389,6 +1408,7 @@ export type CreateContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -1498,6 +1518,7 @@ export type CreateContentMutation = {
           } | null,
           colors?: Array< string | null > | null,
           userID: string,
+          views?: number | null,
           Tags?:  {
             __typename: "ModelContentTagConnection",
             items:  Array< {
@@ -1540,6 +1561,7 @@ export type CreateContentMutation = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -1556,6 +1578,7 @@ export type CreateContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -1609,6 +1632,7 @@ export type CreateContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -1666,6 +1690,7 @@ export type CreateContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -1760,6 +1785,7 @@ export type CreateContentMutation = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -1776,6 +1802,7 @@ export type CreateContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -1829,6 +1856,7 @@ export type CreateContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -1896,6 +1924,7 @@ export type CreateContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -2004,6 +2033,7 @@ export type CreateContentMutation = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -2020,6 +2050,7 @@ export type CreateContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -2073,6 +2104,7 @@ export type CreateContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -2140,6 +2172,7 @@ export type CreateContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -2250,6 +2283,7 @@ export type UpdateContentMutation = {
     } | null,
     colors?: Array< string | null > | null,
     userID: string,
+    views?: number | null,
     Tags?:  {
       __typename: "ModelContentTagConnection",
       items:  Array< {
@@ -2292,6 +2326,7 @@ export type UpdateContentMutation = {
           } | null,
           colors?: Array< string | null > | null,
           userID: string,
+          views?: number | null,
           Tags?:  {
             __typename: "ModelContentTagConnection",
             items:  Array< {
@@ -2334,6 +2369,7 @@ export type UpdateContentMutation = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -2350,6 +2386,7 @@ export type UpdateContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -2403,6 +2440,7 @@ export type UpdateContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -2460,6 +2498,7 @@ export type UpdateContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -2554,6 +2593,7 @@ export type UpdateContentMutation = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -2570,6 +2610,7 @@ export type UpdateContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -2623,6 +2664,7 @@ export type UpdateContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -2690,6 +2732,7 @@ export type UpdateContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -2788,6 +2831,7 @@ export type UpdateContentMutation = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -2804,6 +2848,7 @@ export type UpdateContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -2857,6 +2902,7 @@ export type UpdateContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -2914,6 +2960,7 @@ export type UpdateContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -3023,6 +3070,7 @@ export type UpdateContentMutation = {
           } | null,
           colors?: Array< string | null > | null,
           userID: string,
+          views?: number | null,
           Tags?:  {
             __typename: "ModelContentTagConnection",
             items:  Array< {
@@ -3065,6 +3113,7 @@ export type UpdateContentMutation = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -3081,6 +3130,7 @@ export type UpdateContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -3134,6 +3184,7 @@ export type UpdateContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -3191,6 +3242,7 @@ export type UpdateContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -3285,6 +3337,7 @@ export type UpdateContentMutation = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -3301,6 +3354,7 @@ export type UpdateContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -3354,6 +3408,7 @@ export type UpdateContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -3421,6 +3476,7 @@ export type UpdateContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -3529,6 +3585,7 @@ export type UpdateContentMutation = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -3545,6 +3602,7 @@ export type UpdateContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -3598,6 +3656,7 @@ export type UpdateContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -3665,6 +3724,7 @@ export type UpdateContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -3775,6 +3835,7 @@ export type DeleteContentMutation = {
     } | null,
     colors?: Array< string | null > | null,
     userID: string,
+    views?: number | null,
     Tags?:  {
       __typename: "ModelContentTagConnection",
       items:  Array< {
@@ -3817,6 +3878,7 @@ export type DeleteContentMutation = {
           } | null,
           colors?: Array< string | null > | null,
           userID: string,
+          views?: number | null,
           Tags?:  {
             __typename: "ModelContentTagConnection",
             items:  Array< {
@@ -3859,6 +3921,7 @@ export type DeleteContentMutation = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -3875,6 +3938,7 @@ export type DeleteContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -3928,6 +3992,7 @@ export type DeleteContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -3985,6 +4050,7 @@ export type DeleteContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -4079,6 +4145,7 @@ export type DeleteContentMutation = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -4095,6 +4162,7 @@ export type DeleteContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -4148,6 +4216,7 @@ export type DeleteContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -4215,6 +4284,7 @@ export type DeleteContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -4313,6 +4383,7 @@ export type DeleteContentMutation = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -4329,6 +4400,7 @@ export type DeleteContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -4382,6 +4454,7 @@ export type DeleteContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -4439,6 +4512,7 @@ export type DeleteContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -4548,6 +4622,7 @@ export type DeleteContentMutation = {
           } | null,
           colors?: Array< string | null > | null,
           userID: string,
+          views?: number | null,
           Tags?:  {
             __typename: "ModelContentTagConnection",
             items:  Array< {
@@ -4590,6 +4665,7 @@ export type DeleteContentMutation = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -4606,6 +4682,7 @@ export type DeleteContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -4659,6 +4736,7 @@ export type DeleteContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -4716,6 +4794,7 @@ export type DeleteContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -4810,6 +4889,7 @@ export type DeleteContentMutation = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -4826,6 +4906,7 @@ export type DeleteContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -4879,6 +4960,7 @@ export type DeleteContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -4946,6 +5028,7 @@ export type DeleteContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -5054,6 +5137,7 @@ export type DeleteContentMutation = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -5070,6 +5154,7 @@ export type DeleteContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -5123,6 +5208,7 @@ export type DeleteContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -5190,6 +5276,7 @@ export type DeleteContentMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -5311,6 +5398,7 @@ export type CreateTagMutation = {
           } | null,
           colors?: Array< string | null > | null,
           userID: string,
+          views?: number | null,
           Tags?:  {
             __typename: "ModelContentTagConnection",
             items:  Array< {
@@ -5353,6 +5441,7 @@ export type CreateTagMutation = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -5369,6 +5458,7 @@ export type CreateTagMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -5422,6 +5512,7 @@ export type CreateTagMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -5479,6 +5570,7 @@ export type CreateTagMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -5573,6 +5665,7 @@ export type CreateTagMutation = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -5589,6 +5682,7 @@ export type CreateTagMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -5642,6 +5736,7 @@ export type CreateTagMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -5709,6 +5804,7 @@ export type CreateTagMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -5807,6 +5903,7 @@ export type CreateTagMutation = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -5823,6 +5920,7 @@ export type CreateTagMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -5876,6 +5974,7 @@ export type CreateTagMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -5933,6 +6032,7 @@ export type CreateTagMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -6049,6 +6149,7 @@ export type UpdateTagMutation = {
           } | null,
           colors?: Array< string | null > | null,
           userID: string,
+          views?: number | null,
           Tags?:  {
             __typename: "ModelContentTagConnection",
             items:  Array< {
@@ -6091,6 +6192,7 @@ export type UpdateTagMutation = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -6107,6 +6209,7 @@ export type UpdateTagMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -6160,6 +6263,7 @@ export type UpdateTagMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -6217,6 +6321,7 @@ export type UpdateTagMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -6311,6 +6416,7 @@ export type UpdateTagMutation = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -6327,6 +6433,7 @@ export type UpdateTagMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -6380,6 +6487,7 @@ export type UpdateTagMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -6447,6 +6555,7 @@ export type UpdateTagMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -6545,6 +6654,7 @@ export type UpdateTagMutation = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -6561,6 +6671,7 @@ export type UpdateTagMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -6614,6 +6725,7 @@ export type UpdateTagMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -6671,6 +6783,7 @@ export type UpdateTagMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -6787,6 +6900,7 @@ export type DeleteTagMutation = {
           } | null,
           colors?: Array< string | null > | null,
           userID: string,
+          views?: number | null,
           Tags?:  {
             __typename: "ModelContentTagConnection",
             items:  Array< {
@@ -6829,6 +6943,7 @@ export type DeleteTagMutation = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -6845,6 +6960,7 @@ export type DeleteTagMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -6898,6 +7014,7 @@ export type DeleteTagMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -6955,6 +7072,7 @@ export type DeleteTagMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -7049,6 +7167,7 @@ export type DeleteTagMutation = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -7065,6 +7184,7 @@ export type DeleteTagMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -7118,6 +7238,7 @@ export type DeleteTagMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -7185,6 +7306,7 @@ export type DeleteTagMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -7283,6 +7405,7 @@ export type DeleteTagMutation = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -7299,6 +7422,7 @@ export type DeleteTagMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -7352,6 +7476,7 @@ export type DeleteTagMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -7409,6 +7534,7 @@ export type DeleteTagMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -7535,6 +7661,7 @@ export type CreateCollaboratorMutation = {
           } | null,
           colors?: Array< string | null > | null,
           userID: string,
+          views?: number | null,
           Tags?:  {
             __typename: "ModelContentTagConnection",
             items:  Array< {
@@ -7577,6 +7704,7 @@ export type CreateCollaboratorMutation = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -7593,6 +7721,7 @@ export type CreateCollaboratorMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -7646,6 +7775,7 @@ export type CreateCollaboratorMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -7703,6 +7833,7 @@ export type CreateCollaboratorMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -7797,6 +7928,7 @@ export type CreateCollaboratorMutation = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -7813,6 +7945,7 @@ export type CreateCollaboratorMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -7866,6 +7999,7 @@ export type CreateCollaboratorMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -7933,6 +8067,7 @@ export type CreateCollaboratorMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -8041,6 +8176,7 @@ export type CreateCollaboratorMutation = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -8057,6 +8193,7 @@ export type CreateCollaboratorMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -8110,6 +8247,7 @@ export type CreateCollaboratorMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -8177,6 +8315,7 @@ export type CreateCollaboratorMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -8307,6 +8446,7 @@ export type UpdateCollaboratorMutation = {
           } | null,
           colors?: Array< string | null > | null,
           userID: string,
+          views?: number | null,
           Tags?:  {
             __typename: "ModelContentTagConnection",
             items:  Array< {
@@ -8349,6 +8489,7 @@ export type UpdateCollaboratorMutation = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -8365,6 +8506,7 @@ export type UpdateCollaboratorMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -8418,6 +8560,7 @@ export type UpdateCollaboratorMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -8475,6 +8618,7 @@ export type UpdateCollaboratorMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -8569,6 +8713,7 @@ export type UpdateCollaboratorMutation = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -8585,6 +8730,7 @@ export type UpdateCollaboratorMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -8638,6 +8784,7 @@ export type UpdateCollaboratorMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -8705,6 +8852,7 @@ export type UpdateCollaboratorMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -8813,6 +8961,7 @@ export type UpdateCollaboratorMutation = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -8829,6 +8978,7 @@ export type UpdateCollaboratorMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -8882,6 +9032,7 @@ export type UpdateCollaboratorMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -8949,6 +9100,7 @@ export type UpdateCollaboratorMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -9079,6 +9231,7 @@ export type DeleteCollaboratorMutation = {
           } | null,
           colors?: Array< string | null > | null,
           userID: string,
+          views?: number | null,
           Tags?:  {
             __typename: "ModelContentTagConnection",
             items:  Array< {
@@ -9121,6 +9274,7 @@ export type DeleteCollaboratorMutation = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -9137,6 +9291,7 @@ export type DeleteCollaboratorMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -9190,6 +9345,7 @@ export type DeleteCollaboratorMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -9247,6 +9403,7 @@ export type DeleteCollaboratorMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -9341,6 +9498,7 @@ export type DeleteCollaboratorMutation = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -9357,6 +9515,7 @@ export type DeleteCollaboratorMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -9410,6 +9569,7 @@ export type DeleteCollaboratorMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -9477,6 +9637,7 @@ export type DeleteCollaboratorMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -9585,6 +9746,7 @@ export type DeleteCollaboratorMutation = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -9601,6 +9763,7 @@ export type DeleteCollaboratorMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -9654,6 +9817,7 @@ export type DeleteCollaboratorMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -9721,6 +9885,7 @@ export type DeleteCollaboratorMutation = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -9892,6 +10057,7 @@ export type CreateContentTagMutation = {
       } | null,
       colors?: Array< string | null > | null,
       userID: string,
+      views?: number | null,
       Tags?:  {
         __typename: "ModelContentTagConnection",
         items:  Array< {
@@ -9934,6 +10100,7 @@ export type CreateContentTagMutation = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -9976,6 +10143,7 @@ export type CreateContentTagMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -10114,6 +10282,7 @@ export type CreateContentTagMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -10262,6 +10431,7 @@ export type CreateContentTagMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -10415,6 +10585,7 @@ export type CreateContentTagMutation = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -10457,6 +10628,7 @@ export type CreateContentTagMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -10595,6 +10767,7 @@ export type CreateContentTagMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -10753,6 +10926,7 @@ export type CreateContentTagMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -10916,6 +11090,7 @@ export type CreateContentTagMutation = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -10958,6 +11133,7 @@ export type CreateContentTagMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -11096,6 +11272,7 @@ export type CreateContentTagMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -11244,6 +11421,7 @@ export type CreateContentTagMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -11404,6 +11582,7 @@ export type UpdateContentTagMutation = {
       } | null,
       colors?: Array< string | null > | null,
       userID: string,
+      views?: number | null,
       Tags?:  {
         __typename: "ModelContentTagConnection",
         items:  Array< {
@@ -11446,6 +11625,7 @@ export type UpdateContentTagMutation = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -11488,6 +11668,7 @@ export type UpdateContentTagMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -11626,6 +11807,7 @@ export type UpdateContentTagMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -11774,6 +11956,7 @@ export type UpdateContentTagMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -11927,6 +12110,7 @@ export type UpdateContentTagMutation = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -11969,6 +12153,7 @@ export type UpdateContentTagMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -12107,6 +12292,7 @@ export type UpdateContentTagMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -12265,6 +12451,7 @@ export type UpdateContentTagMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -12428,6 +12615,7 @@ export type UpdateContentTagMutation = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -12470,6 +12658,7 @@ export type UpdateContentTagMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -12608,6 +12797,7 @@ export type UpdateContentTagMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -12756,6 +12946,7 @@ export type UpdateContentTagMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -12916,6 +13107,7 @@ export type DeleteContentTagMutation = {
       } | null,
       colors?: Array< string | null > | null,
       userID: string,
+      views?: number | null,
       Tags?:  {
         __typename: "ModelContentTagConnection",
         items:  Array< {
@@ -12958,6 +13150,7 @@ export type DeleteContentTagMutation = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -13000,6 +13193,7 @@ export type DeleteContentTagMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -13138,6 +13332,7 @@ export type DeleteContentTagMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -13286,6 +13481,7 @@ export type DeleteContentTagMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -13439,6 +13635,7 @@ export type DeleteContentTagMutation = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -13481,6 +13678,7 @@ export type DeleteContentTagMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -13619,6 +13817,7 @@ export type DeleteContentTagMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -13777,6 +13976,7 @@ export type DeleteContentTagMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -13940,6 +14140,7 @@ export type DeleteContentTagMutation = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -13982,6 +14183,7 @@ export type DeleteContentTagMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -14120,6 +14322,7 @@ export type DeleteContentTagMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -14268,6 +14471,7 @@ export type DeleteContentTagMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -14428,6 +14632,7 @@ export type CreateContentCollaboratorMutation = {
       } | null,
       colors?: Array< string | null > | null,
       userID: string,
+      views?: number | null,
       Tags?:  {
         __typename: "ModelContentTagConnection",
         items:  Array< {
@@ -14470,6 +14675,7 @@ export type CreateContentCollaboratorMutation = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -14512,6 +14718,7 @@ export type CreateContentCollaboratorMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -14650,6 +14857,7 @@ export type CreateContentCollaboratorMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -14798,6 +15006,7 @@ export type CreateContentCollaboratorMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -14951,6 +15160,7 @@ export type CreateContentCollaboratorMutation = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -14993,6 +15203,7 @@ export type CreateContentCollaboratorMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -15131,6 +15342,7 @@ export type CreateContentCollaboratorMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -15289,6 +15501,7 @@ export type CreateContentCollaboratorMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -15462,6 +15675,7 @@ export type CreateContentCollaboratorMutation = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -15504,6 +15718,7 @@ export type CreateContentCollaboratorMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -15642,6 +15857,7 @@ export type CreateContentCollaboratorMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -15800,6 +16016,7 @@ export type CreateContentCollaboratorMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -15970,6 +16187,7 @@ export type UpdateContentCollaboratorMutation = {
       } | null,
       colors?: Array< string | null > | null,
       userID: string,
+      views?: number | null,
       Tags?:  {
         __typename: "ModelContentTagConnection",
         items:  Array< {
@@ -16012,6 +16230,7 @@ export type UpdateContentCollaboratorMutation = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -16054,6 +16273,7 @@ export type UpdateContentCollaboratorMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -16192,6 +16412,7 @@ export type UpdateContentCollaboratorMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -16340,6 +16561,7 @@ export type UpdateContentCollaboratorMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -16493,6 +16715,7 @@ export type UpdateContentCollaboratorMutation = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -16535,6 +16758,7 @@ export type UpdateContentCollaboratorMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -16673,6 +16897,7 @@ export type UpdateContentCollaboratorMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -16831,6 +17056,7 @@ export type UpdateContentCollaboratorMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -17004,6 +17230,7 @@ export type UpdateContentCollaboratorMutation = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -17046,6 +17273,7 @@ export type UpdateContentCollaboratorMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -17184,6 +17412,7 @@ export type UpdateContentCollaboratorMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -17342,6 +17571,7 @@ export type UpdateContentCollaboratorMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -17512,6 +17742,7 @@ export type DeleteContentCollaboratorMutation = {
       } | null,
       colors?: Array< string | null > | null,
       userID: string,
+      views?: number | null,
       Tags?:  {
         __typename: "ModelContentTagConnection",
         items:  Array< {
@@ -17554,6 +17785,7 @@ export type DeleteContentCollaboratorMutation = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -17596,6 +17828,7 @@ export type DeleteContentCollaboratorMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -17734,6 +17967,7 @@ export type DeleteContentCollaboratorMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -17882,6 +18116,7 @@ export type DeleteContentCollaboratorMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -18035,6 +18270,7 @@ export type DeleteContentCollaboratorMutation = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -18077,6 +18313,7 @@ export type DeleteContentCollaboratorMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -18215,6 +18452,7 @@ export type DeleteContentCollaboratorMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -18373,6 +18611,7 @@ export type DeleteContentCollaboratorMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -18546,6 +18785,7 @@ export type DeleteContentCollaboratorMutation = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -18588,6 +18828,7 @@ export type DeleteContentCollaboratorMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -18726,6 +18967,7 @@ export type DeleteContentCollaboratorMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -18884,6 +19126,7 @@ export type DeleteContentCollaboratorMutation = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -19060,6 +19303,7 @@ export type GetContentQuery = {
     } | null,
     colors?: Array< string | null > | null,
     userID: string,
+    views?: number | null,
     Tags?:  {
       __typename: "ModelContentTagConnection",
       items:  Array< {
@@ -19102,6 +19346,7 @@ export type GetContentQuery = {
           } | null,
           colors?: Array< string | null > | null,
           userID: string,
+          views?: number | null,
           Tags?:  {
             __typename: "ModelContentTagConnection",
             items:  Array< {
@@ -19144,6 +19389,7 @@ export type GetContentQuery = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -19160,6 +19406,7 @@ export type GetContentQuery = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -19213,6 +19460,7 @@ export type GetContentQuery = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -19270,6 +19518,7 @@ export type GetContentQuery = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -19364,6 +19613,7 @@ export type GetContentQuery = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -19380,6 +19630,7 @@ export type GetContentQuery = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -19433,6 +19684,7 @@ export type GetContentQuery = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -19500,6 +19752,7 @@ export type GetContentQuery = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -19598,6 +19851,7 @@ export type GetContentQuery = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -19614,6 +19868,7 @@ export type GetContentQuery = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -19667,6 +19922,7 @@ export type GetContentQuery = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -19724,6 +19980,7 @@ export type GetContentQuery = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -19833,6 +20090,7 @@ export type GetContentQuery = {
           } | null,
           colors?: Array< string | null > | null,
           userID: string,
+          views?: number | null,
           Tags?:  {
             __typename: "ModelContentTagConnection",
             items:  Array< {
@@ -19875,6 +20133,7 @@ export type GetContentQuery = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -19891,6 +20150,7 @@ export type GetContentQuery = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -19944,6 +20204,7 @@ export type GetContentQuery = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -20001,6 +20262,7 @@ export type GetContentQuery = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -20095,6 +20357,7 @@ export type GetContentQuery = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -20111,6 +20374,7 @@ export type GetContentQuery = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -20164,6 +20428,7 @@ export type GetContentQuery = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -20231,6 +20496,7 @@ export type GetContentQuery = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -20339,6 +20605,7 @@ export type GetContentQuery = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -20355,6 +20622,7 @@ export type GetContentQuery = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -20408,6 +20676,7 @@ export type GetContentQuery = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -20475,6 +20744,7 @@ export type GetContentQuery = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -20588,6 +20858,7 @@ export type ListContentsQuery = {
       } | null,
       colors?: Array< string | null > | null,
       userID: string,
+      views?: number | null,
       Tags?:  {
         __typename: "ModelContentTagConnection",
         items:  Array< {
@@ -20630,6 +20901,7 @@ export type ListContentsQuery = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -20672,6 +20944,7 @@ export type ListContentsQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -20810,6 +21083,7 @@ export type ListContentsQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -20958,6 +21232,7 @@ export type ListContentsQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -21111,6 +21386,7 @@ export type ListContentsQuery = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -21153,6 +21429,7 @@ export type ListContentsQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -21291,6 +21568,7 @@ export type ListContentsQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -21449,6 +21727,7 @@ export type ListContentsQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -21616,6 +21895,7 @@ export type SyncContentsQuery = {
       } | null,
       colors?: Array< string | null > | null,
       userID: string,
+      views?: number | null,
       Tags?:  {
         __typename: "ModelContentTagConnection",
         items:  Array< {
@@ -21658,6 +21938,7 @@ export type SyncContentsQuery = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -21700,6 +21981,7 @@ export type SyncContentsQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -21838,6 +22120,7 @@ export type SyncContentsQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -21986,6 +22269,7 @@ export type SyncContentsQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -22139,6 +22423,7 @@ export type SyncContentsQuery = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -22181,6 +22466,7 @@ export type SyncContentsQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -22319,6 +22605,7 @@ export type SyncContentsQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -22477,6 +22764,7 @@ export type SyncContentsQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -22650,6 +22938,7 @@ export type GetTagQuery = {
           } | null,
           colors?: Array< string | null > | null,
           userID: string,
+          views?: number | null,
           Tags?:  {
             __typename: "ModelContentTagConnection",
             items:  Array< {
@@ -22692,6 +22981,7 @@ export type GetTagQuery = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -22708,6 +22998,7 @@ export type GetTagQuery = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -22761,6 +23052,7 @@ export type GetTagQuery = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -22818,6 +23110,7 @@ export type GetTagQuery = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -22912,6 +23205,7 @@ export type GetTagQuery = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -22928,6 +23222,7 @@ export type GetTagQuery = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -22981,6 +23276,7 @@ export type GetTagQuery = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -23048,6 +23344,7 @@ export type GetTagQuery = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -23146,6 +23443,7 @@ export type GetTagQuery = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -23162,6 +23460,7 @@ export type GetTagQuery = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -23215,6 +23514,7 @@ export type GetTagQuery = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -23272,6 +23572,7 @@ export type GetTagQuery = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -23391,6 +23692,7 @@ export type ListTagsQuery = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -23433,6 +23735,7 @@ export type ListTagsQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -23571,6 +23874,7 @@ export type ListTagsQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -23719,6 +24023,7 @@ export type ListTagsQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -23886,6 +24191,7 @@ export type SyncTagsQuery = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -23928,6 +24234,7 @@ export type SyncTagsQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -24066,6 +24373,7 @@ export type SyncTagsQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -24214,6 +24522,7 @@ export type SyncTagsQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -24386,6 +24695,7 @@ export type GetCollaboratorQuery = {
           } | null,
           colors?: Array< string | null > | null,
           userID: string,
+          views?: number | null,
           Tags?:  {
             __typename: "ModelContentTagConnection",
             items:  Array< {
@@ -24428,6 +24738,7 @@ export type GetCollaboratorQuery = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -24444,6 +24755,7 @@ export type GetCollaboratorQuery = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -24497,6 +24809,7 @@ export type GetCollaboratorQuery = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -24554,6 +24867,7 @@ export type GetCollaboratorQuery = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -24648,6 +24962,7 @@ export type GetCollaboratorQuery = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -24664,6 +24979,7 @@ export type GetCollaboratorQuery = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -24717,6 +25033,7 @@ export type GetCollaboratorQuery = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -24784,6 +25101,7 @@ export type GetCollaboratorQuery = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -24892,6 +25210,7 @@ export type GetCollaboratorQuery = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -24908,6 +25227,7 @@ export type GetCollaboratorQuery = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -24961,6 +25281,7 @@ export type GetCollaboratorQuery = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -25028,6 +25349,7 @@ export type GetCollaboratorQuery = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -25161,6 +25483,7 @@ export type ListCollaboratorsQuery = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -25203,6 +25526,7 @@ export type ListCollaboratorsQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -25341,6 +25665,7 @@ export type ListCollaboratorsQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -25499,6 +25824,7 @@ export type ListCollaboratorsQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -25686,6 +26012,7 @@ export type SyncCollaboratorsQuery = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -25728,6 +26055,7 @@ export type SyncCollaboratorsQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -25866,6 +26194,7 @@ export type SyncCollaboratorsQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -26024,6 +26353,7 @@ export type SyncCollaboratorsQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -26259,6 +26589,7 @@ export type GetContentTagQuery = {
       } | null,
       colors?: Array< string | null > | null,
       userID: string,
+      views?: number | null,
       Tags?:  {
         __typename: "ModelContentTagConnection",
         items:  Array< {
@@ -26301,6 +26632,7 @@ export type GetContentTagQuery = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -26343,6 +26675,7 @@ export type GetContentTagQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -26481,6 +26814,7 @@ export type GetContentTagQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -26629,6 +26963,7 @@ export type GetContentTagQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -26782,6 +27117,7 @@ export type GetContentTagQuery = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -26824,6 +27160,7 @@ export type GetContentTagQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -26962,6 +27299,7 @@ export type GetContentTagQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -27120,6 +27458,7 @@ export type GetContentTagQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -27283,6 +27622,7 @@ export type GetContentTagQuery = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -27325,6 +27665,7 @@ export type GetContentTagQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -27463,6 +27804,7 @@ export type GetContentTagQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -27611,6 +27953,7 @@ export type GetContentTagQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -27774,6 +28117,7 @@ export type ListContentTagsQuery = {
         } | null,
         colors?: Array< string | null > | null,
         userID: string,
+        views?: number | null,
         Tags?:  {
           __typename: "ModelContentTagConnection",
           items:  Array< {
@@ -27816,6 +28160,7 @@ export type ListContentTagsQuery = {
               } | null,
               colors?: Array< string | null > | null,
               userID: string,
+              views?: number | null,
               Tags?:  {
                 __typename: "ModelContentTagConnection",
                 items:  Array< {
@@ -27853,6 +28198,7 @@ export type ListContentTagsQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -27953,6 +28299,7 @@ export type ListContentTagsQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -28063,6 +28410,7 @@ export type ListContentTagsQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -28183,6 +28531,7 @@ export type ListContentTagsQuery = {
               } | null,
               colors?: Array< string | null > | null,
               userID: string,
+              views?: number | null,
               Tags?:  {
                 __typename: "ModelContentTagConnection",
                 items:  Array< {
@@ -28220,6 +28569,7 @@ export type ListContentTagsQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -28320,6 +28670,7 @@ export type ListContentTagsQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -28440,6 +28791,7 @@ export type ListContentTagsQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -28570,6 +28922,7 @@ export type ListContentTagsQuery = {
               } | null,
               colors?: Array< string | null > | null,
               userID: string,
+              views?: number | null,
               Tags?:  {
                 __typename: "ModelContentTagConnection",
                 items:  Array< {
@@ -28607,6 +28960,7 @@ export type ListContentTagsQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -28707,6 +29061,7 @@ export type ListContentTagsQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -28817,6 +29172,7 @@ export type ListContentTagsQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -28951,6 +29307,7 @@ export type SyncContentTagsQuery = {
         } | null,
         colors?: Array< string | null > | null,
         userID: string,
+        views?: number | null,
         Tags?:  {
           __typename: "ModelContentTagConnection",
           items:  Array< {
@@ -28993,6 +29350,7 @@ export type SyncContentTagsQuery = {
               } | null,
               colors?: Array< string | null > | null,
               userID: string,
+              views?: number | null,
               Tags?:  {
                 __typename: "ModelContentTagConnection",
                 items:  Array< {
@@ -29030,6 +29388,7 @@ export type SyncContentTagsQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -29130,6 +29489,7 @@ export type SyncContentTagsQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -29240,6 +29600,7 @@ export type SyncContentTagsQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -29360,6 +29721,7 @@ export type SyncContentTagsQuery = {
               } | null,
               colors?: Array< string | null > | null,
               userID: string,
+              views?: number | null,
               Tags?:  {
                 __typename: "ModelContentTagConnection",
                 items:  Array< {
@@ -29397,6 +29759,7 @@ export type SyncContentTagsQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -29497,6 +29860,7 @@ export type SyncContentTagsQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -29617,6 +29981,7 @@ export type SyncContentTagsQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -29747,6 +30112,7 @@ export type SyncContentTagsQuery = {
               } | null,
               colors?: Array< string | null > | null,
               userID: string,
+              views?: number | null,
               Tags?:  {
                 __typename: "ModelContentTagConnection",
                 items:  Array< {
@@ -29784,6 +30150,7 @@ export type SyncContentTagsQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -29884,6 +30251,7 @@ export type SyncContentTagsQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -29994,6 +30362,7 @@ export type SyncContentTagsQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -30129,6 +30498,7 @@ export type ContentTagsByContentIdQuery = {
         } | null,
         colors?: Array< string | null > | null,
         userID: string,
+        views?: number | null,
         Tags?:  {
           __typename: "ModelContentTagConnection",
           items:  Array< {
@@ -30171,6 +30541,7 @@ export type ContentTagsByContentIdQuery = {
               } | null,
               colors?: Array< string | null > | null,
               userID: string,
+              views?: number | null,
               Tags?:  {
                 __typename: "ModelContentTagConnection",
                 items:  Array< {
@@ -30208,6 +30579,7 @@ export type ContentTagsByContentIdQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -30308,6 +30680,7 @@ export type ContentTagsByContentIdQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -30418,6 +30791,7 @@ export type ContentTagsByContentIdQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -30538,6 +30912,7 @@ export type ContentTagsByContentIdQuery = {
               } | null,
               colors?: Array< string | null > | null,
               userID: string,
+              views?: number | null,
               Tags?:  {
                 __typename: "ModelContentTagConnection",
                 items:  Array< {
@@ -30575,6 +30950,7 @@ export type ContentTagsByContentIdQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -30675,6 +31051,7 @@ export type ContentTagsByContentIdQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -30795,6 +31172,7 @@ export type ContentTagsByContentIdQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -30925,6 +31303,7 @@ export type ContentTagsByContentIdQuery = {
               } | null,
               colors?: Array< string | null > | null,
               userID: string,
+              views?: number | null,
               Tags?:  {
                 __typename: "ModelContentTagConnection",
                 items:  Array< {
@@ -30962,6 +31341,7 @@ export type ContentTagsByContentIdQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -31062,6 +31442,7 @@ export type ContentTagsByContentIdQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -31172,6 +31553,7 @@ export type ContentTagsByContentIdQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -31307,6 +31689,7 @@ export type ContentTagsByTagIdQuery = {
         } | null,
         colors?: Array< string | null > | null,
         userID: string,
+        views?: number | null,
         Tags?:  {
           __typename: "ModelContentTagConnection",
           items:  Array< {
@@ -31349,6 +31732,7 @@ export type ContentTagsByTagIdQuery = {
               } | null,
               colors?: Array< string | null > | null,
               userID: string,
+              views?: number | null,
               Tags?:  {
                 __typename: "ModelContentTagConnection",
                 items:  Array< {
@@ -31386,6 +31770,7 @@ export type ContentTagsByTagIdQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -31486,6 +31871,7 @@ export type ContentTagsByTagIdQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -31596,6 +31982,7 @@ export type ContentTagsByTagIdQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -31716,6 +32103,7 @@ export type ContentTagsByTagIdQuery = {
               } | null,
               colors?: Array< string | null > | null,
               userID: string,
+              views?: number | null,
               Tags?:  {
                 __typename: "ModelContentTagConnection",
                 items:  Array< {
@@ -31753,6 +32141,7 @@ export type ContentTagsByTagIdQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -31853,6 +32242,7 @@ export type ContentTagsByTagIdQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -31973,6 +32363,7 @@ export type ContentTagsByTagIdQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -32103,6 +32494,7 @@ export type ContentTagsByTagIdQuery = {
               } | null,
               colors?: Array< string | null > | null,
               userID: string,
+              views?: number | null,
               Tags?:  {
                 __typename: "ModelContentTagConnection",
                 items:  Array< {
@@ -32140,6 +32532,7 @@ export type ContentTagsByTagIdQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -32240,6 +32633,7 @@ export type ContentTagsByTagIdQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -32350,6 +32744,7 @@ export type ContentTagsByTagIdQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -32479,6 +32874,7 @@ export type GetContentCollaboratorQuery = {
       } | null,
       colors?: Array< string | null > | null,
       userID: string,
+      views?: number | null,
       Tags?:  {
         __typename: "ModelContentTagConnection",
         items:  Array< {
@@ -32521,6 +32917,7 @@ export type GetContentCollaboratorQuery = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -32563,6 +32960,7 @@ export type GetContentCollaboratorQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -32701,6 +33099,7 @@ export type GetContentCollaboratorQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -32849,6 +33248,7 @@ export type GetContentCollaboratorQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -33002,6 +33402,7 @@ export type GetContentCollaboratorQuery = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -33044,6 +33445,7 @@ export type GetContentCollaboratorQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -33182,6 +33584,7 @@ export type GetContentCollaboratorQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -33340,6 +33743,7 @@ export type GetContentCollaboratorQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -33513,6 +33917,7 @@ export type GetContentCollaboratorQuery = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -33555,6 +33960,7 @@ export type GetContentCollaboratorQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -33693,6 +34099,7 @@ export type GetContentCollaboratorQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -33851,6 +34258,7 @@ export type GetContentCollaboratorQuery = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -34024,6 +34432,7 @@ export type ListContentCollaboratorsQuery = {
         } | null,
         colors?: Array< string | null > | null,
         userID: string,
+        views?: number | null,
         Tags?:  {
           __typename: "ModelContentTagConnection",
           items:  Array< {
@@ -34066,6 +34475,7 @@ export type ListContentCollaboratorsQuery = {
               } | null,
               colors?: Array< string | null > | null,
               userID: string,
+              views?: number | null,
               Tags?:  {
                 __typename: "ModelContentTagConnection",
                 items:  Array< {
@@ -34103,6 +34513,7 @@ export type ListContentCollaboratorsQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -34203,6 +34614,7 @@ export type ListContentCollaboratorsQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -34313,6 +34725,7 @@ export type ListContentCollaboratorsQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -34433,6 +34846,7 @@ export type ListContentCollaboratorsQuery = {
               } | null,
               colors?: Array< string | null > | null,
               userID: string,
+              views?: number | null,
               Tags?:  {
                 __typename: "ModelContentTagConnection",
                 items:  Array< {
@@ -34470,6 +34884,7 @@ export type ListContentCollaboratorsQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -34570,6 +34985,7 @@ export type ListContentCollaboratorsQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -34690,6 +35106,7 @@ export type ListContentCollaboratorsQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -34830,6 +35247,7 @@ export type ListContentCollaboratorsQuery = {
               } | null,
               colors?: Array< string | null > | null,
               userID: string,
+              views?: number | null,
               Tags?:  {
                 __typename: "ModelContentTagConnection",
                 items:  Array< {
@@ -34867,6 +35285,7 @@ export type ListContentCollaboratorsQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -34967,6 +35386,7 @@ export type ListContentCollaboratorsQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -35087,6 +35507,7 @@ export type ListContentCollaboratorsQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -35231,6 +35652,7 @@ export type SyncContentCollaboratorsQuery = {
         } | null,
         colors?: Array< string | null > | null,
         userID: string,
+        views?: number | null,
         Tags?:  {
           __typename: "ModelContentTagConnection",
           items:  Array< {
@@ -35273,6 +35695,7 @@ export type SyncContentCollaboratorsQuery = {
               } | null,
               colors?: Array< string | null > | null,
               userID: string,
+              views?: number | null,
               Tags?:  {
                 __typename: "ModelContentTagConnection",
                 items:  Array< {
@@ -35310,6 +35733,7 @@ export type SyncContentCollaboratorsQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -35410,6 +35834,7 @@ export type SyncContentCollaboratorsQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -35520,6 +35945,7 @@ export type SyncContentCollaboratorsQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -35640,6 +36066,7 @@ export type SyncContentCollaboratorsQuery = {
               } | null,
               colors?: Array< string | null > | null,
               userID: string,
+              views?: number | null,
               Tags?:  {
                 __typename: "ModelContentTagConnection",
                 items:  Array< {
@@ -35677,6 +36104,7 @@ export type SyncContentCollaboratorsQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -35777,6 +36205,7 @@ export type SyncContentCollaboratorsQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -35897,6 +36326,7 @@ export type SyncContentCollaboratorsQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -36037,6 +36467,7 @@ export type SyncContentCollaboratorsQuery = {
               } | null,
               colors?: Array< string | null > | null,
               userID: string,
+              views?: number | null,
               Tags?:  {
                 __typename: "ModelContentTagConnection",
                 items:  Array< {
@@ -36074,6 +36505,7 @@ export type SyncContentCollaboratorsQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -36174,6 +36606,7 @@ export type SyncContentCollaboratorsQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -36294,6 +36727,7 @@ export type SyncContentCollaboratorsQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -36439,6 +36873,7 @@ export type ContentCollaboratorsByContentIdQuery = {
         } | null,
         colors?: Array< string | null > | null,
         userID: string,
+        views?: number | null,
         Tags?:  {
           __typename: "ModelContentTagConnection",
           items:  Array< {
@@ -36481,6 +36916,7 @@ export type ContentCollaboratorsByContentIdQuery = {
               } | null,
               colors?: Array< string | null > | null,
               userID: string,
+              views?: number | null,
               Tags?:  {
                 __typename: "ModelContentTagConnection",
                 items:  Array< {
@@ -36518,6 +36954,7 @@ export type ContentCollaboratorsByContentIdQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -36618,6 +37055,7 @@ export type ContentCollaboratorsByContentIdQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -36728,6 +37166,7 @@ export type ContentCollaboratorsByContentIdQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -36848,6 +37287,7 @@ export type ContentCollaboratorsByContentIdQuery = {
               } | null,
               colors?: Array< string | null > | null,
               userID: string,
+              views?: number | null,
               Tags?:  {
                 __typename: "ModelContentTagConnection",
                 items:  Array< {
@@ -36885,6 +37325,7 @@ export type ContentCollaboratorsByContentIdQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -36985,6 +37426,7 @@ export type ContentCollaboratorsByContentIdQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -37105,6 +37547,7 @@ export type ContentCollaboratorsByContentIdQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -37245,6 +37688,7 @@ export type ContentCollaboratorsByContentIdQuery = {
               } | null,
               colors?: Array< string | null > | null,
               userID: string,
+              views?: number | null,
               Tags?:  {
                 __typename: "ModelContentTagConnection",
                 items:  Array< {
@@ -37282,6 +37726,7 @@ export type ContentCollaboratorsByContentIdQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -37382,6 +37827,7 @@ export type ContentCollaboratorsByContentIdQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -37502,6 +37948,7 @@ export type ContentCollaboratorsByContentIdQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -37647,6 +38094,7 @@ export type ContentCollaboratorsByCollaboratorIdQuery = {
         } | null,
         colors?: Array< string | null > | null,
         userID: string,
+        views?: number | null,
         Tags?:  {
           __typename: "ModelContentTagConnection",
           items:  Array< {
@@ -37689,6 +38137,7 @@ export type ContentCollaboratorsByCollaboratorIdQuery = {
               } | null,
               colors?: Array< string | null > | null,
               userID: string,
+              views?: number | null,
               Tags?:  {
                 __typename: "ModelContentTagConnection",
                 items:  Array< {
@@ -37726,6 +38175,7 @@ export type ContentCollaboratorsByCollaboratorIdQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -37826,6 +38276,7 @@ export type ContentCollaboratorsByCollaboratorIdQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -37936,6 +38387,7 @@ export type ContentCollaboratorsByCollaboratorIdQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -38056,6 +38508,7 @@ export type ContentCollaboratorsByCollaboratorIdQuery = {
               } | null,
               colors?: Array< string | null > | null,
               userID: string,
+              views?: number | null,
               Tags?:  {
                 __typename: "ModelContentTagConnection",
                 items:  Array< {
@@ -38093,6 +38546,7 @@ export type ContentCollaboratorsByCollaboratorIdQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -38193,6 +38647,7 @@ export type ContentCollaboratorsByCollaboratorIdQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -38313,6 +38768,7 @@ export type ContentCollaboratorsByCollaboratorIdQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -38453,6 +38909,7 @@ export type ContentCollaboratorsByCollaboratorIdQuery = {
               } | null,
               colors?: Array< string | null > | null,
               userID: string,
+              views?: number | null,
               Tags?:  {
                 __typename: "ModelContentTagConnection",
                 items:  Array< {
@@ -38490,6 +38947,7 @@ export type ContentCollaboratorsByCollaboratorIdQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -38590,6 +39048,7 @@ export type ContentCollaboratorsByCollaboratorIdQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -38710,6 +39169,7 @@ export type ContentCollaboratorsByCollaboratorIdQuery = {
                     } | null,
                     colors?: Array< string | null > | null,
                     userID: string,
+                    views?: number | null,
                     Tags?:  {
                       __typename: "ModelContentTagConnection",
                       nextToken?: string | null,
@@ -38844,6 +39304,7 @@ export type OnCreateContentSubscription = {
     } | null,
     colors?: Array< string | null > | null,
     userID: string,
+    views?: number | null,
     Tags?:  {
       __typename: "ModelContentTagConnection",
       items:  Array< {
@@ -38886,6 +39347,7 @@ export type OnCreateContentSubscription = {
           } | null,
           colors?: Array< string | null > | null,
           userID: string,
+          views?: number | null,
           Tags?:  {
             __typename: "ModelContentTagConnection",
             items:  Array< {
@@ -38928,6 +39390,7 @@ export type OnCreateContentSubscription = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -38944,6 +39407,7 @@ export type OnCreateContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -38997,6 +39461,7 @@ export type OnCreateContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -39054,6 +39519,7 @@ export type OnCreateContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -39148,6 +39614,7 @@ export type OnCreateContentSubscription = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -39164,6 +39631,7 @@ export type OnCreateContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -39217,6 +39685,7 @@ export type OnCreateContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -39284,6 +39753,7 @@ export type OnCreateContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -39382,6 +39852,7 @@ export type OnCreateContentSubscription = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -39398,6 +39869,7 @@ export type OnCreateContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -39451,6 +39923,7 @@ export type OnCreateContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -39508,6 +39981,7 @@ export type OnCreateContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -39617,6 +40091,7 @@ export type OnCreateContentSubscription = {
           } | null,
           colors?: Array< string | null > | null,
           userID: string,
+          views?: number | null,
           Tags?:  {
             __typename: "ModelContentTagConnection",
             items:  Array< {
@@ -39659,6 +40134,7 @@ export type OnCreateContentSubscription = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -39675,6 +40151,7 @@ export type OnCreateContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -39728,6 +40205,7 @@ export type OnCreateContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -39785,6 +40263,7 @@ export type OnCreateContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -39879,6 +40358,7 @@ export type OnCreateContentSubscription = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -39895,6 +40375,7 @@ export type OnCreateContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -39948,6 +40429,7 @@ export type OnCreateContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -40015,6 +40497,7 @@ export type OnCreateContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -40123,6 +40606,7 @@ export type OnCreateContentSubscription = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -40139,6 +40623,7 @@ export type OnCreateContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -40192,6 +40677,7 @@ export type OnCreateContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -40259,6 +40745,7 @@ export type OnCreateContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -40368,6 +40855,7 @@ export type OnUpdateContentSubscription = {
     } | null,
     colors?: Array< string | null > | null,
     userID: string,
+    views?: number | null,
     Tags?:  {
       __typename: "ModelContentTagConnection",
       items:  Array< {
@@ -40410,6 +40898,7 @@ export type OnUpdateContentSubscription = {
           } | null,
           colors?: Array< string | null > | null,
           userID: string,
+          views?: number | null,
           Tags?:  {
             __typename: "ModelContentTagConnection",
             items:  Array< {
@@ -40452,6 +40941,7 @@ export type OnUpdateContentSubscription = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -40468,6 +40958,7 @@ export type OnUpdateContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -40521,6 +41012,7 @@ export type OnUpdateContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -40578,6 +41070,7 @@ export type OnUpdateContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -40672,6 +41165,7 @@ export type OnUpdateContentSubscription = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -40688,6 +41182,7 @@ export type OnUpdateContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -40741,6 +41236,7 @@ export type OnUpdateContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -40808,6 +41304,7 @@ export type OnUpdateContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -40906,6 +41403,7 @@ export type OnUpdateContentSubscription = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -40922,6 +41420,7 @@ export type OnUpdateContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -40975,6 +41474,7 @@ export type OnUpdateContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -41032,6 +41532,7 @@ export type OnUpdateContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -41141,6 +41642,7 @@ export type OnUpdateContentSubscription = {
           } | null,
           colors?: Array< string | null > | null,
           userID: string,
+          views?: number | null,
           Tags?:  {
             __typename: "ModelContentTagConnection",
             items:  Array< {
@@ -41183,6 +41685,7 @@ export type OnUpdateContentSubscription = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -41199,6 +41702,7 @@ export type OnUpdateContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -41252,6 +41756,7 @@ export type OnUpdateContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -41309,6 +41814,7 @@ export type OnUpdateContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -41403,6 +41909,7 @@ export type OnUpdateContentSubscription = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -41419,6 +41926,7 @@ export type OnUpdateContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -41472,6 +41980,7 @@ export type OnUpdateContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -41539,6 +42048,7 @@ export type OnUpdateContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -41647,6 +42157,7 @@ export type OnUpdateContentSubscription = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -41663,6 +42174,7 @@ export type OnUpdateContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -41716,6 +42228,7 @@ export type OnUpdateContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -41783,6 +42296,7 @@ export type OnUpdateContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -41892,6 +42406,7 @@ export type OnDeleteContentSubscription = {
     } | null,
     colors?: Array< string | null > | null,
     userID: string,
+    views?: number | null,
     Tags?:  {
       __typename: "ModelContentTagConnection",
       items:  Array< {
@@ -41934,6 +42449,7 @@ export type OnDeleteContentSubscription = {
           } | null,
           colors?: Array< string | null > | null,
           userID: string,
+          views?: number | null,
           Tags?:  {
             __typename: "ModelContentTagConnection",
             items:  Array< {
@@ -41976,6 +42492,7 @@ export type OnDeleteContentSubscription = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -41992,6 +42509,7 @@ export type OnDeleteContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -42045,6 +42563,7 @@ export type OnDeleteContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -42102,6 +42621,7 @@ export type OnDeleteContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -42196,6 +42716,7 @@ export type OnDeleteContentSubscription = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -42212,6 +42733,7 @@ export type OnDeleteContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -42265,6 +42787,7 @@ export type OnDeleteContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -42332,6 +42855,7 @@ export type OnDeleteContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -42430,6 +42954,7 @@ export type OnDeleteContentSubscription = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -42446,6 +42971,7 @@ export type OnDeleteContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -42499,6 +43025,7 @@ export type OnDeleteContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -42556,6 +43083,7 @@ export type OnDeleteContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -42665,6 +43193,7 @@ export type OnDeleteContentSubscription = {
           } | null,
           colors?: Array< string | null > | null,
           userID: string,
+          views?: number | null,
           Tags?:  {
             __typename: "ModelContentTagConnection",
             items:  Array< {
@@ -42707,6 +43236,7 @@ export type OnDeleteContentSubscription = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -42723,6 +43253,7 @@ export type OnDeleteContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -42776,6 +43307,7 @@ export type OnDeleteContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -42833,6 +43365,7 @@ export type OnDeleteContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -42927,6 +43460,7 @@ export type OnDeleteContentSubscription = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -42943,6 +43477,7 @@ export type OnDeleteContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -42996,6 +43531,7 @@ export type OnDeleteContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -43063,6 +43599,7 @@ export type OnDeleteContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -43171,6 +43708,7 @@ export type OnDeleteContentSubscription = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -43187,6 +43725,7 @@ export type OnDeleteContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -43240,6 +43779,7 @@ export type OnDeleteContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -43307,6 +43847,7 @@ export type OnDeleteContentSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -43427,6 +43968,7 @@ export type OnCreateTagSubscription = {
           } | null,
           colors?: Array< string | null > | null,
           userID: string,
+          views?: number | null,
           Tags?:  {
             __typename: "ModelContentTagConnection",
             items:  Array< {
@@ -43469,6 +44011,7 @@ export type OnCreateTagSubscription = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -43485,6 +44028,7 @@ export type OnCreateTagSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -43538,6 +44082,7 @@ export type OnCreateTagSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -43595,6 +44140,7 @@ export type OnCreateTagSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -43689,6 +44235,7 @@ export type OnCreateTagSubscription = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -43705,6 +44252,7 @@ export type OnCreateTagSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -43758,6 +44306,7 @@ export type OnCreateTagSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -43825,6 +44374,7 @@ export type OnCreateTagSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -43923,6 +44473,7 @@ export type OnCreateTagSubscription = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -43939,6 +44490,7 @@ export type OnCreateTagSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -43992,6 +44544,7 @@ export type OnCreateTagSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -44049,6 +44602,7 @@ export type OnCreateTagSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -44164,6 +44718,7 @@ export type OnUpdateTagSubscription = {
           } | null,
           colors?: Array< string | null > | null,
           userID: string,
+          views?: number | null,
           Tags?:  {
             __typename: "ModelContentTagConnection",
             items:  Array< {
@@ -44206,6 +44761,7 @@ export type OnUpdateTagSubscription = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -44222,6 +44778,7 @@ export type OnUpdateTagSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -44275,6 +44832,7 @@ export type OnUpdateTagSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -44332,6 +44890,7 @@ export type OnUpdateTagSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -44426,6 +44985,7 @@ export type OnUpdateTagSubscription = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -44442,6 +45002,7 @@ export type OnUpdateTagSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -44495,6 +45056,7 @@ export type OnUpdateTagSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -44562,6 +45124,7 @@ export type OnUpdateTagSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -44660,6 +45223,7 @@ export type OnUpdateTagSubscription = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -44676,6 +45240,7 @@ export type OnUpdateTagSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -44729,6 +45294,7 @@ export type OnUpdateTagSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -44786,6 +45352,7 @@ export type OnUpdateTagSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -44901,6 +45468,7 @@ export type OnDeleteTagSubscription = {
           } | null,
           colors?: Array< string | null > | null,
           userID: string,
+          views?: number | null,
           Tags?:  {
             __typename: "ModelContentTagConnection",
             items:  Array< {
@@ -44943,6 +45511,7 @@ export type OnDeleteTagSubscription = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -44959,6 +45528,7 @@ export type OnDeleteTagSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -45012,6 +45582,7 @@ export type OnDeleteTagSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -45069,6 +45640,7 @@ export type OnDeleteTagSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -45163,6 +45735,7 @@ export type OnDeleteTagSubscription = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -45179,6 +45752,7 @@ export type OnDeleteTagSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -45232,6 +45806,7 @@ export type OnDeleteTagSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -45299,6 +45874,7 @@ export type OnDeleteTagSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -45397,6 +45973,7 @@ export type OnDeleteTagSubscription = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -45413,6 +45990,7 @@ export type OnDeleteTagSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -45466,6 +46044,7 @@ export type OnDeleteTagSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -45523,6 +46102,7 @@ export type OnDeleteTagSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -45648,6 +46228,7 @@ export type OnCreateCollaboratorSubscription = {
           } | null,
           colors?: Array< string | null > | null,
           userID: string,
+          views?: number | null,
           Tags?:  {
             __typename: "ModelContentTagConnection",
             items:  Array< {
@@ -45690,6 +46271,7 @@ export type OnCreateCollaboratorSubscription = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -45706,6 +46288,7 @@ export type OnCreateCollaboratorSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -45759,6 +46342,7 @@ export type OnCreateCollaboratorSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -45816,6 +46400,7 @@ export type OnCreateCollaboratorSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -45910,6 +46495,7 @@ export type OnCreateCollaboratorSubscription = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -45926,6 +46512,7 @@ export type OnCreateCollaboratorSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -45979,6 +46566,7 @@ export type OnCreateCollaboratorSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -46046,6 +46634,7 @@ export type OnCreateCollaboratorSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -46154,6 +46743,7 @@ export type OnCreateCollaboratorSubscription = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -46170,6 +46760,7 @@ export type OnCreateCollaboratorSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -46223,6 +46814,7 @@ export type OnCreateCollaboratorSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -46290,6 +46882,7 @@ export type OnCreateCollaboratorSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -46419,6 +47012,7 @@ export type OnUpdateCollaboratorSubscription = {
           } | null,
           colors?: Array< string | null > | null,
           userID: string,
+          views?: number | null,
           Tags?:  {
             __typename: "ModelContentTagConnection",
             items:  Array< {
@@ -46461,6 +47055,7 @@ export type OnUpdateCollaboratorSubscription = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -46477,6 +47072,7 @@ export type OnUpdateCollaboratorSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -46530,6 +47126,7 @@ export type OnUpdateCollaboratorSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -46587,6 +47184,7 @@ export type OnUpdateCollaboratorSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -46681,6 +47279,7 @@ export type OnUpdateCollaboratorSubscription = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -46697,6 +47296,7 @@ export type OnUpdateCollaboratorSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -46750,6 +47350,7 @@ export type OnUpdateCollaboratorSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -46817,6 +47418,7 @@ export type OnUpdateCollaboratorSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -46925,6 +47527,7 @@ export type OnUpdateCollaboratorSubscription = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -46941,6 +47544,7 @@ export type OnUpdateCollaboratorSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -46994,6 +47598,7 @@ export type OnUpdateCollaboratorSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -47061,6 +47666,7 @@ export type OnUpdateCollaboratorSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -47190,6 +47796,7 @@ export type OnDeleteCollaboratorSubscription = {
           } | null,
           colors?: Array< string | null > | null,
           userID: string,
+          views?: number | null,
           Tags?:  {
             __typename: "ModelContentTagConnection",
             items:  Array< {
@@ -47232,6 +47839,7 @@ export type OnDeleteCollaboratorSubscription = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -47248,6 +47856,7 @@ export type OnDeleteCollaboratorSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -47301,6 +47910,7 @@ export type OnDeleteCollaboratorSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -47358,6 +47968,7 @@ export type OnDeleteCollaboratorSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -47452,6 +48063,7 @@ export type OnDeleteCollaboratorSubscription = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -47468,6 +48080,7 @@ export type OnDeleteCollaboratorSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -47521,6 +48134,7 @@ export type OnDeleteCollaboratorSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -47588,6 +48202,7 @@ export type OnDeleteCollaboratorSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -47696,6 +48311,7 @@ export type OnDeleteCollaboratorSubscription = {
                 } | null,
                 colors?: Array< string | null > | null,
                 userID: string,
+                views?: number | null,
                 Tags?:  {
                   __typename: "ModelContentTagConnection",
                   items:  Array< {
@@ -47712,6 +48328,7 @@ export type OnDeleteCollaboratorSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -47765,6 +48382,7 @@ export type OnDeleteCollaboratorSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -47832,6 +48450,7 @@ export type OnDeleteCollaboratorSubscription = {
                       date: string,
                       colors?: Array< string | null > | null,
                       userID: string,
+                      views?: number | null,
                       createdAt: string,
                       updatedAt: string,
                       _version: number,
@@ -47999,6 +48618,7 @@ export type OnCreateContentTagSubscription = {
       } | null,
       colors?: Array< string | null > | null,
       userID: string,
+      views?: number | null,
       Tags?:  {
         __typename: "ModelContentTagConnection",
         items:  Array< {
@@ -48041,6 +48661,7 @@ export type OnCreateContentTagSubscription = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -48083,6 +48704,7 @@ export type OnCreateContentTagSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -48221,6 +48843,7 @@ export type OnCreateContentTagSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -48369,6 +48992,7 @@ export type OnCreateContentTagSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -48522,6 +49146,7 @@ export type OnCreateContentTagSubscription = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -48564,6 +49189,7 @@ export type OnCreateContentTagSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -48702,6 +49328,7 @@ export type OnCreateContentTagSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -48860,6 +49487,7 @@ export type OnCreateContentTagSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -49023,6 +49651,7 @@ export type OnCreateContentTagSubscription = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -49065,6 +49694,7 @@ export type OnCreateContentTagSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -49203,6 +49833,7 @@ export type OnCreateContentTagSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -49351,6 +49982,7 @@ export type OnCreateContentTagSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -49510,6 +50142,7 @@ export type OnUpdateContentTagSubscription = {
       } | null,
       colors?: Array< string | null > | null,
       userID: string,
+      views?: number | null,
       Tags?:  {
         __typename: "ModelContentTagConnection",
         items:  Array< {
@@ -49552,6 +50185,7 @@ export type OnUpdateContentTagSubscription = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -49594,6 +50228,7 @@ export type OnUpdateContentTagSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -49732,6 +50367,7 @@ export type OnUpdateContentTagSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -49880,6 +50516,7 @@ export type OnUpdateContentTagSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -50033,6 +50670,7 @@ export type OnUpdateContentTagSubscription = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -50075,6 +50713,7 @@ export type OnUpdateContentTagSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -50213,6 +50852,7 @@ export type OnUpdateContentTagSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -50371,6 +51011,7 @@ export type OnUpdateContentTagSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -50534,6 +51175,7 @@ export type OnUpdateContentTagSubscription = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -50576,6 +51218,7 @@ export type OnUpdateContentTagSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -50714,6 +51357,7 @@ export type OnUpdateContentTagSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -50862,6 +51506,7 @@ export type OnUpdateContentTagSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -51021,6 +51666,7 @@ export type OnDeleteContentTagSubscription = {
       } | null,
       colors?: Array< string | null > | null,
       userID: string,
+      views?: number | null,
       Tags?:  {
         __typename: "ModelContentTagConnection",
         items:  Array< {
@@ -51063,6 +51709,7 @@ export type OnDeleteContentTagSubscription = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -51105,6 +51752,7 @@ export type OnDeleteContentTagSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -51243,6 +51891,7 @@ export type OnDeleteContentTagSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -51391,6 +52040,7 @@ export type OnDeleteContentTagSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -51544,6 +52194,7 @@ export type OnDeleteContentTagSubscription = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -51586,6 +52237,7 @@ export type OnDeleteContentTagSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -51724,6 +52376,7 @@ export type OnDeleteContentTagSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -51882,6 +52535,7 @@ export type OnDeleteContentTagSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -52045,6 +52699,7 @@ export type OnDeleteContentTagSubscription = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -52087,6 +52742,7 @@ export type OnDeleteContentTagSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -52225,6 +52881,7 @@ export type OnDeleteContentTagSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -52373,6 +53030,7 @@ export type OnDeleteContentTagSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -52532,6 +53190,7 @@ export type OnCreateContentCollaboratorSubscription = {
       } | null,
       colors?: Array< string | null > | null,
       userID: string,
+      views?: number | null,
       Tags?:  {
         __typename: "ModelContentTagConnection",
         items:  Array< {
@@ -52574,6 +53233,7 @@ export type OnCreateContentCollaboratorSubscription = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -52616,6 +53276,7 @@ export type OnCreateContentCollaboratorSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -52754,6 +53415,7 @@ export type OnCreateContentCollaboratorSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -52902,6 +53564,7 @@ export type OnCreateContentCollaboratorSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -53055,6 +53718,7 @@ export type OnCreateContentCollaboratorSubscription = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -53097,6 +53761,7 @@ export type OnCreateContentCollaboratorSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -53235,6 +53900,7 @@ export type OnCreateContentCollaboratorSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -53393,6 +54059,7 @@ export type OnCreateContentCollaboratorSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -53566,6 +54233,7 @@ export type OnCreateContentCollaboratorSubscription = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -53608,6 +54276,7 @@ export type OnCreateContentCollaboratorSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -53746,6 +54415,7 @@ export type OnCreateContentCollaboratorSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -53904,6 +54574,7 @@ export type OnCreateContentCollaboratorSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -54073,6 +54744,7 @@ export type OnUpdateContentCollaboratorSubscription = {
       } | null,
       colors?: Array< string | null > | null,
       userID: string,
+      views?: number | null,
       Tags?:  {
         __typename: "ModelContentTagConnection",
         items:  Array< {
@@ -54115,6 +54787,7 @@ export type OnUpdateContentCollaboratorSubscription = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -54157,6 +54830,7 @@ export type OnUpdateContentCollaboratorSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -54295,6 +54969,7 @@ export type OnUpdateContentCollaboratorSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -54443,6 +55118,7 @@ export type OnUpdateContentCollaboratorSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -54596,6 +55272,7 @@ export type OnUpdateContentCollaboratorSubscription = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -54638,6 +55315,7 @@ export type OnUpdateContentCollaboratorSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -54776,6 +55454,7 @@ export type OnUpdateContentCollaboratorSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -54934,6 +55613,7 @@ export type OnUpdateContentCollaboratorSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -55107,6 +55787,7 @@ export type OnUpdateContentCollaboratorSubscription = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -55149,6 +55830,7 @@ export type OnUpdateContentCollaboratorSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -55287,6 +55969,7 @@ export type OnUpdateContentCollaboratorSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -55445,6 +56128,7 @@ export type OnUpdateContentCollaboratorSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -55614,6 +56298,7 @@ export type OnDeleteContentCollaboratorSubscription = {
       } | null,
       colors?: Array< string | null > | null,
       userID: string,
+      views?: number | null,
       Tags?:  {
         __typename: "ModelContentTagConnection",
         items:  Array< {
@@ -55656,6 +56341,7 @@ export type OnDeleteContentCollaboratorSubscription = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -55698,6 +56384,7 @@ export type OnDeleteContentCollaboratorSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -55836,6 +56523,7 @@ export type OnDeleteContentCollaboratorSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -55984,6 +56672,7 @@ export type OnDeleteContentCollaboratorSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -56137,6 +56826,7 @@ export type OnDeleteContentCollaboratorSubscription = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -56179,6 +56869,7 @@ export type OnDeleteContentCollaboratorSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -56317,6 +57008,7 @@ export type OnDeleteContentCollaboratorSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -56475,6 +57167,7 @@ export type OnDeleteContentCollaboratorSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -56648,6 +57341,7 @@ export type OnDeleteContentCollaboratorSubscription = {
             } | null,
             colors?: Array< string | null > | null,
             userID: string,
+            views?: number | null,
             Tags?:  {
               __typename: "ModelContentTagConnection",
               items:  Array< {
@@ -56690,6 +57384,7 @@ export type OnDeleteContentCollaboratorSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -56828,6 +57523,7 @@ export type OnDeleteContentCollaboratorSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
@@ -56986,6 +57682,7 @@ export type OnDeleteContentCollaboratorSubscription = {
                   } | null,
                   colors?: Array< string | null > | null,
                   userID: string,
+                  views?: number | null,
                   Tags?:  {
                     __typename: "ModelContentTagConnection",
                     items:  Array< {
