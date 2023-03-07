@@ -8,7 +8,7 @@ applications:
         build:
           commands:
             - echo "👌"
-            - echo pwd
+            - pwd
             - yarn build
       artifacts:
         baseDirectory: .next

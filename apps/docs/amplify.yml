@@ -10,7 +10,7 @@ applications:
             - if [ "${AWS_BRANCH}" = "main" ]; then echo "NEXT_PUBLIC_ENV=PROD"; fi
             - if [ "${AWS_BRANCH}" = "develop" ]; then echo "NEXT_PUBLIC_ENV=DEV"; fi
             - echo "👌"
-            - echo pwd
+            - pwd
             - cd ../.. && npx turbo build:${AWS_BRANCH} --filter=docs
       artifacts:
         baseDirectory: .next
