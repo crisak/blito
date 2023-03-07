@@ -85,6 +85,13 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
+                "views": {
+                    "name": "views",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "Tags": {
                     "name": "Tags",
                     "isArray": true,
@@ -855,5 +862,5 @@ export const schema = {
         }
     },
     "codegenVersion": "3.3.6",
-    "version": "14465190fd0e1b4f45427431fbb5452f"
+    "version": "8f10cd0813bd57e549fbaca8aa7b8435"
 };

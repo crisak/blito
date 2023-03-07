@@ -1,6 +1,6 @@
 'use client'
 
-import { Text } from '@/components'
+import { Box, Text } from '@/components'
 import {
   Button,
   Card,
@@ -12,8 +12,24 @@ import {
 } from '@nextui-org/react'
 import Link from 'next/link'
 import { BsArrowClockwise, BsPlus } from 'react-icons/bs'
-import { API } from 'aws-amplify'
+import { API, Storage } from 'aws-amplify'
 import { createCategory } from 'models'
+
+function convertToCSV(arr: any[], header: any[]) {
+  const csv = arr.map((row) => {
+    return Object.values(row)
+      .map((value) => {
+        if (typeof value === 'string' && value.includes(',')) {
+          return `"${value}"`
+        } else {
+          return value
+        }
+      })
+      .join(',')
+  })
+  csv.unshift(header.join(',')) // Agrega las cabeceras
+  return csv.join('\n')
+}
 
 const SettingsPage = () => {
   const handleCreateCategory = async () => {
@@ -36,16 +52,66 @@ const SettingsPage = () => {
     }
   }
 
+  const downloadMetrics = async () => {
+    try {
+      const stringData = new Date().toISOString().substring(0, 16)
+
+      const data = [
+        { name: 'Uno', total: 1, mobile: 11, desktop: 44 },
+        { name: 'dos', total: 2, mobile: 22, desktop: 44 },
+        { name: 'Tres', total: 3, mobile: 333, desktop: 44 },
+        { name: 'cuatro', total: 4, mobile: 333, desktop: 444 }
+      ]
+
+      const csv = convertToCSV(data, ['Page', 'Total', 'Mobile', 'Desktop'])
+
+      const result = await Storage.put(`${stringData}.csv`, csv, {
+        level: 'private',
+        contentType: 'text/csv'
+      })
+
+      console.log('SaveFile->', result)
+
+      const url = await Storage.get(`${stringData}.csv`, { level: 'private' })
+
+      console.log('Result->', url)
+
+      alert('Ok' + url)
+    } catch (error) {
+      console.error('🚨>', error)
+    }
+  }
+
   return (
     <>
       <Container>
         <Spacer y={2} />
-        <Text h2 weight="bold">
-          Configuración
-          <Link href="/proyectos" style={{ float: 'right' }}>
-            <BsArrowClockwise size={25} />
-          </Link>
-        </Text>
+        <Box
+          css={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between'
+          }}
+        >
+          <Text h2 weight="bold">
+            Configuración
+          </Text>
+          <Box
+            css={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '2rem'
+            }}
+          >
+            <Button size="sm" onClick={downloadMetrics}>
+              View metrics
+            </Button>
+            <Link href="/proyectos" style={{ float: 'right' }}>
+              <BsArrowClockwise size={25} />
+            </Link>
+          </Box>
+        </Box>
+
         <Spacer y={2} />
       </Container>
       <Container>

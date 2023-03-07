@@ -148,6 +148,7 @@ type EagerContent = {
   readonly location?: Location | null;
   readonly colors?: (string | null)[] | null;
   readonly userID: string;
+  readonly views?: number | null;
   readonly Tags?: (ContentTag | null)[] | null;
   readonly Category?: Category | null;
   readonly Collaborators?: (ContentCollaborator | null)[] | null;
@@ -171,6 +172,7 @@ type LazyContent = {
   readonly location?: Location | null;
   readonly colors?: (string | null)[] | null;
   readonly userID: string;
+  readonly views?: number | null;
   readonly Tags: AsyncCollection<ContentTag>;
   readonly Category: AsyncItem<Category | undefined>;
   readonly Collaborators: AsyncCollection<ContentCollaborator>;
