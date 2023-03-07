@@ -7,6 +7,8 @@ applications:
             - yarn install
         build:
           commands:
+            - echo "👌"
+            - echo pwd
             - yarn build
       artifacts:
         baseDirectory: .next
