@@ -10,8 +10,8 @@ applications:
             - echo "👌👌"
             - echo $APP_ENV
             - echo "$APP_ENV"
-            - if [ "${AWS_BRANCH}" = "main" ]; then echo "APP_ENV=prod"; fi
-            - if [ "${AWS_BRANCH}" = "develop" ]; then echo "APP_ENV=dev"; fi
+            - if [ "${AWS_BRANCH}" = "main" ]; then export APP_ENV="prod"; fi
+            - if [ "${AWS_BRANCH}" = "develop" ]; then export APP_ENV="dev"; fi
             - pwd
             - ls -la
             - echo $APP_ENV
