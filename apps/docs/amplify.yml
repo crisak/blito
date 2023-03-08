@@ -7,11 +7,21 @@ applications:
             - yarn install
         build:
           commands:
-            - if [ "${AWS_BRANCH}" = "main" ]; then echo "NEXT_PUBLIC_ENV=PROD"; fi
-            - if [ "${AWS_BRANCH}" = "develop" ]; then echo "NEXT_PUBLIC_ENV=DEV"; fi
+            - echo "👌👌"
+            - echo $APP_ENV
+            - echo "$APP_ENV"
+            - if [ "${AWS_BRANCH}" = "main" ]; then export APP_ENV="prod"; fi
+            - if [ "${AWS_BRANCH}" = "develop" ]; then export APP_ENV="dev"; fi
+            - pwd
+            - ls -la
+            - echo $APP_ENV
+            - echo "$APP_ENV"
+            - echo ":${APP_ENV}"
+            - echo ${APP_ENV}
             - echo "👌"
             - pwd
-            - cd ../.. && npx turbo build:${AWS_BRANCH} --filter=docs
+            - yarn build:${APP_ENV}
+            - yarn start
       artifacts:
         baseDirectory: .next
         files:
@@ -19,4 +29,4 @@ applications:
       cache:
         paths:
           - node_modules/**/*
-    appRoot: apps/docs
+    appRoot: apps/web
