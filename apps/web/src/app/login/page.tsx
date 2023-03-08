@@ -4,7 +4,7 @@ import { Box, Text } from '@/components'
 import AuthCognito from '@/types/AuthCognito'
 import { Button, Card, Container, Input, Spacer } from '@nextui-org/react'
 import { Auth } from 'aws-amplify'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const LoginPage = () => {
   const [formData, setFormData] = useState({
@@ -12,17 +12,17 @@ const LoginPage = () => {
     password: ''
   })
 
-  const tmpConfirmCode = async () => {
-    try {
-      await Auth.forgotPasswordSubmit(
-        formData.username,
-        '067994',
-        formData.password
-      )
-    } catch (error) {
-      console.error(error)
-    }
-  }
+  // const tmpConfirmCode = async () => {
+  //   try {
+  //     await Auth.forgotPasswordSubmit(
+  //       formData.username,
+  //       '067994',
+  //       formData.password
+  //     )
+  //   } catch (error) {
+  //     console.error(error)
+  //   }
+  // }
 
   const handleLogin = async () => {
     const auth: AuthCognito = await Auth.signIn(
@@ -36,6 +36,16 @@ const LoginPage = () => {
     }
     localStorage.setItem('auth', JSON.stringify(userAuth, null, 2))
   }
+
+  useEffect(() => {
+    console.log('👌 env                         ->', process.env);
+    console.log('👌 NEXT_PUBLIC_BLITONER_API    ->', process.env.NEXT_PUBLIC_BLITONER_API);
+    console.log('👌 NEXT_PUBLIC_ENABLED_MOCK    ->', process.env.NEXT_PUBLIC_ENABLED_MOCK);
+    console.log('👌 NEXT_PUBLIC_LOGIN_USERNAME  ->', process.env.NEXT_PUBLIC_LOGIN_USERNAME);
+    console.log('👌 NEXT_PUBLIC_ENV             ->', process.env.NEXT_PUBLIC_ENV);
+    console.log('👌 NODE_ENV                    ->', process.env.NODE_ENV);
+    console.log('👌 APP_ENV                     ->', process.env.APP_ENV);
+  }, []);
 
   return (
     <>

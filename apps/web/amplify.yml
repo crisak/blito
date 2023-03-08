@@ -7,9 +7,21 @@ applications:
             - yarn install
         build:
           commands:
+            - echo "👌👌"
+            - echo $APP_ENV
+            - echo "$APP_ENV"
+            - if [ "${AWS_BRANCH}" = "main" ]; then echo "APP_ENV=prod"; fi
+            - if [ "${AWS_BRANCH}" = "develop" ]; then echo "APP_ENV=dev"; fi
+            - pwd
+            - ls -la
+            - echo $APP_ENV
+            - echo "$APP_ENV"
+            - echo ":${APP_ENV}"
+            - echo ${APP_ENV}
             - echo "👌"
             - pwd
-            - yarn build
+            - yarn build:${APP_ENV}
+            - yarn start
       artifacts:
         baseDirectory: .next
         files:
