@@ -29,7 +29,7 @@ const $2seconds = 3000
 
 Amplify.configure({ ...awsExports, ssr: false })
 
-console.log('Running in: ', {
+console.log('Running env: ', {
   'NODE_ENV->>': process.env.NODE_ENV,
   'APP_ENV->>': process.env.APP_ENV,
   'NEXT_PUBLIC_GMAPS_API_KEY->>': process.env.NEXT_PUBLIC_GMAPS_API_KEY,
