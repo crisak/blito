@@ -1,11 +1,11 @@
 {
   "name": "web",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build:dev": "APP_ENV=dev next build",
-    "build:prod": "APP_ENV=prod next build",
+    "build:dev": "next build",
+    "build:prod": "next build",
     "start": "next start",
     "lint": "next lint"
   },
