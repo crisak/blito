@@ -15,7 +15,7 @@ import Splash from './components/Splash'
 import BgBodyFigures from '@/assets/images/bg-body-figures.jpeg'
 
 import { Amplify } from 'aws-amplify'
-import { awsExports } from 'models'
+import { getAwsExports } from 'models'
 
 const darkTheme = createTheme({
   type: 'dark'
@@ -27,7 +27,7 @@ interface RootLayoutProps {
 
 const $2seconds = 3000
 
-Amplify.configure({ ...awsExports, ssr: false })
+Amplify.configure({ ...getAwsExports(), ssr: false })
 
 console.log('Running env: ', {
   'NODE_ENV->>': process.env.NODE_ENV,
