@@ -34,6 +34,7 @@ console.log('Running env: ', {
   'APP_ENV->>': process.env.APP_ENV,
   'NEXT_PUBLIC_GMAPS_API_KEY->>': process.env.NEXT_PUBLIC_GMAPS_API_KEY,
   'NEXT_PUBLIC_TEST->>': process.env.NEXT_PUBLIC_TEST,
+  'NEXT_PUBLIC_VERCEL_ENV->>': process.env.NEXT_PUBLIC_VERCEL_ENV,
   'env->>': process.env
 })
 
