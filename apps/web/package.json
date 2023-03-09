@@ -20,7 +20,6 @@
     "typescript": "4.9.5"
   },
   "dependencies": {
-    "@next/font": "13.1.6",
     "@nextui-org/react": "^1.0.0-beta.12",
     "@react-google-maps/api": "^2.17.0",
     "@reduxjs/toolkit": "^1.8.5",

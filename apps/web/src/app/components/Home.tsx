@@ -10,7 +10,6 @@ import { HEIGHT_NAVBAR } from '@/styles/variables'
 import Categories from './Categories'
 import BlitoFrontPage from '@/assets/images/bg-haeder_home.png'
 import SplahPage from '@/assets/images/splah-push.png'
-import { useEffect } from 'react'
 
 const ImageSplash = styled(Image, {
   opacity: '.6',
@@ -20,13 +19,6 @@ const ImageSplash = styled(Image, {
 })
 
 const Home = ({ categories }: { categories: CategoriesSummaryContents }) => {
-  useEffect(() => {
-    console.log('NEXT_PUBLIC_ENV_TEST->>>', process.env.NEXT_PUBLIC_ENV_TEST)
-    console.log('NODE_ENV->>', process.env.NODE_ENV);
-    console.log('APP_ENV->>', process.env.APP_ENV);
-    console.log('env->>', process.env);
-  }, [])
-
   return (
     <>
       <ParallaxBanner

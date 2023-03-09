@@ -29,6 +29,14 @@ const $2seconds = 3000
 
 Amplify.configure({ ...awsExports, ssr: false })
 
+console.log('Running in: ', {
+  'NODE_ENV->>': process.env.NODE_ENV,
+  'APP_ENV->>': process.env.APP_ENV,
+  'NEXT_PUBLIC_GMAPS_API_KEY->>': process.env.NEXT_PUBLIC_GMAPS_API_KEY,
+  'NEXT_PUBLIC_TEST->>': process.env.NEXT_PUBLIC_TEST,
+  'env->>': process.env
+})
+
 function RootLayout({ children }: RootLayoutProps): JSX.Element {
   const [splash, setSplash] = useState(true)
 
