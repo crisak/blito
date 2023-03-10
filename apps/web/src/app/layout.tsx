@@ -27,7 +27,26 @@ interface RootLayoutProps {
 
 const $2seconds = 3000
 
-Amplify.configure({ ...getAwsExports(), ssr: false })
+Amplify.configure({
+  ...getAwsExports(),
+  ssr: false,
+  API: {
+    graphql_headers: async () => {
+      let language = 'INGLES'
+      if (navigator?.language) {
+        language = navigator?.language
+      }
+
+      return {
+        'HI-MY_CUSTOM': 'CRISTIAN',
+        'custom-2': 'Crisak',
+        Date2: Date.now().toString(),
+        language,
+        'Accept-Language': language
+      }
+    }
+  }
+})
 
 console.log('Running env: ', {
   'NODE_ENV->>': process.env.NODE_ENV,

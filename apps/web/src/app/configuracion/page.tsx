@@ -13,7 +13,7 @@ import {
 import Link from 'next/link'
 import { BsArrowClockwise, BsPlus } from 'react-icons/bs'
 import { API, Storage } from 'aws-amplify'
-import { createCategory } from 'models'
+import { createCategory, getAnalytics } from 'models'
 
 function convertToCSV(arr: any[], header: any[]) {
   const csv = arr.map((row) => {
@@ -47,6 +47,20 @@ const SettingsPage = () => {
       console.log('data->', data)
 
       alert('Categoric agregada')
+    } catch (error) {
+      console.log('error->', error)
+    }
+  }
+
+  const handleGetViewMetrics = async () => {
+    try {
+      const data = await API.graphql({
+        query: getAnalytics
+      })
+
+      console.log('data->', data)
+
+      alert('Metrics get it, view console log data')
     } catch (error) {
       console.log('error->', error)
     }
@@ -104,6 +118,9 @@ const SettingsPage = () => {
             }}
           >
             <Button size="sm" onClick={downloadMetrics}>
+              Download metrics
+            </Button>
+            <Button size="sm" onClick={handleGetViewMetrics}>
               View metrics
             </Button>
             <Link href="/proyectos" style={{ float: 'right' }}>
@@ -127,6 +144,14 @@ const SettingsPage = () => {
                   onClick={handleCreateCategory}
                 >
                   Agregar
+                </Button>
+                <Button
+                  light
+                  icon={<BsPlus fill="currentColor" />}
+                  color="primary"
+                  onClick={handleCreateCategory}
+                >
+                  Ver métricas
                 </Button>
               </Card.Header>
               <Card.Body>
