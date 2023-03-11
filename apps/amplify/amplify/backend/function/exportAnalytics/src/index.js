@@ -3,7 +3,10 @@
 	REGION
 	STORAGE_S3BLITOSTORAGEF45CA4AA_BUCKETNAME
 Amplify Params - DO NOT EDIT */
-import AnalyticsService from './analytics.service'
+// @ts-check
+const I18n = require('./i18n')
+
+const i18n = I18n.getInstance()
 
 class InvalidInputDataCristian extends Error {
   constructor(message, detail) {
@@ -28,47 +31,24 @@ const errorTestInvocation = () => {
   }
 }
 
-function convertToCSV(arr, header) {
-  const csv = arr.map((row) => {
-    return Object.values(row)
-      .map((value) => {
-        if (typeof value === 'string' && value.includes(',')) {
-          return `"${value}"`
-        } else {
-          return value
-        }
-      })
-      .join(',')
-  })
-  csv.unshift(header.join(',')) // Agrega las cabeceras
-  return csv.join('\n')
-}
-
-/**
- * @type {import('@types/aws-lambda').APIGatewayProxyHandler}
- */
 exports.handler = async (event) => {
   console.log(`EVENT: ${JSON.stringify(event)}`)
 
-  const analyticsService = new AnalyticsService()
-
   errorTestInvocation()
-
-  const data = await analyticsService.getAll()
-
-  const dataFilter = data.map(({ page = '', total = 0, mobile, desktop }) => ({
-    page,
-    total,
-    mobile: mobile?.total || 0,
-    desktop: desktop?.total || 0
-  }))
-
-  const csv = convertToCSV(dataFilter, ['Page', 'Total', 'Mobile', 'Desktop'])
 
   // STORAGE_S3BLITOSTORAGEF45CA4AA_BUCKETNAME
 
+  // default language is "en" (English)
+  console.log(i18n.t('welcome', { params: { name: 'Cristian' } }))
+  console.log(i18n.t('accept'))
+
+  console.log('----------------------------')
+  // set language
+  console.log(i18n.t('welcome', { locale: 'es', params: { name: 'Cristian' } }))
+  console.log(i18n.t('accept', { locale: 'es' }))
+
   return {
-    url: csv,
+    url: i18n.t('welcome', { locale: 'es', params: { name: 'Cristian' } }),
     status: true
   }
 }
