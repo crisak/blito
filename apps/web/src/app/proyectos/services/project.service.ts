@@ -1,76 +1,71 @@
-import axios from 'axios'
-import {
-  CreateProjectResultDto,
-  GetProjectDto
-  // GetProjectsDto
-} from '../dtos'
-import { CreateProject, Project } from '../models'
-import db from '@/utils/db'
-import {
-  getProjectAdapter,
-  // getProjectsAdapter,
-  createProjectAdapter,
-  createResultProjectAdapter
-} from '../adapters'
+import { handleError } from '@/utils'
+import { AContent, RmDefaultParameter } from '@/models'
+import { graphqlOperation, GraphQLQuery } from '@aws-amplify/api'
+import { API } from 'aws-amplify'
+import { File, ListContentsQuery, Location } from 'models'
 
-const filterDefaultProjects = { category: 'graffiti' }
+export type ProjectFile = Omit<RmDefaultParameter<File>, 'size'>
 
-// TODO - Remove setTimeout
-export const getAll = ({ category } = filterDefaultProjects): Project[] => {
-  console.log(category)
-
-  return db.projects
-  // return new Promise((resolve, reject) => {
-  //   setTimeout(async () => {
-  //     const url = process.env.NEXT_PUBLIC_BLITONER_API
-  //     const response = await fetch(`${url}/projects?category=${category}`)
-  //     const data = await response.json()
-
-  //     /** mock */
-  //     resolve(db.projects)
-  //     return
-
-  //     if (!response.ok) {
-  //       return reject(data)
-  //     }
-
-  //     const dataAdapter = getProjectsAdapter(data)
-
-  //     resolve(dataAdapter)
-  //   }, 1000)
-  // })
+export type Project = Pick<AContent, 'id' | 'type' | 'date'> & {
+  files: ProjectFile
+  location: Pick<Location, 'city'>
 }
 
-// GET - https://9g0kxdwyn1.execute-api.us-east-1.amazonaws.com/dev/projects
-// GET - https://9g0kxdwyn1.execute-api.us-east-1.amazonaws.com/dev/projects/{id}
-// POST - https://9g0kxdwyn1.execute-api.us-east-1.amazonaws.com/dev/projects
-export const getById = async (
-  idProject: Pick<Project, 'id'>
-): Promise<Project> => {
-  if (!idProject) {
-    throw new Error('idProject not exits')
+export default class ProjectService {
+  static instance: ProjectService
+
+  static getInstance(): ProjectService {
+    if (!this.instance) {
+      this.instance = new ProjectService()
+    }
+    return this.instance
   }
 
-  const url = process.env.NEXT_PUBLIC_BLITONER_API
-  const { data } = await axios.get<GetProjectDto>(
-    `${url}/projects/${idProject}`
-  )
+  async getAll(): Promise<string[]> {
+    try {
+      const queryLoadProjects = /* GraphQL */ `
+        query LoadProjects($categoryId: ID!) {
+          listContents(
+            filter: {
+              type: { ne: GALLERY }
+              contentCategoryId: { eq: $categoryId }
+            }
+          ) {
+            items {
+              id
+              type
+              date
+              files {
+                mimeType
+                type
+                data
+                isBanner
+                caption
+              }
+              location {
+                city
+              }
+            }
+          }
+        }
+      `
 
-  const dataAdapter = getProjectAdapter(data)
+      /**
+       * {Action}-{Name}-{Type}
+       *  Update  Content Mutation
+       */
+      const response = await API.graphql<GraphQLQuery<ListContentsQuery>>(
+        graphqlOperation(queryLoadProjects)
+      )
 
-  return dataAdapter
-}
+      if (!response || response?.errors || !response?.data?.listContents) {
+        throw response
+      }
 
-export const create = async (project: CreateProject): Promise<Project> => {
-  const payload = createProjectAdapter(project)
-
-  const url = process.env.NEXT_PUBLIC_BLITONER_API
-  const { data } = await axios.post<CreateProjectResultDto>(
-    `${url}/projects`,
-    payload
-  )
-
-  const dataAdapter = createResultProjectAdapter(data)
-
-  return dataAdapter
+      // return (response.data.listContents.items || []) as Project[]
+      return []
+    } catch (error) {
+      throw handleError(error)
+    }
+  }
 }

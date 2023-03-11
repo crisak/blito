@@ -8,7 +8,9 @@ import ListOfProjects from './components/ListOfProjects'
 import { Project } from './models'
 import { Breadcrumbs, BreadcrumbsProps, LoadingProgress } from '@/components'
 import { Container, Spacer } from '@nextui-org/react'
-import { projectService } from './services'
+import { ProjectService } from './services'
+
+const projectService = ProjectService.getInstance()
 
 const breadcrumbs = {
   links: [
@@ -48,7 +50,7 @@ const ProjectsPage = ({ searchParams }: ProjectsPageProps) => {
         <Breadcrumbs {...breadcrumbs} />
         <Spacer y={2} />
       </Container>
-      <ListOfProjects projects={projects as Project[]} />
+      {/* <ListOfProjects projects={projects as Project[]} /> */}
       <Spacer y={3} />
     </>
   )

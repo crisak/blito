@@ -1,1 +1,1 @@
-export * as projectService from './project.service'
+export { default as ProjectService } from './project.service'
