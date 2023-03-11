@@ -1,38 +1,47 @@
 {
-  "staging": {
+  "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-blito-staging-44547-authRole",
-      "UnauthRoleArn": "arn:aws:iam::957950463642:role/amplify-blito-staging-44547-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::957950463642:role/amplify-blito-staging-44547-authRole",
+      "AuthRoleName": "amplify-blito-dev-133401-authRole",
+      "UnauthRoleArn": "arn:aws:iam::957950463642:role/amplify-blito-dev-133401-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::957950463642:role/amplify-blito-dev-133401-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-blito-staging-44547-deployment",
-      "UnauthRoleName": "amplify-blito-staging-44547-unauthRole",
-      "StackName": "amplify-blito-staging-44547",
-      "StackId": "arn:aws:cloudformation:us-east-1:957950463642:stack/amplify-blito-staging-44547/f0ecde80-b334-11ed-80f0-12e4641f457d",
-      "AmplifyAppId": "d3ekfn0rvjyyle"
+      "DeploymentBucketName": "amplify-blito-dev-133401-deployment",
+      "UnauthRoleName": "amplify-blito-dev-133401-unauthRole",
+      "StackName": "amplify-blito-dev-133401",
+      "StackId": "arn:aws:cloudformation:us-east-1:957950463642:stack/amplify-blito-dev-133401/4cac30f0-c03b-11ed-930b-1218c574faf3",
+      "AmplifyAppId": "d3ekfn0rvjyyle",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-blito-dev-133401-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
     },
     "categories": {
       "auth": {
-        "Blito": {}
-      },
-      "storage": {
-        "s3blitostoragef45ca4aa": {}
+        "Blito": {
+          "googleClientId": "CLIENT_ID_GOOGLE_TMP"
+        },
+        "userPoolGroups": {}
       },
       "function": {
-        "testCloudformationRemoveFuture": {},
+        "exportAnalytics": {
+          "deploymentBucketName": "amplify-blito-dev-133401-deployment",
+          "s3Key": "amplify-builds/exportAnalytics-69526552353448677835-build.zip",
+          "typeError": "throwCustom"
+        },
         "testCloudFormationTest": {
-          "deploymentBucketName": "amplify-blito-staging-44547-deployment",
+          "deploymentBucketName": "amplify-blito-dev-133401-deployment",
           "s3Key": "amplify-builds/testCloudFormationTest-6151793656666a35416d-build.zip",
           "tableNameTest": "User-removetablefuture-dev"
         },
-        "exportAnalytics": {
-          "deploymentBucketName": "amplify-blito-staging-44547-deployment",
-          "s3Key": "amplify-builds/exportAnalytics-69526552353448677835-build.zip",
-          "typeError": "throwCustom"
+        "s3blitostoragef45ca4aa": {},
+        "BlitoPostConfirmation": {
+          "GROUP": "Admin",
+          "deploymentBucketName": "amplify-blito-dev-133401-deployment",
+          "s3Key": "amplify-builds/BlitoPostConfirmation-42734751374136495871-build.zip"
         }
       },
       "api": {
         "Blito": {}
+      },
+      "storage": {
+        "s3blitostoragef45ca4aa": {}
       }
     }
   }

@@ -4,6 +4,10 @@
   "main": "./index.ts",
   "types": "./index.ts",
   "license": "MIT",
+  "scripts": {
+    "build:dev": "npx amplify codegen --apiId 35jolub6zvaktn5xbpx45kw674",
+    "build:prod": "npx amplify add codegen --apiId XXXXXXXXX"
+  },
   "dependencies": {},
   "devDependencies": {
     "typescript": "^4.7.4",

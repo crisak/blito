@@ -34,11 +34,7 @@ enum ContentType {
   GALLERY
 }
 
-# @auth: Amplify also allows you to restrict the allowed operations, combine multiple
-# authorization rules, and apply fine-grained field-level authorization.
-type Content
-  @model
-  @auth(rules: [{ allow: public, operations: [read] }, { allow: owner }]) {
+type Content @model @auth(rules: [{ allow: public }]) {
   id: ID!
   type: ContentType!
   time: Int!
@@ -55,9 +51,7 @@ type Content
   Collaborators: [Collaborator] @manyToMany(relationName: "ContentCollaborator")
 }
 
-type Tag
-  @model
-  @auth(rules: [{ allow: public, operations: [read] }, { allow: owner }]) {
+type Tag @model @auth(rules: [{ allow: public }]) {
   id: ID!
   name: String!
   contents: [Content] @manyToMany(relationName: "ContentTag")
@@ -68,9 +62,7 @@ type Position {
   longitude: String!
 }
 
-type Collaborator
-  @model
-  @auth(rules: [{ allow: public, operations: [read] }, { allow: owner }]) {
+type Collaborator @model @auth(rules: [{ allow: public }]) {
   id: ID!
   username: String!
   email: String
@@ -96,9 +88,7 @@ type SocialNetwork {
   username: String
 }
 
-type Category
-  @model
-  @auth(rules: [{ allow: public, operations: [read] }, { allow: owner }]) {
+type Category @model @auth(rules: [{ allow: public }]) {
   id: ID!
   name: String!
   description: String!
@@ -122,9 +112,6 @@ type Analytics {
 }
 
 type Query {
-  # {Action}-{Name}-{Type}
-  #  Update  Content Mutation
-
   getAnalytics(filter: ModelAnalyticsFilterInput): Analytics
     @function(name: "exportAnalytics-${env}")
 }

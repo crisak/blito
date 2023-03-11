@@ -1,12 +1,26 @@
 {
   "api": {
     "Blito": {
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "Blito"
+        }
+      ],
       "output": {
         "authConfig": {
           "additionalAuthenticationProviders": [
             {
               "authenticationType": "AWS_IAM"
+            },
+            {
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authBlito"
+              }
             }
           ],
           "defaultAuthentication": {
@@ -25,7 +39,17 @@
   "auth": {
     "Blito": {
       "customAuth": false,
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "BlitoPostConfirmation",
+          "triggerProvider": "Cognito"
+        }
+      ],
       "frontendAuthConfig": {
         "mfaConfiguration": "OFF",
         "mfaTypes": [
@@ -33,7 +57,7 @@
         ],
         "passwordProtectionSettings": {
           "passwordPolicyCharacters": [],
-          "passwordPolicyMinLength": 8
+          "passwordPolicyMinLength": "8"
         },
         "signupAttributes": [
           "EMAIL",
@@ -55,9 +79,30 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
+    },
+    "userPoolGroups": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId",
+            "AppClientIDWeb",
+            "AppClientID",
+            "IdentityPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "Blito"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito-UserPool-Groups"
     }
   },
   "function": {
+    "BlitoPostConfirmation": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "exportAnalytics": {
       "build": true,
       "dependsOn": [
@@ -79,6 +124,38 @@
     }
   },
   "parameters": {
+    "AMPLIFY_auth_Blito_googleClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "Blito"
+        }
+      ]
+    },
+    "AMPLIFY_function_BlitoPostConfirmation_GROUP": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "BlitoPostConfirmation"
+        }
+      ]
+    },
+    "AMPLIFY_function_BlitoPostConfirmation_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "BlitoPostConfirmation"
+        }
+      ]
+    },
+    "AMPLIFY_function_BlitoPostConfirmation_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "BlitoPostConfirmation"
+        }
+      ]
+    },
     "AMPLIFY_function_exportAnalytics_deploymentBucketName": {
       "usedBy": [
         {
