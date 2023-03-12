@@ -5,7 +5,7 @@
   "workspaces": [
     "apps/*",
     "packages/*",
-    "packages/**/functions/**/src/*"
+    "amplify/**/functions/**/src/*"
   ],
   "scripts": {
     "build": "turbo run build",
