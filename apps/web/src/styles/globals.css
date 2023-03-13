@@ -31,3 +31,103 @@ a {
 * {
   box-sizing: border-box;
 }
+
+/* Home page */
+.home {
+  background-color: #1c1c1c;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+.home header {
+  background-color: black;
+  padding: 20px;
+  text-align: center;
+}
+.home h1 {
+  font-size: 48px;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.home nav {
+  background-color: #444;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.home nav a {
+  color: white;
+  margin-right: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.home nav a:hover {
+  color: #ff8c00;
+}
+
+.home .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 50px;
+}
+
+.home .service {
+  background-color: #333;
+  border-radius: 20px;
+  flex-basis: calc(33.33% - 20px);
+  margin-bottom: 40px;
+  overflow: hidden;
+  position: relative;
+}
+
+.home .service img {
+  height: 100%;
+  left: 0;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.home .service:hover img {
+  opacity: 0.8;
+}
+
+.home .service h2 {
+  font-size: 24px;
+  margin: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.home .service p {
+  margin: 20px;
+  text-align: justify;
+}
+
+.home .cta {
+  background-color: #ff8c00;
+  color: white;
+  display: block;
+  font-size: 24px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 80%;
+}
+
+.home .cta:hover {
+  background-color: #ff7f50;
+  cursor: pointer;
+}

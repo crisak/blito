@@ -1,21 +1,46 @@
-import { categoryService } from '@/services'
-import Home from './components/Home'
+'use client'
+import '@/styles/globals.css'
 
-const HomePage = async () => {
-  const { data: categories, error } =
-    await categoryService.getCategoriesSummaryContents()
+import { ParallaxBanner, ParallaxBannerLayer } from 'react-scroll-parallax'
+import Image from 'next/image'
+import { styled } from '@nextui-org/react'
+import Header from './components/Header'
+import FloatingSocials from './components/FloatingSocials'
+import { HEIGHT_NAVBAR } from '@/styles/variables'
+import BlitoFrontPage from '@/assets/images/bg-haeder_home.png'
+import SplahPage from '@/assets/images/splah-push.png'
 
-  if (error) {
-    return (
-      <div>{error instanceof Error ? error?.message : 'Internal server'}</div>
-    )
-  }
+const ImageSplash = styled(Image, {
+  opacity: '.6',
+  position: 'absolute',
+  right: '-42rem',
+  top: '0'
+})
 
-  if (!categories) {
-    return <div>Datos no encontrados</div>
-  }
+const HomePage = () => {
+  return (
+    <div className="homea">
+      <ParallaxBanner
+        style={{ minHeight: `calc(100vh - ${HEIGHT_NAVBAR})`, height: 'auto' }}
+      >
+        <ParallaxBannerLayer image={BlitoFrontPage.src} speed={-20} />
+        <ParallaxBannerLayer speed={10}>
+          <ImageSplash
+            src={SplahPage.src as string}
+            alt="Photo of background"
+            width={900}
+            height={900}
+          />
+        </ParallaxBannerLayer>
 
-  return <Home categories={categories} />
+        <ParallaxBannerLayer speed={-5}>
+          <Header />
+        </ParallaxBannerLayer>
+      </ParallaxBanner>
+
+      <FloatingSocials />
+    </div>
+  )
 }
 
 export default HomePage

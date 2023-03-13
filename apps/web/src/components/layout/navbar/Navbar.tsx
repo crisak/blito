@@ -15,7 +15,7 @@ const collapseItems = [
   {
     label: 'Contacto',
     route: '/contacto'
-  },
+  }
   // {
   //   label: 'Login',
   //   route: '/login'
@@ -67,12 +67,13 @@ const NavbarComponent = () => {
         <Link href="/">Home</Link>
         <Link
           href={{
-            pathname: '/proyectos',
-            query: { category: 'graffiti' }
+            pathname: '/categorias'
+            // query: { category: 'graffiti' }
           }}
         >
-          Proyectos
+          Categorías
         </Link>
+        <Link href="/galeria">Galería</Link>
         <Link href="/contacto">Contacto</Link>
       </Navbar.Content>
       <Navbar.Content>

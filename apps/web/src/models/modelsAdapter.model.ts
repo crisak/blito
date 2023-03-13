@@ -1,14 +1,15 @@
-import type { Content } from 'models'
+import type { Content, Category } from 'models'
 
-export type RmDefaultParameter<T> = Omit<
-  T,
-  | '__typename'
-  | '_version'
-  | '_deleted'
-  | '_lastChangedAt'
-  | 'updatedAt'
-  | 'createdAt'
->
+export type DefaultPropsGraphQL = {
+  __typename: string
+  createdAt: string
+  updatedAt: string
+  _version: number
+  _deleted?: boolean | null
+  _lastChangedAt: number
+}
+
+export type RmDefaultParameter<T> = Omit<T, keyof DefaultPropsGraphQL>
 
 /**
  * Dictionary names
@@ -23,3 +24,5 @@ export type RmDefaultParameter<T> = Omit<
  */
 
 export type AContent = RmDefaultParameter<Content>
+
+export type ACategory = RmDefaultParameter<Category>

@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react"
+'use client'
+
+import { useEffect, useState } from 'react'
 
 const useWindow = () => {
   const [isSSR, setIsSSR] = useState(true)
@@ -6,7 +8,7 @@ const useWindow = () => {
 
   useEffect(() => {
     setIsSSR(false)
-    if (typeof window !== "undefined") setWindowObj(window)
+    if (typeof window !== 'undefined') setWindowObj(window)
   }, [])
 
   return { isSSR, windowObj }

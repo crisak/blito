@@ -7,7 +7,6 @@ import { styled } from '@nextui-org/react'
 import Header from './Header'
 import FloatingSocials from './FloatingSocials'
 import { HEIGHT_NAVBAR } from '@/styles/variables'
-import Categories from './Categories'
 import BlitoFrontPage from '@/assets/images/bg-haeder_home.png'
 import SplahPage from '@/assets/images/splah-push.png'
 
@@ -38,8 +37,6 @@ const Home = ({ categories }: { categories: CategoriesSummaryContents }) => {
           <Header />
         </ParallaxBannerLayer>
       </ParallaxBanner>
-
-      <Categories categories={categories} />
 
       <FloatingSocials />
     </>

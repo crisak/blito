@@ -1,2 +1,2 @@
-export * from './modelsAdapter.model';
-export * from './categories-summary.models';
+export * from './ModelsAdapter.model'
+export * from './categories-summary.models'
