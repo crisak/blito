@@ -3,15 +3,26 @@
 
 const awsmobile = {
     "aws_project_region": "us-east-1",
-    "aws_appsync_graphqlEndpoint": "https://vmroe7psrve5jnzdap6yrpmxpi.appsync-api.us-east-1.amazonaws.com/graphql",
+    "aws_appsync_graphqlEndpoint": "https://gzw7npcnxzbbfidiv6izaqig2u.appsync-api.us-east-1.amazonaws.com/graphql",
     "aws_appsync_region": "us-east-1",
     "aws_appsync_authenticationType": "API_KEY",
-    "aws_appsync_apiKey": "da2-rer2cl7inba27jw3o4ummxv2zy",
-    "aws_cognito_identity_pool_id": "us-east-1:e5ebeee9-a885-4bd9-a220-abb4ef9e0d59",
+    "aws_appsync_apiKey": "da2-ue5gzet7b5eklmne2krjnb3dxe",
+    "aws_cognito_identity_pool_id": "us-east-1:28adc326-42d2-4e2f-98d7-50390a268036",
     "aws_cognito_region": "us-east-1",
-    "aws_user_pools_id": "us-east-1_N7Uon4qES",
-    "aws_user_pools_web_client_id": "2nc2llfm0dafa59pvc5r2f71sa",
-    "oauth": {},
+    "aws_user_pools_id": "us-east-1_1RS1isJNy",
+    "aws_user_pools_web_client_id": "6lqsabor4lo6hogkllpak4sed0",
+    "oauth": {
+        "domain": "dev-blito44e1913d-44e1913d-dev.auth.us-east-1.amazoncognito.com",
+        "scope": [
+            "openid",
+            "profile",
+            "aws.cognito.signin.user.admin"
+        ],
+        "redirectSignIn": "https://dev.blito.co/o-auth/",
+        "redirectSignOut": "https://dev.blito.co/o-auth/sign-out/",
+        "responseType": "code"
+    },
+    "federationTarget": "COGNITO_USER_AND_IDENTITY_POOLS",
     "aws_cognito_username_attributes": [
         "EMAIL"
     ],
@@ -31,13 +42,13 @@ const awsmobile = {
         "SMS"
     ],
     "aws_cognito_password_protection_settings": {
-        "passwordPolicyMinLength": 8,
+        "passwordPolicyMinLength": "8",
         "passwordPolicyCharacters": []
     },
     "aws_cognito_verification_mechanisms": [
         "EMAIL"
     ],
-    "aws_user_files_s3_bucket": "blito-storage-f45ca4aa44547-staging",
+    "aws_user_files_s3_bucket": "blito-storage-f45ca4aa133401-dev",
     "aws_user_files_s3_bucket_region": "us-east-1"
 };
 

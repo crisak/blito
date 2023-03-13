@@ -4,3 +4,5 @@ apps/**/node_modules
 # Amplify App
 src/models
 amplify-codegen-temp/models
+
+packages/models/models

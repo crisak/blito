@@ -1,6 +1,4 @@
 {
-  "cSpell.words": ["blitoner", "Blitoner"],
-  "commentTranslate.targetLanguage": "es",
   "files.exclude": {
     "amplify/.config": true,
     "amplify/**/*-parameters.json": true,

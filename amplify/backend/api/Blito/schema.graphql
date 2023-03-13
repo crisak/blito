@@ -39,7 +39,7 @@ type Content
   @auth(
     rules: [
       { allow: public, operations: [read] }
-      { allow: groups, groups: ["Admin"] }
+      { allow: groups, groups: ["Admin", "SuperAdmin"] }
     ]
   ) {
   id: ID!
@@ -63,7 +63,7 @@ type Tag
   @auth(
     rules: [
       { allow: public, operations: [read] }
-      { allow: groups, groups: ["Admin"] }
+      { allow: groups, groups: ["Admin", "SuperAdmin"] }
     ]
   ) {
   id: ID!
@@ -76,7 +76,14 @@ type Position {
   longitude: String!
 }
 
-type Collaborator @model @auth(rules: [{ allow: public }]) {
+type Collaborator
+  @model
+  @auth(
+    rules: [
+      { allow: public, operations: [read] }
+      { allow: groups, groups: ["Admin", "SuperAdmin"] }
+    ]
+  ) {
   id: ID!
   username: String!
   email: String
@@ -102,7 +109,14 @@ type SocialNetwork {
   username: String
 }
 
-type Category @model @auth(rules: [{ allow: public }]) {
+type Category
+  @model
+  @auth(
+    rules: [
+      { allow: public, operations: [read] }
+      { allow: groups, groups: ["Admin", "SuperAdmin"] }
+    ]
+  ) {
   id: ID!
   name: String!
   description: String!

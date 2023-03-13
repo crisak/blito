@@ -69,26 +69,6 @@ export declare type ContentProject = LazyLoading extends LazyLoadingDisabled ? E
 
 export declare const ContentProject: (new (init: ModelInit<ContentProject>) => ContentProject)
 
-type EagerLocation = {
-  readonly country: string;
-  readonly state: string;
-  readonly city: string;
-  readonly street?: string | null;
-  readonly position: Position;
-}
-
-type LazyLocation = {
-  readonly country: string;
-  readonly state: string;
-  readonly city: string;
-  readonly street?: string | null;
-  readonly position: Position;
-}
-
-export declare type Location = LazyLoading extends LazyLoadingDisabled ? EagerLocation : LazyLocation
-
-export declare const Location: (new (init: ModelInit<Location>) => Location)
-
 type EagerPosition = {
   readonly latitude: string;
   readonly longitude: string;
@@ -119,6 +99,40 @@ export declare type SocialNetwork = LazyLoading extends LazyLoadingDisabled ? Ea
 
 export declare const SocialNetwork: (new (init: ModelInit<SocialNetwork>) => SocialNetwork)
 
+type EagerLocation = {
+  readonly country: string;
+  readonly state: string;
+  readonly city: string;
+  readonly street?: string | null;
+  readonly position: Position;
+}
+
+type LazyLocation = {
+  readonly country: string;
+  readonly state: string;
+  readonly city: string;
+  readonly street?: string | null;
+  readonly position: Position;
+}
+
+export declare type Location = LazyLoading extends LazyLoadingDisabled ? EagerLocation : LazyLocation
+
+export declare const Location: (new (init: ModelInit<Location>) => Location)
+
+type EagerAnalytics = {
+  readonly url: string;
+  readonly status: boolean;
+}
+
+type LazyAnalytics = {
+  readonly url: string;
+  readonly status: boolean;
+}
+
+export declare type Analytics = LazyLoading extends LazyLoadingDisabled ? EagerAnalytics : LazyAnalytics
+
+export declare const Analytics: (new (init: ModelInit<Analytics>) => Analytics)
+
 type EagerContent = {
   readonly [__modelMeta__]: {
     identifier: ManagedIdentifier<Content, 'id'>;
@@ -134,6 +148,7 @@ type EagerContent = {
   readonly location?: Location | null;
   readonly colors?: (string | null)[] | null;
   readonly userID: string;
+  readonly views?: number | null;
   readonly Tags?: (ContentTag | null)[] | null;
   readonly Category?: Category | null;
   readonly Collaborators?: (ContentCollaborator | null)[] | null;
@@ -157,6 +172,7 @@ type LazyContent = {
   readonly location?: Location | null;
   readonly colors?: (string | null)[] | null;
   readonly userID: string;
+  readonly views?: number | null;
   readonly Tags: AsyncCollection<ContentTag>;
   readonly Category: AsyncItem<Category | undefined>;
   readonly Collaborators: AsyncCollection<ContentCollaborator>;
@@ -201,36 +217,6 @@ export declare const Tag: (new (init: ModelInit<Tag>) => Tag) & {
   copyOf(source: Tag, mutator: (draft: MutableModel<Tag>) => MutableModel<Tag> | void): Tag;
 }
 
-type EagerCategory = {
-  readonly [__modelMeta__]: {
-    identifier: ManagedIdentifier<Category, 'id'>;
-    readOnlyFields: 'createdAt' | 'updatedAt';
-  };
-  readonly id: string;
-  readonly name: string;
-  readonly description: string;
-  readonly createdAt?: string | null;
-  readonly updatedAt?: string | null;
-}
-
-type LazyCategory = {
-  readonly [__modelMeta__]: {
-    identifier: ManagedIdentifier<Category, 'id'>;
-    readOnlyFields: 'createdAt' | 'updatedAt';
-  };
-  readonly id: string;
-  readonly name: string;
-  readonly description: string;
-  readonly createdAt?: string | null;
-  readonly updatedAt?: string | null;
-}
-
-export declare type Category = LazyLoading extends LazyLoadingDisabled ? EagerCategory : LazyCategory
-
-export declare const Category: (new (init: ModelInit<Category>) => Category) & {
-  copyOf(source: Category, mutator: (draft: MutableModel<Category>) => MutableModel<Category> | void): Category;
-}
-
 type EagerCollaborator = {
   readonly [__modelMeta__]: {
     identifier: ManagedIdentifier<Collaborator, 'id'>;
@@ -269,6 +255,36 @@ export declare type Collaborator = LazyLoading extends LazyLoadingDisabled ? Eag
 
 export declare const Collaborator: (new (init: ModelInit<Collaborator>) => Collaborator) & {
   copyOf(source: Collaborator, mutator: (draft: MutableModel<Collaborator>) => MutableModel<Collaborator> | void): Collaborator;
+}
+
+type EagerCategory = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Category, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly name: string;
+  readonly description: string;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+type LazyCategory = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Category, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly name: string;
+  readonly description: string;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+export declare type Category = LazyLoading extends LazyLoadingDisabled ? EagerCategory : LazyCategory
+
+export declare const Category: (new (init: ModelInit<Category>) => Category) & {
+  copyOf(source: Category, mutator: (draft: MutableModel<Category>) => MutableModel<Category> | void): Category;
 }
 
 type EagerContentTag = {
