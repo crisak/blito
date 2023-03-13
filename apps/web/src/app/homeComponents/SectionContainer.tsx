@@ -1,17 +1,25 @@
 'use client'
 
-import { Box } from '../components'
+import Box from '../components/Box'
 
-type SectionContainerProps = { children: React.ReactElement }
+export type SectionProps = {
+  children: React.ReactElement | React.ReactElement[]
+  invert?: boolean
+}
 
-export const SectionContainer = ({ children }: SectionContainerProps) => {
+export const Section = ({ children, invert }: SectionProps) => {
   return (
     <Box
       css={{
         display: 'flex',
-        width: '100%',
         minHeight: '100vh',
-        alignItems: 'center'
+        alignItems: 'center',
+        flexDirection: invert ? 'row-reverse' : '',
+        justifyContent: 'center',
+        gap: '5rem',
+        img: {
+          borderRadius: '5px'
+        }
       }}
     >
       {children}
@@ -19,16 +27,12 @@ export const SectionContainer = ({ children }: SectionContainerProps) => {
   )
 }
 
-export type SectionProps = {
-  children: React.ReactElement | React.ReactElement[]
-}
-
-export const Section = ({ children }: SectionProps) => {
+export const SectionContent = ({ children }: SectionProps) => {
   return (
     <Box
       css={{
-        display: 'flex',
-        justifyContent: 'space-evenly'
+        width: '100%',
+        maxWidth: '350px'
       }}
     >
       {children}
