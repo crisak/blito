@@ -1,6 +1,6 @@
 'use client'
 
-import { Text } from '@/components'
+import { Text } from '@/app/components'
 import { loadProjects } from '@/redux/slices'
 import { Container, Grid, Spacer } from '@nextui-org/react'
 import { useEffect } from 'react'

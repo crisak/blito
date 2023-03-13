@@ -1,5 +1,5 @@
 'use client'
-import { LoadingProgress as HomeLoading } from '@/components'
+import { LoadingProgress as HomeLoading } from '@/app/components'
 
 const LoadingPage = () => {
   return <HomeLoading />

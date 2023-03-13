@@ -7,11 +7,13 @@ import { Provider } from 'react-redux'
 import store from '@/redux/store'
 import { createTheme, NextUIProvider } from '@nextui-org/react'
 
-import { Navbar, Footer, Box } from '@/components'
 import { ParallaxProvider } from 'react-scroll-parallax'
 import { useEffect, useState } from 'react'
 import Splash from '../Splash'
 import BgBodyFigures from '@/assets/images/bg-body-figures.jpeg'
+import Box from '../Box'
+import NavbarComponent from '../Navbar'
+import Footer from '../Footer'
 
 const darkTheme = createTheme({
   type: 'dark'
@@ -61,7 +63,7 @@ function RootContainer({ children }: RootContainerProps): JSX.Element {
               <Splash />
             ) : (
               <>
-                <Navbar />
+                <NavbarComponent />
                 <main>{children}</main>
                 <Footer />
               </>

@@ -19,7 +19,8 @@ const nextConfig = {
       'c7.staticflickr.com',
       'c8.staticflickr.com',
       'c9.staticflickr.com',
-      'blito-app.s3.amazonaws.com'
+      'blito-app.s3.amazonaws.com',
+      'instagram.fbog2-4.fna.fbcdn.net'
     ]
   }
 }

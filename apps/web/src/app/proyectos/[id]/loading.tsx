@@ -1,6 +1,6 @@
 'use client'
 
-import { LoadingProgress } from '@/components'
+import { LoadingProgress } from '@/app/components'
 
 const ProjectsLoading = () => {
   return <LoadingProgress />

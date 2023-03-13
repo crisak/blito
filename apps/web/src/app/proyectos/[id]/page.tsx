@@ -1,6 +1,6 @@
 'use client'
 
-import { Box, Breadcrumbs, BreadcrumbsProps, Text } from '@/components'
+import { Box, Breadcrumbs, BreadcrumbsProps, Text } from '@/app/components'
 // import { fetcher } from '@/utils'
 import { Button, Container, Row, Spacer } from '@nextui-org/react'
 import { Loading } from '@nextui-org/react'

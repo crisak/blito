@@ -1,4 +1,6 @@
-import { Text } from '@/app/components'
+'use client'
+
+import Text from '@/app/components/Text'
 import { Container, Grid, Row } from '@nextui-org/react'
 import { FooterStyle } from './Footer.styles'
 import BlitoFrontPage from '@/assets/images/home-blito_bg_white.png'

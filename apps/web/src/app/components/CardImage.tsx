@@ -1,6 +1,7 @@
 'use client'
 
-import { BoxProps, Text } from '@/components'
+import Text from '@/app/components/Text'
+import { type BoxProps } from '@/app/components/Box'
 
 import { BORDER_RADIUS } from '@/styles/variables'
 import Image from 'next/image'

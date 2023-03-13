@@ -1,9 +1,9 @@
 'use client'
 
 import BgFormContact from '@/assets/images/bg-form-contact.jpg'
-import { Box } from '@/components'
+import { Box } from '@/app/components'
 import { HEIGHT_NAVBAR } from '@/styles/variables'
-import { Col, Row } from '@nextui-org/react'
+
 import Image from 'next/image'
 import Form from './components/Form'
 

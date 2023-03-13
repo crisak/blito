@@ -1,3 +1,5 @@
+'use client'
+
 import { styled } from '@nextui-org/react'
 import Link from 'next/link'
 
@@ -29,7 +31,7 @@ export type BreadcrumbsProps = {
   links: Array<{ href?: string; label: string }>
 }
 
-export const Breadcrumbs = ({ links }: BreadcrumbsProps) => {
+const Breadcrumbs = ({ links }: BreadcrumbsProps) => {
   const lastItem = links.length
 
   return (
@@ -51,3 +53,5 @@ export const Breadcrumbs = ({ links }: BreadcrumbsProps) => {
     </List>
   )
 }
+
+export default Breadcrumbs

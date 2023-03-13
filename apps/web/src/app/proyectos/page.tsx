@@ -6,7 +6,7 @@
 
 import ListOfProjects from './components/ListOfProjects'
 import { Project } from './models'
-import { Breadcrumbs, BreadcrumbsProps, LoadingProgress } from '@/components'
+import { Breadcrumbs, BreadcrumbsProps, LoadingProgress } from '@/app/components'
 import { Container, Spacer } from '@nextui-org/react'
 import { ProjectService } from './services'
 

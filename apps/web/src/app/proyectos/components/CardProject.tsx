@@ -1,5 +1,5 @@
 'use client'
-import { Box, Text } from '@/components'
+import { Box, Text } from '@/app/components'
 import { formatDate } from '@/utils'
 import { CSS } from '@nextui-org/react'
 import { Project } from '../models'

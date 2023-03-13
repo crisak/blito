@@ -1,6 +1,6 @@
 'use client'
 
-import { Box, Text } from '@/components'
+import { Box, Text } from '@/app/components'
 import AuthCognito from '@/types/AuthCognito'
 import { Button, Card, Container, Input, Spacer } from '@nextui-org/react'
 import { Auth } from 'aws-amplify'

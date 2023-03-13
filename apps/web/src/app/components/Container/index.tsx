@@ -1,9 +1,9 @@
 'use client'
 
-import {
-  Breadcrumbs,
-  BreadcrumbsProps
-} from '@/components/breadcrumbs/Breadcrumbs'
+import Breadcrumbs, {
+  type BreadcrumbsProps
+} from '@/app/components/Breadcrumbs'
+
 import { Container as ContainerUI, Spacer } from '@nextui-org/react'
 
 type ContainerLayoutProps = {

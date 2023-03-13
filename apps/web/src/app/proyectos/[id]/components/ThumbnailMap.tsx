@@ -1,4 +1,4 @@
-import { Box, GoogleMaps, Marker } from '@/components'
+import { Box, GoogleMaps, Marker } from '@/app/components'
 import { BORDER_RADIUS } from '@/styles/variables'
 import { CSS, Modal } from '@nextui-org/react'
 import { useState } from 'react'
