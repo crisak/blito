@@ -11,8 +11,6 @@ projects:
         generatedFileName: packages/models/API.ts
         docsFilePath: packages/models/graphql
         region: us-east-1
-        # 35jolub6zvaktn5xbpx45kw674 = Dev
-        # XXX = Prod
         apiId: 35jolub6zvaktn5xbpx45kw674
         maxDepth: 10
 extensions:
