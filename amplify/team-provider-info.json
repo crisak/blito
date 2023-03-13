@@ -34,7 +34,7 @@
         "BlitoPostConfirmation": {
           "GROUP": "Admin",
           "deploymentBucketName": "amplify-blito-dev-133401-deployment",
-          "s3Key": "amplify-builds/BlitoPostConfirmation-42734751374136495871-build.zip"
+          "s3Key": "amplify-builds/BlitoPostConfirmation-68413630576165346855-build.zip"
         }
       },
       "api": {

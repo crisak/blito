@@ -34,7 +34,14 @@ enum ContentType {
   GALLERY
 }
 
-type Content @model @auth(rules: [{ allow: public }]) {
+type Content
+  @model
+  @auth(
+    rules: [
+      { allow: public, operations: [read] }
+      { allow: groups, groups: ["Admin"] }
+    ]
+  ) {
   id: ID!
   type: ContentType!
   time: Int!
@@ -51,7 +58,14 @@ type Content @model @auth(rules: [{ allow: public }]) {
   Collaborators: [Collaborator] @manyToMany(relationName: "ContentCollaborator")
 }
 
-type Tag @model @auth(rules: [{ allow: public }]) {
+type Tag
+  @model
+  @auth(
+    rules: [
+      { allow: public, operations: [read] }
+      { allow: groups, groups: ["Admin"] }
+    ]
+  ) {
   id: ID!
   name: String!
   contents: [Content] @manyToMany(relationName: "ContentTag")

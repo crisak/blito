@@ -6,8 +6,8 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**", ".next/**"]
     },
-    "build:dev": {
-      "dependsOn": ["^build:dev"],
+    "build:prod": {
+      "dependsOn": ["^build:prod"],
       "outputs": ["dist/**", ".next/**"]
     },
     "lint": {
