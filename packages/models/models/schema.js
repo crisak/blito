@@ -78,13 +78,6 @@ export const schema = {
                     "attributes": [],
                     "isArrayNullable": true
                 },
-                "userID": {
-                    "name": "userID",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": true,
-                    "attributes": []
-                },
                 "views": {
                     "name": "views",
                     "isArray": false,
@@ -806,14 +799,14 @@ export const schema = {
                 "latitude": {
                     "name": "latitude",
                     "isArray": false,
-                    "type": "String",
+                    "type": "Float",
                     "isRequired": true,
                     "attributes": []
                 },
                 "longitude": {
                     "name": "longitude",
                     "isArray": false,
-                    "type": "String",
+                    "type": "Float",
                     "isRequired": true,
                     "attributes": []
                 }
@@ -910,5 +903,5 @@ export const schema = {
         }
     },
     "codegenVersion": "3.3.6",
-    "version": "8f10cd0813bd57e549fbaca8aa7b8435"
+    "version": "7ce0819b45700658ad25bfade49af5d0"
 };

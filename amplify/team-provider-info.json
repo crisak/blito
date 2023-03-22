@@ -44,5 +44,44 @@
         "s3blitostoragef45ca4aa": {}
       }
     }
+  },
+  "prod": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-blito-prod-74327-authRole",
+      "UnauthRoleArn": "arn:aws:iam::957950463642:role/amplify-blito-prod-74327-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::957950463642:role/amplify-blito-prod-74327-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-blito-prod-74327-deployment",
+      "UnauthRoleName": "amplify-blito-prod-74327-unauthRole",
+      "StackName": "amplify-blito-prod-74327",
+      "StackId": "arn:aws:cloudformation:us-east-1:957950463642:stack/amplify-blito-prod-74327/273369e0-c3f8-11ed-a7ba-0a4fbd066e11",
+      "AmplifyAppId": "d3ekfn0rvjyyle"
+    },
+    "categories": {
+      "auth": {
+        "Blito": {
+          "googleClientId": "CLIENT_ID_GOOGLE_PROD"
+        },
+        "userPoolGroups": {}
+      },
+      "function": {
+        "BlitoPostConfirmation": {
+          "GROUP": "Admin",
+          "deploymentBucketName": "amplify-blito-dev-133401-deployment",
+          "s3Key": "amplify-builds/BlitoPostConfirmation-68413630576165346855-build.zip"
+        },
+        "exportAnalytics": {
+          "deploymentBucketName": "amplify-blito-dev-133401-deployment",
+          "s3Key": "amplify-builds/exportAnalytics-69526552353448677835-build.zip",
+          "typeError": "none"
+        },
+        "testCloudFormationTest": {
+          "deploymentBucketName": "amplify-blito-dev-133401-deployment",
+          "s3Key": "amplify-builds/testCloudFormationTest-6151793656666a35416d-build.zip",
+          "tableNameTest": "User-removetablefuture-dev"
+        },
+        "s3blitostoragef45ca4aa": {}
+      }
+    }
   }
 }

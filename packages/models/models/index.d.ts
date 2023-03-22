@@ -70,13 +70,13 @@ export declare type ContentProject = LazyLoading extends LazyLoadingDisabled ? E
 export declare const ContentProject: (new (init: ModelInit<ContentProject>) => ContentProject)
 
 type EagerPosition = {
-  readonly latitude: string;
-  readonly longitude: string;
+  readonly latitude: number;
+  readonly longitude: number;
 }
 
 type LazyPosition = {
-  readonly latitude: string;
-  readonly longitude: string;
+  readonly latitude: number;
+  readonly longitude: number;
 }
 
 export declare type Position = LazyLoading extends LazyLoadingDisabled ? EagerPosition : LazyPosition
@@ -147,7 +147,6 @@ type EagerContent = {
   readonly date: string;
   readonly location?: Location | null;
   readonly colors?: (string | null)[] | null;
-  readonly userID: string;
   readonly views?: number | null;
   readonly Tags?: (ContentTag | null)[] | null;
   readonly Category?: Category | null;
@@ -171,7 +170,6 @@ type LazyContent = {
   readonly date: string;
   readonly location?: Location | null;
   readonly colors?: (string | null)[] | null;
-  readonly userID: string;
   readonly views?: number | null;
   readonly Tags: AsyncCollection<ContentTag>;
   readonly Category: AsyncItem<Category | undefined>;

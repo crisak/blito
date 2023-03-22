@@ -36,7 +36,6 @@ export const createContent = /* GraphQL */ `
         }
       }
       colors
-      userID
       views
       Tags {
         items {
@@ -72,7 +71,6 @@ export const createContent = /* GraphQL */ `
               }
             }
             colors
-            userID
             views
             Tags {
               items {
@@ -108,7 +106,6 @@ export const createContent = /* GraphQL */ `
                     }
                   }
                   colors
-                  userID
                   views
                   Tags {
                     items {
@@ -122,7 +119,6 @@ export const createContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -171,7 +167,6 @@ export const createContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -224,7 +219,6 @@ export const createContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -310,7 +304,6 @@ export const createContent = /* GraphQL */ `
                     }
                   }
                   colors
-                  userID
                   views
                   Tags {
                     items {
@@ -324,7 +317,6 @@ export const createContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -373,7 +365,6 @@ export const createContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -435,7 +426,6 @@ export const createContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -525,7 +515,6 @@ export const createContent = /* GraphQL */ `
                     }
                   }
                   colors
-                  userID
                   views
                   Tags {
                     items {
@@ -539,7 +528,6 @@ export const createContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -588,7 +576,6 @@ export const createContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -641,7 +628,6 @@ export const createContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -742,7 +728,6 @@ export const createContent = /* GraphQL */ `
               }
             }
             colors
-            userID
             views
             Tags {
               items {
@@ -778,7 +763,6 @@ export const createContent = /* GraphQL */ `
                     }
                   }
                   colors
-                  userID
                   views
                   Tags {
                     items {
@@ -792,7 +776,6 @@ export const createContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -841,7 +824,6 @@ export const createContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -894,7 +876,6 @@ export const createContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -980,7 +961,6 @@ export const createContent = /* GraphQL */ `
                     }
                   }
                   colors
-                  userID
                   views
                   Tags {
                     items {
@@ -994,7 +974,6 @@ export const createContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -1043,7 +1022,6 @@ export const createContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -1105,7 +1083,6 @@ export const createContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -1204,7 +1181,6 @@ export const createContent = /* GraphQL */ `
                     }
                   }
                   colors
-                  userID
                   views
                   Tags {
                     items {
@@ -1218,7 +1194,6 @@ export const createContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -1267,7 +1242,6 @@ export const createContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -1329,7 +1303,6 @@ export const createContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -1433,7 +1406,6 @@ export const updateContent = /* GraphQL */ `
         }
       }
       colors
-      userID
       views
       Tags {
         items {
@@ -1469,7 +1441,6 @@ export const updateContent = /* GraphQL */ `
               }
             }
             colors
-            userID
             views
             Tags {
               items {
@@ -1505,7 +1476,6 @@ export const updateContent = /* GraphQL */ `
                     }
                   }
                   colors
-                  userID
                   views
                   Tags {
                     items {
@@ -1519,7 +1489,6 @@ export const updateContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -1568,7 +1537,6 @@ export const updateContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -1621,7 +1589,6 @@ export const updateContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -1707,7 +1674,6 @@ export const updateContent = /* GraphQL */ `
                     }
                   }
                   colors
-                  userID
                   views
                   Tags {
                     items {
@@ -1721,7 +1687,6 @@ export const updateContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -1770,7 +1735,6 @@ export const updateContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -1832,7 +1796,6 @@ export const updateContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -1922,7 +1885,6 @@ export const updateContent = /* GraphQL */ `
                     }
                   }
                   colors
-                  userID
                   views
                   Tags {
                     items {
@@ -1936,7 +1898,6 @@ export const updateContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -1985,7 +1946,6 @@ export const updateContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -2038,7 +1998,6 @@ export const updateContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -2139,7 +2098,6 @@ export const updateContent = /* GraphQL */ `
               }
             }
             colors
-            userID
             views
             Tags {
               items {
@@ -2175,7 +2133,6 @@ export const updateContent = /* GraphQL */ `
                     }
                   }
                   colors
-                  userID
                   views
                   Tags {
                     items {
@@ -2189,7 +2146,6 @@ export const updateContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -2238,7 +2194,6 @@ export const updateContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -2291,7 +2246,6 @@ export const updateContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -2377,7 +2331,6 @@ export const updateContent = /* GraphQL */ `
                     }
                   }
                   colors
-                  userID
                   views
                   Tags {
                     items {
@@ -2391,7 +2344,6 @@ export const updateContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -2440,7 +2392,6 @@ export const updateContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -2502,7 +2453,6 @@ export const updateContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -2601,7 +2551,6 @@ export const updateContent = /* GraphQL */ `
                     }
                   }
                   colors
-                  userID
                   views
                   Tags {
                     items {
@@ -2615,7 +2564,6 @@ export const updateContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -2664,7 +2612,6 @@ export const updateContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -2726,7 +2673,6 @@ export const updateContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -2830,7 +2776,6 @@ export const deleteContent = /* GraphQL */ `
         }
       }
       colors
-      userID
       views
       Tags {
         items {
@@ -2866,7 +2811,6 @@ export const deleteContent = /* GraphQL */ `
               }
             }
             colors
-            userID
             views
             Tags {
               items {
@@ -2902,7 +2846,6 @@ export const deleteContent = /* GraphQL */ `
                     }
                   }
                   colors
-                  userID
                   views
                   Tags {
                     items {
@@ -2916,7 +2859,6 @@ export const deleteContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -2965,7 +2907,6 @@ export const deleteContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -3018,7 +2959,6 @@ export const deleteContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -3104,7 +3044,6 @@ export const deleteContent = /* GraphQL */ `
                     }
                   }
                   colors
-                  userID
                   views
                   Tags {
                     items {
@@ -3118,7 +3057,6 @@ export const deleteContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -3167,7 +3105,6 @@ export const deleteContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -3229,7 +3166,6 @@ export const deleteContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -3319,7 +3255,6 @@ export const deleteContent = /* GraphQL */ `
                     }
                   }
                   colors
-                  userID
                   views
                   Tags {
                     items {
@@ -3333,7 +3268,6 @@ export const deleteContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -3382,7 +3316,6 @@ export const deleteContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -3435,7 +3368,6 @@ export const deleteContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -3536,7 +3468,6 @@ export const deleteContent = /* GraphQL */ `
               }
             }
             colors
-            userID
             views
             Tags {
               items {
@@ -3572,7 +3503,6 @@ export const deleteContent = /* GraphQL */ `
                     }
                   }
                   colors
-                  userID
                   views
                   Tags {
                     items {
@@ -3586,7 +3516,6 @@ export const deleteContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -3635,7 +3564,6 @@ export const deleteContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -3688,7 +3616,6 @@ export const deleteContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -3774,7 +3701,6 @@ export const deleteContent = /* GraphQL */ `
                     }
                   }
                   colors
-                  userID
                   views
                   Tags {
                     items {
@@ -3788,7 +3714,6 @@ export const deleteContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -3837,7 +3762,6 @@ export const deleteContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -3899,7 +3823,6 @@ export const deleteContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -3998,7 +3921,6 @@ export const deleteContent = /* GraphQL */ `
                     }
                   }
                   colors
-                  userID
                   views
                   Tags {
                     items {
@@ -4012,7 +3934,6 @@ export const deleteContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -4061,7 +3982,6 @@ export const deleteContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -4123,7 +4043,6 @@ export const deleteContent = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -4235,7 +4154,6 @@ export const createTag = /* GraphQL */ `
               }
             }
             colors
-            userID
             views
             Tags {
               items {
@@ -4271,7 +4189,6 @@ export const createTag = /* GraphQL */ `
                     }
                   }
                   colors
-                  userID
                   views
                   Tags {
                     items {
@@ -4285,7 +4202,6 @@ export const createTag = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -4334,7 +4250,6 @@ export const createTag = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -4387,7 +4302,6 @@ export const createTag = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -4473,7 +4387,6 @@ export const createTag = /* GraphQL */ `
                     }
                   }
                   colors
-                  userID
                   views
                   Tags {
                     items {
@@ -4487,7 +4400,6 @@ export const createTag = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -4536,7 +4448,6 @@ export const createTag = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -4598,7 +4509,6 @@ export const createTag = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -4688,7 +4598,6 @@ export const createTag = /* GraphQL */ `
                     }
                   }
                   colors
-                  userID
                   views
                   Tags {
                     items {
@@ -4702,7 +4611,6 @@ export const createTag = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -4751,7 +4659,6 @@ export const createTag = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -4804,7 +4711,6 @@ export const createTag = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -4911,7 +4817,6 @@ export const updateTag = /* GraphQL */ `
               }
             }
             colors
-            userID
             views
             Tags {
               items {
@@ -4947,7 +4852,6 @@ export const updateTag = /* GraphQL */ `
                     }
                   }
                   colors
-                  userID
                   views
                   Tags {
                     items {
@@ -4961,7 +4865,6 @@ export const updateTag = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -5010,7 +4913,6 @@ export const updateTag = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -5063,7 +4965,6 @@ export const updateTag = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -5149,7 +5050,6 @@ export const updateTag = /* GraphQL */ `
                     }
                   }
                   colors
-                  userID
                   views
                   Tags {
                     items {
@@ -5163,7 +5063,6 @@ export const updateTag = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -5212,7 +5111,6 @@ export const updateTag = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -5274,7 +5172,6 @@ export const updateTag = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -5364,7 +5261,6 @@ export const updateTag = /* GraphQL */ `
                     }
                   }
                   colors
-                  userID
                   views
                   Tags {
                     items {
@@ -5378,7 +5274,6 @@ export const updateTag = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -5427,7 +5322,6 @@ export const updateTag = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -5480,7 +5374,6 @@ export const updateTag = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -5587,7 +5480,6 @@ export const deleteTag = /* GraphQL */ `
               }
             }
             colors
-            userID
             views
             Tags {
               items {
@@ -5623,7 +5515,6 @@ export const deleteTag = /* GraphQL */ `
                     }
                   }
                   colors
-                  userID
                   views
                   Tags {
                     items {
@@ -5637,7 +5528,6 @@ export const deleteTag = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -5686,7 +5576,6 @@ export const deleteTag = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -5739,7 +5628,6 @@ export const deleteTag = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -5825,7 +5713,6 @@ export const deleteTag = /* GraphQL */ `
                     }
                   }
                   colors
-                  userID
                   views
                   Tags {
                     items {
@@ -5839,7 +5726,6 @@ export const deleteTag = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -5888,7 +5774,6 @@ export const deleteTag = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -5950,7 +5835,6 @@ export const deleteTag = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -6040,7 +5924,6 @@ export const deleteTag = /* GraphQL */ `
                     }
                   }
                   colors
-                  userID
                   views
                   Tags {
                     items {
@@ -6054,7 +5937,6 @@ export const deleteTag = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -6103,7 +5985,6 @@ export const deleteTag = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -6156,7 +6037,6 @@ export const deleteTag = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -6272,7 +6152,6 @@ export const createCollaborator = /* GraphQL */ `
               }
             }
             colors
-            userID
             views
             Tags {
               items {
@@ -6308,7 +6187,6 @@ export const createCollaborator = /* GraphQL */ `
                     }
                   }
                   colors
-                  userID
                   views
                   Tags {
                     items {
@@ -6322,7 +6200,6 @@ export const createCollaborator = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -6371,7 +6248,6 @@ export const createCollaborator = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -6424,7 +6300,6 @@ export const createCollaborator = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -6510,7 +6385,6 @@ export const createCollaborator = /* GraphQL */ `
                     }
                   }
                   colors
-                  userID
                   views
                   Tags {
                     items {
@@ -6524,7 +6398,6 @@ export const createCollaborator = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -6573,7 +6446,6 @@ export const createCollaborator = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -6635,7 +6507,6 @@ export const createCollaborator = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -6734,7 +6605,6 @@ export const createCollaborator = /* GraphQL */ `
                     }
                   }
                   colors
-                  userID
                   views
                   Tags {
                     items {
@@ -6748,7 +6618,6 @@ export const createCollaborator = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -6797,7 +6666,6 @@ export const createCollaborator = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -6859,7 +6727,6 @@ export const createCollaborator = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -6979,7 +6846,6 @@ export const updateCollaborator = /* GraphQL */ `
               }
             }
             colors
-            userID
             views
             Tags {
               items {
@@ -7015,7 +6881,6 @@ export const updateCollaborator = /* GraphQL */ `
                     }
                   }
                   colors
-                  userID
                   views
                   Tags {
                     items {
@@ -7029,7 +6894,6 @@ export const updateCollaborator = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -7078,7 +6942,6 @@ export const updateCollaborator = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -7131,7 +6994,6 @@ export const updateCollaborator = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -7217,7 +7079,6 @@ export const updateCollaborator = /* GraphQL */ `
                     }
                   }
                   colors
-                  userID
                   views
                   Tags {
                     items {
@@ -7231,7 +7092,6 @@ export const updateCollaborator = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -7280,7 +7140,6 @@ export const updateCollaborator = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -7342,7 +7201,6 @@ export const updateCollaborator = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -7441,7 +7299,6 @@ export const updateCollaborator = /* GraphQL */ `
                     }
                   }
                   colors
-                  userID
                   views
                   Tags {
                     items {
@@ -7455,7 +7312,6 @@ export const updateCollaborator = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -7504,7 +7360,6 @@ export const updateCollaborator = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -7566,7 +7421,6 @@ export const updateCollaborator = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -7686,7 +7540,6 @@ export const deleteCollaborator = /* GraphQL */ `
               }
             }
             colors
-            userID
             views
             Tags {
               items {
@@ -7722,7 +7575,6 @@ export const deleteCollaborator = /* GraphQL */ `
                     }
                   }
                   colors
-                  userID
                   views
                   Tags {
                     items {
@@ -7736,7 +7588,6 @@ export const deleteCollaborator = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -7785,7 +7636,6 @@ export const deleteCollaborator = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -7838,7 +7688,6 @@ export const deleteCollaborator = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -7924,7 +7773,6 @@ export const deleteCollaborator = /* GraphQL */ `
                     }
                   }
                   colors
-                  userID
                   views
                   Tags {
                     items {
@@ -7938,7 +7786,6 @@ export const deleteCollaborator = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -7987,7 +7834,6 @@ export const deleteCollaborator = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -8049,7 +7895,6 @@ export const deleteCollaborator = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -8148,7 +7993,6 @@ export const deleteCollaborator = /* GraphQL */ `
                     }
                   }
                   colors
-                  userID
                   views
                   Tags {
                     items {
@@ -8162,7 +8006,6 @@ export const deleteCollaborator = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -8211,7 +8054,6 @@ export const deleteCollaborator = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -8273,7 +8115,6 @@ export const deleteCollaborator = /* GraphQL */ `
                         size
                         date
                         colors
-                        userID
                         views
                         createdAt
                         updatedAt
@@ -8431,7 +8272,6 @@ export const createContentTag = /* GraphQL */ `
           }
         }
         colors
-        userID
         views
         Tags {
           items {
@@ -8467,7 +8307,6 @@ export const createContentTag = /* GraphQL */ `
                 }
               }
               colors
-              userID
               views
               Tags {
                 items {
@@ -8503,7 +8342,6 @@ export const createContentTag = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -8626,7 +8464,6 @@ export const createContentTag = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -8758,7 +8595,6 @@ export const createContentTag = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -8896,7 +8732,6 @@ export const createContentTag = /* GraphQL */ `
                 }
               }
               colors
-              userID
               views
               Tags {
                 items {
@@ -8932,7 +8767,6 @@ export const createContentTag = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -9055,7 +8889,6 @@ export const createContentTag = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -9196,7 +9029,6 @@ export const createContentTag = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -9343,7 +9175,6 @@ export const createContentTag = /* GraphQL */ `
                 }
               }
               colors
-              userID
               views
               Tags {
                 items {
@@ -9379,7 +9210,6 @@ export const createContentTag = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -9502,7 +9332,6 @@ export const createContentTag = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -9634,7 +9463,6 @@ export const createContentTag = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -9780,7 +9608,6 @@ export const updateContentTag = /* GraphQL */ `
           }
         }
         colors
-        userID
         views
         Tags {
           items {
@@ -9816,7 +9643,6 @@ export const updateContentTag = /* GraphQL */ `
                 }
               }
               colors
-              userID
               views
               Tags {
                 items {
@@ -9852,7 +9678,6 @@ export const updateContentTag = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -9975,7 +9800,6 @@ export const updateContentTag = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -10107,7 +9931,6 @@ export const updateContentTag = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -10245,7 +10068,6 @@ export const updateContentTag = /* GraphQL */ `
                 }
               }
               colors
-              userID
               views
               Tags {
                 items {
@@ -10281,7 +10103,6 @@ export const updateContentTag = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -10404,7 +10225,6 @@ export const updateContentTag = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -10545,7 +10365,6 @@ export const updateContentTag = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -10692,7 +10511,6 @@ export const updateContentTag = /* GraphQL */ `
                 }
               }
               colors
-              userID
               views
               Tags {
                 items {
@@ -10728,7 +10546,6 @@ export const updateContentTag = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -10851,7 +10668,6 @@ export const updateContentTag = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -10983,7 +10799,6 @@ export const updateContentTag = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -11129,7 +10944,6 @@ export const deleteContentTag = /* GraphQL */ `
           }
         }
         colors
-        userID
         views
         Tags {
           items {
@@ -11165,7 +10979,6 @@ export const deleteContentTag = /* GraphQL */ `
                 }
               }
               colors
-              userID
               views
               Tags {
                 items {
@@ -11201,7 +11014,6 @@ export const deleteContentTag = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -11324,7 +11136,6 @@ export const deleteContentTag = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -11456,7 +11267,6 @@ export const deleteContentTag = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -11594,7 +11404,6 @@ export const deleteContentTag = /* GraphQL */ `
                 }
               }
               colors
-              userID
               views
               Tags {
                 items {
@@ -11630,7 +11439,6 @@ export const deleteContentTag = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -11753,7 +11561,6 @@ export const deleteContentTag = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -11894,7 +11701,6 @@ export const deleteContentTag = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -12041,7 +11847,6 @@ export const deleteContentTag = /* GraphQL */ `
                 }
               }
               colors
-              userID
               views
               Tags {
                 items {
@@ -12077,7 +11882,6 @@ export const deleteContentTag = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -12200,7 +12004,6 @@ export const deleteContentTag = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -12332,7 +12135,6 @@ export const deleteContentTag = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -12478,7 +12280,6 @@ export const createContentCollaborator = /* GraphQL */ `
           }
         }
         colors
-        userID
         views
         Tags {
           items {
@@ -12514,7 +12315,6 @@ export const createContentCollaborator = /* GraphQL */ `
                 }
               }
               colors
-              userID
               views
               Tags {
                 items {
@@ -12550,7 +12350,6 @@ export const createContentCollaborator = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -12673,7 +12472,6 @@ export const createContentCollaborator = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -12805,7 +12603,6 @@ export const createContentCollaborator = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -12943,7 +12740,6 @@ export const createContentCollaborator = /* GraphQL */ `
                 }
               }
               colors
-              userID
               views
               Tags {
                 items {
@@ -12979,7 +12775,6 @@ export const createContentCollaborator = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -13102,7 +12897,6 @@ export const createContentCollaborator = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -13243,7 +13037,6 @@ export const createContentCollaborator = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -13399,7 +13192,6 @@ export const createContentCollaborator = /* GraphQL */ `
                 }
               }
               colors
-              userID
               views
               Tags {
                 items {
@@ -13435,7 +13227,6 @@ export const createContentCollaborator = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -13558,7 +13349,6 @@ export const createContentCollaborator = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -13699,7 +13489,6 @@ export const createContentCollaborator = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -13854,7 +13643,6 @@ export const updateContentCollaborator = /* GraphQL */ `
           }
         }
         colors
-        userID
         views
         Tags {
           items {
@@ -13890,7 +13678,6 @@ export const updateContentCollaborator = /* GraphQL */ `
                 }
               }
               colors
-              userID
               views
               Tags {
                 items {
@@ -13926,7 +13713,6 @@ export const updateContentCollaborator = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -14049,7 +13835,6 @@ export const updateContentCollaborator = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -14181,7 +13966,6 @@ export const updateContentCollaborator = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -14319,7 +14103,6 @@ export const updateContentCollaborator = /* GraphQL */ `
                 }
               }
               colors
-              userID
               views
               Tags {
                 items {
@@ -14355,7 +14138,6 @@ export const updateContentCollaborator = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -14478,7 +14260,6 @@ export const updateContentCollaborator = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -14619,7 +14400,6 @@ export const updateContentCollaborator = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -14775,7 +14555,6 @@ export const updateContentCollaborator = /* GraphQL */ `
                 }
               }
               colors
-              userID
               views
               Tags {
                 items {
@@ -14811,7 +14590,6 @@ export const updateContentCollaborator = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -14934,7 +14712,6 @@ export const updateContentCollaborator = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -15075,7 +14852,6 @@ export const updateContentCollaborator = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -15230,7 +15006,6 @@ export const deleteContentCollaborator = /* GraphQL */ `
           }
         }
         colors
-        userID
         views
         Tags {
           items {
@@ -15266,7 +15041,6 @@ export const deleteContentCollaborator = /* GraphQL */ `
                 }
               }
               colors
-              userID
               views
               Tags {
                 items {
@@ -15302,7 +15076,6 @@ export const deleteContentCollaborator = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -15425,7 +15198,6 @@ export const deleteContentCollaborator = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -15557,7 +15329,6 @@ export const deleteContentCollaborator = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -15695,7 +15466,6 @@ export const deleteContentCollaborator = /* GraphQL */ `
                 }
               }
               colors
-              userID
               views
               Tags {
                 items {
@@ -15731,7 +15501,6 @@ export const deleteContentCollaborator = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -15854,7 +15623,6 @@ export const deleteContentCollaborator = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -15995,7 +15763,6 @@ export const deleteContentCollaborator = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -16151,7 +15918,6 @@ export const deleteContentCollaborator = /* GraphQL */ `
                 }
               }
               colors
-              userID
               views
               Tags {
                 items {
@@ -16187,7 +15953,6 @@ export const deleteContentCollaborator = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -16310,7 +16075,6 @@ export const deleteContentCollaborator = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {
@@ -16451,7 +16215,6 @@ export const deleteContentCollaborator = /* GraphQL */ `
                       }
                     }
                     colors
-                    userID
                     views
                     Tags {
                       items {

@@ -51,7 +51,6 @@ type Content
   date: AWSDateTime!
   location: Location
   colors: [String]
-  userID: String!
   views: Int
   Tags: [Tag] @manyToMany(relationName: "ContentTag")
   Category: Category @hasOne
@@ -72,8 +71,8 @@ type Tag
 }
 
 type Position {
-  latitude: String!
-  longitude: String!
+  latitude: Float!
+  longitude: Float!
 }
 
 type Collaborator
