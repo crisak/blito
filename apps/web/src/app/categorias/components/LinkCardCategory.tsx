@@ -1,10 +1,7 @@
 'use client'
 
-import classNames from 'classnames'
 import Image from 'next/image'
-// import TilT from 'react-parallax-tilt'
-import styles from './../../components/CardImage.module.css'
-import { AFile } from '@/models'
+import { AFile } from '@/models/modelsAdapter.model'
 import { BORDER_RADIUS } from '@/styles/variables'
 
 export type LinkCardCategoryProps = {
@@ -13,7 +10,6 @@ export type LinkCardCategoryProps = {
 } & AFile
 
 const LinkCardCategory = ({
-  // className,
   caption,
   data: image,
   index
@@ -30,7 +26,6 @@ const LinkCardCategory = ({
         left: `${index}.4rem}`
       }}
     />
-    // </TilT>
   )
 }
 

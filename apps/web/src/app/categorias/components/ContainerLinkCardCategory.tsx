@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { Card, Col, Row, Button } from '@nextui-org/react'
 import { Text } from '@/app/components'
-import { AFile } from '@/models'
+import { AFile } from '@/models/modelsAdapter.model'
 
 type ContainerLinkCardCategoryProps = {
   categoryId: string
