@@ -14,6 +14,7 @@ import BgBodyFigures from '@/assets/images/bg-body-figures.jpeg'
 import Box from '../Box'
 import NavbarComponent from '../Navbar'
 import Footer from '../Footer'
+import ToastProvider from '../Toast'
 
 const darkTheme = createTheme({
   type: 'dark'
@@ -42,43 +43,40 @@ function RootContainer({ children }: RootContainerProps): JSX.Element {
     }
   }, [])
   return (
-    <Box
-      className="body-container"
-      css={{
-        backgroundImage: `url(${BgBodyFigures.src})`,
-        backgroundRepeat: 'no-repeat',
-        backgroundAttachment: 'fixed',
-        backgroundSize: 'cover',
-        height: '100vh',
-        overflow: 'auto',
-        width: '100%'
-      }}
-    >
-      <ParallaxProvider>
-        <NextUIProvider theme={darkTheme}>
-          <Provider store={store}>
-            {splash ? (
-              <Splash />
-            ) : (
-              <>
-                <NavbarComponent />
-                <main>{children}</main>
-                <Footer />
-              </>
-            )}
-          </Provider>
-        </NextUIProvider>
-      </ParallaxProvider>
-    </Box>
+    <>
+      <Box
+        className="body-container"
+        css={{
+          backgroundImage: `url(${BgBodyFigures.src})`,
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed',
+          backgroundSize: 'cover',
+          height: '100vh',
+          overflow: 'auto',
+          width: '100%'
+        }}
+      >
+        <ToastProvider>
+          <ParallaxProvider>
+            <NextUIProvider theme={darkTheme}>
+              <Provider store={store}>
+                {splash ? (
+                  <Splash />
+                ) : (
+                  <>
+                    <NavbarComponent />
+                    <main>{children}</main>
+                    <Footer />
+                  </>
+                )}
+              </Provider>
+            </NextUIProvider>
+          </ParallaxProvider>
+        </ToastProvider>
+      </Box>
+    </>
   )
 }
 export default RootContainer
 {
-  /* <ToastContainer
-                  position="bottom-right"
-                  autoClose={5000}
-                  hideProgressBar={true}
-                  closeOnClick
-                  pauseOnHover
-                /> */
 }
