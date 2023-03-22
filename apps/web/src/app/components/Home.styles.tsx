@@ -1,3 +1,4 @@
+'use client'
 import { styled } from '@nextui-org/react'
 
 const HEIGHT_NAVBAR = '76px'
@@ -96,22 +97,3 @@ const positionsBox = [
     right: '0'
   }
 ]
-
-const stylesBoxChildren = positionsBox.reduce((prev, properties, index) => {
-  const className = `& .card-image__card-${index + 1}`
-  prev[className] = properties
-  return prev
-}, {} as Record<string, unknown>)
-
-export const ContentProjects = styled('div', {
-  position: 'relative',
-  width: '600px',
-  height: '800px',
-
-  '& .card-image__card-1, & .card-image__card-2, & .card-image__card-3, & .card-image__card-4, & .card-image__card-5':
-    {
-      position: 'absolute'
-    },
-
-  ...stylesBoxChildren
-})

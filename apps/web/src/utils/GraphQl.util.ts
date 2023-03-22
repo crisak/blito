@@ -1,4 +1,4 @@
-import { DefaultPropsGraphQL } from '@/models/ModelsAdapter.model'
+import type { DefaultPropsGraphQL } from '@/models/ModelsAdapter.model'
 
 export default class GraphQLUtil {
   static removeDefaultPropsOfList<T>(
@@ -11,18 +11,24 @@ export default class GraphQLUtil {
         continue
       }
 
-      const {
-        __typename,
-        _deleted,
-        _lastChangedAt,
-        _version,
-        createdAt,
-        updatedAt,
-        ...props
-      } = value
-      newList.push({ ...props } as T)
+      const valueFilter = GraphQLUtil.removeDefaultProps<T>(value)
+
+      newList.push(valueFilter)
     }
 
     return newList
+  }
+
+  static removeDefaultProps<T>(value: any): T {
+    const {
+      __typename,
+      _deleted,
+      _lastChangedAt,
+      _version,
+      createdAt,
+      updatedAt,
+      ...props
+    } = value
+    return { ...props } as T
   }
 }

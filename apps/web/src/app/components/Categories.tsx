@@ -4,11 +4,7 @@ import { CategoriesSummaryContents } from '@/models/categories-summary.models'
 import { Button, Container, styled } from '@nextui-org/react'
 import { CardLinkImage } from './CardImage'
 import Text from '@/app/components/Text'
-import {
-  CategoryContent,
-  ContentProjects,
-  SectionCategory
-} from './Home.styles'
+import { CategoryContent, SectionCategory } from './Home.styles'
 import { ParallaxBanner, ParallaxBannerLayer } from 'react-scroll-parallax'
 import SplashPage from '@/assets/images/splah-push.png'
 import Image from 'next/image'
@@ -65,15 +61,6 @@ const Categories = ({ categories }: CategoriesProps) => {
                       <Button>Ver más</Button>
                     </Fade>
                   </CategoryContent>
-                  <ContentProjects>
-                    {category.projects.slice(0, 5).map((project, index) => (
-                      <CardLinkImage
-                        key={project.id}
-                        className={`card-image__card-${index + 1}`}
-                        {...project}
-                      />
-                    ))}
-                  </ContentProjects>
                 </SectionCategory>
               </Container>
             </ParallaxBannerLayer>
