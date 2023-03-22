@@ -3,16 +3,16 @@
 
 const awsmobile = {
     "aws_project_region": "us-east-1",
-    "aws_appsync_graphqlEndpoint": "https://gzw7npcnxzbbfidiv6izaqig2u.appsync-api.us-east-1.amazonaws.com/graphql",
+    "aws_appsync_graphqlEndpoint": "https://x77nmqzamfeqxo2tjvqwgpcd4e.appsync-api.us-east-1.amazonaws.com/graphql",
     "aws_appsync_region": "us-east-1",
     "aws_appsync_authenticationType": "API_KEY",
-    "aws_appsync_apiKey": "da2-ue5gzet7b5eklmne2krjnb3dxe",
-    "aws_cognito_identity_pool_id": "us-east-1:28adc326-42d2-4e2f-98d7-50390a268036",
+    "aws_appsync_apiKey": "da2-ghx56mrzfrcvfau4s4ioo7sy2a",
+    "aws_cognito_identity_pool_id": "us-east-1:a267ef7b-762d-4b74-abde-c4232f5c1c76",
     "aws_cognito_region": "us-east-1",
-    "aws_user_pools_id": "us-east-1_1RS1isJNy",
-    "aws_user_pools_web_client_id": "6lqsabor4lo6hogkllpak4sed0",
+    "aws_user_pools_id": "us-east-1_FcreACG83",
+    "aws_user_pools_web_client_id": "71tu3a1i5b7ffenacpfi3a1u27",
     "oauth": {
-        "domain": "dev-blito44e1913d-44e1913d-dev.auth.us-east-1.amazoncognito.com",
+        "domain": "dev-blito44e1913d-44e1913d-prod.auth.us-east-1.amazoncognito.com",
         "scope": [
             "openid",
             "profile",
@@ -48,7 +48,7 @@ const awsmobile = {
     "aws_cognito_verification_mechanisms": [
         "EMAIL"
     ],
-    "aws_user_files_s3_bucket": "blito-storage-f45ca4aa133401-dev",
+    "aws_user_files_s3_bucket": "blito-storage-f45ca4aa74327-prod",
     "aws_user_files_s3_bucket_region": "us-east-1"
 };
 

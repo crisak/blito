@@ -19,8 +19,6 @@ const darkTheme = createTheme({
   type: 'dark'
 })
 
-console.info('⚠️ App running in: ', process.env.NEXT_PUBLIC_ENV)
-
 const $2seconds = 3000
 
 interface RootContainerProps {

@@ -15,6 +15,8 @@ Amplify.configure({
   }
 })
 
+console.info('⛳️ App running in: ', process.env.NEXT_PUBLIC_ENV)
+
 interface RootLayoutProps {
   children: React.ReactNode
 }

@@ -55,7 +55,8 @@
       "UnauthRoleName": "amplify-blito-prod-74327-unauthRole",
       "StackName": "amplify-blito-prod-74327",
       "StackId": "arn:aws:cloudformation:us-east-1:957950463642:stack/amplify-blito-prod-74327/273369e0-c3f8-11ed-a7ba-0a4fbd066e11",
-      "AmplifyAppId": "d3ekfn0rvjyyle"
+      "AmplifyAppId": "d3ekfn0rvjyyle",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-blito-prod-74327-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
     },
     "categories": {
       "auth": {
@@ -67,19 +68,25 @@
       "function": {
         "BlitoPostConfirmation": {
           "GROUP": "Admin",
-          "deploymentBucketName": "amplify-blito-dev-133401-deployment",
+          "deploymentBucketName": "amplify-blito-prod-74327-deployment",
           "s3Key": "amplify-builds/BlitoPostConfirmation-68413630576165346855-build.zip"
         },
         "exportAnalytics": {
-          "deploymentBucketName": "amplify-blito-dev-133401-deployment",
+          "deploymentBucketName": "amplify-blito-prod-74327-deployment",
           "s3Key": "amplify-builds/exportAnalytics-69526552353448677835-build.zip",
           "typeError": "none"
         },
         "testCloudFormationTest": {
-          "deploymentBucketName": "amplify-blito-dev-133401-deployment",
+          "deploymentBucketName": "amplify-blito-prod-74327-deployment",
           "s3Key": "amplify-builds/testCloudFormationTest-6151793656666a35416d-build.zip",
           "tableNameTest": "User-removetablefuture-dev"
         },
+        "s3blitostoragef45ca4aa": {}
+      },
+      "api": {
+        "Blito": {}
+      },
+      "storage": {
         "s3blitostoragef45ca4aa": {}
       }
     }
