@@ -2,7 +2,12 @@ import { handleError, GraphQLUtil } from '@/utils'
 import { ACategory, AContent, AFile } from '@/models'
 import { graphqlOperation, GraphQLQuery } from '@aws-amplify/api'
 import { API } from 'aws-amplify'
-import { ListCategoriesQuery, listCategories, ListContentsQuery } from 'models'
+import {
+  TypeFile,
+  ListCategoriesQuery,
+  listCategories,
+  ListContentsQuery
+} from 'models'
 import type { GetAllWithContentResult } from './Category.type'
 
 export default class CategoryService {
@@ -117,7 +122,7 @@ export default class CategoryService {
         response.data.listContents.items
       )
 
-      const files = contest.slice(0, 3).map<AFile>((content) => {
+      let files = contest.slice(0, 3).map<AFile>((content) => {
         const bannerImage = content?.files?.find(
           (file) => file?.isBanner
         ) as AFile
@@ -128,6 +133,19 @@ export default class CategoryService {
 
         return GraphQLUtil.removeDefaultProps<AFile>(bannerImage)
       })
+
+      if (files.length === 0) {
+        files = [
+          {
+            isBanner: true,
+            data: 'https://cdn-icons-png.flaticon.com/512/3342/3342137.png',
+            type: TypeFile.IMAGE,
+            mimeType: 'image/png',
+            caption: 'Imagen por defecto',
+            size: 1400
+          } as AFile
+        ]
+      }
 
       return {
         ...category,

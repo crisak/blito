@@ -13,19 +13,12 @@ export type LinkCardCategoryProps = {
 } & AFile
 
 const LinkCardCategory = ({
-  className,
+  // className,
   caption,
   data: image,
   index
 }: LinkCardCategoryProps) => {
-  // const classes = classNames(
-  //   {
-  //     [styles.parallax_effect_glare_scale]: true
-  //   },
-  //   className
-  // )
   return (
-    // <TilT className={classes} perspective={500} scale={1.02}>
     <Image
       src={image}
       alt={caption || 'Imagen de proyecto de modo de Banner'}

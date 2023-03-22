@@ -1,5 +1,5 @@
 import { Box } from '../components'
-import { LinkCardCategory, ContainerLinkCardCategory } from './components'
+import { ContainerLinkCardCategory } from './components'
 
 import CategoryService from './services/Category.service'
 
@@ -11,33 +11,20 @@ const CategoryPage = async () => {
   return (
     <Box
       css={{
-        margin: '0',
-        padding: '0',
-        width: '80vw',
-        position: 'absolute',
-        left: '50%',
-        transform: 'translateX(-50%)',
         display: 'grid',
-        'grid-template-columns': 'repeat(auto-fill, 250px)',
-        'grid-auto-rows': '10px',
-        'justify-content': 'center',
-        'background-color': 'black'
+        'grid-template-columns': 'repeat(auto-fill, minmax(250px, 1fr))',
+        'grid-gap': '1.2rem',
+        padding: '10px'
       }}
     >
-      {categories.map(({ id: categoryId, files }) => (
-        <ContainerLinkCardCategory key={categoryId} categoryId={categoryId}>
-          {files.slice(1).map((file, index) => {
-            const id = file.caption + file.mimeType + file.data
-            return (
-              <LinkCardCategory
-                key={id}
-                className={`card-image__card-${index + 1}`}
-                index={index}
-                {...file}
-              />
-            )
-          })}
-        </ContainerLinkCardCategory>
+      {categories.map(({ id: categoryId, files, name, description }) => (
+        <ContainerLinkCardCategory
+          key={categoryId}
+          categoryId={categoryId}
+          name={name}
+          description={description}
+          file={files}
+        />
       ))}
     </Box>
   )
