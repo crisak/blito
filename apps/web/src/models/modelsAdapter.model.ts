@@ -1,4 +1,4 @@
-import type { Content, Category, File as FileModel } from 'models'
+import type { Content, Category as CategoryModel, File as FileModel } from 'models'
 
 export type DefaultPropsGraphQL = {
   __typename: string
@@ -25,6 +25,6 @@ export type RmDefaultParameter<T> = Omit<T, keyof DefaultPropsGraphQL>
 
 export type AContent = RmDefaultParameter<Content>
 
-export type ACategory = RmDefaultParameter<Category>
+export type ACategory = RmDefaultParameter<CategoryModel>
 
 export type AFile = RmDefaultParameter<FileModel>
