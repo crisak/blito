@@ -1,5 +1,5 @@
 import { handleError, GraphQLUtil } from '@/utils'
-import { ACategory, AContent, AFile } from '@/models/modelsAdapter.model'
+import { ACategory, AContent, AFile } from '@/models/ModelsAdapter.model'
 import { graphqlOperation, GraphQLQuery } from '@aws-amplify/api'
 import { API } from 'aws-amplify'
 import {

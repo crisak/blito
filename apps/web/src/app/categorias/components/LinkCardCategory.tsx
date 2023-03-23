@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { AFile } from '@/models/modelsAdapter.model'
+import { AFile } from '@/models/ModelsAdapter.model'
 import { BORDER_RADIUS } from '@/styles/variables'
 
 export type LinkCardCategoryProps = {
