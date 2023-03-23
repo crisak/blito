@@ -7,7 +7,7 @@ import Breadcrumbs, {
 import { Container as ContainerUI, Spacer } from '@nextui-org/react'
 
 type ContainerLayoutProps = {
-  children: React.ReactNode
+  children: React.ReactNode | React.ReactNode[]
   header?: React.ReactNode
   breadcrumbs?: BreadcrumbsProps
 }

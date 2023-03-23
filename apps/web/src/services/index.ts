@@ -1,3 +1,3 @@
 export * from './authService'
-export * from './category.service'
-// export * from './local-storage.service';
+export * from './Category.service'
+export * from './Project.service'

@@ -1,7 +1,7 @@
 import { Box } from '../components'
 import { ContainerLinkCardCategory } from './components'
 
-import CategoryService from './services/Category.service'
+import { CategoryService } from '@/services'
 
 const categoryService = CategoryService.getInstance()
 
@@ -12,8 +12,8 @@ const CategoryPage = async () => {
     <Box
       css={{
         display: 'grid',
-        'grid-template-columns': 'repeat(auto-fill, minmax(250px, 1fr))',
-        'grid-gap': '1.2rem',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
+        gap: '1.2rem',
         padding: '10px'
       }}
     >

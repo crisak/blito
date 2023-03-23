@@ -59,7 +59,7 @@ const ContainerLinkCardCategory = ({
           <Col>
             <Row justify="flex-end">
               <Button flat auto rounded>
-                <Link href={`/categorias/${categoryId}`}>Ver más</Link>
+                <Link href={`/categorias/${categoryId}/proyectos`}>Ver más</Link>
               </Button>
             </Row>
           </Col>

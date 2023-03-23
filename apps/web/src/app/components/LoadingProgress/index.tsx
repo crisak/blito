@@ -1,3 +1,5 @@
+'use client'
+
 import { Grid, Progress } from '@nextui-org/react'
 
 const LoadingProgress = () => {

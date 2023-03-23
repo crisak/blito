@@ -1,12 +1,10 @@
 'use client'
 
-// import useSWR from 'swr'
-// import { fetcher } from '@/utils'
-// import type { NextPage } from 'next'
-
-import ListOfProjects from './components/ListOfProjects'
-import { Project } from './models'
-import { Breadcrumbs, BreadcrumbsProps, LoadingProgress } from '@/app/components'
+import {
+  Breadcrumbs,
+  BreadcrumbsProps,
+  LoadingProgress
+} from '@/app/components'
 import { Container, Spacer } from '@nextui-org/react'
 import { ProjectService } from './services'
 
