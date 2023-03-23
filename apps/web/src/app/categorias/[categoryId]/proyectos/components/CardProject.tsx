@@ -1,3 +1,5 @@
+'use client'
+
 import { Card, Col, Row, Button } from '@nextui-org/react'
 import { Text } from '@/app/components'
 import { AContent } from '@/models'
@@ -6,7 +8,7 @@ import Link from 'next/link'
 
 type CardProjectProps = AContent & { categoryId: string }
 
-export const CardProject = ({
+const CardProject = ({
   id,
   project,
   files,
@@ -37,7 +39,7 @@ export const CardProject = ({
           objectFit="cover"
           width="100%"
           height="100%"
-          alt="Relaxing app background"
+          alt={file?.caption || files?.[0]?.caption || ''}
         />
       </Card.Body>
       <Card.Footer
@@ -93,3 +95,4 @@ export const CardProject = ({
     </Card>
   )
 }
+export default CardProject

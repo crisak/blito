@@ -2,7 +2,12 @@ import { handleError, GraphQLUtil } from '@/utils'
 import { AContent } from '@/models/ModelsAdapter.model'
 import { graphqlOperation, GraphQLQuery } from '@aws-amplify/api'
 import { API } from 'aws-amplify'
-import { ListContentsQuery, listContents } from 'models'
+import {
+  ListContentsQuery,
+  listContents,
+  GetContentQuery,
+  getContent
+} from 'models'
 
 export class ProjectService {
   static instance: ProjectService
@@ -37,6 +42,31 @@ export class ProjectService {
       return GraphQLUtil.removeDefaultPropsOfList<AContent>(
         response.data.listContents.items
       )
+    } catch (error) {
+      throw handleError(error)
+    }
+  }
+
+  async getById(projectId: string): Promise<AContent> {
+    try {
+      if (!projectId) {
+        throw new Error('ProjectId params not exits')
+      }
+      /**
+       * {Action}-{Name}-{Type}
+       *  Update  Content Mutation
+       */
+      const response = await API.graphql<GraphQLQuery<GetContentQuery>>(
+        graphqlOperation(getContent, {
+          id: projectId
+        })
+      )
+
+      if (!response || response?.errors || !response?.data?.getContent) {
+        throw response
+      }
+
+      return GraphQLUtil.removeDefaultProps<AContent>(response.data.getContent)
     } catch (error) {
       throw handleError(error)
     }

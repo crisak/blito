@@ -28,7 +28,7 @@ const Container = ({ children, breadcrumbs }: ContainerLayoutProps) => {
   return (
     <>
       <ContainerUI>
-        <Spacer y={2} />
+        <Spacer y={1} />
         {displayBreadcrumbs()}
 
         {children}

@@ -1,8 +1,9 @@
 import { Box, Container, Text, BreadcrumbsProps } from '@/app/components'
 import { CategoryService, ProjectService } from '@/services'
+import { CardProject } from './components'
 
 type ProjectsPageProps = {
-  params: { id: string }
+  params: { categoryId: string }
 }
 
 const categoryService = CategoryService.getInstance()
@@ -10,15 +11,15 @@ const projectService = ProjectService.getInstance()
 
 const CategoryContentsPage = async ({ params }: ProjectsPageProps) => {
   const [category, projects] = await Promise.all([
-    categoryService.getById(params.id),
-    projectService.getAllByCategory(params.id)
+    categoryService.getById(params.categoryId),
+    projectService.getAllByCategory(params.categoryId)
   ])
 
   const breadcrumbs: BreadcrumbsProps = {
     links: [
       { label: 'Categorias', href: '/categorias' },
-      { label: category.name, href: `/categorias/${params.id}` },
-      { label: 'Proyectos', href: `/categorias/${params.id}/proyectos` }
+      { label: category.name, href: `/categorias/${params.categoryId}` },
+      { label: 'Proyectos', href: `/categorias/${params.categoryId}/proyectos` }
     ]
   }
 
@@ -36,12 +37,12 @@ const CategoryContentsPage = async ({ params }: ProjectsPageProps) => {
           padding: '10px'
         }}
       >
-        {projects.map(({ id }) => (
-          <Box key={id} css={{ w: '100%', h: '400px', border: '$accents1' }}>
-            <Text h4 weight="bold">
-              {category.name}
-            </Text>
-          </Box>
+        {projects.map((content) => (
+          <CardProject
+            key={content.id}
+            categoryId={params.categoryId}
+            {...content}
+          />
         ))}
       </Box>
     </Container>
