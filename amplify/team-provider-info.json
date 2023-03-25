@@ -20,11 +20,6 @@
         "userPoolGroups": {}
       },
       "function": {
-        "exportAnalytics": {
-          "deploymentBucketName": "amplify-blito-dev-133401-deployment",
-          "s3Key": "amplify-builds/exportAnalytics-69526552353448677835-build.zip",
-          "typeError": "throwCustom"
-        },
         "s3blitostoragef45ca4aa": {},
         "BlitoPostConfirmation": {
           "GROUP": "Admin",

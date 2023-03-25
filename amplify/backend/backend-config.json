@@ -107,20 +107,6 @@
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
-    },
-    "exportAnalytics": {
-      "build": true,
-      "dependsOn": [
-        {
-          "attributes": [
-            "BucketName"
-          ],
-          "category": "storage",
-          "resourceName": "s3blitostoragef45ca4aa"
-        }
-      ],
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
     }
   },
   "parameters": {
@@ -153,30 +139,6 @@
         {
           "category": "function",
           "resourceName": "BlitoPostConfirmation"
-        }
-      ]
-    },
-    "AMPLIFY_function_exportAnalytics_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "exportAnalytics"
-        }
-      ]
-    },
-    "AMPLIFY_function_exportAnalytics_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "exportAnalytics"
-        }
-      ]
-    },
-    "AMPLIFY_function_exportAnalytics_typeError": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "exportAnalytics"
         }
       ]
     }
