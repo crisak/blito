@@ -116,11 +116,6 @@
       ],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
-    },
-    "testCloudFormationTest": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
     }
   },
   "parameters": {
@@ -177,30 +172,6 @@
         {
           "category": "function",
           "resourceName": "exportAnalytics"
-        }
-      ]
-    },
-    "AMPLIFY_function_testCloudFormationTest_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "testCloudFormationTest"
-        }
-      ]
-    },
-    "AMPLIFY_function_testCloudFormationTest_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "testCloudFormationTest"
-        }
-      ]
-    },
-    "AMPLIFY_function_testCloudFormationTest_tableNameTest": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "testCloudFormationTest"
         }
       ]
     }
