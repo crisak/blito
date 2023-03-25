@@ -7,13 +7,6 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "outDir": "./src",
-    "baseUrl": "./",
-    "paths": {
-      "@": ["./lib"]
-    }
-  },
-  "exclude": ["./lib/node_modules", "node_modules"]
-  
+    "resolveJsonModule": true
+  }
 }

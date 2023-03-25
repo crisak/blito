@@ -1,7 +1,13 @@
 {
   "extends": "tsconfig/amplify-config.json",
   "compilerOptions": {
-    "rootDir": "./lib"
+    "rootDir": "./lib",
+    "outDir": "./src",
+    "baseUrl": "./",
+    "paths": {
+      "@": ["./lib"]
+    }
   },
-  "include": ["./lib/**/*.ts", "./lib/package.json"]
+  "include": ["./lib/**/*.ts", "./lib/package.json"],
+  "exclude": ["./lib/node_modules", "node_modules"]
 }
