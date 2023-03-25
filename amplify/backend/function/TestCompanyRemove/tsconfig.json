@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "lib": ["esnext"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "outDir": "./src",
+    "baseUrl": "./",
+    "rootDir": "./lib",
+    "paths": {
+      "@": ["./lib"]
+    }
+  },
+  "include": ["**/*", "package.json"],
+  "exclude": ["node_modules"]
+}

@@ -66,3 +66,7 @@ amplifytools.xcconfig
 amplify/mock-data
 amplify/mock-api-resources
 #amplify-do-not-edit-end
+
+
+# Ignore build of all lambdas in amplify
+amplify/backend/function/*/src
