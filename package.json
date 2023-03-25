@@ -5,11 +5,10 @@
   "workspaces": [
     "apps/*",
     "packages/*",
-    "amplify/**/functions/**/src/*"
+    "amplify/backend/function/**/lib"
   ],
   "scripts": {
-    "amplify:generateReport": "cd amplify/backend/function/generateReport && tsc -p ./tsconfig.json && cd -",
-    "amplify:TestCompanyRemove": "cd amplify/backend/function/TestCompanyRemove && echo \"holi🙋\" && cd -",
+    "amplify:TestCompanyRemove": "cd ./amplify/backend/function/TestCompanyRemove/lib && yarn && yarn build && cd -",
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",

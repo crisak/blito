@@ -2,15 +2,18 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "lib": ["dom", "esnext"],
+    "lib": ["ESNext"],
+    "target": "ES2016",
     "module": "commonjs",
     "moduleResolution": "node",
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "outDir": "./../src/**",
+    "outDir": "./src",
     "baseUrl": "./",
     "paths": {
-      "@/*": ["./*"]
+      "@": ["./lib"]
     }
-  }
+  },
+  "exclude": ["./lib/node_modules", "node_modules"]
+  
 }

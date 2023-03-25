@@ -1,17 +1,22 @@
+import { Singleton } from './utils'
+import type { Tag } from 'models'
 
+type InputExample = { name: string; newInstance: boolean }
 
-/**
- * @type {import('@types/aws-lambda').APIGatewayProxyHandler}
- */
-exports.handler = async (event) => {
-    console.log(`EVENT: ${JSON.stringify(event)}`);
-    return {
-        statusCode: 200,
-    //  Uncomment below to enable CORS requests
-    //  headers: {
-    //      "Access-Control-Allow-Origin": "*",
-    //      "Access-Control-Allow-Headers": "*"
-    //  }, 
-        body: JSON.stringify('Hello from Lambda!'),
-    };
-};
+exports.handler = async (event: InputExample) => {
+  const memoryObject = Singleton.getInstance({
+    newInstance: Boolean(event.newInstance)
+  })
+
+  memoryObject.setUsers(event?.name || 'random')
+
+  return {
+    statusCode: 200,
+
+    body: memoryObject.getUsers(),
+    tags: {
+      id: 'Test',
+      name: 'Example'
+    } as Pick<Tag, 'id' | 'name'>
+  }
+}

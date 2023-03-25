@@ -1,18 +1,7 @@
 {
+  "extends": "tsconfig/amplify-config.json",
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "lib": ["esnext"],
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "outDir": "./src",
-    "baseUrl": "./",
-    "rootDir": "./lib",
-    "paths": {
-      "@": ["./lib"]
-    }
+    "rootDir": "./lib"
   },
-  "include": ["**/*", "package.json"],
-  "exclude": ["node_modules"]
+  "include": ["./lib/**/*.ts", "./lib/package.json"]
 }
