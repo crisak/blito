@@ -30,7 +30,8 @@
           "GROUP": "Admin",
           "deploymentBucketName": "amplify-blito-dev-133401-deployment",
           "s3Key": "amplify-builds/BlitoPostConfirmation-68413630576165346855-build.zip"
-        }
+        },
+        "TestCompanyRemove": {}
       },
       "api": {
         "Blito": {}
