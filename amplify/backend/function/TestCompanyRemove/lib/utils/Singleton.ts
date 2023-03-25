@@ -32,7 +32,7 @@ class Singleton {
     const options = { timeZone: 'America/Bogota' }
     const colombiaTime = now.toLocaleString('es-CO', options)
 
-    this.users.push(`User.${name}  - ${colombiaTime}`)
+    this.users.push(`🇨🇴 User.${name}  - ${colombiaTime}`)
   }
 }
 
