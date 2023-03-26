@@ -6,13 +6,13 @@
   "scripts": {
     "lint": "eslint *.ts*",
     "build": "tsc",
-    "dev": "yarn build && amplify mock function TestCompanyRemove --event lib/events/event.json"
+    "dev": "yarn build && amplify mock function TestCompanyRemove --event lib/events/event.json --timeout 20000",
+    "models": "*"
   },
   "license": "Apache-2.0",
   "devDependencies": {
     "@types/aws-lambda": "^8.10.92",
     "typescript": "^5.0.2",
-    "models": "*",
     "tsconfig": "*",
     "eslint-config-custom": "*"
   }

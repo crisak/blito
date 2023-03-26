@@ -28,7 +28,7 @@
         },
         "TestCompanyRemove": {
           "deploymentBucketName": "amplify-blito-dev-133401-deployment",
-          "s3Key": "amplify-builds/TestCompanyRemove-6e577269772f7963425a-build.zip"
+          "s3Key": "amplify-builds/TestCompanyRemove-48716e78644a6f473253-build.zip"
         }
       },
       "api": {

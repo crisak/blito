@@ -1,48 +1,69 @@
 /* eslint-disable no-console */
 import { Singleton } from './utils'
-import type { Tag } from 'models'
-import { Context } from 'aws-lambda'
+import { getContent, Tag, TypeSocialNetwork } from 'models'
+import { APIGatewayEvent, Context } from 'aws-lambda'
 
 const todos = []
 
 console.log('🏁 Start lambda', {
-  'global.miRequestId': global.miRequestId,
+  'global.miRequestId': global?.miRequestId || '',
   todos
 })
 
 type InputExample = { name: string; newInstance: boolean }
 
-const sleep = (time = 10000) =>
+const sleep = (time = 15000) =>
   new Promise((resolve) => setTimeout(resolve, time))
 
-export const handler = async (event: InputExample, context: Context) => {
+export const handler = async (event: APIGatewayEvent, context: Context) => {
+  console.log('0️⃣ global.miRequestId->', global.miRequestId)
+  const body = JSON.parse(event.body) as InputExample
+
   global.miRequestId = context.awsRequestId
-  console.log('1️⃣ Start function:', {
-    'global.miRequestId': global.miRequestId,
-    todos
-  })
 
   const memoryObject = Singleton.getInstance({
-    newInstance: Boolean(event.newInstance)
+    newInstance: Boolean(body.newInstance)
   })
 
-  memoryObject.setUsers(event?.name || 'random')
-  todos.push(event?.name || 'random')
+  console.log('1️⃣ Start function:', {
+    'global.miRequestId': global?.miRequestId || '',
+    todos: JSON.parse(JSON.stringify(todos)),
+    users: JSON.parse(JSON.stringify(memoryObject.getUsers()))
+  })
 
+  memoryObject.setUsers(body?.name || 'random')
+  todos.push(body?.name || 'random')
+
+  console.log('⏰ waiting .............')
   await sleep()
 
-  console.log('2️⃣ Start function:', {
-    'global.miRequestId': global.miRequestId,
-    todos
+  console.log('2️⃣ After of sleep function:', {
+    'global.miRequestId': global?.miRequestId || '',
+    todos: JSON.parse(JSON.stringify(todos)),
+    users: JSON.parse(JSON.stringify(memoryObject.getUsers()))
   })
 
   return {
     statusCode: 200,
-
-    body: memoryObject.getUsers(),
-    tags: {
-      id: 'Test',
-      name: 'Example'
-    } as Pick<Tag, 'id' | 'name'>
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': '*'
+    },
+    body: JSON.stringify({
+      users: memoryObject.getUsers(),
+      todos,
+      cloudWatchId: global?.miRequestId || '',
+      /** Test with library of Models  */
+      queryGrahql: getContent,
+      typeSocial: {
+        facebook: TypeSocialNetwork.FACEBOOK,
+        ins: TypeSocialNetwork.INSTAGRAM,
+        you: TypeSocialNetwork.YOUTUBE
+      },
+      tag: {
+        id: 'Test',
+        name: 'Example'
+      } as Pick<Tag, 'id' | 'name'>
+    })
   }
 }
