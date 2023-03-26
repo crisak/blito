@@ -1,10 +1,12 @@
 {
-  "name": "models",
-  "version": "0.0.1",
-  "main": "./index.ts",
+  "name": "blito-models",
+  "version": "0.0.3",
+  "main": "./dist/index.js",
   "types": "./index.ts",
   "license": "MIT",
   "scripts": {
+    "build": "echo 'crsitian' && tsc",
+    "dev": "tsc -w",
     "local:build": "npx amplify codegen --apiId 35jolub6zvaktn5xbpx45kw674",
     "local:build:prod": "npx amplify add codegen --apiId XXXXXXXXX"
   },
@@ -14,7 +16,7 @@
     "eslint-config-custom": "*",
     "tsconfig": "*"
   },
-  "publishConfig": {
-    "access": "public"
+  "author": {
+    "name": "crisak"
   }
 }

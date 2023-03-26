@@ -6,7 +6,7 @@ import { Button, Card, Container, Input, Spacer } from '@nextui-org/react'
 import { Auth } from 'aws-amplify'
 import { useState } from 'react'
 import { Amplify } from 'aws-amplify'
-import { getAwsExports } from 'models'
+import { getAwsExports } from 'blito-models'
 import { toast } from 'react-toastify'
 
 Amplify.configure({

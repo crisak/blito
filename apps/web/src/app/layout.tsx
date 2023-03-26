@@ -1,7 +1,7 @@
 import 'react-toastify/dist/ReactToastify.css'
 import IcoBlitoWhite from '@/assets/images/icon-blito-white.ico'
 import { Amplify } from 'aws-amplify'
-import { getAwsExports } from 'models'
+import { getAwsExports } from 'blito-models'
 import { RootContainer } from './components'
 
 const configAws = getAwsExports()

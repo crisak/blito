@@ -2,7 +2,7 @@ import type {
   Content,
   Category as CategoryModel,
   File as FileModel
-} from 'models'
+} from 'blito-models'
 
 export type DefaultPropsGraphQL = {
   __typename: string

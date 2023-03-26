@@ -4,7 +4,7 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**"]
+      "outputs": ["dist/**", ".next/**", "./../src/**"]
     },
     "build:prod": {
       "dependsOn": ["^build:prod"],
@@ -14,7 +14,8 @@
       "outputs": []
     },
     "dev": {
-      "cache": false
+      "cache": false,
+      "outputs": ["./../src/**"]
     }
   }
 }

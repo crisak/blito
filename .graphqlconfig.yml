@@ -2,14 +2,14 @@ projects:
   Blito:
     schemaPath: amplify/backend/api/Blito/build/schema.graphql
     includes:
-      - packages/models/graphql/**/*.ts
+      - packages/blito-models/graphql/**/*.ts
     excludes:
       - ./amplify/**
     extensions:
       amplify:
         codeGenTarget: typescript
-        generatedFileName: packages/models/API.ts
-        docsFilePath: packages/models/graphql
+        generatedFileName: packages/blito-models/API.ts
+        docsFilePath: packages/blito-models/graphql
         region: us-east-1
         apiId: 35jolub6zvaktn5xbpx45kw674
         maxDepth: 10

@@ -1,0 +1,8 @@
+{
+  "extends": "./tsconfig.paths.json",
+  "compilerOptions": {
+    "outDir": "./../src"
+  },
+  "include": ["./**/*.ts", "./*.ts", "package.json"],
+  "exclude": ["node_modules"]
+}

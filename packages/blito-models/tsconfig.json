@@ -1,0 +1,10 @@
+{
+  "extends": "tsconfig/amplify-config.json",
+  "include": ["./*.ts", "./**/*.ts", "aws-exports*.js"],
+  "compilerOptions": {
+    "allowJs": true,
+    "outDir": "./dist",
+    "baseUrl": "."
+  },
+  "exclude": ["node_modules"]
+}

@@ -6,14 +6,16 @@
   "scripts": {
     "lint": "eslint *.ts*",
     "build": "tsc",
-    "dev": "yarn build && amplify mock function TestCompanyRemove --event lib/events/event.json --timeout 20000",
-    "models": "*"
+    "start": "echo EJECUTA",
+    "dev": "yarn build && amplify mock function TestCompanyRemove --event lib/events/event.json --timeout 20000"
   },
   "license": "Apache-2.0",
   "devDependencies": {
     "@types/aws-lambda": "^8.10.92",
-    "typescript": "^5.0.2",
-    "tsconfig": "*",
-    "eslint-config-custom": "*"
+    "typescript": "^5.0.2"
+  },
+  "dependencies": {
+    "is-number": "^7.0.0",
+    "blito-models": "file:./../../../../../packages/blito-models"
   }
 }

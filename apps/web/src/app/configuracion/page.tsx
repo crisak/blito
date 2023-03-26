@@ -13,7 +13,7 @@ import {
 import Link from 'next/link'
 import { BsArrowClockwise, BsPlus } from 'react-icons/bs'
 import { API, Storage } from 'aws-amplify'
-import { createCategory, getAnalytics } from 'models'
+import { createCategory, getAnalytics } from 'blito-models'
 
 function convertToCSV(arr: any[], header: any[]) {
   const csv = arr.map((row) => {

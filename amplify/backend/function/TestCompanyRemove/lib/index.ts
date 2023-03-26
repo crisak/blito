@@ -1,7 +1,9 @@
 /* eslint-disable no-console */
-import { Singleton } from './utils'
-import { getContent, Tag, TypeSocialNetwork } from 'models'
+
 import { APIGatewayEvent, Context } from 'aws-lambda'
+import * as isNumber from 'is-number'
+import { Singleton } from './utils'
+import { Tag, getContent } from 'blito-models'
 
 const todos = []
 
@@ -56,10 +58,12 @@ export const handler = async (event: APIGatewayEvent, context: Context) => {
       /** Test with library of Models  */
       queryGrahql: getContent,
       typeSocial: {
-        facebook: TypeSocialNetwork.FACEBOOK,
-        ins: TypeSocialNetwork.INSTAGRAM,
-        you: TypeSocialNetwork.YOUTUBE
+        // facebook: TypeSocialNetwork.FACEBOOK,
+        // ins: TypeSocialNetwork.INSTAGRAM,
+        // you: TypeSocialNetwork.YOUTUBE,
+        // tikTok: TypeSocialNetwork.TIKTOK
       },
+      isNumber: isNumber(12),
       tag: {
         id: 'Test',
         name: 'Example'

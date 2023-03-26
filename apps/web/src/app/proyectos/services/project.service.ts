@@ -2,7 +2,7 @@ import { handleError } from '@/utils'
 import { AContent, RmDefaultParameter } from '@/models'
 import { graphqlOperation, GraphQLQuery } from '@aws-amplify/api'
 import { API } from 'aws-amplify'
-import { File, ListContentsQuery, Location } from 'models'
+import { File, ListContentsQuery, Location } from 'blito-models'
 
 export type ProjectFile = Omit<RmDefaultParameter<File>, 'size'>
 

@@ -7,7 +7,7 @@ import {
   listContents,
   GetContentQuery,
   getContent
-} from 'models'
+} from 'blito-models'
 
 export class ProjectService {
   static instance: ProjectService

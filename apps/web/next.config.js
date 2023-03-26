@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  transpilePackages: ['models'],
+  transpilePackages: ['blito-models'],
   experimental: {
     appDir: true
   },
