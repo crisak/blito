@@ -102,11 +102,6 @@
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
-    },
-    "TestCompanyRemove": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
     }
   },
   "parameters": {
@@ -139,22 +134,6 @@
         {
           "category": "function",
           "resourceName": "BlitoPostConfirmation"
-        }
-      ]
-    },
-    "AMPLIFY_function_TestCompanyRemove_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "TestCompanyRemove"
-        }
-      ]
-    },
-    "AMPLIFY_function_TestCompanyRemove_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "TestCompanyRemove"
         }
       ]
     }

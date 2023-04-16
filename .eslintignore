@@ -6,3 +6,5 @@ src/blito-models
 amplify-codegen-temp/blito-models
 
 packages/blito-models/models
+
+amplify-codegen-temp/models
