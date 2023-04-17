@@ -13,7 +13,7 @@ import {
 import Link from 'next/link'
 import { BsArrowClockwise, BsPlus } from 'react-icons/bs'
 import { API, Storage } from 'aws-amplify'
-import { createCategory, getAnalytics } from 'blito-models'
+import { createCategory } from 'blito-models'
 
 function convertToCSV(arr: any[], header: any[]) {
   const csv = arr.map((row) => {
@@ -50,17 +50,7 @@ const SettingsPage = () => {
     }
   }
 
-  const handleGetViewMetrics = async () => {
-    try {
-      const data = await API.graphql({
-        query: getAnalytics
-      })
-
-      alert('Metrics get it, view console log data')
-    } catch (error) {
-      console.error('error->', error)
-    }
-  }
+  const handleGetViewMetrics = async () => {}
 
   const downloadMetrics = async () => {
     try {
