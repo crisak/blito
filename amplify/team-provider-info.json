@@ -61,16 +61,6 @@
           "deploymentBucketName": "amplify-blito-prod-74327-deployment",
           "s3Key": "amplify-builds/BlitoPostConfirmation-68413630576165346855-build.zip"
         },
-        "exportAnalytics": {
-          "deploymentBucketName": "amplify-blito-prod-74327-deployment",
-          "s3Key": "amplify-builds/exportAnalytics-69526552353448677835-build.zip",
-          "typeError": "none"
-        },
-        "testCloudFormationTest": {
-          "deploymentBucketName": "amplify-blito-prod-74327-deployment",
-          "s3Key": "amplify-builds/testCloudFormationTest-6151793656666a35416d-build.zip",
-          "tableNameTest": "User-removetablefuture-dev"
-        },
         "s3blitostoragef45ca4aa": {}
       },
       "api": {
