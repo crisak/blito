@@ -4,23 +4,63 @@ import Breadcrumbs, {
   type BreadcrumbsProps
 } from '@/app/components/Breadcrumbs'
 
-import { Container as ContainerUI, Spacer } from '@nextui-org/react'
+import {
+  CSS,
+  Container as ContainerUI,
+  Spacer,
+  styled
+} from '@nextui-org/react'
+import Actions from '@/app/components/Actions'
+import { AppStore, AuthStore } from '@/redux/store'
+import { useSelector } from 'react-redux'
 
 type ContainerLayoutProps = {
   children: React.ReactNode | React.ReactNode[]
-  header?: React.ReactNode
+  title?: React.ReactNode
   breadcrumbs?: BreadcrumbsProps
 }
 
-const Container = ({ children, breadcrumbs }: ContainerLayoutProps) => {
+const Header = styled('header', {
+  '& h1, & h2, & h3, & h4': {
+    marginBottom: 0
+  }
+})
+
+const Container = ({ children, breadcrumbs, title }: ContainerLayoutProps) => {
+  const auth = useSelector<AppStore, AuthStore>((state) => state.auth)
+
   const displayBreadcrumbs = () => {
-    if (!breadcrumbs) {
+    if (!breadcrumbs?.links?.length) {
       return null
     }
 
+    return <Breadcrumbs {...breadcrumbs} />
+  }
+
+  const displayHeader = () => {
+    if (!title && !auth?.isAuth) {
+      return null
+    }
+
+    let cssHeader: CSS = {}
+    if (title && auth?.isAuth) {
+      cssHeader = {
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center'
+      }
+    }
+
+    /**
+     * Header
+     */
     return (
       <>
-        <Breadcrumbs {...breadcrumbs} />
+        <Header css={cssHeader}>
+          {title || null}
+
+          {auth.isAuth && <Actions />}
+        </Header>
         <Spacer y={2} />
       </>
     )
@@ -30,7 +70,9 @@ const Container = ({ children, breadcrumbs }: ContainerLayoutProps) => {
       <ContainerUI>
         <Spacer y={1} />
         {displayBreadcrumbs()}
-
+        <Spacer y={1} />
+        {displayHeader()}
+        <Spacer y={1} />
         {children}
         <Spacer y={3} />
       </ContainerUI>

@@ -1,2 +1,3 @@
 export * from './project.slice'
-export * from './authReducer.slice'
+export * from './auth.slice'
+export * from './headerUI.slice'

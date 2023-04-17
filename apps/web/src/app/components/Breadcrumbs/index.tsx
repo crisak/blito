@@ -3,19 +3,30 @@
 import { styled } from '@nextui-org/react'
 import Link from 'next/link'
 
+const Container = styled('div', {
+  display: 'flex',
+  justifyContent: 'space-between'
+})
+
 const List = styled('ul', {
   padding: '10px 0px',
   listStyle: 'none',
   margin: '0',
   borderRadius: '$xs',
+  '&.content-right': {
+    display: 'flex',
+    justifyContent: 'flex-end'
+  },
   '& li': {
     display: 'inline',
-    fontSize: '18px'
+    fontSize: '.875rem'
+  },
+  '&.breadcrumbs li+li:before': {
+    content: '/'
   },
   '& li+li:before': {
     padding: '8px',
-    color: '$primary',
-    content: '/'
+    color: '$primary'
   },
   '& li a': {
     color: '$primary',
@@ -35,22 +46,24 @@ const Breadcrumbs = ({ links }: BreadcrumbsProps) => {
   const lastItem = links.length
 
   return (
-    <List className="breadcrumb">
-      {links.map(({ href, label }, index) => {
-        if (lastItem === index + 1) {
-          return <li key={href + label}>{label}</li>
-        }
+    <Container>
+      <List className="breadcrumbs">
+        {links.map(({ href, label }, index) => {
+          if (lastItem === index + 1) {
+            return <li key={href + label}>{label}</li>
+          }
 
-        if (href) {
-          return (
-            <li key={href + label}>
-              <Link href={href}>{label}</Link>
-            </li>
-          )
-        }
-        return
-      })}
-    </List>
+          if (href) {
+            return (
+              <li key={href + label}>
+                <Link href={href}>{label}</Link>
+              </li>
+            )
+          }
+          return
+        })}
+      </List>
+    </Container>
   )
 }
 
