@@ -1,14 +1,17 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { projectReducer, ProjectStore } from './slices'
+import { projectReducer, ProjectStore, AuthStore, authReducer } from './slices'
 
-export interface AppStore {
+interface AppStore {
   project: ProjectStore
+  auth: AuthStore
 }
 
 const store = configureStore<AppStore>({
   reducer: {
-    project: projectReducer
+    project: projectReducer,
+    auth: authReducer
   }
 })
 
 export default store
+export type { AppStore, ProjectStore, AuthStore }

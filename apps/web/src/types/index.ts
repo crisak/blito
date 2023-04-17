@@ -1,2 +1,5 @@
 export * from './utilityTypes'
 export * from './response'
+export type { default as AuthSession } from './AuthSession'
+export type { default as AuthCognito } from './AuthCognito'
+export type { default as CognitoUserSession } from './CognitoUserSession'

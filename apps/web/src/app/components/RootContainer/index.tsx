@@ -3,7 +3,7 @@
 import '@/styles/globals.css'
 import 'react-toastify/dist/ReactToastify.min.css'
 
-import { Provider } from 'react-redux'
+import { Provider as ReduxProvider } from 'react-redux'
 import store from '@/redux/store'
 import { createTheme, NextUIProvider } from '@nextui-org/react'
 
@@ -15,12 +15,32 @@ import Box from '../Box'
 import NavbarComponent from '../Navbar'
 import Footer from '../Footer'
 import ToastProvider from '../Toast'
+import { AuthService } from '@/app/services'
+import { authSliceActions } from '@/redux/slices'
+import { Amplify } from 'aws-amplify'
+import { getAwsExports } from 'blito-models'
+
+/** This should be configured on Client side but not in the Server */
+const configAws = getAwsExports()
+Amplify.configure({
+  ...configAws,
+  ssr: true,
+  API: {
+    graphql_headers: async () => {
+      return {
+        'Accept-Language': 'es-CO'
+      }
+    }
+  }
+})
+
+console.info('⛳️ App running in: ', process.env.NEXT_PUBLIC_ENV)
 
 const darkTheme = createTheme({
   type: 'dark'
 })
 
-const $2seconds = 3000
+const $3seconds = 3000
 
 interface RootContainerProps {
   children: React.ReactNode
@@ -29,18 +49,40 @@ interface RootContainerProps {
 function RootContainer({ children }: RootContainerProps): JSX.Element {
   const [splash, setSplash] = useState(true)
 
-  useEffect(() => {
-    let refTimeout: NodeJS.Timeout | null = null
+  const initApp = async (refTimeout: NodeJS.Timeout | null) => {
+    const start = performance.now()
+
+    const userAuth = await AuthService.setLoginData()
+
+    if (userAuth) {
+      store.dispatch(authSliceActions.login(userAuth))
+    }
+    const end = performance.now()
+
+    // Calcula la diferencia entre los dos tiempos en milisegundos
+    const time = end - start
+
+    if (time >= $3seconds) {
+      setSplash(false)
+      return
+    }
 
     refTimeout = setTimeout(() => {
       setSplash(false)
-    }, $2seconds)
+    }, time)
+  }
+
+  useEffect(() => {
+    let refTimeout: NodeJS.Timeout | null = null
+
+    initApp(refTimeout)
 
     return () => {
       if (refTimeout) {
         clearTimeout(refTimeout)
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   return (
     <>
@@ -59,7 +101,7 @@ function RootContainer({ children }: RootContainerProps): JSX.Element {
         <ToastProvider>
           <ParallaxProvider>
             <NextUIProvider theme={darkTheme}>
-              <Provider store={store}>
+              <ReduxProvider store={store}>
                 {splash ? (
                   <Splash />
                 ) : (
@@ -69,7 +111,7 @@ function RootContainer({ children }: RootContainerProps): JSX.Element {
                     <Footer />
                   </>
                 )}
-              </Provider>
+              </ReduxProvider>
             </NextUIProvider>
           </ParallaxProvider>
         </ToastProvider>

@@ -9,7 +9,7 @@ import {
   ListContentsQuery,
   GetCategoryQuery,
   getCategory
-} from 'models'
+} from 'blito-models'
 
 export type GetAllWithContentResult = ACategory & { files: Array<AFile> }
 

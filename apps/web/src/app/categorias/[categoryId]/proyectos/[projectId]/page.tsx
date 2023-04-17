@@ -12,8 +12,6 @@ type DetailProjectProps = {
 }
 
 const DetailProject = async (props: DetailProjectProps) => {
-  console.log('->', props)
-
   const [project, category] = await Promise.all([
     projectService.getById(props.params.projectId),
     categoryService.getById(props.params.categoryId)

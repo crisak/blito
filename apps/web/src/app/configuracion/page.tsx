@@ -44,11 +44,9 @@ const SettingsPage = () => {
         }
       })
 
-      console.log('data->', data)
-
       alert('Categoric agregada')
     } catch (error) {
-      console.log('error->', error)
+      console.error('error->', error)
     }
   }
 
@@ -58,11 +56,9 @@ const SettingsPage = () => {
         query: getAnalytics
       })
 
-      console.log('data->', data)
-
       alert('Metrics get it, view console log data')
     } catch (error) {
-      console.log('error->', error)
+      console.error('error->', error)
     }
   }
 
@@ -84,11 +80,7 @@ const SettingsPage = () => {
         contentType: 'text/csv'
       })
 
-      console.log('SaveFile->', result)
-
       const url = await Storage.get(`${stringData}.csv`, { level: 'private' })
-
-      console.log('Result->', url)
 
       alert('Ok' + url)
     } catch (error) {

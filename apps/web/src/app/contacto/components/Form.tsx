@@ -5,7 +5,6 @@ import Fade from 'react-reveal/Fade'
 const Form = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Form submit')
   }
   return (
     <Box css={{ p: '$15' }}>

@@ -2,6 +2,8 @@ import { Grid, Navbar, Text, useTheme } from '@nextui-org/react'
 import Link from 'next/link'
 import BlitoFrontPage from '@/assets/images/home-blito_bg_white.png'
 import Image from 'next/image'
+import { useSelector } from 'react-redux'
+import { AppStore, AuthStore } from '@/redux/store'
 
 const collapseItems = [
   {
@@ -16,14 +18,26 @@ const collapseItems = [
     label: 'Contacto',
     route: '/contacto'
   }
-  // {
-  //   label: 'Login',
-  //   route: '/login'
-  // }
 ]
 
 const NavbarComponent = () => {
   const { isDark } = useTheme()
+  const auth = useSelector<AppStore, AuthStore>((state) => state.auth)
+
+  const navbarCollapseItems = auth.isAuth
+    ? [
+        ...collapseItems,
+        {
+          label: 'Configuración',
+          route: '/configuracion'
+        },
+        {
+          label: 'Cerrar sesión',
+          route: '/logout'
+        }
+      ]
+    : collapseItems
+
   return (
     <Navbar
       css={{
@@ -76,20 +90,23 @@ const NavbarComponent = () => {
         <Link href="/galeria">Galería</Link>
         <Link href="/contacto">Contacto</Link>
       </Navbar.Content>
-      <Navbar.Content>
-        <Link color="inherit" href="/configuracion">
-          Configuración
-        </Link>
-        <Link color="inherit" href="/login">
-          Login
-        </Link>
-        <Link color="inherit" href="/login">
-          Logout
-        </Link>
+      <Navbar.Content hideIn="xs">
+        {auth.isAuth && (
+          <Link color="inherit" href="/configuracion">
+            Configuración
+          </Link>
+        )}
+
+        {auth.isAuth && (
+          <Link color="inherit" href="/logout">
+            Cerrar sesión
+          </Link>
+        )}
       </Navbar.Content>
 
       <Navbar.Collapse>
-        {collapseItems.map(({ label, route }) => (
+        {}
+        {navbarCollapseItems.map(({ label, route }) => (
           <Navbar.CollapseItem key={label}>
             <Link href={route}>{label}</Link>
           </Navbar.CollapseItem>

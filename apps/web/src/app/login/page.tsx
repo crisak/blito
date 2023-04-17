@@ -1,13 +1,15 @@
 'use client'
 
 import { Box, Text } from '@/app/components'
-import AuthCognito from '@/types/AuthCognito'
 import { Button, Card, Container, Input, Spacer } from '@nextui-org/react'
-import { Auth } from 'aws-amplify'
 import { useState } from 'react'
 import { Amplify } from 'aws-amplify'
 import { getAwsExports } from 'blito-models'
 import { toast } from 'react-toastify'
+import { useRouter } from 'next/navigation'
+import { AuthService } from '../services'
+import { useDispatch } from 'react-redux'
+import { authSliceActions } from '@/redux/slices'
 
 Amplify.configure({
   ...getAwsExports(),
@@ -26,24 +28,29 @@ const LoginPage = () => {
     username: '',
     password: ''
   })
+  const router = useRouter()
+  const dispatch = useDispatch()
 
   const handleLogin = async () => {
     try {
-      const auth: AuthCognito = await Auth.signIn(
-        formData.username,
-        formData.password
-      )
-      const userAuth = {
-        username: auth.username,
-        email: auth.attributes.email,
-        isAuth: true
+      const userAuth = await AuthService.login({
+        username: formData.username,
+        password: formData.password
+      })
+
+      if (userAuth) {
+        dispatch(authSliceActions.login(userAuth))
       }
-      localStorage.setItem('auth', JSON.stringify(userAuth, null, 2))
 
       toast('Usuario autenticado', {
         type: 'success'
       })
+
+      router.replace('/')
     } catch (error) {
+      await AuthService.logout()
+      dispatch(authSliceActions.logout())
+
       if (error instanceof Error) {
         toast(error?.message || '', {
           type: 'warning'
