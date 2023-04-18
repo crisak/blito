@@ -8,12 +8,16 @@ import {
   listCategories,
   ListContentsQuery,
   GetCategoryQuery,
-  getCategory
+  getCategory,
+  createCategory,
+  CreateCategoryMutation,
+  Category,
+  CreateCategoryInput
 } from 'blito-models'
 
 export type GetAllWithContentResult = ACategory & { files: Array<AFile> }
 
-export class CategoryService {
+class CategoryService {
   static instance: CategoryService
 
   static getInstance(): CategoryService {
@@ -21,6 +25,26 @@ export class CategoryService {
       this.instance = new CategoryService()
     }
     return this.instance
+  }
+
+  async create(category: CreateCategoryInput): Promise<Category> {
+    try {
+      const response = await API.graphql<GraphQLQuery<CreateCategoryMutation>>(
+        graphqlOperation(createCategory, {
+          input: category
+        })
+      )
+
+      const newCategory = response?.data?.createCategory
+
+      if (!response || response?.errors?.length || !newCategory?.id) {
+        throw response
+      }
+
+      return newCategory
+    } catch (error) {
+      throw handleError(error)
+    }
   }
 
   async getById(categoryId: string): Promise<ACategory> {
@@ -181,3 +205,5 @@ export class CategoryService {
     }
   }
 }
+
+export default CategoryService

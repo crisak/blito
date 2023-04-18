@@ -4,7 +4,6 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "outDir": "lib",
-    "declaration": true,
     "module": "CommonJS"
   },
   "include": ["src/**/*.ts", "serverless.ts"],

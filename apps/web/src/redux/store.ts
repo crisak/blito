@@ -5,20 +5,24 @@ import {
   AuthStore,
   authReducer,
   headerUIReducer,
-  HeaderUIStore
+  HeaderUIStore,
+  CategoryStore,
+  categoryReducer
 } from './slices'
 
 interface AppStore {
   project: ProjectStore
   auth: AuthStore
   headerUI: HeaderUIStore
+  category: CategoryStore
 }
 
 const store = configureStore<AppStore>({
   reducer: {
     project: projectReducer,
     auth: authReducer,
-    headerUI: headerUIReducer
+    headerUI: headerUIReducer,
+    category: categoryReducer
   }
 })
 

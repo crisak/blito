@@ -1,7 +1,7 @@
 'use client'
 
 import { AuthCognito, ReturnedPromiseResolvedType, AuthSession } from '@/types'
-
+import { getAwsExports } from 'blito-models'
 import { Amplify } from 'aws-amplify'
 
 type CognitoUserSession = ReturnedPromiseResolvedType<
@@ -84,7 +84,11 @@ class AuthService {
       nickname: auth.attributes.nickname
     } as AuthSession
 
+    const configAws = getAwsExports()
+
     Amplify.configure({
+      ...configAws,
+      ssr: true,
       API: {
         graphql_headers: async () => {
           return {

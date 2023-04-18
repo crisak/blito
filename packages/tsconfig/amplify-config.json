@@ -8,6 +8,5 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "skipLibCheck": true
-    
   }
 }

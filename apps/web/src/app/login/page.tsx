@@ -89,9 +89,10 @@ const LoginPage = () => {
             <Card.Body>
               <Spacer y={1} />
               <Input
-                placeholder="Username"
+                type="email"
+                placeholder="Correo"
                 name="username"
-                labelPlaceholder="Username"
+                labelPlaceholder="Correo"
                 onChange={(e) =>
                   setFormData({ ...formData, username: e.target.value })
                 }

@@ -1,7 +1,7 @@
 import { Box } from '../components'
 import { ContainerLinkCardCategory, ModalFormCategory } from './components'
 
-import { CategoryService } from '@/services'
+import { CategoryService } from '@/app/services'
 
 const categoryService = CategoryService.getInstance()
 

@@ -1,5 +1,6 @@
 import { BreadcrumbsProps, Container, Text } from '@/app/components'
-import { CategoryService, ProjectService } from '@/services'
+import { ProjectService } from '@/services'
+import { CategoryService } from '@/app/services'
 
 const projectService = ProjectService.getInstance()
 const categoryService = CategoryService.getInstance()
