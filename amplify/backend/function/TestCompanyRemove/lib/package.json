@@ -6,7 +6,6 @@
   "license": "Apache-2.0",
   "scripts": {
     "dev": "echo 'holi'",
-    "build:!": "tsc",
     "build": "node esbuild.config.js"
   },
   "dependencies": {

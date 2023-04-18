@@ -141,6 +141,22 @@
           "resourceName": "BlitoPostConfirmation"
         }
       ]
+    },
+    "AMPLIFY_function_TestCompanyRemove_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "TestCompanyRemove"
+        }
+      ]
+    },
+    "AMPLIFY_function_TestCompanyRemove_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "TestCompanyRemove"
+        }
+      ]
     }
   },
   "storage": {

@@ -5,7 +5,8 @@
     "allowJs": true,
     "outDir": "./dist",
     "baseUrl": ".",
-    "composite": true
+    "composite": true,
+    "declaration": true
   },
   "exclude": ["node_modules"]
 }

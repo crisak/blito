@@ -5,7 +5,7 @@ build({
   bundle: true,
   outdir: './../src',
   platform: 'node',
-  target: 'b ',
+  target: 'node14',
   format: 'cjs',
   loader: { '.ts': 'ts' },
   sourcemap: true // Habilita la generación de mapas de origen (opcional)
