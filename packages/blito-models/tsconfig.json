@@ -4,7 +4,8 @@
   "compilerOptions": {
     "allowJs": true,
     "outDir": "./dist",
-    "baseUrl": "."
+    "baseUrl": ".",
+    "composite": true
   },
   "exclude": ["node_modules"]
 }

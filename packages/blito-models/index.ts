@@ -7,13 +7,13 @@ import { default as awsExportsProd } from './aws-exports.prod'
 
 export type AwsExports = typeof awsExports
 
-export const getAwsExports = (env = 'dev') => {
+export const getAwsExports = (env = 'dev'): AwsExports => {
   const isProduction = ['prod', 'production', 'product']
   const envFilter = env.toLowerCase()
 
   if (isProduction.includes(envFilter)) {
-    return awsExportsProd
+    return awsExportsProd as any
   }
 
-  return awsExports
+  return awsExports as any
 }

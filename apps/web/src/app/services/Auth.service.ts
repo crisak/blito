@@ -17,14 +17,11 @@ class AuthService {
     status: boolean
     data: CognitoUserSession | null
   }> {
-    console.group('getCurrentSession')
     try {
       const data = await Auth.currentSession()
       return { status: true, data: data || null }
     } catch (error) {
       return { status: false, data: null }
-    } finally {
-      console.groupEnd()
     }
   }
 

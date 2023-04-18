@@ -8,39 +8,39 @@ declare const awsconfig: {
   aws_cognito_region: string;
   aws_user_pools_id: string;
   aws_user_pools_web_client_id: string;
-  oauth: AwsExportsOauth;
+  oauth: ProdAwsExportsOauth;
   aws_cognito_username_attributes: any[];
   aws_cognito_social_providers: any[];
   aws_cognito_signup_attributes: string[];
   aws_cognito_mfa_configuration: string;
   aws_cognito_mfa_types: any[];
-  aws_cognito_password_protection_settings: AwsCognitoPasswordProtectionSettings;
+  aws_cognito_password_protection_settings: ProdAwsCognitoPasswordProtectionSettings;
   aws_cognito_verification_mechanisms: string[];
   aws_user_files_s3_bucket: string;
   aws_user_files_s3_bucket_region: string;
-  geo: AwsExportsGeo;
+  geo: ProdAwsExportsGeo;
 };
 
-interface AwsCognitoPasswordProtectionSettings {
+interface ProdAwsCognitoPasswordProtectionSettings {
   passwordPolicyMinLength: number;
   passwordPolicyCharacters: any[];
 }
 
-interface AwsExportsGeo {
-  amazon_location_service: AmazonLocationService;
+interface ProdAwsExportsGeo {
+  amazon_location_service: ProdProdAmazonLocationService;
 }
 
-interface AmazonLocationService {
+interface ProdProdAmazonLocationService {
   region: string;
-  maps: AmazonLocationServiceMaps;
+  maps: ProdAmazonLocationServiceMaps;
 }
 
-interface AmazonLocationServiceMaps {
+interface ProdAmazonLocationServiceMaps {
   items: any;
   default: string;
 }
 
-interface AwsExportsOauth {
+interface ProdAwsExportsOauth {
   domain: string;
 }
 
