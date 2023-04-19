@@ -5,8 +5,9 @@ import { Card, Col, Row, Button } from '@nextui-org/react'
 import { Box, Text } from '@/app/components'
 import { AFile } from '@/models/ModelsAdapter.model'
 import { AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai'
-import { useDispatch } from 'react-redux'
-import { headerUIActions } from '@/redux/slices'
+import { useDispatch, useSelector } from 'react-redux'
+import { AuthStore, headerUIActions } from '@/redux/slices'
+import { AppStore } from '@/redux/store'
 
 type ContainerLinkCardCategoryProps = {
   categoryId: string
@@ -22,6 +23,7 @@ const ContainerLinkCardCategory = ({
   file
 }: ContainerLinkCardCategoryProps) => {
   const dispatch = useDispatch()
+  const auth = useSelector<AppStore, AuthStore>((state) => state.auth)
 
   const handleRemove = () => {
     dispatch(
@@ -44,6 +46,10 @@ const ContainerLinkCardCategory = ({
   }
 
   const displayActionsAdmin = () => {
+    if (!auth?.isAuth) {
+      return null
+    }
+
     return (
       <Box
         css={{
