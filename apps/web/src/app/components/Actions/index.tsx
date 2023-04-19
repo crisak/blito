@@ -1,6 +1,6 @@
 'use client'
 
-import { headerUIActions, HeaderEvent } from '@/redux/slices'
+import { headerUIActions } from '@/redux/slices'
 
 import { Button, styled } from '@nextui-org/react'
 
@@ -41,8 +41,7 @@ const Actions = () => {
   const dispatch = useDispatch()
 
   const handleCreate = () => {
-    console.log('open modal')
-    dispatch(headerUIActions.setEvent(HeaderEvent.create))
+    dispatch(headerUIActions.setEventCreate())
   }
 
   return (

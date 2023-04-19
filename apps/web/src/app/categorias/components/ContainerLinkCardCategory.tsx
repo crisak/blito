@@ -2,8 +2,11 @@
 
 import Link from 'next/link'
 import { Card, Col, Row, Button } from '@nextui-org/react'
-import { Text } from '@/app/components'
+import { Box, Text } from '@/app/components'
 import { AFile } from '@/models/ModelsAdapter.model'
+import { AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai'
+import { useDispatch } from 'react-redux'
+import { headerUIActions } from '@/redux/slices'
 
 type ContainerLinkCardCategoryProps = {
   categoryId: string
@@ -18,8 +21,73 @@ const ContainerLinkCardCategory = ({
   description,
   file
 }: ContainerLinkCardCategoryProps) => {
+  const dispatch = useDispatch()
+
+  const handleRemove = () => {
+    dispatch(
+      headerUIActions.setEventUpdateCategory({
+        id: categoryId,
+        name,
+        description
+      })
+    )
+  }
+
+  const handleEdit = () => {
+    dispatch(
+      headerUIActions.setEventUpdateCategory({
+        id: categoryId,
+        name,
+        description
+      })
+    )
+  }
+
+  const displayActionsAdmin = () => {
+    return (
+      <Box
+        css={{
+          width: '100%',
+          zIndex: 2,
+          display: 'flex',
+          justifyContent: 'flex-end',
+          gap: '$3',
+          paddingRight: '$8',
+          paddingTop: '$8',
+          '& button': {
+            bgBlur: 'rgba(0, 0, 0, 0.053)',
+            opacity: 0.5,
+            '&:hover': {
+              opacity: 1,
+              cursor: 'pointer',
+              bgBlur: '$primary'
+            }
+          }
+        }}
+      >
+        <Button
+          ghost
+          auto
+          size="sm"
+          color="primary"
+          icon={<AiOutlineDelete />}
+          onClick={handleRemove}
+        />
+        <Button
+          ghost
+          auto
+          size="sm"
+          color="primary"
+          icon={<AiOutlineEdit />}
+          onClick={handleEdit}
+        />
+      </Box>
+    )
+  }
+
   return (
     <Card css={{ w: '100%', h: '400px' }}>
+      {displayActionsAdmin()}
       <Card.Header css={{ position: 'absolute', zIndex: 1, top: 5 }}>
         <Col>
           <Text size={12} weight="bold" transform="uppercase" color="#ffffffAA">
@@ -59,7 +127,9 @@ const ContainerLinkCardCategory = ({
           <Col>
             <Row justify="flex-end">
               <Button flat auto rounded>
-                <Link href={`/categorias/${categoryId}/proyectos`}>Ver más</Link>
+                <Link href={`/categorias/${categoryId}/proyectos`}>
+                  Ver más
+                </Link>
               </Button>
             </Row>
           </Col>

@@ -15,7 +15,6 @@ import {
   Button,
   Text,
   Input,
-  Grid,
   Textarea,
   Loading,
   Spacer
@@ -24,18 +23,20 @@ import { Category } from 'blito-models'
 import { CategoryService } from '@/app/services'
 import { toast } from 'react-toastify'
 
+type FDCategory = Pick<Category, 'id' | 'name' | 'description'>
+
 const categoryService = CategoryService.getInstance()
 
 const initialState = {
   id: '',
   name: '',
   description: ''
-}
+} as FDCategory
 
 const ModalFormCategory = () => {
   const [loading, setLoading] = useState(false)
   const dispatch = useDispatch()
-  const headerUI = useSelector<AppStore, HeaderUIStore>(
+  const headerUI = useSelector<AppStore, HeaderUIStore<FDCategory>>(
     (state) => state.headerUI
   )
   const [formData, setFormData] = useState<Partial<Category>>(initialState)
@@ -43,7 +44,7 @@ const ModalFormCategory = () => {
   const { setVisible, bindings } = useModal()
 
   const handlerCloseModel = () => {
-    dispatch(headerUIActions.setEvent(null))
+    dispatch(headerUIActions.resetEvent())
     setVisible(false)
   }
 
@@ -63,7 +64,7 @@ const ModalFormCategory = () => {
       setLoading(false)
 
       dispatch(categoryActions.create(category))
-      dispatch(headerUIActions.setEvent(null))
+      dispatch(headerUIActions.setEventCreate())
 
       toast('Categoría guardada exitosamente', {
         type: 'success'
@@ -89,6 +90,15 @@ const ModalFormCategory = () => {
 
   useEffect(() => {
     if (headerUI.event === HeaderEvent.create) {
+      setVisible(true)
+    }
+
+    if (headerUI.event === HeaderEvent.updateCategory) {
+      setFormData({
+        id: headerUI.data?.id,
+        name: headerUI.data?.name,
+        description: headerUI.data?.description
+      })
       setVisible(true)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

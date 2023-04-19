@@ -1,25 +1,39 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 export enum HeaderEvent {
-  create = 'create'
+  create = 'create',
+  updateCategory = 'update'
 }
 
-export type HeaderUIStore = {
+export type HeaderUIStore<T = any> = {
   event: HeaderEvent | null
+  data: T | null
 }
 
 const initialState: HeaderUIStore = {
-  event: null
+  event: null,
+  data: null
 }
 
 const headerUItSlice = createSlice({
   name: 'headerUI',
   initialState,
   reducers: {
-    setEvent: (state, action) => {
+    resetEvent: () => {
+      return initialState
+    },
+    setEventCreate: (state) => {
       return {
         ...state,
-        event: action.payload
+        data: null,
+        event: HeaderEvent.create
+      }
+    },
+    setEventUpdateCategory: (state, action) => {
+      return {
+        ...state,
+        event: HeaderEvent.updateCategory,
+        data: action.payload || null
       }
     }
   }
