@@ -15,24 +15,7 @@ import Box from '../Box'
 import NavbarComponent from '../Navbar'
 import Footer from '../Footer'
 import ToastProvider from '../Toast'
-import { AuthService } from '@/app/services'
-import { authSliceActions } from '@/redux/slices'
-import { Amplify } from 'aws-amplify'
-import { getAwsExports } from 'blito-models'
-
-/** This should be configured on Client side but not in the Server */
-const configAws = getAwsExports()
-Amplify.configure({
-  ...configAws,
-  ssr: true,
-  API: {
-    graphql_headers: async () => {
-      return {
-        'Accept-Language': 'es-CO'
-      }
-    }
-  }
-})
+import { useAuth } from '@/app/hooks'
 
 console.info('⛳️ App running in: ', process.env.NEXT_PUBLIC_ENV)
 
@@ -48,34 +31,28 @@ interface RootContainerProps {
 
 function RootContainer({ children }: RootContainerProps): JSX.Element {
   const [splash, setSplash] = useState(true)
-
-  const initApp = async (refTimeout: NodeJS.Timeout | null) => {
-    const start = performance.now()
-
-    const userAuth = await AuthService.setLoginData()
-
-    if (userAuth) {
-      store.dispatch(authSliceActions.login(userAuth))
-    }
-    const end = performance.now()
-
-    // Calcula la diferencia entre los dos tiempos en milisegundos
-    const time = end - start
-
-    if (time >= $3seconds) {
-      setSplash(false)
-      return
-    }
-
-    refTimeout = setTimeout(() => {
-      setSplash(false)
-    }, time)
-  }
+  const { initAuth } = useAuth()
 
   useEffect(() => {
     let refTimeout: NodeJS.Timeout | null = null
 
-    initApp(refTimeout)
+    ;(async () => {
+      const start = performance.now()
+      await initAuth()
+      const end = performance.now()
+
+      // Calcula la diferencia entre los dos tiempos en milisegundos
+      const time = end - start
+
+      if (time >= $3seconds) {
+        setSplash(false)
+        return
+      }
+
+      refTimeout = setTimeout(() => {
+        setSplash(false)
+      }, time)
+    })()
 
     return () => {
       if (refTimeout) {

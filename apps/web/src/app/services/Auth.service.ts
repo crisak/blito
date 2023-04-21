@@ -40,26 +40,32 @@ class AuthService {
   }
 
   static async setLoginData(): Promise<AuthSession | null> {
-    if (window?.localStorage === undefined) {
-      return null
+    try {
+      if (window?.localStorage === undefined) {
+        return null
+      }
+
+      const { status } = await AuthService.getCurrentSession()
+
+      if (!status) {
+        await AuthService.logout()
+        return null
+      }
+
+      const userStorage = window.localStorage.getItem(
+        AuthService.STORAGE_KEY_AUTH
+      )
+
+      if (!userStorage) {
+        await AuthService.logout()
+        return null
+      }
+
+      return JSON.parse(userStorage)
+    } catch (error) {
+      console.error('🚨 setLoginData: ', error)
+      throw error
     }
-
-    const { status } = await AuthService.getCurrentSession()
-
-    if (!status) {
-      await AuthService.logout()
-    }
-
-    let userAuth!: AuthSession
-
-    const userStorage = window.localStorage.getItem(
-      AuthService.STORAGE_KEY_AUTH
-    )
-    if (userStorage) {
-      userAuth = JSON.parse(userStorage)
-    }
-
-    return userAuth
   }
 
   static async login({

@@ -1,7 +1,7 @@
 import { handleError, GraphQLUtil } from '@/utils'
 import { ACategory, AContent, AFile } from '@/models/ModelsAdapter.model'
 import { graphqlOperation, GraphQLQuery } from '@aws-amplify/api'
-import { API } from 'aws-amplify'
+import { withSSRContext, API } from 'aws-amplify'
 import {
   TypeFile,
   ListCategoriesQuery,
@@ -12,13 +12,21 @@ import {
   createCategory,
   CreateCategoryMutation,
   Category,
-  CreateCategoryInput
+  CreateCategoryInput,
+  updateCategory,
+  UpdateCategoryMutation,
+  UpdateCategoryInput
 } from 'blito-models'
 
 export type GetAllWithContentResult = ACategory & { files: Array<AFile> }
 
 class CategoryService {
   static instance: CategoryService
+  private SSR: ReturnType<typeof withSSRContext>
+
+  constructor() {
+    this.SSR = withSSRContext()
+  }
 
   static getInstance(): CategoryService {
     if (!this.instance) {
@@ -42,6 +50,26 @@ class CategoryService {
       }
 
       return newCategory
+    } catch (error) {
+      throw handleError(error)
+    }
+  }
+
+  async update(category: UpdateCategoryInput): Promise<Category> {
+    try {
+      const response = await API.graphql<GraphQLQuery<UpdateCategoryMutation>>(
+        graphqlOperation(updateCategory, {
+          input: category
+        })
+      )
+
+      const resUpdateCategory = response?.data?.updateCategory
+
+      if (!response || response?.errors?.length || !resUpdateCategory?.id) {
+        throw response
+      }
+
+      return resUpdateCategory
     } catch (error) {
       throw handleError(error)
     }

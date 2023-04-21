@@ -14,11 +14,25 @@ const categorySlice = createSlice({
   initialState,
   reducers: {
     create: (state, action) => {
-      const newCategory = action.payload
+      const newCategory = action.payload as Category
 
       return {
         ...state,
         category: [...state.category, newCategory]
+      }
+    },
+    update: (state, action) => {
+      const { id, ...categoryUpdate } = action.payload as Category
+
+      return {
+        ...state,
+        category: state.category.map((cat) => {
+          if (cat.id === id) {
+            return { id, ...categoryUpdate }
+          }
+
+          return { ...cat }
+        })
       }
     }
   }

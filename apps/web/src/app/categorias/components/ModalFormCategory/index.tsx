@@ -22,6 +22,7 @@ import {
 import { Category } from 'blito-models'
 import { CategoryService } from '@/app/services'
 import { toast } from 'react-toastify'
+import { useAuth } from '@/app/hooks'
 
 type FDCategory = Pick<Category, 'id' | 'name' | 'description'>
 
@@ -35,21 +36,26 @@ const initialState = {
 
 const ModalFormCategory = () => {
   const [loading, setLoading] = useState(false)
+  const [formData, setFormData] = useState<Partial<Category>>(initialState)
+
+  const { initAuth } = useAuth()
   const dispatch = useDispatch()
+  const { setVisible, bindings } = useModal()
   const headerUI = useSelector<AppStore, HeaderUIStore<FDCategory>>(
     (state) => state.headerUI
   )
-  const [formData, setFormData] = useState<Partial<Category>>(initialState)
-
-  const { setVisible, bindings } = useModal()
-
-  const handlerCloseModel = () => {
-    dispatch(headerUIActions.resetEvent())
-    setVisible(false)
-  }
 
   const resetForm = () => {
     setFormData(initialState)
+  }
+
+  const handlerCloseModel = () => {
+    if (headerUI.event === HeaderEvent.updateCategory) {
+      resetForm()
+    }
+
+    dispatch(headerUIActions.resetEvent())
+    setVisible(false)
   }
 
   const handlerSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -57,20 +63,34 @@ const ModalFormCategory = () => {
       e.preventDefault()
 
       setLoading(true)
-      const category = await categoryService.create({
-        name: formData.name as string,
-        description: formData.description as string
-      })
+
+      let category: Category
+
+      if (headerUI.event === HeaderEvent.updateCategory) {
+        category = await categoryService.update({
+          id: formData.id!,
+          name: formData.name,
+          description: formData.description as string
+        })
+        dispatch(categoryActions.update(category))
+      } else {
+        /** Create record */
+        category = await categoryService.create({
+          name: formData.name as string,
+          description: formData.description as string
+        })
+        dispatch(categoryActions.create(category))
+      }
+
       setLoading(false)
 
-      dispatch(categoryActions.create(category))
-      dispatch(headerUIActions.setEventCreate())
-
+      dispatch(headerUIActions.resetEvent())
       toast('Categoría guardada exitosamente', {
         type: 'success'
       })
 
       resetForm()
+      handlerCloseModel()
     } catch (error) {
       setLoading(false)
       if (error instanceof Error) {
@@ -94,6 +114,12 @@ const ModalFormCategory = () => {
     }
 
     if (headerUI.event === HeaderEvent.updateCategory) {
+      if (!headerUI.data?.id) {
+        toast('El registro que intenta actualizar no es valida', {
+          type: 'warning'
+        })
+      }
+
       setFormData({
         id: headerUI.data?.id,
         name: headerUI.data?.name,
@@ -103,6 +129,11 @@ const ModalFormCategory = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [headerUI.event])
+
+  useEffect(() => {
+    initAuth()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <Modal
