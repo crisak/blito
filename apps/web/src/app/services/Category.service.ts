@@ -1,7 +1,8 @@
 import { handleError, GraphQLUtil } from '@/utils'
 import { ACategory, AContent, AFile } from '@/models/ModelsAdapter.model'
 import { graphqlOperation, GraphQLQuery } from '@aws-amplify/api'
-import { withSSRContext, API } from 'aws-amplify'
+import { withSSRContext, type API } from 'aws-amplify'
+import { headers } from 'next/headers'
 import {
   TypeFile,
   ListCategoriesQuery,
@@ -22,11 +23,8 @@ export type GetAllWithContentResult = ACategory & { files: Array<AFile> }
 
 class CategoryService {
   static instance: CategoryService
-  private SSR: ReturnType<typeof withSSRContext>
 
-  constructor() {
-    this.SSR = withSSRContext()
-  }
+  constructor() {}
 
   static getInstance(): CategoryService {
     if (!this.instance) {
@@ -37,7 +35,9 @@ class CategoryService {
 
   async create(category: CreateCategoryInput): Promise<Category> {
     try {
-      const response = await API.graphql<GraphQLQuery<CreateCategoryMutation>>(
+      const response = await this.getAPI().graphql<
+        GraphQLQuery<CreateCategoryMutation>
+      >(
         graphqlOperation(createCategory, {
           input: category
         })
@@ -57,7 +57,9 @@ class CategoryService {
 
   async update(category: UpdateCategoryInput): Promise<Category> {
     try {
-      const response = await API.graphql<GraphQLQuery<UpdateCategoryMutation>>(
+      const response = await this.getAPI().graphql<
+        GraphQLQuery<UpdateCategoryMutation>
+      >(
         graphqlOperation(updateCategory, {
           input: category
         })
@@ -81,7 +83,9 @@ class CategoryService {
        * {Action}-{Name}-{Type}
        *  Update  Content Mutation
        */
-      const response = await API.graphql<GraphQLQuery<GetCategoryQuery>>(
+      const response = await this.getAPI().graphql<
+        GraphQLQuery<GetCategoryQuery>
+      >(
         graphqlOperation(getCategory, {
           id: categoryId
         })
@@ -105,9 +109,9 @@ class CategoryService {
        * {Action}-{Name}-{Type}
        *  Update  Content Mutation
        */
-      const response = await API.graphql<GraphQLQuery<ListCategoriesQuery>>(
-        graphqlOperation(listCategories)
-      )
+      const response = await this.getAPI().graphql<
+        GraphQLQuery<ListCategoriesQuery>
+      >(graphqlOperation(listCategories))
 
       if (!response || response?.errors || !response?.data?.listCategories) {
         throw response
@@ -117,6 +121,7 @@ class CategoryService {
         response.data.listCategories.items
       )
     } catch (error) {
+      console.error('▶ CategoryService.getAll')
       throw handleError(error)
     }
   }
@@ -126,7 +131,7 @@ class CategoryService {
       const responseCategories = await this.getAll()
 
       const response = await Promise.allSettled(
-        responseCategories.map(this.getContentByCategory)
+        responseCategories.map(this.getContentByCategory.bind(this))
       )
 
       const errors = response.filter((res) => {
@@ -137,7 +142,6 @@ class CategoryService {
       })
 
       if (errors.length > 0) {
-        console.error('🚨->', errors)
         throw errors
       }
 
@@ -150,6 +154,7 @@ class CategoryService {
         })
         .filter((data) => Boolean(data)) as GetAllWithContentResult[]
     } catch (error) {
+      console.error('▶ CategoryService.getAllWithFiles')
       throw handleError(error)
     }
   }
@@ -187,9 +192,9 @@ class CategoryService {
        * {Action}-{Modules}-{Type}
        *  Update  Content Mutation
        */
-      const response = await API.graphql<GraphQLQuery<ListContentsQuery>>(
-        graphqlOperation(listFilesByCategoryQuery, filters)
-      )
+      const response = await this.getAPI().graphql<
+        GraphQLQuery<ListContentsQuery>
+      >(graphqlOperation(listFilesByCategoryQuery, filters))
 
       if (!response || response?.errors || !response?.data?.listContents) {
         throw response
@@ -229,8 +234,20 @@ class CategoryService {
         files
       } as GetAllWithContentResult
     } catch (error) {
+      console.error('▶ CategoryService.getContentByCategory')
       throw handleError(error)
     }
+  }
+
+  private getAPI(): typeof API {
+    const req = {
+      headers: {
+        cookie: headers().get('cookie')
+      }
+    }
+
+    const SSR = withSSRContext({ req })
+    return SSR.API as typeof API
   }
 }
 

@@ -1,5 +1,5 @@
 'use client'
-import { AuthService } from '@/app/services'
+import AuthService from '@/app/services/Auth.service'
 import { Amplify } from 'aws-amplify'
 import { getAwsExports } from 'blito-models'
 import store from '@/redux/store'

@@ -26,8 +26,6 @@ import { useAuth } from '@/app/hooks'
 
 type FDCategory = Pick<Category, 'id' | 'name' | 'description'>
 
-const categoryService = CategoryService.getInstance()
-
 const initialState = {
   id: '',
   name: '',
@@ -60,6 +58,8 @@ const ModalFormCategory = () => {
 
   const handlerSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     try {
+      const categoryService = CategoryService.getInstance()
+
       e.preventDefault()
 
       setLoading(true)
@@ -75,11 +75,11 @@ const ModalFormCategory = () => {
         dispatch(categoryActions.update(category))
       } else {
         /** Create record */
-        category = await categoryService.create({
-          name: formData.name as string,
-          description: formData.description as string
-        })
-        dispatch(categoryActions.create(category))
+        // category = await categoryService.create({
+        //   name: formData.name as string,
+        //   description: formData.description as string
+        // })
+        // dispatch(categoryActions.create(category))
       }
 
       setLoading(false)
