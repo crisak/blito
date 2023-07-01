@@ -8,45 +8,22 @@ import { AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai'
 import { useDispatch, useSelector } from 'react-redux'
 import { AuthStore, headerUIActions } from '@/redux/slices'
 import { AppStore } from '@/redux/store'
+import type { GetAllWithContentResult } from '@/services'
 
-type ContainerLinkCardCategoryProps = {
-  categoryId: string
-  name: string
-  file: AFile[]
-  description: string
-  _version?: number
-}
+type ContainerLinkCardCategoryProps = GetAllWithContentResult
 
 const ContainerLinkCardCategory = ({
-  categoryId,
-  name,
-  description,
-  file,
-  _version
+  ...category
 }: ContainerLinkCardCategoryProps) => {
   const dispatch = useDispatch()
   const auth = useSelector<AppStore, AuthStore>((state) => state.auth)
 
   const handleRemove = () => {
-    dispatch(
-      headerUIActions.setEventUpdateCategory({
-        id: categoryId,
-        name,
-        description,
-        _version
-      })
-    )
+    dispatch(headerUIActions.setEventUpdateCategory(category))
   }
 
   const handleEdit = () => {
-    dispatch(
-      headerUIActions.setEventUpdateCategory({
-        id: categoryId,
-        name,
-        description,
-        _version
-      })
-    )
+    dispatch(headerUIActions.setEventUpdateCategory(category))
   }
 
   const displayActionsAdmin = () => {
@@ -101,17 +78,17 @@ const ContainerLinkCardCategory = ({
       <Card.Header css={{ position: 'absolute', zIndex: 1, top: 5 }}>
         <Col>
           <Text size={12} weight="bold" transform="uppercase" color="#ffffffAA">
-            {name}
+            {category.name}
           </Text>
         </Col>
       </Card.Header>
       <Card.Body css={{ p: 0 }}>
         <Card.Image
-          src={file?.[0]?.data}
+          src={category.files?.[0]?.data}
           width="100%"
           height="100%"
           objectFit="cover"
-          alt={file?.[0]?.caption || ''}
+          alt={category.files?.[0]?.caption || ''}
         />
       </Card.Body>
       <Card.Footer
@@ -127,17 +104,17 @@ const ContainerLinkCardCategory = ({
         <Row>
           <Col>
             <Text color="#000" size={12}>
-              {description.slice(0, 38)}
+              {category.description.slice(0, 38)}
               {' ...'}
             </Text>
             <Text color="#000" size={12}>
-              {file.length} Proyectos
+              {category.files.length} Proyectos
             </Text>
           </Col>
           <Col>
             <Row justify="flex-end">
               <Button flat auto rounded>
-                <Link href={`/categorias/${categoryId}/proyectos`}>
+                <Link href={`/categorias/${category.id}/proyectos`}>
                   Ver más
                 </Link>
               </Button>

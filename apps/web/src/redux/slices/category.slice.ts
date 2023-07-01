@@ -1,8 +1,8 @@
+import { GetAllWithContentResult } from '@/services'
 import { createSlice } from '@reduxjs/toolkit'
-import { Category } from 'blito-models'
 
 export type CategoryStore = {
-  category: Category[]
+  category: GetAllWithContentResult[]
 }
 
 const initialState: CategoryStore = {
@@ -13,8 +13,15 @@ const categorySlice = createSlice({
   name: 'category',
   initialState,
   reducers: {
+    setList: (state, action) => {
+      const listCategory = [...action.payload] as GetAllWithContentResult[]
+      return {
+        ...state,
+        category: listCategory
+      }
+    },
     create: (state, action) => {
-      const newCategory = action.payload as Category
+      const newCategory = action.payload as GetAllWithContentResult
 
       return {
         ...state,
@@ -22,7 +29,8 @@ const categorySlice = createSlice({
       }
     },
     update: (state, action) => {
-      const { id, ...categoryUpdate } = action.payload as Category
+      const { id, ...categoryUpdate } =
+        action.payload as GetAllWithContentResult
 
       return {
         ...state,

@@ -23,26 +23,28 @@ import { Category } from 'blito-models'
 import { CategoryService } from '@/app/services'
 import { toast } from 'react-toastify'
 import { useAuth } from '@/app/hooks'
+import type { GetAllWithContentResult } from '@/app/services/Category.service'
 
-type FDCategory = Pick<Category, 'id' | 'name' | 'description' | '_version'>
+type FDCategory = Pick<Category, 'id' | 'name' | 'description'>
 
 const initialState = {
   id: '',
   name: '',
-  description: '',
-  _version: 0
+  description: ''
 } as FDCategory
 
 const ModalFormCategory = () => {
   const [loading, setLoading] = useState(false)
-  const [formData, setFormData] = useState<Partial<Category>>(initialState)
+  const [formData, setFormData] = useState<FDCategory>(initialState)
 
   const { initAuth } = useAuth()
-  const dispatch = useDispatch()
   const { setVisible, bindings } = useModal()
-  const headerUI = useSelector<AppStore, HeaderUIStore<FDCategory>>(
-    (state) => state.headerUI
-  )
+
+  const dispatch = useDispatch()
+  const headerUI = useSelector<
+    AppStore,
+    HeaderUIStore<GetAllWithContentResult>
+  >((state) => state.headerUI)
 
   const resetForm = () => {
     setFormData(initialState)
@@ -68,26 +70,38 @@ const ModalFormCategory = () => {
       let category: Category
 
       if (headerUI.event === HeaderEvent.updateCategory) {
-        if (!formData._version) {
+        if (!headerUI.data?._version) {
           toast('La version del registro no esta especificada', {
             type: 'warning'
           })
           return
         }
+
         category = await categoryService.update({
           id: formData.id!,
           name: formData.name,
           description: formData.description as string,
-          _version: formData._version
+          _version: headerUI.data?._version
         })
-        dispatch(categoryActions.update(category))
+
+        dispatch(
+          categoryActions.update({
+            ...headerUI.data,
+            ...category
+          })
+        )
       } else {
         /** Create record */
         category = await categoryService.create({
           name: formData.name as string,
           description: formData.description as string
         })
-        dispatch(categoryActions.create(category))
+        dispatch(
+          categoryActions.create({
+            ...headerUI.data,
+            ...category
+          })
+        )
       }
 
       setLoading(false)
@@ -129,10 +143,9 @@ const ModalFormCategory = () => {
       }
 
       setFormData({
-        id: headerUI.data?.id,
-        name: headerUI.data?.name,
-        description: headerUI.data?.description,
-        _version: headerUI.data?._version
+        id: headerUI.data?.id || '',
+        name: headerUI.data?.name || '',
+        description: headerUI.data?.description || ''
       })
       setVisible(true)
     }
