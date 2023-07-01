@@ -5,8 +5,6 @@ import {
   GraphQLQuery,
   GRAPHQL_AUTH_MODE
 } from '@aws-amplify/api'
-import { withSSRContext, type API } from 'aws-amplify'
-import { headers } from 'next/headers'
 import {
   TypeFile,
   ListCategoriesQuery,
@@ -22,13 +20,12 @@ import {
   UpdateCategoryMutation,
   UpdateCategoryInput
 } from 'blito-models'
+import GraphQLService from './GraphQL.Service'
 
 export type GetAllWithContentResult = ACategory & { files: Array<AFile> }
 
-class CategoryService {
+class CategoryService extends GraphQLService {
   static instance: CategoryService
-
-  constructor() {}
 
   static getInstance(): CategoryService {
     if (!this.instance) {
@@ -51,14 +48,10 @@ class CategoryService {
             'CategoryService.create',
             err,
             createCategory,
-            '\nVariables:',
-            JSON.stringify(
-              {
-                input: category
-              },
-              null,
-              2
-            )
+            '🔎 Input:',
+            {
+              input: category
+            }
           )
           return Promise.reject(err)
         })
@@ -70,14 +63,10 @@ class CategoryService {
           'CategoryService.create',
           response,
           createCategory,
-          '\nVariables:',
-          JSON.stringify(
-            {
-              input: category
-            },
-            null,
-            2
-          ),
+          '🔎 Input:',
+          {
+            input: category
+          },
           { prettyError: true }
         )
 
@@ -104,14 +93,10 @@ class CategoryService {
             'CategoryService.update',
             err,
             updateCategory,
-            '\nVariables:',
-            JSON.stringify(
-              {
-                input: category
-              },
-              null,
-              2
-            )
+            '🔎 Input:',
+            {
+              input: category
+            }
           )
           return Promise.reject(err)
         })
@@ -123,14 +108,10 @@ class CategoryService {
           'CategoryService.update',
           response,
           updateCategory,
-          '\nVariables:',
-          JSON.stringify(
-            {
-              input: category
-            },
-            null,
-            2
-          ),
+          '🔎 Input:',
+          {
+            input: category
+          },
           {
             prettyError: true
           }
@@ -345,28 +326,8 @@ class CategoryService {
         files
       } as GetAllWithContentResult
     } catch (error) {
-      console.error('▶ CategoryService.getContentByCategory')
       throw handleError(error)
     }
-  }
-
-  /** Options */
-  private getAPI(options?: { public: boolean }): typeof API {
-    /** Required auth with API KEY */
-    if (options?.public) {
-      const SSR = withSSRContext()
-      return SSR.API as typeof API
-    }
-
-    /** Required auth with Cognito */
-    const req = {
-      headers: {
-        cookie: headers().get('cookie')
-      }
-    }
-
-    const SSR = withSSRContext({ req })
-    return SSR.API as typeof API
   }
 }
 
