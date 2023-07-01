@@ -38,7 +38,7 @@ export default class ProjectService extends GraphQLService {
        * {Action}-{Name}-{Type}
        *  Update  Content Mutation
        */
-      const response = await this.getAPI({ public: true })
+      const response = await this.getAPI()
         .graphql<GraphQLQuery<ListContentsQuery>>(payloadReq)
         .catch((err) => {
           LogUtil.errorDetail(
@@ -85,7 +85,7 @@ export default class ProjectService extends GraphQLService {
        * {Action}-{Name}-{Type}
        *  Update  Content Mutation
        */
-      const response = await this.getAPI({ public: true })
+      const response = await this.getAPI()
         .graphql<GraphQLQuery<GetContentQuery>>(payloadReq)
         .catch((err) => {
           LogUtil.errorDetail('ProjectService.getById', err, payloadReq)

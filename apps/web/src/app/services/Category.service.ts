@@ -138,7 +138,7 @@ class CategoryService extends GraphQLService {
        * {Action}-{Name}-{Type}
        *  Update  Content Mutation
        */
-      const response = await this.getAPI({ public: true })
+      const response = await this.getAPI()
         .graphql<GraphQLQuery<GetCategoryQuery>>(payload)
         .catch((err) => {
           LogUtil.errorDetail('CategoryService.getById', err, payload)
@@ -167,7 +167,7 @@ class CategoryService extends GraphQLService {
        * {Action}-{Name}-{Type}
        *  Update  Content Mutation
        */
-      const response = await this.getAPI({ public: true })
+      const response = await this.getAPI()
         .graphql<GraphQLQuery<ListCategoriesQuery>>({
           query: listCategories,
           authMode: GRAPHQL_AUTH_MODE.API_KEY
@@ -270,7 +270,7 @@ class CategoryService extends GraphQLService {
        * {Action}-{Modules}-{Type}
        *  Update  Content Mutation
        */
-      const response = await this.getAPI({ public: true })
+      const response = await this.getAPI()
         .graphql<GraphQLQuery<ListContentsQuery>>(payloadReq)
         .catch((err) => {
           LogUtil.errorDetail(

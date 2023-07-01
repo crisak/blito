@@ -6,9 +6,9 @@ import {
   LoadingProgress
 } from '@/app/components'
 import { Container, Spacer } from '@nextui-org/react'
-import { ProjectService } from './services'
+// import { ProjectService } from './services'
 
-const projectService = ProjectService.getInstance()
+// const projectService = ProjectService.getInstance()
 
 const breadcrumbs = {
   links: [
@@ -29,7 +29,9 @@ const ProjectsPage = ({ searchParams }: ProjectsPageProps) => {
   //   `/projects?category=${searchParams.category}`,
   //   fetcher
   // )
-  const projects = projectService.getAll()
+  /** TODO - This method is async */
+  // const projects = await projectService.getAll()
+  const projects = [] as any[]
 
   /**
    * todo - Add message of error or a Toast component

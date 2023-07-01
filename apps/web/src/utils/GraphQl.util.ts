@@ -24,7 +24,6 @@ export default class GraphQLUtil {
       __typename,
       _deleted,
       _lastChangedAt,
-      _version,
       createdAt,
       updatedAt,
       ...props

@@ -8,7 +8,6 @@ export type DefaultPropsGraphQL = {
   __typename: string
   createdAt: string
   updatedAt: string
-  _version: number
   _deleted?: boolean | null
   _lastChangedAt: number
 }

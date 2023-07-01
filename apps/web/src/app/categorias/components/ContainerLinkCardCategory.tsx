@@ -14,13 +14,15 @@ type ContainerLinkCardCategoryProps = {
   name: string
   file: AFile[]
   description: string
+  _version?: number
 }
 
 const ContainerLinkCardCategory = ({
   categoryId,
   name,
   description,
-  file
+  file,
+  _version
 }: ContainerLinkCardCategoryProps) => {
   const dispatch = useDispatch()
   const auth = useSelector<AppStore, AuthStore>((state) => state.auth)
@@ -30,7 +32,8 @@ const ContainerLinkCardCategory = ({
       headerUIActions.setEventUpdateCategory({
         id: categoryId,
         name,
-        description
+        description,
+        _version
       })
     )
   }
@@ -40,7 +43,8 @@ const ContainerLinkCardCategory = ({
       headerUIActions.setEventUpdateCategory({
         id: categoryId,
         name,
-        description
+        description,
+        _version
       })
     )
   }

@@ -18,15 +18,18 @@ const CategoryPage = async () => {
           padding: '10px'
         }}
       >
-        {categories.map(({ id: categoryId, files, name, description }) => (
-          <ContainerLinkCardCategory
-            key={categoryId}
-            categoryId={categoryId}
-            name={name}
-            description={description}
-            file={files}
-          />
-        ))}
+        {categories.map(
+          ({ id: categoryId, files, name, description, _version }) => (
+            <ContainerLinkCardCategory
+              key={categoryId}
+              categoryId={categoryId}
+              name={name}
+              description={description}
+              file={files}
+              _version={_version}
+            />
+          )
+        )}
       </Box>
       <ModalFormCategory />
     </>

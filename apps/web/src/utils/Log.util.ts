@@ -1,4 +1,11 @@
 export default class LogUtil {
+  static log(title: string, ...options: unknown[]) {
+    console.log(`▶ ${title}:`, ...options)
+  }
+
+  static error(title: string, ...options: unknown[]) {
+    console.error(`🚨 ${title}: `, ...options)
+  }
   static errorDetail(
     title: string,
     error: object | Error | string | unknown,
