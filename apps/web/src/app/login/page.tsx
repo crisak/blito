@@ -7,7 +7,7 @@ import { Amplify } from 'aws-amplify'
 import { getAwsExports } from 'blito-models'
 import { toast } from 'react-toastify'
 import { useRouter } from 'next/navigation'
-import { AuthService } from '../services'
+import AuthService from '../services/Auth.service'
 import { useDispatch } from 'react-redux'
 import { authSliceActions } from '@/redux/slices'
 

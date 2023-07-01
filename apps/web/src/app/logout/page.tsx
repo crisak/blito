@@ -6,7 +6,7 @@ import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { Box, Text } from '@/app/components'
 import { useRouter } from 'next/navigation'
-import { AuthService } from '@/app/services'
+import AuthService from '@/app/services/Auth.service'
 
 const Logout = () => {
   const router = useRouter()

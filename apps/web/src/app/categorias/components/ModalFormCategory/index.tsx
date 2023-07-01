@@ -3,8 +3,8 @@
 import {
   HeaderUIStore,
   HeaderEvent,
-  headerUIActions,
-  categoryActions
+  headerUIActions
+  // categoryActions
 } from '@/redux/slices'
 import { AppStore } from '@/redux/store'
 import { useEffect, useState } from 'react'
@@ -20,7 +20,7 @@ import {
   Spacer
 } from '@nextui-org/react'
 import { Category } from 'blito-models'
-import { CategoryService } from '@/app/services'
+// import { CategoryService } from '@/app/services'
 import { toast } from 'react-toastify'
 import { useAuth } from '@/app/hooks'
 
@@ -58,21 +58,21 @@ const ModalFormCategory = () => {
 
   const handlerSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     try {
-      const categoryService = CategoryService.getInstance()
+      // const categoryService = CategoryService.getInstance()
 
       e.preventDefault()
 
       setLoading(true)
 
-      let category: Category
+      // let category: Category
 
       if (headerUI.event === HeaderEvent.updateCategory) {
-        category = await categoryService.update({
-          id: formData.id!,
-          name: formData.name,
-          description: formData.description as string
-        })
-        dispatch(categoryActions.update(category))
+        // category = await categoryService.update({
+        //   id: formData.id!,
+        //   name: formData.name,
+        //   description: formData.description as string
+        // })
+        // dispatch(categoryActions.update(category))
       } else {
         /** Create record */
         // category = await categoryService.create({
