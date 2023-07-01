@@ -1,6 +1,10 @@
-import { handleError, GraphQLUtil } from '@/utils'
+import { handleError, GraphQLUtil, LogUtil } from '@/utils'
 import { ACategory, AContent, AFile } from '@/models/ModelsAdapter.model'
-import { graphqlOperation, GraphQLQuery } from '@aws-amplify/api'
+import {
+  graphqlOperation,
+  GraphQLQuery,
+  GRAPHQL_AUTH_MODE
+} from '@aws-amplify/api'
 import { withSSRContext, type API } from 'aws-amplify'
 import { headers } from 'next/headers'
 import {
@@ -35,17 +39,48 @@ class CategoryService {
 
   async create(category: CreateCategoryInput): Promise<Category> {
     try {
-      const response = await this.getAPI().graphql<
-        GraphQLQuery<CreateCategoryMutation>
-      >(
-        graphqlOperation(createCategory, {
-          input: category
+      /** Request with auth of Cognito */
+      const response = await this.getAPI()
+        .graphql<GraphQLQuery<CreateCategoryMutation>>(
+          graphqlOperation(createCategory, {
+            input: category
+          })
+        )
+        .catch((err) => {
+          LogUtil.errorDetail(
+            'CategoryService.create',
+            err,
+            createCategory,
+            '\nVariables:',
+            JSON.stringify(
+              {
+                input: category
+              },
+              null,
+              2
+            )
+          )
+          return Promise.reject(err)
         })
-      )
 
       const newCategory = response?.data?.createCategory
 
       if (!response || response?.errors?.length || !newCategory?.id) {
+        LogUtil.errorDetail(
+          'CategoryService.create',
+          response,
+          createCategory,
+          '\nVariables:',
+          JSON.stringify(
+            {
+              input: category
+            },
+            null,
+            2
+          ),
+          { prettyError: true }
+        )
+
         throw response
       }
 
@@ -57,17 +92,49 @@ class CategoryService {
 
   async update(category: UpdateCategoryInput): Promise<Category> {
     try {
-      const response = await this.getAPI().graphql<
-        GraphQLQuery<UpdateCategoryMutation>
-      >(
-        graphqlOperation(updateCategory, {
-          input: category
+      /** Request with auth of Cognito */
+      const response = await this.getAPI()
+        .graphql<GraphQLQuery<UpdateCategoryMutation>>(
+          graphqlOperation(updateCategory, {
+            input: category
+          })
+        )
+        .catch((err) => {
+          LogUtil.errorDetail(
+            'CategoryService.update',
+            err,
+            updateCategory,
+            '\nVariables:',
+            JSON.stringify(
+              {
+                input: category
+              },
+              null,
+              2
+            )
+          )
+          return Promise.reject(err)
         })
-      )
 
       const resUpdateCategory = response?.data?.updateCategory
 
       if (!response || response?.errors?.length || !resUpdateCategory?.id) {
+        LogUtil.errorDetail(
+          'CategoryService.update',
+          response,
+          updateCategory,
+          '\nVariables:',
+          JSON.stringify(
+            {
+              input: category
+            },
+            null,
+            2
+          ),
+          {
+            prettyError: true
+          }
+        )
         throw response
       }
 
@@ -79,19 +146,28 @@ class CategoryService {
 
   async getById(categoryId: string): Promise<ACategory> {
     try {
+      const payload = {
+        query: getCategory,
+        variables: {
+          id: categoryId
+        },
+        authMode: GRAPHQL_AUTH_MODE.API_KEY
+      }
       /**
        * {Action}-{Name}-{Type}
        *  Update  Content Mutation
        */
-      const response = await this.getAPI().graphql<
-        GraphQLQuery<GetCategoryQuery>
-      >(
-        graphqlOperation(getCategory, {
-          id: categoryId
+      const response = await this.getAPI({ public: true })
+        .graphql<GraphQLQuery<GetCategoryQuery>>(payload)
+        .catch((err) => {
+          LogUtil.errorDetail('CategoryService.getById', err, payload)
+          return Promise.reject(err)
         })
-      )
 
       if (!response || response?.errors || !response?.data?.getCategory) {
+        LogUtil.errorDetail('CategoryService.getById', response, payload, {
+          prettyError: true
+        })
         throw response
       }
 
@@ -103,17 +179,33 @@ class CategoryService {
     }
   }
 
+  /** Public API */
   async getAll(): Promise<ACategory[]> {
     try {
       /**
        * {Action}-{Name}-{Type}
        *  Update  Content Mutation
        */
-      const response = await this.getAPI().graphql<
-        GraphQLQuery<ListCategoriesQuery>
-      >(graphqlOperation(listCategories))
+      const response = await this.getAPI({ public: true })
+        .graphql<GraphQLQuery<ListCategoriesQuery>>({
+          query: listCategories,
+          authMode: GRAPHQL_AUTH_MODE.API_KEY
+        })
+        .catch((err) => {
+          LogUtil.errorDetail('CategoryService.getAll', err, listCategories)
+          return Promise.reject(err)
+        })
 
       if (!response || response?.errors || !response?.data?.listCategories) {
+        LogUtil.errorDetail(
+          'CategoryService.getAll',
+          response,
+          listCategories,
+          {
+            prettyError: true
+          }
+        )
+
         throw response
       }
 
@@ -121,7 +213,6 @@ class CategoryService {
         response.data.listCategories.items
       )
     } catch (error) {
-      console.error('▶ CategoryService.getAll')
       throw handleError(error)
     }
   }
@@ -154,11 +245,11 @@ class CategoryService {
         })
         .filter((data) => Boolean(data)) as GetAllWithContentResult[]
     } catch (error) {
-      console.error('▶ CategoryService.getAllWithFiles')
       throw handleError(error)
     }
   }
 
+  /** Public */
   private async getContentByCategory(
     category: ACategory
   ): Promise<GetAllWithContentResult> {
@@ -188,15 +279,35 @@ class CategoryService {
         categoryId: category.id
       }
 
+      const payloadReq = {
+        query: listFilesByCategoryQuery,
+        authMode: GRAPHQL_AUTH_MODE.API_KEY,
+        variables: filters
+      }
+
       /**
        * {Action}-{Modules}-{Type}
        *  Update  Content Mutation
        */
-      const response = await this.getAPI().graphql<
-        GraphQLQuery<ListContentsQuery>
-      >(graphqlOperation(listFilesByCategoryQuery, filters))
+      const response = await this.getAPI({ public: true })
+        .graphql<GraphQLQuery<ListContentsQuery>>(payloadReq)
+        .catch((err) => {
+          LogUtil.errorDetail(
+            'CategoryService.getContentByCategory',
+            err,
+            payloadReq
+          )
+
+          return Promise.reject(err)
+        })
 
       if (!response || response?.errors || !response?.data?.listContents) {
+        LogUtil.errorDetail(
+          'CategoryService.getContentByCategory',
+          response,
+          payloadReq,
+          { prettyError: true }
+        )
         throw response
       }
 
@@ -239,7 +350,15 @@ class CategoryService {
     }
   }
 
-  private getAPI(): typeof API {
+  /** Options */
+  private getAPI(options?: { public: boolean }): typeof API {
+    /** Required auth with API KEY */
+    if (options?.public) {
+      const SSR = withSSRContext()
+      return SSR.API as typeof API
+    }
+
+    /** Required auth with Cognito */
     const req = {
       headers: {
         cookie: headers().get('cookie')

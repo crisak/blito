@@ -17,7 +17,7 @@ import Footer from '../Footer'
 import ToastProvider from '../Toast'
 import { useAuth } from '@/app/hooks'
 
-console.info('⛳️ App running in: ', process.env.NEXT_PUBLIC_ENV)
+console.info('⛳️ Client App running in: ', process.env.NEXT_PUBLIC_ENV)
 
 const darkTheme = createTheme({
   type: 'dark'
