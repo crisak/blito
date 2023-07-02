@@ -24,7 +24,7 @@ import GraphQLService from './GraphQL.Service'
 
 export type GetAllWithContentResult = ACategory & { files: Array<AFile> }
 
-class CategoryService extends GraphQLService {
+export class CategoryService extends GraphQLService {
   static instance: CategoryService
 
   static getInstance(): CategoryService {

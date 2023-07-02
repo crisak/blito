@@ -5,17 +5,19 @@ import ContainerLinkCardCategory from './ContainerLinkCardCategory'
 import { useEffect } from 'react'
 import { CategoryStore, categoryActions } from '@/redux/slices'
 import { AppStore } from '@/redux/store'
-import { CategoryService } from '@/app/services'
-import { useState } from 'react'
-import { LoadingProgress } from '@/app/components'
+import { CategoryService, type GetAllWithContentResult } from '@/app/services'
+import { toast } from 'react-toastify'
 
-interface ContainerListCategoriesProps {}
+interface ContainerListCategoriesProps {
+  categories: GetAllWithContentResult[]
+}
 
 const categoryService = CategoryService.getInstance()
 
-const ContainerListCategories = ({}: ContainerListCategoriesProps) => {
+const ContainerListCategories = ({
+  categories: categoriesStaticProps
+}: ContainerListCategoriesProps) => {
   const dispatch = useDispatch()
-  const [loading, setLoading] = useState(true)
 
   const headerUI = useSelector<AppStore, CategoryStore>(
     (state) => state.category
@@ -23,22 +25,40 @@ const ContainerListCategories = ({}: ContainerListCategoriesProps) => {
 
   useEffect(() => {
     ;(async () => {
-      try {
-        const categories = await categoryService.getAllWithFiles()
-        dispatch(categoryActions.setList(categories))
-      } catch (error) {
-        alert(error)
-      } finally {
-        setLoading(false)
+      /** Only set data if there not record in store(Redux)  */
+      if (!headerUI?.category || headerUI?.category?.length === 0) {
+        dispatch(categoryActions.setList(categoriesStaticProps))
+
+        const id = toast.loading('Sincronizando datos...')
+        try {
+          const categories = await categoryService.getAllWithFiles()
+
+          dispatch(categoryActions.setList(categories))
+        } catch (error) {
+          if (error instanceof Error) {
+            toast(error?.message || '', {
+              type: 'warning'
+            })
+            return
+          }
+
+          toast(`Error internal ${JSON.stringify(error)}`, {
+            type: 'error'
+          })
+        } finally {
+          toast.update(id, {
+            render: 'Datos sincronizados exitosamente',
+            type: 'success',
+            isLoading: false,
+            closeButton: true,
+            autoClose: 3000,
+            hideProgressBar: false
+          })
+        }
       }
     })()
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
-
-  if (loading) {
-    return <LoadingProgress />
-  }
 
   return (
     <>

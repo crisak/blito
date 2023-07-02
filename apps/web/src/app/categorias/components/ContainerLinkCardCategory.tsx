@@ -3,12 +3,11 @@
 import Link from 'next/link'
 import { Card, Col, Row, Button } from '@nextui-org/react'
 import { Box, Text } from '@/app/components'
-import { AFile } from '@/models/ModelsAdapter.model'
 import { AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai'
 import { useDispatch, useSelector } from 'react-redux'
 import { AuthStore, headerUIActions } from '@/redux/slices'
 import { AppStore } from '@/redux/store'
-import type { GetAllWithContentResult } from '@/services'
+import type { GetAllWithContentResult } from '@/app/services'
 
 type ContainerLinkCardCategoryProps = GetAllWithContentResult
 
