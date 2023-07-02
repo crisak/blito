@@ -13,7 +13,8 @@ Amplify.configure({
   API: {
     graphql_headers: async () => {
       return {
-        'Accept-Language': 'es-CO'
+        'Accept-Language': 'es-CO',
+        'TEST-AppLayoutCRIS': 'use server'
       }
     }
   }

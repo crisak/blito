@@ -98,7 +98,8 @@ class AuthService {
       API: {
         graphql_headers: async () => {
           return {
-            'Accept-Language': userAuth.locale
+            'Accept-Language': userAuth.locale,
+            'TEST-AuthService02': 'use client'
           }
         }
       }

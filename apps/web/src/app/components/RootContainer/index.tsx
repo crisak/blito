@@ -16,8 +16,24 @@ import NavbarComponent from '../Navbar'
 import Footer from '../Footer'
 import ToastProvider from '../Toast'
 import { useAuth } from '@/app/hooks'
+import { getAwsExports } from 'blito-models'
+import { Amplify } from 'aws-amplify'
 
 console.info('⛳️ Client App running in: ', process.env.NEXT_PUBLIC_ENV)
+
+/** This should be configured on Server side but not in the client(WEB) */
+Amplify.configure({
+  ...getAwsExports(),
+  ssr: true,
+  API: {
+    graphql_headers: async () => {
+      return {
+        'Accept-Language': 'es-CO',
+        'TEST-app-components-RootContainer': 'use client'
+      }
+    }
+  }
+})
 
 const darkTheme = createTheme({
   type: 'dark'
@@ -97,5 +113,3 @@ function RootContainer({ children }: RootContainerProps): JSX.Element {
   )
 }
 export default RootContainer
-{
-}
