@@ -47,12 +47,11 @@ const ContainerListCategories = ({
           })
         } finally {
           toast.update(id, {
-            render: 'Datos sincronizados exitosamente',
-            type: 'success',
+            render: 'Datos sincronizados',
+            type: 'info',
             isLoading: false,
             closeButton: true,
-            autoClose: 3000,
-            hideProgressBar: false
+            autoClose: 2000
           })
         }
       }
