@@ -22,7 +22,7 @@ class GraphQLService {
   protected getAPI(): typeof API {
     const req = {
       headers: {
-        CristianCamiloKEY: 'Cristian Camilo Romero Pinero',
+        'Cache-Control': 'no-store' /** TODO - This not working, make test */,
         cache: 'no-store'
       }
     }

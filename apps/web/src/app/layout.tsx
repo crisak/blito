@@ -14,7 +14,7 @@ Amplify.configure({
     graphql_headers: async () => {
       return {
         'Accept-Language': 'es-CO',
-        'TEST-AppLayoutCRIS': 'use server'
+        'Cache-Control': 'no-store' /** TODO - This not working, make test */
       }
     }
   }

@@ -29,9 +29,7 @@ Amplify.configure({
     graphql_headers: async () => {
       return {
         'Accept-Language': 'es-CO',
-        'TEST-app-components-RootContainer': 'use client',
-        'Cache-Control': 'no-store',
-        cache: 'no-store'
+        'Cache-Control': 'no-store' /** TODO - This not working, make test */
       }
     }
   }
