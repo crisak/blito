@@ -24,8 +24,6 @@ const ContainerListCategories = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  console.log('categories', headerUI.category)
-
   return (
     <>
       {(headerUI.category || []).map((category) => (
