@@ -18,7 +18,7 @@ const ContainerLinkCardCategory = ({
   const auth = useSelector<AppStore, AuthStore>((state) => state.auth)
 
   const handleRemove = () => {
-    dispatch(headerUIActions.setEventUpdateCategory(category))
+    dispatch(headerUIActions.setEventRemoveCategory(category))
   }
 
   const handleEdit = () => {

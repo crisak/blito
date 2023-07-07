@@ -77,6 +77,7 @@ function RootContainer({ children }: RootContainerProps): JSX.Element {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
   return (
     <>
       <Box

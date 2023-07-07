@@ -1,8 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 export enum HeaderEvent {
-  create = 'create',
-  updateCategory = 'update'
+  create = 'createCategory',
+  updateCategory = 'updateCategory',
+  removeCategory = 'removeCategory'
 }
 
 export type HeaderUIStore<T = any> = {
@@ -33,6 +34,13 @@ const headerUItSlice = createSlice({
       return {
         ...state,
         event: HeaderEvent.updateCategory,
+        data: action.payload || null
+      }
+    },
+    setEventRemoveCategory: (state, action) => {
+      return {
+        ...state,
+        event: HeaderEvent.removeCategory,
         data: action.payload || null
       }
     }

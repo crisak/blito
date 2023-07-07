@@ -18,7 +18,11 @@ import {
   CreateCategoryInput,
   updateCategory,
   UpdateCategoryMutation,
-  UpdateCategoryInput
+  UpdateCategoryInput,
+  DeleteCategoryMutation,
+  deleteCategory,
+  DeleteCategoryInput,
+  ModelCategoryFilterInput
 } from 'blito-models'
 import GraphQLService from './GraphQL.Service'
 
@@ -125,6 +129,52 @@ export class CategoryService extends GraphQLService {
     }
   }
 
+  async delete(category: DeleteCategoryInput): Promise<Category> {
+    try {
+      /** Request with auth of Cognito */
+      const response = await this.getAPI()
+        .graphql<GraphQLQuery<DeleteCategoryMutation>>(
+          graphqlOperation(deleteCategory, {
+            input: category
+          })
+        )
+        .catch((err) => {
+          LogUtil.errorDetail(
+            'CategoryService.delete',
+            err,
+            deleteCategory,
+            '🔎 Input:',
+            {
+              input: category
+            }
+          )
+          return Promise.reject(err)
+        })
+
+      const resUpdateCategory = response?.data?.deleteCategory
+
+      if (!response || response?.errors?.length || !resUpdateCategory?.id) {
+        LogUtil.errorDetail(
+          'CategoryService.delete',
+          response,
+          deleteCategory,
+          '🔎 Input:',
+          {
+            input: category
+          },
+          {
+            prettyError: true
+          }
+        )
+        throw response
+      }
+
+      return resUpdateCategory
+    } catch (error) {
+      throw handleError(error)
+    }
+  }
+
   async getById(categoryId: string): Promise<ACategory> {
     try {
       const payload = {
@@ -170,6 +220,9 @@ export class CategoryService extends GraphQLService {
       const response = await this.getAPI()
         .graphql<GraphQLQuery<ListCategoriesQuery>>({
           query: listCategories,
+          variables: {
+            filter: {} as ModelCategoryFilterInput
+          },
           authMode: GRAPHQL_AUTH_MODE.API_KEY
         })
         .catch((err) => {
@@ -190,9 +243,11 @@ export class CategoryService extends GraphQLService {
         throw response
       }
 
-      return GraphQLUtil.removeDefaultPropsOfList<ACategory>(
-        response.data.listCategories.items
+      const items = response.data.listCategories.items.filter(
+        (item) => item?._deleted !== true
       )
+
+      return GraphQLUtil.removeDefaultPropsOfList<ACategory>(items)
     } catch (error) {
       throw handleError(error)
     }
@@ -292,9 +347,12 @@ export class CategoryService extends GraphQLService {
         throw response
       }
 
-      const contest = GraphQLUtil.removeDefaultPropsOfList<AContent>(
-        response.data.listContents.items
+      const contestList = response.data.listContents.items.filter(
+        (item) => item?._deleted !== true
       )
+
+      const contest =
+        GraphQLUtil.removeDefaultPropsOfList<AContent>(contestList)
 
       let files = contest.slice(0, 3).map<AFile>((content) => {
         const bannerImage = content?.files?.find(

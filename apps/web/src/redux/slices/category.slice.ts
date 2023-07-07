@@ -42,6 +42,14 @@ const categorySlice = createSlice({
           return { ...cat }
         })
       }
+    },
+    remove: (state, action) => {
+      const categoryId = action.payload as string
+
+      return {
+        ...state,
+        category: state.category.filter(({ id }) => id !== categoryId)
+      }
     }
   }
 })

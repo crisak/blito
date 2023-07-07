@@ -13,7 +13,6 @@ import {
   Modal,
   useModal,
   Button,
-  Text,
   Input,
   Textarea,
   Loading,
@@ -22,8 +21,8 @@ import {
 import { Category } from 'blito-models'
 import { CategoryService } from '@/app/services'
 import { toast } from 'react-toastify'
-import { useAuth } from '@/app/hooks'
 import type { GetAllWithContentResult } from '@/app/services/Category.service'
+import { Text } from '@/app/components'
 
 type FDCategory = Pick<Category, 'id' | 'name' | 'description'>
 
@@ -36,9 +35,12 @@ const initialState = {
 const ModalFormCategory = () => {
   const [loading, setLoading] = useState(false)
   const [formData, setFormData] = useState<FDCategory>(initialState)
+  const [] = useState({ name: '' })
 
-  const { initAuth } = useAuth()
   const { setVisible, bindings } = useModal()
+
+  const { setVisible: setVisibleAlertRemove, bindings: bindingsRemove } =
+    useModal()
 
   const dispatch = useDispatch()
   const headerUI = useSelector<
@@ -51,12 +53,19 @@ const ModalFormCategory = () => {
   }
 
   const handlerCloseModel = () => {
-    if (headerUI.event === HeaderEvent.updateCategory) {
-      resetForm()
+    if (
+      headerUI.event === HeaderEvent.updateCategory ||
+      headerUI.event === HeaderEvent.create
+    ) {
+      setVisible(false)
     }
 
+    if (headerUI.event === HeaderEvent.removeCategory) {
+      setVisibleAlertRemove(false)
+    }
+
+    resetForm()
     dispatch(headerUIActions.resetEvent())
-    setVisible(false)
   }
 
   const handlerSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -96,22 +105,65 @@ const ModalFormCategory = () => {
           name: formData.name as string,
           description: formData.description as string
         })
+
         dispatch(
           categoryActions.create({
-            ...headerUI.data,
-            ...category
-          })
+            ...category,
+            files: []
+          } as GetAllWithContentResult)
         )
       }
 
       setLoading(false)
 
-      dispatch(headerUIActions.resetEvent())
       toast('Categoría guardada exitosamente', {
         type: 'success'
       })
 
-      resetForm()
+      handlerCloseModel()
+    } catch (error) {
+      setLoading(false)
+      if (error instanceof Error) {
+        toast(error?.message || '', {
+          type: 'warning'
+        })
+        return
+      }
+
+      toast(`Error internal ${JSON.stringify(error)}`, {
+        type: 'error'
+      })
+    }
+  }
+
+  const handleSubmitRemove = async () => {
+    try {
+      const categoryService = CategoryService.getInstance()
+
+      setLoading(true)
+
+      let category: Category
+
+      if (!headerUI.data?._version) {
+        toast('La version del registro no esta especificada', {
+          type: 'warning'
+        })
+        return
+      }
+
+      category = await categoryService.delete({
+        id: formData.id!,
+        _version: headerUI.data._version
+      })
+
+      dispatch(categoryActions.remove(formData.id))
+
+      setLoading(false)
+
+      toast('Categoría eliminada exitosamente', {
+        type: 'success'
+      })
+
       handlerCloseModel()
     } catch (error) {
       setLoading(false)
@@ -149,67 +201,120 @@ const ModalFormCategory = () => {
       })
       setVisible(true)
     }
+
+    if (headerUI.event === HeaderEvent.removeCategory) {
+      if (!headerUI.data?.id) {
+        toast('El registro que intenta eliminar no es valido', {
+          type: 'warning'
+        })
+      }
+
+      setFormData({
+        id: headerUI.data?.id || '',
+        name: headerUI.data?.name || '',
+        description: headerUI.data?.description || ''
+      })
+
+      setVisibleAlertRemove(true)
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [headerUI.event])
 
-  useEffect(() => {
-    initAuth()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
   return (
-    <Modal
-      blur
-      closeButton
-      preventClose
-      scroll
-      width="600px"
-      aria-labelledby="modal-create-category"
-      aria-describedby="modal-description"
-      onCloseButtonClick={handlerCloseModel}
-      {...bindings}
-    >
-      <form onSubmit={handlerSubmit}>
-        <Modal.Header>
-          <Text id="modal-create-category" size={18}>
-            Agregar categoría
+    <>
+      <Modal
+        blur
+        closeButton
+        preventClose
+        aria-labelledby="modal-remove-category"
+        aria-describedby="modal-description"
+        onCloseButtonClick={handlerCloseModel}
+        {...bindingsRemove}
+      >
+        <Modal.Header justify="flex-start">
+          <Text b id="modal-title" size={20}>
+            Eliminar categoría
           </Text>
+          <hr />
         </Modal.Header>
         <Modal.Body>
-          <Spacer y={1} />
-          <Input
-            fullWidth
-            clearable
-            bordered
-            name="name"
-            labelPlaceholder="Titulo"
-            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            value={formData.name}
-          />
-          <Spacer y={1} />
-          <Textarea
-            fullWidth
-            bordered
-            name="description"
-            labelPlaceholder="Descripción"
-            onChange={(e) =>
-              setFormData({ ...formData, description: e.target.value })
-            }
-            value={formData.description}
-          />
-          <Spacer y={1} />
+          <Text>
+            ¿Estas seguro que deseas eliminar esta categoría
+            <Text b> {formData.name}</Text>?
+          </Text>
+          <Text>Esta acción no se puede deshacer.</Text>
         </Modal.Body>
         <Modal.Footer>
-          <Button auto flat color="primary" onPress={handlerCloseModel}>
-            Cancel
+          <Button light color="primary" auto onPress={handlerCloseModel}>
+            Cancelar
           </Button>
-          <Button type="submit" auto disabled={!isValidForm}>
+          <Button
+            color="primary"
+            auto
+            onPress={handleSubmitRemove}
+            disabled={!isValidForm}
+          >
             {loading && <Loading color="currentColor" size="sm" />}
-            {!loading && 'Guardar'}
+            {!loading && 'Eliminar'}
           </Button>
         </Modal.Footer>
-      </form>
-    </Modal>
+      </Modal>
+
+      <Modal
+        blur
+        closeButton
+        preventClose
+        scroll
+        width="600px"
+        aria-labelledby="modal-create-category"
+        aria-describedby="modal-description"
+        onCloseButtonClick={handlerCloseModel}
+        {...bindings}
+      >
+        <form onSubmit={handlerSubmit}>
+          <Modal.Header>
+            <Text id="modal-create-category" size={18}>
+              Agregar categoría
+            </Text>
+          </Modal.Header>
+          <Modal.Body>
+            <Spacer y={1} />
+            <Input
+              fullWidth
+              clearable
+              bordered
+              name="name"
+              labelPlaceholder="Titulo"
+              onChange={(e) =>
+                setFormData({ ...formData, name: e.target.value })
+              }
+              value={formData.name}
+            />
+            <Spacer y={1} />
+            <Textarea
+              fullWidth
+              bordered
+              name="description"
+              labelPlaceholder="Descripción"
+              onChange={(e) =>
+                setFormData({ ...formData, description: e.target.value })
+              }
+              value={formData.description}
+            />
+            <Spacer y={1} />
+          </Modal.Body>
+          <Modal.Footer>
+            <Button auto flat color="primary" onPress={handlerCloseModel}>
+              Cancelar
+            </Button>
+            <Button type="submit" auto disabled={!isValidForm}>
+              {loading && <Loading color="currentColor" size="sm" />}
+              {!loading && 'Guardar'}
+            </Button>
+          </Modal.Footer>
+        </form>
+      </Modal>
+    </>
   )
 }
 
