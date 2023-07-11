@@ -1,6 +1,7 @@
 import { Box } from '../components'
 import { CategoryService } from '@/app/services'
 import { ContainerListCategories, ModalFormCategory } from './components'
+import { Container, Text } from '@/app/components'
 
 const categoryService = CategoryService.getInstance()
 
@@ -8,7 +9,7 @@ const CategoryPage = async () => {
   const categories = await categoryService.getAllWithFiles()
 
   return (
-    <>
+    <Container title={<Text h2>Categorías</Text>}>
       <Box
         css={{
           display: 'grid',
@@ -20,7 +21,7 @@ const CategoryPage = async () => {
         <ContainerListCategories categories={categories} />
       </Box>
       <ModalFormCategory />
-    </>
+    </Container>
   )
 }
 

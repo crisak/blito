@@ -33,17 +33,22 @@ const DetailProject = async (props: DetailProjectProps) => {
   }
 
   return (
-    <Container breadcrumbs={breadcrumbs}>
-      <Text h2 weight="bold">
-        Proyecto
-      </Text>
-
-      <Text>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus,
-        corporis accusantium. Recusandae architecto neque consequatur libero
-        excepturi? Perferendis, dolorum facilis illum sequi ut sunt beatae iste
-        sint consequuntur rem commodi.
-      </Text>
+    <Container
+      breadcrumbs={breadcrumbs}
+      title={<Text h2>{project.project?.name || ''}</Text>}
+    >
+      <div>
+        <Text b>Titulo</Text>
+        <Text>{project.project?.name}</Text>
+      </div>
+      <div>
+        <Text b>Descripción</Text>
+        <Text>{project.project?.description}</Text>
+      </div>
+      <div>
+        <Text b>Fecha</Text>
+        <Text>{new Date(project.date).toLocaleString()}</Text>
+      </div>
     </Container>
   )
 }

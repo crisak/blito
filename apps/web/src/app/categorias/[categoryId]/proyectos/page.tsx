@@ -24,11 +24,10 @@ const CategoryContentsPage = async ({ params }: ProjectsPageProps) => {
   }
 
   return (
-    <Container breadcrumbs={breadcrumbs}>
-      <Text h2 weight="bold">
-        {category.name}
-      </Text>
-      <hr />
+    <Container
+      breadcrumbs={breadcrumbs}
+      title={<Text h2>{category.name}</Text>}
+    >
       <Box
         css={{
           display: 'grid',
