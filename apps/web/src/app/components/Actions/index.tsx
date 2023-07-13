@@ -37,26 +37,37 @@ const List = styled('ul', {
   }
 })
 
-const Actions = () => {
+export type ActionsProps = {
+  showButtonSave?: boolean
+}
+
+const Actions = ({ showButtonSave }: ActionsProps) => {
   const dispatch = useDispatch()
 
   const handleCreate = () => {
     dispatch(headerUIActions.setEventCreate())
   }
 
+  const isShowActionSave =
+    showButtonSave === undefined ||
+    showButtonSave === null ||
+    showButtonSave === true
+
   return (
     <List className="actions">
-      <li>
-        <Button
-          auto
-          size="sm"
-          icon={<IoIosAddCircleOutline size="1.2rem" />}
-          color="primary"
-          onPress={handleCreate}
-        >
-          Agregar
-        </Button>
-      </li>
+      {isShowActionSave && (
+        <li>
+          <Button
+            auto
+            size="sm"
+            icon={<IoIosAddCircleOutline size="1.2rem" />}
+            color="primary"
+            onPress={handleCreate}
+          >
+            Agregar
+          </Button>
+        </li>
+      )}
     </List>
   )
 }

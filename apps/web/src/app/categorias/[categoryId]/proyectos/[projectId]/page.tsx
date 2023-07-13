@@ -1,8 +1,8 @@
 import { BreadcrumbsProps, Container, Text } from '@/app/components'
-import { CategoryService, ProjectService } from '@/app/services'
+import { ProjectService } from '@/app/services'
+import { ProjectDetailContainer } from './components'
 
 const projectService = ProjectService.getInstance()
-const categoryService = CategoryService.getInstance()
 
 type DetailProjectProps = {
   params: {
@@ -12,15 +12,15 @@ type DetailProjectProps = {
 }
 
 const DetailProject = async (props: DetailProjectProps) => {
-  const [project, category] = await Promise.all([
-    projectService.getById(props.params.projectId),
-    categoryService.getById(props.params.categoryId)
-  ])
+  const project = await projectService.getById(props.params.projectId)
 
   const breadcrumbs: BreadcrumbsProps = {
     links: [
       { label: 'Categorias', href: '/categorias' },
-      { label: category.name, href: `/categorias/${props.params.categoryId}` },
+      {
+        label: project.Category?.name || '',
+        href: `/categorias/${props.params.categoryId}`
+      },
       {
         label: 'Proyectos',
         href: `/categorias/${props.params.categoryId}/proyectos`
@@ -33,22 +33,8 @@ const DetailProject = async (props: DetailProjectProps) => {
   }
 
   return (
-    <Container
-      breadcrumbs={breadcrumbs}
-      title={<Text h2>{project.project?.name || ''}</Text>}
-    >
-      <div>
-        <Text b>Titulo</Text>
-        <Text>{project.project?.name}</Text>
-      </div>
-      <div>
-        <Text b>Descripción</Text>
-        <Text>{project.project?.description}</Text>
-      </div>
-      <div>
-        <Text b>Fecha</Text>
-        <Text>{new Date(project.date).toLocaleString()}</Text>
-      </div>
+    <Container breadcrumbs={breadcrumbs} showButtonSave={false}>
+      <ProjectDetailContainer project={project} />
     </Container>
   )
 }

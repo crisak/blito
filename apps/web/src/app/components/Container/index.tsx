@@ -10,7 +10,7 @@ import {
   Spacer,
   styled
 } from '@nextui-org/react'
-import Actions from '@/app/components/Actions'
+import Actions, { ActionsProps } from '@/app/components/Actions'
 import { AppStore, AuthStore } from '@/redux/store'
 import { useSelector } from 'react-redux'
 
@@ -18,7 +18,7 @@ type ContainerLayoutProps = {
   children: React.ReactNode | React.ReactNode[]
   title?: React.ReactNode
   breadcrumbs?: BreadcrumbsProps
-}
+} & ActionsProps
 
 const Header = styled('header', {
   '& h1, & h2, & h3, & h4': {
@@ -26,7 +26,12 @@ const Header = styled('header', {
   }
 })
 
-const Container = ({ children, breadcrumbs, title }: ContainerLayoutProps) => {
+const Container = ({
+  children,
+  breadcrumbs,
+  title,
+  showButtonSave
+}: ContainerLayoutProps) => {
   const auth = useSelector<AppStore, AuthStore>((state) => state.auth)
 
   const displayBreadcrumbs = () => {
@@ -51,6 +56,8 @@ const Container = ({ children, breadcrumbs, title }: ContainerLayoutProps) => {
       }
     }
 
+    // const show = auth.isAuth && false === showActions.
+
     /**
      * Header
      */
@@ -59,12 +66,13 @@ const Container = ({ children, breadcrumbs, title }: ContainerLayoutProps) => {
         <Header css={cssHeader}>
           {title || null}
 
-          {auth.isAuth && <Actions />}
+          {auth.isAuth && <Actions showButtonSave={showButtonSave} />}
         </Header>
         <Spacer y={2} />
       </>
     )
   }
+
   return (
     <>
       <ContainerUI>

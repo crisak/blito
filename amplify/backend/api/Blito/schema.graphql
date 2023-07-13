@@ -11,7 +11,7 @@ type File {
   type: TypeFile!
   mimeType: String!
   caption: String
-  size: Int
+  size: Int # In kb
   isBanner: Boolean
 }
 
@@ -44,7 +44,7 @@ type Content
   ) {
   id: ID!
   type: ContentType!
-  time: Int!
+  time: Int! # In minutes
   size: Sizes!
   project: ContentProject
   files: [File]!

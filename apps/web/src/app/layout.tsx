@@ -1,4 +1,6 @@
 import 'react-toastify/dist/ReactToastify.css'
+import 'react-image-lightbox/style.css'
+
 import IcoBlitoWhite from '@/assets/images/icon-blito-white.ico'
 import { Amplify } from 'aws-amplify'
 import { getAwsExports } from 'blito-models'

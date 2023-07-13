@@ -1,16 +1,16 @@
-import { Project, ProjectDefaultState } from '@/app/proyectos/models'
+import { AContent } from '@/models'
 import { createSlice } from '@reduxjs/toolkit'
 
 export type ProjectStore = {
-  active: Project
-  list: Project[]
-  projectEdit: Project
+  active: AContent | null
+  list: AContent[]
+  projectEdit: AContent | null
 }
 
 const initialState: ProjectStore = {
-  active: ProjectDefaultState,
+  active: null,
   list: [],
-  projectEdit: ProjectDefaultState
+  projectEdit: null
 }
 
 const projectSlice = createSlice({
@@ -32,7 +32,7 @@ const projectSlice = createSlice({
         list: action.payload
       }
     },
-    updateProject: (state, action) => {
+    updateProject: (state) => {
       return state
     },
     resetProject: () => {
