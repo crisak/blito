@@ -18,6 +18,7 @@ import ToastProvider from '../Toast'
 import { useAuth } from '@/app/hooks'
 import { getAwsExports } from 'blito-models'
 import { Amplify } from 'aws-amplify'
+import { AlertProvider } from '@/app/shared/components'
 
 console.info('⛳️ Client App running in: ', process.env.NEXT_PUBLIC_ENV)
 
@@ -96,15 +97,17 @@ function RootContainer({ children }: RootContainerProps): JSX.Element {
           <ParallaxProvider>
             <NextUIProvider theme={darkTheme}>
               <ReduxProvider store={store}>
-                {splash ? (
-                  <Splash />
-                ) : (
-                  <>
-                    <NavbarComponent />
-                    <main>{children}</main>
-                    <Footer />
-                  </>
-                )}
+                <AlertProvider>
+                  {splash ? (
+                    <Splash />
+                  ) : (
+                    <>
+                      <NavbarComponent />
+                      <main>{children}</main>
+                      <Footer />
+                    </>
+                  )}
+                </AlertProvider>
               </ReduxProvider>
             </NextUIProvider>
           </ParallaxProvider>

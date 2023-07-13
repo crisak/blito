@@ -67,5 +67,4 @@ const ContainerListCategories = ({
     </>
   )
 }
-
 export default ContainerListCategories

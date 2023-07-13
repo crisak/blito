@@ -5,20 +5,75 @@ import { Card, Col, Row, Button } from '@nextui-org/react'
 import { Box, Text } from '@/app/components'
 import { AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai'
 import { useDispatch, useSelector } from 'react-redux'
-import { AuthStore, headerUIActions } from '@/redux/slices'
+import { AuthStore, headerUIActions, categoryActions } from '@/redux/slices'
 import { AppStore } from '@/redux/store'
-import type { GetAllWithContentResult } from '@/app/services'
+import { CategoryService, type GetAllWithContentResult } from '@/app/services'
+import { useAlert } from '@/app/shared/components'
+import { toast } from 'react-toastify'
 
 type ContainerLinkCardCategoryProps = GetAllWithContentResult
 
-const ContainerLinkCardCategory = ({
-  ...category
-}: ContainerLinkCardCategoryProps) => {
+const categoryService = CategoryService.getInstance()
+
+const ContainerLinkCardCategory = (
+  category: ContainerLinkCardCategoryProps
+) => {
   const dispatch = useDispatch()
+  const alert = useAlert()
   const auth = useSelector<AppStore, AuthStore>((state) => state.auth)
 
+  const removeCategory = async () => {
+    try {
+      if (!category._version) {
+        toast('La version del registro no esta especificada', {
+          type: 'warning'
+        })
+        return false
+      }
+
+      await categoryService.delete({
+        id: category.id!,
+        _version: category._version
+      })
+
+      dispatch(categoryActions.remove(category.id))
+
+      toast('Categoría eliminada exitosamente', {
+        type: 'success'
+      })
+
+      return true
+    } catch (error) {
+      if (error instanceof Error) {
+        toast(error?.message || '', {
+          type: 'warning'
+        })
+        return false
+      }
+
+      toast(`Error internal ${JSON.stringify(error)}`, {
+        type: 'error'
+      })
+
+      return false
+    }
+  }
+
   const handleRemove = () => {
-    dispatch(headerUIActions.setEventRemoveCategory(category))
+    alert.confirm({
+      title: 'Eliminar categoría',
+      body: (
+        <>
+          <Text>
+            ¿Estas seguro que deseas eliminar esta categoría
+            <Text b> {category.name}</Text>?
+          </Text>
+          <Text>Esta acción no se puede deshacer.</Text>
+        </>
+      ),
+      messageButtonAccept: 'Eliminar',
+      asyncFn: removeCategory
+    })
   }
 
   const handleEdit = () => {
