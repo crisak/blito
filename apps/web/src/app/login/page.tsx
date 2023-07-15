@@ -1,6 +1,6 @@
 'use client'
 
-import { Box, Text } from '@/app/components'
+import { Box, Text } from '@/app/shared/components'
 import { Button, Card, Container, Input, Spacer } from '@nextui-org/react'
 import { useState } from 'react'
 import { toast } from 'react-toastify'

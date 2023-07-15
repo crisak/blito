@@ -1,6 +1,6 @@
 'use client'
 
-import { Box, Text } from '@/app/components'
+import { Text, Box } from '@/app/shared/components'
 import {
   Button,
   Card,

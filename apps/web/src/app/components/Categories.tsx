@@ -2,8 +2,7 @@
 
 import { CategoriesSummaryContents } from '@/models/categories-summary.models'
 import { Button, Container, styled } from '@nextui-org/react'
-import { CardLinkImage } from './CardImage'
-import Text from '@/app/components/Text'
+import { Text } from '@/app/shared/components'
 import { CategoryContent, SectionCategory } from './Home.styles'
 import { ParallaxBanner, ParallaxBannerLayer } from 'react-scroll-parallax'
 import SplashPage from '@/assets/images/splah-push.png'

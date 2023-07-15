@@ -12,7 +12,7 @@ import BlitoFrontPage from '@/assets/images/bg-haeder_home.png'
 import SplahPage from '@/assets/images/splah-push.png'
 import { Section, SectionContent } from './homeComponents'
 import Link from 'next/link'
-import Box from './components/Box'
+import { Box } from '@/app/shared/components'
 
 const ImageSplash = styled(Image, {
   opacity: '.6',

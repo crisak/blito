@@ -1,6 +1,6 @@
 'use client'
 
-import Text from './Text'
+import { Text } from '@/app/shared/components'
 import Image from 'next/image'
 import { Header as HeaderStyle } from './Home.styles'
 import BlitoFrontPage from '@/assets/images/home-blito_bg_white.png'

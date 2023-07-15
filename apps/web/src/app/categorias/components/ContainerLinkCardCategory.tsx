@@ -2,12 +2,15 @@
 
 import Link from 'next/link'
 import { Card, Col, Row, Button } from '@nextui-org/react'
-import { Box, Text } from '@/app/components'
+import { Box, Text } from '@/app/shared/components'
 import { AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai'
 import { useDispatch, useSelector } from 'react-redux'
 import { AuthStore, headerUIActions, categoryActions } from '@/redux/slices'
 import { AppStore } from '@/redux/store'
-import { CategoryService, type GetAllWithContentResult } from '@/app/shared/services'
+import {
+  CategoryService,
+  type GetAllWithContentResult
+} from '@/app/shared/services'
 import { useAlert } from '@/app/shared/components'
 import { toast } from 'react-toastify'
 

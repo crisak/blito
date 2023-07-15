@@ -1,7 +1,7 @@
-import { Box } from '../components'
+import { Box, Text } from '@/app/shared/components'
 import { CategoryService } from '@/app/shared/services'
 import { ContainerListCategories, ModalFormCategory } from './components'
-import { Container, Text } from '@/app/components'
+import { Container } from '@/app/components'
 
 const categoryService = CategoryService.getInstance()
 

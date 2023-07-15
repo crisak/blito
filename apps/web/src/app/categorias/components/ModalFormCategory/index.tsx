@@ -22,7 +22,7 @@ import { Category } from 'blito-models'
 import { CategoryService } from '@/app/shared/services'
 import { toast } from 'react-toastify'
 import type { GetAllWithContentResult } from '@/app/shared/services/Category.service'
-import { Text } from '@/app/components'
+import { Text } from '@/app/shared/components'
 
 type FDCategory = Pick<Category, 'id' | 'name' | 'description'>
 

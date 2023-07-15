@@ -1,7 +1,7 @@
 'use client'
 
 import BgFormContact from '@/assets/images/bg-form-contact.jpg'
-import { Box } from '@/app/components'
+import { Box } from '@/app/shared/components'
 import { HEIGHT_NAVBAR } from '@/styles/variables'
 
 import Image from 'next/image'

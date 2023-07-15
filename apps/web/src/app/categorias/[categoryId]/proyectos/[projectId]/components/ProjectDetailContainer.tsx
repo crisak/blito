@@ -1,6 +1,6 @@
 'use client'
 
-import { Box } from '@/app/components'
+import { Box } from '@/app/shared/components'
 import { Button, Container, Spacer } from '@nextui-org/react'
 import { useState } from 'react'
 import { default as ContentGallery } from './ContentGallery'

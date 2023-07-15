@@ -1,4 +1,4 @@
-import { Box, Text } from '@/app/components'
+import { Box, Text } from '@/app/shared/components'
 import { Button, Grid, Input, Textarea } from '@nextui-org/react'
 import Fade from 'react-reveal/Fade'
 

@@ -1,6 +1,6 @@
 'use client'
 
-import Box from '../components/Box'
+import { Box } from '@/app/shared/components'
 
 export type SectionProps = {
   children: React.ReactElement | React.ReactElement[]

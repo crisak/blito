@@ -4,7 +4,7 @@ import { authSliceActions } from '@/redux/slices'
 
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { Box, Text } from '@/app/components'
+import { Box, Text } from '@/app/shared/components'
 import { useRouter } from 'next/navigation'
 import AuthService from '@/app/shared/services/Auth.service'
 

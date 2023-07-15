@@ -1,6 +1,6 @@
 'use client'
 
-import { Text } from '@/app/components'
+import { Text } from '@/app/shared/components'
 import { Button, Loading, Modal, useModal } from '@nextui-org/react'
 import { useState } from 'react'
 

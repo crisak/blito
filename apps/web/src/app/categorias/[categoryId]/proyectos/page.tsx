@@ -1,4 +1,5 @@
-import { Box, Container, Text, BreadcrumbsProps } from '@/app/components'
+import { Container, BreadcrumbsProps } from '@/app/components'
+import { Box, Text } from '@/app/shared/components'
 import { CategoryService, ProjectService } from '@/app/shared/services'
 import { CardProject } from './components'
 

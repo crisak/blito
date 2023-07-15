@@ -1,7 +1,7 @@
 'use client'
 
 import { Card, Col, Row, Button } from '@nextui-org/react'
-import { Text } from '@/app/components'
+import { Text } from '@/app/shared/components'
 import { AContent } from '@/models'
 import { formatDate } from '@/utils'
 import Link from 'next/link'
