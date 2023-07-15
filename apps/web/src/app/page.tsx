@@ -5,14 +5,13 @@ import { ParallaxBanner, ParallaxBannerLayer } from 'react-scroll-parallax'
 import Image from 'next/image'
 import { Button, Card, Spacer, styled } from '@nextui-org/react'
 import Header from './components/Header'
-import Text from './components/Text'
 import FloatingSocials from './components/FloatingSocials'
 import { HEIGHT_NAVBAR } from '@/styles/variables'
 import BlitoFrontPage from '@/assets/images/bg-haeder_home.png'
 import SplahPage from '@/assets/images/splah-push.png'
 import { Section, SectionContent } from './homeComponents'
 import Link from 'next/link'
-import { Box } from '@/app/shared/components'
+import { Box, Text } from '@/app/shared/components'
 
 const ImageSplash = styled(Image, {
   opacity: '.6',

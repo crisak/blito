@@ -5,6 +5,7 @@ import { Container, Grid, Row } from '@nextui-org/react'
 import { FooterStyle } from './Footer.styles'
 import BlitoFrontPage from '@/assets/images/home-blito_bg_white.png'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 
 import {
   BsInstagram,
@@ -15,7 +16,20 @@ import {
 } from 'react-icons/bs'
 import Link from 'next/link'
 
+const LIST_ROUTERS_DISABLED = ['/configuracion']
+
 const Footer = () => {
+  const pathname = usePathname()
+  /**
+   * Example
+   * pathname = /categorias/830f3d81-ba5d-453d-85b1-3f2eebd9dfb5/proyectos
+   */
+
+  /** TODO - Importa path router from navbar */
+  if (LIST_ROUTERS_DISABLED.includes(pathname)) {
+    return <></>
+  }
+
   return (
     <FooterStyle
       css={{
