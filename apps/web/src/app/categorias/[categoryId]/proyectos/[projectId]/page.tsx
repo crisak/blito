@@ -1,4 +1,4 @@
-import { BreadcrumbsProps, Container, Text } from '@/app/components'
+import { BreadcrumbsProps, Container } from '@/app/components'
 import { ProjectService } from '@/app/shared/services'
 import { ProjectDetailContainer } from './components'
 
