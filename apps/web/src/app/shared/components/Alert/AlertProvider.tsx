@@ -6,8 +6,8 @@ import { useContext, createContext } from 'react'
 import Alert, { type StateAlert } from './Alert'
 
 const initialState = {
-  show: (paramsShowAlert: ParamsShowAlert) => {},
-  confirm: (paramsShowAlert: ParamsConfirmAlert) => {}
+  show: (_: ParamsShowAlert) => {},
+  confirm: (_: ParamsConfirmAlert) => {}
 }
 
 const AlertContext = createContext(initialState)

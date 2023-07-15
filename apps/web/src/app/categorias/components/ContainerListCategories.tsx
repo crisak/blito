@@ -5,7 +5,7 @@ import ContainerLinkCardCategory from './ContainerLinkCardCategory'
 import { useEffect } from 'react'
 import { CategoryStore, categoryActions } from '@/redux/slices'
 import { AppStore } from '@/redux/store'
-import { CategoryService, type GetAllWithContentResult } from '@/app/services'
+import { CategoryService, type GetAllWithContentResult } from '@/app/shared/services'
 import { toast } from 'react-toastify'
 
 interface ContainerListCategoriesProps {

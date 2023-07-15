@@ -1,5 +1,5 @@
 import { Box, Container, Text, BreadcrumbsProps } from '@/app/components'
-import { CategoryService, ProjectService } from '@/app/services'
+import { CategoryService, ProjectService } from '@/app/shared/services'
 import { CardProject } from './components'
 
 type ProjectsPageProps = {

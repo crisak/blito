@@ -1,4 +1,4 @@
-import type { GetAllWithContentResult } from '@/app/services'
+import type { GetAllWithContentResult } from '@/app/shared/services'
 import { createSlice } from '@reduxjs/toolkit'
 
 export type CategoryStore = {

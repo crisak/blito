@@ -5,7 +5,7 @@ import { Button, Card, Container, Input, Spacer } from '@nextui-org/react'
 import { useState } from 'react'
 import { toast } from 'react-toastify'
 import { useRouter } from 'next/navigation'
-import AuthService from '../services/Auth.service'
+import AuthService from '@/app/shared/services/Auth.service'
 import { useDispatch } from 'react-redux'
 import { authSliceActions } from '@/redux/slices'
 

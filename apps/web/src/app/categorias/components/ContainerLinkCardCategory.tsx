@@ -7,7 +7,7 @@ import { AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai'
 import { useDispatch, useSelector } from 'react-redux'
 import { AuthStore, headerUIActions, categoryActions } from '@/redux/slices'
 import { AppStore } from '@/redux/store'
-import { CategoryService, type GetAllWithContentResult } from '@/app/services'
+import { CategoryService, type GetAllWithContentResult } from '@/app/shared/services'
 import { useAlert } from '@/app/shared/components'
 import { toast } from 'react-toastify'
 

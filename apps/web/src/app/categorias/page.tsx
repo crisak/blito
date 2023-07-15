@@ -1,5 +1,5 @@
 import { Box } from '../components'
-import { CategoryService } from '@/app/services'
+import { CategoryService } from '@/app/shared/services'
 import { ContainerListCategories, ModalFormCategory } from './components'
 import { Container, Text } from '@/app/components'
 

@@ -1,5 +1,5 @@
 import { BreadcrumbsProps, Container, Text } from '@/app/components'
-import { ProjectService } from '@/app/services'
+import { ProjectService } from '@/app/shared/services'
 import { ProjectDetailContainer } from './components'
 
 const projectService = ProjectService.getInstance()
