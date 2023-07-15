@@ -24,7 +24,7 @@ const SettingsLayout = ({ children }: SettingsLayoutProps) => {
         }}
       >
         <Text
-          h2
+          h4
           weight="bold"
           css={{
             padding: '$8'

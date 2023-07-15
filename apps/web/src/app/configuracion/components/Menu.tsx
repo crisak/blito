@@ -4,7 +4,8 @@ import { Box } from '@/app/shared/components'
 import Link from 'next/link'
 import { CiSettings } from 'react-icons/ci'
 import { MdInsights } from 'react-icons/md'
-import { CgProfile } from 'react-icons/cg'
+import { CgProfile, CgAwards } from 'react-icons/cg'
+
 import { Badge } from '@nextui-org/react'
 
 const Menu = () => {
@@ -55,6 +56,17 @@ const Menu = () => {
       >
         <MdInsights size={25} />
         Estadísticas
+        <Badge size="xs">Pronto</Badge>
+      </Link>
+      <Link
+        href={{
+          pathname: '/perfil'
+        }}
+        aria-disabled={true}
+        className="blocked-link"
+      >
+        <CgAwards size={25} />
+        Sorteos
         <Badge size="xs">Pronto</Badge>
       </Link>
       <Link

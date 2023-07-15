@@ -1,13 +1,14 @@
 import type {
   Content,
   Category as CategoryModel,
-  File as FileModel
+  File as FileModel,
+  Tag,
+  Collaborator,
+  SocialNetwork
 } from 'blito-models'
 
 export type DefaultPropsGraphQL = {
   __typename: string
-  createdAt: string
-  updatedAt: string
   _deleted?: boolean | null
   _lastChangedAt: number
 }
@@ -31,3 +32,18 @@ export type AContent = RmDefaultParameter<Content>
 export type ACategory = RmDefaultParameter<CategoryModel>
 
 export type AFile = RmDefaultParameter<FileModel>
+
+export type ATag = Omit<RmDefaultParameter<Tag>, 'contents'>
+
+export type ATagRelation = RmDefaultParameter<Tag>
+
+export type ACollaborator = Omit<
+  RmDefaultParameter<Collaborator>,
+  'contents' | 'socials'
+> & {
+  socials?: Array<ASocialNetwork>
+}
+
+export type ASocialNetwork = RmDefaultParameter<SocialNetwork>
+
+export type ACollaboratorRelation = RmDefaultParameter<Collaborator>
