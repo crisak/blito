@@ -8,12 +8,12 @@ import { default as InfoDetail } from './InfoDetail'
 import { BsChevronDoubleRight, BsChevronDoubleLeft } from 'react-icons/bs'
 import { HEIGHT_NAVBAR } from '@/styles/variables'
 import { SizeMe } from 'react-sizeme'
-import { AContent } from '@/models'
+import { AFullContent } from '@/models'
 
 const WIDTH_ASIDE = '300px'
 
 type ProjectDetailContainerProps = {
-  project: AContent
+  project: AFullContent
 }
 
 const ProjectDetailContainer = ({ project }: ProjectDetailContainerProps) => {

@@ -2,10 +2,10 @@ import { Box, Text } from '@/app/shared/components'
 import { formatDate } from '@/utils'
 import { Badge, Spacer } from '@nextui-org/react'
 import ThumbnailMap from './ThumbnailMap'
-import { AContent } from '@/models'
+import { AFullContent } from '@/models'
 
 type InfoDetailProps = {
-  project: AContent
+  project: AFullContent
 }
 
 const InfoDetail = ({ project }: InfoDetailProps) => {

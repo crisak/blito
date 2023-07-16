@@ -2,12 +2,10 @@
 
 import { useState, useMemo } from 'react'
 import Lightbox from 'react-image-lightbox'
-// import { images } from './images'
 import StackGrid from 'react-stack-grid'
 import { BORDER_RADIUS } from '@/styles/variables'
 import { Box } from '@/app/shared/components'
 import Image from 'next/image'
-// import { contentGallery } from '@/utils/db-images'
 import { AContent } from '@/models'
 
 export const WIDTH = 200

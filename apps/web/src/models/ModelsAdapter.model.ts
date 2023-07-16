@@ -29,6 +29,8 @@ export type RmDefaultParameter<T> = Omit<T, keyof DefaultPropsGraphQL>
  * AContent = Name Adapter
  *
  */
+/** TODO - Change implementation, take custom query  */
+export type AFullContent = RmDefaultParameter<Content>
 
 export type AContent = Omit<
   AClearRelationContent,

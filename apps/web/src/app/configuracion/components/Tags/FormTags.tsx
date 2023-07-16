@@ -23,7 +23,7 @@ import { CiTrash } from 'react-icons/ci'
 import { toast } from 'react-toastify'
 import Image from 'next/image'
 import { ContentType, TypeFile } from 'blito-models'
-import { DomUtil, StringUtil } from '@/utils'
+import { DomUtil } from '@/utils'
 import Link from 'next/link'
 import { GoLinkExternal } from 'react-icons/go'
 

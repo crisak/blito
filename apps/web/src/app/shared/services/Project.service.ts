@@ -1,5 +1,5 @@
 import { handleError, GraphQLUtil, LogUtil } from '@/utils'
-import { AContent } from '@/models/ModelsAdapter.model'
+import { AContent, AFullContent } from '@/models/ModelsAdapter.model'
 import { GraphQLQuery, GRAPHQL_AUTH_MODE } from '@aws-amplify/api'
 
 import {
@@ -67,7 +67,7 @@ export default class ProjectService extends GraphQLService {
     }
   }
 
-  async getById(projectId: string): Promise<AContent> {
+  async getById(projectId: string): Promise<AFullContent> {
     try {
       if (!projectId) {
         throw new Error('ProjectId params not exits')
@@ -99,7 +99,9 @@ export default class ProjectService extends GraphQLService {
         throw response
       }
 
-      return GraphQLUtil.removeDefaultProps<AContent>(response.data.getContent)
+      return GraphQLUtil.removeDefaultProps<AFullContent>(
+        response.data.getContent
+      )
     } catch (error) {
       throw handleError(error)
     }
