@@ -35,6 +35,12 @@ const columns: Array<{ name: string; uid: keyof ATag | 'actions' }> = [
   { name: 'ACTIONS', uid: 'actions' }
 ]
 
+const showToastSuccess = (message = 'Datos guardaos exitosamente') => {
+  toast(message, {
+    type: 'success'
+  })
+}
+
 const showToastError = (error: unknown) => {
   if (error instanceof Error) {
     toast(error?.message || '', {
@@ -67,6 +73,7 @@ const FormTags = () => {
 
       if (response) {
         setFormData(initialFormData)
+        showToastSuccess()
       }
       return
     }
@@ -81,6 +88,7 @@ const FormTags = () => {
 
     if (response) {
       setFormData(initialFormData)
+      showToastSuccess()
     }
   }
 
