@@ -4,12 +4,15 @@ import type {
   File as FileModel,
   Tag,
   Collaborator,
-  SocialNetwork
+  SocialNetwork,
+  ContentProject,
+  Location as LocationModel,
+  File,
+  Position
 } from 'blito-models'
 
 export type DefaultPropsGraphQL = {
   __typename: string
-  _deleted?: boolean | null
   _lastChangedAt: number
 }
 
@@ -27,7 +30,27 @@ export type RmDefaultParameter<T> = Omit<T, keyof DefaultPropsGraphQL>
  *
  */
 
-export type AContent = RmDefaultParameter<Content>
+export type AContent = Omit<
+  AClearRelationContent,
+  'project' | 'files' | 'location'
+> & {
+  project?: AContentProject | null
+  files: Array<AFile | null>
+  location?: ALocation | null
+}
+
+type AClearRelationContent = Omit<
+  RmDefaultParameter<Content>,
+  'Tags' | 'Category' | 'Collaborators'
+>
+
+type AContentProject = RmDefaultParameter<ContentProject>
+
+type ALocation = Omit<RmDefaultParameter<LocationModel>, 'position'> & {
+  position: APosition
+}
+
+type APosition = RmDefaultParameter<Position>
 
 export type ACategory = RmDefaultParameter<CategoryModel>
 

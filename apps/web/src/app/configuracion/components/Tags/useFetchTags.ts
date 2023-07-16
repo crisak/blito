@@ -8,7 +8,7 @@ import { GlobalStore, globalActions } from '@/redux/slices'
 
 import { useState } from 'react'
 import type { CreateTagInput } from 'blito-models'
-import { ATag } from '@/models'
+import { AContent, ATag } from '@/models'
 
 const tagService = TagService.getInstance()
 
@@ -17,10 +17,14 @@ const useFetchTags = () => {
     list: boolean
     create: boolean
     update: boolean
+    delete: boolean
+    contents: boolean
   }>({
     list: false,
     create: false,
-    update: false
+    update: false,
+    delete: false,
+    contents: false
   })
   const [error, setError] = useState<unknown>()
 
@@ -96,6 +100,49 @@ const useFetchTags = () => {
     }
   }
 
+  const getContentsByTag = async (tag: ATag): Promise<AContent[]> => {
+    try {
+      setLoading((prev) => ({
+        ...prev,
+        contents: true
+      }))
+
+      const contents = await tagService.getContents(tag.id)
+      return contents
+    } catch (error) {
+      throw error
+    } finally {
+      setLoading((prev) => ({
+        ...prev,
+        contents: false
+      }))
+    }
+  }
+
+  const remove = async (tag: ATag): Promise<boolean> => {
+    try {
+      setLoading((prev) => ({
+        ...prev,
+        delete: true
+      }))
+
+      const newTag = await tagService.delete({
+        id: tag.id,
+        _version: tag._version
+      })
+
+      dispatch(globalActions.deleteTag(newTag.id))
+      return true
+    } catch (error) {
+      throw error
+    } finally {
+      setLoading((prev) => ({
+        ...prev,
+        delete: false
+      }))
+    }
+  }
+
   useEffect(() => {
     ;(() => {
       /** Only set data if there not record in store(Redux)  */
@@ -106,7 +153,16 @@ const useFetchTags = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  return { list: store.tags, loading, error, refresh: request, create, update }
+  return {
+    list: store.tags,
+    loading,
+    error,
+    refresh: request,
+    create,
+    update,
+    remove,
+    getContentsByTag
+  }
 }
 
 export default useFetchTags

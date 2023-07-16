@@ -11,7 +11,7 @@ import {
   CategoryService,
   type GetAllWithContentResult
 } from '@/app/shared/services'
-import { useAlert } from '@/app/shared/components'
+import { useAlert } from '@/app/shared/hooks'
 import { toast } from 'react-toastify'
 
 type ContainerLinkCardCategoryProps = GetAllWithContentResult

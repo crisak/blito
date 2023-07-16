@@ -18,7 +18,7 @@ type ParamsShowAlert = Pick<
 >
 
 type ParamsConfirmAlert = ParamsShowAlert & {
-  asyncFn: () => Promise<boolean>
+  asyncFn: () => Promise<boolean> /** If return true then close modal else the modal is open */
 }
 
 export type AlertProviderProps = {

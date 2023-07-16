@@ -2,7 +2,7 @@ import type { DefaultPropsGraphQL } from '@/models/ModelsAdapter.model'
 
 export default class GraphQLUtil {
   static removeDefaultPropsOfList<T>(
-    list: Array<Partial<DefaultPropsGraphQL> | null> = []
+    list: Array<Partial<DefaultPropsGraphQL & T> | null> = []
   ): Array<T> {
     const newList: T[] = []
 
@@ -20,7 +20,7 @@ export default class GraphQLUtil {
   }
 
   static removeDefaultProps<T>(value: any): T {
-    const { __typename, _deleted, _lastChangedAt, ...props } = value
+    const { __typename, _lastChangedAt, ...props } = value
     return { ...props } as T
   }
 }

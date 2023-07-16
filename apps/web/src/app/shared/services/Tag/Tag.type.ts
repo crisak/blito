@@ -1,12 +1,10 @@
-import { ATag } from '@/models'
-/** Q = Query  */
+import { AContent, ATag } from '@/models'
 
-type QTag = ATag & { _deleted?: boolean | null }
+/** Q = Query  */
 
 export type ListTagsQuery = {
   listTags?: {
-    // __typename: 'ModelTagConnection'
-    items: Array<QTag | null>
+    items: Array<ATag | null>
     nextToken?: string | null
     startedAt?: number | null
   } | null
@@ -18,4 +16,20 @@ export type CreateTagMutation = {
 
 export type UpdateTagMutation = {
   updateTag?: ATag | null
+}
+
+export type GetContentsByTagQuery = {
+  getTag?:
+    | (ATag & {
+        contents?: {
+          items: Array<{
+            content: AContent
+          } | null>
+        } | null
+      })
+    | null
+}
+
+export type DeleteTagMutation = {
+  deleteTag?: ATag | null
 }

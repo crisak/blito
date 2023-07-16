@@ -11,14 +11,14 @@ import { ParallaxProvider } from 'react-scroll-parallax'
 import { useEffect, useState } from 'react'
 import Splash from '../Splash'
 import BgBodyFigures from '@/assets/images/bg-body-figures.jpeg'
-import Box from '../../shared/components/Box'
+import { Box } from '@/app/shared/components'
 import NavbarComponent from '../Navbar'
 import Footer from '../Footer'
 import ToastProvider from '../Toast'
 import { useAuth } from '@/app/hooks'
 import { getAwsExports } from 'blito-models'
 import { Amplify } from 'aws-amplify'
-import { AlertProvider } from '@/app/shared/components'
+import { AlertProvider } from '@/app/shared/hooks'
 
 console.info('⛳️ Client App running in: ', process.env.NEXT_PUBLIC_ENV)
 

@@ -46,7 +46,7 @@ const globalSlice = createSlice({
         })
       }
     },
-    removeTag: (state, action: PayloadInput<ATag['id']>) => {
+    deleteTag: (state, action: PayloadInput<ATag['id']>) => {
       const tagId = action.payload
 
       return {

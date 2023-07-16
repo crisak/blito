@@ -22,7 +22,8 @@ const nextConfig = {
       'blito-app.s3.amazonaws.com',
       'instagram.fbog2-4.fna.fbcdn.net',
       'www.sanmantattoo.com',
-      'cdn-icons-png.flaticon.com'
+      'cdn-icons-png.flaticon.com',
+      'www.pngitem.com'
     ]
   }
 }
