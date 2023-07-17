@@ -1,8 +1,5 @@
 'use client'
 
-import '@/styles/globals.css'
-import 'react-toastify/dist/ReactToastify.min.css'
-
 import { Provider as ReduxProvider } from 'react-redux'
 import store from '@/redux/store'
 import { createTheme, NextUIProvider } from '@nextui-org/react'

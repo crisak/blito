@@ -131,3 +131,38 @@ a {
   background-color: #ff7f50;
   cursor: pointer;
 }
+
+@keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: hidden;
+    display: none;
+  }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.25s linear;
+}
+
+.slide-out-right {
+  animation: slideOutRight 0.25s linear;
+}

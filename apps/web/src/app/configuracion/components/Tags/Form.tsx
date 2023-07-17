@@ -16,18 +16,20 @@ import {
 import ReactDOMServer from 'react-dom/server'
 import { useState } from 'react'
 import { Box, Text } from '@/app/shared/components'
-import { useAlert } from '@/app/shared/hooks'
+import { useAlert, useScreenNavigation } from '@/app/shared/hooks'
 import useFetchTags from './useFetchTags'
 import { ATag } from '@/models'
 import { IconButton } from './IconButton'
 import BodyModalError from './BodyModalError'
 import { AiOutlineEdit } from 'react-icons/ai'
 import { BsSearch } from 'react-icons/bs'
+import { BsChevronLeft } from 'react-icons/bs'
 import { CiTrash } from 'react-icons/ci'
 import { toast } from 'react-toastify'
 import { DomUtil } from '@/utils'
 import { useMemo } from 'react'
 import HeaderTable from './HeaderTable'
+import { MetadataScreens } from './constants'
 
 const initialFormData: ATag = {
   id: '',
@@ -66,11 +68,8 @@ const showToastError = (error: unknown) => {
   })
 }
 
-type FormTagsProps = {
-  containerTableCss?: CSS
-}
-
-const FormTags = ({ containerTableCss }: FormTagsProps) => {
+const Form = () => {
+  const screenNavigation = useScreenNavigation<MetadataScreens>()
   const collator = useCollator({ numeric: true })
   const { theme } = useTheme()
   const [formData, setFormData] = useState(initialFormData)
@@ -245,7 +244,29 @@ const FormTags = ({ containerTableCss }: FormTagsProps) => {
 
   return (
     <Box>
-      <Text h3>Tags</Text>
+      <Box
+        css={{
+          display: 'flex',
+          gap: '$7',
+          alignItems: 'center'
+        }}
+      >
+        <Button
+          light
+          auto
+          size="sm"
+          color="default"
+          icon={<BsChevronLeft fill="currentColor" size={25} />}
+          onClick={() => {
+            screenNavigation.pop()
+          }}
+        />
+
+        <Text h3 css={{ margin: 0 }}>
+          Tags
+        </Text>
+      </Box>
+
       <Spacer y={2} />
       <form onSubmit={handleSubmit}>
         <Box css={{ display: 'flex', flexDirection: 'column', gap: '$10' }}>
@@ -340,7 +361,7 @@ const FormTags = ({ containerTableCss }: FormTagsProps) => {
           pt: 'none',
           borderRadius: '0 0 $xl $xl',
           borderTop: 'none',
-          ...containerTableCss
+          ...screenNavigation.metadata.containerListCss
         }}
         sortDescriptor={sortCell}
         onSortChange={(sortByCell) => setSortCell(sortByCell)}
@@ -383,4 +404,4 @@ const FormTags = ({ containerTableCss }: FormTagsProps) => {
   )
 }
 
-export default FormTags
+export default Form

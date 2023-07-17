@@ -2,9 +2,9 @@
 
 import { Text } from '@/app/shared/components'
 import { Card, Container, Grid, Spacer } from '@nextui-org/react'
-import { FormTags } from './components/Tags'
+import { ScreenTags } from './components/Tags'
 
-const MAX_HEIGHT = 200
+const MAX_HEIGHT_CARD = 580
 
 const SettingsPage = () => {
   return (
@@ -25,11 +25,17 @@ const SettingsPage = () => {
       <Container>
         <Grid.Container gap={2}>
           <Grid xs={12} md={4}>
-            <Card>
+            <Card
+              css={{
+                maxHeight: MAX_HEIGHT_CARD,
+                overflow: 'auto'
+              }}
+            >
               <Card.Body css={{ padding: '$10' }}>
-                <FormTags
-                  containerTableCss={{
-                    maxHeight: MAX_HEIGHT,
+                <ScreenTags
+                  height={MAX_HEIGHT_CARD}
+                  containerListCss={{
+                    maxHeight: MAX_HEIGHT_CARD - 50,
                     overflow: 'auto'
                   }}
                 />
