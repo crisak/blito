@@ -1,4 +1,10 @@
-import { createContext, useContext, useState } from 'react'
+import {
+  createContext,
+  useContext,
+  useState,
+  Dispatch,
+  SetStateAction
+} from 'react'
 import { Box } from '@/app/shared/components'
 import { CSS } from '@nextui-org/react'
 
@@ -11,6 +17,7 @@ type ContextNavigationProps<T = unknown> = {
   pop: () => void
   background?: CSS['background']
   metadata: T
+  setMetadata: Dispatch<SetStateAction<T>>
 }
 
 const ContextNavigation = createContext<ContextNavigationProps>({
@@ -21,7 +28,8 @@ const ContextNavigation = createContext<ContextNavigationProps>({
   push: (page: PageName) => {},
   pop: () => {},
   background: '',
-  metadata: null
+  metadata: null,
+  setMetadata: () => {}
 })
 
 export function useScreenNavigation<T = unknown>() {
@@ -42,6 +50,7 @@ type ProviderScreenNavigationProps<T = unknown> = {
   children: (dta: {
     page: PageName
     component: React.ReactNode
+    index?: number
   }) => React.ReactNode
   metadata: T
 }
@@ -57,8 +66,7 @@ const Container = ({ height = 500, ...props }: ContainerProps) => {
       css={{
         position: 'relative',
         width: '100%',
-        height,
-        border: '1px solid red'
+        height
       }}
     />
   )
@@ -70,8 +78,9 @@ const ProviderScreenNavigation = ({
   height,
   currentPage,
   background,
-  metadata
+  metadata: initialMetadata
 }: ProviderScreenNavigationProps) => {
+  const [metadata, setMetadata] = useState(initialMetadata)
   const [historyPage, setHistoryPage] = useState<
     Array<{
       page: PageName
@@ -116,12 +125,12 @@ const ProviderScreenNavigation = ({
 
   return (
     <ContextNavigation.Provider
-      value={{ playAnimation, push, pop, background, metadata }}
+      value={{ playAnimation, push, pop, background, metadata, setMetadata }}
     >
       <Container height={height}>
         <>
-          {historyPage.map(({ page, component }) => {
-            return children({ page, component })
+          {historyPage.map(({ page, component }, index) => {
+            return children({ page, component, index })
           })}
         </>
       </Container>

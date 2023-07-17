@@ -9,18 +9,24 @@ import { CSS, useTheme } from '@nextui-org/react'
 type PageNavigationProps = Child & {
   page: PageName
   css?: CSS
+  index?: number
 }
 
-const PageNavigation = ({ children, page, css }: PageNavigationProps) => {
+const PageNavigation = ({
+  children,
+  page,
+  css,
+  index
+}: PageNavigationProps) => {
   const data = useScreenNavigation()
   const { theme } = useTheme()
-
-  console.log('PageNavigation.Background:', theme?.colors.background.value)
 
   return (
     <Box
       className={
-        data.playAnimation.page === page ? data.playAnimation.animation : ''
+        data.playAnimation.page === page
+          ? `${data.playAnimation.animation}`
+          : ''
       }
       css={{
         background: data.background || theme?.colors.background.value,
@@ -28,6 +34,7 @@ const PageNavigation = ({ children, page, css }: PageNavigationProps) => {
         top: 0,
         width: '100%',
         height: '100%',
+        zIndex: index !== null && index !== undefined ? index + 2 : 'auto',
         ...css
       }}
     >

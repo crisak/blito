@@ -25,8 +25,10 @@ const ScreenTags = ({ containerListCss, height }: ScreenTagsProps) => {
         containerListCss
       }}
     >
-      {({ page, component }) => (
-        <PageNavigation page={page}>{component}</PageNavigation>
+      {({ page, component, index }) => (
+        <PageNavigation page={page} index={index}>
+          {component}
+        </PageNavigation>
       )}
     </ProviderScreenNavigation>
   )

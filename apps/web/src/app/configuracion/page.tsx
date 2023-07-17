@@ -28,14 +28,14 @@ const SettingsPage = () => {
             <Card
               css={{
                 maxHeight: MAX_HEIGHT_CARD,
-                overflow: 'auto'
+                overflow: 'hidden'
               }}
             >
               <Card.Body css={{ padding: '$10' }}>
                 <ScreenTags
                   height={MAX_HEIGHT_CARD}
                   containerListCss={{
-                    maxHeight: MAX_HEIGHT_CARD - 50,
+                    height: MAX_HEIGHT_CARD - 190,
                     overflow: 'auto'
                   }}
                 />
