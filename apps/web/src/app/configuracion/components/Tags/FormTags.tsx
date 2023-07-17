@@ -2,12 +2,15 @@
 
 import {
   Button,
+  CSS,
   Col,
   Input,
   Loading,
   Row,
+  SortDescriptor,
   Spacer,
   Table,
+  useCollator,
   useTheme
 } from '@nextui-org/react'
 import ReactDOMServer from 'react-dom/server'
@@ -19,9 +22,12 @@ import { ATag } from '@/models'
 import { IconButton } from './IconButton'
 import BodyModalError from './BodyModalError'
 import { AiOutlineEdit } from 'react-icons/ai'
+import { BsSearch } from 'react-icons/bs'
 import { CiTrash } from 'react-icons/ci'
 import { toast } from 'react-toastify'
 import { DomUtil } from '@/utils'
+import { useMemo } from 'react'
+import HeaderTable from './HeaderTable'
 
 const initialFormData: ATag = {
   id: '',
@@ -60,9 +66,20 @@ const showToastError = (error: unknown) => {
   })
 }
 
-const FormTags = () => {
+type FormTagsProps = {
+  containerTableCss?: CSS
+}
+
+const FormTags = ({ containerTableCss }: FormTagsProps) => {
+  const collator = useCollator({ numeric: true })
   const { theme } = useTheme()
   const [formData, setFormData] = useState(initialFormData)
+  const [sortCell, setSortCell] = useState<SortDescriptor>({
+    column: '',
+    direction: undefined
+  })
+  const [searchInput, setSearchInput] = useState('')
+
   const { list, loading, update, create, getContentsByTag, remove } =
     useFetchTags()
 
@@ -193,6 +210,37 @@ const FormTags = () => {
     }
   }
 
+  const listFilter = useMemo(() => {
+    let list_ = [...list]
+
+    /** Filter element with search input */
+    if (searchInput.length > 2) {
+      list_ = list_.filter((tag) => {
+        /** Ignore properties */
+        const { id, _version, _deleted, ...rest } = tag
+        const values = Object.values(rest).join(' ').toUpperCase().trim()
+        return values.includes(searchInput.toUpperCase().trim())
+      })
+    }
+
+    /** Sort by column */
+    if (sortCell?.column) {
+      list_.sort((a, b) => {
+        const nameColumn = sortCell.column as keyof ATag
+        let first = a[nameColumn]
+        let second = b[nameColumn]
+        let cmp = collator.compare(first as any, second as any)
+        if (sortCell.direction === 'descending') {
+          cmp *= -1
+        }
+        return cmp
+      })
+    }
+
+    return list_
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [list, sortCell, searchInput])
+
   const isValidForm = Boolean(formData.name)
 
   return (
@@ -251,6 +299,31 @@ const FormTags = () => {
       </form>
 
       <Spacer y={2} />
+
+      <HeaderTable
+        css={{
+          display: 'flex',
+          justifyContent: 'flex-end'
+        }}
+      >
+        <Input
+          clearable
+          bordered
+          size="sm"
+          name="searchInput"
+          placeholder="Búsqueda por palabra"
+          disabled={loading.create || loading.update || loading.list}
+          onChange={(e) => setSearchInput(e.target.value || '')}
+          value={searchInput}
+          contentLeft={
+            <BsSearch
+              width="16"
+              height="16"
+              fill={theme?.colors.accents6.value}
+            />
+          }
+        />
+      </HeaderTable>
       <Table
         bordered
         lined
@@ -263,10 +336,19 @@ const FormTags = () => {
           height: 'auto',
           minWidth: '100%'
         }}
+        containerCss={{
+          pt: 'none',
+          borderRadius: '0 0 $xl $xl',
+          borderTop: 'none',
+          ...containerTableCss
+        }}
+        sortDescriptor={sortCell}
+        onSortChange={(sortByCell) => setSortCell(sortByCell)}
       >
         <Table.Header columns={columns}>
           {(column) => (
             <Table.Column
+              allowsSorting={column.uid !== 'actions'}
               key={column.uid}
               hideHeader={column.uid === 'actions'}
               align={column.uid === 'actions' ? 'center' : 'start'}
@@ -283,7 +365,7 @@ const FormTags = () => {
           )}
         </Table.Header>
         <Table.Body
-          items={list}
+          items={listFilter}
           loadingState={loading.list ? 'loading' : undefined}
         >
           {(item: ATag) => (

@@ -4,6 +4,8 @@ import { Text } from '@/app/shared/components'
 import { Card, Container, Grid, Spacer } from '@nextui-org/react'
 import { FormTags } from './components/Tags'
 
+const MAX_HEIGHT = 200
+
 const SettingsPage = () => {
   return (
     <>
@@ -25,7 +27,12 @@ const SettingsPage = () => {
           <Grid xs={12} md={4}>
             <Card>
               <Card.Body css={{ padding: '$10' }}>
-                <FormTags />
+                <FormTags
+                  containerTableCss={{
+                    maxHeight: MAX_HEIGHT,
+                    overflow: 'auto'
+                  }}
+                />
               </Card.Body>
             </Card>
           </Grid>

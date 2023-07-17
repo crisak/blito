@@ -12,7 +12,11 @@ import { AContent, ATag } from '@/models'
 
 const tagService = TagService.getInstance()
 
-const useFetchTags = () => {
+type UseFetchTagsProps = {
+  initialLoad?: boolean
+}
+
+const useFetchTags = ({ initialLoad }: UseFetchTagsProps = {}) => {
   const [loading, setLoading] = useState<{
     list: boolean
     create: boolean
@@ -32,7 +36,7 @@ const useFetchTags = () => {
   const dispatch = useDispatch()
   const store = useSelector<AppStore, GlobalStore>((state) => state.global)
 
-  const request = async () => {
+  const getList = async () => {
     try {
       setLoading((prev) => ({
         ...prev,
@@ -41,13 +45,15 @@ const useFetchTags = () => {
       const tags = await tagService.getAll()
 
       dispatch(globalActions.setListTags(tags))
+      return tags || []
     } catch (error) {
       if (error instanceof Error) {
         setError(error.message)
-        return
+        return null
       }
 
       setError(error)
+      return null
     } finally {
       setLoading((prev) => ({
         ...prev,
@@ -146,8 +152,10 @@ const useFetchTags = () => {
   useEffect(() => {
     ;(() => {
       /** Only set data if there not record in store(Redux)  */
-      if (!store?.tags || store?.tags?.length === 0) {
-        request()
+      if (initialLoad === undefined || initialLoad === true) {
+        if (!store?.tags || store?.tags?.length === 0) {
+          getList()
+        }
       }
     })()
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -157,7 +165,7 @@ const useFetchTags = () => {
     list: store.tags,
     loading,
     error,
-    refresh: request,
+    refresh: getList,
     create,
     update,
     remove,
