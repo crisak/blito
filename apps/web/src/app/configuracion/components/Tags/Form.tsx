@@ -1,14 +1,9 @@
 'use client'
 
-import {
-  Button,
-  Input,
-  Loading,
-  Spacer,
-} from '@nextui-org/react'
-import { useState } from 'react'
+import { Button, Input, Loading, Spacer } from '@nextui-org/react'
+import { useState, useEffect } from 'react'
 import { Box, Text } from '@/app/shared/components'
-import {  useScreenNavigation } from '@/app/shared/hooks'
+import { useScreenNavigation } from '@/app/shared/hooks'
 import useFetchTags from './useFetchTags'
 import { ATag } from '@/models'
 import { BsChevronLeft } from 'react-icons/bs'
@@ -46,7 +41,11 @@ const showToastError = (error: unknown) => {
   })
 }
 
-const Form = () => {
+type FormProps = {
+  tag?: ATag
+}
+
+const Form = ({ tag: tagEdit }: FormProps) => {
   const screenNavigation = useScreenNavigation<MetadataScreens>()
 
   const [formData, setFormData] = useState(initialFormData)
@@ -58,39 +57,47 @@ const Form = () => {
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault()
 
+    let response = null
+
     /** Update */
     if (formData.id) {
-      const response = await update(formData).catch((error) => {
+      response = await update(formData).catch((error) => {
         showToastError(error)
         return false
       })
-
-      if (response) {
-        setFormData(initialFormData)
-        showToastSuccess()
-      }
-      return
     }
 
     /** Create */
-    const response = await create({
-      name: formData.name
-    }).catch((error) => {
-      showToastError(error)
-      return false
-    })
-
-    if (response) {
-      setFormData(initialFormData)
-      showToastSuccess()
+    if (!formData.id) {
+      response = await create({
+        name: formData.name
+      }).catch((error) => {
+        showToastError(error)
+        return false
+      })
     }
+
+    if (response === false) {
+      return
+    }
+
+    setFormData(initialFormData)
+    showToastSuccess()
+    screenNavigation.pop()
   }
 
   const handleCancel = () => {
     setFormData(initialFormData)
+    screenNavigation.pop()
   }
 
   const isValidForm = Boolean(formData.name)
+
+  useEffect(() => {
+    if (tagEdit?.id) {
+      setFormData(tagEdit)
+    }
+  }, [tagEdit])
 
   return (
     <Box>
@@ -168,8 +175,6 @@ const Form = () => {
           </Box>
         </Box>
       </form>
-
-      <Spacer y={2} />
     </Box>
   )
 }

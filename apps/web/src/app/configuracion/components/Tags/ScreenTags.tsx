@@ -3,30 +3,30 @@
 import List from './List'
 import Form from './Form'
 import { PageNavigation, ProviderScreenNavigation } from '@/app/shared/hooks'
-import { LIST_TAGS, FORM_TAGS, MetadataScreens } from './constants'
-import { useTheme } from '@nextui-org/react'
+import { SCREENS, MetadataScreens } from './constants'
+import { CSS, useTheme } from '@nextui-org/react'
 
-type ScreenTagsProps = MetadataScreens & { height: number }
+type ScreenTagsProps = MetadataScreens & { containerCss?: CSS }
 
-const ScreenTags = ({ containerListCss, height }: ScreenTagsProps) => {
+const ScreenTags = ({ containerListCss, containerCss }: ScreenTagsProps) => {
   const { theme } = useTheme()
   const screens = {
-    [LIST_TAGS]: <List />,
-    [FORM_TAGS]: <Form />
+    [SCREENS.listTags]: <List />,
+    [SCREENS.formTags]: <Form />
   }
 
   return (
     <ProviderScreenNavigation
       background={theme?.colors.backgroundContrast.value}
       pages={screens}
-      currentPage={LIST_TAGS}
-      height={height}
+      currentPage={SCREENS.listTags}
+      containerCss={containerCss}
       metadata={{
         containerListCss
       }}
     >
-      {({ page, component, index }) => (
-        <PageNavigation page={page} index={index}>
+      {({ page, component, props, index }) => (
+        <PageNavigation page={page} index={index} propsPage={props as object}>
           {component}
         </PageNavigation>
       )}

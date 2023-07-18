@@ -1,3 +1,6 @@
+'use client'
+
+import { Children, isValidElement, cloneElement } from 'react'
 import { Box } from '@/app/shared/components'
 import {
   useScreenNavigation,
@@ -10,13 +13,15 @@ type PageNavigationProps = Child & {
   page: PageName
   css?: CSS
   index?: number
+  propsPage?: object
 }
 
 const PageNavigation = ({
   children,
   page,
   css,
-  index
+  index,
+  propsPage
 }: PageNavigationProps) => {
   const data = useScreenNavigation()
   const { theme } = useTheme()
@@ -38,7 +43,13 @@ const PageNavigation = ({
         ...css
       }}
     >
-      {children}
+      {/* Clonamos el componente hijo y le asignamos la propiedad personalizada */}
+      {Children.map(children, (child) => {
+        if (isValidElement(child)) {
+          return cloneElement(child, propsPage)
+        }
+        return child
+      })}
     </Box>
   )
 }

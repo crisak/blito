@@ -13,7 +13,7 @@ type ContextNavigationProps<T = unknown> = {
     animation: string
     page: string
   }
-  push: (page: PageName) => void
+  push: <PropsData = unknown>(page: PageName, props?: PropsData) => void
   pop: () => void
   background?: CSS['background']
   metadata: T
@@ -25,7 +25,7 @@ const ContextNavigation = createContext<ContextNavigationProps>({
     animation: '',
     page: ''
   },
-  push: (page: PageName) => {},
+  push: (page: PageName, props?: unknown) => {},
   pop: () => {},
   background: '',
   metadata: null,
@@ -44,29 +44,31 @@ export type PageName = string
 
 type ProviderScreenNavigationProps<T = unknown> = {
   pages: Record<PageName, React.ReactNode>
-  height: number | string
+  containerCss?: CSS
   currentPage: PageName
   background?: string
-  children: (dta: {
+  children: <PropsData = unknown>(dta: {
     page: PageName
     component: React.ReactNode
+    props?: PropsData
     index?: number
   }) => React.ReactNode
   metadata: T
 }
 
 type ContainerProps = Child & {
-  height: number | string
+  css?: CSS
 }
 
-const Container = ({ height = 500, ...props }: ContainerProps) => {
+const Container = ({ css, ...props }: ContainerProps) => {
   return (
     <Box
       {...props}
       css={{
         position: 'relative',
         width: '100%',
-        height
+        height: '100%',
+        ...css
       }}
     />
   )
@@ -75,7 +77,7 @@ const Container = ({ height = 500, ...props }: ContainerProps) => {
 const ProviderScreenNavigation = ({
   children,
   pages,
-  height,
+  containerCss,
   currentPage,
   background,
   metadata: initialMetadata
@@ -85,17 +87,18 @@ const ProviderScreenNavigation = ({
     Array<{
       page: PageName
       component: React.ReactNode
+      props?: unknown
     }>
-  >([{ page: currentPage, component: pages[currentPage] }])
+  >([{ page: currentPage, component: pages[currentPage], props: null }])
 
   const [playAnimation, setPlayAnimation] = useState({
     animation: '',
     page: ''
   })
 
-  const push = (page: PageName) => {
+  function push<T>(page: PageName, props?: T) {
     setHistoryPage((prev) => {
-      return [...prev, { page, component: pages[page] }]
+      return [...prev, { page, component: pages[page], props }]
     })
 
     setPlayAnimation({ animation: 'slide-in-right', page })
@@ -127,10 +130,10 @@ const ProviderScreenNavigation = ({
     <ContextNavigation.Provider
       value={{ playAnimation, push, pop, background, metadata, setMetadata }}
     >
-      <Container height={height}>
+      <Container css={containerCss}>
         <>
-          {historyPage.map(({ page, component }, index) => {
-            return children({ page, component, index })
+          {historyPage.map(({ page, component, props }, index) => {
+            return children({ page, component, props, index })
           })}
         </>
       </Container>

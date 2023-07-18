@@ -12,10 +12,9 @@ import {
   useCollator,
   useTheme
 } from '@nextui-org/react'
-import { MetadataScreens, FORM_TAGS } from './constants'
+import { MetadataScreens, SCREENS } from './constants'
 import HeaderTable from './HeaderTable'
-import { useState } from 'react'
-import { useMemo } from 'react'
+import { useState, useMemo } from 'react'
 import useFetchTags from './useFetchTags'
 import { ATag } from '@/models'
 import { BsSearch } from 'react-icons/bs'
@@ -165,6 +164,10 @@ const List = () => {
     })
   }
 
+  const handleEdit = (tag: ATag) => {
+    screenNavigation.push<{ tag: ATag }>(SCREENS.formTags, { tag })
+  }
+
   const renderCell = (tag: ATag, columnKey: keyof ATag | 'actions') => {
     // @ts-ignore
     const cellValue = tag[columnKey]
@@ -175,8 +178,7 @@ const List = () => {
         return (
           <Row justify="center" align="center">
             <Col css={{ d: 'flex' }}>
-              {/* <IconButton onClick={() => setFormData(tag)}> */}
-              <IconButton>
+              <IconButton onClick={() => handleEdit(tag)}>
                 <AiOutlineEdit size={20} fill={theme?.colors.neutral.value} />
               </IconButton>
             </Col>
@@ -193,7 +195,7 @@ const List = () => {
   }
 
   return (
-    <Box>
+    <>
       <Box
         css={{
           display: 'flex',
@@ -213,7 +215,7 @@ const List = () => {
           color="default"
           icon={<MdAddCircle fill="currentColor" size={30} />}
           onClick={() => {
-            screenNavigation.push(FORM_TAGS)
+            screenNavigation.push(SCREENS.formTags)
           }}
         />
       </Box>
@@ -297,7 +299,7 @@ const List = () => {
           )}
         </Table.Body>
       </Table>
-    </Box>
+    </>
   )
 }
 export default List
