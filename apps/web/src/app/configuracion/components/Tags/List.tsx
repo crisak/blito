@@ -13,34 +13,17 @@ import { MetadataScreens, SCREENS } from './constants'
 import HeaderFilterTable from './HeaderFilterTable'
 import { useState, useMemo } from 'react'
 import useFetchTags from './useFetchTags'
-import { ATag } from '@/models'
+import { AContent, ATag } from '@/models'
 import { BsSearch } from 'react-icons/bs'
 import { BiTrashAlt } from 'react-icons/bi'
-import ReactDOMServer from 'react-dom/server'
 import { toast } from 'react-toastify'
-import { Flex, Text } from '@/app/shared/components'
-import { DomUtil } from '@/utils'
-import BodyModalError from './BodyModalError'
+import { Box, Flex, Text } from '@/app/shared/components'
+import BodyModalError, { type TagsWithContents } from './BodyModalError'
 
 const columns: Array<{ name: string; uid: keyof ATag | 'actions' }> = [
   { name: 'Nombre', uid: 'name' },
   { name: 'Fecha', uid: 'createdAt' }
 ]
-
-const showToastError = (error: unknown) => {
-  if (error instanceof Error) {
-    toast(error?.message || '', {
-      type: 'warning',
-      autoClose: false
-    })
-    return
-  }
-
-  toast(`Error interno: ${JSON.stringify(error)}`, {
-    type: 'error',
-    autoClose: false
-  })
-}
 
 const showToastSuccess = (
   message: string | React.ReactNode = 'Datos guardaos exitosamente'
@@ -49,6 +32,27 @@ const showToastSuccess = (
     type: 'success'
   })
 }
+
+const processContents =
+  (getContents: (tag: ATag) => Promise<AContent[]>) =>
+  async (tag: ATag): Promise<TagsWithContents> => {
+    try {
+      const contents = await getContents(tag)
+      return {
+        tag,
+        hasContents: false,
+        contents: contents || [],
+        error: null
+      }
+    } catch (error) {
+      return {
+        tag,
+        hasContents: false,
+        contents: [],
+        error: error
+      }
+    }
+  }
 
 const List = () => {
   const { theme } = useTheme()
@@ -63,67 +67,69 @@ const List = () => {
   })
   const { list, loading, getContentsByTag, remove } = useFetchTags()
 
-  const processRemove = async (tag: ATag): Promise<boolean> => {
-    const response = await remove(tag).catch((error) => {
-      showToastError(error)
-      return false
-    })
-
-    if (response) {
-      // setFormData(initialFormData)
-      showToastSuccess(
-        <>
-          El tag{' '}
-          <Text b color="primary">
-            {tag.name}
-          </Text>{' '}
-          fue eliminado
-        </>
-      )
+  const processRemove = async (tags: TagsWithContents[]): Promise<boolean> => {
+    const STATUS_MODEL = {
+      hideModal: true,
+      keepOpen: false
     }
-    return true
-  }
-
-  const handleRemove = async (
-    event: React.MouseEvent<HTMLButtonElement>,
-    tag: ATag
-  ) => {
-    let element: HTMLButtonElement = event.target as HTMLButtonElement
-
-    const buttonElement = DomUtil.getParent<HTMLButtonElement>(
-      element,
-      'button'
+    const responsePromise = await Promise.allSettled(
+      tags.map(async ({ tag }) => {
+        try {
+          await remove(tag)
+          return { tag, error: null }
+        } catch (error) {
+          return { tag, error }
+        }
+      })
     )
 
-    const oldContent = buttonElement?.innerHTML || ''
+    const errors: { tag: ATag; error: unknown }[] = responsePromise
+      .map((res) => {
+        if (res.status === 'rejected') {
+          return res.reason
+        }
+        return null
+      })
+      .filter(Boolean)
 
-    if (buttonElement) {
-      const logoSvg = ReactDOMServer.renderToString(
-        <Loading size="xs" color="error" />
+    if (errors.length) {
+      toast(
+        <Box>
+          <Text>Error al eliminar unos de los tags</Text>
+          <ul>
+            {errors.map(({ tag, error }) => (
+              <li key={tag.id}>
+                <Text b>{tag.name} </Text>
+                <br />
+                <details>
+                  <summary>Ver error</summary>
+                  <pre style={{ opacity: 0.7 }}>
+                    {JSON.stringify(error, null, 2)}
+                  </pre>
+                </details>
+              </li>
+            ))}
+          </ul>
+        </Box>,
+        { type: 'error', autoClose: false, closeOnClick: false }
       )
-
-      buttonElement.innerHTML = logoSvg
+      return STATUS_MODEL.keepOpen
     }
 
-    const contents = await getContentsByTag(tag).catch((error) => {
-      showToastError(error)
-      return null
-    })
+    showToastSuccess('Los tag(s) fueron eliminados correctamente')
 
-    if (buttonElement) {
-      buttonElement.innerHTML = oldContent
-    }
+    return STATUS_MODEL.hideModal
+  }
 
-    if (contents === null) {
-      /** Return null because there is a error to get contents */
-      return
-    }
+  const handleRemove = async () => {
+    const getContents = processContents(getContentsByTag)
+    const contents = await Promise.all(itemsSelected.map(getContents))
 
     alert.confirm({
-      title: 'Eliminar tag',
+      title: 'Eliminar tags',
       messageButtonAccept: 'Eliminar',
-      body: <BodyModalError contents={contents || []} tag={tag} />,
-      asyncFn: () => processRemove(tag)
+      body: <BodyModalError contents={contents || []} />,
+      asyncFn: () => processRemove(contents)
     })
   }
 
@@ -199,7 +205,7 @@ const List = () => {
   return (
     <>
       <HeaderFilterTable>
-        <Flex direction={'column'} gap="$xl">
+        <Flex direction={'column'} gap="$lg">
           <Flex justify="space-between" align="center">
             {/* Title */}
             <Flex gap="$sm" align="center">
@@ -219,10 +225,17 @@ const List = () => {
                   light
                   size="sm"
                   color="error"
-                  icon={<BiTrashAlt fill="currentColor" />}
-                  onClick={(event) => handleRemove(event, itemsSelected[0])}
+                  icon={
+                    loading.contents ? (
+                      <Loading color="currentColor" size="xs" />
+                    ) : (
+                      <BiTrashAlt fill="currentColor" />
+                    )
+                  }
+                  disabled={loading.contents}
+                  onClick={handleRemove}
                 >
-                  Eliminar items
+                  Eliminar {itemsSelected.length} item(s)
                 </Button>
               )}
 
