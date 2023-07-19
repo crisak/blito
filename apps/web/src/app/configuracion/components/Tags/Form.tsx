@@ -2,13 +2,14 @@
 
 import { Button, Input, Loading, Spacer } from '@nextui-org/react'
 import { useState, useEffect } from 'react'
-import { Box, Text } from '@/app/shared/components'
+import { Box, Flex, Text } from '@/app/shared/components'
 import { useScreenNavigation } from '@/app/shared/hooks'
 import useFetchTags from './useFetchTags'
 import { ATag } from '@/models'
 import { BsChevronLeft } from 'react-icons/bs'
 import { toast } from 'react-toastify'
 import { MetadataScreens } from './constants'
+import HeaderFilterTable from './HeaderFilterTable'
 
 const initialFormData: ATag = {
   id: '',
@@ -100,12 +101,13 @@ const Form = ({ tag: tagEdit }: FormProps) => {
   }, [tagEdit])
 
   return (
-    <Box>
-      <Box
+    <>
+      <HeaderFilterTable
         css={{
           display: 'flex',
           gap: '$7',
-          alignItems: 'center'
+          alignItems: 'center',
+          pl: 0
         }}
       >
         <Button
@@ -118,11 +120,10 @@ const Form = ({ tag: tagEdit }: FormProps) => {
             screenNavigation.pop()
           }}
         />
-
         <Text h3 css={{ margin: 0 }}>
-          Tags
+          {formData.id ? 'Editar' : 'Crear'} Tag
         </Text>
-      </Box>
+      </HeaderFilterTable>
 
       <Spacer y={2} />
       <form onSubmit={handleSubmit}>
@@ -175,7 +176,7 @@ const Form = ({ tag: tagEdit }: FormProps) => {
           </Box>
         </Box>
       </form>
-    </Box>
+    </>
   )
 }
 

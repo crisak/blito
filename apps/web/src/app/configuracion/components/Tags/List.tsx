@@ -2,36 +2,29 @@
 import { useAlert, useScreenNavigation } from '@/app/shared/hooks'
 import {
   Button,
-  Col,
   Input,
   Loading,
-  Row,
   SortDescriptor,
-  Spacer,
   Table,
   useCollator,
   useTheme
 } from '@nextui-org/react'
 import { MetadataScreens, SCREENS } from './constants'
-import HeaderTable from './HeaderTable'
+import HeaderFilterTable from './HeaderFilterTable'
 import { useState, useMemo } from 'react'
 import useFetchTags from './useFetchTags'
 import { ATag } from '@/models'
 import { BsSearch } from 'react-icons/bs'
-import { IconButton } from './IconButton'
-import { AiOutlineEdit } from 'react-icons/ai'
-import { CiTrash } from 'react-icons/ci'
+import { BiTrashAlt } from 'react-icons/bi'
 import ReactDOMServer from 'react-dom/server'
 import { toast } from 'react-toastify'
-import { Box, Text } from '@/app/shared/components'
+import { Flex, Text } from '@/app/shared/components'
 import { DomUtil } from '@/utils'
 import BodyModalError from './BodyModalError'
-import { MdAddCircle } from 'react-icons/md'
 
 const columns: Array<{ name: string; uid: keyof ATag | 'actions' }> = [
   { name: 'Nombre', uid: 'name' },
-  { name: 'Fecha', uid: 'createdAt' },
-  { name: 'ACTIONS', uid: 'actions' }
+  { name: 'Fecha', uid: 'createdAt' }
 ]
 
 const showToastError = (error: unknown) => {
@@ -63,42 +56,12 @@ const List = () => {
   const alert = useAlert()
   const [searchInput, setSearchInput] = useState('')
   const screenNavigation = useScreenNavigation<MetadataScreens>()
+  const [itemsSelected, setItemsSelected] = useState<ATag[]>([])
   const [sortCell, setSortCell] = useState<SortDescriptor>({
     column: '',
     direction: undefined
   })
   const { list, loading, getContentsByTag, remove } = useFetchTags()
-
-  const listFilter = useMemo(() => {
-    let list_ = [...list]
-
-    /** Filter element with search input */
-    if (searchInput.length > 2) {
-      list_ = list_.filter((tag) => {
-        /** Ignore properties */
-        const { id, _version, _deleted, ...rest } = tag
-        const values = Object.values(rest).join(' ').toUpperCase().trim()
-        return values.includes(searchInput.toUpperCase().trim())
-      })
-    }
-
-    /** Sort by column */
-    if (sortCell?.column) {
-      list_.sort((a, b) => {
-        const nameColumn = sortCell.column as keyof ATag
-        let first = a[nameColumn]
-        let second = b[nameColumn]
-        let cmp = collator.compare(first as any, second as any)
-        if (sortCell.direction === 'descending') {
-          cmp *= -1
-        }
-        return cmp
-      })
-    }
-
-    return list_
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [list, sortCell, searchInput])
 
   const processRemove = async (tag: ATag): Promise<boolean> => {
     const response = await remove(tag).catch((error) => {
@@ -172,113 +135,175 @@ const List = () => {
     // @ts-ignore
     const cellValue = tag[columnKey]
     switch (columnKey) {
+      case 'name':
+        return (
+          <Text
+            span
+            color={'primary'}
+            css={{
+              cursor: 'pointer',
+              textDecoration: 'underline'
+            }}
+            onClick={() => handleEdit(tag)}
+          >
+            {cellValue}
+          </Text>
+        )
       case 'createdAt':
         return new Date(cellValue).toLocaleDateString()
-      case 'actions':
-        return (
-          <Row justify="center" align="center">
-            <Col css={{ d: 'flex' }}>
-              <IconButton onClick={() => handleEdit(tag)}>
-                <AiOutlineEdit size={20} fill={theme?.colors.neutral.value} />
-              </IconButton>
-            </Col>
-            <Col css={{ d: 'flex' }}>
-              <IconButton onClick={(event) => handleRemove(event, tag)}>
-                <CiTrash size={20} fill={theme?.colors.error.value} />
-              </IconButton>
-            </Col>
-          </Row>
-        )
+
       default:
         return cellValue
     }
   }
 
+  const listFilter = useMemo(() => {
+    let list_ = [...list]
+
+    /** Filter element with search input */
+    if (searchInput.length > 2) {
+      list_ = list_.filter((tag) => {
+        /** Ignore properties */
+        const { id, _version, _deleted, ...rest } = tag
+        const values = Object.values(rest).join(' ').toUpperCase().trim()
+        return values.includes(searchInput.toUpperCase().trim())
+      })
+    }
+
+    /** Sort by column */
+    if (sortCell?.column) {
+      list_.sort((a, b) => {
+        const nameColumn = sortCell.column as keyof ATag
+        let first = a[nameColumn]
+        let second = b[nameColumn]
+        let cmp = collator.compare(first as any, second as any)
+        if (sortCell.direction === 'descending') {
+          cmp *= -1
+        }
+        return cmp
+      })
+    }
+
+    return list_
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [list, sortCell, searchInput])
+
+  const indexList = useMemo(() => {
+    const indexObject: Record<ATag['id'], ATag> = {}
+    list.forEach((tag) => {
+      indexObject[tag.id] = tag
+    })
+    return indexObject
+  }, [list])
+
   return (
     <>
-      <Box
-        css={{
-          display: 'flex',
-          gap: '$7',
-          alignItems: 'center',
-          justifyContent: 'space-between'
-        }}
-      >
-        <Text h3 css={{ margin: 0 }}>
-          Tags
-        </Text>
+      <HeaderFilterTable>
+        <Flex direction={'column'} gap="$xl">
+          <Flex justify="space-between" align="center">
+            {/* Title */}
+            <Flex gap="$sm" align="center">
+              <Text h3 css={{ margin: 0 }}>
+                Tags
+              </Text>
+              <Text span css={{ margin: 0 }}>
+                ({list.length}
+                {itemsSelected.length > 0 ? `/${itemsSelected.length}` : ''})
+              </Text>
+            </Flex>
+            {/* Button actions */}
+            <Flex gap="$md" align="center">
+              {itemsSelected.length > 0 && (
+                <Button
+                  auto
+                  light
+                  size="sm"
+                  color="error"
+                  icon={<BiTrashAlt fill="currentColor" />}
+                  onClick={(event) => handleRemove(event, itemsSelected[0])}
+                >
+                  Eliminar items
+                </Button>
+              )}
 
-        <Button
-          light
-          auto
-          size="sm"
-          color="default"
-          icon={<MdAddCircle fill="currentColor" size={30} />}
-          onClick={() => {
-            screenNavigation.push(SCREENS.formTags)
-          }}
-        />
-      </Box>
-      <Spacer y={1} />
-      <HeaderTable
-        css={{
-          display: 'flex',
-          justifyContent: 'flex-end'
-        }}
-      >
-        <Input
-          clearable
-          bordered
-          size="sm"
-          name="searchInput"
-          placeholder="Búsqueda por palabra"
-          disabled={loading.list}
-          onChange={(e) => setSearchInput(e.target.value || '')}
-          value={searchInput}
-          contentLeft={
-            <BsSearch
-              width="16"
-              height="16"
-              fill={theme?.colors.accents6.value}
+              <Button
+                auto
+                size="sm"
+                onClick={() => screenNavigation.push(SCREENS.formTags)}
+              >
+                Crear Tag
+              </Button>
+            </Flex>
+          </Flex>
+
+          <Flex justify="flex-end">
+            <Input
+              clearable
+              bordered
+              size="sm"
+              name="searchInput"
+              placeholder="Búsqueda por palabra"
+              disabled={loading.list}
+              onChange={(e) => setSearchInput(e.target.value || '')}
+              value={searchInput}
+              contentLeft={
+                <BsSearch
+                  width="16"
+                  height="16"
+                  fill={theme?.colors.accents6.value}
+                />
+              }
             />
-          }
-        />
-      </HeaderTable>
+          </Flex>
+        </Flex>
+      </HeaderFilterTable>
       <Table
-        bordered
         lined
-        headerLined
-        sticked
+        shadow={false}
+        fixed
         aria-label="Lista de tags"
-        selectionMode="none"
+        selectionMode="multiple"
         css={{
           minHeight: 110,
-          height: 'auto',
-          minWidth: '100%'
+          height: '100%',
+          padding: 0,
+          '& thead tr th': {
+            zIndex: 201,
+            position: 'sticky',
+            top: 0
+          },
+          '& thead tr th:first-child': {
+            width: 55
+          }
         }}
         containerCss={{
-          pt: 'none',
-          borderRadius: '0 0 $xl $xl',
-          borderTop: 'none',
           ...screenNavigation.metadata.containerListCss
         }}
         sortDescriptor={sortCell}
         onSortChange={(sortByCell) => setSortCell(sortByCell)}
+        onSelectionChange={(eventSelection) => {
+          const setList = eventSelection as 'all' | Set<ATag['id']>
+          let tags: ATag[] = []
+
+          if (setList instanceof Set) {
+            setList.forEach((tagId) => {
+              tags.push({ ...indexList[tagId] })
+            })
+          }
+
+          if (setList === 'all') {
+            tags = [...list]
+          }
+
+          setItemsSelected(tags)
+        }}
       >
         <Table.Header columns={columns}>
           {(column) => (
             <Table.Column
-              allowsSorting={column.uid !== 'actions'}
+              allowsSorting
               key={column.uid}
-              hideHeader={column.uid === 'actions'}
-              align={column.uid === 'actions' ? 'center' : 'start'}
-              width={
-                column.uid === 'createdAt'
-                  ? '100'
-                  : column.uid === 'actions'
-                  ? '71'
-                  : undefined
-              }
+              width={column.uid === 'createdAt' ? '100' : undefined}
             >
               {column.name}
             </Table.Column>
