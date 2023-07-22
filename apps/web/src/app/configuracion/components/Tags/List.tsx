@@ -2,23 +2,26 @@
 import { useAlert, useScreenNavigation } from '@/app/shared/hooks'
 import {
   Button,
+  Grid,
   Input,
   Loading,
   SortDescriptor,
+  Spacer,
   Table,
   useCollator,
   useTheme
 } from '@nextui-org/react'
 import { MetadataScreens, SCREENS } from './constants'
-import HeaderFilterTable from './HeaderFilterTable'
 import { useState, useMemo } from 'react'
 import useFetchTags from './useFetchTags'
 import { AContent, ATag } from '@/models'
 import { BsSearch } from 'react-icons/bs'
 import { BiTrashAlt } from 'react-icons/bi'
 import { toast } from 'react-toastify'
-import { Box, Flex, Text } from '@/app/shared/components'
+import { Box, Text } from '@/app/shared/components'
 import BodyModalError, { type TagsWithContents } from './BodyModalError'
+import NavHeader from './ScreenHeader'
+import { IoIosAdd } from 'react-icons/io'
 
 const columns: Array<{ name: string; uid: keyof ATag | 'actions' }> = [
   { name: 'Nombre', uid: 'name' },
@@ -171,8 +174,14 @@ const List = () => {
       list_ = list_.filter((tag) => {
         /** Ignore properties */
         const { id, _version, _deleted, ...rest } = tag
-        const values = Object.values(rest).join(' ').toUpperCase().trim()
-        return values.includes(searchInput.toUpperCase().trim())
+        const values = Object.values(rest)
+          .join('')
+          .replace(/\s/g, '')
+          .toUpperCase()
+          .trim()
+        return values.includes(
+          searchInput.replace(/\s/g, '').toUpperCase().trim()
+        )
       })
     }
 
@@ -204,72 +213,82 @@ const List = () => {
 
   return (
     <>
-      <HeaderFilterTable>
-        <Flex direction={'column'} gap="$lg">
-          <Flex justify="space-between" align="center">
-            {/* Title */}
-            <Flex gap="$sm" align="center">
-              <Text h3 css={{ margin: 0 }}>
-                Tags
-              </Text>
-              <Text span css={{ margin: 0 }}>
-                ({list.length}
-                {itemsSelected.length > 0 ? `/${itemsSelected.length}` : ''})
-              </Text>
-            </Flex>
-            {/* Button actions */}
-            <Flex gap="$md" align="center">
-              {itemsSelected.length > 0 && (
-                <Button
-                  auto
-                  light
-                  size="sm"
-                  color="error"
-                  icon={
-                    loading.contents ? (
-                      <Loading color="currentColor" size="xs" />
-                    ) : (
-                      <BiTrashAlt fill="currentColor" />
-                    )
-                  }
-                  disabled={loading.contents}
-                  onClick={handleRemove}
-                >
-                  Eliminar {itemsSelected.length} item(s)
-                </Button>
-              )}
-
+      <NavHeader
+        title={
+          <>
+            Tags{' '}
+            <Text
+              span
+              css={{ margin: 0, color: '$accents7', fontWeight: '$light' }}
+            >
+              ({list.length}
+              {itemsSelected.length > 0 ? `/${itemsSelected.length}` : ''})
+            </Text>
+          </>
+        }
+        content={
+          <>
+            {itemsSelected.length > 0 && (
               <Button
                 auto
+                light
                 size="sm"
-                onClick={() => screenNavigation.push(SCREENS.formTags)}
+                color="error"
+                icon={
+                  loading.contents ? (
+                    <Loading color="currentColor" size="xs" />
+                  ) : (
+                    <BiTrashAlt fill="currentColor" />
+                  )
+                }
+                css={{
+                  mr: '$10'
+                }}
+                disabled={loading.contents}
+                onClick={handleRemove}
               >
-                Crear Tag
+                Eliminar {itemsSelected.length} item(s)
               </Button>
-            </Flex>
-          </Flex>
+            )}
 
-          <Flex justify="flex-end">
-            <Input
-              clearable
-              bordered
+            <Button
+              auto
               size="sm"
-              name="searchInput"
-              placeholder="Búsqueda por palabra"
-              disabled={loading.list}
-              onChange={(e) => setSearchInput(e.target.value || '')}
-              value={searchInput}
-              contentLeft={
-                <BsSearch
-                  width="16"
-                  height="16"
-                  fill={theme?.colors.accents6.value}
-                />
-              }
-            />
-          </Flex>
-        </Flex>
-      </HeaderFilterTable>
+              onClick={() => screenNavigation.push(SCREENS.formTags)}
+              icon={<IoIosAdd fill="currentColor" />}
+            >
+              Crear Tag
+            </Button>
+          </>
+        }
+      />
+
+      {/* Box filter list */}
+      <Grid.Container gap={2}>
+        {/* Row input */}
+        <Grid xs={0} sm />
+        <Grid xs={12} sm={5} justify="flex-end">
+          <Input
+            clearable
+            bordered
+            fullWidth
+            size="sm"
+            name="searchInput"
+            placeholder="Búsqueda por palabra"
+            disabled={loading.list}
+            onChange={(e) => setSearchInput(e.target.value || '')}
+            value={searchInput}
+            contentLeft={
+              <BsSearch
+                width="16"
+                height="16"
+                fill={theme?.colors.accents6.value}
+              />
+            }
+          />
+        </Grid>
+      </Grid.Container>
+
       <Table
         lined
         shadow={false}
@@ -278,7 +297,6 @@ const List = () => {
         selectionMode="multiple"
         css={{
           minHeight: 110,
-          height: '100%',
           padding: 0,
           '& thead tr th': {
             zIndex: 201,

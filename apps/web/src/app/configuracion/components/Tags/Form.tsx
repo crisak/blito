@@ -1,15 +1,14 @@
 'use client'
 
-import { Button, Input, Loading, Spacer } from '@nextui-org/react'
+import { Button, Grid, Input, Loading, Spacer } from '@nextui-org/react'
 import { useState, useEffect } from 'react'
 import { Box, Flex, Text } from '@/app/shared/components'
 import { useScreenNavigation } from '@/app/shared/hooks'
 import useFetchTags from './useFetchTags'
 import { ATag } from '@/models'
-import { BsChevronLeft } from 'react-icons/bs'
 import { toast } from 'react-toastify'
 import { MetadataScreens } from './constants'
-import HeaderFilterTable from './HeaderFilterTable'
+import ScreenHeader from './ScreenHeader'
 
 const initialFormData: ATag = {
   id: '',
@@ -102,80 +101,80 @@ const Form = ({ tag: tagEdit }: FormProps) => {
 
   return (
     <>
-      <HeaderFilterTable
-        css={{
-          display: 'flex',
-          gap: '$7',
-          alignItems: 'center',
-          pl: 0
-        }}
-      >
-        <Button
-          light
-          auto
-          size="sm"
-          color="default"
-          icon={<BsChevronLeft fill="currentColor" size={25} />}
-          onClick={() => {
-            screenNavigation.pop()
-          }}
-        />
-        <Text h3 css={{ margin: 0 }}>
-          {formData.id ? 'Editar' : 'Crear'} Tag
-        </Text>
-      </HeaderFilterTable>
+      <ScreenHeader
+        enableBackButton
+        title={<>{formData.id ? 'Editar' : 'Crear'} Tag</>}
+      />
 
-      <Spacer y={2} />
-      <form onSubmit={handleSubmit}>
-        <Box css={{ display: 'flex', flexDirection: 'column', gap: '$10' }}>
-          <Input
-            fullWidth
-            clearable
-            bordered
-            name="name"
-            labelPlaceholder="Nombre del tag"
-            disabled={loading.create}
-            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            value={formData.name}
-          />
-          <Box
-            css={{ display: 'flex', gap: '$10', justifyContent: 'flex-end' }}
-          >
-            <Button
-              type="button"
-              light
-              color="primary"
-              auto
-              onPress={handleCancel}
-              disabled={loading.create || loading.update}
-            >
-              Cancelar
-            </Button>
+      <Box>
+        <Spacer y={2} />
+      </Box>
 
-            {!formData.id && (
-              <Button
-                type="submit"
-                auto
-                disabled={!isValidForm || loading.create}
+      <Grid.Container gap={2}>
+        <Grid xs={12}>
+          <form onSubmit={handleSubmit} style={{ width: '100%' }}>
+            <Box css={{ display: 'flex', flexDirection: 'column', gap: '$10' }}>
+              <Input
+                fullWidth
+                clearable
+                bordered
+                name="name"
+                labelPlaceholder="Nombre del tag"
+                disabled={loading.create}
+                onChange={(e) =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
+                value={formData.name}
+              />
+              <Box
+                css={{
+                  display: 'flex',
+                  gap: '$10',
+                  justifyContent: 'flex-end'
+                }}
               >
-                {loading.create && <Loading color="currentColor" size="sm" />}
-                {!loading.create && 'Guardar'}
-              </Button>
-            )}
+                <Button
+                  type="button"
+                  light
+                  color="primary"
+                  auto
+                  onPress={handleCancel}
+                  disabled={loading.create || loading.update}
+                >
+                  Cancelar
+                </Button>
 
-            {formData.id && (
-              <Button
-                type="submit"
-                auto
-                disabled={!isValidForm || loading.update}
-              >
-                {loading.update && <Loading color="currentColor" size="sm" />}
-                {!loading.update && 'Actualizar'}
-              </Button>
-            )}
-          </Box>
-        </Box>
-      </form>
+                {!formData.id && (
+                  <Button
+                    type="submit"
+                    auto
+                    disabled={!isValidForm || loading.create}
+                  >
+                    {loading.create && (
+                      <Loading color="currentColor" size="sm" />
+                    )}
+                    {!loading.create && 'Guardar'}
+                  </Button>
+                )}
+
+                {formData.id && (
+                  <Button
+                    type="submit"
+                    auto
+                    disabled={!isValidForm || loading.update}
+                  >
+                    {loading.update && (
+                      <Loading color="currentColor" size="sm" />
+                    )}
+                    {!loading.update && 'Actualizar'}
+                  </Button>
+                )}
+              </Box>
+            </Box>
+          </form>
+        </Grid>
+        <Grid xs={0} />
+      </Grid.Container>
     </>
   )
 }

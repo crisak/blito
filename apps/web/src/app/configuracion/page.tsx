@@ -24,7 +24,7 @@ const SettingsPage = () => {
       </Container>
       <Container>
         <Grid.Container gap={2}>
-          <Grid xs={12} md={4}>
+          <Grid xs={12} md={5}>
             <Card
               css={{
                 height: MAX_HEIGHT_CARD,
@@ -41,17 +41,10 @@ const SettingsPage = () => {
               </Card.Body>
             </Card>
           </Grid>
-          <Grid xs={6} md={4}>
+          <Grid xs={12} md={7}>
             <Card>
               <Card.Body css={{ padding: '$10' }}>
                 <Text h3>Colaboradores</Text>
-              </Card.Body>
-            </Card>
-          </Grid>
-          <Grid xs={6} md={4}>
-            <Card>
-              <Card.Body css={{ padding: '$10' }}>
-                <Text h3>Categorías</Text>
               </Card.Body>
             </Card>
           </Grid>

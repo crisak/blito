@@ -18,6 +18,7 @@ type ContextNavigationProps<T = unknown> = {
   background?: CSS['background']
   metadata: T
   setMetadata: Dispatch<SetStateAction<T>>
+  history: PageName[]
 }
 
 const ContextNavigation = createContext<ContextNavigationProps>({
@@ -29,7 +30,8 @@ const ContextNavigation = createContext<ContextNavigationProps>({
   pop: () => {},
   background: '',
   metadata: null,
-  setMetadata: () => {}
+  setMetadata: () => {},
+  history: []
 })
 
 export function useScreenNavigation<T = unknown>() {
@@ -128,7 +130,15 @@ const ProviderScreenNavigation = ({
 
   return (
     <ContextNavigation.Provider
-      value={{ playAnimation, push, pop, background, metadata, setMetadata }}
+      value={{
+        playAnimation,
+        push,
+        pop,
+        background,
+        metadata,
+        setMetadata,
+        history: historyPage.map(({ page }) => page)
+      }}
     >
       <Container css={containerCss}>
         <>
