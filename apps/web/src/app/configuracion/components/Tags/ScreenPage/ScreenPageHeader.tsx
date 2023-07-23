@@ -1,16 +1,19 @@
 import { Flex, Text } from '@/app/shared/components'
 import { useScreenNavigation } from '@/app/shared/hooks'
 import { Button, Grid } from '@nextui-org/react'
-
 import { BsChevronLeft } from 'react-icons/bs'
 
-type NavHeaderProps = {
-  title?: React.ReactNode | React.ReactNode[] | string
-  content?: React.ReactNode | React.ReactNode[]
+type ScreenPageHeaderProps = {
   enableBackButton?: boolean
+  children: React.ReactNode | React.ReactNode[]
+  content?: React.ReactNode | React.ReactNode[]
 }
 
-const ScreenHeader = ({ title, content, enableBackButton }: NavHeaderProps) => {
+const ScreenPageHeader = ({
+  enableBackButton,
+  children,
+  content
+}: ScreenPageHeaderProps) => {
   const screenNavigation = useScreenNavigation()
 
   return (
@@ -26,7 +29,7 @@ const ScreenHeader = ({ title, content, enableBackButton }: NavHeaderProps) => {
           textOverflow: 'ellipsis'
         }}
       >
-        <Flex align="center" gap="$2">
+        <Flex align="center">
           {enableBackButton && screenNavigation.history.length > 1 && (
             <Button
               light
@@ -59,7 +62,7 @@ const ScreenHeader = ({ title, content, enableBackButton }: NavHeaderProps) => {
               margin: 0
             }}
           >
-            {title}
+            {children}
           </Text>
         </Flex>
       </Grid>
@@ -72,4 +75,4 @@ const ScreenHeader = ({ title, content, enableBackButton }: NavHeaderProps) => {
   )
 }
 
-export default ScreenHeader
+export default ScreenPageHeader

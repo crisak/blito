@@ -1,14 +1,15 @@
 'use client'
 
-import { Button, Grid, Input, Loading, Spacer } from '@nextui-org/react'
+import { Button, Input, Loading, Spacer } from '@nextui-org/react'
 import { useState, useEffect } from 'react'
-import { Box, Flex, Text } from '@/app/shared/components'
+import { Box } from '@/app/shared/components'
 import { useScreenNavigation } from '@/app/shared/hooks'
 import useFetchTags from './useFetchTags'
 import { ATag } from '@/models'
 import { toast } from 'react-toastify'
 import { MetadataScreens } from './constants'
-import ScreenHeader from './ScreenHeader'
+
+import ScreenPage from './ScreenPage'
 
 const initialFormData: ATag = {
   id: '',
@@ -101,17 +102,13 @@ const Form = ({ tag: tagEdit }: FormProps) => {
 
   return (
     <>
-      <ScreenHeader
-        enableBackButton
-        title={<>{formData.id ? 'Editar' : 'Crear'} Tag</>}
-      />
+      <ScreenPage>
+        <ScreenPage.Header enableBackButton>
+          {formData.id ? 'Editar' : 'Crear'} Tag
+        </ScreenPage.Header>
+        <ScreenPage.Body>
+          <Spacer y={1} />
 
-      <Box>
-        <Spacer y={2} />
-      </Box>
-
-      <Grid.Container gap={2}>
-        <Grid xs={12}>
           <form onSubmit={handleSubmit} style={{ width: '100%' }}>
             <Box css={{ display: 'flex', flexDirection: 'column', gap: '$10' }}>
               <Input
@@ -172,9 +169,8 @@ const Form = ({ tag: tagEdit }: FormProps) => {
               </Box>
             </Box>
           </form>
-        </Grid>
-        <Grid xs={0} />
-      </Grid.Container>
+        </ScreenPage.Body>
+      </ScreenPage>
     </>
   )
 }

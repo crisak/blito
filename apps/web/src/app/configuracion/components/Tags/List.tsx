@@ -2,7 +2,6 @@
 import { useAlert, useScreenNavigation } from '@/app/shared/hooks'
 import {
   Button,
-  Grid,
   Input,
   Loading,
   SortDescriptor,
@@ -20,8 +19,8 @@ import { BiTrashAlt } from 'react-icons/bi'
 import { toast } from 'react-toastify'
 import { Box, Text } from '@/app/shared/components'
 import BodyModalError, { type TagsWithContents } from './BodyModalError'
-import NavHeader from './ScreenHeader'
 import { IoIosAdd } from 'react-icons/io'
+import ScreenPage from './ScreenPage'
 
 const columns: Array<{ name: string; uid: keyof ATag | 'actions' }> = [
   { name: 'Nombre', uid: 'name' },
@@ -213,8 +212,44 @@ const List = () => {
 
   return (
     <>
-      <NavHeader
-        title={
+      <ScreenPage>
+        <ScreenPage.Header
+          content={
+            <>
+              {itemsSelected.length > 0 && (
+                <Button
+                  auto
+                  light
+                  size="sm"
+                  color="error"
+                  icon={
+                    loading.contents ? (
+                      <Loading color="currentColor" size="xs" />
+                    ) : (
+                      <BiTrashAlt fill="currentColor" />
+                    )
+                  }
+                  css={{
+                    mr: '$10'
+                  }}
+                  disabled={loading.contents}
+                  onClick={handleRemove}
+                >
+                  Eliminar {itemsSelected.length} item(s)
+                </Button>
+              )}
+
+              <Button
+                auto
+                size="sm"
+                onClick={() => screenNavigation.push(SCREENS.formTags)}
+                icon={<IoIosAdd fill="currentColor" />}
+              >
+                Crear Tag
+              </Button>
+            </>
+          }
+        >
           <>
             Tags{' '}
             <Text
@@ -225,49 +260,8 @@ const List = () => {
               {itemsSelected.length > 0 ? `/${itemsSelected.length}` : ''})
             </Text>
           </>
-        }
-        content={
-          <>
-            {itemsSelected.length > 0 && (
-              <Button
-                auto
-                light
-                size="sm"
-                color="error"
-                icon={
-                  loading.contents ? (
-                    <Loading color="currentColor" size="xs" />
-                  ) : (
-                    <BiTrashAlt fill="currentColor" />
-                  )
-                }
-                css={{
-                  mr: '$10'
-                }}
-                disabled={loading.contents}
-                onClick={handleRemove}
-              >
-                Eliminar {itemsSelected.length} item(s)
-              </Button>
-            )}
-
-            <Button
-              auto
-              size="sm"
-              onClick={() => screenNavigation.push(SCREENS.formTags)}
-              icon={<IoIosAdd fill="currentColor" />}
-            >
-              Crear Tag
-            </Button>
-          </>
-        }
-      />
-
-      {/* Box filter list */}
-      <Grid.Container gap={2}>
-        {/* Row input */}
-        <Grid xs={0} sm />
-        <Grid xs={12} sm={5} justify="flex-end">
+        </ScreenPage.Header>
+        <ScreenPage.Body>
           <Input
             clearable
             bordered
@@ -286,75 +280,77 @@ const List = () => {
               />
             }
           />
-        </Grid>
-      </Grid.Container>
 
-      <Table
-        lined
-        shadow={false}
-        fixed
-        aria-label="Lista de tags"
-        selectionMode="multiple"
-        css={{
-          minHeight: 110,
-          padding: 0,
-          '& thead tr th': {
-            zIndex: 201,
-            position: 'sticky',
-            top: 0
-          },
-          '& thead tr th:first-child': {
-            width: 55
-          }
-        }}
-        containerCss={{
-          ...screenNavigation.metadata.containerListCss
-        }}
-        sortDescriptor={sortCell}
-        onSortChange={(sortByCell) => setSortCell(sortByCell)}
-        onSelectionChange={(eventSelection) => {
-          const setList = eventSelection as 'all' | Set<ATag['id']>
-          let tags: ATag[] = []
+          <Spacer y={2} />
 
-          if (setList instanceof Set) {
-            setList.forEach((tagId) => {
-              tags.push({ ...indexList[tagId] })
-            })
-          }
+          <Table
+            lined
+            shadow={false}
+            fixed
+            aria-label="Lista de tags"
+            selectionMode="multiple"
+            css={{
+              minHeight: 110,
+              padding: 0,
+              '& thead tr th': {
+                zIndex: 201,
+                position: 'sticky',
+                top: 0
+              },
+              '& thead tr th:first-child': {
+                width: 55
+              }
+            }}
+            containerCss={{
+              ...screenNavigation.metadata.containerListCss
+            }}
+            sortDescriptor={sortCell}
+            onSortChange={(sortByCell) => setSortCell(sortByCell)}
+            onSelectionChange={(eventSelection) => {
+              const setList = eventSelection as 'all' | Set<ATag['id']>
+              let tags: ATag[] = []
 
-          if (setList === 'all') {
-            tags = [...list]
-          }
+              if (setList instanceof Set) {
+                setList.forEach((tagId) => {
+                  tags.push({ ...indexList[tagId] })
+                })
+              }
 
-          setItemsSelected(tags)
-        }}
-      >
-        <Table.Header columns={columns}>
-          {(column) => (
-            <Table.Column
-              allowsSorting
-              key={column.uid}
-              width={column.uid === 'createdAt' ? '100' : undefined}
-            >
-              {column.name}
-            </Table.Column>
-          )}
-        </Table.Header>
-        <Table.Body
-          items={listFilter}
-          loadingState={loading.list ? 'loading' : undefined}
-        >
-          {(item: ATag) => (
-            <Table.Row>
-              {(columnKey) => (
-                <Table.Cell>
-                  {renderCell(item, columnKey as keyof ATag | 'actions')}
-                </Table.Cell>
+              if (setList === 'all') {
+                tags = [...list]
+              }
+
+              setItemsSelected(tags)
+            }}
+          >
+            <Table.Header columns={columns}>
+              {(column) => (
+                <Table.Column
+                  allowsSorting
+                  key={column.uid}
+                  width={column.uid === 'createdAt' ? '100' : undefined}
+                >
+                  {column.name}
+                </Table.Column>
               )}
-            </Table.Row>
-          )}
-        </Table.Body>
-      </Table>
+            </Table.Header>
+            <Table.Body
+              items={listFilter}
+              loadingState={loading.list ? 'loading' : undefined}
+            >
+              {(item: ATag) => (
+                <Table.Row>
+                  {(columnKey) => (
+                    <Table.Cell>
+                      {renderCell(item, columnKey as keyof ATag | 'actions')}
+                    </Table.Cell>
+                  )}
+                </Table.Row>
+              )}
+            </Table.Body>
+          </Table>
+        </ScreenPage.Body>
+      </ScreenPage>
     </>
   )
 }
