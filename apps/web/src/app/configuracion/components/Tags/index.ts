@@ -1,2 +1,2 @@
-export { default as ScreenTags } from './ScreenTags'
-export * from './constants'
+export { default as TagScreen } from './TagScreen'
+export * from './Tag.constants'

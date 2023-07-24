@@ -1,6 +1,7 @@
 import { PropsWithoutRef, RefAttributes } from 'react'
 import ScreenPageHeader from './ScreenPageHeader'
 import ScreenPageBody from './ScreenPageBody'
+import ScreenPageContainer from './ScreenPageContainer'
 
 type ScreenPageProps = { children: React.ReactNode }
 
@@ -13,6 +14,7 @@ type ScreenPageComponent<T, P = {}> = React.ForwardRefExoticComponent<
 > & {
   Header: typeof ScreenPageHeader
   Body: typeof ScreenPageBody
+  Container: typeof ScreenPageContainer
 }
 
 export default ScreenPage as ScreenPageComponent<

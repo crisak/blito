@@ -12,6 +12,6 @@ export type MetadataScreens = {
 }
 
 export const SCREENS = {
-  listTags: 'listTags',
-  formTags: 'FORM_TAGS'
+  listTags: 'TAG_LIST',
+  formTags: 'TAG_FORM'
 }

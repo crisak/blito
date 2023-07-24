@@ -2,11 +2,7 @@
 
 import { Children, isValidElement, cloneElement } from 'react'
 import { Box } from '@/app/shared/components'
-import {
-  useScreenNavigation,
-  type Child,
-  type PageName
-} from './ProviderScreenNavigation'
+import { useScreenPage, type Child, type PageName } from './ScreenPageProvider'
 import { CSS, useTheme } from '@nextui-org/react'
 
 type PageNavigationProps = Child & {
@@ -23,7 +19,7 @@ const PageNavigation = ({
   index,
   propsPage
 }: PageNavigationProps) => {
-  const data = useScreenNavigation()
+  const data = useScreenPage()
   const { theme } = useTheme()
 
   return (

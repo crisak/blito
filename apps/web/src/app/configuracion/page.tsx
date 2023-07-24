@@ -2,7 +2,7 @@
 
 import { Text } from '@/app/shared/components'
 import { Card, Container, Grid, Spacer } from '@nextui-org/react'
-import { ScreenTags, HEIGHT_FILTER_LIST } from './components/Tags'
+import { TagScreen, HEIGHT_FILTER_LIST } from './components/Tags'
 
 const MAX_HEIGHT_CARD = 580
 
@@ -32,7 +32,7 @@ const SettingsPage = () => {
               }}
             >
               <Card.Body css={{ padding: '$10' }}>
-                <ScreenTags
+                <TagScreen
                   containerListCss={{
                     height: `calc(100% - ${HEIGHT_FILTER_LIST}px)`,
                     overflow: 'auto'

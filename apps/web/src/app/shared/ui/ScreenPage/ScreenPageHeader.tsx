@@ -1,5 +1,7 @@
+'use client'
+
 import { Flex, Text } from '@/app/shared/components'
-import { useScreenNavigation } from '@/app/shared/hooks'
+import { useScreenPage } from './ScreenPageProvider'
 import { Button, Grid } from '@nextui-org/react'
 import { BsChevronLeft } from 'react-icons/bs'
 
@@ -14,7 +16,7 @@ const ScreenPageHeader = ({
   children,
   content
 }: ScreenPageHeaderProps) => {
-  const screenNavigation = useScreenNavigation()
+  const screenNavigation = useScreenPage()
 
   return (
     <Grid.Container gap={2} alignItems="center">
@@ -37,8 +39,8 @@ const ScreenPageHeader = ({
               css={{
                 minWidth: 'auto',
                 borderRadius: '50%',
-                width: 40,
-                height: 40,
+                width: 30,
+                height: 30,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'flex-start'

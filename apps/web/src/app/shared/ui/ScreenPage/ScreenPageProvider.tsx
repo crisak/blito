@@ -8,7 +8,7 @@ import {
 import { Box } from '@/app/shared/components'
 import { CSS } from '@nextui-org/react'
 
-type ContextNavigationProps<T = unknown> = {
+type ContextScreenPageProps<T = unknown> = {
   playAnimation: {
     animation: string
     page: string
@@ -21,7 +21,7 @@ type ContextNavigationProps<T = unknown> = {
   history: PageName[]
 }
 
-const ContextNavigation = createContext<ContextNavigationProps>({
+const ContextScreenPage = createContext<ContextScreenPageProps>({
   playAnimation: {
     animation: '',
     page: ''
@@ -34,8 +34,8 @@ const ContextNavigation = createContext<ContextNavigationProps>({
   history: []
 })
 
-export function useScreenNavigation<T = unknown>() {
-  return useContext<ContextNavigationProps<T>>(ContextNavigation as any)
+export function useScreenPage<T = unknown>() {
+  return useContext<ContextScreenPageProps<T>>(ContextScreenPage as any)
 }
 
 export type Child = {
@@ -76,7 +76,7 @@ const Container = ({ css, ...props }: ContainerProps) => {
   )
 }
 
-const ProviderScreenNavigation = ({
+const ScreenPageProvider = ({
   children,
   pages,
   containerCss,
@@ -129,7 +129,7 @@ const ProviderScreenNavigation = ({
   }
 
   return (
-    <ContextNavigation.Provider
+    <ContextScreenPage.Provider
       value={{
         playAnimation,
         push,
@@ -147,8 +147,8 @@ const ProviderScreenNavigation = ({
           })}
         </>
       </Container>
-    </ContextNavigation.Provider>
+    </ContextScreenPage.Provider>
   )
 }
 
-export default ProviderScreenNavigation
+export default ScreenPageProvider

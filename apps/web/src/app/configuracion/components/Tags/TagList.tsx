@@ -1,5 +1,6 @@
 'use client'
-import { useAlert, useScreenNavigation } from '@/app/shared/hooks'
+
+import { useAlert } from '@/app/shared/hooks'
 import {
   Button,
   Input,
@@ -10,7 +11,7 @@ import {
   useCollator,
   useTheme
 } from '@nextui-org/react'
-import { MetadataScreens, SCREENS } from './constants'
+import { MetadataScreens, SCREENS } from './Tag.constants'
 import { useState, useMemo } from 'react'
 import useFetchTags from './useFetchTags'
 import { AContent, ATag } from '@/models'
@@ -20,7 +21,7 @@ import { toast } from 'react-toastify'
 import { Box, Text } from '@/app/shared/components'
 import BodyModalError, { type TagsWithContents } from './BodyModalError'
 import { IoIosAdd } from 'react-icons/io'
-import ScreenPage from './ScreenPage'
+import { ScreenPage, useScreenPage } from '@/app/shared/ui'
 
 const columns: Array<{ name: string; uid: keyof ATag | 'actions' }> = [
   { name: 'Nombre', uid: 'name' },
@@ -56,12 +57,12 @@ const processContents =
     }
   }
 
-const List = () => {
+const TagList = () => {
   const { theme } = useTheme()
   const collator = useCollator({ numeric: true })
   const alert = useAlert()
   const [searchInput, setSearchInput] = useState('')
-  const screenNavigation = useScreenNavigation<MetadataScreens>()
+  const screenNavigation = useScreenPage<MetadataScreens>()
   const [itemsSelected, setItemsSelected] = useState<ATag[]>([])
   const [sortCell, setSortCell] = useState<SortDescriptor>({
     column: '',
@@ -211,147 +212,143 @@ const List = () => {
   }, [list])
 
   return (
-    <>
-      <ScreenPage>
-        <ScreenPage.Header
-          content={
-            <>
-              {itemsSelected.length > 0 && (
-                <Button
-                  auto
-                  light
-                  size="sm"
-                  color="error"
-                  icon={
-                    loading.contents ? (
-                      <Loading color="currentColor" size="xs" />
-                    ) : (
-                      <BiTrashAlt fill="currentColor" />
-                    )
-                  }
-                  css={{
-                    mr: '$10'
-                  }}
-                  disabled={loading.contents}
-                  onClick={handleRemove}
-                >
-                  Eliminar {itemsSelected.length} item(s)
-                </Button>
-              )}
-
+    <ScreenPage>
+      <ScreenPage.Header
+        content={
+          <>
+            {itemsSelected.length > 0 && (
               <Button
                 auto
+                light
                 size="sm"
-                onClick={() => screenNavigation.push(SCREENS.formTags)}
-                icon={<IoIosAdd fill="currentColor" />}
+                color="error"
+                icon={
+                  loading.contents ? (
+                    <Loading color="currentColor" size="xs" />
+                  ) : (
+                    <BiTrashAlt fill="currentColor" />
+                  )
+                }
+                css={{
+                  mr: '$10'
+                }}
+                disabled={loading.contents}
+                onClick={handleRemove}
               >
-                Crear Tag
+                Eliminar {itemsSelected.length} item(s)
               </Button>
-            </>
-          }
-        >
-          <>
-            Tags{' '}
-            <Text
-              span
-              css={{ margin: 0, color: '$accents7', fontWeight: '$light' }}
+            )}
+
+            <Button
+              auto
+              size="sm"
+              onClick={() => screenNavigation.push(SCREENS.formTags)}
+              icon={<IoIosAdd fill="currentColor" />}
             >
-              ({list.length}
-              {itemsSelected.length > 0 ? `/${itemsSelected.length}` : ''})
-            </Text>
+              Crear Tag
+            </Button>
           </>
-        </ScreenPage.Header>
-        <ScreenPage.Body>
-          <Input
-            clearable
-            bordered
-            fullWidth
-            size="sm"
-            name="searchInput"
-            placeholder="Búsqueda por palabra"
-            disabled={loading.list}
-            onChange={(e) => setSearchInput(e.target.value || '')}
-            value={searchInput}
-            contentLeft={
-              <BsSearch
-                width="16"
-                height="16"
-                fill={theme?.colors.accents6.value}
-              />
+        }
+      >
+        Tags{' '}
+        <Text
+          span
+          css={{ margin: 0, color: '$accents7', fontWeight: '$light' }}
+        >
+          ({list.length}
+          {itemsSelected.length > 0 ? `/${itemsSelected.length}` : ''})
+        </Text>
+      </ScreenPage.Header>
+      <ScreenPage.Body>
+        <Input
+          clearable
+          bordered
+          fullWidth
+          size="sm"
+          name="searchInput"
+          placeholder="Búsqueda por palabra"
+          disabled={loading.list}
+          onChange={(e) => setSearchInput(e.target.value || '')}
+          value={searchInput}
+          contentLeft={
+            <BsSearch
+              width="16"
+              height="16"
+              fill={theme?.colors.accents6.value}
+            />
+          }
+        />
+
+        <Spacer y={2} />
+
+        <Table
+          lined
+          shadow={false}
+          fixed
+          aria-label="Lista de tags"
+          selectionMode="multiple"
+          css={{
+            minHeight: 110,
+            padding: 0,
+            '& thead tr th': {
+              zIndex: 201,
+              position: 'sticky',
+              top: 0
+            },
+            '& thead tr th:first-child': {
+              width: 55
             }
-          />
+          }}
+          containerCss={{
+            ...screenNavigation.metadata.containerListCss
+          }}
+          sortDescriptor={sortCell}
+          onSortChange={(sortByCell) => setSortCell(sortByCell)}
+          onSelectionChange={(eventSelection) => {
+            const setList = eventSelection as 'all' | Set<ATag['id']>
+            let tags: ATag[] = []
 
-          <Spacer y={2} />
+            if (setList instanceof Set) {
+              setList.forEach((tagId) => {
+                tags.push({ ...indexList[tagId] })
+              })
+            }
 
-          <Table
-            lined
-            shadow={false}
-            fixed
-            aria-label="Lista de tags"
-            selectionMode="multiple"
-            css={{
-              minHeight: 110,
-              padding: 0,
-              '& thead tr th': {
-                zIndex: 201,
-                position: 'sticky',
-                top: 0
-              },
-              '& thead tr th:first-child': {
-                width: 55
-              }
-            }}
-            containerCss={{
-              ...screenNavigation.metadata.containerListCss
-            }}
-            sortDescriptor={sortCell}
-            onSortChange={(sortByCell) => setSortCell(sortByCell)}
-            onSelectionChange={(eventSelection) => {
-              const setList = eventSelection as 'all' | Set<ATag['id']>
-              let tags: ATag[] = []
+            if (setList === 'all') {
+              tags = [...list]
+            }
 
-              if (setList instanceof Set) {
-                setList.forEach((tagId) => {
-                  tags.push({ ...indexList[tagId] })
-                })
-              }
-
-              if (setList === 'all') {
-                tags = [...list]
-              }
-
-              setItemsSelected(tags)
-            }}
+            setItemsSelected(tags)
+          }}
+        >
+          <Table.Header columns={columns}>
+            {(column) => (
+              <Table.Column
+                allowsSorting
+                key={column.uid}
+                width={column.uid === 'createdAt' ? '100' : undefined}
+              >
+                {column.name}
+              </Table.Column>
+            )}
+          </Table.Header>
+          <Table.Body
+            items={listFilter}
+            loadingState={loading.list ? 'loading' : undefined}
           >
-            <Table.Header columns={columns}>
-              {(column) => (
-                <Table.Column
-                  allowsSorting
-                  key={column.uid}
-                  width={column.uid === 'createdAt' ? '100' : undefined}
-                >
-                  {column.name}
-                </Table.Column>
-              )}
-            </Table.Header>
-            <Table.Body
-              items={listFilter}
-              loadingState={loading.list ? 'loading' : undefined}
-            >
-              {(item: ATag) => (
-                <Table.Row>
-                  {(columnKey) => (
-                    <Table.Cell>
-                      {renderCell(item, columnKey as keyof ATag | 'actions')}
-                    </Table.Cell>
-                  )}
-                </Table.Row>
-              )}
-            </Table.Body>
-          </Table>
-        </ScreenPage.Body>
-      </ScreenPage>
-    </>
+            {(item: ATag) => (
+              <Table.Row>
+                {(columnKey) => (
+                  <Table.Cell>
+                    {renderCell(item, columnKey as keyof ATag | 'actions')}
+                  </Table.Cell>
+                )}
+              </Table.Row>
+            )}
+          </Table.Body>
+        </Table>
+      </ScreenPage.Body>
+    </ScreenPage>
   )
 }
-export default List
+export default TagList
