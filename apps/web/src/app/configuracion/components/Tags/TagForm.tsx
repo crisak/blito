@@ -111,10 +111,10 @@ const TagForm = ({ tag: tagEdit }: TagFormProps) => {
           <Box css={{ display: 'flex', flexDirection: 'column', gap: '$10' }}>
             <Input
               fullWidth
-              clearable
-              bordered
+              isClearable
+              variant="bordered"
               name="name"
-              labelPlaceholder="Nombre del tag"
+              label="Nombre del tag"
               disabled={loading.create}
               onChange={(e) =>
                 setFormData({ ...formData, name: e.target.value })

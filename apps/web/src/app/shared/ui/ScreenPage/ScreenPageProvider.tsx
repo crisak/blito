@@ -5,8 +5,7 @@ import {
   Dispatch,
   SetStateAction
 } from 'react'
-import { Box } from '@/app/shared/components'
-import { CSS } from '@nextui-org/react'
+import { Box } from '@/app/shared/ui'
 
 type ContextScreenPageProps<T = unknown> = {
   playAnimation: {
@@ -15,7 +14,7 @@ type ContextScreenPageProps<T = unknown> = {
   }
   push: <PropsData = unknown>(page: PageName, props?: PropsData) => void
   pop: () => void
-  background?: CSS['background']
+  background?: React.CSSProperties['background']
   metadata: T
   setMetadata: Dispatch<SetStateAction<T>>
   history: PageName[]
@@ -46,7 +45,7 @@ export type PageName = string
 
 type ProviderScreenNavigationProps<T = unknown> = {
   pages: Record<PageName, React.ReactNode>
-  containerCss?: CSS
+  containerCss?: React.CSSProperties
   currentPage: PageName
   background?: string
   children: <PropsData = unknown>(dta: {
@@ -59,7 +58,7 @@ type ProviderScreenNavigationProps<T = unknown> = {
 }
 
 type ContainerProps = Child & {
-  css?: CSS
+  css?: React.CSSProperties
 }
 
 const Container = ({ css, ...props }: ContainerProps) => {

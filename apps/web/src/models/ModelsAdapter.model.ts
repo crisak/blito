@@ -7,7 +7,6 @@ import type {
   SocialNetwork,
   ContentProject,
   Location as LocationModel,
-  File,
   Position
 } from 'blito-models'
 

@@ -1,4 +1,4 @@
-import { Box, Text } from '@/app/shared/components'
+import { Box, Text } from '@/app/shared/ui'
 import { formatDate } from '@/utils'
 import { Badge, Spacer } from '@nextui-org/react'
 import ThumbnailMap from './ThumbnailMap'

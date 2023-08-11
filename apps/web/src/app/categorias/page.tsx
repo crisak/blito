@@ -1,4 +1,4 @@
-import { Box, Text } from '@/app/shared/components'
+import { Box, Text } from '@/app/shared/ui'
 import { CategoryService } from '@/app/shared/services'
 import { ContainerListCategories, ModalFormCategory } from './components'
 import { Container } from '@/app/components'

@@ -11,12 +11,14 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import {
   Modal,
-  useModal,
   Button,
   Input,
   Textarea,
-  Loading,
-  Spacer
+  Spacer,
+  useDisclosure,
+  ModalHeader,
+  ModalBody,
+  ModalFooter
 } from '@nextui-org/react'
 import { Category } from 'blito-models'
 import { CategoryService } from '@/app/shared/services'
@@ -35,8 +37,7 @@ const initialState = {
 const ModalFormCategory = () => {
   const [loading, setLoading] = useState(false)
   const [formData, setFormData] = useState<FDCategory>(initialState)
-
-  const { setVisible, bindings } = useModal()
+  const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure()
 
   const dispatch = useDispatch()
   const headerUI = useSelector<
@@ -53,7 +54,7 @@ const ModalFormCategory = () => {
       headerUI.event === HeaderEvent.updateCategory ||
       headerUI.event === HeaderEvent.create
     ) {
-      setVisible(false)
+      onClose()
     }
 
     resetForm()
@@ -132,7 +133,7 @@ const ModalFormCategory = () => {
 
   useEffect(() => {
     if (headerUI.event === HeaderEvent.create) {
-      setVisible(true)
+      onOpen()
     }
 
     if (headerUI.event === HeaderEvent.updateCategory) {
@@ -147,7 +148,7 @@ const ModalFormCategory = () => {
         name: headerUI.data?.name || '',
         description: headerUI.data?.description || ''
       })
-      setVisible(true)
+      onOpen()
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -155,55 +156,56 @@ const ModalFormCategory = () => {
 
   return (
     <Modal
-      blur
+      backdrop="blur"
       closeButton
-      preventClose
-      scroll
-      width="600px"
+      isDismissable={false}
+      scrollBehavior="normal"
+      className="w-[600px]"
       aria-labelledby="modal-create-category"
       aria-describedby="modal-description"
-      onCloseButtonClick={handlerCloseModel}
-      {...bindings}
+      onOpenChange={onOpenChange}
     >
       <form onSubmit={handlerSubmit}>
-        <Modal.Header>
+        <ModalHeader>
           <Text id="modal-create-category" className="text-lg">
             Agregar categoría
           </Text>
-        </Modal.Header>
-        <Modal.Body>
+        </ModalHeader>
+        <ModalBody>
           <Spacer y={1} />
           <Input
             fullWidth
-            clearable
-            bordered
+            isClearable
+            variant="bordered"
             name="name"
-            labelPlaceholder="Titulo"
+            labelPlacement="outside"
+            placeholder="Titulo"
+            label="Titulo"
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             value={formData.name}
           />
           <Spacer y={1} />
           <Textarea
             fullWidth
-            bordered
+            variant="bordered"
             name="description"
-            labelPlaceholder="Descripción"
+            placeholder="Descripción"
+            label="Descripción"
             onChange={(e) =>
               setFormData({ ...formData, description: e.target.value })
             }
             value={formData.description}
           />
           <Spacer y={1} />
-        </Modal.Body>
-        <Modal.Footer>
-          <Button auto flat color="primary" onPress={handlerCloseModel}>
+        </ModalBody>
+        <ModalFooter>
+          <Button variant="flat" color="primary" onPress={handlerCloseModel}>
             Cancelar
           </Button>
-          <Button type="submit" auto disabled={!isValidForm}>
-            {loading && <Loading color="currentColor" size="sm" />}
-            {!loading && 'Guardar'}
+          <Button type="submit" disabled={!isValidForm} isLoading={loading}>
+            Guardar
           </Button>
-        </Modal.Footer>
+        </ModalFooter>
       </form>
     </Modal>
   )

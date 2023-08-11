@@ -4,12 +4,15 @@ import { useAlert } from '@/app/shared/hooks'
 import {
   Button,
   Input,
-  Loading,
   SortDescriptor,
   Spacer,
   Table,
-  useCollator,
-  useTheme
+  TableBody,
+  TableCell,
+  TableColumn,
+  TableHeader,
+  TableRow,
+  colors
 } from '@nextui-org/react'
 import { MetadataScreens, SCREENS } from './Tag.constants'
 import { useState, useMemo } from 'react'
@@ -18,7 +21,7 @@ import { AContent, ATag } from '@/models'
 import { BsSearch } from 'react-icons/bs'
 import { BiTrashAlt } from 'react-icons/bi'
 import { toast } from 'react-toastify'
-import { Box, Text } from '@/app/shared/components'
+import { Box, Text } from '@/app/shared/ui'
 import BodyModalError, { type TagsWithContents } from './BodyModalError'
 import { IoIosAdd } from 'react-icons/io'
 import { ScreenPage, useScreenPage } from '@/app/shared/ui'
@@ -58,8 +61,8 @@ const processContents =
   }
 
 const TagList = () => {
-  const { theme } = useTheme()
-  const collator = useCollator({ numeric: true })
+  // const { theme } = useTheme()
+  // const collator = useCollator({ numeric: true })
   const alert = useAlert()
   const [searchInput, setSearchInput] = useState('')
   const screenNavigation = useScreenPage<MetadataScreens>()
@@ -147,12 +150,9 @@ const TagList = () => {
       case 'name':
         return (
           <Text
-            span
+            as="span"
             color={'primary'}
-            css={{
-              cursor: 'pointer',
-              textDecoration: 'underline'
-            }}
+            className="cursor-pointer underline"
             onClick={() => handleEdit(tag)}
           >
             {cellValue}
@@ -189,9 +189,15 @@ const TagList = () => {
     if (sortCell?.column) {
       list_.sort((a, b) => {
         const nameColumn = sortCell.column as keyof ATag
-        let first = a[nameColumn]
-        let second = b[nameColumn]
-        let cmp = collator.compare(first as any, second as any)
+        let first = a[nameColumn] ?? ''
+        let second = b[nameColumn] ?? ''
+
+        let cmp =
+          (parseInt(first as string) || first) <
+          (parseInt(second as string) || second)
+            ? -1
+            : 1
+
         if (sortCell.direction === 'descending') {
           cmp *= -1
         }
@@ -218,20 +224,12 @@ const TagList = () => {
           <>
             {itemsSelected.length > 0 && (
               <Button
-                auto
-                light
+                variant="light"
                 size="sm"
-                color="error"
-                icon={
-                  loading.contents ? (
-                    <Loading color="currentColor" size="xs" />
-                  ) : (
-                    <BiTrashAlt fill="currentColor" />
-                  )
-                }
-                css={{
-                  mr: '$10'
-                }}
+                color="danger"
+                startContent={<BiTrashAlt fill="currentColor" />}
+                isLoading={loading.contents}
+                className="mr-10"
                 disabled={loading.contents}
                 onClick={handleRemove}
               >
@@ -240,10 +238,9 @@ const TagList = () => {
             )}
 
             <Button
-              auto
               size="sm"
               onClick={() => screenNavigation.push(SCREENS.formTags)}
-              icon={<IoIosAdd fill="currentColor" />}
+              startContent={<IoIosAdd fill="currentColor" />}
             >
               Crear Tag
             </Button>
@@ -251,18 +248,15 @@ const TagList = () => {
         }
       >
         Tags{' '}
-        <Text
-          span
-          css={{ margin: 0, color: '$accents7', fontWeight: '$light' }}
-        >
+        <Text as="span" className="text-gray-700 font-light m-0">
           ({list.length}
           {itemsSelected.length > 0 ? `/${itemsSelected.length}` : ''})
         </Text>
       </ScreenPage.Header>
       <ScreenPage.Body>
         <Input
-          clearable
-          bordered
+          isClearable
+          variant="bordered"
           fullWidth
           size="sm"
           name="searchInput"
@@ -270,37 +264,22 @@ const TagList = () => {
           disabled={loading.list}
           onChange={(e) => setSearchInput(e.target.value || '')}
           value={searchInput}
-          contentLeft={
-            <BsSearch
-              width="16"
-              height="16"
-              fill={theme?.colors.accents6.value}
-            />
+          startContent={
+            <BsSearch width="16" height="16" fill={colors.zinc['700']} />
           }
         />
 
         <Spacer y={2} />
 
         <Table
-          lined
-          shadow={false}
-          fixed
+          shadow="none"
+          // layout="fixed"
           aria-label="Lista de tags"
           selectionMode="multiple"
-          css={{
-            minHeight: 110,
-            padding: 0,
-            '& thead tr th': {
-              zIndex: 201,
-              position: 'sticky',
-              top: 0
-            },
-            '& thead tr th:first-child': {
-              width: 55
-            }
-          }}
-          containerCss={{
-            ...screenNavigation.metadata.containerListCss
+          className="min-h-[110px] p-0"
+          classNames={{
+            th: 'z-20 sticky top-0 z-50 first:w-[55px]',
+            wrapper: screenNavigation.metadata.containerListCss
           }}
           sortDescriptor={sortCell}
           onSortChange={(sortByCell) => setSortCell(sortByCell)}
@@ -321,31 +300,31 @@ const TagList = () => {
             setItemsSelected(tags)
           }}
         >
-          <Table.Header columns={columns}>
+          <TableHeader columns={columns}>
             {(column) => (
-              <Table.Column
+              <TableColumn
                 allowsSorting
                 key={column.uid}
                 width={column.uid === 'createdAt' ? '100' : undefined}
               >
                 {column.name}
-              </Table.Column>
+              </TableColumn>
             )}
-          </Table.Header>
-          <Table.Body
+          </TableHeader>
+          <TableBody
             items={listFilter}
             loadingState={loading.list ? 'loading' : undefined}
           >
             {(item: ATag) => (
-              <Table.Row>
-                {(columnKey) => (
-                  <Table.Cell>
+              <TableRow>
+                {(columnKey: unknown) => (
+                  <TableCell>
                     {renderCell(item, columnKey as keyof ATag | 'actions')}
-                  </Table.Cell>
+                  </TableCell>
                 )}
-              </Table.Row>
+              </TableRow>
             )}
-          </Table.Body>
+          </TableBody>
         </Table>
       </ScreenPage.Body>
     </ScreenPage>

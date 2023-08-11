@@ -1,8 +1,16 @@
-'use client'
-
-import { Text } from '@/app/shared/components'
+import { Text } from '@/app/shared/ui'
 import { AContent, AFile, ATag } from '@/models'
-import { Spacer, Table, Tooltip, useTheme } from '@nextui-org/react'
+import {
+  Spacer,
+  Table,
+  TableBody,
+  TableCell,
+  TableColumn,
+  TableHeader,
+  TableRow,
+  Tooltip,
+  semanticColors
+} from '@nextui-org/react'
 import { ContentType, TypeFile } from 'blito-models'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -27,40 +35,32 @@ type BodyModalErrorProps = {
 }
 
 const BodyModalError = ({ contents = [] }: BodyModalErrorProps) => {
-  const { theme } = useTheme()
-
   return (
     <>
       {contents.filter(({ contents }) => contents.length === 0).length > 0 && (
         <>
           <Text>Tags sin galerías</Text>
           <Table
-            lined
-            compact
-            shadow={false}
+            isCompact
+            shadow="none"
             aria-label={`Lista de tags a eliminar`}
-            containerCss={{
-              maxHeight: 300,
-              overflow: 'auto'
+            classNames={{
+              wrapper: 'max-h-[300px] overflow-auto'
             }}
-            css={{
-              height: '100%',
-              minWidth: '100%',
-              padding: 0
-            }}
+            className="h-full min-w-full p-0"
           >
-            <Table.Header>
-              <Table.Column>Tag</Table.Column>
-            </Table.Header>
-            <Table.Body>
+            <TableHeader>
+              <TableColumn>Tag</TableColumn>
+            </TableHeader>
+            <TableBody>
               {contents
                 .filter(({ contents }) => contents.length === 0)
                 .map(({ tag }) => (
-                  <Table.Row key={tag.id}>
-                    <Table.Cell>{tag.name}</Table.Cell>
-                  </Table.Row>
+                  <TableRow key={tag.id}>
+                    <TableCell>{tag.name}</TableCell>
+                  </TableRow>
                 ))}
-            </Table.Body>
+            </TableBody>
           </Table>
         </>
       )}
@@ -78,28 +78,22 @@ const BodyModalError = ({ contents = [] }: BodyModalErrorProps) => {
                   {tag.name}
                 </Text>
                 <Table
-                  lined
-                  compact
-                  shadow={false}
+                  isCompact
+                  shadow="none"
                   aria-label={`Lista de galerías con el tag ${tag.name}`}
-                  containerCss={{
-                    maxHeight: 300,
-                    overflow: 'auto'
-                  }}
-                  css={{
-                    height: 'auto',
-                    minWidth: '100%',
-                    padding: 0
+                  className="h-full min-w-full p-0"
+                  classNames={{
+                    wrapper: 'max-h-[300px] overflow-auto'
                   }}
                 >
-                  <Table.Header>
-                    <Table.Column>Galería</Table.Column>
-                    <Table.Column>Tipo</Table.Column>
-                    <Table.Column>Nombre</Table.Column>
-                    <Table.Column hideHeader>Acciones</Table.Column>
-                  </Table.Header>
+                  <TableHeader>
+                    <TableColumn>Galería</TableColumn>
+                    <TableColumn>Tipo</TableColumn>
+                    <TableColumn>Nombre</TableColumn>
+                    <TableColumn hideHeader>Acciones</TableColumn>
+                  </TableHeader>
 
-                  <Table.Body>
+                  <TableBody>
                     {contents.map((ctn) => {
                       const imageWithBanner: AFile | null =
                         ctn.files.find((fil) =>
@@ -121,15 +115,12 @@ const BodyModalError = ({ contents = [] }: BodyModalErrorProps) => {
                         }
 
                       return (
-                        <Table.Row key={ctn.id}>
-                          <Table.Cell>
+                        <TableRow key={ctn.id}>
+                          <TableCell>
                             <Tooltip
                               placement="top"
-                              css={{
-                                zIndex: 10000
-                              }}
-                              triggerCss={{
-                                zIndex: 10000
+                              classNames={{
+                                base: 'z-10'
                               }}
                               content={
                                 <Image
@@ -154,12 +145,12 @@ const BodyModalError = ({ contents = [] }: BodyModalErrorProps) => {
                                 }}
                               />
                             </Tooltip>
-                          </Table.Cell>
-                          <Table.Cell>{typeGallery[ctn.type]}</Table.Cell>
-                          <Table.Cell>
+                          </TableCell>
+                          <TableCell>{typeGallery[ctn.type]}</TableCell>
+                          <TableCell>
                             {ctn.project?.name || image.caption || ''}
-                          </Table.Cell>
-                          <Table.Cell>
+                          </TableCell>
+                          <TableCell>
                             <Link
                               target="_blank"
                               href={{
@@ -173,14 +164,14 @@ const BodyModalError = ({ contents = [] }: BodyModalErrorProps) => {
                             >
                               <GoLinkExternal
                                 size={20}
-                                fill={theme?.colors.primary.value}
+                                fill={semanticColors.dark.primary['400']}
                               />
                             </Link>
-                          </Table.Cell>
-                        </Table.Row>
+                          </TableCell>
+                        </TableRow>
                       )
                     })}
-                  </Table.Body>
+                  </TableBody>
                 </Table>
               </Fragment>
             ))}

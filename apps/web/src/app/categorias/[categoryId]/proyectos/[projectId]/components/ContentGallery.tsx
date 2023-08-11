@@ -4,7 +4,7 @@ import { useState, useMemo } from 'react'
 import Lightbox from 'react-image-lightbox'
 import StackGrid from 'react-stack-grid'
 import { BORDER_RADIUS } from '@/styles/variables'
-import { Box } from '@/app/shared/components'
+import { Box } from '@/app/shared/ui'
 import Image from 'next/image'
 import { AContent } from '@/models'
 

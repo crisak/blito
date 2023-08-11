@@ -1,15 +1,12 @@
-'use client'
-
 import TagList from './TagList'
 import TagForm from './TagForm'
 import { ScreenPageProvider, ScreenPage } from '@/app/shared/ui'
 import { SCREENS, MetadataScreens } from './Tag.constants'
-import { CSS, useTheme } from '@nextui-org/react'
+import { semanticColors } from '@nextui-org/react'
 
-type ScreenTagsProps = MetadataScreens & { containerCss?: CSS }
+type ScreenTagsProps = MetadataScreens & { containerCss?: React.CSSProperties }
 
 const TagScreen = ({ containerListCss, containerCss }: ScreenTagsProps) => {
-  const { theme } = useTheme()
   const screens = {
     [SCREENS.listTags]: <TagList />,
     [SCREENS.formTags]: <TagForm />
@@ -17,7 +14,7 @@ const TagScreen = ({ containerListCss, containerCss }: ScreenTagsProps) => {
 
   return (
     <ScreenPageProvider
-      background={theme?.colors.backgroundContrast.value}
+      background={semanticColors.dark.content1['900']}
       pages={screens}
       currentPage={SCREENS.listTags}
       containerCss={containerCss}

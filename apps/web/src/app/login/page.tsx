@@ -78,24 +78,24 @@ const LoginPage = () => {
                 type="email"
                 placeholder="Correo"
                 name="username"
-                labelPlaceholder="Correo"
+                label="Correo"
                 onChange={(e) =>
                   setFormData({ ...formData, username: e.target.value })
                 }
                 value={formData.username}
-                bordered
+                variant="bordered"
               />
               <Spacer y={2} />
               <Input.Password
                 type="password"
                 placeholder="Password"
                 name="password"
-                labelPlaceholder="Password"
+                label="Password"
                 onChange={(e) =>
                   setFormData({ ...formData, password: e.target.value })
                 }
                 value={formData.password}
-                bordered
+                variant="bordered"
               />
 
               <Spacer y={2} />

@@ -1,5 +1,5 @@
 import { GoogleMaps, Marker } from '@/app/components'
-import { Box } from '@/app/shared/components'
+import { Box } from '@/app/shared/ui'
 // import { BORDER_RADIUS } from '@/styles/variables'
 import { Modal, ModalBody, useDisclosure } from '@nextui-org/react'
 

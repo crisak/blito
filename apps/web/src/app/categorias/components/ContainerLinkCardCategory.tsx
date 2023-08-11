@@ -1,8 +1,14 @@
 'use client'
 
 import Link from 'next/link'
-import { Card, Col, Row, Button } from '@nextui-org/react'
-import { Box, Text } from '@/app/shared/components'
+import {
+  Card,
+  Button,
+  CardHeader,
+  CardBody,
+  CardFooter
+} from '@nextui-org/react'
+import { Box, Text, Row, Col } from '@/app/shared/ui'
 import { AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai'
 import { useDispatch, useSelector } from 'react-redux'
 import { AuthStore, headerUIActions, categoryActions } from '@/redux/slices'
@@ -13,6 +19,7 @@ import {
 } from '@/app/shared/services'
 import { useAlert } from '@/app/shared/hooks'
 import { toast } from 'react-toastify'
+import Image from 'next/image'
 
 type ContainerLinkCardCategoryProps = GetAllWithContentResult
 
@@ -97,32 +104,30 @@ const ContainerLinkCardCategory = (
           justifyContent: 'flex-end',
           gap: '$3',
           paddingRight: '$8',
-          paddingTop: '$8',
-          '& button': {
-            bgBlur: 'rgba(0, 0, 0, 0.053)',
-            opacity: 0.5,
-            '&:hover': {
-              opacity: 1,
-              cursor: 'pointer',
-              bgBlur: '$primary'
-            }
-          }
+          paddingTop: '$8'
+          // '& button': {
+          //   bgBlur: 'rgba(0, 0, 0, 0.053)',
+          //   opacity: 0.5,
+          //   '&:hover': {
+          //     opacity: 1,
+          //     cursor: 'pointer',
+          //     bgBlur: '$primary'
+          //   }
+          // }
         }}
       >
         <Button
-          ghost
-          auto
+          variant="ghost"
           size="sm"
           color="primary"
-          icon={<AiOutlineDelete />}
+          startContent={<AiOutlineDelete />}
           onClick={handleRemove}
         />
         <Button
-          ghost
-          auto
+          variant="ghost"
           size="sm"
           color="primary"
-          icon={<AiOutlineEdit />}
+          startContent={<AiOutlineEdit />}
           onClick={handleEdit}
         />
       </Box>
@@ -130,34 +135,23 @@ const ContainerLinkCardCategory = (
   }
 
   return (
-    <Card css={{ w: '100%', h: '400px' }}>
+    <Card className="w-full h-400px">
       {displayActionsAdmin()}
-      <Card.Header css={{ position: 'absolute', zIndex: 1, top: 5 }}>
+      <CardHeader className="absolute z-10 top-5">
         <Col>
           <Text className="text-xs font-bold uppercase text-white opacity-70">
             {category.name}
           </Text>
         </Col>
-      </Card.Header>
-      <Card.Body css={{ p: 0 }}>
-        <Card.Image
+      </CardHeader>
+      <CardBody className="p-0">
+        <Image
+          className="w-full h-full object-cover"
           src={category.files?.[0]?.data}
-          width="100%"
-          height="100%"
-          objectFit="cover"
           alt={category.files?.[0]?.caption || ''}
         />
-      </Card.Body>
-      <Card.Footer
-        isBlurred
-        css={{
-          position: 'absolute',
-          bgBlur: '#ffffff66',
-          borderTop: '$borderWeights$light solid rgba(255, 255, 255, 0.2)',
-          bottom: 0,
-          zIndex: 1
-        }}
-      >
+      </CardBody>
+      <CardFooter className="absolute bottom-0 left-0 right-0 blur bg-[#ffffff66] border-t-[rgba(255, 255, 255, 0.2)] border-[1px]">
         <Row>
           <Col>
             <Text className="text-black text-sm">
@@ -170,7 +164,7 @@ const ContainerLinkCardCategory = (
           </Col>
           <Col>
             <Row justify="flex-end">
-              <Button flat auto rounded>
+              <Button variant="flat">
                 <Link href={`/categorias/${category.id}/proyectos`}>
                   Ver más
                 </Link>
@@ -178,7 +172,7 @@ const ContainerLinkCardCategory = (
             </Row>
           </Col>
         </Row>
-      </Card.Footer>
+      </CardFooter>
     </Card>
   )
 }

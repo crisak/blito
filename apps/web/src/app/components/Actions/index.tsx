@@ -58,9 +58,8 @@ const Actions = ({ showButtonSave }: ActionsProps) => {
       {isShowActionSave && (
         <li>
           <Button
-            auto
             size="sm"
-            icon={<IoIosAddCircleOutline size="1.2rem" />}
+            startContent={<IoIosAddCircleOutline size="1.2rem" />}
             color="primary"
             onPress={handleCreate}
           >

@@ -17,20 +17,20 @@ const Form = () => {
               </Fade>
             </Grid>
             <Grid xs={12}>
-              <Input underlined labelPlaceholder="Nombre" fullWidth />
+              <Input underlined label="Nombre" fullWidth />
             </Grid>
             <Grid xs={12}>
               <Input
                 type="email"
                 underlined
-                labelPlaceholder="Correo"
+                label="Correo"
                 fullWidth
               />
             </Grid>
             <Grid xs={12}>
               <Textarea
                 underlined
-                labelPlaceholder="Mensaje"
+                label="Mensaje"
                 rows={4}
                 fullWidth
               />
