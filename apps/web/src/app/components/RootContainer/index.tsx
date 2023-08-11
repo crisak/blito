@@ -2,7 +2,7 @@
 
 import { Provider as ReduxProvider } from 'react-redux'
 import store from '@/redux/store'
-import { createTheme, NextUIProvider } from '@nextui-org/react'
+import { NextUIProvider } from '@nextui-org/react'
 
 import { ParallaxProvider } from 'react-scroll-parallax'
 import { useEffect, useState } from 'react'
@@ -31,10 +31,6 @@ Amplify.configure({
       }
     }
   }
-})
-
-const darkTheme = createTheme({
-  type: 'dark'
 })
 
 const $3seconds = 3000
@@ -92,7 +88,7 @@ function RootContainer({ children }: RootContainerProps): JSX.Element {
       >
         <ToastProvider>
           <ParallaxProvider>
-            <NextUIProvider theme={darkTheme}>
+            <NextUIProvider>
               <ReduxProvider store={store}>
                 <AlertProvider>
                   {splash ? (

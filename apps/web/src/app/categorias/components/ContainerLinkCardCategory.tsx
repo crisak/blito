@@ -69,7 +69,7 @@ const ContainerLinkCardCategory = (
         <>
           <Text>
             ¿Estas seguro que deseas eliminar esta categoría
-            <Text b> {category.name}</Text>?
+            <Text as="b"> {category.name}</Text>?
           </Text>
           <Text>Esta acción no se puede deshacer.</Text>
         </>
@@ -134,7 +134,7 @@ const ContainerLinkCardCategory = (
       {displayActionsAdmin()}
       <Card.Header css={{ position: 'absolute', zIndex: 1, top: 5 }}>
         <Col>
-          <Text size={12} weight="bold" transform="uppercase" color="#ffffffAA">
+          <Text className="text-xs font-bold uppercase text-white opacity-70">
             {category.name}
           </Text>
         </Col>
@@ -160,11 +160,11 @@ const ContainerLinkCardCategory = (
       >
         <Row>
           <Col>
-            <Text color="#000" size={12}>
+            <Text className="text-black text-sm">
               {category.description.slice(0, 38)}
               {' ...'}
             </Text>
-            <Text color="#000" size={12}>
+            <Text className="text-black text-sm">
               {category.files.length} Proyectos
             </Text>
           </Col>

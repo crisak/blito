@@ -55,11 +55,7 @@ const GoogleMaps = ({
     )
   }
   if (loadError) {
-    return (
-      <Text blockquote color="error">
-        Error al cargar el mapa
-      </Text>
-    )
+    return <Text className="text-danger-200">Error al cargar el mapa</Text>
   }
 
   return isLoaded ? renderMap() : <Spinner />

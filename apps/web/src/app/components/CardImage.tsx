@@ -1,7 +1,7 @@
 'use client'
 
 import { Text } from '@/app/shared/components'
-import { type BoxProps } from '@/app/shared/components/Box'
+import { type BoxProps } from '@/app/shared/ui/Box'
 
 import { BORDER_RADIUS } from '@/styles/variables'
 import Image from 'next/image'
@@ -55,7 +55,7 @@ export const CardLinkImage = ({
             }}
           />
           <div className={styles.parallax_effect_glare_scale__inner_element}>
-            <Text h3>{name}</Text>
+            <Text as="h3">{name}</Text>
             <Text as="span">{getDateFormat(date)}</Text>
           </div>
         </Tilt>

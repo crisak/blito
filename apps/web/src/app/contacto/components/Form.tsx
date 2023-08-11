@@ -13,7 +13,7 @@ const Form = () => {
           <Grid.Container gap={4}>
             <Grid xs={12}>
               <Fade bottom>
-                <Text h2>Escríbeme</Text>
+                <Text as="h2">Escríbeme</Text>
               </Fade>
             </Grid>
             <Grid xs={12}>

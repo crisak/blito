@@ -1,7 +1,15 @@
 'use client'
 
 import { Text } from '@/app/shared/components'
-import { Button, Loading, Modal, useModal } from '@nextui-org/react'
+import {
+  Button,
+  useDisclosure,
+  Modal,
+  ModalContent,
+  ModalBody,
+  ModalHeader,
+  ModalFooter
+} from '@nextui-org/react'
 import { useState } from 'react'
 
 export type StateAlert = {
@@ -14,7 +22,7 @@ export type StateAlert = {
   asyncFn: () => Promise<boolean>
 }
 
-type AlertProps = ReturnType<typeof useModal> & StateAlert
+type AlertProps = { bindings: ReturnType<typeof useDisclosure> } & StateAlert
 
 const Alert = (props: AlertProps) => {
   const [loading, setLoading] = useState(false)
@@ -28,23 +36,22 @@ const Alert = (props: AlertProps) => {
       /** Response ok */
       if (response) {
         /** Close modal */
-        props.setVisible(false)
+        props.bindings.onClose()
       }
 
       return
     }
 
-    props.setVisible(false)
+    props.bindings.onClose()
   }
 
   const displayFooter = () => {
     if (props.type === 'CONFIRM') {
       return (
-        <Modal.Footer>
+        <ModalFooter>
           <Button
-            light
+            variant="light"
             color="primary"
-            auto
             onPress={() => handlerCloseModel(false)}
             disabled={loading}
           >
@@ -52,44 +59,47 @@ const Alert = (props: AlertProps) => {
           </Button>
           <Button
             color="primary"
-            auto
             onPress={() => handlerCloseModel(true)}
-            disabled={loading}
+            isLoading={loading}
           >
-            {loading && <Loading color="currentColor" size="sm" />}
-            {!loading && (props.messageButtonAccept || 'Aceptar')}
+            {props.messageButtonAccept || 'Aceptar'}
           </Button>
-        </Modal.Footer>
+        </ModalFooter>
       )
     }
 
     return (
-      <Modal.Footer>
-        <Button color="primary" auto onPress={() => handlerCloseModel()}>
+      <ModalFooter>
+        <Button color="primary" onPress={() => handlerCloseModel()}>
           {props.messageButtonAccept || 'Aceptar'}
         </Button>
-      </Modal.Footer>
+      </ModalFooter>
     )
   }
 
   return (
     <Modal
-      blur
-      closeButton
-      preventClose
+      backdrop="blur"
+      isDismissable={false}
       aria-labelledby={`modal-${props.title || 'label'}`}
       aria-describedby={`modal-${props.title || 'describe'}`}
-      onCloseButtonClick={handlerCloseModel}
-      {...props.bindings}
+      isOpen={props.bindings.isOpen}
+      onOpenChange={props.bindings.onOpenChange}
     >
-      <Modal.Header justify="flex-start">
-        <Text b id="modal-title" size={20}>
-          {props.title}
-        </Text>
-        <hr />
-      </Modal.Header>
-      <Modal.Body>{props.body}</Modal.Body>
-      {displayFooter()}
+      <ModalContent>
+        {() => (
+          <>
+            <ModalHeader>
+              <Text as="b" id="modal-title" className="ext-xl">
+                {props.title}
+              </Text>
+              <hr />
+            </ModalHeader>
+            <ModalBody>{props.body}</ModalBody>
+            {displayFooter()}
+          </>
+        )}
+      </ModalContent>
     </Modal>
   )
 }

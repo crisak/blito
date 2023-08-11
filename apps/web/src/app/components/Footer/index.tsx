@@ -31,15 +31,11 @@ const Footer = () => {
   }
 
   return (
-    <FooterStyle
-      css={{
-        bgBlur: '#0000008e'
-      }}
-    >
+    <FooterStyle className="bg-[#0000008e] blur">
       <Container>
         <Grid.Container gap={2}>
           <Grid md direction="column">
-            <Text h3>Menu</Text>
+            <Text as="h3">Menu</Text>
 
             <Row
               css={{
@@ -67,12 +63,12 @@ const Footer = () => {
               }
             }}
           >
-            <Text h3>Información de contacto</Text>
+            <Text as="h3">Información de contacto</Text>
 
             <Link href="https://www.instagram.com/blito.col/" target="_blank">
               <Row align="center">
                 <BsInstagram />
-                <Text css={{ ml: '$5' }}>Instagram</Text>
+                <Text className="ml-5">Instagram</Text>
               </Row>
             </Link>
             <Link
@@ -81,21 +77,21 @@ const Footer = () => {
             >
               <Row align="center">
                 <BsYoutube />
-                <Text css={{ ml: '$5' }}>YouTube</Text>
+                <Text className="ml-5">YouTube</Text>
               </Row>
             </Link>
 
             <Link href="https://www.facebook.com/loxorea" target="_blank">
               <Row align="center">
                 <BsFacebook />
-                <Text css={{ ml: '$5' }}>Facebook</Text>
+                <Text className="ml-5">Facebook</Text>
               </Row>
             </Link>
 
             <Link href="mailto:loxoreacrew@gmail.com" target="_blank">
               <Row align="center">
                 <BsMailbox />
-                <Text css={{ ml: '$5' }}>Email</Text>
+                <Text className="ml-5">Email</Text>
               </Row>
             </Link>
 
@@ -105,7 +101,7 @@ const Footer = () => {
             >
               <Row align="center">
                 <BsWhatsapp />
-                <Text css={{ ml: '$5' }}>Whatsapp</Text>
+                <Text className="ml-5">Whatsapp</Text>
               </Row>
             </Link>
           </Grid>
@@ -131,7 +127,7 @@ const Footer = () => {
                 alt="Logo de portada"
                 color="red"
               />
-              <Text h2>Blitoner</Text>
+              <Text as="h2">Blitoner</Text>
             </Link>
           </Grid>
         </Grid.Container>

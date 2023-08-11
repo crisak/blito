@@ -1,6 +1,6 @@
 'use client'
 
-import { useModal } from '@nextui-org/react'
+import { useDisclosure } from '@nextui-org/react'
 import { useState } from 'react'
 import { useContext, createContext } from 'react'
 import Alert, { type StateAlert } from './Alert'
@@ -26,7 +26,7 @@ export type AlertProviderProps = {
 }
 
 const AlertProvider = ({ children }: AlertProviderProps) => {
-  const { setVisible, bindings, ...restModalProps } = useModal()
+  const bindings = useDisclosure()
 
   const [stateAlert, setStateAlert] = useState<
     Omit<StateAlert, 'setResponseConfirm'>
@@ -46,7 +46,7 @@ const AlertProvider = ({ children }: AlertProviderProps) => {
       ...parameterShow,
       type: 'INFO'
     }))
-    setVisible(true)
+    bindings.onOpen()
   }
 
   const confirm = (parameterShow: ParamsConfirmAlert) => {
@@ -55,7 +55,7 @@ const AlertProvider = ({ children }: AlertProviderProps) => {
       ...parameterShow,
       type: 'CONFIRM'
     }))
-    setVisible(true)
+    bindings.onOpen()
   }
 
   return (
@@ -64,9 +64,7 @@ const AlertProvider = ({ children }: AlertProviderProps) => {
         {children}
         <Alert
           {...{
-            setVisible,
             bindings,
-            ...restModalProps,
             ...stateAlert
           }}
         />

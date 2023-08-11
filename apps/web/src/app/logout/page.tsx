@@ -32,7 +32,7 @@ const Logout = () => {
         height: '80vh'
       }}
     >
-      <Text h2> Cerrando session ... </Text>
+      <Text as="h2"> Cerrando session ... </Text>
     </Box>
   )
 }

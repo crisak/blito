@@ -102,7 +102,7 @@ const TagList = () => {
           <ul>
             {errors.map(({ tag, error }) => (
               <li key={tag.id}>
-                <Text b>{tag.name} </Text>
+                <Text as="b">{tag.name} </Text>
                 <br />
                 <details>
                   <summary>Ver error</summary>

@@ -68,7 +68,7 @@ const LoginPage = () => {
             }}
           >
             <Card.Header>
-              <Text h2 weight="bold">
+              <Text as="h2" className="font-bold">
                 Login
               </Text>
             </Card.Header>

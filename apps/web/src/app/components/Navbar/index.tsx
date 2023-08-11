@@ -1,9 +1,10 @@
-import { Grid, Navbar, Text, useTheme } from '@nextui-org/react'
+import { Navbar } from '@nextui-org/react'
 import Link from 'next/link'
 import BlitoFrontPage from '@/assets/images/home-blito_bg_white.png'
 import Image from 'next/image'
 import { useSelector } from 'react-redux'
 import { AppStore, AuthStore } from '@/redux/store'
+import { Text } from '@/app/shared/components'
 
 const collapseItems = [
   {
@@ -69,7 +70,7 @@ const NavbarComponent = () => {
             alt="Logo de portada"
             color="red"
           />
-          <Text b color="inherit" hideIn="xs" css={{ ml: '$8' }}>
+          <Text as="b" className="text-inherit xs:invisible font-bold ml-8">
             Blito
           </Text>
         </Link>

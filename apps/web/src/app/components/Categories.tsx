@@ -55,8 +55,8 @@ const Categories = ({ categories }: CategoriesProps) => {
                 <SectionCategory className={odd ? `reverse-section` : ''}>
                   <CategoryContent>
                     <Fade bottom cascade>
-                      <Text h2>{category.name}</Text>
-                      <Text css={{ mb: '$10' }}>{category.description}</Text>
+                      <Text as="h2">{category.name}</Text>
+                      <Text className="mb-10">{category.description}</Text>
                       <Button>Ver más</Button>
                     </Fade>
                   </CategoryContent>

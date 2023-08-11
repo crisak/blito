@@ -58,16 +58,7 @@ const ContentGallery = ({ project }: ContentGalleryProps) => {
 
   return (
     <>
-      <Box
-        css={{
-          '& > *:hover .content-image img': {
-            filter: 'blur(1px) grayscale(90%)'
-          },
-          '& .content-image:hover img': {
-            filter: 'blur(0)'
-          }
-        }}
-      >
+      <Box>
         <StackGrid
           columnWidth={WIDTH}
           duration={480}
@@ -80,13 +71,7 @@ const ContentGallery = ({ project }: ContentGalleryProps) => {
               onClick={() => handleClick(index)}
               className="content-image"
               css={{
-                cursor: 'pointer',
-                '& img': {
-                  transition: 'all .3s',
-                  '&:hover': {
-                    transform: 'scale(1.1)'
-                  }
-                }
+                cursor: 'pointer'
               }}
             >
               <Image

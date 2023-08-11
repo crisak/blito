@@ -1,7 +1,7 @@
 'use client'
 
 import { Box } from '@/app/shared/components'
-import { Button, Container, Spacer } from '@nextui-org/react'
+import { Button, Spacer } from '@nextui-org/react'
 import { useState } from 'react'
 import { default as ContentGallery } from './ContentGallery'
 import { default as InfoDetail } from './InfoDetail'
@@ -9,6 +9,7 @@ import { BsChevronDoubleRight, BsChevronDoubleLeft } from 'react-icons/bs'
 import { HEIGHT_NAVBAR } from '@/styles/variables'
 import { SizeMe } from 'react-sizeme'
 import { AFullContent } from '@/models'
+import { Container } from '@/app/shared/ui'
 
 const WIDTH_ASIDE = '300px'
 
@@ -70,13 +71,11 @@ const ProjectDetailContainer = ({ project }: ProjectDetailContainerProps) => {
                   >
                     {!isCollapse && (
                       <Button
-                        css={{
-                          left: `calc(${WIDTH_ASIDE} - 50px)`,
-                          position: 'absolute',
-                          zIndex: 20
+                        style={{
+                          left: `calc(${WIDTH_ASIDE} - 50px)`
                         }}
-                        auto
-                        flat
+                        className="absolute z-20"
+                        variant="flat"
                         onClick={() => setIsCollapse(!isCollapse)}
                       >
                         <BsChevronDoubleLeft />
@@ -96,14 +95,11 @@ const ProjectDetailContainer = ({ project }: ProjectDetailContainerProps) => {
           >
             {isCollapse && (
               <Button
-                css={{
-                  ml: '1rem',
-                  top: `calc(${HEIGHT_NAVBAR} + 1rem)`,
-                  position: 'sticky',
-                  zIndex: 20
+                variant="flat"
+                style={{
+                  top: `calc(${HEIGHT_NAVBAR} + 1rem)`
                 }}
-                auto
-                flat
+                className={`ml-4 sticky z-20`}
                 onClick={() => setIsCollapse(!isCollapse)}
               >
                 <BsChevronDoubleRight />

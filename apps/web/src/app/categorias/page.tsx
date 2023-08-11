@@ -9,7 +9,7 @@ const CategoryPage = async () => {
   const categories = await categoryService.getAllWithFiles()
 
   return (
-    <Container title={<Text h2>Categorías</Text>}>
+    <Container title={<Text as="h2">Categorías</Text>}>
       <Box
         css={{
           display: 'grid',

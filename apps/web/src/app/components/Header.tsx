@@ -19,10 +19,10 @@ const Header = () => {
         />
       </Fade>
 
-      <Text h1 size="5rem">
+      <Text as="h1" className="text-7xl">
         <Fade bottom>Blito</Fade>
       </Text>
-      <Text h2 css={{ textAlign: 'center' }}>
+      <Text as="h2" className="text-center">
         <Fade bottom>Deja entrar el color a tu vida</Fade>
       </Text>
     </HeaderStyle>

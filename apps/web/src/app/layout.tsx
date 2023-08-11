@@ -31,7 +31,7 @@ interface RootLayoutProps {
 
 function RootLayout({ children }: RootLayoutProps): JSX.Element {
   return (
-    <html>
+    <html lang="es" className="dark text-foreground bg-background">
       <head>
         <title>Blito</title>
         <meta

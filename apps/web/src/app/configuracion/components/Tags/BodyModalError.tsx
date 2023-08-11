@@ -74,7 +74,7 @@ const BodyModalError = ({ contents = [] }: BodyModalErrorProps) => {
             .filter(({ contents }) => contents.length > 0)
             .map(({ tag, contents }) => (
               <Fragment key={tag.id}>
-                <Text key={tag.id} b>
+                <Text key={tag.id} as="b">
                   {tag.name}
                 </Text>
                 <Table

@@ -1,22 +1,19 @@
 'use client'
 
-import { Grid, Progress } from '@nextui-org/react'
+import { Box } from '@/app/shared/ui'
+import { Progress } from '@nextui-org/react'
 
 const LoadingProgress = () => {
   return (
-    <Grid.Container xs={12}>
-      <Grid>
-        <Progress
-          indeterminated
-          size="xs"
-          striped
-          shadow
-          value={50}
-          color="primary"
-          status="primary"
-        />
-      </Grid>
-    </Grid.Container>
+    <Box>
+      <Progress
+        isIndeterminate
+        size="sm"
+        isStriped
+        value={50}
+        color="primary"
+      />
+    </Box>
   )
 }
 

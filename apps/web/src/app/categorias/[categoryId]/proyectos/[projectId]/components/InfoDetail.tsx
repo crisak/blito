@@ -11,7 +11,7 @@ type InfoDetailProps = {
 const InfoDetail = ({ project }: InfoDetailProps) => {
   const displayTags = () => {
     if (!project.Tags?.items?.length) {
-      return <Text css={{ opacity: '.6' }}>Sin tags</Text>
+      return <Text className="opacity-60">Sin tags</Text>
     }
 
     const tags = project.Tags.items
@@ -30,7 +30,7 @@ const InfoDetail = ({ project }: InfoDetailProps) => {
   const displayCollaborators = () => {
     return (
       <>
-        <Text h3>Colaboradores</Text>
+        <Text as="h3">Colaboradores</Text>
 
         <Box css={{ display: 'flex', gap: '0.8rem', flexDirection: 'column' }}>
           {project.Collaborators?.items.map((pro) => (
@@ -39,9 +39,9 @@ const InfoDetail = ({ project }: InfoDetailProps) => {
               css={{
                 textDecoration: 'underline',
                 cursor: 'pointer',
-                transition: 'all .3s',
-                '&:hover': { opacity: '.7' }
+                transition: 'all .3s'
               }}
+              className="hover:opacity-70"
             >
               {pro?.collaborator?.username}
             </Text>
@@ -58,7 +58,7 @@ const InfoDetail = ({ project }: InfoDetailProps) => {
       !project.location?.position?.latitude &&
       !project.location?.position?.longitude
     ) {
-      return <Text css={{ opacity: '.6' }}>Sin ubicación</Text>
+      return <Text className="opacity-60">Sin ubicación</Text>
     }
 
     const position = {
@@ -71,34 +71,34 @@ const InfoDetail = ({ project }: InfoDetailProps) => {
 
   return (
     <>
-      <Text h2>{project.project?.name}</Text>
+      <Text as="h2">{project.project?.name}</Text>
       <Spacer y={1} />
 
       <Text>{project.project?.description}</Text>
       <Spacer y={2} />
 
-      <Text h3>Tags</Text>
+      <Text as="h3">Tags</Text>
       {displayTags()}
       <Spacer y={2} />
 
       {displayCollaborators()}
 
-      <Text h3>Detalles</Text>
+      <Text as="h3">Detalles</Text>
       <Box>
-        <Text b>Fecha: </Text>
-        <Text span weight="light">
+        <Text as="b">Fecha: </Text>
+        <Text as="span" className="font-light">
           {formatDate(project.date)}
         </Text>
       </Box>
       <Box>
-        <Text b>Categoría: </Text>
-        <Text span weight="light">
+        <Text as="b">Categoría: </Text>
+        <Text as="span" className="font-light">
           {project.Category?.name || ''}
         </Text>
       </Box>
       <Spacer y={2} />
 
-      <Text h3>Ubicación</Text>
+      <Text as="h3">Ubicación</Text>
       {displayPosition()}
       <Spacer y={2} />
     </>

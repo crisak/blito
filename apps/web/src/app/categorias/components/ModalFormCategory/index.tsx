@@ -167,7 +167,7 @@ const ModalFormCategory = () => {
     >
       <form onSubmit={handlerSubmit}>
         <Modal.Header>
-          <Text id="modal-create-category" size={18}>
+          <Text id="modal-create-category" className="text-lg">
             Agregar categoría
           </Text>
         </Modal.Header>

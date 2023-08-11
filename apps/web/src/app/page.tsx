@@ -1,9 +1,8 @@
 'use client'
-import '@/styles/globals.css'
 
 import { ParallaxBanner, ParallaxBannerLayer } from 'react-scroll-parallax'
 import Image from 'next/image'
-import { Button, Card, Spacer, styled } from '@nextui-org/react'
+import { Button, Card, Spacer } from '@nextui-org/react'
 import Header from './components/Header'
 import FloatingSocials from './components/FloatingSocials'
 import { HEIGHT_NAVBAR } from '@/styles/variables'
@@ -12,13 +11,6 @@ import SplahPage from '@/assets/images/splah-push.png'
 import { Section, SectionContent } from './homeComponents'
 import Link from 'next/link'
 import { Box, Text } from '@/app/shared/components'
-
-const ImageSplash = styled(Image, {
-  opacity: '.6',
-  position: 'absolute',
-  right: '-42rem',
-  top: '0'
-})
 
 const content = [
   {
@@ -87,11 +79,16 @@ const HomePage = () => {
       >
         <ParallaxBannerLayer image={BlitoFrontPage.src} speed={-20} />
         <ParallaxBannerLayer speed={10}>
-          <ImageSplash
+          <Image
             src={SplahPage.src as string}
             alt="Photo of background"
             width={900}
             height={900}
+            className="absolute opacity-60"
+            style={{
+              right: '-42rem',
+              top: '0'
+            }}
           />
         </ParallaxBannerLayer>
 
@@ -106,10 +103,10 @@ const HomePage = () => {
         <Section key={link} invert={right}>
           <Image width={400} height={400} alt={image.alt} src={image.src} />
           <SectionContent>
-            <Text h2>{title}</Text>
+            <Text as="h2">{title}</Text>
             <Text> {description} </Text>
             <Spacer y={2} />
-            <Button bordered color="primary">
+            <Button variant="bordered" color="primary">
               <Link
                 href={{
                   pathname: link
@@ -130,13 +127,7 @@ const HomePage = () => {
           justifyContent: 'center'
         }}
       >
-        <Card
-          css={{
-            maxWidth: '400px',
-            width: '100%',
-            padding: '2rem'
-          }}
-        >
+        <Card className="max-w-400px w-full p-8">
           <Text>
             ¡No esperes más para transformar tu vida y tu entorno con mi arte
             urbano! Contáctame hoy mismo para conocer más acerca de mis

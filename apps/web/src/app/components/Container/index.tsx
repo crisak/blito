@@ -4,27 +4,18 @@ import Breadcrumbs, {
   type BreadcrumbsProps
 } from '@/app/components/Breadcrumbs'
 
-import {
-  CSS,
-  Container as ContainerUI,
-  Spacer,
-  styled
-} from '@nextui-org/react'
+import { Spacer } from '@nextui-org/react'
 import Actions, { ActionsProps } from '@/app/components/Actions'
 import { AppStore, AuthStore } from '@/redux/store'
 import { useSelector } from 'react-redux'
+import { Container as ContainerUI } from '@/app/shared/ui'
+import classNames from 'classnames'
 
 type ContainerLayoutProps = {
   children: React.ReactNode | React.ReactNode[]
   title?: React.ReactNode
   breadcrumbs?: BreadcrumbsProps
 } & ActionsProps
-
-const Header = styled('header', {
-  '& h1, & h2, & h3, & h4': {
-    marginBottom: 0
-  }
-})
 
 const Container = ({
   children,
@@ -47,13 +38,9 @@ const Container = ({
       return null
     }
 
-    let cssHeader: CSS = {}
+    let classNamesHeader: string = ''
     if (title && auth?.isAuth) {
-      cssHeader = {
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center'
-      }
+      classNamesHeader = 'flex justify-between items-center'
     }
 
     // const show = auth.isAuth && false === showActions.
@@ -63,11 +50,11 @@ const Container = ({
      */
     return (
       <>
-        <Header css={cssHeader}>
+        <header className={classNames(classNamesHeader)}>
           {title || null}
 
           {auth.isAuth && <Actions showButtonSave={showButtonSave} />}
-        </Header>
+        </header>
         <Spacer y={2} />
       </>
     )

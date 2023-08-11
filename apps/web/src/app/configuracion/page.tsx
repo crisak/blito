@@ -44,7 +44,7 @@ const SettingsPage = () => {
           <Grid xs={12} md={7}>
             <Card>
               <Card.Body css={{ padding: '$10' }}>
-                <Text h3>Colaboradores</Text>
+                <Text as="h3">Colaboradores</Text>
               </Card.Body>
             </Card>
           </Grid>

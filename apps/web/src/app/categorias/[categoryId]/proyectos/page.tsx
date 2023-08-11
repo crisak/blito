@@ -1,5 +1,5 @@
 import { Container, BreadcrumbsProps } from '@/app/components'
-import { Box, Text } from '@/app/shared/components'
+import { Box, Text } from '@/app/shared/ui'
 import { CategoryService, ProjectService } from '@/app/shared/services'
 import { CardProject } from './components'
 
@@ -27,7 +27,7 @@ const CategoryContentsPage = async ({ params }: ProjectsPageProps) => {
   return (
     <Container
       breadcrumbs={breadcrumbs}
-      title={<Text h2>{category.name}</Text>}
+      title={<Text as="h2">{category.name}</Text>}
     >
       <Box
         css={{
