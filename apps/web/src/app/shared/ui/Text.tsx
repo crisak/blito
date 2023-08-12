@@ -24,8 +24,8 @@ const Text = ({ as, css, className, ...props }: TextProps) => {
     <Element
       style={propsConcat}
       className={classNames({
-        // 'text-lg': as === 'h2',
-        // 'text-xl ': as === 'h1'
+        'text-3xl': as === 'h2',
+        'text-6xl': as === 'h1'
       })}
       {...props}
     />

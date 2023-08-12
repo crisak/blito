@@ -26,6 +26,7 @@ const TagScreen = ({ containerListCss, containerCss }: ScreenTagsProps) => {
     >
       {({ page, component, props, index }) => (
         <ScreenPage.Container
+          key={page}
           page={page}
           index={index}
           propsPage={props as object}
