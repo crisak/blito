@@ -1,9 +1,11 @@
+import classNames from 'classnames'
+
 type TextProps<T = React.ElementType> = {
   as?: T
   css?: React.CSSProperties
 } & React.ComponentPropsWithoutRef<'p'>
 
-const Text = ({ as, css, ...props }: TextProps) => {
+const Text = ({ as, css, className, ...props }: TextProps) => {
   const propsConcat: React.CSSProperties = css ?? {}
 
   const Element = as || 'p'
@@ -18,7 +20,16 @@ const Text = ({ as, css, ...props }: TextProps) => {
     propsConcat.letterSpacing = '.2rem'
   }
 
-  return <Element style={propsConcat} {...props} />
+  return (
+    <Element
+      style={propsConcat}
+      className={classNames({
+        // 'text-lg': as === 'h2',
+        // 'text-xl ': as === 'h1'
+      })}
+      {...props}
+    />
+  )
 }
 
 export default Text

@@ -1,5 +1,5 @@
-import 'react-image-lightbox/style.css'
 import '@/styles/globals.css'
+import 'react-image-lightbox/style.css'
 import 'react-toastify/dist/ReactToastify.min.css'
 
 import IcoBlitoWhite from '@/assets/images/icon-blito-white.ico'

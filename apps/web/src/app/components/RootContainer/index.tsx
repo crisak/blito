@@ -3,7 +3,7 @@
 import { Provider as ReduxProvider } from 'react-redux'
 import store from '@/redux/store'
 import { NextUIProvider } from '@nextui-org/react'
-
+import { ThemeProvider as NextThemesProvider } from 'next-themes'
 import { ParallaxProvider } from 'react-scroll-parallax'
 import { useEffect, useState } from 'react'
 import Splash from '../Splash'
@@ -74,38 +74,40 @@ function RootContainer({ children }: RootContainerProps): JSX.Element {
 
   return (
     <>
-      <Box
-        className="body-container"
-        css={{
-          backgroundImage: `url(${BgBodyFigures.src})`,
-          backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed',
-          backgroundSize: 'cover',
-          height: '100vh',
-          overflow: 'auto',
-          width: '100%'
-        }}
-      >
-        <ToastProvider>
-          <ParallaxProvider>
-            <NextUIProvider>
-              <ReduxProvider store={store}>
-                <AlertProvider>
-                  {splash ? (
-                    <Splash />
-                  ) : (
-                    <>
-                      <NavbarComponent />
-                      <main>{children}</main>
-                      <Footer />
-                    </>
-                  )}
-                </AlertProvider>
-              </ReduxProvider>
-            </NextUIProvider>
-          </ParallaxProvider>
-        </ToastProvider>
-      </Box>
+      <NextUIProvider>
+        <NextThemesProvider>
+          <Box
+            className="body-container"
+            css={{
+              backgroundImage: `url(${BgBodyFigures.src})`,
+              backgroundRepeat: 'no-repeat',
+              backgroundAttachment: 'fixed',
+              backgroundSize: 'cover',
+              height: '100vh',
+              overflow: 'auto',
+              width: '100%'
+            }}
+          >
+            <ToastProvider>
+              <ParallaxProvider>
+                <ReduxProvider store={store}>
+                  <AlertProvider>
+                    {splash ? (
+                      <Splash />
+                    ) : (
+                      <>
+                        <NavbarComponent />
+                        <main>{children}</main>
+                        <Footer />
+                      </>
+                    )}
+                  </AlertProvider>
+                </ReduxProvider>
+              </ParallaxProvider>
+            </ToastProvider>
+          </Box>
+        </NextThemesProvider>
+      </NextUIProvider>
     </>
   )
 }
