@@ -1,10 +1,15 @@
-import { Navbar } from '@nextui-org/react'
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarMenuToggle
+} from '@nextui-org/react'
 import Link from 'next/link'
 import BlitoFrontPage from '@/assets/images/home-blito_bg_white.png'
 import Image from 'next/image'
 import { useSelector } from 'react-redux'
 import { AppStore, AuthStore } from '@/redux/store'
-import { Text } from '@/app/shared/components'
+import { Text, Grid } from '@/app/shared/ui'
 
 const collapseItems = [
   {
@@ -22,7 +27,6 @@ const collapseItems = [
 ]
 
 const NavbarComponent = () => {
-  const { isDark } = useTheme()
   const auth = useSelector<AppStore, AuthStore>((state) => state.auth)
 
   const navbarCollapseItems = auth.isAuth
@@ -41,19 +45,14 @@ const NavbarComponent = () => {
 
   return (
     <Navbar
-      css={{
-        background: 'rgba(0, 0, 0, 0.6)',
-        backdropFilter: 'saturate(180%) blur(10px)',
-        '& .nextui-navbar-container': {
-          background: 'none',
-          backdropFilter: 'none',
-          borderBottom: '0px'
-        }
+      className="bg-opacity-60 backdrop-blur-md bg-[rgba(0, 0, 0, 0.6)]"
+      classNames={{
+        wrapper: 'bg-none backdrop-blur-none border-b-0'
       }}
-      isBordered={isDark}
-      variant="sticky"
+      isBordered
+      position="sticky"
     >
-      <Navbar.Brand>
+      <NavbarBrand>
         <Link
           href={{
             pathname: '/'
@@ -75,10 +74,10 @@ const NavbarComponent = () => {
           </Text>
         </Link>
         <Grid sm={0}>
-          <Navbar.Toggle css={{ mr: '$8' }} aria-label="toggle navigation" />
+          <NavbarMenuToggle className="mr-8" aria-label="toggle navigation" />
         </Grid>
-      </Navbar.Brand>
-      <Navbar.Content enableCursorHighlight hideIn="xs" variant="underline">
+      </NavbarBrand>
+      <NavbarContent className="xs:invisible">
         <Link href="/">Home</Link>
         <Link
           href={{
@@ -90,8 +89,8 @@ const NavbarComponent = () => {
         </Link>
         <Link href="/galeria">Galería</Link>
         <Link href="/contacto">Contacto</Link>
-      </Navbar.Content>
-      <Navbar.Content hideIn="xs">
+      </NavbarContent>
+      <NavbarContent className="xs:invisible">
         {auth.isAuth && (
           <Link color="inherit" href="/configuracion">
             Configuración
@@ -103,16 +102,16 @@ const NavbarComponent = () => {
             Cerrar sesión
           </Link>
         )}
-      </Navbar.Content>
+      </NavbarContent>
 
-      <Navbar.Collapse>
+      {/* <NavbarCollapse>
         {}
         {navbarCollapseItems.map(({ label, route }) => (
           <Navbar.CollapseItem key={label}>
             <Link href={route}>{label}</Link>
           </Navbar.CollapseItem>
         ))}
-      </Navbar.Collapse>
+      </NavbarCollapse> */}
     </Navbar>
   )
 }

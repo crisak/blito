@@ -1,5 +1,7 @@
+'use client'
+
 import { BsYoutube, BsFacebook, BsInstagram } from 'react-icons/bs'
-import { ContainerSocialsHome, LinkSocial } from './Home.styles'
+import { LinkSocial } from './Home.styles'
 import { SplashSocial } from './SplashSocial'
 import SplashImage1 from '@/assets/images/splash1.png'
 import SplashImage2 from '@/assets/images/splash2.png'
@@ -13,8 +15,9 @@ const FloatingSocials = () => {
   const opacity = (1 * (scroll.hideHomePage + 1000)) / scroll.heightWindow
 
   return (
-    <ContainerSocialsHome
-      css={{
+    <div
+      className="fixed bottom-16 right-4"
+      style={{
         opacity: opacity <= 0 ? '0' : opacity,
         display: opacity <= 0 ? 'none' : 'block'
       }}
@@ -59,7 +62,7 @@ const FloatingSocials = () => {
           bgImg={SplashImage3.src}
         />
       </Fade>
-    </ContainerSocialsHome>
+    </div>
   )
 }
 

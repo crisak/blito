@@ -1,14 +1,13 @@
 'use client'
 
-import { Button, Input, Loading, Spacer } from '@nextui-org/react'
+import { Button, Input, Spacer } from '@nextui-org/react'
 import { useState, useEffect } from 'react'
-import { Box } from '@/app/shared/components'
 import useFetchTags from './useFetchTags'
 import { ATag } from '@/models'
 import { toast } from 'react-toastify'
 import { MetadataScreens } from './Tag.constants'
 
-import { ScreenPage, useScreenPage } from '@/app/shared/ui'
+import { ScreenPage, useScreenPage, Box } from '@/app/shared/ui'
 
 const initialFormData: ATag = {
   id: '',
@@ -130,9 +129,8 @@ const TagForm = ({ tag: tagEdit }: TagFormProps) => {
             >
               <Button
                 type="button"
-                light
+                variant="light"
                 color="primary"
-                auto
                 onPress={handleCancel}
                 disabled={loading.create || loading.update}
               >
@@ -142,22 +140,20 @@ const TagForm = ({ tag: tagEdit }: TagFormProps) => {
               {!formData.id && (
                 <Button
                   type="submit"
-                  auto
                   disabled={!isValidForm || loading.create}
+                  isLoading={loading.create}
                 >
-                  {loading.create && <Loading color="currentColor" size="sm" />}
-                  {!loading.create && 'Guardar'}
+                  Guardar
                 </Button>
               )}
 
               {formData.id && (
                 <Button
                   type="submit"
-                  auto
                   disabled={!isValidForm || loading.update}
+                  isLoading={loading.update}
                 >
-                  {loading.update && <Loading color="currentColor" size="sm" />}
-                  {!loading.update && 'Actualizar'}
+                  Actualizar
                 </Button>
               )}
             </Box>

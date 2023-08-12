@@ -1,13 +1,21 @@
 'use client'
 
-import { Box, Text } from '@/app/shared/components'
-import { Button, Card, Container, Input, Spacer } from '@nextui-org/react'
+import { Box, Container, Text } from '@/app/shared/ui'
+import {
+  Button,
+  Card,
+  CardBody,
+  CardHeader,
+  Input,
+  Spacer
+} from '@nextui-org/react'
 import { useState } from 'react'
 import { toast } from 'react-toastify'
 import { useRouter } from 'next/navigation'
 import AuthService from '@/app/shared/services/Auth.service'
 import { useDispatch } from 'react-redux'
 import { authSliceActions } from '@/redux/slices'
+import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 
 const LoginPage = () => {
   const [formData, setFormData] = useState({
@@ -16,6 +24,9 @@ const LoginPage = () => {
   })
   const router = useRouter()
   const dispatch = useDispatch()
+  const [isVisible, setIsVisible] = useState(false)
+
+  const toggleVisibility = () => setIsVisible(!isVisible)
 
   const handleLogin = async () => {
     try {
@@ -53,26 +64,14 @@ const LoginPage = () => {
   return (
     <>
       <Container>
-        <Box
-          css={{
-            height: '50vh',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center'
-          }}
-        >
-          <Card
-            css={{
-              p: '$6',
-              maxWidth: '400px'
-            }}
-          >
-            <Card.Header>
+        <Box className="h-1/2 flex items-center justify-center">
+          <Card className="max-w-sm p-6">
+            <CardHeader>
               <Text as="h2" className="font-bold">
                 Login
               </Text>
-            </Card.Header>
-            <Card.Body>
+            </CardHeader>
+            <CardBody>
               <Spacer y={1} />
               <Input
                 type="email"
@@ -86,8 +85,8 @@ const LoginPage = () => {
                 variant="bordered"
               />
               <Spacer y={2} />
-              <Input.Password
-                type="password"
+              <Input
+                type={isVisible ? 'text' : 'password'}
                 placeholder="Password"
                 name="password"
                 label="Password"
@@ -96,11 +95,24 @@ const LoginPage = () => {
                 }
                 value={formData.password}
                 variant="bordered"
+                endContent={
+                  <button
+                    className="focus:outline-none"
+                    type="button"
+                    onClick={toggleVisibility}
+                  >
+                    {isVisible ? (
+                      <AiOutlineEye className="text-2xl text-default-400 pointer-events-none" />
+                    ) : (
+                      <AiOutlineEyeInvisible className="text-2xl text-default-400 pointer-events-none" />
+                    )}
+                  </button>
+                }
               />
 
               <Spacer y={2} />
               <Button onClick={handleLogin}>Login</Button>
-            </Card.Body>
+            </CardBody>
           </Card>
         </Box>
       </Container>

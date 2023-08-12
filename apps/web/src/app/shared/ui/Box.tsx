@@ -1,6 +1,4 @@
-import classNames from 'classnames'
-
-type BoxProps = {
+export type BoxProps = {
   css?: React.CSSProperties
 } & React.ComponentPropsWithoutRef<'div'>
 

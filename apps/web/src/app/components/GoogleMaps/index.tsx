@@ -5,7 +5,7 @@ import {
   GoogleMap,
   useJsApiLoader
 } from '@react-google-maps/api'
-import { Text } from '@/app/shared/components'
+import { Text } from '@/app/shared/ui'
 import darkModeStyles from './dark-mode.styles'
 
 const containerStyle = {

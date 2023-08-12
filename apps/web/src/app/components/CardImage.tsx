@@ -1,7 +1,4 @@
-'use client'
-
-import { Text } from '@/app/shared/components'
-import { type BoxProps } from '@/app/shared/ui/Box'
+import { Text, type BoxProps } from '@/app/shared/ui'
 
 import { BORDER_RADIUS } from '@/styles/variables'
 import Image from 'next/image'

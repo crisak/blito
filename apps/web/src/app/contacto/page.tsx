@@ -1,7 +1,5 @@
-'use client'
-
 import BgFormContact from '@/assets/images/bg-form-contact.jpg'
-import { Box } from '@/app/shared/components'
+import { Box } from '@/app/shared/ui'
 import { HEIGHT_NAVBAR } from '@/styles/variables'
 
 import Image from 'next/image'
@@ -28,11 +26,7 @@ const ContactPage = () => {
           }}
         />
       </Box>
-      <Box
-        css={{
-          bgBlur: '#0000008e'
-        }}
-      >
+      <Box className="backdrop-blur-md bg-[#0000008e] bg-opacity-30">
         <Form />
       </Box>
     </Box>

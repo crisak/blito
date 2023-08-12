@@ -1,13 +1,14 @@
-import { Box, Text } from '@/app/shared/components'
-import { Button, Grid, Input, Textarea } from '@nextui-org/react'
+import { Box, Text, Grid } from '@/app/shared/ui'
+import { Button, Input, Textarea } from '@nextui-org/react'
 import Fade from 'react-reveal/Fade'
 
 const Form = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
   }
+
   return (
-    <Box css={{ p: '$15' }}>
+    <Box className="p-11">
       <form onSubmit={handleSubmit}>
         <Fade right>
           <Grid.Container gap={4}>
@@ -17,19 +18,19 @@ const Form = () => {
               </Fade>
             </Grid>
             <Grid xs={12}>
-              <Input underlined label="Nombre" fullWidth />
+              <Input variant="underlined" label="Nombre" fullWidth />
             </Grid>
             <Grid xs={12}>
               <Input
                 type="email"
-                underlined
+                variant="underlined"
                 label="Correo"
                 fullWidth
               />
             </Grid>
             <Grid xs={12}>
               <Textarea
-                underlined
+                variant="underlined"
                 label="Mensaje"
                 rows={4}
                 fullWidth
@@ -37,13 +38,7 @@ const Form = () => {
             </Grid>
             <Grid>
               <Fade bottom>
-                <Button
-                  css={{
-                    width: '100%'
-                  }}
-                >
-                  Enviar
-                </Button>
+                <Button className="w-full">Enviar</Button>
               </Fade>
             </Grid>
           </Grid.Container>

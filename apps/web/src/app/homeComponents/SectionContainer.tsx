@@ -1,6 +1,4 @@
-'use client'
-
-import { Box } from '@/app/shared/components'
+import { Box } from '@/app/shared/ui'
 
 export type SectionProps = {
   children: React.ReactElement | React.ReactElement[]
@@ -14,12 +12,9 @@ export const Section = ({ children, invert }: SectionProps) => {
         display: 'flex',
         minHeight: '100vh',
         alignItems: 'center',
-        flexDirection: invert ? 'row-reverse' : '',
+        flexDirection: invert ? 'row-reverse' : 'initial',
         justifyContent: 'center',
-        gap: '5rem',
-        img: {
-          borderRadius: '5px'
-        }
+        gap: '5rem'
       }}
     >
       {children}

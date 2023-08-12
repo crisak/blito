@@ -10,7 +10,7 @@ import BlitoFrontPage from '@/assets/images/bg-haeder_home.png'
 import SplahPage from '@/assets/images/splah-push.png'
 import { Section, SectionContent } from './homeComponents'
 import Link from 'next/link'
-import { Box, Text } from '@/app/shared/components'
+import { Box, Text } from '@/app/shared/ui'
 
 const content = [
   {

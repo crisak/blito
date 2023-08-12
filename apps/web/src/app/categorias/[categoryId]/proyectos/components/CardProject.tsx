@@ -6,11 +6,10 @@ import {
   CardFooter,
   Image
 } from '@nextui-org/react'
-import { Text } from '@/app/shared/components'
 import { AContent } from '@/models'
 import { formatDate } from '@/utils'
 import Link from 'next/link'
-import { Col, Row } from '@/app/shared/ui'
+import { Text, Col, Row } from '@/app/shared/ui'
 
 type CardProjectProps = AContent & { categoryId: string }
 

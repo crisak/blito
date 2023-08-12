@@ -1,6 +1,6 @@
 'use client'
 
-import { Text } from '@/app/shared/components'
+import { Text } from '@/app/shared/ui'
 import {
   Button,
   useDisclosure,

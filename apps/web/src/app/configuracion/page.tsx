@@ -1,7 +1,5 @@
-'use client'
-
-import { Text } from '@/app/shared/components'
-import { Card, Container, Grid, Spacer } from '@nextui-org/react'
+import { Text, Container, Grid } from '@/app/shared/ui'
+import { Card, CardBody, Spacer } from '@nextui-org/react'
 import { TagScreen, HEIGHT_FILTER_LIST } from './components/Tags'
 
 const MAX_HEIGHT_CARD = 580
@@ -11,13 +9,7 @@ const SettingsPage = () => {
     <>
       <Container>
         <Spacer y={1.5} />
-        <Text
-          h2
-          weight="bold"
-          css={{
-            padding: '$8'
-          }}
-        >
+        <Text as="h2" className="font-bold p-4">
           General
         </Text>
         <Spacer y={1.5} />
@@ -25,27 +17,19 @@ const SettingsPage = () => {
       <Container>
         <Grid.Container gap={2}>
           <Grid xs={12} md={5}>
-            <Card
-              css={{
-                height: MAX_HEIGHT_CARD,
-                overflow: 'hidden'
-              }}
-            >
-              <Card.Body css={{ padding: '$10' }}>
+            <Card className={`h-[${MAX_HEIGHT_CARD}px] overflow-hidden`}>
+              <CardBody className="p-5">
                 <TagScreen
-                  containerListCss={{
-                    height: `calc(100% - ${HEIGHT_FILTER_LIST}px)`,
-                    overflow: 'auto'
-                  }}
+                  containerListCss={`h-[calc(100% - ${HEIGHT_FILTER_LIST})] overflow-auto`}
                 />
-              </Card.Body>
+              </CardBody>
             </Card>
           </Grid>
           <Grid xs={12} md={7}>
             <Card>
-              <Card.Body css={{ padding: '$10' }}>
+              <CardBody className="p-6">
                 <Text as="h3">Colaboradores</Text>
-              </Card.Body>
+              </CardBody>
             </Card>
           </Grid>
         </Grid.Container>

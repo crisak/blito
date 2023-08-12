@@ -1,18 +1,13 @@
 'use client'
 
 import { CategoriesSummaryContents } from '@/models/categories-summary.models'
-import { Button, Container, styled } from '@nextui-org/react'
-import { Text } from '@/app/shared/components'
-import { CategoryContent, SectionCategory } from './Home.styles'
+import { Button } from '@nextui-org/react'
+import { Text, Container } from '@/app/shared/ui'
 import { ParallaxBanner, ParallaxBannerLayer } from 'react-scroll-parallax'
 import SplashPage from '@/assets/images/splah-push.png'
 import Image from 'next/image'
 import { randomIntFromInterval } from '@/utils'
 import Fade from 'react-reveal/Fade'
-
-const ImageSplash = styled(Image, {
-  position: 'absolute'
-})
 
 type CategoriesProps = { categories: CategoriesSummaryContents }
 
@@ -36,31 +31,35 @@ const Categories = ({ categories }: CategoriesProps) => {
               scale={[0.9, 1]}
               opacity={[0.5, 0.8]}
             >
-              <ImageSplash
+              <Image
                 src={SplashPage.src as string}
                 alt="Photo of background"
                 width={900}
                 height={900}
-                css={{
-                  left: odd ? '-47rem' : 'auto',
-                  right: odd ? 'auto' : '-47rem',
-                  top: '15rem',
-                  transform: `rotate(${rotate}deg)`
-                }}
+                className={`absolute ${
+                  odd ? 'left-[-47rem]' : 'right-[-47rem]'
+                } top-[15rem] transform rotate-${rotate}`}
               />
             </ParallaxBannerLayer>
 
             <ParallaxBannerLayer speed={10}>
               <Container>
-                <SectionCategory className={odd ? `reverse-section` : ''}>
-                  <CategoryContent>
+                <section
+                  className={
+                    'flex flex-wrap h-auto min-h-screen w-full items-center justify-center gap-6' +
+                    odd
+                      ? `reverse-section`
+                      : ''
+                  }
+                >
+                  <div className="w-full max-w-[300px]">
                     <Fade bottom cascade>
                       <Text as="h2">{category.name}</Text>
                       <Text className="mb-10">{category.description}</Text>
                       <Button>Ver más</Button>
                     </Fade>
-                  </CategoryContent>
-                </SectionCategory>
+                  </div>
+                </section>
               </Container>
             </ParallaxBannerLayer>
           </ParallaxBanner>

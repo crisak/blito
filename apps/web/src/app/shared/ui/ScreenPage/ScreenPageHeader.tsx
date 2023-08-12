@@ -1,8 +1,6 @@
-'use client'
-
-import { Flex, Text } from '@/app/shared/components'
+import { Box, Text, Grid } from '@/app/shared/ui'
 import { useScreenPage } from './ScreenPageProvider'
-import { Button, Grid } from '@nextui-org/react'
+import { Button } from '@nextui-org/react'
 import { BsChevronLeft } from 'react-icons/bs'
 
 type ScreenPageHeaderProps = {
@@ -31,21 +29,13 @@ const ScreenPageHeader = ({
           textOverflow: 'ellipsis'
         }}
       >
-        <Flex align="center">
+        <Box className="flex justify-center">
           {enableBackButton && screenNavigation.history.length > 1 && (
             <Button
-              light
+              variant="light"
               color="default"
-              css={{
-                minWidth: 'auto',
-                borderRadius: '50%',
-                width: 30,
-                height: 30,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'flex-start'
-              }}
-              icon={
+              className="min-w-min rounded-full w-[30px] h-[30px] flex items-center justify-start"
+              startContent={
                 <BsChevronLeft
                   fill="currentColor"
                   size={25}
@@ -59,14 +49,14 @@ const ScreenPageHeader = ({
           )}
 
           <Text
-            h3
+            as="h3"
             css={{
               margin: 0
             }}
           >
             {children}
           </Text>
-        </Flex>
+        </Box>
       </Grid>
       {content && (
         <Grid xs={12} sm={8} justify="flex-end" alignItems="center">

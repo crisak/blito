@@ -1,4 +1,4 @@
-import { Box, Text } from '@/app/shared/components'
+import { Box, Text } from '@/app/shared/ui'
 import Menu from './components/Menu'
 
 type SettingsLayoutProps = { children: React.ReactNode }
@@ -16,24 +16,12 @@ const SettingsLayout = ({ children }: SettingsLayoutProps) => {
         height: `calc(100vh - ${HEIGHT_NAVBAR})`
       }}
     >
-      <Box
-        as="aside"
-        css={{
-          backgroundColor: '$backgroundAlpha',
-          overflow: 'auto'
-        }}
-      >
-        <Text
-          h4
-          weight="bold"
-          css={{
-            padding: '$8'
-          }}
-        >
+      <aside className="bg-backgroundAlpha overflow-auto">
+        <Text as="h4" className="font-bold p-4">
           Configuración
         </Text>
         <Menu />
-      </Box>
+      </aside>
       <Box
         css={{
           overflow: 'auto'

@@ -1,13 +1,11 @@
-'use client'
-
 import { Children, isValidElement, cloneElement } from 'react'
-import { Box } from '@/app/shared/components'
+import { Box } from '@/app/shared/ui'
 import { useScreenPage, type Child, type PageName } from './ScreenPageProvider'
-import { CSS, useTheme } from '@nextui-org/react'
+import { semanticColors } from '@nextui-org/react'
 
 type PageNavigationProps = Child & {
   page: PageName
-  css?: CSS
+  css?: React.CSSProperties
   index?: number
   propsPage?: object
 }
@@ -20,7 +18,6 @@ const PageNavigation = ({
   propsPage
 }: PageNavigationProps) => {
   const data = useScreenPage()
-  const { theme } = useTheme()
 
   return (
     <Box
@@ -30,7 +27,7 @@ const PageNavigation = ({
           : ''
       }
       css={{
-        background: data.background || theme?.colors.background.value,
+        background: data.background || semanticColors.dark.background['600'],
         position: 'absolute',
         top: 0,
         width: '100%',
