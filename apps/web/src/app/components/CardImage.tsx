@@ -1,3 +1,5 @@
+'use client'
+
 import { Text, type BoxProps } from '@/app/shared/ui'
 
 import { BORDER_RADIUS } from '@/styles/variables'

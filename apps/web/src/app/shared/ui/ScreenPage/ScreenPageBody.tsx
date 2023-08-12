@@ -1,4 +1,4 @@
-import { Grid } from '@nextui-org/react'
+import { Grid } from '@/app/shared/ui'
 
 type ScreenPageBodyProps = {
   children: React.ReactNode | React.ReactNode[]

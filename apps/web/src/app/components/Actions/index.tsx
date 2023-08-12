@@ -2,7 +2,7 @@
 
 import { headerUIActions } from '@/redux/slices'
 
-import { Button } from '@nextui-org/react'
+import { Button } from '@nextui-org/button'
 
 import { IoIosAddCircleOutline } from 'react-icons/io'
 import { useDispatch } from 'react-redux'

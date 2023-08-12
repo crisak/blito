@@ -1,4 +1,6 @@
-import { Children, isValidElement, cloneElement } from 'react'
+'use client'
+
+import { isValidElement, cloneElement, Children } from 'react'
 import { Box } from '@/app/shared/ui'
 import { useScreenPage, type Child, type PageName } from './ScreenPageProvider'
 import { semanticColors } from '@nextui-org/react'

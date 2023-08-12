@@ -1,6 +1,6 @@
 import { Box, Text, Grid } from '@/app/shared/ui'
 import { useScreenPage } from './ScreenPageProvider'
-import { Button } from '@nextui-org/react'
+import { Button } from '@nextui-org/button'
 import { BsChevronLeft } from 'react-icons/bs'
 
 type ScreenPageHeaderProps = {

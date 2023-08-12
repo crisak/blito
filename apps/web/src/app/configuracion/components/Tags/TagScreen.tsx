@@ -1,3 +1,5 @@
+'use client'
+
 import TagList from './TagList'
 import TagForm from './TagForm'
 import { ScreenPageProvider, ScreenPage } from '@/app/shared/ui'

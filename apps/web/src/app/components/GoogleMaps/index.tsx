@@ -1,3 +1,5 @@
+'use client'
+
 import { BORDER_RADIUS } from '@/styles/variables'
 import { Spinner } from '@nextui-org/react'
 import {

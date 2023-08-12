@@ -1,5 +1,6 @@
 import { Text, Container, Grid } from '@/app/shared/ui'
-import { Card, CardBody, Spacer } from '@nextui-org/react'
+import { Card, CardBody } from '@nextui-org/card'
+import { Spacer } from '@nextui-org/spacer'
 import { TagScreen, HEIGHT_FILTER_LIST } from './components/Tags'
 
 const MAX_HEIGHT_CARD = 580

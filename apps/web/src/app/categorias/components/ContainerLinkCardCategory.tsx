@@ -149,6 +149,8 @@ const ContainerLinkCardCategory = (
           className="w-full h-full object-cover"
           src={category.files?.[0]?.data}
           alt={category.files?.[0]?.caption || ''}
+          width={200}
+          height={200}
         />
       </CardBody>
       <CardFooter className="absolute bottom-0 left-0 right-0 blur bg-[#ffffff66] border-t-[rgba(255, 255, 255, 0.2)] border-[1px]">

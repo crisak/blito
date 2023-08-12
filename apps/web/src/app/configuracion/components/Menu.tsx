@@ -4,7 +4,7 @@ import { CiSettings } from 'react-icons/ci'
 import { MdInsights } from 'react-icons/md'
 import { CgProfile, CgAwards } from 'react-icons/cg'
 
-import { Badge } from '@nextui-org/react'
+import { Badge } from '@nextui-org/badge'
 
 const Menu = () => {
   return (
