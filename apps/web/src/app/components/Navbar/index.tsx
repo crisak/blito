@@ -11,37 +11,37 @@ import { useSelector } from 'react-redux'
 import { AppStore, AuthStore } from '@/redux/store'
 import { Text, Grid } from '@/app/shared/ui'
 
-const collapseItems = [
-  {
-    label: 'Home',
-    route: '/'
-  },
-  {
-    label: 'Proyectos',
-    route: '/proyectos'
-  },
-  {
-    label: 'Contacto',
-    route: '/contacto'
-  }
-]
+// const collapseItems = [
+//   {
+//     label: 'Home',
+//     route: '/'
+//   },
+//   {
+//     label: 'Proyectos',
+//     route: '/proyectos'
+//   },
+//   {
+//     label: 'Contacto',
+//     route: '/contacto'
+//   }
+// ]
 
 const NavbarComponent = () => {
   const auth = useSelector<AppStore, AuthStore>((state) => state.auth)
 
-  const navbarCollapseItems = auth.isAuth
-    ? [
-        ...collapseItems,
-        {
-          label: 'Configuración',
-          route: '/configuracion'
-        },
-        {
-          label: 'Cerrar sesión',
-          route: '/logout'
-        }
-      ]
-    : collapseItems
+  // const navbarCollapseItems = auth.isAuth
+  //   ? [
+  //       ...collapseItems,
+  //       {
+  //         label: 'Configuración',
+  //         route: '/configuracion'
+  //       },
+  //       {
+  //         label: 'Cerrar sesión',
+  //         route: '/logout'
+  //       }
+  //     ]
+  //   : collapseItems
 
   return (
     <Navbar

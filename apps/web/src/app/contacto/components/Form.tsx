@@ -1,5 +1,6 @@
 import { Box, Text, Grid } from '@/app/shared/ui'
-import { Button, Input, Textarea } from '@nextui-org/react'
+import { Button } from '@nextui-org/button'
+import { Input, Textarea } from '@nextui-org/input'
 import Fade from 'react-reveal/Fade'
 
 const Form = () => {
