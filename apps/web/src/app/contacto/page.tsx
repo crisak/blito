@@ -1,11 +1,10 @@
 import BgFormContact from '@/assets/images/bg-form-contact.jpg'
 import { Box } from '@/app/shared/ui'
 import { HEIGHT_NAVBAR } from '@/styles/variables'
-
 import Image from 'next/image'
-import Form from './components/Form'
+import FormContact from './components/FormContact'
 
-const ContactPage = () => {
+const PageContact = () => {
   return (
     <Box
       css={{
@@ -26,11 +25,10 @@ const ContactPage = () => {
           }}
         />
       </Box>
-      <Box className="backdrop-blur-md bg-[#0000008e] bg-opacity-30">
-        <Form />
-      </Box>
+
+      <FormContact />
     </Box>
   )
 }
 
-export default ContactPage
+export default PageContact

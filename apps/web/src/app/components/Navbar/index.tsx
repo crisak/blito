@@ -67,7 +67,10 @@ const NavbarComponent = () => {
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-4">
+      <NavbarContent
+        justify={auth.isAuth ? 'start' : 'end'}
+        className="hidden sm:flex gap-4"
+      >
         {linksPublic.map(({ label, route }) => (
           <NavbarItem key={label + route} isActive={pathname === route}>
             <Link
