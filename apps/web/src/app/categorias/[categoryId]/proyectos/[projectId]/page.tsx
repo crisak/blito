@@ -1,4 +1,4 @@
-import { BreadcrumbsProps, Container } from '@/app/components'
+import { BreadcrumbsProps, PageLayout } from '@/app/components'
 import { ProjectService } from '@/app/shared/services'
 import { ProjectDetailContainer } from './components'
 
@@ -33,9 +33,9 @@ const DetailProject = async (props: DetailProjectProps) => {
   }
 
   return (
-    <Container breadcrumbs={breadcrumbs} showButtonSave={false}>
+    <PageLayout breadcrumbs={breadcrumbs} showButtonSave={false}>
       <ProjectDetailContainer project={project} />
-    </Container>
+    </PageLayout>
   )
 }
 

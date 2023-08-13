@@ -1,7 +1,7 @@
 import { Box, Text } from '@/app/shared/ui'
 import { CategoryService } from '@/app/shared/services'
 import { ContainerListCategories, ModalFormCategory } from './components'
-import { Container } from '@/app/components'
+import { PageLayout } from '@/app/components'
 
 const categoryService = CategoryService.getInstance()
 
@@ -9,7 +9,7 @@ const CategoryPage = async () => {
   const categories = await categoryService.getAllWithFiles()
 
   return (
-    <Container title={<Text as="h2">Categorías</Text>}>
+    <PageLayout title={<Text as="h2">Categorías</Text>}>
       <Box
         css={{
           display: 'grid',
@@ -21,7 +21,7 @@ const CategoryPage = async () => {
         <ContainerListCategories categories={categories} />
       </Box>
       <ModalFormCategory />
-    </Container>
+    </PageLayout>
   )
 }
 

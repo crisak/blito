@@ -1,4 +1,4 @@
-import { Container } from '@/app/components'
+import { Container } from '@/app/shared/ui'
 
 type GalleryLayoutProps = { children: React.ReactNode }
 

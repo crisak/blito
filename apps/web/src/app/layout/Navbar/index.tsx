@@ -22,6 +22,10 @@ const linksPublic = [
     route: '/'
   },
   {
+    label: 'Categorías',
+    route: '/categorias'
+  },
+  {
     label: 'Galerías',
     route: '/galeria'
   },
@@ -69,7 +73,7 @@ const NavbarComponent = () => {
 
       <NavbarContent
         justify={auth.isAuth ? 'start' : 'end'}
-        className="hidden sm:flex gap-4"
+        className="hidden gap-4 sm:flex"
       >
         {linksPublic.map(({ label, route }) => (
           <NavbarItem key={label + route} isActive={pathname === route}>
@@ -85,7 +89,7 @@ const NavbarComponent = () => {
       </NavbarContent>
 
       {auth.isAuth && (
-        <NavbarContent justify="end" className="hidden sm:flex gap-4">
+        <NavbarContent justify="end" className="hidden gap-4 sm:flex">
           {linksPrivate.map(({ label, route }) => (
             <NavbarItem key={label + route} isActive={pathname === route}>
               <Link
