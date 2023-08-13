@@ -1,5 +1,5 @@
 'use client'
-
+import Navbar from '@/app/Navbar'
 import { Provider as ReduxProvider } from 'react-redux'
 import store from '@/redux/store'
 import { NextUIProvider } from '@nextui-org/react'
@@ -9,8 +9,8 @@ import { useEffect, useState } from 'react'
 import Splash from '../Splash'
 import BgBodyFigures from '@/assets/images/bg-body-figures.jpeg'
 import { Box } from '@/app/shared/ui'
-import NavbarComponent from '../Navbar'
-import Footer from '../Footer'
+// import NavbarComponent from '../Navbar'
+// import Footer from '../Footer'
 import ToastProvider from '../Toast'
 import { useAuth } from '@/app/hooks'
 import { getAwsExports } from 'blito-models'
@@ -40,43 +40,44 @@ interface RootContainerProps {
 }
 
 function RootContainer({ children }: RootContainerProps): JSX.Element {
-  const [splash, setSplash] = useState(true)
-  const { initAuth } = useAuth()
+  // const [splash, setSplash] = useState(true)
+  // const { initAuth } = useAuth()
 
-  useEffect(() => {
-    let refTimeout: NodeJS.Timeout | null = null
+  // useEffect(() => {
+  //   let refTimeout: NodeJS.Timeout | null = null
 
-    ;(async () => {
-      const start = performance.now()
-      await initAuth()
-      const end = performance.now()
+  //   ;(async () => {
+  //     const start = performance.now()
+  //     await initAuth()
+  //     const end = performance.now()
 
-      // Calcula la diferencia entre los dos tiempos en milisegundos
-      const time = end - start
+  //     // Calcula la diferencia entre los dos tiempos en milisegundos
+  //     const time = end - start
 
-      if (time >= $3seconds) {
-        setSplash(false)
-        return
-      }
+  //     if (time >= $3seconds) {
+  //       setSplash(false)
+  //       return
+  //     }
 
-      refTimeout = setTimeout(() => {
-        setSplash(false)
-      }, time)
-    })()
+  //     refTimeout = setTimeout(() => {
+  //       setSplash(false)
+  //     }, time)
+  //   })()
 
-    return () => {
-      if (refTimeout) {
-        clearTimeout(refTimeout)
-      }
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  //   return () => {
+  //     if (refTimeout) {
+  //       clearTimeout(refTimeout)
+  //     }
+  //   }
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [])
 
   return (
     <>
       <NextUIProvider>
         <NextThemesProvider>
-          <Box
+          <Navbar />
+          {/* <Box
             className="body-container"
             css={{
               backgroundImage: `url(${BgBodyFigures.src})`,
@@ -105,7 +106,7 @@ function RootContainer({ children }: RootContainerProps): JSX.Element {
                 </ReduxProvider>
               </ParallaxProvider>
             </ToastProvider>
-          </Box>
+          </Box> */}
         </NextThemesProvider>
       </NextUIProvider>
     </>

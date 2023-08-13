@@ -1,0 +1,10 @@
+node_modules
+apps/**/node_modules
+
+# Amplify App
+src/blito-models
+amplify-codegen-temp/blito-models
+
+packages/blito-models/models
+
+amplify-codegen-temp/models
