@@ -1,3 +1,5 @@
+'use client'
+
 import { Box } from '@/app/shared/ui'
 import Link, { type LinkProps } from 'next/link'
 import { CiSettings } from 'react-icons/ci'
@@ -6,6 +8,7 @@ import { CgProfile, CgAwards } from 'react-icons/cg'
 import { Chip } from '@nextui-org/chip'
 
 import clsx from 'clsx'
+import { usePathname } from 'next/navigation'
 
 type MenuLink = LinkProps &
   React.ComponentPropsWithoutRef<'a'> & {
@@ -18,10 +21,14 @@ const MenuLink = ({ className, active, ...props }: MenuLink) => (
     className={clsx(
       'blocked-link:disabled blocked-link:cursor-not-allowed',
       'flex items-center gap-unit-sm rounded-xl px-unit-md py-unit-sm',
-      'text-primary-foreground/60 no-underline transition-all duration-300',
-      'hover:bg-default hover:text-foreground/100',
+      'no-underline transition-all duration-300',
+      'hover:bg-default/40 hover:text-foreground/100',
       className,
-      { 'text-primary': active, 'opacity-disabled': props['aria-disabled'] }
+      {
+        'text-primary-foreground/60': !active,
+        'text-primary': active,
+        'opacity-disabled': props['aria-disabled']
+      }
     )}
     style={{
       pointerEvents: props['aria-disabled'] ? 'none' : 'auto'
@@ -30,27 +37,43 @@ const MenuLink = ({ className, active, ...props }: MenuLink) => (
   />
 )
 
-const Menu = () => {
+const Menu = ({ ...props }) => {
+  console.log('defaultprops', props, props.params, props.query)
+
+  const pathname = usePathname()
   return (
     <Box>
-      <MenuLink active href="/configuracion">
+      <MenuLink active={pathname === '/configuracion'} href="/configuracion">
         <CiSettings size={25} />
         General
       </MenuLink>
-      <MenuLink href="/estadisticas" aria-disabled={true}>
+
+      <MenuLink
+        active={pathname === '/configuracion/estadisticas'}
+        href="/estadisticas"
+        aria-disabled={true}
+      >
         <MdInsights size={25} />
         Estadísticas
         <Chip size="sm">Pronto</Chip>
       </MenuLink>
-      <MenuLink href="/perfil" aria-disabled={true}>
+
+      <MenuLink
+        active={pathname === '/configuracion/sorteos'}
+        href="/perfil"
+        aria-disabled={true}
+      >
         <CgAwards size={25} />
         Sorteos
         <Chip size="sm">Pronto</Chip>
       </MenuLink>
-      <MenuLink href="/perfil" aria-disabled={true}>
+
+      <MenuLink
+        active={pathname === '/configuracion/perfil'}
+        href="/configuracion/perfil"
+      >
         <CgProfile size={25} />
         Perfil
-        <Chip size="sm">Pronto</Chip>
       </MenuLink>
     </Box>
   )

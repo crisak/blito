@@ -13,7 +13,11 @@ import {
 } from 'react-icons/bs'
 import Link from 'next/link'
 
-const LIST_ROUTERS_DISABLED = ['/configuracion', '/contacto']
+const LIST_ROUTERS_DISABLED = [
+  '/configuracion',
+  '/configuracion/perfil',
+  '/contacto'
+]
 
 const Footer = () => {
   const pathname = usePathname()
@@ -28,7 +32,7 @@ const Footer = () => {
   }
 
   return (
-    <FooterStyle className="backdrop-blur-lg backdrop-saturate-150 bg-background/30">
+    <FooterStyle className="bg-background/30 backdrop-blur-lg backdrop-saturate-150">
       <Container>
         <Box className="grid grid-cols-3">
           <Box className="flex flex-col gap-3">
@@ -106,7 +110,7 @@ const Footer = () => {
               <Text className="ml-3">Whatsapp</Text>
             </Link>
           </Box>
-          <Box className="flex justify-center items-center">
+          <Box className="flex items-center justify-center">
             <Link href="/" className="flex flex-col items-center gap-3">
               <Image
                 src={BlitoFrontPage}
