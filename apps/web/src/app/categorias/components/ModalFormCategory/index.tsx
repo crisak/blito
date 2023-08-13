@@ -37,7 +37,7 @@ const initialState = {
 const ModalFormCategory = () => {
   const [loading, setLoading] = useState(false)
   const [formData, setFormData] = useState<FDCategory>(initialState)
-  const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure()
+  const { onOpen, onOpenChange, onClose } = useDisclosure()
 
   const dispatch = useDispatch()
   const headerUI = useSelector<

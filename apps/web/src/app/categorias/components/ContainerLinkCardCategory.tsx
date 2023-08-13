@@ -1,14 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import {
-  Card,
-  Button,
-  CardHeader,
-  CardBody,
-  CardFooter
-} from '@nextui-org/react'
-import { Box, Text, Row, Col } from '@/app/shared/ui'
+import { Card, Button, CardHeader, CardFooter, Image } from '@nextui-org/react'
+import { Box, Text } from '@/app/shared/ui'
 import { AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai'
 import { useDispatch, useSelector } from 'react-redux'
 import { AuthStore, headerUIActions, categoryActions } from '@/redux/slices'
@@ -19,7 +13,6 @@ import {
 } from '@/app/shared/services'
 import { useAlert } from '@/app/shared/hooks'
 import { toast } from 'react-toastify'
-import Image from 'next/image'
 
 type ContainerLinkCardCategoryProps = GetAllWithContentResult
 
@@ -96,38 +89,21 @@ const ContainerLinkCardCategory = (
     }
 
     return (
-      <Box
-        css={{
-          width: '100%',
-          zIndex: 2,
-          display: 'flex',
-          justifyContent: 'flex-end',
-          gap: '$3',
-          paddingRight: '$8',
-          paddingTop: '$8'
-          // '& button': {
-          //   bgBlur: 'rgba(0, 0, 0, 0.053)',
-          //   opacity: 0.5,
-          //   '&:hover': {
-          //     opacity: 1,
-          //     cursor: 'pointer',
-          //     bgBlur: '$primary'
-          //   }
-          // }
-        }}
-      >
+      <Box className="z-20 flex w-full justify-end gap-unit-sm pr-unit-sm pt-unit-sm">
         <Button
+          className="backdrop-blur-lg backdrop-saturate-150 hover:cursor-pointer"
           variant="ghost"
-          size="sm"
           color="primary"
           startContent={<AiOutlineDelete />}
+          isIconOnly
           onClick={handleRemove}
         />
         <Button
+          className="backdrop-blur-lg backdrop-saturate-150 hover:cursor-pointer"
           variant="ghost"
-          size="sm"
           color="primary"
           startContent={<AiOutlineEdit />}
+          isIconOnly
           onClick={handleEdit}
         />
       </Box>
@@ -135,45 +111,32 @@ const ContainerLinkCardCategory = (
   }
 
   return (
-    <Card className="w-full h-400px">
+    <Card isFooterBlurred className="relative h-[300px] w-full">
       {displayActionsAdmin()}
-      <CardHeader className="absolute z-10 top-5">
-        <Col>
-          <Text className="text-xs font-bold uppercase text-white opacity-70">
-            {category.name}
-          </Text>
-        </Col>
+      <CardHeader className="absolute top-1 z-10 flex-col items-start">
+        <h4 className="text-2xl font-medium text-foreground">
+          {category.name}
+        </h4>
       </CardHeader>
-      <CardBody className="p-0">
-        <Image
-          className="w-full h-full object-cover"
-          src={category.files?.[0]?.data}
-          alt={category.files?.[0]?.caption || ''}
-          width={200}
-          height={200}
-        />
-      </CardBody>
-      <CardFooter className="absolute bottom-0 left-0 right-0 blur bg-[#ffffff66] border-t-[rgba(255, 255, 255, 0.2)] border-[1px]">
-        <Row>
-          <Col>
-            <Text className="text-black text-sm">
-              {category.description.slice(0, 38)}
-              {' ...'}
-            </Text>
-            <Text className="text-black text-sm">
-              {category.files.length} Proyectos
-            </Text>
-          </Col>
-          <Col>
-            <Row justify="flex-end">
-              <Button variant="flat">
-                <Link href={`/categorias/${category.id}/proyectos`}>
-                  Ver más
-                </Link>
-              </Button>
-            </Row>
-          </Col>
-        </Row>
+      <Image
+        removeWrapper
+        className="z-0 h-full w-full -translate-y-6 scale-125 object-cover brightness-50"
+        src={category.files?.[0]?.data}
+        alt={category.files?.[0]?.caption || ''}
+      />
+      <CardFooter className="absolute bottom-0 z-10 justify-between border-t-1 border-zinc-100/50 bg-white/30">
+        <div>
+          <p className="text-tiny text-black">
+            {category.description.slice(0, 38)}
+            {' ...'}
+          </p>
+          <p className="text-tiny text-black">
+            {category.files.length} Proyectos
+          </p>
+        </div>
+        <Button className="text-tiny" color="primary" radius="full" size="sm">
+          <Link href={`/categorias/${category.id}/proyectos`}>Ver más</Link>
+        </Button>
       </CardFooter>
     </Card>
   )
