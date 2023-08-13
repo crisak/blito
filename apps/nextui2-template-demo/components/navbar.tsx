@@ -1,4 +1,8 @@
 import {
+	Button,
+	Kbd,
+	Link,
+	Input,
 	Navbar as NextUINavbar,
 	NavbarContent,
 	NavbarMenu,
@@ -6,11 +10,7 @@ import {
 	NavbarBrand,
 	NavbarItem,
 	NavbarMenuItem,
-} from "@nextui-org/navbar";
-import { Button } from "@nextui-org/button";
-import { Kbd } from "@nextui-org/kbd";
-import { Link } from "@nextui-org/link";
-import { Input } from "@nextui-org/input";
+} from "@nextui-org/react";
 
 import { link as linkStyles } from "@nextui-org/theme";
 
@@ -54,13 +54,13 @@ export const Navbar = () => {
 	return (
 		<NextUINavbar maxWidth="xl" position="sticky">
 			<NavbarContent className="basis-1/5 sm:basis-full" justify="start">
-				<NavbarBrand as="li" className="gap-3 max-w-fit">
+				<NavbarBrand className="gap-3 max-w-fit">
 					<NextLink className="flex justify-start items-center gap-1" href="/">
 						<Logo />
 						<p className="font-bold text-inherit">ACME</p>
 					</NextLink>
 				</NavbarBrand>
-				<ul className="hidden lg:flex gap-4 justify-start ml-2">
+				<div className="hidden lg:flex gap-4 justify-start ml-2">
 					{siteConfig.navItems.map((item) => (
 						<NavbarItem key={item.href}>
 							<NextLink
@@ -75,21 +75,18 @@ export const Navbar = () => {
 							</NextLink>
 						</NavbarItem>
 					))}
-				</ul>
+				</div>
 			</NavbarContent>
 
-			<NavbarContent
-				className="hidden sm:flex basis-1/5 sm:basis-full"
-				justify="end"
-			>
+      <NavbarContent className="hidden sm:flex basis-1/5 sm:basis-full" justify="end">
 				<NavbarItem className="hidden sm:flex gap-2">
-					<Link isExternal href={siteConfig.links.twitter} aria-label="Twitter">
+					<Link isExternal href={siteConfig.links.twitter}>
 						<TwitterIcon className="text-default-500" />
 					</Link>
-					<Link isExternal href={siteConfig.links.discord} aria-label="Discord">
+					<Link isExternal href={siteConfig.links.discord}>
 						<DiscordIcon className="text-default-500" />
 					</Link>
-					<Link isExternal href={siteConfig.links.github} aria-label="Github">
+					<Link isExternal href={siteConfig.links.github}>
 						<GithubIcon className="text-default-500" />
 					</Link>
 					<ThemeSwitch />
@@ -97,7 +94,7 @@ export const Navbar = () => {
 				<NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
 				<NavbarItem className="hidden md:flex">
 					<Button
-            isExternal
+						isExternal
 						as={Link}
 						className="text-sm font-normal text-default-600 bg-default-100"
 						href={siteConfig.links.sponsor}
@@ -110,14 +107,14 @@ export const Navbar = () => {
 			</NavbarContent>
 
 			<NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-				<Link isExternal href={siteConfig.links.github} aria-label="Github">
-					<GithubIcon className="text-default-500" />
-				</Link>
-				<ThemeSwitch />
+        <Link isExternal href={siteConfig.links.github}>
+          <GithubIcon className="text-default-500" />
+        </Link>
+        <ThemeSwitch />
 				<NavbarMenuToggle />
-			</NavbarContent>
+      </NavbarContent>
 
-			<NavbarMenu>
+      <NavbarMenu>
 				{searchInput}
 				<div className="mx-4 mt-2 flex flex-col gap-2">
 					{siteConfig.navMenuItems.map((item, index) => (
