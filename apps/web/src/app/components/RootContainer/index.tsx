@@ -76,36 +76,34 @@ function RootContainer({ children }: RootContainerProps): JSX.Element {
     <>
       <NextUIProvider>
         <NextThemesProvider>
-          <Box
-            className="body-container"
-            css={{
-              backgroundImage: `url(${BgBodyFigures.src})`,
-              backgroundRepeat: 'no-repeat',
-              backgroundAttachment: 'fixed',
-              backgroundSize: 'cover',
-              height: '100vh',
-              overflow: 'auto',
-              width: '100%'
-            }}
-          >
-            <ToastProvider>
-              <ParallaxProvider>
-                <ReduxProvider store={store}>
-                  <AlertProvider>
-                    {splash ? (
-                      <Splash />
-                    ) : (
-                      <>
-                        <Navbar />
-                        <main>{children}</main>
-                        <Footer />
-                      </>
-                    )}
-                  </AlertProvider>
-                </ReduxProvider>
-              </ParallaxProvider>
-            </ToastProvider>
-          </Box>
+          <ToastProvider>
+            <ParallaxProvider>
+              <ReduxProvider store={store}>
+                <AlertProvider>
+                  {splash ? (
+                    <Splash />
+                  ) : (
+                    <Box
+                      className="body-container"
+                      css={{
+                        backgroundImage: `url(${BgBodyFigures.src})`,
+                        backgroundRepeat: 'no-repeat',
+                        backgroundAttachment: 'fixed',
+                        backgroundSize: 'cover',
+                        height: '100vh',
+                        overflow: 'auto',
+                        width: '100%'
+                      }}
+                    >
+                      <Navbar />
+                      <main>{children}</main>
+                      <Footer />
+                    </Box>
+                  )}
+                </AlertProvider>
+              </ReduxProvider>
+            </ParallaxProvider>
+          </ToastProvider>
         </NextThemesProvider>
       </NextUIProvider>
     </>

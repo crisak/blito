@@ -17,7 +17,7 @@ type ContainerLayoutProps = {
   breadcrumbs?: BreadcrumbsProps
 } & ActionsProps
 
-const Container = ({
+const PageLayout = ({
   children,
   breadcrumbs,
   title,
@@ -75,4 +75,4 @@ const Container = ({
   )
 }
 
-export default Container
+export default PageLayout
