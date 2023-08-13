@@ -1,4 +1,4 @@
-import classNames from 'classnames'
+import clsx from "clsx"
 
 type RowProps = {
   justify?: 'flex-end'
@@ -10,7 +10,7 @@ const Row = ({ className, justify, css, align, ...props }: RowProps) => {
   return (
     <div
       style={css}
-      className={classNames('flex flex-wrap -mx-4', className, {
+      className={clsx('flex flex-wrap -mx-4', className, {
         [`justify-${justify}`]: Boolean(justify),
         [`items-${align}`]: Boolean(align)
       })}

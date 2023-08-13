@@ -1,4 +1,4 @@
-import classNames from 'classnames'
+import clsx from "clsx"
 
 type ColProps = {
   span?: number
@@ -7,7 +7,7 @@ type ColProps = {
 const Col = ({ span, className, ...props }: ColProps) => {
   return (
     <div
-      className={classNames('w-full px-4', className, {
+      className={clsx('w-full px-4', className, {
         span: span ? `w-${span}/12` : ''
       })}
       {...props}

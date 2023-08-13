@@ -1,11 +1,11 @@
-import classNames from 'classnames'
+import clsx from "clsx"
 
 const Container = ({
   className,
   ...props
 }: React.ComponentPropsWithoutRef<'div'>) => {
   return (
-    <div className={classNames('container mx-auto', className)} {...props} />
+    <div className={clsx('container mx-auto', className)} {...props} />
   )
 }
 

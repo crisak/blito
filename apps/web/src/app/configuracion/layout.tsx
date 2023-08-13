@@ -10,13 +10,13 @@ const SettingsLayout = ({ children }: SettingsLayoutProps) => {
     <Box
       css={{
         display: 'grid',
-        gridTemplateColumns: '290px 3fr',
+        gridTemplateColumns: '280px 3fr',
         gridTemplateRows: 'auto',
         gap: '1.2rem',
         height: `calc(100vh - ${HEIGHT_NAVBAR})`
       }}
     >
-      <aside className="bg-backgroundAlpha overflow-auto">
+      <aside className="bg-background/50 overflow-auto">
         <Text as="h4" className="font-bold p-4">
           Configuración
         </Text>

@@ -9,7 +9,7 @@ import Actions, { ActionsProps } from '@/app/components/Actions'
 import { AppStore, AuthStore } from '@/redux/store'
 import { useSelector } from 'react-redux'
 import { Container as ContainerUI } from '@/app/shared/ui'
-import classNames from 'classnames'
+import clsx from "clsx"
 
 type ContainerLayoutProps = {
   children: React.ReactNode | React.ReactNode[]
@@ -50,7 +50,7 @@ const PageLayout = ({
      */
     return (
       <>
-        <header className={classNames(classNamesHeader)}>
+        <header className={clsx(classNamesHeader)}>
           {title || null}
 
           {auth.isAuth && <Actions showButtonSave={showButtonSave} />}

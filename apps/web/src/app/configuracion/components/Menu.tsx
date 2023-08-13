@@ -1,83 +1,57 @@
 import { Box } from '@/app/shared/ui'
-import Link from 'next/link'
+import Link, { type LinkProps } from 'next/link'
 import { CiSettings } from 'react-icons/ci'
 import { MdInsights } from 'react-icons/md'
 import { CgProfile, CgAwards } from 'react-icons/cg'
+import { Chip } from '@nextui-org/chip'
 
-import { Badge } from '@nextui-org/badge'
+import clsx from 'clsx'
+
+type MenuLink = LinkProps &
+  React.ComponentPropsWithoutRef<'a'> & {
+    active?: boolean
+    'aria-disabled'?: boolean
+  }
+
+const MenuLink = ({ className, active, ...props }: MenuLink) => (
+  <Link
+    className={clsx(
+      'blocked-link:disabled blocked-link:cursor-not-allowed',
+      'flex items-center gap-unit-sm rounded-xl px-unit-md py-unit-sm',
+      'text-primary-foreground/60 no-underline transition-all duration-300',
+      'hover:bg-default hover:text-foreground/100',
+      className,
+      { 'text-primary': active, 'opacity-disabled': props['aria-disabled'] }
+    )}
+    style={{
+      pointerEvents: props['aria-disabled'] ? 'none' : 'auto'
+    }}
+    {...props}
+  />
+)
 
 const Menu = () => {
   return (
-    <Box
-    // css={{
-    //   '& > a': {
-    //     color: '$gray800',
-    //     borderRadius: '$lg',
-    //     padding: '$8',
-    //     textDecoration: 'none',
-    //     transition: 'all .3s',
-
-    //     display: 'flex',
-    //     alignItems: 'center',
-    //     gap: '12px',
-
-    //     '&:hover': {
-    //       backgroundColor: '$backgroundContrast',
-    //       color: '$blue900'
-    //     },
-    //     '&.active': {
-    //       color: '$blue900'
-    //     },
-
-    //     '&.blocked-link': {
-    //       'pointer-events': 'none',
-    //       ursor: 'not-allowed'
-    //     }
-    //   }
-    // }}
-    >
-      <Link
-        className="active"
-        href={{
-          pathname: '/configuracion'
-        }}
-      >
+    <Box>
+      <MenuLink active href="/configuracion">
         <CiSettings size={25} />
         General
-      </Link>
-      <Link
-        href={{
-          pathname: '/estadisticas'
-        }}
-        aria-disabled={true}
-        className="blocked-link "
-      >
+      </MenuLink>
+      <MenuLink href="/estadisticas" aria-disabled={true}>
         <MdInsights size={25} />
         Estadísticas
-        <Badge size="sm">Pronto</Badge>
-      </Link>
-      <Link
-        href={{
-          pathname: '/perfil'
-        }}
-        aria-disabled={true}
-        className="blocked-link"
-      >
+        <Chip size="sm">Pronto</Chip>
+      </MenuLink>
+      <MenuLink href="/perfil" aria-disabled={true}>
         <CgAwards size={25} />
         Sorteos
-        <Badge size="sm">Pronto</Badge>
-      </Link>
-      <Link
-        href={{
-          pathname: '/perfil'
-        }}
-        aria-disabled={true}
-        className="blocked-link"
-      >
+        <Chip size="sm">Pronto</Chip>
+      </MenuLink>
+      <MenuLink href="/perfil" aria-disabled={true}>
         <CgProfile size={25} />
         Perfil
-        <Badge size="sm">Pronto</Badge>
-      </Link>
+        <Chip size="sm">Pronto</Chip>
+      </MenuLink>
     </Box>
   )
 }

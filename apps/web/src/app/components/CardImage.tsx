@@ -5,7 +5,7 @@ import { Text, type BoxProps } from '@/app/shared/ui'
 import { BORDER_RADIUS } from '@/styles/variables'
 import Image from 'next/image'
 import styles from './CardImage.module.css'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import Tilt from 'react-parallax-tilt'
 import Link from 'next/link'
 import { Category } from '@/models/categories-summary.models'
@@ -27,7 +27,7 @@ export const CardLinkImage = ({
   id: projectId,
   className
 }: CardImageProps) => {
-  const classes = classnames(
+  const classes = clsx(
     {
       [styles.parallax_effect_glare_scale]: true
     },

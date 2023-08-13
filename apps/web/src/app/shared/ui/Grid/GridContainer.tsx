@@ -1,4 +1,4 @@
-import classNames from 'classnames'
+import clsx from "clsx"
 
 type GridContainerProps = {
   children: React.ReactNode | React.ReactNode[]
@@ -9,7 +9,7 @@ type GridContainerProps = {
 const GridContainer = ({ gap, alignItems, ...props }: GridContainerProps) => {
   return (
     <div
-      className={classNames({
+      className={clsx({
         [`grid grid-cols-${gap}`]: Boolean(gap),
         [`items-${alignItems}`]: Boolean(alignItems)
       })}

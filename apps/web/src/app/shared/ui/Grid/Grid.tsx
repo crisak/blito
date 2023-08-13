@@ -1,6 +1,6 @@
 import type { PropsWithoutRef, RefAttributes } from 'react'
 import GridContainer from './GridContainer'
-import classNames from 'classnames'
+import clsx from "clsx"
 
 type GridProps = {
   xs?: boolean | number | string
@@ -32,7 +32,7 @@ const Grid = ({
         ...style,
         ...css
       }}
-      className={classNames(
+      className={clsx(
         className,
         `justify-${justify || 'normal'}`,
         `flex-${direction || 'row'}`,

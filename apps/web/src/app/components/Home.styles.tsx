@@ -1,5 +1,5 @@
 'use client'
-import classNames from 'classnames'
+import clsx from "clsx"
 
 /**
  * Sections
@@ -14,7 +14,7 @@ export const LinkSocial = ({
   ...props
 }: React.ComponentPropsWithoutRef<'a'>) => (
   <a
-    className={classNames(
+    className={clsx(
       'text-white flex justify-center items-center p-0.3 rounded-full',
       className
     )}
