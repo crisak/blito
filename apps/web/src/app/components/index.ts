@@ -1,7 +1,7 @@
 export * from './CardImage'
 export { default as FloatingSocials } from './FloatingSocials'
 export * from './SplashSocial'
-export { default as Container } from './Container'
+export { default as Container } from '../layout/Container'
 export { default as RootContainer } from './RootContainer'
 export { default as Breadcrumbs, type BreadcrumbsProps } from './Breadcrumbs'
 export { default as LoadingProgress } from './LoadingProgress'

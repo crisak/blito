@@ -23,9 +23,10 @@ const Text = ({ as, css, className, ...props }: TextProps) => {
   return (
     <Element
       style={propsConcat}
-      className={classNames({
+      className={classNames(className, {
         'text-3xl': as === 'h2',
-        'text-6xl': as === 'h1'
+        'text-6xl': as === 'h1',
+        'font-bold': Boolean(/h[3,4,5,6]/.exec(String(as)))
       })}
       {...props}
     />

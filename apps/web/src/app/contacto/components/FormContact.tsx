@@ -1,6 +1,6 @@
 'use client'
 
-import { Box, Text, Grid } from '@/app/shared/ui'
+import { Box, Text } from '@/app/shared/ui'
 import { Button } from '@nextui-org/button'
 import { Input, Textarea } from '@nextui-org/input'
 import Fade from 'react-reveal/Fade'
@@ -12,7 +12,7 @@ const FormContact = () => {
 
   return (
     <Fade right>
-      <Box className="h-full backdrop-blur-md bg-[#0000008e] bg-opacity-30 p-11">
+      <Box className="h-full p-11 backdrop-blur-lg backdrop-saturate-150 bg-background/50">
         <form onSubmit={handleSubmit}>
           <Box className="flex flex-col gap-4">
             <Text as="h2">Escríbeme</Text>

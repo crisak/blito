@@ -127,7 +127,7 @@ const HomePage = () => {
           justifyContent: 'center'
         }}
       >
-        <Card className="max-w-[400px] w-full p-8 mx-3">
+        <Card className="max-w-[400px] w-full p-8 mx-3 mb-32">
           <Text>
             ¡No esperes más para transformar tu vida y tu entorno con mi arte
             urbano! Contáctame hoy mismo para conocer más acerca de mis
