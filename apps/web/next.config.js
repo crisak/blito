@@ -14,7 +14,10 @@ const nextConfig = {
       'instagram.fbog2-4.fna.fbcdn.net',
       'www.sanmantattoo.com',
       'cdn-icons-png.flaticon.com',
-      'www.pngitem.com'
+      'www.pngitem.com',
+      'www.tu-moda-online.es' /** TODO - remove */,
+      'www.okchicas.com' /** TODO - remove */,
+      'scontent-bog1-1.xx.fbcdn.net'
     ]
   }
 }

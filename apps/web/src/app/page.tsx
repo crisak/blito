@@ -31,7 +31,7 @@ const content = [
     link: '/categorias/969fba59-a55b-43b2-8a10-3f965a1caf18',
     image: {
       alt: 'Tatuaje en la espalda',
-      src: 'https://instagram.fbog2-4.fna.fbcdn.net/v/t51.2885-15/187657530_155399266479564_3108326086555607132_n.jpg?stp=dst-jpg_e35&_nc_ht=instagram.fbog2-4.fna.fbcdn.net&_nc_cat=100&_nc_ohc=HImK_nZoFYMAX9O689G&edm=ABmJApABAAAA&ccb=7-5&ig_cache_key=MjU3Nzk0NTgxMDE3NDg3Njk2MQ%3D%3D.2-ccb7-5&oh=00_AfCRppb5PI8bxS83bRAdos8T_xzscMyHYSHWPVQO41lbig&oe=64146BAD&_nc_sid=6136e7'
+      src: 'https://www.okchicas.com/wp-content/uploads/2023/04/15-Tatuajes-para-mostrar-tu-guerrera-interior-sin-temerle-al-exito.jpg'
     },
     right: false
   },
@@ -41,8 +41,8 @@ const content = [
       'Además, también ofrezco servicios de pintura para locales comerciales y fachadas de edificios. Con mi experiencia en graffiti y arte urbano, puedo transformar cualquier espacio en un lugar impactante y original que atraiga a tu público y refleje tu marca. Desde la conceptualización hasta la ejecución del proyecto, estaré contigo en cada paso del camino para asegurar que obtengas un resultado final que supere tus expectativas.',
     link: '/categorias/b5e46301-da11-4708-9a1b-4ec8b1392e55',
     image: {
-      alt: 'Tatuaje en la espalda',
-      src: 'https://www.sanmantattoo.com/wp-content/uploads/2021/10/785BECE3-EA49-4256-9592-C7676F169D90-3.jpg'
+      alt: 'Pintura para locales',
+      src: 'https://scontent-bog1-1.xx.fbcdn.net/v/t39.30808-6/359730287_765168148944087_1529726381198561471_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=7f8c78&_nc_ohc=8URm_D6ZZNAAX-MXK-C&_nc_ht=scontent-bog1-1.xx&oh=00_AfCFC21SWvemcotdgNiVAxVSJJJKBeojLEfNxQHmWmCSEw&oe=64DE4822'
     },
     right: true
   },
@@ -52,8 +52,8 @@ const content = [
       'Si necesitas un mural personalizado para tu empresa, también puedo ayudarte. Pinto murales a gran escala y micro murales, utilizando técnicas avanzadas y mi creatividad como artista. Me adapto a tus necesidades y te ofrezco un servicio completo, desde la conceptualización hasta la ejecución del proyecto, para que obtengas un resultado final que refleje los valores y objetivos de tu empresa.',
     link: '/categorias/a75a503b-cb82-4bc6-80a0-d70fc7ffc9a2',
     image: {
-      alt: 'Tatuaje en la espalda',
-      src: 'https://instagram.fbog2-4.fna.fbcdn.net/v/t51.2885-15/187657530_155399266479564_3108326086555607132_n.jpg?stp=dst-jpg_e35&_nc_ht=instagram.fbog2-4.fna.fbcdn.net&_nc_cat=100&_nc_ohc=HImK_nZoFYMAX9O689G&edm=ABmJApABAAAA&ccb=7-5&ig_cache_key=MjU3Nzk0NTgxMDE3NDg3Njk2MQ%3D%3D.2-ccb7-5&oh=00_AfCRppb5PI8bxS83bRAdos8T_xzscMyHYSHWPVQO41lbig&oe=64146BAD&_nc_sid=6136e7'
+      alt: 'Murales para empresas',
+      src: 'https://scontent-bog1-1.xx.fbcdn.net/v/t39.30808-6/316043381_582095477251356_9007516511014643742_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=dd63ad&_nc_ohc=Jv6iP5zqqHcAX9BTcaO&_nc_ht=scontent-bog1-1.xx&oh=00_AfBI8LJZCRSN4HGmuGAlL9ECOtjDrlZgh_uU1gJVlTI0dA&oe=64DD3C88'
     },
     right: false
   },
@@ -127,7 +127,7 @@ const HomePage = () => {
           justifyContent: 'center'
         }}
       >
-        <Card className="max-w-400px w-full p-8">
+        <Card className="max-w-[400px] w-full p-8 mx-3">
           <Text>
             ¡No esperes más para transformar tu vida y tu entorno con mi arte
             urbano! Contáctame hoy mismo para conocer más acerca de mis
