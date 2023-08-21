@@ -1,8 +1,4 @@
-export {
-  useScreenPage,
-  ScreenPageProvider,
-  default as ScreenPage
-} from './ScreenPage'
+export { useScreenPage, default as ScreenPage } from './ScreenPage'
 export { default as Container } from './Container'
 export { default as Row } from './Row'
 export { default as Col } from './Col'

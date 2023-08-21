@@ -1,52 +1,41 @@
 'use client'
 
 import { isValidElement, cloneElement, Children } from 'react'
-import { Box } from '@/app/shared/ui'
-import { useScreenPage, type Child, type PageName } from './ScreenPageProvider'
-import { semanticColors } from '@nextui-org/react'
+import { BoxProps } from '@/app/shared/ui'
+import { type Child, type PageName } from './ScreenPageProvider'
+import { motion } from 'framer-motion'
 
-type PageNavigationProps = Child & {
-  page: PageName
-  css?: React.CSSProperties
-  index?: number
-  propsPage?: object
-}
+type PageNavigationProps = Child &
+  BoxProps & {
+    page: PageName
+    index?: number
+    propsPage?: object
+  }
 
 const PageNavigation = ({
   children,
-  page,
-  css,
   index,
   propsPage
 }: PageNavigationProps) => {
-  const data = useScreenPage()
-
   return (
-    <Box
-      className={
-        data.playAnimation.page === page
-          ? `${data.playAnimation.animation}`
-          : ''
+    <motion.div
+      className="page-container absolute left-0 top-0 h-full w-full bg-content1 text-foreground"
+      initial={
+        index === 0
+          ? { transform: 'translateX(0%)', opacity: 0.5 }
+          : { transform: 'translateX(100%)', opacity: 0.9 }
       }
-      css={{
-        background: data.background || semanticColors.dark.background['600'],
-        position: 'absolute',
-        top: 0,
-        width: '100%',
-        height: '100%',
-        overflow: 'hidden',
-        zIndex: index !== null && index !== undefined ? index + 2 : 'auto',
-        ...css
-      }}
+      animate={{ transform: 'translateX(0%)', opacity: 1 }}
+      exit={{ transform: 'translateX(100%)', opacity: 0.9 }}
+      transition={{ duration: 0.3, ease: 'easeInOut' }}
     >
-      {/* Clonamos el componente hijo y le asignamos la propiedad personalizada */}
       {Children.map(children, (child) => {
         if (isValidElement(child)) {
           return cloneElement(child, propsPage)
         }
         return child
       })}
-    </Box>
+    </motion.div>
   )
 }
 

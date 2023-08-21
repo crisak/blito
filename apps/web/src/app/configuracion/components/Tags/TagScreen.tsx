@@ -2,24 +2,24 @@
 
 import TagList from './TagList'
 import TagForm from './TagForm'
-import { ScreenPageProvider, ScreenPage } from '@/app/shared/ui'
+import { ScreenPage } from '@/app/shared/ui'
 import { SCREENS, MetadataScreens } from './Tag.constants'
-import { semanticColors } from '@nextui-org/react'
 
-type ScreenTagsProps = MetadataScreens & { containerCss?: React.CSSProperties }
+type ScreenTagsProps = MetadataScreens & {
+  classNames?: { containerPages?: string; containerPage?: string }
+}
 
-const TagScreen = ({ containerListCss, containerCss }: ScreenTagsProps) => {
-  const screens = {
-    [SCREENS.listTags]: <TagList />,
-    [SCREENS.formTags]: <TagForm />
-  }
+const screens = {
+  [SCREENS.listTags]: () => <TagList />,
+  [SCREENS.formTags]: () => <TagForm />
+} as const
 
+const TagScreen = ({ containerListCss, classNames }: ScreenTagsProps) => {
   return (
-    <ScreenPageProvider
-      background={semanticColors.dark.content1['900']}
+    <ScreenPage.Provider
       pages={screens}
       currentPage={SCREENS.listTags}
-      containerCss={containerCss}
+      className={classNames?.containerPages}
       metadata={{
         containerListCss
       }}
@@ -30,11 +30,12 @@ const TagScreen = ({ containerListCss, containerCss }: ScreenTagsProps) => {
           page={page}
           index={index}
           propsPage={props as object}
+          className={classNames?.containerPage}
         >
           {component}
         </ScreenPage.Container>
       )}
-    </ScreenPageProvider>
+    </ScreenPage.Provider>
   )
 }
 
