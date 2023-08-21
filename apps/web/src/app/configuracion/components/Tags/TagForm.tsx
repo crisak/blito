@@ -99,15 +99,13 @@ const TagForm = ({ tag: tagEdit }: TagFormProps) => {
   }, [tagEdit])
 
   return (
-    <ScreenPage>
-      <ScreenPage.Header enableBackButton>
-        {formData.id ? 'Editar' : 'Crear'} Tag
-      </ScreenPage.Header>
+    <>
+      <ScreenPage.Header title={formData.id ? 'Editar Tag' : 'Crear Tag'} />
       <ScreenPage.Body>
         <Spacer y={1} />
 
         <form onSubmit={handleSubmit} style={{ width: '100%' }}>
-          <Box css={{ display: 'flex', flexDirection: 'column', gap: '$10' }}>
+          <Box className="flex flex-col gap-unit-lg">
             <Input
               fullWidth
               isClearable
@@ -120,13 +118,7 @@ const TagForm = ({ tag: tagEdit }: TagFormProps) => {
               }
               value={formData.name}
             />
-            <Box
-              css={{
-                display: 'flex',
-                gap: '$10',
-                justifyContent: 'flex-end'
-              }}
-            >
+            <Box className="flex justify-end gap-unit-md">
               <Button
                 type="button"
                 variant="light"
@@ -160,7 +152,7 @@ const TagForm = ({ tag: tagEdit }: TagFormProps) => {
           </Box>
         </form>
       </ScreenPage.Body>
-    </ScreenPage>
+    </>
   )
 }
 

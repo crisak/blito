@@ -218,47 +218,49 @@ const TagList = () => {
   }, [list])
 
   return (
-    <ScreenPage>
+    <>
       <ScreenPage.Header
-        content={
+        disableBackButton
+        title={
           <>
-            {itemsSelected.length > 0 && (
-              <Button
-                variant="light"
-                size="sm"
-                color="danger"
-                startContent={<BiTrashAlt fill="currentColor" />}
-                isLoading={loading.contents}
-                className="mr-10"
-                disabled={loading.contents}
-                onClick={handleRemove}
-              >
-                Eliminar {itemsSelected.length} item(s)
-              </Button>
-            )}
-
-            <Button
-              size="sm"
-              onClick={() => screenNavigation.push(SCREENS.formTags)}
-              startContent={<IoIosAdd fill="currentColor" />}
-            >
-              Crear Tag
-            </Button>
+            Tags
+            <Text as="span" className="ml-2 font-light text-foreground-500">
+              ({list.length}
+              {itemsSelected.length > 0 ? `/${itemsSelected.length}` : ''})
+            </Text>
           </>
         }
       >
-        Tags{' '}
-        <Text as="span" className="text-gray-700 font-light m-0">
-          ({list.length}
-          {itemsSelected.length > 0 ? `/${itemsSelected.length}` : ''})
-        </Text>
+        <div className="flex gap-3">
+          {itemsSelected.length > 0 && (
+            <Button
+              variant="light"
+              size="sm"
+              color="danger"
+              startContent={<BiTrashAlt fill="currentColor" />}
+              isLoading={loading.contents}
+              disabled={loading.contents}
+              onClick={handleRemove}
+            >
+              Eliminar {itemsSelected.length} item(s)
+            </Button>
+          )}
+
+          <Button
+            size="sm"
+            onClick={() => screenNavigation.push(SCREENS.formTags)}
+            startContent={<IoIosAdd size={16} fill="currentColor" />}
+          >
+            Crear Tag
+          </Button>
+        </div>
       </ScreenPage.Header>
+
       <ScreenPage.Body>
         <Input
           isClearable
           variant="bordered"
           fullWidth
-          size="sm"
           name="searchInput"
           placeholder="Búsqueda por palabra"
           disabled={loading.list}
@@ -272,14 +274,18 @@ const TagList = () => {
         <Spacer y={2} />
 
         <Table
-          shadow="none"
-          // layout="fixed"
+          layout="fixed"
           aria-label="Lista de tags"
           selectionMode="multiple"
-          className="min-h-[110px] p-0"
+          className="min-h-[110px] p-0 "
           classNames={{
-            th: 'z-20 sticky top-0 z-50 first:w-[55px]',
-            wrapper: screenNavigation.metadata.containerListCss
+            // th: 'z-20 sticky top-0 z-50 first:w-[55px]',
+            wrapper: screenNavigation.metadata.containerListCss,
+            base: 'base p-0',
+            emptyWrapper: 'emptyWrapper p-0',
+            table: 'table p-0 relative',
+            // thead: '',
+            th: 'top-0 sticky'
           }}
           sortDescriptor={sortCell}
           onSortChange={(sortByCell) => setSortCell(sortByCell)}
@@ -317,17 +323,19 @@ const TagList = () => {
           >
             {(item: ATag) => (
               <TableRow>
-                {(columnKey: unknown) => (
-                  <TableCell>
-                    {renderCell(item, columnKey as keyof ATag | 'actions')}
-                  </TableCell>
-                )}
+                {(columnKey: unknown) => {
+                  return (
+                    <TableCell width={columnKey === '' ? 28 : 'auto'}>
+                      {renderCell(item, columnKey as keyof ATag | 'actions')}
+                    </TableCell>
+                  )
+                }}
               </TableRow>
             )}
           </TableBody>
         </Table>
       </ScreenPage.Body>
-    </ScreenPage>
+    </>
   )
 }
 export default TagList

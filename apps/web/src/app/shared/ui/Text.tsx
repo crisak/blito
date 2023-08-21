@@ -1,4 +1,4 @@
-import clsx from "clsx"
+import clsx from 'clsx'
 
 type TextProps<T = React.ElementType> = {
   as?: T

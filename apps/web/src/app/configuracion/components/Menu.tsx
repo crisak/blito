@@ -38,8 +38,6 @@ const MenuLink = ({ className, active, ...props }: MenuLink) => (
 )
 
 const Menu = ({ ...props }) => {
-  console.log('defaultprops', props, props.params, props.query)
-
   const pathname = usePathname()
   return (
     <Box>
