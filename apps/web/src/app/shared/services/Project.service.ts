@@ -2,12 +2,7 @@ import { handleError, GraphQLUtil, LogUtil } from '@/utils'
 import { AContent, AFullContent } from '@/models/ModelsAdapter.model'
 import { GraphQLQuery, GRAPHQL_AUTH_MODE } from '@aws-amplify/api'
 
-import {
-  ListContentsQuery,
-  listContents,
-  GetContentQuery,
-  getContent
-} from 'blito-models'
+import { ListContentsQuery, GetContentQuery } from 'blito-models'
 import GraphQLService from './GraphQL.Service'
 
 export default class ProjectService extends GraphQLService {
@@ -22,6 +17,55 @@ export default class ProjectService extends GraphQLService {
 
   async getAllByCategory(categoryId: string): Promise<AContent[]> {
     try {
+      const listContents = /* GraphQL */ `
+        query ListContents(
+          $filter: ModelContentFilterInput
+          $limit: Int
+          $nextToken: String
+        ) {
+          listContents(filter: $filter, limit: $limit, nextToken: $nextToken) {
+            items {
+              id
+              type
+              time
+              size
+              project {
+                name
+                description
+              }
+              files {
+                data
+                type
+                mimeType
+                caption
+                size
+                isBanner
+              }
+              date
+              location {
+                country
+                state
+                city
+                street
+                position {
+                  latitude
+                  longitude
+                }
+              }
+              colors
+              views
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              contentCategoryId
+            }
+            nextToken
+            startedAt
+          }
+        }
+      `
+
       const payloadReq = {
         query: listContents,
         variables: {
@@ -44,7 +88,8 @@ export default class ProjectService extends GraphQLService {
           LogUtil.errorDetail(
             'ProjectService.getAllByCategory',
             err,
-            payloadReq
+            payloadReq,
+            { prettyError: err?.errors?.length }
           )
           return Promise.reject(err)
         })
@@ -73,6 +118,113 @@ export default class ProjectService extends GraphQLService {
         throw new Error('ProjectId params not exits')
       }
 
+      const getContent = /* GraphQL */ `
+        query GetContent($id: ID!) {
+          getContent(id: $id) {
+            id
+            type
+            time
+            size
+            project {
+              name
+              description
+            }
+            files {
+              data
+              type
+              mimeType
+              caption
+              size
+              isBanner
+            }
+            date
+            location {
+              country
+              state
+              city
+              street
+              position {
+                latitude
+                longitude
+              }
+            }
+            colors
+            views
+            Tags {
+              items {
+                id
+                contentId
+                tagId
+                tag {
+                  id
+                  name
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                }
+                createdAt
+                updatedAt
+                _version
+                _deleted
+              }
+              nextToken
+              startedAt
+            }
+            Category {
+              id
+              name
+              description
+              createdAt
+              updatedAt
+              _version
+              _deleted
+            }
+            Collaborators {
+              items {
+                id
+                contentId
+                collaboratorId
+                collaborator {
+                  id
+                  username
+                  email
+                  phone
+                  socials {
+                    type
+                    url
+                    username
+                  }
+                  fullName
+                  photoUrl
+                  createdAt
+                  updatedAt
+                  _version
+                  _deleted
+                }
+                createdAt
+                updatedAt
+                _version
+                _deleted
+                _lastChangedAt
+              }
+              nextToken
+              startedAt
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            contentCategoryId
+          }
+        }
+      `
+
+      /**
+       * project.Tags
+       * project.Collaborators
+       * project.Category
+       */
       const payloadReq = {
         query: getContent,
         variables: {
@@ -88,7 +240,9 @@ export default class ProjectService extends GraphQLService {
       const response = await this.getAPI()
         .graphql<GraphQLQuery<GetContentQuery>>(payloadReq)
         .catch((err) => {
-          LogUtil.errorDetail('ProjectService.getById', err, payloadReq)
+          LogUtil.errorDetail('ProjectService.getById', err, payloadReq, {
+            prettyError: err?.errors?.length
+          })
           return Promise.reject(err)
         })
 

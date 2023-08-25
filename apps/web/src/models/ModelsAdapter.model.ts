@@ -35,6 +35,7 @@ export type AContent = Omit<
   AClearRelationContent,
   'project' | 'files' | 'location'
 > & {
+  /** Remove "__typename" property */
   project?: AContentProject | null
   files: Array<AFile | null>
   location?: ALocation | null
