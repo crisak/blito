@@ -23,6 +23,7 @@ Amplify.configure({
   }
 })
 
+// eslint-disable-next-line no-console
 console.info('⛳️ Server App running in: ', process.env.NEXT_PUBLIC_ENV)
 
 interface RootLayoutProps {

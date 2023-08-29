@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 export default class LogUtil {
   static log(title: string, ...options: unknown[]) {
     console.log(`▶ ${title}:`, ...options)

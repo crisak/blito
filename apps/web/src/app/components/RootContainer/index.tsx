@@ -17,6 +17,7 @@ import Navbar from '../../layout/Navbar'
 import Splash from '../Splash'
 import ToastProvider from '../Toast'
 
+// eslint-disable-next-line no-console
 console.info('⛳️ Client App running in: ', process.env.NEXT_PUBLIC_ENV)
 
 /** This should be configured on Server side but not in the client(WEB) */

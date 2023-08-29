@@ -1,13 +1,13 @@
 'use client'
 
+import { Text } from '@/app/shared/ui'
 import { BORDER_RADIUS } from '@/styles/variables'
 import { Spinner } from '@nextui-org/react'
 import {
-  type GoogleMapProps,
   GoogleMap,
-  useJsApiLoader
+  useJsApiLoader,
+  type GoogleMapProps
 } from '@react-google-maps/api'
-import { Text } from '@/app/shared/ui'
 import darkModeStyles from './dark-mode.styles'
 
 const containerStyle = {

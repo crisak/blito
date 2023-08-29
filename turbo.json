@@ -1,6 +1,13 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalDotEnv": ["**/.env.*local"],
   "globalDependencies": ["**/.env.*local"],
+  "globalEnv": [
+    "**/.env.*local",
+    "NEXT_PUBLIC_GMAPS_API_KEY",
+    "NEXT_PUBLIC_BLITONER_API",
+    "NEXT_PUBLIC_ENV"
+  ],
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
