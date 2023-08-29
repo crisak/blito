@@ -1,9 +1,9 @@
 'use client'
 
-import { isValidElement, cloneElement, Children } from 'react'
 import { BoxProps } from '@/app/shared/ui'
-import { type Child, type PageName } from './ScreenPageProvider'
 import { motion } from 'framer-motion'
+import { Children, cloneElement, isValidElement } from 'react'
+import { type Child, type PageName } from './ScreenPageProvider'
 
 type ScreenPageContainerProps = Child &
   BoxProps & {
@@ -17,7 +17,6 @@ const ScreenPageContainer = ({
   index,
   propsPage
 }: ScreenPageContainerProps) => {
-  console.debug('ScreenPage.ScreenPageContainer', children)
   return (
     <motion.div
       className="page-container absolute left-0 top-0 h-full w-full overflow-y-auto overflow-x-hidden bg-content1 text-foreground"

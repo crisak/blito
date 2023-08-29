@@ -275,7 +275,7 @@ const TagList = () => {
           selectionMode="multiple"
           className="p-0"
           classNames={{
-            wrapper: screenNavigation.metadata.containerListCss,
+            wrapper: screenNavigation?.metadata?.containerListCss,
             base: 'base p-0',
             emptyWrapper: 'emptyWrapper p-0',
             table: 'table p-0 relative'

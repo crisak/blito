@@ -72,7 +72,6 @@ const ScreenPageProvider = ({
   currentPage,
   metadata: initialMetadata
 }: ProviderScreenNavigationProps) => {
-  console.debug('ScreenPage.ScreenPageProvider', pages)
   const [metadata, setMetadata] = useState(initialMetadata)
   const [historyPage, setHistoryPage] = useState<
     Array<{
