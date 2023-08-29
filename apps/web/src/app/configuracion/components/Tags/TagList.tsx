@@ -3,6 +3,7 @@
 import { useAlert } from '@/app/shared/hooks'
 import { Box, ScreenPage, Text } from '@/app/shared/ui'
 import { AContent, ATag } from '@/models'
+import { useTagStore } from '@/store'
 import {
   Button,
   colors,
@@ -15,7 +16,7 @@ import {
   TableHeader,
   TableRow
 } from '@nextui-org/react'
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { BiTrashAlt } from 'react-icons/bi'
 import { BsSearch } from 'react-icons/bs'
 import { IoIosAdd } from 'react-icons/io'
@@ -67,7 +68,12 @@ const TagList = () => {
     column: '',
     direction: undefined
   })
-  const { list, loading, getContentsByTag, remove } = useFetchTags()
+  const { getContentsByTag, remove } = useFetchTags()
+  const [getList, list, loading] = useTagStore((state) => [
+    state.getList,
+    state.list,
+    state.loading
+  ])
 
   const processRemove = async (tags: TagsWithContents[]): Promise<boolean> => {
     const STATUS_MODEL = {
@@ -213,6 +219,11 @@ const TagList = () => {
     return indexObject
   }, [list])
 
+  useEffect(() => {
+    getList()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
     <>
       <ScreenPage.Header
@@ -234,8 +245,8 @@ const TagList = () => {
                 size="sm"
                 color="danger"
                 startContent={<BiTrashAlt fill="currentColor" />}
-                isLoading={loading.contents}
-                disabled={loading.contents}
+                isLoading={loading === 'previewDelete'}
+                disabled={loading === 'previewDelete'}
                 onClick={handleRemove}
               >
                 Eliminar {itemsSelected.length} item(s)
@@ -258,7 +269,7 @@ const TagList = () => {
           fullWidth
           name="searchInput"
           placeholder="Búsqueda por palabra"
-          disabled={loading.list}
+          disabled={loading === 'list'}
           onChange={(e) => setSearchInput(e.target.value || '')}
           value={searchInput}
           startContent={
@@ -314,7 +325,7 @@ const TagList = () => {
           </TableHeader>
           <TableBody
             items={listFilter}
-            loadingState={loading.list ? 'loading' : undefined}
+            loadingState={loading === 'list' ? 'loading' : undefined}
           >
             {(item: ATag) => (
               <TableRow>

@@ -1,21 +1,26 @@
-import { GraphQLUtil, handleError, LogUtil } from '@/utils'
 import { AContent, ATag } from '@/models/ModelsAdapter.model'
+import { GraphQLUtil, handleError, LogUtil } from '@/utils'
 import { GraphQLQuery, GRAPHQL_AUTH_MODE } from '@aws-amplify/api'
 import {
   CreateTagInput,
   DeleteTagInput,
   ModelTagFilterInput,
-  updateTag,
   UpdateTagInput
 } from 'blito-models'
 import GraphQLService from '../GraphQL.Service'
-import { listTags, createTag, deleteTag, getContentsByTag } from './Tag.query'
 import {
-  ListTagsQuery,
+  createTag,
+  deleteTag,
+  getContentsByTag,
+  listTags,
+  updateTag
+} from './Tag.query'
+import {
   CreateTagMutation,
-  UpdateTagMutation,
+  DeleteTagMutation,
   GetContentsByTagQuery,
-  DeleteTagMutation
+  ListTagsQuery,
+  UpdateTagMutation
 } from './Tag.type'
 
 export class TagService extends GraphQLService {

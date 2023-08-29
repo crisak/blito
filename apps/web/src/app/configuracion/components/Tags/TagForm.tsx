@@ -5,9 +5,9 @@ import { Button, Input, Spacer } from '@nextui-org/react'
 import { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
 import { MetadataScreens } from './Tag.constants'
-import useFetchTags from './useFetchTags'
 
 import { Box, ScreenPage } from '@/app/shared/ui'
+import { useTagStore } from '@/store'
 
 const initialFormData: ATag = {
   id: '',
@@ -49,9 +49,11 @@ const TagForm = ({ tag: tagEdit }: TagFormProps) => {
 
   const [formData, setFormData] = useState(initialFormData)
 
-  const { loading, update, create } = useFetchTags({
-    initialLoad: false
-  })
+  const [loading, create, update] = useTagStore((state) => [
+    state.loading,
+    state.create,
+    state.update
+  ])
 
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault()
@@ -115,7 +117,7 @@ const TagForm = ({ tag: tagEdit }: TagFormProps) => {
             variant="bordered"
             name="name"
             label="Nombre del tag"
-            disabled={loading.create}
+            disabled={loading === 'create'}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             value={formData.name}
           />
@@ -125,7 +127,7 @@ const TagForm = ({ tag: tagEdit }: TagFormProps) => {
               variant="light"
               color="primary"
               onPress={handleCancel}
-              disabled={loading.create || loading.update}
+              disabled={loading === 'create' || loading === 'update'}
             >
               Cancelar
             </Button>
@@ -134,8 +136,8 @@ const TagForm = ({ tag: tagEdit }: TagFormProps) => {
               <Button
                 type="submit"
                 color="primary"
-                disabled={!isValidForm || loading.create}
-                isLoading={loading.create}
+                disabled={!isValidForm || loading === 'create'}
+                isLoading={loading === 'create'}
               >
                 Guardar
               </Button>
@@ -145,8 +147,8 @@ const TagForm = ({ tag: tagEdit }: TagFormProps) => {
               <Button
                 type="submit"
                 color="primary"
-                disabled={!isValidForm || loading.update}
-                isLoading={loading.update}
+                disabled={!isValidForm || loading === 'update'}
+                isLoading={loading === 'update'}
               >
                 Actualizar
               </Button>

@@ -5,6 +5,10 @@ export default class LogUtil {
     console.log(`▶ ${title}:`, ...options)
   }
 
+  static debug(title: string, ...options: unknown[]) {
+    console.debug(`🧪 ${title}:`, ...options)
+  }
+
   static error(title: string, ...options: unknown[]) {
     console.error(`🚨 ${title}: `, ...options)
   }

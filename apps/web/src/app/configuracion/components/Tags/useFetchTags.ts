@@ -1,14 +1,13 @@
 'use client'
 
-import { useEffect } from 'react'
 import { TagService } from '@/app/shared/services'
-import { useDispatch, useSelector } from 'react-redux'
+import { globalActions, GlobalStore } from '@/redux/slices'
 import { AppStore } from '@/redux/store'
-import { GlobalStore, globalActions } from '@/redux/slices'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
-import { useState } from 'react'
-import type { CreateTagInput } from 'blito-models'
 import { AContent, ATag } from '@/models'
+import { useState } from 'react'
 
 const tagService = TagService.getInstance()
 
@@ -62,49 +61,49 @@ const useFetchTags = ({ initialLoad }: UseFetchTagsProps = {}) => {
     }
   }
 
-  const create = async (tag: CreateTagInput): Promise<boolean> => {
-    try {
-      setLoading((prev) => ({
-        ...prev,
-        create: true
-      }))
-      const newTag = await tagService.create(tag)
-      dispatch(globalActions.createTag(newTag))
-      return true
-    } catch (error) {
-      throw error
-    } finally {
-      setLoading((prev) => ({
-        ...prev,
-        create: false
-      }))
-    }
-  }
+  // const create = async (tag: CreateTagInput): Promise<boolean> => {
+  //   try {
+  //     setLoading((prev) => ({
+  //       ...prev,
+  //       create: true
+  //     }))
+  //     const newTag = await tagService.create(tag)
+  //     dispatch(globalActions.createTag(newTag))
+  //     return true
+  //   } catch (error) {
+  //     throw error
+  //   } finally {
+  //     setLoading((prev) => ({
+  //       ...prev,
+  //       create: false
+  //     }))
+  //   }
+  // }
 
-  const update = async (tag: ATag): Promise<boolean> => {
-    try {
-      setLoading((prev) => ({
-        ...prev,
-        update: true
-      }))
+  // const update = async (tag: ATag): Promise<boolean> => {
+  //   try {
+  //     setLoading((prev) => ({
+  //       ...prev,
+  //       update: true
+  //     }))
 
-      const newTag = await tagService.update({
-        id: tag.id,
-        name: tag.name,
-        _version: tag._version
-      })
+  //     const newTag = await tagService.update({
+  //       id: tag.id,
+  //       name: tag.name,
+  //       _version: tag._version
+  //     })
 
-      dispatch(globalActions.updateTag(newTag))
-      return true
-    } catch (error) {
-      throw error
-    } finally {
-      setLoading((prev) => ({
-        ...prev,
-        update: false
-      }))
-    }
-  }
+  //     dispatch(globalActions.updateTag(newTag))
+  //     return true
+  //   } catch (error) {
+  //     throw error
+  //   } finally {
+  //     setLoading((prev) => ({
+  //       ...prev,
+  //       update: false
+  //     }))
+  //   }
+  // }
 
   const getContentsByTag = async (tag: ATag): Promise<AContent[]> => {
     try {
@@ -166,8 +165,8 @@ const useFetchTags = ({ initialLoad }: UseFetchTagsProps = {}) => {
     loading,
     error,
     refresh: getList,
-    create,
-    update,
+    // create,
+    // update,
     remove,
     getContentsByTag
   }
