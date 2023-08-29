@@ -3,18 +3,18 @@ import {
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  NavbarMenuToggle,
   NavbarMenu,
-  NavbarMenuItem
+  NavbarMenuItem,
+  NavbarMenuToggle
 } from '@nextui-org/navbar'
-import { Link } from '@nextui-org/link'
+import Link from 'next/link'
 
 import BlitoFrontPage from '@/assets/images/home-blito_bg_white.png'
-import Image from 'next/image'
-import { useSelector } from 'react-redux'
 import { AppStore, AuthStore } from '@/redux/store'
-import { useState } from 'react'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
+import { useState } from 'react'
+import { useSelector } from 'react-redux'
 
 const linksPublic = [
   {
@@ -119,8 +119,7 @@ const NavbarComponent = () => {
               <Link
                 color={route === '/logout' ? 'danger' : 'foreground'}
                 href={route}
-                size="lg"
-                className="w-full"
+                className="w-full text-lg"
               >
                 {label}
               </Link>
