@@ -1,8 +1,7 @@
 'use client'
 
 import { useDisclosure } from '@nextui-org/react'
-import { useState } from 'react'
-import { useContext, createContext } from 'react'
+import { createContext, useContext, useState } from 'react'
 import Alert, { type StateAlert } from './Alert'
 
 const initialState = {

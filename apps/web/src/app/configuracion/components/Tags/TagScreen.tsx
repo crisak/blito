@@ -1,9 +1,9 @@
 'use client'
 
-import TagList from './TagList'
-import TagForm from './TagForm'
 import { ScreenPage } from '@/app/shared/ui'
-import { SCREENS, MetadataScreens } from './Tag.constants'
+import { MetadataScreens, SCREENS } from './Tag.constants'
+import TagForm from './TagForm'
+import TagList from './TagList'
 
 type ScreenTagsProps = MetadataScreens & {
   classNames?: { containerPages?: string; containerPage?: string }
@@ -14,28 +14,16 @@ const screens = {
   [SCREENS.formTags]: () => <TagForm />
 } as const
 
-const TagScreen = ({ containerListCss, classNames }: ScreenTagsProps) => {
+const TagScreen = ({ classNames }: ScreenTagsProps) => {
   return (
     <ScreenPage.Provider
       pages={screens}
       currentPage={SCREENS.listTags}
-      className={classNames?.containerPages}
-      metadata={{
-        containerListCss
-      }}
-    >
-      {({ page, component, props, index }) => (
-        <ScreenPage.Container
-          key={page}
-          page={page}
-          index={index}
-          propsPage={props as object}
-          className={classNames?.containerPage}
-        >
-          {component}
-        </ScreenPage.Container>
-      )}
-    </ScreenPage.Provider>
+      className={
+        /** Defined height page container  */
+        classNames?.containerPages
+      }
+    />
   )
 }
 

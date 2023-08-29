@@ -1,15 +1,16 @@
 'use client'
 
-import {
-  createContext,
-  useContext,
-  useState,
-  Dispatch,
-  SetStateAction
-} from 'react'
 import { Box, BoxProps } from '@/app/shared/ui'
 import clsx from 'clsx'
 import { AnimatePresence } from 'framer-motion'
+import {
+  createContext,
+  Dispatch,
+  SetStateAction,
+  useContext,
+  useState
+} from 'react'
+import ScreenPageContainer from './ScreenPageContainer'
 
 type ContextScreenPageProps<T = unknown> = {
   push: <PropsData = unknown>(page: PageName, props?: PropsData) => void
@@ -43,13 +44,10 @@ type ProviderScreenNavigationProps<T = unknown> = {
   pages: Record<PageName, () => JSX.Element>
   currentPage: PageName
   className?: string
-  children: <PropsData = unknown>(dta: {
-    page: PageName
-    component: React.ReactNode
-    props?: PropsData
-    index?: number
-  }) => React.ReactNode
-  metadata: T
+  classNames?: {
+    containerPage?: string
+  }
+  metadata?: T
 }
 
 type ContainerProps = Child & BoxProps
@@ -59,7 +57,7 @@ const Container = ({ css, className, ...props }: ContainerProps) => {
     <Box
       {...props}
       className={clsx(
-        'pages-container relative w-full overflow-x-hidden',
+        'pages-container relative h-auto w-full overflow-hidden',
         className
       )}
       css={css}
@@ -68,12 +66,13 @@ const Container = ({ css, className, ...props }: ContainerProps) => {
 }
 
 const ScreenPageProvider = ({
-  children,
   pages,
   className,
+  classNames,
   currentPage,
   metadata: initialMetadata
 }: ProviderScreenNavigationProps) => {
+  console.debug('ScreenPage.ScreenPageProvider', pages)
   const [metadata, setMetadata] = useState(initialMetadata)
   const [historyPage, setHistoryPage] = useState<
     Array<{
@@ -113,7 +112,17 @@ const ScreenPageProvider = ({
       <Container className={className}>
         <AnimatePresence>
           {historyPage.map(({ page, component, props }, index) => {
-            return children({ page, component, props, index })
+            return (
+              <ScreenPageContainer
+                key={page}
+                page={page}
+                index={index}
+                propsPage={props as object}
+                className={classNames?.containerPage}
+              >
+                {component}
+              </ScreenPageContainer>
+            )
           })}
         </AnimatePresence>
       </Container>

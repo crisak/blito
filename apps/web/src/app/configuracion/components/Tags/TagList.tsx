@@ -1,30 +1,28 @@
 'use client'
 
 import { useAlert } from '@/app/shared/hooks'
+import { Box, ScreenPage, Text } from '@/app/shared/ui'
+import { AContent, ATag } from '@/models'
 import {
   Button,
+  colors,
   Input,
   SortDescriptor,
-  Spacer,
   Table,
   TableBody,
   TableCell,
   TableColumn,
   TableHeader,
-  TableRow,
-  colors
+  TableRow
 } from '@nextui-org/react'
-import { MetadataScreens, SCREENS } from './Tag.constants'
-import { useState, useMemo } from 'react'
-import useFetchTags from './useFetchTags'
-import { AContent, ATag } from '@/models'
-import { BsSearch } from 'react-icons/bs'
+import { useMemo, useState } from 'react'
 import { BiTrashAlt } from 'react-icons/bi'
-import { toast } from 'react-toastify'
-import { Box, Text } from '@/app/shared/ui'
-import BodyModalError, { type TagsWithContents } from './BodyModalError'
+import { BsSearch } from 'react-icons/bs'
 import { IoIosAdd } from 'react-icons/io'
-import { ScreenPage, useScreenPage } from '@/app/shared/ui'
+import { toast } from 'react-toastify'
+import BodyModalError, { type TagsWithContents } from './BodyModalError'
+import { MetadataScreens, SCREENS } from './Tag.constants'
+import useFetchTags from './useFetchTags'
 
 const columns: Array<{ name: string; uid: keyof ATag | 'actions' }> = [
   { name: 'Nombre', uid: 'name' },
@@ -61,11 +59,9 @@ const processContents =
   }
 
 const TagList = () => {
-  // const { theme } = useTheme()
-  // const collator = useCollator({ numeric: true })
   const alert = useAlert()
   const [searchInput, setSearchInput] = useState('')
-  const screenNavigation = useScreenPage<MetadataScreens>()
+  const screenNavigation = ScreenPage.useScreenPage<MetadataScreens>()
   const [itemsSelected, setItemsSelected] = useState<ATag[]>([])
   const [sortCell, setSortCell] = useState<SortDescriptor>({
     column: '',
@@ -230,33 +226,32 @@ const TagList = () => {
             </Text>
           </>
         }
-      >
-        <div className="flex gap-3">
-          {itemsSelected.length > 0 && (
+        actionsContent={
+          <div className="flex gap-3">
+            {itemsSelected.length > 0 && (
+              <Button
+                variant="light"
+                size="sm"
+                color="danger"
+                startContent={<BiTrashAlt fill="currentColor" />}
+                isLoading={loading.contents}
+                disabled={loading.contents}
+                onClick={handleRemove}
+              >
+                Eliminar {itemsSelected.length} item(s)
+              </Button>
+            )}
+
             <Button
-              variant="light"
               size="sm"
-              color="danger"
-              startContent={<BiTrashAlt fill="currentColor" />}
-              isLoading={loading.contents}
-              disabled={loading.contents}
-              onClick={handleRemove}
+              onClick={() => screenNavigation.push(SCREENS.formTags)}
+              startContent={<IoIosAdd size={16} fill="currentColor" />}
             >
-              Eliminar {itemsSelected.length} item(s)
+              Crear Tag
             </Button>
-          )}
-
-          <Button
-            size="sm"
-            onClick={() => screenNavigation.push(SCREENS.formTags)}
-            startContent={<IoIosAdd size={16} fill="currentColor" />}
-          >
-            Crear Tag
-          </Button>
-        </div>
-      </ScreenPage.Header>
-
-      <ScreenPage.Body>
+          </div>
+        }
+      >
         <Input
           isClearable
           variant="bordered"
@@ -270,22 +265,20 @@ const TagList = () => {
             <BsSearch width="16" height="16" fill={colors.zinc['700']} />
           }
         />
+      </ScreenPage.Header>
 
-        <Spacer y={2} />
-
+      <ScreenPage.Body>
         <Table
+          isHeaderSticky
           layout="fixed"
           aria-label="Lista de tags"
           selectionMode="multiple"
-          className="min-h-[110px] p-0 "
+          className="p-0"
           classNames={{
-            // th: 'z-20 sticky top-0 z-50 first:w-[55px]',
             wrapper: screenNavigation.metadata.containerListCss,
             base: 'base p-0',
             emptyWrapper: 'emptyWrapper p-0',
-            table: 'table p-0 relative',
-            // thead: '',
-            th: 'top-0 sticky'
+            table: 'table p-0 relative'
           }}
           sortDescriptor={sortCell}
           onSortChange={(sortByCell) => setSortCell(sortByCell)}
@@ -307,15 +300,17 @@ const TagList = () => {
           }}
         >
           <TableHeader columns={columns}>
-            {(column) => (
-              <TableColumn
-                allowsSorting
-                key={column.uid}
-                width={column.uid === 'createdAt' ? '100' : undefined}
-              >
-                {column.name}
-              </TableColumn>
-            )}
+            {(column) => {
+              return (
+                <TableColumn
+                  allowsSorting
+                  key={column.uid}
+                  width={column.uid === 'createdAt' ? '100' : undefined}
+                >
+                  {column.name}
+                </TableColumn>
+              )
+            }}
           </TableHeader>
           <TableBody
             items={listFilter}

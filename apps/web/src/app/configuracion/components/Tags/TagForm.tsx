@@ -1,13 +1,13 @@
 'use client'
 
-import { Button, Input, Spacer } from '@nextui-org/react'
-import { useState, useEffect } from 'react'
-import useFetchTags from './useFetchTags'
 import { ATag } from '@/models'
+import { Button, Input, Spacer } from '@nextui-org/react'
+import { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
 import { MetadataScreens } from './Tag.constants'
+import useFetchTags from './useFetchTags'
 
-import { ScreenPage, useScreenPage, Box } from '@/app/shared/ui'
+import { Box, ScreenPage } from '@/app/shared/ui'
 
 const initialFormData: ATag = {
   id: '',
@@ -45,7 +45,7 @@ type TagFormProps = {
 }
 
 const TagForm = ({ tag: tagEdit }: TagFormProps) => {
-  const screenNavigation = useScreenPage<MetadataScreens>()
+  const screenNavigation = ScreenPage.useScreenPage<MetadataScreens>()
 
   const [formData, setFormData] = useState(initialFormData)
 
@@ -105,7 +105,7 @@ const TagForm = ({ tag: tagEdit }: TagFormProps) => {
         <Spacer y={1} />
 
         <form onSubmit={handleSubmit} style={{ width: '100%' }}>
-          <Box className="flex flex-col gap-unit-lg">
+          <Box className="absolute  gap-unit-lg flex flex-col">
             <Input
               fullWidth
               isClearable
@@ -132,6 +132,7 @@ const TagForm = ({ tag: tagEdit }: TagFormProps) => {
               {!formData.id && (
                 <Button
                   type="submit"
+                  color="primary"
                   disabled={!isValidForm || loading.create}
                   isLoading={loading.create}
                 >
@@ -142,6 +143,7 @@ const TagForm = ({ tag: tagEdit }: TagFormProps) => {
               {formData.id && (
                 <Button
                   type="submit"
+                  color="primary"
                   disabled={!isValidForm || loading.update}
                   isLoading={loading.update}
                 >

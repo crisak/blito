@@ -5,21 +5,22 @@ import { BoxProps } from '@/app/shared/ui'
 import { type Child, type PageName } from './ScreenPageProvider'
 import { motion } from 'framer-motion'
 
-type PageNavigationProps = Child &
+type ScreenPageContainerProps = Child &
   BoxProps & {
     page: PageName
     index?: number
     propsPage?: object
   }
 
-const PageNavigation = ({
+const ScreenPageContainer = ({
   children,
   index,
   propsPage
-}: PageNavigationProps) => {
+}: ScreenPageContainerProps) => {
+  console.debug('ScreenPage.ScreenPageContainer', children)
   return (
     <motion.div
-      className="page-container absolute left-0 top-0 h-full w-full bg-content1 text-foreground"
+      className="page-container absolute left-0 top-0 h-full w-full overflow-y-auto overflow-x-hidden bg-content1 text-foreground"
       initial={
         index === 0
           ? { transform: 'translateX(0%)', opacity: 0.5 }
@@ -39,4 +40,4 @@ const PageNavigation = ({
   )
 }
 
-export default PageNavigation
+export default ScreenPageContainer
