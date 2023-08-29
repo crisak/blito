@@ -104,53 +104,53 @@ const TagForm = ({ tag: tagEdit }: TagFormProps) => {
       <ScreenPage.Body>
         <Spacer y={1} />
 
-        <form onSubmit={handleSubmit} style={{ width: '100%' }}>
-          <Box className="absolute  gap-unit-lg flex flex-col">
-            <Input
-              fullWidth
-              isClearable
-              variant="bordered"
-              name="name"
-              label="Nombre del tag"
-              disabled={loading.create}
-              onChange={(e) =>
-                setFormData({ ...formData, name: e.target.value })
-              }
-              value={formData.name}
-            />
-            <Box className="flex justify-end gap-unit-md">
+        <form
+          onSubmit={handleSubmit}
+          style={{ width: '100%' }}
+          className="flex flex-col gap-unit-lg"
+        >
+          <Input
+            fullWidth
+            isClearable
+            variant="bordered"
+            name="name"
+            label="Nombre del tag"
+            disabled={loading.create}
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+            value={formData.name}
+          />
+          <Box className="flex justify-end gap-unit-md">
+            <Button
+              type="button"
+              variant="light"
+              color="primary"
+              onPress={handleCancel}
+              disabled={loading.create || loading.update}
+            >
+              Cancelar
+            </Button>
+
+            {!formData.id && (
               <Button
-                type="button"
-                variant="light"
+                type="submit"
                 color="primary"
-                onPress={handleCancel}
-                disabled={loading.create || loading.update}
+                disabled={!isValidForm || loading.create}
+                isLoading={loading.create}
               >
-                Cancelar
+                Guardar
               </Button>
+            )}
 
-              {!formData.id && (
-                <Button
-                  type="submit"
-                  color="primary"
-                  disabled={!isValidForm || loading.create}
-                  isLoading={loading.create}
-                >
-                  Guardar
-                </Button>
-              )}
-
-              {formData.id && (
-                <Button
-                  type="submit"
-                  color="primary"
-                  disabled={!isValidForm || loading.update}
-                  isLoading={loading.update}
-                >
-                  Actualizar
-                </Button>
-              )}
-            </Box>
+            {formData.id && (
+              <Button
+                type="submit"
+                color="primary"
+                disabled={!isValidForm || loading.update}
+                isLoading={loading.update}
+              >
+                Actualizar
+              </Button>
+            )}
           </Box>
         </form>
       </ScreenPage.Body>

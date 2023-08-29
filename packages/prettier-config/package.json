@@ -1,0 +1,16 @@
+{
+  "name": "@blito/prettier-config",
+  "version": "0.0.1",
+  "main": "./prettier-config.json",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier-plugin-organize-imports": "^3.2.3",
+    "prettier-plugin-tailwindcss": "^0.5.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": {
+    "name": "Crisak"
+  }
+}

@@ -1,6 +1,1 @@
-{
-  "semi": false,
-  "singleQuote": true,
-  "trailingComma": "none",
-  "plugins": ["prettier-plugin-tailwindcss"]
-}
+"@blito/prettier-config"
