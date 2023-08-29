@@ -1,34 +1,28 @@
 import { Box, Text } from '@/app/shared/ui'
+import clsx from 'clsx'
 import Menu from './components/Menu'
 
 type SettingsLayoutProps = { children: React.ReactNode }
 
-const HEIGHT_NAVBAR = '76px'
+/**
+ * 64px = height of navbar
+ */
 
 const SettingsLayout = ({ children }: SettingsLayoutProps) => {
   return (
     <Box
-      css={{
-        display: 'grid',
-        gridTemplateColumns: '280px 3fr',
-        gridTemplateRows: 'auto',
-        gap: '1.2rem',
-        height: `calc(100vh - ${HEIGHT_NAVBAR})`
-      }}
+      className={clsx(
+        'grid grid-cols-1 sm:grid-cols-[280px_1fr]',
+        `sm:h-[calc(100vh_-_64px)]`
+      )}
     >
-      <aside className="bg-background/50 overflow-auto">
-        <Text as="h4" className="font-bold p-4">
+      <aside className="overflow-auto bg-background/50">
+        <Text as="h4" className="p-4 font-bold">
           Configuración
         </Text>
         <Menu />
       </aside>
-      <Box
-        css={{
-          overflow: 'auto'
-        }}
-      >
-        {children}
-      </Box>
+      <Box className="overflow-auto p-unit-lg">{children}</Box>
     </Box>
   )
 }

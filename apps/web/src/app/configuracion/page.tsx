@@ -1,23 +1,18 @@
-import { Text, Container } from '@/app/shared/ui'
+import { Container, Text } from '@/app/shared/ui'
 import { Card, CardBody } from '@nextui-org/card'
-import { Spacer } from '@nextui-org/spacer'
 import { TagScreen } from './components/Tags'
-
-const MAX_HEIGHT_CARD = 580
 
 const SettingsPage = () => {
   return (
     <>
       <Container>
-        <Spacer y={1.5} />
-        <Text as="h2" className="p-4 font-bold">
+        <Text as="h2" className="mb-unit-lg font-bold">
           General
         </Text>
-        <Spacer y={1.5} />
       </Container>
       <Container>
-        <div className="grid grid-cols-2 gap-10">
-          <Card className="h-unit-8xl overflow-hidden">
+        <div className="grid auto-cols-max grid-cols-1 gap-10 lg:grid-cols-12">
+          <Card className="h-unit-8xl overflow-hidden lg:col-span-5">
             <CardBody className="p-5">
               <TagScreen
                 classNames={{
@@ -27,7 +22,7 @@ const SettingsPage = () => {
             </CardBody>
           </Card>
 
-          <Card className={`h-[${MAX_HEIGHT_CARD}px] overflow-hidden`}>
+          <Card className="h-unit-8xl overflow-hidden lg:col-span-7">
             <CardBody className="p-6">
               <Text as="h3">Colaboradores</Text>
             </CardBody>
