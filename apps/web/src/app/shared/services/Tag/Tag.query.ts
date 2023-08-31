@@ -48,6 +48,62 @@ export const updateTag = /* GraphQL */ `
     }
   }
 `
+export const listContentsByTag = /* GraphQL */ `
+  query ListContentTags(
+    $filter: ModelContentTagFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listContentTags(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        contentId
+        tagId
+        content {
+          id
+          type
+          time
+          size
+          project {
+            name
+            description
+          }
+          files {
+            data
+            type
+            mimeType
+            caption
+            size
+            isBanner
+          }
+          date
+          location {
+            country
+            state
+            city
+            street
+            position {
+              latitude
+              longitude
+            }
+          }
+          colors
+          views
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          contentCategoryId
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+      }
+    }
+  }
+`
+
 export const getContentsByTag = /* GraphQL */ `
   query GetContentsByTag($id: ID!) {
     getTag(id: $id) {
@@ -109,6 +165,23 @@ export const deleteTag = /* GraphQL */ `
     deleteTag(input: $input, condition: $condition) {
       id
       name
+      createdAt
+      updatedAt
+      _version
+      _deleted
+    }
+  }
+`
+
+export const deleteContentTag = /* GraphQL */ `
+  mutation DeleteContentTag(
+    $input: DeleteContentTagInput!
+    $condition: ModelContentTagConditionInput
+  ) {
+    deleteContentTag(input: $input, condition: $condition) {
+      id
+      contentId
+      tagId
       createdAt
       updatedAt
       _version

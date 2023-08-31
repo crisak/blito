@@ -1,8 +1,9 @@
-import { AContent, ATag } from '@/models/ModelsAdapter.model'
+import { AContentTag, ARContentByTag, ATag } from '@/models/ModelsAdapter.model'
 import { GraphQLUtil, handleError, LogUtil } from '@/utils'
 import { GraphQLQuery, GRAPHQL_AUTH_MODE } from '@aws-amplify/api'
 import {
   CreateTagInput,
+  DeleteContentTagInput,
   DeleteTagInput,
   ModelTagFilterInput,
   UpdateTagInput
@@ -10,15 +11,17 @@ import {
 import GraphQLService from '../GraphQL.Service'
 import {
   createTag,
+  deleteContentTag,
   deleteTag,
-  getContentsByTag,
+  listContentsByTag,
   listTags,
   updateTag
 } from './Tag.query'
 import {
   CreateTagMutation,
+  DeleteTagContentMutation,
   DeleteTagMutation,
-  GetContentsByTagQuery,
+  ListContentsByTagQuery,
   ListTagsQuery,
   UpdateTagMutation
 } from './Tag.type'
@@ -143,12 +146,12 @@ export class TagService extends GraphQLService {
   }
 
   /** Public */
-  async getContents(tagId: ATag['id']): Promise<Array<AContent>> {
+  async getContentsByTag(tagId: ATag['id']): Promise<Array<ARContentByTag>> {
     try {
       const req = {
-        query: getContentsByTag,
+        query: listContentsByTag,
         variables: {
-          id: tagId
+          filter: { tagId: { eq: tagId } }
         },
         authMode: GRAPHQL_AUTH_MODE.API_KEY
       }
@@ -157,14 +160,18 @@ export class TagService extends GraphQLService {
        *  Update  Content Mutation
        */
       const response = await this.getAPI()
-        .graphql<GraphQLQuery<GetContentsByTagQuery>>(req)
+        .graphql<GraphQLQuery<ListContentsByTagQuery>>(req)
         .catch((err) => {
-          LogUtil.errorDetail('TagService.getContents', err, req)
+          LogUtil.errorDetail('getContentsByTag.getContents', err, req)
           return Promise.reject(err)
         })
 
-      if (!response || response?.errors || !response?.data?.getTag?.id) {
-        LogUtil.errorDetail('TagService.getContents', response, req, {
+      if (
+        !response ||
+        response?.errors ||
+        !response?.data?.listContentTags?.items
+      ) {
+        LogUtil.errorDetail('getContentsByTag.getContents', response, req, {
           prettyError: true
         })
 
@@ -172,10 +179,10 @@ export class TagService extends GraphQLService {
       }
 
       return (
-        response.data?.getTag?.contents?.items
-          .filter((relationItem) => Boolean(relationItem?.content?.id))
-          .map<AContent>((relationItem: any) => {
-            return relationItem.content
+        response.data?.listContentTags?.items
+          ?.filter((relationItem) => Boolean(relationItem?.content?.id))
+          .map<ARContentByTag>((relationItem: any) => {
+            return relationItem
           }) || []
       )
     } catch (error) {
@@ -192,9 +199,10 @@ export class TagService extends GraphQLService {
           input: tag
         }
       }
+
       /**
        * {Action}-{Name}-{Type}
-       *  Update  Content Mutation
+       *  Update Content Mutation
        */
       const response = await this.getAPI()
         .graphql<GraphQLQuery<DeleteTagMutation>>(req)
@@ -212,6 +220,76 @@ export class TagService extends GraphQLService {
       }
 
       return response.data.deleteTag
+    } catch (error) {
+      throw handleError(error)
+    }
+  }
+
+  /** Private API */
+  async deleteContentsByTag(
+    contentsTagR: DeleteContentTagInput[]
+  ): Promise<Array<AContentTag>> {
+    try {
+      if (!contentsTagR.length) {
+        return []
+      }
+
+      const res = await Promise.allSettled(
+        contentsTagR.map((contentTagR) => {
+          const req = {
+            query: deleteContentTag,
+            variables: {
+              input: contentTagR
+            }
+          }
+
+          /**
+           * {Action}-{Name}-{Type}
+           *  Update Content Mutation
+           */
+          return this.getAPI()
+            .graphql<GraphQLQuery<DeleteTagContentMutation>>(req)
+            .catch((err) => {
+              return Promise.reject(err)
+            })
+        })
+      )
+
+      const errors = res
+        .filter((resp) => {
+          if (resp.status === 'rejected') {
+            return true
+          }
+
+          if (resp.status === 'fulfilled') {
+            const result = resp.value
+            return result.errors?.length || !result.data?.deleteContentTag?.id
+          }
+
+          return false
+        })
+        .map((resp: any) => resp.value)
+
+      if (errors.length) {
+        LogUtil.errorDetail(
+          'TagService.deleteContentsByTag',
+          errors,
+          contentsTagR
+        )
+
+        throw errors
+      }
+
+      const result: Array<AContentTag> = []
+      res.forEach((resp) => {
+        if (resp.status === 'fulfilled') {
+          if (resp.value.data?.deleteContentTag?.id) {
+            result.push(resp.value.data.deleteContentTag)
+          }
+        }
+      })
+
+      return result
     } catch (error) {
       throw handleError(error)
     }

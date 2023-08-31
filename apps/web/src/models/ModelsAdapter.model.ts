@@ -1,13 +1,14 @@
 import type {
-  Content,
   Category as CategoryModel,
-  File as FileModel,
-  Tag,
   Collaborator,
-  SocialNetwork,
+  Content,
   ContentProject,
+  ContentTag,
+  File as FileModel,
   Location as LocationModel,
-  Position
+  Position,
+  SocialNetwork,
+  Tag
 } from 'blito-models'
 
 export type DefaultPropsGraphQL = {
@@ -18,12 +19,16 @@ export type DefaultPropsGraphQL = {
 export type RmDefaultParameter<T> = Omit<T, keyof DefaultPropsGraphQL>
 
 /**
- * Dictionary names
+ *
+ * * Dictionary names
+ * A = Adapter
+ * R = Relation
+ * * Detail
  * {A}{ModelName} = Name type or model
  * A = Prefix of adapter
  * ModelName = Name original of model
  *
- * Example
+ * * Example
  * Content = Name Original
  * AContent = Name Adapter
  *
@@ -59,6 +64,33 @@ export type ACategory = RmDefaultParameter<CategoryModel>
 export type AFile = RmDefaultParameter<FileModel>
 
 export type ATag = Omit<RmDefaultParameter<Tag>, 'contents'>
+
+export type AContentTag = Omit<
+  RmDefaultParameter<ContentTag>,
+  'tag' | 'content'
+>
+
+export type ARContentTag = Omit<
+  RmDefaultParameter<ContentTag>,
+  'tag' | 'content'
+> & {
+  content: AContent
+  tag: ATag
+}
+
+export type ARContentByTag = Omit<
+  RmDefaultParameter<ContentTag>,
+  'tag' | 'content'
+> & {
+  content: AContent
+}
+
+export type ARTagByContent = Omit<
+  RmDefaultParameter<ContentTag>,
+  'tag' | 'content'
+> & {
+  tag: ATag
+}
 
 export type ATagRelation = RmDefaultParameter<Tag>
 

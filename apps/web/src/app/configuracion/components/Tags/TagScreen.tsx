@@ -19,6 +19,9 @@ const TagScreen = ({ classNames }: ScreenTagsProps) => {
     <ScreenPage.Provider
       pages={screens}
       currentPage={SCREENS.listTags}
+      classNames={{
+        containerPage: classNames?.containerPage
+      }}
       className={
         /** Defined height page container  */
         classNames?.containerPages

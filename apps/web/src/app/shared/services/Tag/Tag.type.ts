@@ -1,6 +1,8 @@
-import { AContent, ATag } from '@/models'
+import { AContentTag, ARContentByTag, ATag } from '@/models'
 
-/** Q = Query  */
+/**
+ * Q = Query
+ */
 
 export type ListTagsQuery = {
   listTags?: {
@@ -18,18 +20,17 @@ export type UpdateTagMutation = {
   updateTag?: ATag | null
 }
 
-export type GetContentsByTagQuery = {
-  getTag?:
-    | (ATag & {
-        contents?: {
-          items: Array<{
-            content: AContent
-          } | null>
-        } | null
-      })
-    | null
+export type ListContentsByTagQuery = {
+  listContentTags?: {
+    __typename: 'ModelContentTagConnection'
+    items: Array<ARContentByTag | null>
+  } | null
 }
 
 export type DeleteTagMutation = {
   deleteTag?: ATag | null
+}
+
+export type DeleteTagContentMutation = {
+  deleteContentTag?: AContentTag | null
 }

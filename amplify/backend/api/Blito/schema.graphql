@@ -53,7 +53,7 @@ type Content
   colors: [String]
   views: Int
   Tags: [Tag] @manyToMany(relationName: "ContentTag")
-  Category: Category @hasOne
+  Category: Category @hasOne # contentCategoryId
   Collaborators: [Collaborator] @manyToMany(relationName: "ContentCollaborator")
 }
 

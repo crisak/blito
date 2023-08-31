@@ -2,7 +2,7 @@
 
 import { useAlert } from '@/app/shared/hooks'
 import { Box, ScreenPage, Text } from '@/app/shared/ui'
-import { AContent, ATag } from '@/models'
+import { ARContentByTag, ATag } from '@/models'
 import { useTagStore } from '@/store'
 import {
   Button,
@@ -23,7 +23,6 @@ import { IoIosAdd } from 'react-icons/io'
 import { toast } from 'react-toastify'
 import BodyModalError, { type TagsWithContents } from './BodyModalError'
 import { MetadataScreens, SCREENS } from './Tag.constants'
-import useFetchTags from './useFetchTags'
 
 const columns: Array<{ name: string; uid: keyof ATag | 'actions' }> = [
   { name: 'Nombre', uid: 'name' },
@@ -39,13 +38,15 @@ const showToastSuccess = (
 }
 
 const processContents =
-  (getContents: (tag: ATag) => Promise<AContent[]>) =>
+  (getContents: (tag: ATag['id']) => Promise<ARContentByTag[]>) =>
   async (tag: ATag): Promise<TagsWithContents> => {
     try {
-      const contents = await getContents(tag)
+      const contentsByTag = await getContents(tag.id)
+      const contents = contentsByTag.map(({ content }) => content)
+
       return {
         tag,
-        hasContents: false,
+        hasContents: contents.length > 0,
         contents: contents || [],
         error: null
       }
@@ -68,19 +69,23 @@ const TagList = () => {
     column: '',
     direction: undefined
   })
-  const { getContentsByTag, remove } = useFetchTags()
-  const [getList, list, loading] = useTagStore((state) => [
-    state.getList,
-    state.list,
-    state.loading
-  ])
+
+  const [getContentsByTag, getAll, remove, list, loading] = useTagStore(
+    (state) => [
+      state.getContentsByTag,
+      state.getAll,
+      state.remove,
+      state.list,
+      state.loading
+    ]
+  )
 
   const processRemove = async (tags: TagsWithContents[]): Promise<boolean> => {
     const STATUS_MODEL = {
       hideModal: true,
       keepOpen: false
     }
-    const responsePromise = await Promise.allSettled(
+    const responsePromise = await Promise.all(
       tags.map(async ({ tag }) => {
         try {
           await remove(tag)
@@ -93,10 +98,11 @@ const TagList = () => {
 
     const errors: { tag: ATag; error: unknown }[] = responsePromise
       .map((res) => {
-        if (res.status === 'rejected') {
-          return res.reason
+        if (res.error) {
+          return res
         }
-        return null
+
+        return null as any
       })
       .filter(Boolean)
 
@@ -130,8 +136,9 @@ const TagList = () => {
   }
 
   const handleRemove = async () => {
-    const getContents = processContents(getContentsByTag)
-    const contents = await Promise.all(itemsSelected.map(getContents))
+    const contents = await Promise.all(
+      itemsSelected.map(processContents(getContentsByTag))
+    )
 
     alert.confirm({
       title: 'Eliminar tags',
@@ -220,7 +227,7 @@ const TagList = () => {
   }, [list])
 
   useEffect(() => {
-    getList()
+    getAll()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
