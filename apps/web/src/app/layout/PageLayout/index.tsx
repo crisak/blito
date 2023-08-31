@@ -1,37 +1,23 @@
 'use client'
 
-import Breadcrumbs, {
-  type BreadcrumbsProps
-} from '@/app/components/Breadcrumbs'
-
-import { Spacer } from '@nextui-org/react'
 import Actions, { ActionsProps } from '@/app/components/Actions'
-import { AppStore, AuthStore } from '@/redux/store'
-import { useSelector } from 'react-redux'
 import { Container as ContainerUI } from '@/app/shared/ui'
-import clsx from "clsx"
+import { AppStore, AuthStore } from '@/redux/store'
+import { Spacer } from '@nextui-org/react'
+import clsx from 'clsx'
+import { useSelector } from 'react-redux'
 
 type ContainerLayoutProps = {
   children: React.ReactNode | React.ReactNode[]
   title?: React.ReactNode
-  breadcrumbs?: BreadcrumbsProps
 } & ActionsProps
 
 const PageLayout = ({
   children,
-  breadcrumbs,
   title,
   showButtonSave
 }: ContainerLayoutProps) => {
   const auth = useSelector<AppStore, AuthStore>((state) => state.auth)
-
-  const displayBreadcrumbs = () => {
-    if (!breadcrumbs?.links?.length) {
-      return null
-    }
-
-    return <Breadcrumbs {...breadcrumbs} />
-  }
 
   const displayHeader = () => {
     if (!title && !auth?.isAuth) {
@@ -63,8 +49,6 @@ const PageLayout = ({
   return (
     <>
       <ContainerUI>
-        <Spacer y={1} />
-        {displayBreadcrumbs()}
         <Spacer y={1} />
         {displayHeader()}
         <Spacer y={1} />

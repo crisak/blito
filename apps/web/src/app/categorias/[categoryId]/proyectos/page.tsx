@@ -1,6 +1,7 @@
 import { PageLayout } from '@/app/components'
-import { Box, Text } from '@/app/shared/ui'
+import { SetBreadcrumb } from '@/app/shared/components'
 import { CategoryService, ProjectService } from '@/app/shared/services'
+import { Box, Text } from '@/app/shared/ui'
 import { CardProject } from './components'
 
 type ProjectsPageProps = {
@@ -16,19 +17,10 @@ const CategoryContentsPage = async ({ params }: ProjectsPageProps) => {
     projectService.getAllByCategory(params.categoryId)
   ])
 
-  // const breadcrumbs: BreadcrumbsProps = {
-  //   links: [
-  //     { label: 'Categorias', href: '/categorias' },
-  //     { label: category.name, href: `/categorias/${params.categoryId}` },
-  //     { label: 'Proyectos', href: `/categorias/${params.categoryId}/proyectos` }
-  //   ]
-  // }
-
   return (
-    <PageLayout
-      // breadcrumbs={breadcrumbs}
-      title={<Text as="h2">{category.name}</Text>}
-    >
+    <PageLayout title={<Text as="h2">{category.name}</Text>}>
+      <SetBreadcrumb params={[{ key: 'categoryId', value: category.name }]} />
+
       <Box
         css={{
           display: 'grid',

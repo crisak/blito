@@ -1,6 +1,5 @@
 export { default as PageLayout } from '../layout/PageLayout'
 export { default as Actions } from './Actions'
-export { default as Breadcrumbs, type BreadcrumbsProps } from './Breadcrumbs'
 export * from './CardImage'
 export { default as FloatingSocials } from './FloatingSocials'
 export { default as GoogleMaps } from './GoogleMaps'

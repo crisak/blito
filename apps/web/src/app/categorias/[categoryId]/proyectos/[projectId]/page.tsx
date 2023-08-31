@@ -1,4 +1,5 @@
-import { BreadcrumbsProps, PageLayout } from '@/app/components'
+import { PageLayout } from '@/app/components'
+import { SetBreadcrumb } from '@/app/shared/components'
 import { ProjectService } from '@/app/shared/services'
 import { ProjectDetailContainer } from './components'
 
@@ -14,26 +15,23 @@ type DetailProjectProps = {
 const DetailProject = async (props: DetailProjectProps) => {
   const project = await projectService.getById(props.params.projectId)
 
-  // const breadcrumbs: BreadcrumbsProps = {
-  //   links: [
-  //     { label: 'Categorias', href: '/categorias' },
-  //     {
-  //       label: project.Category?.name || '',
-  //       href: `/categorias/${props.params.categoryId}`
-  //     },
-  //     {
-  //       label: 'Proyectos',
-  //       href: `/categorias/${props.params.categoryId}/proyectos`
-  //     },
-  //     {
-  //       label: project.project?.name || project.type || '',
-  //       href: `/categorias/${props.params.categoryId}/proyectos/${props.params.projectId}`
-  //     }
-  //   ]
-  // }
-
   return (
     <PageLayout showButtonSave={false}>
+      <SetBreadcrumb
+        params={[
+          {
+            key: 'projectId',
+            value:
+              project?.project?.name ||
+              project.files?.[0]?.caption ||
+              props.params.projectId
+          },
+          {
+            key: 'categoryId',
+            value: project?.Category?.name || props.params.categoryId
+          }
+        ]}
+      />
       <ProjectDetailContainer project={project} />
     </PageLayout>
   )
