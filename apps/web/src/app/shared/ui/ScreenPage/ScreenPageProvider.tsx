@@ -98,6 +98,8 @@ const ScreenPageProvider = ({
     })
   }
 
+  const indexPreview = historyPage.length - 2
+
   return (
     <ContextScreenPage.Provider
       value={{
@@ -113,6 +115,7 @@ const ScreenPageProvider = ({
           {historyPage.map(({ page, component, props }, index) => {
             return (
               <ScreenPageContainer
+                isPreview={indexPreview >= 0 && indexPreview === index}
                 key={page}
                 page={page}
                 index={index}
