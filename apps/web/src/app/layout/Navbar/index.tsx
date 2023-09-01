@@ -11,6 +11,7 @@ import Link from 'next/link'
 
 import BlitoFrontPage from '@/assets/images/home-blito_bg_white.png'
 import { AppStore, AuthStore } from '@/redux/store'
+import clsx from 'clsx'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
@@ -78,7 +79,9 @@ const NavbarComponent = () => {
         {linksPublic.map(({ label, route }) => (
           <NavbarItem key={label + route} isActive={pathname === route}>
             <Link
-              color={pathname === route ? 'primary' : 'foreground'}
+              className={clsx({
+                'text-primary': pathname === route
+              })}
               href={route}
               aria-current={pathname === route ? 'page' : 'false'}
             >
@@ -93,7 +96,9 @@ const NavbarComponent = () => {
           {linksPrivate.map(({ label, route }) => (
             <NavbarItem key={label + route} isActive={pathname === route}>
               <Link
-                color={pathname === route ? 'primary' : 'foreground'}
+                className={clsx({
+                  'text-primary': pathname === route
+                })}
                 aria-current={pathname === route ? 'page' : 'false'}
                 href={route}
               >
@@ -107,7 +112,12 @@ const NavbarComponent = () => {
       <NavbarMenu>
         {linksPublic.map(({ label, route }) => (
           <NavbarMenuItem key={label + route}>
-            <Link color="foreground" href={route}>
+            <Link
+              className={clsx({
+                'text-primary': pathname === route
+              })}
+              href={route}
+            >
               {label}
             </Link>
           </NavbarMenuItem>
@@ -117,9 +127,10 @@ const NavbarComponent = () => {
           linksPrivate.map(({ label, route }) => (
             <NavbarMenuItem key={label + route}>
               <Link
-                color={route === '/logout' ? 'danger' : 'foreground'}
+                className={clsx('w-full text-lg', {
+                  'text-danger': route === '/logout'
+                })}
                 href={route}
-                className="w-full text-lg"
               >
                 {label}
               </Link>
