@@ -9,6 +9,7 @@ import {
   colors,
   Input,
   SortDescriptor,
+  Spinner,
   Table,
   TableBody,
   TableCell,
@@ -16,6 +17,7 @@ import {
   TableHeader,
   TableRow
 } from '@nextui-org/react'
+import clsx from 'clsx'
 import { useEffect, useMemo, useState } from 'react'
 import { BiTrashAlt } from 'react-icons/bi'
 import { BsSearch } from 'react-icons/bs'
@@ -64,7 +66,7 @@ const TagList = () => {
   const alert = useAlert()
   const [searchInput, setSearchInput] = useState('')
   const screenNavigation = ScreenPage.useScreenPage<MetadataScreens>()
-  const [itemsSelected, setItemsSelected] = useState<ATag[]>([])
+  const [selectedKeys, setSelectedKeys] = useState<Set<ATag['id']>>(new Set([]))
   const [sortCell, setSortCell] = useState<SortDescriptor>({
     column: '',
     direction: undefined
@@ -80,13 +82,15 @@ const TagList = () => {
     ]
   )
 
-  const processRemove = async (tags: TagsWithContents[]): Promise<boolean> => {
+  const processRemove = async (
+    tagsContentsRemoved: TagsWithContents[]
+  ): Promise<boolean> => {
     const STATUS_MODEL = {
       hideModal: true,
       keepOpen: false
     }
     const responsePromise = await Promise.all(
-      tags.map(async ({ tag }) => {
+      tagsContentsRemoved.map(async ({ tag }) => {
         try {
           await remove(tag)
           return { tag, error: null }
@@ -130,22 +134,11 @@ const TagList = () => {
       return STATUS_MODEL.keepOpen
     }
 
+    setSelectedKeys(new Set([]))
+
     showToastSuccess('Los tag(s) fueron eliminados correctamente')
 
     return STATUS_MODEL.hideModal
-  }
-
-  const handleRemove = async () => {
-    const contents = await Promise.all(
-      itemsSelected.map(processContents(getContentsByTag))
-    )
-
-    alert.confirm({
-      title: 'Eliminar tags',
-      messageButtonAccept: 'Eliminar',
-      body: <BodyModalError contents={contents || []} />,
-      asyncFn: () => processRemove(contents)
-    })
   }
 
   const handleEdit = (tag: ATag) => {
@@ -226,6 +219,21 @@ const TagList = () => {
     return indexObject
   }, [list])
 
+  const handleRemove = async () => {
+    const tagsContents = await Promise.all(
+      Array.from(selectedKeys)
+        .map((tagId) => indexList[tagId])
+        .map(processContents(getContentsByTag))
+    )
+
+    alert.confirm({
+      title: 'Eliminar tags',
+      messageButtonAccept: 'Eliminar',
+      body: <BodyModalError tagsContents={tagsContents || []} />,
+      asyncFn: () => processRemove(tagsContents)
+    })
+  }
+
   useEffect(() => {
     getAll()
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -240,13 +248,13 @@ const TagList = () => {
             Tags
             <Text as="span" className="ml-2 font-light text-foreground-500">
               ({list.length}
-              {itemsSelected.length > 0 ? `/${itemsSelected.length}` : ''})
+              {selectedKeys.size > 0 ? `/${selectedKeys.size}` : ''})
             </Text>
           </>
         }
         actionsContent={
           <div className="flex gap-3">
-            {itemsSelected.length > 0 && (
+            {selectedKeys.size > 0 && (
               <Button
                 variant="light"
                 size="sm"
@@ -256,7 +264,7 @@ const TagList = () => {
                 disabled={loading === 'previewDelete'}
                 onClick={handleRemove}
               >
-                Eliminar {itemsSelected.length} item(s)
+                Eliminar {selectedKeys.size} item(s)
               </Button>
             )}
 
@@ -272,6 +280,7 @@ const TagList = () => {
       >
         <Input
           isClearable
+          onClear={() => setSearchInput('')}
           variant="bordered"
           fullWidth
           name="searchInput"
@@ -296,25 +305,23 @@ const TagList = () => {
             wrapper: screenNavigation?.metadata?.containerListCss,
             base: 'base p-0',
             emptyWrapper: 'emptyWrapper p-0',
-            table: 'table p-0 relative'
+            table: clsx('table-tags p-0 relative', {
+              'min-h-[250px]': loading === 'list'
+            })
           }}
           sortDescriptor={sortCell}
           onSortChange={(sortByCell) => setSortCell(sortByCell)}
+          selectedKeys={selectedKeys}
           onSelectionChange={(eventSelection) => {
             const setList = eventSelection as 'all' | Set<ATag['id']>
-            let tags: ATag[] = []
 
             if (setList instanceof Set) {
-              setList.forEach((tagId) => {
-                tags.push({ ...indexList[tagId] })
-              })
+              setSelectedKeys(setList)
             }
 
             if (setList === 'all') {
-              tags = [...list]
+              setSelectedKeys(new Set(Object.keys(indexList)))
             }
-
-            setItemsSelected(tags)
           }}
         >
           <TableHeader columns={columns}>
@@ -332,7 +339,8 @@ const TagList = () => {
           </TableHeader>
           <TableBody
             items={listFilter}
-            loadingState={loading === 'list' ? 'loading' : undefined}
+            isLoading={loading === 'list'}
+            loadingContent={<Spinner size="md" label="Cargando registros..." />}
           >
             {(item: ATag) => (
               <TableRow>

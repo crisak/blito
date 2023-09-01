@@ -114,6 +114,7 @@ const TagForm = ({ tag: tagEdit }: TagFormProps) => {
           <Input
             fullWidth
             isClearable
+            onClear={() => setFormData({ ...formData, name: '' })}
             variant="bordered"
             name="name"
             label="Nombre del tag"

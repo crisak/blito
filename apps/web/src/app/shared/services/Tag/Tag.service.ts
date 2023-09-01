@@ -68,7 +68,7 @@ export class TagService extends GraphQLService {
       /** TODO - Apply pagination */
 
       const items = response.data.listTags.items.filter(
-        (item) => item?._deleted !== true
+        (item) => !item?._deleted
       )
 
       return GraphQLUtil.removeDefaultPropsOfList<ATag>(items || [])
@@ -180,7 +180,9 @@ export class TagService extends GraphQLService {
 
       return (
         response.data?.listContentTags?.items
-          ?.filter((relationItem) => Boolean(relationItem?.content?.id))
+          ?.filter((relationItem) =>
+            Boolean(relationItem?.content?.id || !relationItem?._deleted)
+          )
           .map<ARContentByTag>((relationItem: any) => {
             return relationItem
           }) || []

@@ -1,6 +1,7 @@
 import { Text } from '@/app/shared/ui'
 import { AContent, AFile, ATag } from '@/models'
 import {
+  semanticColors,
   Spacer,
   Table,
   TableBody,
@@ -8,8 +9,7 @@ import {
   TableColumn,
   TableHeader,
   TableRow,
-  Tooltip,
-  semanticColors
+  Tooltip
 } from '@nextui-org/react'
 import { ContentType, TypeFile } from 'blito-models'
 import Image from 'next/image'
@@ -31,13 +31,14 @@ export type TagsWithContents = {
 }
 
 type BodyModalErrorProps = {
-  contents: TagsWithContents[]
+  tagsContents: TagsWithContents[]
 }
 
-const BodyModalError = ({ contents = [] }: BodyModalErrorProps) => {
+const BodyModalError = ({ tagsContents = [] }: BodyModalErrorProps) => {
   return (
     <>
-      {contents.filter(({ contents }) => contents.length === 0).length > 0 && (
+      {tagsContents.filter(({ contents }) => contents.length === 0).length >
+        0 && (
         <>
           <Text>Tags sin galerías</Text>
           <Table
@@ -53,7 +54,7 @@ const BodyModalError = ({ contents = [] }: BodyModalErrorProps) => {
               <TableColumn>Tag</TableColumn>
             </TableHeader>
             <TableBody>
-              {contents
+              {tagsContents
                 .filter(({ contents }) => contents.length === 0)
                 .map(({ tag }) => (
                   <TableRow key={tag.id}>
@@ -67,10 +68,11 @@ const BodyModalError = ({ contents = [] }: BodyModalErrorProps) => {
 
       <Spacer />
 
-      {contents.filter(({ contents }) => contents.length > 0).length > 0 && (
+      {tagsContents.filter(({ contents }) => contents.length > 0).length >
+        0 && (
         <>
           <Text>Se encontraron galerías en los siguientes tags</Text>
-          {contents
+          {tagsContents
             .filter(({ contents }) => contents.length > 0)
             .map(({ tag, contents }) => (
               <Fragment key={tag.id}>
