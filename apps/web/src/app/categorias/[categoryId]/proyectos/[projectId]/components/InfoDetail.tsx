@@ -1,7 +1,16 @@
-import { ButtonEditAdmin } from '@/app/shared/components'
+import { ButtonEditAdmin, Tags } from '@/app/shared/components'
 import { Box, Text } from '@/app/shared/ui'
 import { AFullContent } from '@/models'
 import { formatDate, LogUtil } from '@/utils'
+import { Button } from '@nextui-org/button'
+import {
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  useDisclosure
+} from '@nextui-org/modal'
 import { Badge, Spacer } from '@nextui-org/react'
 import ThumbnailMap from './ThumbnailMap'
 
@@ -10,6 +19,7 @@ type InfoDetailProps = {
 }
 
 const InfoDetail = ({ project }: InfoDetailProps) => {
+  const { isOpen, onOpen, onOpenChange } = useDisclosure()
   const displayTags = () => {
     if (!project.Tags?.items?.length) {
       return <Text className="opacity-60">Sin tags</Text>
@@ -81,6 +91,7 @@ const InfoDetail = ({ project }: InfoDetailProps) => {
       <ButtonEditAdmin
         onClick={() => {
           LogUtil.debug('Edit tag')
+          onOpen()
         }}
       >
         <Text as="h3">Tags </Text>
@@ -109,6 +120,31 @@ const InfoDetail = ({ project }: InfoDetailProps) => {
       <Text as="h3">Ubicación</Text>
       {displayPosition()}
       <Spacer y={2} />
+
+      <Modal isOpen={isOpen} onOpenChange={onOpenChange} backdrop="blur">
+        <ModalContent>
+          {(onClose) => (
+            <>
+              <ModalHeader className="flex flex-col gap-1"></ModalHeader>
+              <ModalBody>
+                <Tags
+                  classNames={{
+                    containerPages: 'h-unit-8xl'
+                  }}
+                />
+              </ModalBody>
+              <ModalFooter>
+                <Button color="danger" variant="light" onPress={onClose}>
+                  Close
+                </Button>
+                <Button color="primary" onPress={onClose}>
+                  Action
+                </Button>
+              </ModalFooter>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
     </>
   )
 }

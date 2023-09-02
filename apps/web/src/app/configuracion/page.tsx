@@ -1,6 +1,6 @@
+import { Tags } from '@/app/shared/components'
 import { Container, Text } from '@/app/shared/ui'
 import { Card, CardBody } from '@nextui-org/card'
-import { TagScreen } from './components/Tags'
 
 const SettingsPage = () => {
   return (
@@ -14,7 +14,7 @@ const SettingsPage = () => {
         <div className="grid auto-cols-max grid-cols-1 gap-10 lg:grid-cols-12">
           <Card className="h-unit-8xl overflow-hidden lg:col-span-5">
             <CardBody className="p-5">
-              <TagScreen
+              <Tags
                 classNames={{
                   containerPages: 'h-unit-8xl'
                 }}
