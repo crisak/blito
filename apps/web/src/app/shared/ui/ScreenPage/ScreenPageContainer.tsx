@@ -20,7 +20,7 @@ const variants = {
 
   /** Animation start */
   newScreen: { transform: 'translateX(0%)', opacity: 1 },
-  previewScreen: { transform: 'translateX(-20%)', opacity: 0.3 },
+  previewScreen: { transform: 'translateX(-30%)', opacity: 0.3 },
 
   exitScreen: { transform: 'translateX(100%)', opacity: 1 }
 }

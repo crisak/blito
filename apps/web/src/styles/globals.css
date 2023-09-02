@@ -14,8 +14,18 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    Fira Sans,
+    Droid Sans,
+    Helvetica Neue,
+    sans-serif;
   width: 100%;
   /* background-color: #000000; */
 }
@@ -169,4 +179,9 @@ body div:has(nav):has(footer):has(main) {
 
 .slide-out-right {
   animation: slideOutRight 0.25s linear;
+}
+
+/* Set with for column table of NextUI */
+[aria-multiselectable='true'] [role='columnheader']:has([aria-label]) {
+  width: 45px;
 }
