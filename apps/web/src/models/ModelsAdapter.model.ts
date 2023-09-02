@@ -2,6 +2,7 @@ import type {
   Category as CategoryModel,
   Collaborator,
   Content,
+  ContentCollaborator,
   ContentProject,
   ContentTag,
   File as FileModel,
@@ -99,6 +100,18 @@ export type ACollaborator = Omit<
   'contents' | 'socials'
 > & {
   socials?: Array<ASocialNetwork>
+}
+
+export type AContentCollaborator = Omit<
+  RmDefaultParameter<ContentCollaborator>,
+  'collaborator' | 'content'
+>
+
+export type ARContentByCollaborator = Omit<
+  RmDefaultParameter<ContentCollaborator>,
+  'collaborator' | 'content'
+> & {
+  content: AContent
 }
 
 export type ASocialNetwork = RmDefaultParameter<SocialNetwork>

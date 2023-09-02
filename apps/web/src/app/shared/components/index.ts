@@ -1,4 +1,5 @@
 export { default as Breadcrumb } from './Breadcrumb'
 export { default as ButtonEditAdmin } from './ButtonEditAdmin'
+export * from './Collaborators'
 export { default as SetBreadcrumb } from './SetBreadcrumb'
 export * from './Tags'

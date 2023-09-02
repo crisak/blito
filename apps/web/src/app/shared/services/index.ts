@@ -1,4 +1,5 @@
 export { default as AuthService } from './Auth.service'
 export * from './Category.service'
+export * from './Collaborator'
 export { default as ProjectService } from './Project.service'
 export * from './Tag'

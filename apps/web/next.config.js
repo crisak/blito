@@ -17,7 +17,8 @@ const nextConfig = {
       'www.pngitem.com',
       'www.tu-moda-online.es' /** TODO - remove */,
       'www.okchicas.com' /** TODO - remove */,
-      'scontent-bog1-1.xx.fbcdn.net' // facebook sources
+      'scontent-bog1-1.xx.fbcdn.net', // facebook sources
+      'cdn.iconscout.com' /** TODO delete temporal profile image collaborator */
     ]
   }
 }

@@ -1,4 +1,4 @@
-import { Tags } from '@/app/shared/components'
+import { Collaborators, Tags } from '@/app/shared/components'
 import { Container, Text } from '@/app/shared/ui'
 import { Card, CardBody } from '@nextui-org/card'
 
@@ -12,7 +12,7 @@ const SettingsPage = () => {
       </Container>
       <Container>
         <div className="grid auto-cols-max grid-cols-1 gap-10 lg:grid-cols-12">
-          <Card className="h-unit-8xl overflow-hidden lg:col-span-5">
+          <Card className="overflow-hidden lg:col-span-5">
             <CardBody className="p-5">
               <Tags
                 classNames={{
@@ -23,8 +23,12 @@ const SettingsPage = () => {
           </Card>
 
           <Card className="h-unit-8xl overflow-hidden lg:col-span-7">
-            <CardBody className="p-6">
-              <Text as="h3">Colaboradores</Text>
+            <CardBody className="p-5">
+              <Collaborators
+                classNames={{
+                  containerPages: 'h-unit-8xl'
+                }}
+              />
             </CardBody>
           </Card>
         </div>

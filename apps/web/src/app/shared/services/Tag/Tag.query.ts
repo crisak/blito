@@ -104,59 +104,6 @@ export const listContentsByTag = /* GraphQL */ `
   }
 `
 
-export const getContentsByTag = /* GraphQL */ `
-  query GetContentsByTag($id: ID!) {
-    getTag(id: $id) {
-      id
-      name
-      contents {
-        items {
-          content {
-            id
-            type
-            time
-            size
-            project {
-              name
-              description
-            }
-            files {
-              data
-              type
-              mimeType
-              caption
-              size
-              isBanner
-            }
-            date
-            location {
-              country
-              state
-              city
-              street
-              position {
-                latitude
-                longitude
-              }
-            }
-            colors
-            views
-            contentCategoryId
-            createdAt
-            updatedAt
-            _version
-            _deleted
-          }
-        }
-      }
-      createdAt
-      updatedAt
-      _version
-      _deleted
-    }
-  }
-`
-
 export const deleteTag = /* GraphQL */ `
   mutation DeleteTag(
     $input: DeleteTagInput!

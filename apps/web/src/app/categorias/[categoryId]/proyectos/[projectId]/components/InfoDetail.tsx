@@ -90,7 +90,6 @@ const InfoDetail = ({ project }: InfoDetailProps) => {
 
       <ButtonEditAdmin
         onClick={() => {
-          LogUtil.debug('Edit tag')
           onOpen()
         }}
       >
