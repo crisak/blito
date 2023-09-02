@@ -3,6 +3,7 @@ import 'react-image-lightbox/style.css'
 import 'react-toastify/dist/ReactToastify.min.css'
 
 import IcoBlitoWhite from '@/assets/images/icon-blito-white.ico'
+import { LogUtil } from '@/utils'
 import { Amplify } from 'aws-amplify'
 import { getAwsExports } from 'blito-models'
 import { RootContainer } from './components'
@@ -23,8 +24,7 @@ Amplify.configure({
   }
 })
 
-// eslint-disable-next-line no-console
-console.info('⛳️ Server App running in: ', process.env.NEXT_PUBLIC_ENV)
+LogUtil.debug('Server App running in: ', process.env.NEXT_PUBLIC_ENV)
 
 interface RootLayoutProps {
   children: React.ReactNode

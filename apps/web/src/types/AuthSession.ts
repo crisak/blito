@@ -5,4 +5,5 @@ export default interface AuthSession {
   picture: string
   name: string
   nickname: string
+  email: string
 }

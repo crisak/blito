@@ -1,70 +1,48 @@
-'use client'
-
-import { AuthCognito, ReturnedPromiseResolvedType, AuthSession } from '@/types'
+import type {
+  AuthCognito,
+  AuthSession,
+  ReturnedPromiseResolvedType
+} from '@/types'
+import { Amplify, Auth } from 'aws-amplify'
 import { getAwsExports } from 'blito-models'
-import { Amplify } from 'aws-amplify'
 
 type CognitoUserSession = ReturnedPromiseResolvedType<
   typeof Auth.currentSession
 >
 
-import { Auth } from 'aws-amplify'
-
 class AuthService {
-  static STORAGE_KEY_AUTH = 'auth'
+  static getAuthData(data: CognitoUserSession): AuthSession {
+    const userAuth = {
+      id: data?.getIdToken().payload.sub,
+      username: data?.getIdToken().payload['cognito:username'],
+      locale: data?.getIdToken().payload.locale,
+      picture: data?.getIdToken().payload.picture,
+      name: data?.getIdToken().payload.name,
+      nickname: data?.getIdToken().payload.nickname,
+      email: data?.getIdToken().payload.email
+    } as AuthSession
+
+    return userAuth
+  }
 
   static async getCurrentSession(): Promise<{
     status: boolean
     data: CognitoUserSession | null
   }> {
     try {
+      await Auth.userAttributes
       const data = await Auth.currentSession()
-      return { status: true, data: data || null }
+      return { status: data.isValid(), data: data || null }
     } catch (error) {
       return { status: false, data: null }
     }
   }
 
   static async logout() {
-    if (window?.localStorage === undefined) {
-      return null
-    }
-
     const { status } = await AuthService.getCurrentSession()
 
     if (status) {
       await Auth.signOut()
-    }
-
-    window.localStorage.removeItem(AuthService.STORAGE_KEY_AUTH)
-  }
-
-  static async setLoginData(): Promise<AuthSession | null> {
-    try {
-      if (window?.localStorage === undefined) {
-        return null
-      }
-
-      const { status } = await AuthService.getCurrentSession()
-
-      if (!status) {
-        await AuthService.logout()
-        return null
-      }
-
-      const userStorage = window.localStorage.getItem(
-        AuthService.STORAGE_KEY_AUTH
-      )
-
-      if (!userStorage) {
-        await AuthService.logout()
-        return null
-      }
-
-      return JSON.parse(userStorage)
-    } catch (error) {
-      console.error('🚨 setLoginData: ', error)
-      throw error
     }
   }
 
@@ -75,10 +53,6 @@ class AuthService {
     username: string
     password: string
   }): Promise<AuthSession | null> {
-    if (window?.localStorage === undefined) {
-      return null
-    }
-
     const auth: AuthCognito = await Auth.signIn(username, password)
 
     const userAuth = {
@@ -87,7 +61,8 @@ class AuthService {
       locale: auth.attributes.locale,
       picture: auth.attributes.picture,
       name: auth.attributes.name,
-      nickname: auth.attributes.nickname
+      nickname: auth.attributes.nickname,
+      email: auth.attributes.email
     } as AuthSession
 
     const configAws = getAwsExports()
@@ -98,6 +73,7 @@ class AuthService {
       API: {
         graphql_headers: async () => {
           return {
+            'X-Blito-User-Id': userAuth.id,
             'Accept-Language': userAuth.locale,
             'Cache-Control':
               'no-store' /** TODO - This not working, make test */
@@ -105,11 +81,6 @@ class AuthService {
         }
       }
     })
-
-    localStorage.setItem(
-      AuthService.STORAGE_KEY_AUTH,
-      JSON.stringify(userAuth, null, 2)
-    )
 
     return userAuth
   }

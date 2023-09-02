@@ -1,20 +1,17 @@
 import { configureStore } from '@reduxjs/toolkit'
 import {
-  projectReducer,
-  ProjectStore,
-  AuthStore,
-  authReducer,
+  categoryReducer,
+  CategoryStore,
+  globalReducer,
+  GlobalStore,
   headerUIReducer,
   HeaderUIStore,
-  CategoryStore,
-  categoryReducer,
-  GlobalStore,
-  globalReducer
+  projectReducer,
+  ProjectStore
 } from './slices'
 
 interface AppStore {
   project: ProjectStore
-  auth: AuthStore
   headerUI: HeaderUIStore
   category: CategoryStore
   global: GlobalStore
@@ -23,7 +20,6 @@ interface AppStore {
 const store = configureStore<AppStore>({
   reducer: {
     project: projectReducer,
-    auth: authReducer,
     headerUI: headerUIReducer,
     category: categoryReducer,
     global: globalReducer
@@ -31,4 +27,4 @@ const store = configureStore<AppStore>({
 })
 
 export default store
-export type { AppStore, ProjectStore, AuthStore }
+export type { AppStore, ProjectStore }

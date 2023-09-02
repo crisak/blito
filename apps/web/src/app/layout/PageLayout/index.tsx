@@ -2,10 +2,9 @@
 
 import Actions, { ActionsProps } from '@/app/components/Actions'
 import { Container as ContainerUI } from '@/app/shared/ui'
-import { AppStore, AuthStore } from '@/redux/store'
+import { useAuthStore } from '@/store'
 import { Spacer } from '@nextui-org/react'
 import clsx from 'clsx'
-import { useSelector } from 'react-redux'
 
 type ContainerLayoutProps = {
   children: React.ReactNode | React.ReactNode[]
@@ -17,15 +16,15 @@ const PageLayout = ({
   title,
   showButtonSave
 }: ContainerLayoutProps) => {
-  const auth = useSelector<AppStore, AuthStore>((state) => state.auth)
+  const isAuthenticate = useAuthStore((state) => state.isAuthenticate)
 
   const displayHeader = () => {
-    if (!title && !auth?.isAuth) {
+    if (!title && !isAuthenticate) {
       return null
     }
 
     let classNamesHeader: string = ''
-    if (title && auth?.isAuth) {
+    if (title && isAuthenticate) {
       classNamesHeader = 'flex justify-between items-center'
     }
 
@@ -39,7 +38,7 @@ const PageLayout = ({
         <header className={clsx(classNamesHeader)}>
           {title || null}
 
-          {auth.isAuth && <Actions showButtonSave={showButtonSave} />}
+          {isAuthenticate && <Actions showButtonSave={showButtonSave} />}
         </header>
         <Spacer y={2} />
       </>

@@ -1,21 +1,14 @@
 'use client'
 
 import { Container, Text } from '@/app/shared/ui'
-import {
-  Button,
-  Card,
-  CardBody,
-  CardHeader,
-  Input,
-  Spacer
-} from '@nextui-org/react'
-import { useState } from 'react'
-import { toast } from 'react-toastify'
+// import { authSliceActions } from '@/redux/slices'
+import { Button, Card, CardBody, CardHeader, Input } from '@nextui-org/react'
 import { useRouter } from 'next/navigation'
-import AuthService from '@/app/shared/services/Auth.service'
-import { useDispatch } from 'react-redux'
-import { authSliceActions } from '@/redux/slices'
+import { useState } from 'react'
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
+// import { useDispatch } from 'react-redux'
+import { useAuthStore } from '@/store'
+import { toast } from 'react-toastify'
 
 const LoginPage = () => {
   const [loading, setLoading] = useState(false)
@@ -24,22 +17,20 @@ const LoginPage = () => {
     password: ''
   })
   const router = useRouter()
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
   const [isVisible, setIsVisible] = useState(false)
+  const login = useAuthStore((state) => state.login)
 
   const toggleVisibility = () => setIsVisible(!isVisible)
 
   const handleLogin = async () => {
     try {
       setLoading(true)
-      const userAuth = await AuthService.login({
-        username: formData.username,
-        password: formData.password
-      })
+      await login(formData.username, formData.password)
 
-      if (userAuth) {
-        dispatch(authSliceActions.login(userAuth))
-      }
+      // if (userAuth) {
+      //   // dispatch(authSliceActions.login(userAuth))
+      // }
 
       toast('Usuario autenticado', {
         type: 'success'
@@ -47,8 +38,8 @@ const LoginPage = () => {
 
       router.replace('/')
     } catch (error) {
-      await AuthService.logout()
-      dispatch(authSliceActions.logout())
+      // await AuthService.logout()
+      // dispatch(authSliceActions.logout())
 
       if (error instanceof Error) {
         toast(error?.message || '', {
@@ -67,8 +58,8 @@ const LoginPage = () => {
 
   return (
     <>
-      <Container className="h-full flex items-center justify-center">
-        <Card className="max-w-sm w-full mx-unit-sm">
+      <Container className="flex h-full items-center justify-center">
+        <Card className="mx-unit-sm w-full max-w-sm">
           <CardHeader className="px-unit-5">
             <Text as="h2" className="font-bold">
               Login
@@ -102,9 +93,9 @@ const LoginPage = () => {
                   onClick={toggleVisibility}
                 >
                   {isVisible ? (
-                    <AiOutlineEye className="text-2xl text-default-400 pointer-events-none" />
+                    <AiOutlineEye className="pointer-events-none text-2xl text-default-400" />
                   ) : (
-                    <AiOutlineEyeInvisible className="text-2xl text-default-400 pointer-events-none" />
+                    <AiOutlineEyeInvisible className="pointer-events-none text-2xl text-default-400" />
                   )}
                 </button>
               }

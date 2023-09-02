@@ -1,26 +1,22 @@
 'use client'
 
-import { authSliceActions } from '@/redux/slices'
-
-import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
 import { Box, Text } from '@/app/shared/ui'
+import { useAuthStore } from '@/store'
 import { useRouter } from 'next/navigation'
-import AuthService from '@/app/shared/services/Auth.service'
+import { useEffect } from 'react'
 
 const Logout = () => {
   const router = useRouter()
-  const dispatch = useDispatch()
+  const logout = useAuthStore((state) => state.logout)
 
-  const logout = async () => {
-    await AuthService.logout()
-    dispatch(authSliceActions.logout())
+  const handleLogout = async () => {
+    await logout()
 
     router.replace('/')
   }
 
   useEffect(() => {
-    logout()
+    handleLogout()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   return (

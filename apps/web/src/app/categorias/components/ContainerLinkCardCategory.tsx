@@ -1,17 +1,17 @@
 'use client'
 
-import Link from 'next/link'
-import { Card, Button, CardHeader, CardFooter, Image } from '@nextui-org/react'
-import { Box, Text } from '@/app/shared/ui'
-import { AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai'
-import { useDispatch, useSelector } from 'react-redux'
-import { AuthStore, headerUIActions, categoryActions } from '@/redux/slices'
-import { AppStore } from '@/redux/store'
+import { useAlert } from '@/app/shared/hooks'
 import {
   CategoryService,
   type GetAllWithContentResult
 } from '@/app/shared/services'
-import { useAlert } from '@/app/shared/hooks'
+import { Box, Text } from '@/app/shared/ui'
+import { categoryActions, headerUIActions } from '@/redux/slices'
+import { useAuthStore } from '@/store'
+import { Button, Card, CardFooter, CardHeader, Image } from '@nextui-org/react'
+import Link from 'next/link'
+import { AiOutlineDelete, AiOutlineEdit } from 'react-icons/ai'
+import { useDispatch } from 'react-redux'
 import { toast } from 'react-toastify'
 
 type ContainerLinkCardCategoryProps = GetAllWithContentResult
@@ -23,7 +23,7 @@ const ContainerLinkCardCategory = (
 ) => {
   const dispatch = useDispatch()
   const alert = useAlert()
-  const auth = useSelector<AppStore, AuthStore>((state) => state.auth)
+  const isAuthenticate = useAuthStore((state) => state.isAuthenticate)
 
   const removeCategory = async () => {
     try {
@@ -84,7 +84,7 @@ const ContainerLinkCardCategory = (
   }
 
   const displayActionsAdmin = () => {
-    if (!auth?.isAuth) {
+    if (!isAuthenticate) {
       return null
     }
 

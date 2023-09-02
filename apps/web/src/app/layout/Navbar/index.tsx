@@ -10,12 +10,11 @@ import {
 import Link from 'next/link'
 
 import BlitoFrontPage from '@/assets/images/home-blito_bg_white.png'
-import { AppStore, AuthStore } from '@/redux/store'
+import { useAuthStore } from '@/store'
 import clsx from 'clsx'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
-import { useSelector } from 'react-redux'
 
 const linksPublic = [
   {
@@ -48,7 +47,7 @@ const linksPrivate = [
 ]
 
 const NavbarComponent = () => {
-  const auth = useSelector<AppStore, AuthStore>((state) => state.auth)
+  const isAuthenticate = useAuthStore((state) => state.isAuthenticate)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const pathname = usePathname()
 
@@ -73,7 +72,7 @@ const NavbarComponent = () => {
       </NavbarContent>
 
       <NavbarContent
-        justify={auth.isAuth ? 'start' : 'end'}
+        justify={isAuthenticate ? 'start' : 'end'}
         className="hidden gap-4 sm:flex"
       >
         {linksPublic.map(({ label, route }) => (
@@ -91,7 +90,7 @@ const NavbarComponent = () => {
         ))}
       </NavbarContent>
 
-      {auth.isAuth && (
+      {isAuthenticate && (
         <NavbarContent justify="end" className="hidden gap-4 sm:flex">
           {linksPrivate.map(({ label, route }) => (
             <NavbarItem key={label + route} isActive={pathname === route}>
@@ -123,7 +122,7 @@ const NavbarComponent = () => {
           </NavbarMenuItem>
         ))}
 
-        {auth.isAuth &&
+        {isAuthenticate &&
           linksPrivate.map(({ label, route }) => (
             <NavbarMenuItem key={label + route}>
               <Link

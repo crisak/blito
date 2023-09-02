@@ -1,10 +1,11 @@
 'use client'
 
-import { useAuth } from '@/app/hooks'
 import { AlertProvider } from '@/app/shared/hooks'
 import { Box } from '@/app/shared/ui'
 import BgBodyFigures from '@/assets/images/bg-body-figures.jpeg'
 import store from '@/redux/store'
+import { useAuthStore } from '@/store'
+import { LogUtil } from '@/utils'
 import { NextUIProvider } from '@nextui-org/react'
 import { Amplify } from 'aws-amplify'
 import { getAwsExports } from 'blito-models'
@@ -17,8 +18,7 @@ import Navbar from '../../layout/Navbar'
 import Splash from '../Splash'
 import ToastProvider from '../Toast'
 
-// eslint-disable-next-line no-console
-console.info('⛳️ Client App running in: ', process.env.NEXT_PUBLIC_ENV)
+LogUtil.debug('Client App running in: ', process.env.NEXT_PUBLIC_ENV)
 
 /** This should be configured on Server side but not in the client(WEB) */
 Amplify.configure({
@@ -42,17 +42,17 @@ interface RootContainerProps {
 
 function RootContainer({ children }: RootContainerProps): JSX.Element {
   const [splash, setSplash] = useState(true)
-  const { initAuth } = useAuth()
+  const checkAuth = useAuthStore((state) => state.checkAuth)
 
   useEffect(() => {
     let refTimeout: NodeJS.Timeout | null = null
 
     ;(async () => {
       const start = performance.now()
-      await initAuth()
+      await checkAuth()
       const end = performance.now()
 
-      // Calcula la diferencia entre los dos tiempos en milisegundos
+      /** Calcula la diferencia entre los dos tiempos en milesegundos */
       const time = end - start
 
       if (time >= $3seconds) {
