@@ -1,22 +1,12 @@
-'use client'
+import { ButtonEditAdmin } from '@/app/shared/components'
 import { Box, Text } from '@/app/shared/ui'
 import { AFullContent } from '@/models'
-import { formatDate } from '@/utils'
+import { formatDate, LogUtil } from '@/utils'
 import { Badge, Spacer } from '@nextui-org/react'
 import ThumbnailMap from './ThumbnailMap'
 
 type InfoDetailProps = {
   project: AFullContent
-}
-
-const ActionAdmin = ({ children }: React.ComponentPropsWithoutRef<'span'>) => {
-  // const {initAuth} = useAuth()
-  /**
-   * If is authenticate show button edit
-   * If is not authenticate show text original
-   */
-
-  return children
 }
 
 const InfoDetail = ({ project }: InfoDetailProps) => {
@@ -88,9 +78,13 @@ const InfoDetail = ({ project }: InfoDetailProps) => {
       <Text>{project.project?.description}</Text>
       <Spacer y={2} />
 
-      <ActionAdmin>
+      <ButtonEditAdmin
+        onClick={() => {
+          LogUtil.debug('Edit tag')
+        }}
+      >
         <Text as="h3">Tags </Text>
-      </ActionAdmin>
+      </ButtonEditAdmin>
 
       {displayTags()}
       <Spacer y={2} />
