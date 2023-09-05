@@ -3,7 +3,7 @@ type ScreenPageBodyProps = {
 }
 
 const ScreenPageBody = ({ children }: ScreenPageBodyProps) => {
-  return <div className="screen-body pb-unit-lg">{children}</div>
+  return <div className="screen-body">{children}</div>
 }
 
 export default ScreenPageBody

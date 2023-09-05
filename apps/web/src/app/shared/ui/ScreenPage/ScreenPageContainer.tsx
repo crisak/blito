@@ -34,7 +34,7 @@ const ScreenPageContainer = ({
   return (
     <motion.div
       variants={variants}
-      className="page-container absolute left-0 top-0 h-full w-full overflow-y-auto overflow-x-hidden bg-content1 text-foreground"
+      className="page-container absolute left-0 top-0 h-full w-full overflow-y-auto overflow-x-hidden scroll-smooth bg-content1 text-foreground"
       /** Punto inicial de la animación */
       initial={
         index === 0

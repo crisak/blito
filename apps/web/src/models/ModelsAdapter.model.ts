@@ -99,7 +99,7 @@ export type ACollaborator = Omit<
   RmDefaultParameter<Collaborator>,
   'contents' | 'socials'
 > & {
-  socials?: Array<ASocialNetwork>
+  socials: Array<ASocialNetwork>
 }
 
 export type AContentCollaborator = Omit<

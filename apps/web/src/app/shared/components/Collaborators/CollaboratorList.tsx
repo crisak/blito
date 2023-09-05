@@ -19,6 +19,7 @@ import {
   User
 } from '@nextui-org/react'
 
+import { LogUtil } from '@/utils'
 import { SocialNetwork, TypeSocialNetwork } from 'blito-models'
 import clsx from 'clsx'
 import { useEffect, useMemo, useState } from 'react'
@@ -30,7 +31,7 @@ import {
   BsPinterest,
   BsSearch,
   BsTiktok,
-  BsTwitch,
+  BsTwitter,
   BsYoutube
 } from 'react-icons/bs'
 import { IoIosAdd } from 'react-icons/io'
@@ -62,8 +63,8 @@ const processContents =
   ) =>
   async (collaborator: ACollaborator): Promise<CollaboratorsWithContents> => {
     try {
-      const contentsByTag = await getContents(collaborator.id)
-      const contents = contentsByTag.map(({ content }) => content)
+      const contentsByCollaborator = await getContents(collaborator.id)
+      const contents = contentsByCollaborator.map(({ content }) => content)
 
       return {
         collaborator: collaborator,
@@ -103,19 +104,19 @@ const CollaboratorList = () => {
     ])
 
   const processRemove = async (
-    tagsContentsRemoved: CollaboratorsWithContents[]
+    collaboratorsContentsRemoved: CollaboratorsWithContents[]
   ): Promise<boolean> => {
     const STATUS_MODEL = {
       hideModal: true,
       keepOpen: false
     }
     const responsePromise = await Promise.all(
-      tagsContentsRemoved.map(async ({ collaborator: tag }) => {
+      collaboratorsContentsRemoved.map(async ({ collaborator }) => {
         try {
-          await remove(tag)
-          return { tag, error: null }
+          await remove(collaborator)
+          return { collaborator, error: null }
         } catch (error) {
-          return { tag, error }
+          return { collaborator, error }
         }
       })
     )
@@ -127,14 +128,14 @@ const CollaboratorList = () => {
             return res
           }
 
-          return null as any
+          return null
         })
         .filter(Boolean)
 
     if (errors.length) {
       toast(
         <Box>
-          <Text>Error al eliminar unos de los tags</Text>
+          <Text>Error al eliminar unos de los colaboradores</Text>
           <ul>
             {errors.map(({ collaborator, error }) => (
               <li key={collaborator.id}>
@@ -157,15 +158,17 @@ const CollaboratorList = () => {
 
     setSelectedKeys(new Set([]))
 
-    showToastSuccess('Los tag(s) fueron eliminados correctamente')
+    showToastSuccess('Los colaborador(s) fueron eliminados correctamente')
 
     return STATUS_MODEL.hideModal
   }
 
-  const handleEdit = (tag: ACollaborator) => {
-    screenNavigation.push<{ tag: ACollaborator }>(SCREENS.formCollaborators, {
-      tag
-    })
+  const handleEdit = (collaborator: ACollaborator) => {
+    LogUtil.debug('collaborator', collaborator)
+    screenNavigation.push<{ collaborator: ACollaborator }>(
+      SCREENS.formCollaborators,
+      { collaborator }
+    )
   }
 
   const renderCell = (
@@ -238,7 +241,7 @@ const CollaboratorList = () => {
                 [TypeSocialNetwork.YOUTUBE]: BsYoutube,
                 [TypeSocialNetwork.TIKTOK]: BsTiktok,
                 [TypeSocialNetwork.PINTEREST]: BsPinterest,
-                [TypeSocialNetwork.TWITTER]: BsTwitch
+                [TypeSocialNetwork.TWITTER]: BsTwitter
               }
 
               const IconSocial: IconType = icons[social.type]
@@ -269,9 +272,9 @@ const CollaboratorList = () => {
 
     /** Filter element with search input */
     if (searchInput.length > 2) {
-      list_ = list_.filter((tag) => {
+      list_ = list_.filter((collaborator) => {
         /** Ignore properties */
-        const { id, _version, _deleted, ...rest } = tag
+        const { id, _version, _deleted, ...rest } = collaborator
         const values = Object.values(rest)
           .join('')
           .replace(/\s/g, '')
@@ -309,24 +312,26 @@ const CollaboratorList = () => {
 
   const indexList = useMemo(() => {
     const indexObject: Record<ACollaborator['id'], ACollaborator> = {}
-    list.forEach((tag) => {
-      indexObject[tag.id] = tag
+    list.forEach((collaborator) => {
+      indexObject[collaborator.id] = collaborator
     })
     return indexObject
   }, [list])
 
   const handleRemove = async () => {
-    const tagsContents = await Promise.all(
+    const collaboratorContents = await Promise.all(
       Array.from(selectedKeys)
-        .map((tagId) => indexList[tagId])
+        .map((collaboratorId) => indexList[collaboratorId])
         .map(processContents(getContentsByCollaborator))
     )
 
     alert.confirm({
-      title: 'Eliminar tags',
+      title: 'Eliminar colaboradores',
       messageButtonAccept: 'Eliminar',
-      body: <BodyModalError collaboratorsContents={tagsContents || []} />,
-      asyncFn: () => processRemove(tagsContents)
+      body: (
+        <BodyModalError collaboratorsContents={collaboratorContents || []} />
+      ),
+      asyncFn: () => processRemove(collaboratorContents)
     })
   }
 
@@ -366,6 +371,7 @@ const CollaboratorList = () => {
 
             <Button
               size="sm"
+              color="primary"
               onClick={() => screenNavigation.push(SCREENS.formCollaborators)}
               startContent={<IoIosAdd size={16} fill="currentColor" />}
             >
@@ -394,14 +400,14 @@ const CollaboratorList = () => {
         <Table
           isHeaderSticky
           layout="fixed"
-          aria-label="Lista de tags"
+          aria-label="Lista de colaboradores"
           selectionMode="multiple"
           className="p-0"
           classNames={{
             wrapper: screenNavigation?.metadata?.containerListCss,
             base: 'base p-0',
             emptyWrapper: 'emptyWrapper p-0',
-            table: clsx('table-tags p-0 relative', {
+            table: clsx('table-colaboradores p-0 relative', {
               'min-h-[250px]': loading === 'list'
             })
           }}

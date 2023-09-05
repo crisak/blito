@@ -19,7 +19,7 @@ const ScreenPageHeader = ({
   const screenNavigation = useScreenPage()
 
   return (
-    <div className="screen-header sticky top-0 z-10 flex flex-col gap-unit-lg bg-content1 pb-unit-lg shadow-lg">
+    <div className="screen-header sticky top-0 z-20 flex flex-col gap-unit-lg bg-content1 pb-unit-lg shadow-lg">
       <div className="screen-header-title flex flex-wrap items-center justify-between gap-unit-sm">
         {title && (
           <div className="flex items-center">

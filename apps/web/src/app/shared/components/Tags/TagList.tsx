@@ -153,8 +153,7 @@ const TagList = () => {
         return (
           <Text
             as="span"
-            color={'primary'}
-            className="cursor-pointer underline"
+            className="cursor-pointer text-primary transition-all hover:underline"
             onClick={() => handleEdit(tag)}
           >
             {cellValue}
@@ -269,6 +268,7 @@ const TagList = () => {
             )}
 
             <Button
+              color="primary"
               size="sm"
               onClick={() => screenNavigation.push(SCREENS.formTags)}
               startContent={<IoIosAdd size={16} fill="currentColor" />}
@@ -340,13 +340,14 @@ const TagList = () => {
           <TableBody
             items={listFilter}
             isLoading={loading === 'list'}
+            emptyContent={'No hay tags registrados'}
             loadingContent={<Spinner size="md" label="Cargando registros..." />}
           >
             {(item: ATag) => (
               <TableRow>
                 {(columnKey: unknown) => {
                   return (
-                    <TableCell width={columnKey === '' ? 28 : 'auto'}>
+                    <TableCell>
                       {renderCell(item, columnKey as keyof ATag | 'actions')}
                     </TableCell>
                   )
