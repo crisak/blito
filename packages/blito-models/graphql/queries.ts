@@ -12,6 +12,7 @@ export const getContent = /* GraphQL */ `
       project {
         name
         description
+        __typename
       }
       files {
         data
@@ -20,6 +21,7 @@ export const getContent = /* GraphQL */ `
         caption
         size
         isBanner
+        __typename
       }
       date
       location {
@@ -30,7 +32,9 @@ export const getContent = /* GraphQL */ `
         position {
           latitude
           longitude
+          __typename
         }
+        __typename
       }
       colors
       views
@@ -47,6 +51,7 @@ export const getContent = /* GraphQL */ `
             project {
               name
               description
+              __typename
             }
             files {
               data
@@ -55,6 +60,7 @@ export const getContent = /* GraphQL */ `
               caption
               size
               isBanner
+              __typename
             }
             date
             location {
@@ -65,7 +71,9 @@ export const getContent = /* GraphQL */ `
               position {
                 latitude
                 longitude
+                __typename
               }
+              __typename
             }
             colors
             views
@@ -82,6 +90,7 @@ export const getContent = /* GraphQL */ `
                   project {
                     name
                     description
+                    __typename
                   }
                   files {
                     data
@@ -90,6 +99,7 @@ export const getContent = /* GraphQL */ `
                     caption
                     size
                     isBanner
+                    __typename
                   }
                   date
                   location {
@@ -100,7 +110,9 @@ export const getContent = /* GraphQL */ `
                     position {
                       latitude
                       longitude
+                      __typename
                     }
+                    __typename
                   }
                   colors
                   views
@@ -123,6 +135,7 @@ export const getContent = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                         contentCategoryId
+                        __typename
                       }
                       tag {
                         id
@@ -132,15 +145,18 @@ export const getContent = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     nextToken
                     startedAt
+                    __typename
                   }
                   Category {
                     id
@@ -151,6 +167,7 @@ export const getContent = /* GraphQL */ `
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   Collaborators {
                     items {
@@ -171,6 +188,7 @@ export const getContent = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                         contentCategoryId
+                        __typename
                       }
                       collaborator {
                         id
@@ -184,15 +202,18 @@ export const getContent = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     nextToken
                     startedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
@@ -200,6 +221,7 @@ export const getContent = /* GraphQL */ `
                   _deleted
                   _lastChangedAt
                   contentCategoryId
+                  __typename
                 }
                 tag {
                   id
@@ -223,6 +245,7 @@ export const getContent = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                         contentCategoryId
+                        __typename
                       }
                       tag {
                         id
@@ -232,30 +255,36 @@ export const getContent = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     nextToken
                     startedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               nextToken
               startedAt
+              __typename
             }
             Category {
               id
@@ -266,6 +295,7 @@ export const getContent = /* GraphQL */ `
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             Collaborators {
               items {
@@ -280,6 +310,7 @@ export const getContent = /* GraphQL */ `
                   project {
                     name
                     description
+                    __typename
                   }
                   files {
                     data
@@ -288,6 +319,7 @@ export const getContent = /* GraphQL */ `
                     caption
                     size
                     isBanner
+                    __typename
                   }
                   date
                   location {
@@ -298,7 +330,9 @@ export const getContent = /* GraphQL */ `
                     position {
                       latitude
                       longitude
+                      __typename
                     }
+                    __typename
                   }
                   colors
                   views
@@ -321,6 +355,7 @@ export const getContent = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                         contentCategoryId
+                        __typename
                       }
                       tag {
                         id
@@ -330,15 +365,18 @@ export const getContent = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     nextToken
                     startedAt
+                    __typename
                   }
                   Category {
                     id
@@ -349,6 +387,7 @@ export const getContent = /* GraphQL */ `
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   Collaborators {
                     items {
@@ -369,6 +408,7 @@ export const getContent = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                         contentCategoryId
+                        __typename
                       }
                       collaborator {
                         id
@@ -382,15 +422,18 @@ export const getContent = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     nextToken
                     startedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
@@ -398,6 +441,7 @@ export const getContent = /* GraphQL */ `
                   _deleted
                   _lastChangedAt
                   contentCategoryId
+                  __typename
                 }
                 collaborator {
                   id
@@ -408,6 +452,7 @@ export const getContent = /* GraphQL */ `
                     type
                     url
                     username
+                    __typename
                   }
                   fullName
                   photoUrl
@@ -430,6 +475,7 @@ export const getContent = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                         contentCategoryId
+                        __typename
                       }
                       collaborator {
                         id
@@ -443,30 +489,36 @@ export const getContent = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     nextToken
                     startedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               nextToken
               startedAt
+              __typename
             }
             createdAt
             updatedAt
@@ -474,6 +526,7 @@ export const getContent = /* GraphQL */ `
             _deleted
             _lastChangedAt
             contentCategoryId
+            __typename
           }
           tag {
             id
@@ -491,6 +544,7 @@ export const getContent = /* GraphQL */ `
                   project {
                     name
                     description
+                    __typename
                   }
                   files {
                     data
@@ -499,6 +553,7 @@ export const getContent = /* GraphQL */ `
                     caption
                     size
                     isBanner
+                    __typename
                   }
                   date
                   location {
@@ -509,7 +564,9 @@ export const getContent = /* GraphQL */ `
                     position {
                       latitude
                       longitude
+                      __typename
                     }
+                    __typename
                   }
                   colors
                   views
@@ -532,6 +589,7 @@ export const getContent = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                         contentCategoryId
+                        __typename
                       }
                       tag {
                         id
@@ -541,15 +599,18 @@ export const getContent = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     nextToken
                     startedAt
+                    __typename
                   }
                   Category {
                     id
@@ -560,6 +621,7 @@ export const getContent = /* GraphQL */ `
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   Collaborators {
                     items {
@@ -580,6 +642,7 @@ export const getContent = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                         contentCategoryId
+                        __typename
                       }
                       collaborator {
                         id
@@ -593,15 +656,18 @@ export const getContent = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     nextToken
                     startedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
@@ -609,6 +675,7 @@ export const getContent = /* GraphQL */ `
                   _deleted
                   _lastChangedAt
                   contentCategoryId
+                  __typename
                 }
                 tag {
                   id
@@ -632,6 +699,7 @@ export const getContent = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                         contentCategoryId
+                        __typename
                       }
                       tag {
                         id
@@ -641,45 +709,54 @@ export const getContent = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     nextToken
                     startedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               nextToken
               startedAt
+              __typename
             }
             createdAt
             updatedAt
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         nextToken
         startedAt
+        __typename
       }
       Category {
         id
@@ -690,6 +767,7 @@ export const getContent = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       Collaborators {
         items {
@@ -704,6 +782,7 @@ export const getContent = /* GraphQL */ `
             project {
               name
               description
+              __typename
             }
             files {
               data
@@ -712,6 +791,7 @@ export const getContent = /* GraphQL */ `
               caption
               size
               isBanner
+              __typename
             }
             date
             location {
@@ -722,7 +802,9 @@ export const getContent = /* GraphQL */ `
               position {
                 latitude
                 longitude
+                __typename
               }
+              __typename
             }
             colors
             views
@@ -739,6 +821,7 @@ export const getContent = /* GraphQL */ `
                   project {
                     name
                     description
+                    __typename
                   }
                   files {
                     data
@@ -747,6 +830,7 @@ export const getContent = /* GraphQL */ `
                     caption
                     size
                     isBanner
+                    __typename
                   }
                   date
                   location {
@@ -757,7 +841,9 @@ export const getContent = /* GraphQL */ `
                     position {
                       latitude
                       longitude
+                      __typename
                     }
+                    __typename
                   }
                   colors
                   views
@@ -780,6 +866,7 @@ export const getContent = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                         contentCategoryId
+                        __typename
                       }
                       tag {
                         id
@@ -789,15 +876,18 @@ export const getContent = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     nextToken
                     startedAt
+                    __typename
                   }
                   Category {
                     id
@@ -808,6 +898,7 @@ export const getContent = /* GraphQL */ `
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   Collaborators {
                     items {
@@ -828,6 +919,7 @@ export const getContent = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                         contentCategoryId
+                        __typename
                       }
                       collaborator {
                         id
@@ -841,15 +933,18 @@ export const getContent = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     nextToken
                     startedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
@@ -857,6 +952,7 @@ export const getContent = /* GraphQL */ `
                   _deleted
                   _lastChangedAt
                   contentCategoryId
+                  __typename
                 }
                 tag {
                   id
@@ -880,6 +976,7 @@ export const getContent = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                         contentCategoryId
+                        __typename
                       }
                       tag {
                         id
@@ -889,30 +986,36 @@ export const getContent = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     nextToken
                     startedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               nextToken
               startedAt
+              __typename
             }
             Category {
               id
@@ -923,6 +1026,7 @@ export const getContent = /* GraphQL */ `
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             Collaborators {
               items {
@@ -937,6 +1041,7 @@ export const getContent = /* GraphQL */ `
                   project {
                     name
                     description
+                    __typename
                   }
                   files {
                     data
@@ -945,6 +1050,7 @@ export const getContent = /* GraphQL */ `
                     caption
                     size
                     isBanner
+                    __typename
                   }
                   date
                   location {
@@ -955,7 +1061,9 @@ export const getContent = /* GraphQL */ `
                     position {
                       latitude
                       longitude
+                      __typename
                     }
+                    __typename
                   }
                   colors
                   views
@@ -978,6 +1086,7 @@ export const getContent = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                         contentCategoryId
+                        __typename
                       }
                       tag {
                         id
@@ -987,15 +1096,18 @@ export const getContent = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     nextToken
                     startedAt
+                    __typename
                   }
                   Category {
                     id
@@ -1006,6 +1118,7 @@ export const getContent = /* GraphQL */ `
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   Collaborators {
                     items {
@@ -1026,6 +1139,7 @@ export const getContent = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                         contentCategoryId
+                        __typename
                       }
                       collaborator {
                         id
@@ -1039,15 +1153,18 @@ export const getContent = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     nextToken
                     startedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
@@ -1055,6 +1172,7 @@ export const getContent = /* GraphQL */ `
                   _deleted
                   _lastChangedAt
                   contentCategoryId
+                  __typename
                 }
                 collaborator {
                   id
@@ -1065,6 +1183,7 @@ export const getContent = /* GraphQL */ `
                     type
                     url
                     username
+                    __typename
                   }
                   fullName
                   photoUrl
@@ -1087,6 +1206,7 @@ export const getContent = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                         contentCategoryId
+                        __typename
                       }
                       collaborator {
                         id
@@ -1100,30 +1220,36 @@ export const getContent = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     nextToken
                     startedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               nextToken
               startedAt
+              __typename
             }
             createdAt
             updatedAt
@@ -1131,6 +1257,7 @@ export const getContent = /* GraphQL */ `
             _deleted
             _lastChangedAt
             contentCategoryId
+            __typename
           }
           collaborator {
             id
@@ -1141,6 +1268,7 @@ export const getContent = /* GraphQL */ `
               type
               url
               username
+              __typename
             }
             fullName
             photoUrl
@@ -1157,6 +1285,7 @@ export const getContent = /* GraphQL */ `
                   project {
                     name
                     description
+                    __typename
                   }
                   files {
                     data
@@ -1165,6 +1294,7 @@ export const getContent = /* GraphQL */ `
                     caption
                     size
                     isBanner
+                    __typename
                   }
                   date
                   location {
@@ -1175,7 +1305,9 @@ export const getContent = /* GraphQL */ `
                     position {
                       latitude
                       longitude
+                      __typename
                     }
+                    __typename
                   }
                   colors
                   views
@@ -1198,6 +1330,7 @@ export const getContent = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                         contentCategoryId
+                        __typename
                       }
                       tag {
                         id
@@ -1207,15 +1340,18 @@ export const getContent = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     nextToken
                     startedAt
+                    __typename
                   }
                   Category {
                     id
@@ -1226,6 +1362,7 @@ export const getContent = /* GraphQL */ `
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   Collaborators {
                     items {
@@ -1246,6 +1383,7 @@ export const getContent = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                         contentCategoryId
+                        __typename
                       }
                       collaborator {
                         id
@@ -1259,15 +1397,18 @@ export const getContent = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     nextToken
                     startedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
@@ -1275,6 +1416,7 @@ export const getContent = /* GraphQL */ `
                   _deleted
                   _lastChangedAt
                   contentCategoryId
+                  __typename
                 }
                 collaborator {
                   id
@@ -1285,6 +1427,7 @@ export const getContent = /* GraphQL */ `
                     type
                     url
                     username
+                    __typename
                   }
                   fullName
                   photoUrl
@@ -1307,6 +1450,7 @@ export const getContent = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                         contentCategoryId
+                        __typename
                       }
                       collaborator {
                         id
@@ -1320,45 +1464,54 @@ export const getContent = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     nextToken
                     startedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               nextToken
               startedAt
+              __typename
             }
             createdAt
             updatedAt
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         nextToken
         startedAt
+        __typename
       }
       createdAt
       updatedAt
@@ -1366,6 +1519,7 @@ export const getContent = /* GraphQL */ `
       _deleted
       _lastChangedAt
       contentCategoryId
+      __typename
     }
   }
 `;
@@ -1384,6 +1538,7 @@ export const listContents = /* GraphQL */ `
         project {
           name
           description
+          __typename
         }
         files {
           data
@@ -1392,6 +1547,7 @@ export const listContents = /* GraphQL */ `
           caption
           size
           isBanner
+          __typename
         }
         date
         location {
@@ -1402,7 +1558,9 @@ export const listContents = /* GraphQL */ `
           position {
             latitude
             longitude
+            __typename
           }
+          __typename
         }
         colors
         views
@@ -1419,6 +1577,7 @@ export const listContents = /* GraphQL */ `
               project {
                 name
                 description
+                __typename
               }
               files {
                 data
@@ -1427,6 +1586,7 @@ export const listContents = /* GraphQL */ `
                 caption
                 size
                 isBanner
+                __typename
               }
               date
               location {
@@ -1437,7 +1597,9 @@ export const listContents = /* GraphQL */ `
                 position {
                   latitude
                   longitude
+                  __typename
                 }
+                __typename
               }
               colors
               views
@@ -1454,6 +1616,7 @@ export const listContents = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -1462,6 +1625,7 @@ export const listContents = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -1472,7 +1636,9 @@ export const listContents = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -1486,9 +1652,11 @@ export const listContents = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -1499,6 +1667,7 @@ export const listContents = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -1510,9 +1679,11 @@ export const listContents = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -1520,6 +1691,7 @@ export const listContents = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   tag {
                     id
@@ -1534,24 +1706,29 @@ export const listContents = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               Category {
                 id
@@ -1562,6 +1739,7 @@ export const listContents = /* GraphQL */ `
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               Collaborators {
                 items {
@@ -1576,6 +1754,7 @@ export const listContents = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -1584,6 +1763,7 @@ export const listContents = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -1594,7 +1774,9 @@ export const listContents = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -1608,9 +1790,11 @@ export const listContents = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -1621,6 +1805,7 @@ export const listContents = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -1632,9 +1817,11 @@ export const listContents = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -1642,6 +1829,7 @@ export const listContents = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   collaborator {
                     id
@@ -1652,6 +1840,7 @@ export const listContents = /* GraphQL */ `
                       type
                       url
                       username
+                      __typename
                     }
                     fullName
                     photoUrl
@@ -1665,24 +1854,29 @@ export const listContents = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               createdAt
               updatedAt
@@ -1690,6 +1884,7 @@ export const listContents = /* GraphQL */ `
               _deleted
               _lastChangedAt
               contentCategoryId
+              __typename
             }
             tag {
               id
@@ -1707,6 +1902,7 @@ export const listContents = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -1715,6 +1911,7 @@ export const listContents = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -1725,7 +1922,9 @@ export const listContents = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -1739,9 +1938,11 @@ export const listContents = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -1752,6 +1953,7 @@ export const listContents = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -1763,9 +1965,11 @@ export const listContents = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -1773,6 +1977,7 @@ export const listContents = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   tag {
                     id
@@ -1787,39 +1992,47 @@ export const listContents = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             createdAt
             updatedAt
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         Category {
           id
@@ -1830,6 +2043,7 @@ export const listContents = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         Collaborators {
           items {
@@ -1844,6 +2058,7 @@ export const listContents = /* GraphQL */ `
               project {
                 name
                 description
+                __typename
               }
               files {
                 data
@@ -1852,6 +2067,7 @@ export const listContents = /* GraphQL */ `
                 caption
                 size
                 isBanner
+                __typename
               }
               date
               location {
@@ -1862,7 +2078,9 @@ export const listContents = /* GraphQL */ `
                 position {
                   latitude
                   longitude
+                  __typename
                 }
+                __typename
               }
               colors
               views
@@ -1879,6 +2097,7 @@ export const listContents = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -1887,6 +2106,7 @@ export const listContents = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -1897,7 +2117,9 @@ export const listContents = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -1911,9 +2133,11 @@ export const listContents = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -1924,6 +2148,7 @@ export const listContents = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -1935,9 +2160,11 @@ export const listContents = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -1945,6 +2172,7 @@ export const listContents = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   tag {
                     id
@@ -1959,24 +2187,29 @@ export const listContents = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               Category {
                 id
@@ -1987,6 +2220,7 @@ export const listContents = /* GraphQL */ `
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               Collaborators {
                 items {
@@ -2001,6 +2235,7 @@ export const listContents = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -2009,6 +2244,7 @@ export const listContents = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -2019,7 +2255,9 @@ export const listContents = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -2033,9 +2271,11 @@ export const listContents = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -2046,6 +2286,7 @@ export const listContents = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -2057,9 +2298,11 @@ export const listContents = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -2067,6 +2310,7 @@ export const listContents = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   collaborator {
                     id
@@ -2077,6 +2321,7 @@ export const listContents = /* GraphQL */ `
                       type
                       url
                       username
+                      __typename
                     }
                     fullName
                     photoUrl
@@ -2090,24 +2335,29 @@ export const listContents = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               createdAt
               updatedAt
@@ -2115,6 +2365,7 @@ export const listContents = /* GraphQL */ `
               _deleted
               _lastChangedAt
               contentCategoryId
+              __typename
             }
             collaborator {
               id
@@ -2125,6 +2376,7 @@ export const listContents = /* GraphQL */ `
                 type
                 url
                 username
+                __typename
               }
               fullName
               photoUrl
@@ -2141,6 +2393,7 @@ export const listContents = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -2149,6 +2402,7 @@ export const listContents = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -2159,7 +2413,9 @@ export const listContents = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -2173,9 +2429,11 @@ export const listContents = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -2186,6 +2444,7 @@ export const listContents = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -2197,9 +2456,11 @@ export const listContents = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -2207,6 +2468,7 @@ export const listContents = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   collaborator {
                     id
@@ -2217,6 +2479,7 @@ export const listContents = /* GraphQL */ `
                       type
                       url
                       username
+                      __typename
                     }
                     fullName
                     photoUrl
@@ -2230,39 +2493,47 @@ export const listContents = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             createdAt
             updatedAt
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         createdAt
         updatedAt
@@ -2270,9 +2541,11 @@ export const listContents = /* GraphQL */ `
         _deleted
         _lastChangedAt
         contentCategoryId
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -2297,6 +2570,7 @@ export const syncContents = /* GraphQL */ `
         project {
           name
           description
+          __typename
         }
         files {
           data
@@ -2305,6 +2579,7 @@ export const syncContents = /* GraphQL */ `
           caption
           size
           isBanner
+          __typename
         }
         date
         location {
@@ -2315,7 +2590,9 @@ export const syncContents = /* GraphQL */ `
           position {
             latitude
             longitude
+            __typename
           }
+          __typename
         }
         colors
         views
@@ -2332,6 +2609,7 @@ export const syncContents = /* GraphQL */ `
               project {
                 name
                 description
+                __typename
               }
               files {
                 data
@@ -2340,6 +2618,7 @@ export const syncContents = /* GraphQL */ `
                 caption
                 size
                 isBanner
+                __typename
               }
               date
               location {
@@ -2350,7 +2629,9 @@ export const syncContents = /* GraphQL */ `
                 position {
                   latitude
                   longitude
+                  __typename
                 }
+                __typename
               }
               colors
               views
@@ -2367,6 +2648,7 @@ export const syncContents = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -2375,6 +2657,7 @@ export const syncContents = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -2385,7 +2668,9 @@ export const syncContents = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -2399,9 +2684,11 @@ export const syncContents = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -2412,6 +2699,7 @@ export const syncContents = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -2423,9 +2711,11 @@ export const syncContents = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -2433,6 +2723,7 @@ export const syncContents = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   tag {
                     id
@@ -2447,24 +2738,29 @@ export const syncContents = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               Category {
                 id
@@ -2475,6 +2771,7 @@ export const syncContents = /* GraphQL */ `
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               Collaborators {
                 items {
@@ -2489,6 +2786,7 @@ export const syncContents = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -2497,6 +2795,7 @@ export const syncContents = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -2507,7 +2806,9 @@ export const syncContents = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -2521,9 +2822,11 @@ export const syncContents = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -2534,6 +2837,7 @@ export const syncContents = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -2545,9 +2849,11 @@ export const syncContents = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -2555,6 +2861,7 @@ export const syncContents = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   collaborator {
                     id
@@ -2565,6 +2872,7 @@ export const syncContents = /* GraphQL */ `
                       type
                       url
                       username
+                      __typename
                     }
                     fullName
                     photoUrl
@@ -2578,24 +2886,29 @@ export const syncContents = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               createdAt
               updatedAt
@@ -2603,6 +2916,7 @@ export const syncContents = /* GraphQL */ `
               _deleted
               _lastChangedAt
               contentCategoryId
+              __typename
             }
             tag {
               id
@@ -2620,6 +2934,7 @@ export const syncContents = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -2628,6 +2943,7 @@ export const syncContents = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -2638,7 +2954,9 @@ export const syncContents = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -2652,9 +2970,11 @@ export const syncContents = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -2665,6 +2985,7 @@ export const syncContents = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -2676,9 +2997,11 @@ export const syncContents = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -2686,6 +3009,7 @@ export const syncContents = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   tag {
                     id
@@ -2700,39 +3024,47 @@ export const syncContents = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             createdAt
             updatedAt
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         Category {
           id
@@ -2743,6 +3075,7 @@ export const syncContents = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         Collaborators {
           items {
@@ -2757,6 +3090,7 @@ export const syncContents = /* GraphQL */ `
               project {
                 name
                 description
+                __typename
               }
               files {
                 data
@@ -2765,6 +3099,7 @@ export const syncContents = /* GraphQL */ `
                 caption
                 size
                 isBanner
+                __typename
               }
               date
               location {
@@ -2775,7 +3110,9 @@ export const syncContents = /* GraphQL */ `
                 position {
                   latitude
                   longitude
+                  __typename
                 }
+                __typename
               }
               colors
               views
@@ -2792,6 +3129,7 @@ export const syncContents = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -2800,6 +3138,7 @@ export const syncContents = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -2810,7 +3149,9 @@ export const syncContents = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -2824,9 +3165,11 @@ export const syncContents = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -2837,6 +3180,7 @@ export const syncContents = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -2848,9 +3192,11 @@ export const syncContents = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -2858,6 +3204,7 @@ export const syncContents = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   tag {
                     id
@@ -2872,24 +3219,29 @@ export const syncContents = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               Category {
                 id
@@ -2900,6 +3252,7 @@ export const syncContents = /* GraphQL */ `
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               Collaborators {
                 items {
@@ -2914,6 +3267,7 @@ export const syncContents = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -2922,6 +3276,7 @@ export const syncContents = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -2932,7 +3287,9 @@ export const syncContents = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -2946,9 +3303,11 @@ export const syncContents = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -2959,6 +3318,7 @@ export const syncContents = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -2970,9 +3330,11 @@ export const syncContents = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -2980,6 +3342,7 @@ export const syncContents = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   collaborator {
                     id
@@ -2990,6 +3353,7 @@ export const syncContents = /* GraphQL */ `
                       type
                       url
                       username
+                      __typename
                     }
                     fullName
                     photoUrl
@@ -3003,24 +3367,29 @@ export const syncContents = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               createdAt
               updatedAt
@@ -3028,6 +3397,7 @@ export const syncContents = /* GraphQL */ `
               _deleted
               _lastChangedAt
               contentCategoryId
+              __typename
             }
             collaborator {
               id
@@ -3038,6 +3408,7 @@ export const syncContents = /* GraphQL */ `
                 type
                 url
                 username
+                __typename
               }
               fullName
               photoUrl
@@ -3054,6 +3425,7 @@ export const syncContents = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -3062,6 +3434,7 @@ export const syncContents = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -3072,7 +3445,9 @@ export const syncContents = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -3086,9 +3461,11 @@ export const syncContents = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -3099,6 +3476,7 @@ export const syncContents = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -3110,9 +3488,11 @@ export const syncContents = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -3120,6 +3500,7 @@ export const syncContents = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   collaborator {
                     id
@@ -3130,6 +3511,7 @@ export const syncContents = /* GraphQL */ `
                       type
                       url
                       username
+                      __typename
                     }
                     fullName
                     photoUrl
@@ -3143,39 +3525,47 @@ export const syncContents = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             createdAt
             updatedAt
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         createdAt
         updatedAt
@@ -3183,9 +3573,11 @@ export const syncContents = /* GraphQL */ `
         _deleted
         _lastChangedAt
         contentCategoryId
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -3207,6 +3599,7 @@ export const getTag = /* GraphQL */ `
             project {
               name
               description
+              __typename
             }
             files {
               data
@@ -3215,6 +3608,7 @@ export const getTag = /* GraphQL */ `
               caption
               size
               isBanner
+              __typename
             }
             date
             location {
@@ -3225,7 +3619,9 @@ export const getTag = /* GraphQL */ `
               position {
                 latitude
                 longitude
+                __typename
               }
+              __typename
             }
             colors
             views
@@ -3242,6 +3638,7 @@ export const getTag = /* GraphQL */ `
                   project {
                     name
                     description
+                    __typename
                   }
                   files {
                     data
@@ -3250,6 +3647,7 @@ export const getTag = /* GraphQL */ `
                     caption
                     size
                     isBanner
+                    __typename
                   }
                   date
                   location {
@@ -3260,7 +3658,9 @@ export const getTag = /* GraphQL */ `
                     position {
                       latitude
                       longitude
+                      __typename
                     }
+                    __typename
                   }
                   colors
                   views
@@ -3283,6 +3683,7 @@ export const getTag = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                         contentCategoryId
+                        __typename
                       }
                       tag {
                         id
@@ -3292,15 +3693,18 @@ export const getTag = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     nextToken
                     startedAt
+                    __typename
                   }
                   Category {
                     id
@@ -3311,6 +3715,7 @@ export const getTag = /* GraphQL */ `
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   Collaborators {
                     items {
@@ -3331,6 +3736,7 @@ export const getTag = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                         contentCategoryId
+                        __typename
                       }
                       collaborator {
                         id
@@ -3344,15 +3750,18 @@ export const getTag = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     nextToken
                     startedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
@@ -3360,6 +3769,7 @@ export const getTag = /* GraphQL */ `
                   _deleted
                   _lastChangedAt
                   contentCategoryId
+                  __typename
                 }
                 tag {
                   id
@@ -3383,6 +3793,7 @@ export const getTag = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                         contentCategoryId
+                        __typename
                       }
                       tag {
                         id
@@ -3392,30 +3803,36 @@ export const getTag = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     nextToken
                     startedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               nextToken
               startedAt
+              __typename
             }
             Category {
               id
@@ -3426,6 +3843,7 @@ export const getTag = /* GraphQL */ `
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             Collaborators {
               items {
@@ -3440,6 +3858,7 @@ export const getTag = /* GraphQL */ `
                   project {
                     name
                     description
+                    __typename
                   }
                   files {
                     data
@@ -3448,6 +3867,7 @@ export const getTag = /* GraphQL */ `
                     caption
                     size
                     isBanner
+                    __typename
                   }
                   date
                   location {
@@ -3458,7 +3878,9 @@ export const getTag = /* GraphQL */ `
                     position {
                       latitude
                       longitude
+                      __typename
                     }
+                    __typename
                   }
                   colors
                   views
@@ -3481,6 +3903,7 @@ export const getTag = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                         contentCategoryId
+                        __typename
                       }
                       tag {
                         id
@@ -3490,15 +3913,18 @@ export const getTag = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     nextToken
                     startedAt
+                    __typename
                   }
                   Category {
                     id
@@ -3509,6 +3935,7 @@ export const getTag = /* GraphQL */ `
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   Collaborators {
                     items {
@@ -3529,6 +3956,7 @@ export const getTag = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                         contentCategoryId
+                        __typename
                       }
                       collaborator {
                         id
@@ -3542,15 +3970,18 @@ export const getTag = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     nextToken
                     startedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
@@ -3558,6 +3989,7 @@ export const getTag = /* GraphQL */ `
                   _deleted
                   _lastChangedAt
                   contentCategoryId
+                  __typename
                 }
                 collaborator {
                   id
@@ -3568,6 +4000,7 @@ export const getTag = /* GraphQL */ `
                     type
                     url
                     username
+                    __typename
                   }
                   fullName
                   photoUrl
@@ -3590,6 +4023,7 @@ export const getTag = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                         contentCategoryId
+                        __typename
                       }
                       collaborator {
                         id
@@ -3603,30 +4037,36 @@ export const getTag = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     nextToken
                     startedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               nextToken
               startedAt
+              __typename
             }
             createdAt
             updatedAt
@@ -3634,6 +4074,7 @@ export const getTag = /* GraphQL */ `
             _deleted
             _lastChangedAt
             contentCategoryId
+            __typename
           }
           tag {
             id
@@ -3651,6 +4092,7 @@ export const getTag = /* GraphQL */ `
                   project {
                     name
                     description
+                    __typename
                   }
                   files {
                     data
@@ -3659,6 +4101,7 @@ export const getTag = /* GraphQL */ `
                     caption
                     size
                     isBanner
+                    __typename
                   }
                   date
                   location {
@@ -3669,7 +4112,9 @@ export const getTag = /* GraphQL */ `
                     position {
                       latitude
                       longitude
+                      __typename
                     }
+                    __typename
                   }
                   colors
                   views
@@ -3692,6 +4137,7 @@ export const getTag = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                         contentCategoryId
+                        __typename
                       }
                       tag {
                         id
@@ -3701,15 +4147,18 @@ export const getTag = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     nextToken
                     startedAt
+                    __typename
                   }
                   Category {
                     id
@@ -3720,6 +4169,7 @@ export const getTag = /* GraphQL */ `
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   Collaborators {
                     items {
@@ -3740,6 +4190,7 @@ export const getTag = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                         contentCategoryId
+                        __typename
                       }
                       collaborator {
                         id
@@ -3753,15 +4204,18 @@ export const getTag = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     nextToken
                     startedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
@@ -3769,6 +4223,7 @@ export const getTag = /* GraphQL */ `
                   _deleted
                   _lastChangedAt
                   contentCategoryId
+                  __typename
                 }
                 tag {
                   id
@@ -3792,6 +4247,7 @@ export const getTag = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                         contentCategoryId
+                        __typename
                       }
                       tag {
                         id
@@ -3801,51 +4257,61 @@ export const getTag = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     nextToken
                     startedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               nextToken
               startedAt
+              __typename
             }
             createdAt
             updatedAt
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         nextToken
         startedAt
+        __typename
       }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
+      __typename
     }
   }
 `;
@@ -3872,6 +4338,7 @@ export const listTags = /* GraphQL */ `
               project {
                 name
                 description
+                __typename
               }
               files {
                 data
@@ -3880,6 +4347,7 @@ export const listTags = /* GraphQL */ `
                 caption
                 size
                 isBanner
+                __typename
               }
               date
               location {
@@ -3890,7 +4358,9 @@ export const listTags = /* GraphQL */ `
                 position {
                   latitude
                   longitude
+                  __typename
                 }
+                __typename
               }
               colors
               views
@@ -3907,6 +4377,7 @@ export const listTags = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -3915,6 +4386,7 @@ export const listTags = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -3925,7 +4397,9 @@ export const listTags = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -3939,9 +4413,11 @@ export const listTags = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -3952,6 +4428,7 @@ export const listTags = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -3963,9 +4440,11 @@ export const listTags = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -3973,6 +4452,7 @@ export const listTags = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   tag {
                     id
@@ -3987,24 +4467,29 @@ export const listTags = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               Category {
                 id
@@ -4015,6 +4500,7 @@ export const listTags = /* GraphQL */ `
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               Collaborators {
                 items {
@@ -4029,6 +4515,7 @@ export const listTags = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -4037,6 +4524,7 @@ export const listTags = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -4047,7 +4535,9 @@ export const listTags = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -4061,9 +4551,11 @@ export const listTags = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -4074,6 +4566,7 @@ export const listTags = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -4085,9 +4578,11 @@ export const listTags = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -4095,6 +4590,7 @@ export const listTags = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   collaborator {
                     id
@@ -4105,6 +4601,7 @@ export const listTags = /* GraphQL */ `
                       type
                       url
                       username
+                      __typename
                     }
                     fullName
                     photoUrl
@@ -4118,24 +4615,29 @@ export const listTags = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               createdAt
               updatedAt
@@ -4143,6 +4645,7 @@ export const listTags = /* GraphQL */ `
               _deleted
               _lastChangedAt
               contentCategoryId
+              __typename
             }
             tag {
               id
@@ -4160,6 +4663,7 @@ export const listTags = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -4168,6 +4672,7 @@ export const listTags = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -4178,7 +4683,9 @@ export const listTags = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -4192,9 +4699,11 @@ export const listTags = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -4205,6 +4714,7 @@ export const listTags = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -4216,9 +4726,11 @@ export const listTags = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -4226,6 +4738,7 @@ export const listTags = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   tag {
                     id
@@ -4240,48 +4753,58 @@ export const listTags = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             createdAt
             updatedAt
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -4314,6 +4837,7 @@ export const syncTags = /* GraphQL */ `
               project {
                 name
                 description
+                __typename
               }
               files {
                 data
@@ -4322,6 +4846,7 @@ export const syncTags = /* GraphQL */ `
                 caption
                 size
                 isBanner
+                __typename
               }
               date
               location {
@@ -4332,7 +4857,9 @@ export const syncTags = /* GraphQL */ `
                 position {
                   latitude
                   longitude
+                  __typename
                 }
+                __typename
               }
               colors
               views
@@ -4349,6 +4876,7 @@ export const syncTags = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -4357,6 +4885,7 @@ export const syncTags = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -4367,7 +4896,9 @@ export const syncTags = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -4381,9 +4912,11 @@ export const syncTags = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -4394,6 +4927,7 @@ export const syncTags = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -4405,9 +4939,11 @@ export const syncTags = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -4415,6 +4951,7 @@ export const syncTags = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   tag {
                     id
@@ -4429,24 +4966,29 @@ export const syncTags = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               Category {
                 id
@@ -4457,6 +4999,7 @@ export const syncTags = /* GraphQL */ `
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               Collaborators {
                 items {
@@ -4471,6 +5014,7 @@ export const syncTags = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -4479,6 +5023,7 @@ export const syncTags = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -4489,7 +5034,9 @@ export const syncTags = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -4503,9 +5050,11 @@ export const syncTags = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -4516,6 +5065,7 @@ export const syncTags = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -4527,9 +5077,11 @@ export const syncTags = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -4537,6 +5089,7 @@ export const syncTags = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   collaborator {
                     id
@@ -4547,6 +5100,7 @@ export const syncTags = /* GraphQL */ `
                       type
                       url
                       username
+                      __typename
                     }
                     fullName
                     photoUrl
@@ -4560,24 +5114,29 @@ export const syncTags = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               createdAt
               updatedAt
@@ -4585,6 +5144,7 @@ export const syncTags = /* GraphQL */ `
               _deleted
               _lastChangedAt
               contentCategoryId
+              __typename
             }
             tag {
               id
@@ -4602,6 +5162,7 @@ export const syncTags = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -4610,6 +5171,7 @@ export const syncTags = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -4620,7 +5182,9 @@ export const syncTags = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -4634,9 +5198,11 @@ export const syncTags = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -4647,6 +5213,7 @@ export const syncTags = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -4658,9 +5225,11 @@ export const syncTags = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -4668,6 +5237,7 @@ export const syncTags = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   tag {
                     id
@@ -4682,48 +5252,58 @@ export const syncTags = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             createdAt
             updatedAt
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -4738,6 +5318,7 @@ export const getCollaborator = /* GraphQL */ `
         type
         url
         username
+        __typename
       }
       fullName
       photoUrl
@@ -4754,6 +5335,7 @@ export const getCollaborator = /* GraphQL */ `
             project {
               name
               description
+              __typename
             }
             files {
               data
@@ -4762,6 +5344,7 @@ export const getCollaborator = /* GraphQL */ `
               caption
               size
               isBanner
+              __typename
             }
             date
             location {
@@ -4772,7 +5355,9 @@ export const getCollaborator = /* GraphQL */ `
               position {
                 latitude
                 longitude
+                __typename
               }
+              __typename
             }
             colors
             views
@@ -4789,6 +5374,7 @@ export const getCollaborator = /* GraphQL */ `
                   project {
                     name
                     description
+                    __typename
                   }
                   files {
                     data
@@ -4797,6 +5383,7 @@ export const getCollaborator = /* GraphQL */ `
                     caption
                     size
                     isBanner
+                    __typename
                   }
                   date
                   location {
@@ -4807,7 +5394,9 @@ export const getCollaborator = /* GraphQL */ `
                     position {
                       latitude
                       longitude
+                      __typename
                     }
+                    __typename
                   }
                   colors
                   views
@@ -4830,6 +5419,7 @@ export const getCollaborator = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                         contentCategoryId
+                        __typename
                       }
                       tag {
                         id
@@ -4839,15 +5429,18 @@ export const getCollaborator = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     nextToken
                     startedAt
+                    __typename
                   }
                   Category {
                     id
@@ -4858,6 +5451,7 @@ export const getCollaborator = /* GraphQL */ `
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   Collaborators {
                     items {
@@ -4878,6 +5472,7 @@ export const getCollaborator = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                         contentCategoryId
+                        __typename
                       }
                       collaborator {
                         id
@@ -4891,15 +5486,18 @@ export const getCollaborator = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     nextToken
                     startedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
@@ -4907,6 +5505,7 @@ export const getCollaborator = /* GraphQL */ `
                   _deleted
                   _lastChangedAt
                   contentCategoryId
+                  __typename
                 }
                 tag {
                   id
@@ -4930,6 +5529,7 @@ export const getCollaborator = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                         contentCategoryId
+                        __typename
                       }
                       tag {
                         id
@@ -4939,30 +5539,36 @@ export const getCollaborator = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     nextToken
                     startedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               nextToken
               startedAt
+              __typename
             }
             Category {
               id
@@ -4973,6 +5579,7 @@ export const getCollaborator = /* GraphQL */ `
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             Collaborators {
               items {
@@ -4987,6 +5594,7 @@ export const getCollaborator = /* GraphQL */ `
                   project {
                     name
                     description
+                    __typename
                   }
                   files {
                     data
@@ -4995,6 +5603,7 @@ export const getCollaborator = /* GraphQL */ `
                     caption
                     size
                     isBanner
+                    __typename
                   }
                   date
                   location {
@@ -5005,7 +5614,9 @@ export const getCollaborator = /* GraphQL */ `
                     position {
                       latitude
                       longitude
+                      __typename
                     }
+                    __typename
                   }
                   colors
                   views
@@ -5028,6 +5639,7 @@ export const getCollaborator = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                         contentCategoryId
+                        __typename
                       }
                       tag {
                         id
@@ -5037,15 +5649,18 @@ export const getCollaborator = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     nextToken
                     startedAt
+                    __typename
                   }
                   Category {
                     id
@@ -5056,6 +5671,7 @@ export const getCollaborator = /* GraphQL */ `
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   Collaborators {
                     items {
@@ -5076,6 +5692,7 @@ export const getCollaborator = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                         contentCategoryId
+                        __typename
                       }
                       collaborator {
                         id
@@ -5089,15 +5706,18 @@ export const getCollaborator = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     nextToken
                     startedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
@@ -5105,6 +5725,7 @@ export const getCollaborator = /* GraphQL */ `
                   _deleted
                   _lastChangedAt
                   contentCategoryId
+                  __typename
                 }
                 collaborator {
                   id
@@ -5115,6 +5736,7 @@ export const getCollaborator = /* GraphQL */ `
                     type
                     url
                     username
+                    __typename
                   }
                   fullName
                   photoUrl
@@ -5137,6 +5759,7 @@ export const getCollaborator = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                         contentCategoryId
+                        __typename
                       }
                       collaborator {
                         id
@@ -5150,30 +5773,36 @@ export const getCollaborator = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     nextToken
                     startedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               nextToken
               startedAt
+              __typename
             }
             createdAt
             updatedAt
@@ -5181,6 +5810,7 @@ export const getCollaborator = /* GraphQL */ `
             _deleted
             _lastChangedAt
             contentCategoryId
+            __typename
           }
           collaborator {
             id
@@ -5191,6 +5821,7 @@ export const getCollaborator = /* GraphQL */ `
               type
               url
               username
+              __typename
             }
             fullName
             photoUrl
@@ -5207,6 +5838,7 @@ export const getCollaborator = /* GraphQL */ `
                   project {
                     name
                     description
+                    __typename
                   }
                   files {
                     data
@@ -5215,6 +5847,7 @@ export const getCollaborator = /* GraphQL */ `
                     caption
                     size
                     isBanner
+                    __typename
                   }
                   date
                   location {
@@ -5225,7 +5858,9 @@ export const getCollaborator = /* GraphQL */ `
                     position {
                       latitude
                       longitude
+                      __typename
                     }
+                    __typename
                   }
                   colors
                   views
@@ -5248,6 +5883,7 @@ export const getCollaborator = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                         contentCategoryId
+                        __typename
                       }
                       tag {
                         id
@@ -5257,15 +5893,18 @@ export const getCollaborator = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     nextToken
                     startedAt
+                    __typename
                   }
                   Category {
                     id
@@ -5276,6 +5915,7 @@ export const getCollaborator = /* GraphQL */ `
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   Collaborators {
                     items {
@@ -5296,6 +5936,7 @@ export const getCollaborator = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                         contentCategoryId
+                        __typename
                       }
                       collaborator {
                         id
@@ -5309,15 +5950,18 @@ export const getCollaborator = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     nextToken
                     startedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
@@ -5325,6 +5969,7 @@ export const getCollaborator = /* GraphQL */ `
                   _deleted
                   _lastChangedAt
                   contentCategoryId
+                  __typename
                 }
                 collaborator {
                   id
@@ -5335,6 +5980,7 @@ export const getCollaborator = /* GraphQL */ `
                     type
                     url
                     username
+                    __typename
                   }
                   fullName
                   photoUrl
@@ -5357,6 +6003,7 @@ export const getCollaborator = /* GraphQL */ `
                         _deleted
                         _lastChangedAt
                         contentCategoryId
+                        __typename
                       }
                       collaborator {
                         id
@@ -5370,51 +6017,61 @@ export const getCollaborator = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     nextToken
                     startedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               nextToken
               startedAt
+              __typename
             }
             createdAt
             updatedAt
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         nextToken
         startedAt
+        __typename
       }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
+      __typename
     }
   }
 `;
@@ -5434,6 +6091,7 @@ export const listCollaborators = /* GraphQL */ `
           type
           url
           username
+          __typename
         }
         fullName
         photoUrl
@@ -5450,6 +6108,7 @@ export const listCollaborators = /* GraphQL */ `
               project {
                 name
                 description
+                __typename
               }
               files {
                 data
@@ -5458,6 +6117,7 @@ export const listCollaborators = /* GraphQL */ `
                 caption
                 size
                 isBanner
+                __typename
               }
               date
               location {
@@ -5468,7 +6128,9 @@ export const listCollaborators = /* GraphQL */ `
                 position {
                   latitude
                   longitude
+                  __typename
                 }
+                __typename
               }
               colors
               views
@@ -5485,6 +6147,7 @@ export const listCollaborators = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -5493,6 +6156,7 @@ export const listCollaborators = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -5503,7 +6167,9 @@ export const listCollaborators = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -5517,9 +6183,11 @@ export const listCollaborators = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -5530,6 +6198,7 @@ export const listCollaborators = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -5541,9 +6210,11 @@ export const listCollaborators = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -5551,6 +6222,7 @@ export const listCollaborators = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   tag {
                     id
@@ -5565,24 +6237,29 @@ export const listCollaborators = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               Category {
                 id
@@ -5593,6 +6270,7 @@ export const listCollaborators = /* GraphQL */ `
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               Collaborators {
                 items {
@@ -5607,6 +6285,7 @@ export const listCollaborators = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -5615,6 +6294,7 @@ export const listCollaborators = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -5625,7 +6305,9 @@ export const listCollaborators = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -5639,9 +6321,11 @@ export const listCollaborators = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -5652,6 +6336,7 @@ export const listCollaborators = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -5663,9 +6348,11 @@ export const listCollaborators = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -5673,6 +6360,7 @@ export const listCollaborators = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   collaborator {
                     id
@@ -5683,6 +6371,7 @@ export const listCollaborators = /* GraphQL */ `
                       type
                       url
                       username
+                      __typename
                     }
                     fullName
                     photoUrl
@@ -5696,24 +6385,29 @@ export const listCollaborators = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               createdAt
               updatedAt
@@ -5721,6 +6415,7 @@ export const listCollaborators = /* GraphQL */ `
               _deleted
               _lastChangedAt
               contentCategoryId
+              __typename
             }
             collaborator {
               id
@@ -5731,6 +6426,7 @@ export const listCollaborators = /* GraphQL */ `
                 type
                 url
                 username
+                __typename
               }
               fullName
               photoUrl
@@ -5747,6 +6443,7 @@ export const listCollaborators = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -5755,6 +6452,7 @@ export const listCollaborators = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -5765,7 +6463,9 @@ export const listCollaborators = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -5779,9 +6479,11 @@ export const listCollaborators = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -5792,6 +6494,7 @@ export const listCollaborators = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -5803,9 +6506,11 @@ export const listCollaborators = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -5813,6 +6518,7 @@ export const listCollaborators = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   collaborator {
                     id
@@ -5823,6 +6529,7 @@ export const listCollaborators = /* GraphQL */ `
                       type
                       url
                       username
+                      __typename
                     }
                     fullName
                     photoUrl
@@ -5836,48 +6543,58 @@ export const listCollaborators = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             createdAt
             updatedAt
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -5903,6 +6620,7 @@ export const syncCollaborators = /* GraphQL */ `
           type
           url
           username
+          __typename
         }
         fullName
         photoUrl
@@ -5919,6 +6637,7 @@ export const syncCollaborators = /* GraphQL */ `
               project {
                 name
                 description
+                __typename
               }
               files {
                 data
@@ -5927,6 +6646,7 @@ export const syncCollaborators = /* GraphQL */ `
                 caption
                 size
                 isBanner
+                __typename
               }
               date
               location {
@@ -5937,7 +6657,9 @@ export const syncCollaborators = /* GraphQL */ `
                 position {
                   latitude
                   longitude
+                  __typename
                 }
+                __typename
               }
               colors
               views
@@ -5954,6 +6676,7 @@ export const syncCollaborators = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -5962,6 +6685,7 @@ export const syncCollaborators = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -5972,7 +6696,9 @@ export const syncCollaborators = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -5986,9 +6712,11 @@ export const syncCollaborators = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -5999,6 +6727,7 @@ export const syncCollaborators = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -6010,9 +6739,11 @@ export const syncCollaborators = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -6020,6 +6751,7 @@ export const syncCollaborators = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   tag {
                     id
@@ -6034,24 +6766,29 @@ export const syncCollaborators = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               Category {
                 id
@@ -6062,6 +6799,7 @@ export const syncCollaborators = /* GraphQL */ `
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               Collaborators {
                 items {
@@ -6076,6 +6814,7 @@ export const syncCollaborators = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -6084,6 +6823,7 @@ export const syncCollaborators = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -6094,7 +6834,9 @@ export const syncCollaborators = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -6108,9 +6850,11 @@ export const syncCollaborators = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -6121,6 +6865,7 @@ export const syncCollaborators = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -6132,9 +6877,11 @@ export const syncCollaborators = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -6142,6 +6889,7 @@ export const syncCollaborators = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   collaborator {
                     id
@@ -6152,6 +6900,7 @@ export const syncCollaborators = /* GraphQL */ `
                       type
                       url
                       username
+                      __typename
                     }
                     fullName
                     photoUrl
@@ -6165,24 +6914,29 @@ export const syncCollaborators = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               createdAt
               updatedAt
@@ -6190,6 +6944,7 @@ export const syncCollaborators = /* GraphQL */ `
               _deleted
               _lastChangedAt
               contentCategoryId
+              __typename
             }
             collaborator {
               id
@@ -6200,6 +6955,7 @@ export const syncCollaborators = /* GraphQL */ `
                 type
                 url
                 username
+                __typename
               }
               fullName
               photoUrl
@@ -6216,6 +6972,7 @@ export const syncCollaborators = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -6224,6 +6981,7 @@ export const syncCollaborators = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -6234,7 +6992,9 @@ export const syncCollaborators = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -6248,9 +7008,11 @@ export const syncCollaborators = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -6261,6 +7023,7 @@ export const syncCollaborators = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -6272,9 +7035,11 @@ export const syncCollaborators = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -6282,6 +7047,7 @@ export const syncCollaborators = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   collaborator {
                     id
@@ -6292,6 +7058,7 @@ export const syncCollaborators = /* GraphQL */ `
                       type
                       url
                       username
+                      __typename
                     }
                     fullName
                     photoUrl
@@ -6305,48 +7072,58 @@ export const syncCollaborators = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             createdAt
             updatedAt
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -6361,6 +7138,7 @@ export const getCategory = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      __typename
     }
   }
 `;
@@ -6380,9 +7158,11 @@ export const listCategories = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -6408,9 +7188,11 @@ export const syncCategories = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -6428,6 +7210,7 @@ export const getContentTag = /* GraphQL */ `
         project {
           name
           description
+          __typename
         }
         files {
           data
@@ -6436,6 +7219,7 @@ export const getContentTag = /* GraphQL */ `
           caption
           size
           isBanner
+          __typename
         }
         date
         location {
@@ -6446,7 +7230,9 @@ export const getContentTag = /* GraphQL */ `
           position {
             latitude
             longitude
+            __typename
           }
+          __typename
         }
         colors
         views
@@ -6463,6 +7249,7 @@ export const getContentTag = /* GraphQL */ `
               project {
                 name
                 description
+                __typename
               }
               files {
                 data
@@ -6471,6 +7258,7 @@ export const getContentTag = /* GraphQL */ `
                 caption
                 size
                 isBanner
+                __typename
               }
               date
               location {
@@ -6481,7 +7269,9 @@ export const getContentTag = /* GraphQL */ `
                 position {
                   latitude
                   longitude
+                  __typename
                 }
+                __typename
               }
               colors
               views
@@ -6498,6 +7288,7 @@ export const getContentTag = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -6506,6 +7297,7 @@ export const getContentTag = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -6516,7 +7308,9 @@ export const getContentTag = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -6530,9 +7324,11 @@ export const getContentTag = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -6543,6 +7339,7 @@ export const getContentTag = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -6554,9 +7351,11 @@ export const getContentTag = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -6564,6 +7363,7 @@ export const getContentTag = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   tag {
                     id
@@ -6578,24 +7378,29 @@ export const getContentTag = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               Category {
                 id
@@ -6606,6 +7411,7 @@ export const getContentTag = /* GraphQL */ `
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               Collaborators {
                 items {
@@ -6620,6 +7426,7 @@ export const getContentTag = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -6628,6 +7435,7 @@ export const getContentTag = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -6638,7 +7446,9 @@ export const getContentTag = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -6652,9 +7462,11 @@ export const getContentTag = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -6665,6 +7477,7 @@ export const getContentTag = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -6676,9 +7489,11 @@ export const getContentTag = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -6686,6 +7501,7 @@ export const getContentTag = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   collaborator {
                     id
@@ -6696,6 +7512,7 @@ export const getContentTag = /* GraphQL */ `
                       type
                       url
                       username
+                      __typename
                     }
                     fullName
                     photoUrl
@@ -6709,24 +7526,29 @@ export const getContentTag = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               createdAt
               updatedAt
@@ -6734,6 +7556,7 @@ export const getContentTag = /* GraphQL */ `
               _deleted
               _lastChangedAt
               contentCategoryId
+              __typename
             }
             tag {
               id
@@ -6751,6 +7574,7 @@ export const getContentTag = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -6759,6 +7583,7 @@ export const getContentTag = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -6769,7 +7594,9 @@ export const getContentTag = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -6783,9 +7610,11 @@ export const getContentTag = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -6796,6 +7625,7 @@ export const getContentTag = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -6807,9 +7637,11 @@ export const getContentTag = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -6817,6 +7649,7 @@ export const getContentTag = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   tag {
                     id
@@ -6831,39 +7664,47 @@ export const getContentTag = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             createdAt
             updatedAt
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         Category {
           id
@@ -6874,6 +7715,7 @@ export const getContentTag = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         Collaborators {
           items {
@@ -6888,6 +7730,7 @@ export const getContentTag = /* GraphQL */ `
               project {
                 name
                 description
+                __typename
               }
               files {
                 data
@@ -6896,6 +7739,7 @@ export const getContentTag = /* GraphQL */ `
                 caption
                 size
                 isBanner
+                __typename
               }
               date
               location {
@@ -6906,7 +7750,9 @@ export const getContentTag = /* GraphQL */ `
                 position {
                   latitude
                   longitude
+                  __typename
                 }
+                __typename
               }
               colors
               views
@@ -6923,6 +7769,7 @@ export const getContentTag = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -6931,6 +7778,7 @@ export const getContentTag = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -6941,7 +7789,9 @@ export const getContentTag = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -6955,9 +7805,11 @@ export const getContentTag = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -6968,6 +7820,7 @@ export const getContentTag = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -6979,9 +7832,11 @@ export const getContentTag = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -6989,6 +7844,7 @@ export const getContentTag = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   tag {
                     id
@@ -7003,24 +7859,29 @@ export const getContentTag = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               Category {
                 id
@@ -7031,6 +7892,7 @@ export const getContentTag = /* GraphQL */ `
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               Collaborators {
                 items {
@@ -7045,6 +7907,7 @@ export const getContentTag = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -7053,6 +7916,7 @@ export const getContentTag = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -7063,7 +7927,9 @@ export const getContentTag = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -7077,9 +7943,11 @@ export const getContentTag = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -7090,6 +7958,7 @@ export const getContentTag = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -7101,9 +7970,11 @@ export const getContentTag = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -7111,6 +7982,7 @@ export const getContentTag = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   collaborator {
                     id
@@ -7121,6 +7993,7 @@ export const getContentTag = /* GraphQL */ `
                       type
                       url
                       username
+                      __typename
                     }
                     fullName
                     photoUrl
@@ -7134,24 +8007,29 @@ export const getContentTag = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               createdAt
               updatedAt
@@ -7159,6 +8037,7 @@ export const getContentTag = /* GraphQL */ `
               _deleted
               _lastChangedAt
               contentCategoryId
+              __typename
             }
             collaborator {
               id
@@ -7169,6 +8048,7 @@ export const getContentTag = /* GraphQL */ `
                 type
                 url
                 username
+                __typename
               }
               fullName
               photoUrl
@@ -7185,6 +8065,7 @@ export const getContentTag = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -7193,6 +8074,7 @@ export const getContentTag = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -7203,7 +8085,9 @@ export const getContentTag = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -7217,9 +8101,11 @@ export const getContentTag = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -7230,6 +8116,7 @@ export const getContentTag = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -7241,9 +8128,11 @@ export const getContentTag = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -7251,6 +8140,7 @@ export const getContentTag = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   collaborator {
                     id
@@ -7261,6 +8151,7 @@ export const getContentTag = /* GraphQL */ `
                       type
                       url
                       username
+                      __typename
                     }
                     fullName
                     photoUrl
@@ -7274,39 +8165,47 @@ export const getContentTag = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             createdAt
             updatedAt
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         createdAt
         updatedAt
@@ -7314,6 +8213,7 @@ export const getContentTag = /* GraphQL */ `
         _deleted
         _lastChangedAt
         contentCategoryId
+        __typename
       }
       tag {
         id
@@ -7331,6 +8231,7 @@ export const getContentTag = /* GraphQL */ `
               project {
                 name
                 description
+                __typename
               }
               files {
                 data
@@ -7339,6 +8240,7 @@ export const getContentTag = /* GraphQL */ `
                 caption
                 size
                 isBanner
+                __typename
               }
               date
               location {
@@ -7349,7 +8251,9 @@ export const getContentTag = /* GraphQL */ `
                 position {
                   latitude
                   longitude
+                  __typename
                 }
+                __typename
               }
               colors
               views
@@ -7366,6 +8270,7 @@ export const getContentTag = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -7374,6 +8279,7 @@ export const getContentTag = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -7384,7 +8290,9 @@ export const getContentTag = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -7398,9 +8306,11 @@ export const getContentTag = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -7411,6 +8321,7 @@ export const getContentTag = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -7422,9 +8333,11 @@ export const getContentTag = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -7432,6 +8345,7 @@ export const getContentTag = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   tag {
                     id
@@ -7446,24 +8360,29 @@ export const getContentTag = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               Category {
                 id
@@ -7474,6 +8393,7 @@ export const getContentTag = /* GraphQL */ `
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               Collaborators {
                 items {
@@ -7488,6 +8408,7 @@ export const getContentTag = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -7496,6 +8417,7 @@ export const getContentTag = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -7506,7 +8428,9 @@ export const getContentTag = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -7520,9 +8444,11 @@ export const getContentTag = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -7533,6 +8459,7 @@ export const getContentTag = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -7544,9 +8471,11 @@ export const getContentTag = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -7554,6 +8483,7 @@ export const getContentTag = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   collaborator {
                     id
@@ -7564,6 +8494,7 @@ export const getContentTag = /* GraphQL */ `
                       type
                       url
                       username
+                      __typename
                     }
                     fullName
                     photoUrl
@@ -7577,24 +8508,29 @@ export const getContentTag = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               createdAt
               updatedAt
@@ -7602,6 +8538,7 @@ export const getContentTag = /* GraphQL */ `
               _deleted
               _lastChangedAt
               contentCategoryId
+              __typename
             }
             tag {
               id
@@ -7619,6 +8556,7 @@ export const getContentTag = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -7627,6 +8565,7 @@ export const getContentTag = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -7637,7 +8576,9 @@ export const getContentTag = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -7651,9 +8592,11 @@ export const getContentTag = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -7664,6 +8607,7 @@ export const getContentTag = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -7675,9 +8619,11 @@ export const getContentTag = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -7685,6 +8631,7 @@ export const getContentTag = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   tag {
                     id
@@ -7699,51 +8646,61 @@ export const getContentTag = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             createdAt
             updatedAt
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
+      __typename
     }
   }
 `;
@@ -7766,6 +8723,7 @@ export const listContentTags = /* GraphQL */ `
           project {
             name
             description
+            __typename
           }
           files {
             data
@@ -7774,6 +8732,7 @@ export const listContentTags = /* GraphQL */ `
             caption
             size
             isBanner
+            __typename
           }
           date
           location {
@@ -7784,7 +8743,9 @@ export const listContentTags = /* GraphQL */ `
             position {
               latitude
               longitude
+              __typename
             }
+            __typename
           }
           colors
           views
@@ -7801,6 +8762,7 @@ export const listContentTags = /* GraphQL */ `
                 project {
                   name
                   description
+                  __typename
                 }
                 files {
                   data
@@ -7809,6 +8771,7 @@ export const listContentTags = /* GraphQL */ `
                   caption
                   size
                   isBanner
+                  __typename
                 }
                 date
                 location {
@@ -7819,7 +8782,9 @@ export const listContentTags = /* GraphQL */ `
                   position {
                     latitude
                     longitude
+                    __typename
                   }
+                  __typename
                 }
                 colors
                 views
@@ -7836,6 +8801,7 @@ export const listContentTags = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -7844,6 +8810,7 @@ export const listContentTags = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -7851,12 +8818,14 @@ export const listContentTags = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -7867,10 +8836,12 @@ export const listContentTags = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -7878,6 +8849,7 @@ export const listContentTags = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     tag {
                       id
@@ -7885,21 +8857,25 @@ export const listContentTags = /* GraphQL */ `
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 Category {
                   id
@@ -7910,6 +8886,7 @@ export const listContentTags = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 Collaborators {
                   items {
@@ -7924,6 +8901,7 @@ export const listContentTags = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -7932,6 +8910,7 @@ export const listContentTags = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -7939,12 +8918,14 @@ export const listContentTags = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -7955,10 +8936,12 @@ export const listContentTags = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -7966,6 +8949,7 @@ export const listContentTags = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     collaborator {
                       id
@@ -7976,27 +8960,32 @@ export const listContentTags = /* GraphQL */ `
                         type
                         url
                         username
+                        __typename
                       }
                       fullName
                       photoUrl
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
@@ -8004,6 +8993,7 @@ export const listContentTags = /* GraphQL */ `
                 _deleted
                 _lastChangedAt
                 contentCategoryId
+                __typename
               }
               tag {
                 id
@@ -8021,6 +9011,7 @@ export const listContentTags = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -8029,6 +9020,7 @@ export const listContentTags = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -8036,12 +9028,14 @@ export const listContentTags = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -8052,10 +9046,12 @@ export const listContentTags = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -8063,6 +9059,7 @@ export const listContentTags = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     tag {
                       id
@@ -8070,36 +9067,43 @@ export const listContentTags = /* GraphQL */ `
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             nextToken
             startedAt
+            __typename
           }
           Category {
             id
@@ -8110,6 +9114,7 @@ export const listContentTags = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           Collaborators {
             items {
@@ -8124,6 +9129,7 @@ export const listContentTags = /* GraphQL */ `
                 project {
                   name
                   description
+                  __typename
                 }
                 files {
                   data
@@ -8132,6 +9138,7 @@ export const listContentTags = /* GraphQL */ `
                   caption
                   size
                   isBanner
+                  __typename
                 }
                 date
                 location {
@@ -8142,7 +9149,9 @@ export const listContentTags = /* GraphQL */ `
                   position {
                     latitude
                     longitude
+                    __typename
                   }
+                  __typename
                 }
                 colors
                 views
@@ -8159,6 +9168,7 @@ export const listContentTags = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -8167,6 +9177,7 @@ export const listContentTags = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -8174,12 +9185,14 @@ export const listContentTags = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -8190,10 +9203,12 @@ export const listContentTags = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -8201,6 +9216,7 @@ export const listContentTags = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     tag {
                       id
@@ -8208,21 +9224,25 @@ export const listContentTags = /* GraphQL */ `
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 Category {
                   id
@@ -8233,6 +9253,7 @@ export const listContentTags = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 Collaborators {
                   items {
@@ -8247,6 +9268,7 @@ export const listContentTags = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -8255,6 +9277,7 @@ export const listContentTags = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -8262,12 +9285,14 @@ export const listContentTags = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -8278,10 +9303,12 @@ export const listContentTags = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -8289,6 +9316,7 @@ export const listContentTags = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     collaborator {
                       id
@@ -8299,27 +9327,32 @@ export const listContentTags = /* GraphQL */ `
                         type
                         url
                         username
+                        __typename
                       }
                       fullName
                       photoUrl
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
@@ -8327,6 +9360,7 @@ export const listContentTags = /* GraphQL */ `
                 _deleted
                 _lastChangedAt
                 contentCategoryId
+                __typename
               }
               collaborator {
                 id
@@ -8337,6 +9371,7 @@ export const listContentTags = /* GraphQL */ `
                   type
                   url
                   username
+                  __typename
                 }
                 fullName
                 photoUrl
@@ -8353,6 +9388,7 @@ export const listContentTags = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -8361,6 +9397,7 @@ export const listContentTags = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -8368,12 +9405,14 @@ export const listContentTags = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -8384,10 +9423,12 @@ export const listContentTags = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -8395,6 +9436,7 @@ export const listContentTags = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     collaborator {
                       id
@@ -8405,42 +9447,50 @@ export const listContentTags = /* GraphQL */ `
                         type
                         url
                         username
+                        __typename
                       }
                       fullName
                       photoUrl
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
@@ -8448,6 +9498,7 @@ export const listContentTags = /* GraphQL */ `
           _deleted
           _lastChangedAt
           contentCategoryId
+          __typename
         }
         tag {
           id
@@ -8465,6 +9516,7 @@ export const listContentTags = /* GraphQL */ `
                 project {
                   name
                   description
+                  __typename
                 }
                 files {
                   data
@@ -8473,6 +9525,7 @@ export const listContentTags = /* GraphQL */ `
                   caption
                   size
                   isBanner
+                  __typename
                 }
                 date
                 location {
@@ -8483,7 +9536,9 @@ export const listContentTags = /* GraphQL */ `
                   position {
                     latitude
                     longitude
+                    __typename
                   }
+                  __typename
                 }
                 colors
                 views
@@ -8500,6 +9555,7 @@ export const listContentTags = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -8508,6 +9564,7 @@ export const listContentTags = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -8515,12 +9572,14 @@ export const listContentTags = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -8531,10 +9590,12 @@ export const listContentTags = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -8542,6 +9603,7 @@ export const listContentTags = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     tag {
                       id
@@ -8549,21 +9611,25 @@ export const listContentTags = /* GraphQL */ `
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 Category {
                   id
@@ -8574,6 +9640,7 @@ export const listContentTags = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 Collaborators {
                   items {
@@ -8588,6 +9655,7 @@ export const listContentTags = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -8596,6 +9664,7 @@ export const listContentTags = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -8603,12 +9672,14 @@ export const listContentTags = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -8619,10 +9690,12 @@ export const listContentTags = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -8630,6 +9703,7 @@ export const listContentTags = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     collaborator {
                       id
@@ -8640,27 +9714,32 @@ export const listContentTags = /* GraphQL */ `
                         type
                         url
                         username
+                        __typename
                       }
                       fullName
                       photoUrl
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
@@ -8668,6 +9747,7 @@ export const listContentTags = /* GraphQL */ `
                 _deleted
                 _lastChangedAt
                 contentCategoryId
+                __typename
               }
               tag {
                 id
@@ -8685,6 +9765,7 @@ export const listContentTags = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -8693,6 +9774,7 @@ export const listContentTags = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -8700,12 +9782,14 @@ export const listContentTags = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -8716,10 +9800,12 @@ export const listContentTags = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -8727,6 +9813,7 @@ export const listContentTags = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     tag {
                       id
@@ -8734,51 +9821,61 @@ export const listContentTags = /* GraphQL */ `
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -8807,6 +9904,7 @@ export const syncContentTags = /* GraphQL */ `
           project {
             name
             description
+            __typename
           }
           files {
             data
@@ -8815,6 +9913,7 @@ export const syncContentTags = /* GraphQL */ `
             caption
             size
             isBanner
+            __typename
           }
           date
           location {
@@ -8825,7 +9924,9 @@ export const syncContentTags = /* GraphQL */ `
             position {
               latitude
               longitude
+              __typename
             }
+            __typename
           }
           colors
           views
@@ -8842,6 +9943,7 @@ export const syncContentTags = /* GraphQL */ `
                 project {
                   name
                   description
+                  __typename
                 }
                 files {
                   data
@@ -8850,6 +9952,7 @@ export const syncContentTags = /* GraphQL */ `
                   caption
                   size
                   isBanner
+                  __typename
                 }
                 date
                 location {
@@ -8860,7 +9963,9 @@ export const syncContentTags = /* GraphQL */ `
                   position {
                     latitude
                     longitude
+                    __typename
                   }
+                  __typename
                 }
                 colors
                 views
@@ -8877,6 +9982,7 @@ export const syncContentTags = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -8885,6 +9991,7 @@ export const syncContentTags = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -8892,12 +9999,14 @@ export const syncContentTags = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -8908,10 +10017,12 @@ export const syncContentTags = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -8919,6 +10030,7 @@ export const syncContentTags = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     tag {
                       id
@@ -8926,21 +10038,25 @@ export const syncContentTags = /* GraphQL */ `
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 Category {
                   id
@@ -8951,6 +10067,7 @@ export const syncContentTags = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 Collaborators {
                   items {
@@ -8965,6 +10082,7 @@ export const syncContentTags = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -8973,6 +10091,7 @@ export const syncContentTags = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -8980,12 +10099,14 @@ export const syncContentTags = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -8996,10 +10117,12 @@ export const syncContentTags = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -9007,6 +10130,7 @@ export const syncContentTags = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     collaborator {
                       id
@@ -9017,27 +10141,32 @@ export const syncContentTags = /* GraphQL */ `
                         type
                         url
                         username
+                        __typename
                       }
                       fullName
                       photoUrl
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
@@ -9045,6 +10174,7 @@ export const syncContentTags = /* GraphQL */ `
                 _deleted
                 _lastChangedAt
                 contentCategoryId
+                __typename
               }
               tag {
                 id
@@ -9062,6 +10192,7 @@ export const syncContentTags = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -9070,6 +10201,7 @@ export const syncContentTags = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -9077,12 +10209,14 @@ export const syncContentTags = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -9093,10 +10227,12 @@ export const syncContentTags = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -9104,6 +10240,7 @@ export const syncContentTags = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     tag {
                       id
@@ -9111,36 +10248,43 @@ export const syncContentTags = /* GraphQL */ `
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             nextToken
             startedAt
+            __typename
           }
           Category {
             id
@@ -9151,6 +10295,7 @@ export const syncContentTags = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           Collaborators {
             items {
@@ -9165,6 +10310,7 @@ export const syncContentTags = /* GraphQL */ `
                 project {
                   name
                   description
+                  __typename
                 }
                 files {
                   data
@@ -9173,6 +10319,7 @@ export const syncContentTags = /* GraphQL */ `
                   caption
                   size
                   isBanner
+                  __typename
                 }
                 date
                 location {
@@ -9183,7 +10330,9 @@ export const syncContentTags = /* GraphQL */ `
                   position {
                     latitude
                     longitude
+                    __typename
                   }
+                  __typename
                 }
                 colors
                 views
@@ -9200,6 +10349,7 @@ export const syncContentTags = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -9208,6 +10358,7 @@ export const syncContentTags = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -9215,12 +10366,14 @@ export const syncContentTags = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -9231,10 +10384,12 @@ export const syncContentTags = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -9242,6 +10397,7 @@ export const syncContentTags = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     tag {
                       id
@@ -9249,21 +10405,25 @@ export const syncContentTags = /* GraphQL */ `
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 Category {
                   id
@@ -9274,6 +10434,7 @@ export const syncContentTags = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 Collaborators {
                   items {
@@ -9288,6 +10449,7 @@ export const syncContentTags = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -9296,6 +10458,7 @@ export const syncContentTags = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -9303,12 +10466,14 @@ export const syncContentTags = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -9319,10 +10484,12 @@ export const syncContentTags = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -9330,6 +10497,7 @@ export const syncContentTags = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     collaborator {
                       id
@@ -9340,27 +10508,32 @@ export const syncContentTags = /* GraphQL */ `
                         type
                         url
                         username
+                        __typename
                       }
                       fullName
                       photoUrl
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
@@ -9368,6 +10541,7 @@ export const syncContentTags = /* GraphQL */ `
                 _deleted
                 _lastChangedAt
                 contentCategoryId
+                __typename
               }
               collaborator {
                 id
@@ -9378,6 +10552,7 @@ export const syncContentTags = /* GraphQL */ `
                   type
                   url
                   username
+                  __typename
                 }
                 fullName
                 photoUrl
@@ -9394,6 +10569,7 @@ export const syncContentTags = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -9402,6 +10578,7 @@ export const syncContentTags = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -9409,12 +10586,14 @@ export const syncContentTags = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -9425,10 +10604,12 @@ export const syncContentTags = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -9436,6 +10617,7 @@ export const syncContentTags = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     collaborator {
                       id
@@ -9446,42 +10628,50 @@ export const syncContentTags = /* GraphQL */ `
                         type
                         url
                         username
+                        __typename
                       }
                       fullName
                       photoUrl
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
@@ -9489,6 +10679,7 @@ export const syncContentTags = /* GraphQL */ `
           _deleted
           _lastChangedAt
           contentCategoryId
+          __typename
         }
         tag {
           id
@@ -9506,6 +10697,7 @@ export const syncContentTags = /* GraphQL */ `
                 project {
                   name
                   description
+                  __typename
                 }
                 files {
                   data
@@ -9514,6 +10706,7 @@ export const syncContentTags = /* GraphQL */ `
                   caption
                   size
                   isBanner
+                  __typename
                 }
                 date
                 location {
@@ -9524,7 +10717,9 @@ export const syncContentTags = /* GraphQL */ `
                   position {
                     latitude
                     longitude
+                    __typename
                   }
+                  __typename
                 }
                 colors
                 views
@@ -9541,6 +10736,7 @@ export const syncContentTags = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -9549,6 +10745,7 @@ export const syncContentTags = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -9556,12 +10753,14 @@ export const syncContentTags = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -9572,10 +10771,12 @@ export const syncContentTags = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -9583,6 +10784,7 @@ export const syncContentTags = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     tag {
                       id
@@ -9590,21 +10792,25 @@ export const syncContentTags = /* GraphQL */ `
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 Category {
                   id
@@ -9615,6 +10821,7 @@ export const syncContentTags = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 Collaborators {
                   items {
@@ -9629,6 +10836,7 @@ export const syncContentTags = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -9637,6 +10845,7 @@ export const syncContentTags = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -9644,12 +10853,14 @@ export const syncContentTags = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -9660,10 +10871,12 @@ export const syncContentTags = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -9671,6 +10884,7 @@ export const syncContentTags = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     collaborator {
                       id
@@ -9681,27 +10895,32 @@ export const syncContentTags = /* GraphQL */ `
                         type
                         url
                         username
+                        __typename
                       }
                       fullName
                       photoUrl
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
@@ -9709,6 +10928,7 @@ export const syncContentTags = /* GraphQL */ `
                 _deleted
                 _lastChangedAt
                 contentCategoryId
+                __typename
               }
               tag {
                 id
@@ -9726,6 +10946,7 @@ export const syncContentTags = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -9734,6 +10955,7 @@ export const syncContentTags = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -9741,12 +10963,14 @@ export const syncContentTags = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -9757,10 +10981,12 @@ export const syncContentTags = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -9768,6 +10994,7 @@ export const syncContentTags = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     tag {
                       id
@@ -9775,51 +11002,61 @@ export const syncContentTags = /* GraphQL */ `
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -9850,6 +11087,7 @@ export const contentTagsByContentId = /* GraphQL */ `
           project {
             name
             description
+            __typename
           }
           files {
             data
@@ -9858,6 +11096,7 @@ export const contentTagsByContentId = /* GraphQL */ `
             caption
             size
             isBanner
+            __typename
           }
           date
           location {
@@ -9868,7 +11107,9 @@ export const contentTagsByContentId = /* GraphQL */ `
             position {
               latitude
               longitude
+              __typename
             }
+            __typename
           }
           colors
           views
@@ -9885,6 +11126,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                 project {
                   name
                   description
+                  __typename
                 }
                 files {
                   data
@@ -9893,6 +11135,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                   caption
                   size
                   isBanner
+                  __typename
                 }
                 date
                 location {
@@ -9903,7 +11146,9 @@ export const contentTagsByContentId = /* GraphQL */ `
                   position {
                     latitude
                     longitude
+                    __typename
                   }
+                  __typename
                 }
                 colors
                 views
@@ -9920,6 +11165,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -9928,6 +11174,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -9935,12 +11182,14 @@ export const contentTagsByContentId = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -9951,10 +11200,12 @@ export const contentTagsByContentId = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -9962,6 +11213,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     tag {
                       id
@@ -9969,21 +11221,25 @@ export const contentTagsByContentId = /* GraphQL */ `
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 Category {
                   id
@@ -9994,6 +11250,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 Collaborators {
                   items {
@@ -10008,6 +11265,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -10016,6 +11274,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -10023,12 +11282,14 @@ export const contentTagsByContentId = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -10039,10 +11300,12 @@ export const contentTagsByContentId = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -10050,6 +11313,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     collaborator {
                       id
@@ -10060,27 +11324,32 @@ export const contentTagsByContentId = /* GraphQL */ `
                         type
                         url
                         username
+                        __typename
                       }
                       fullName
                       photoUrl
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
@@ -10088,6 +11357,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                 _deleted
                 _lastChangedAt
                 contentCategoryId
+                __typename
               }
               tag {
                 id
@@ -10105,6 +11375,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -10113,6 +11384,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -10120,12 +11392,14 @@ export const contentTagsByContentId = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -10136,10 +11410,12 @@ export const contentTagsByContentId = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -10147,6 +11423,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     tag {
                       id
@@ -10154,36 +11431,43 @@ export const contentTagsByContentId = /* GraphQL */ `
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             nextToken
             startedAt
+            __typename
           }
           Category {
             id
@@ -10194,6 +11478,7 @@ export const contentTagsByContentId = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           Collaborators {
             items {
@@ -10208,6 +11493,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                 project {
                   name
                   description
+                  __typename
                 }
                 files {
                   data
@@ -10216,6 +11502,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                   caption
                   size
                   isBanner
+                  __typename
                 }
                 date
                 location {
@@ -10226,7 +11513,9 @@ export const contentTagsByContentId = /* GraphQL */ `
                   position {
                     latitude
                     longitude
+                    __typename
                   }
+                  __typename
                 }
                 colors
                 views
@@ -10243,6 +11532,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -10251,6 +11541,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -10258,12 +11549,14 @@ export const contentTagsByContentId = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -10274,10 +11567,12 @@ export const contentTagsByContentId = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -10285,6 +11580,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     tag {
                       id
@@ -10292,21 +11588,25 @@ export const contentTagsByContentId = /* GraphQL */ `
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 Category {
                   id
@@ -10317,6 +11617,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 Collaborators {
                   items {
@@ -10331,6 +11632,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -10339,6 +11641,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -10346,12 +11649,14 @@ export const contentTagsByContentId = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -10362,10 +11667,12 @@ export const contentTagsByContentId = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -10373,6 +11680,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     collaborator {
                       id
@@ -10383,27 +11691,32 @@ export const contentTagsByContentId = /* GraphQL */ `
                         type
                         url
                         username
+                        __typename
                       }
                       fullName
                       photoUrl
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
@@ -10411,6 +11724,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                 _deleted
                 _lastChangedAt
                 contentCategoryId
+                __typename
               }
               collaborator {
                 id
@@ -10421,6 +11735,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                   type
                   url
                   username
+                  __typename
                 }
                 fullName
                 photoUrl
@@ -10437,6 +11752,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -10445,6 +11761,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -10452,12 +11769,14 @@ export const contentTagsByContentId = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -10468,10 +11787,12 @@ export const contentTagsByContentId = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -10479,6 +11800,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     collaborator {
                       id
@@ -10489,42 +11811,50 @@ export const contentTagsByContentId = /* GraphQL */ `
                         type
                         url
                         username
+                        __typename
                       }
                       fullName
                       photoUrl
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
@@ -10532,6 +11862,7 @@ export const contentTagsByContentId = /* GraphQL */ `
           _deleted
           _lastChangedAt
           contentCategoryId
+          __typename
         }
         tag {
           id
@@ -10549,6 +11880,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                 project {
                   name
                   description
+                  __typename
                 }
                 files {
                   data
@@ -10557,6 +11889,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                   caption
                   size
                   isBanner
+                  __typename
                 }
                 date
                 location {
@@ -10567,7 +11900,9 @@ export const contentTagsByContentId = /* GraphQL */ `
                   position {
                     latitude
                     longitude
+                    __typename
                   }
+                  __typename
                 }
                 colors
                 views
@@ -10584,6 +11919,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -10592,6 +11928,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -10599,12 +11936,14 @@ export const contentTagsByContentId = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -10615,10 +11954,12 @@ export const contentTagsByContentId = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -10626,6 +11967,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     tag {
                       id
@@ -10633,21 +11975,25 @@ export const contentTagsByContentId = /* GraphQL */ `
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 Category {
                   id
@@ -10658,6 +12004,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 Collaborators {
                   items {
@@ -10672,6 +12019,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -10680,6 +12028,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -10687,12 +12036,14 @@ export const contentTagsByContentId = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -10703,10 +12054,12 @@ export const contentTagsByContentId = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -10714,6 +12067,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     collaborator {
                       id
@@ -10724,27 +12078,32 @@ export const contentTagsByContentId = /* GraphQL */ `
                         type
                         url
                         username
+                        __typename
                       }
                       fullName
                       photoUrl
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
@@ -10752,6 +12111,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                 _deleted
                 _lastChangedAt
                 contentCategoryId
+                __typename
               }
               tag {
                 id
@@ -10769,6 +12129,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -10777,6 +12138,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -10784,12 +12146,14 @@ export const contentTagsByContentId = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -10800,10 +12164,12 @@ export const contentTagsByContentId = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -10811,6 +12177,7 @@ export const contentTagsByContentId = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     tag {
                       id
@@ -10818,51 +12185,61 @@ export const contentTagsByContentId = /* GraphQL */ `
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -10893,6 +12270,7 @@ export const contentTagsByTagId = /* GraphQL */ `
           project {
             name
             description
+            __typename
           }
           files {
             data
@@ -10901,6 +12279,7 @@ export const contentTagsByTagId = /* GraphQL */ `
             caption
             size
             isBanner
+            __typename
           }
           date
           location {
@@ -10911,7 +12290,9 @@ export const contentTagsByTagId = /* GraphQL */ `
             position {
               latitude
               longitude
+              __typename
             }
+            __typename
           }
           colors
           views
@@ -10928,6 +12309,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                 project {
                   name
                   description
+                  __typename
                 }
                 files {
                   data
@@ -10936,6 +12318,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                   caption
                   size
                   isBanner
+                  __typename
                 }
                 date
                 location {
@@ -10946,7 +12329,9 @@ export const contentTagsByTagId = /* GraphQL */ `
                   position {
                     latitude
                     longitude
+                    __typename
                   }
+                  __typename
                 }
                 colors
                 views
@@ -10963,6 +12348,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -10971,6 +12357,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -10978,12 +12365,14 @@ export const contentTagsByTagId = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -10994,10 +12383,12 @@ export const contentTagsByTagId = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -11005,6 +12396,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     tag {
                       id
@@ -11012,21 +12404,25 @@ export const contentTagsByTagId = /* GraphQL */ `
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 Category {
                   id
@@ -11037,6 +12433,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 Collaborators {
                   items {
@@ -11051,6 +12448,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -11059,6 +12457,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -11066,12 +12465,14 @@ export const contentTagsByTagId = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -11082,10 +12483,12 @@ export const contentTagsByTagId = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -11093,6 +12496,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     collaborator {
                       id
@@ -11103,27 +12507,32 @@ export const contentTagsByTagId = /* GraphQL */ `
                         type
                         url
                         username
+                        __typename
                       }
                       fullName
                       photoUrl
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
@@ -11131,6 +12540,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                 _deleted
                 _lastChangedAt
                 contentCategoryId
+                __typename
               }
               tag {
                 id
@@ -11148,6 +12558,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -11156,6 +12567,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -11163,12 +12575,14 @@ export const contentTagsByTagId = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -11179,10 +12593,12 @@ export const contentTagsByTagId = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -11190,6 +12606,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     tag {
                       id
@@ -11197,36 +12614,43 @@ export const contentTagsByTagId = /* GraphQL */ `
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             nextToken
             startedAt
+            __typename
           }
           Category {
             id
@@ -11237,6 +12661,7 @@ export const contentTagsByTagId = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           Collaborators {
             items {
@@ -11251,6 +12676,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                 project {
                   name
                   description
+                  __typename
                 }
                 files {
                   data
@@ -11259,6 +12685,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                   caption
                   size
                   isBanner
+                  __typename
                 }
                 date
                 location {
@@ -11269,7 +12696,9 @@ export const contentTagsByTagId = /* GraphQL */ `
                   position {
                     latitude
                     longitude
+                    __typename
                   }
+                  __typename
                 }
                 colors
                 views
@@ -11286,6 +12715,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -11294,6 +12724,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -11301,12 +12732,14 @@ export const contentTagsByTagId = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -11317,10 +12750,12 @@ export const contentTagsByTagId = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -11328,6 +12763,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     tag {
                       id
@@ -11335,21 +12771,25 @@ export const contentTagsByTagId = /* GraphQL */ `
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 Category {
                   id
@@ -11360,6 +12800,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 Collaborators {
                   items {
@@ -11374,6 +12815,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -11382,6 +12824,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -11389,12 +12832,14 @@ export const contentTagsByTagId = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -11405,10 +12850,12 @@ export const contentTagsByTagId = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -11416,6 +12863,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     collaborator {
                       id
@@ -11426,27 +12874,32 @@ export const contentTagsByTagId = /* GraphQL */ `
                         type
                         url
                         username
+                        __typename
                       }
                       fullName
                       photoUrl
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
@@ -11454,6 +12907,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                 _deleted
                 _lastChangedAt
                 contentCategoryId
+                __typename
               }
               collaborator {
                 id
@@ -11464,6 +12918,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                   type
                   url
                   username
+                  __typename
                 }
                 fullName
                 photoUrl
@@ -11480,6 +12935,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -11488,6 +12944,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -11495,12 +12952,14 @@ export const contentTagsByTagId = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -11511,10 +12970,12 @@ export const contentTagsByTagId = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -11522,6 +12983,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     collaborator {
                       id
@@ -11532,42 +12994,50 @@ export const contentTagsByTagId = /* GraphQL */ `
                         type
                         url
                         username
+                        __typename
                       }
                       fullName
                       photoUrl
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
@@ -11575,6 +13045,7 @@ export const contentTagsByTagId = /* GraphQL */ `
           _deleted
           _lastChangedAt
           contentCategoryId
+          __typename
         }
         tag {
           id
@@ -11592,6 +13063,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                 project {
                   name
                   description
+                  __typename
                 }
                 files {
                   data
@@ -11600,6 +13072,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                   caption
                   size
                   isBanner
+                  __typename
                 }
                 date
                 location {
@@ -11610,7 +13083,9 @@ export const contentTagsByTagId = /* GraphQL */ `
                   position {
                     latitude
                     longitude
+                    __typename
                   }
+                  __typename
                 }
                 colors
                 views
@@ -11627,6 +13102,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -11635,6 +13111,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -11642,12 +13119,14 @@ export const contentTagsByTagId = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -11658,10 +13137,12 @@ export const contentTagsByTagId = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -11669,6 +13150,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     tag {
                       id
@@ -11676,21 +13158,25 @@ export const contentTagsByTagId = /* GraphQL */ `
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 Category {
                   id
@@ -11701,6 +13187,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 Collaborators {
                   items {
@@ -11715,6 +13202,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -11723,6 +13211,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -11730,12 +13219,14 @@ export const contentTagsByTagId = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -11746,10 +13237,12 @@ export const contentTagsByTagId = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -11757,6 +13250,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     collaborator {
                       id
@@ -11767,27 +13261,32 @@ export const contentTagsByTagId = /* GraphQL */ `
                         type
                         url
                         username
+                        __typename
                       }
                       fullName
                       photoUrl
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
@@ -11795,6 +13294,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                 _deleted
                 _lastChangedAt
                 contentCategoryId
+                __typename
               }
               tag {
                 id
@@ -11812,6 +13312,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -11820,6 +13321,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -11827,12 +13329,14 @@ export const contentTagsByTagId = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -11843,10 +13347,12 @@ export const contentTagsByTagId = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -11854,6 +13360,7 @@ export const contentTagsByTagId = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     tag {
                       id
@@ -11861,51 +13368,61 @@ export const contentTagsByTagId = /* GraphQL */ `
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -11923,6 +13440,7 @@ export const getContentCollaborator = /* GraphQL */ `
         project {
           name
           description
+          __typename
         }
         files {
           data
@@ -11931,6 +13449,7 @@ export const getContentCollaborator = /* GraphQL */ `
           caption
           size
           isBanner
+          __typename
         }
         date
         location {
@@ -11941,7 +13460,9 @@ export const getContentCollaborator = /* GraphQL */ `
           position {
             latitude
             longitude
+            __typename
           }
+          __typename
         }
         colors
         views
@@ -11958,6 +13479,7 @@ export const getContentCollaborator = /* GraphQL */ `
               project {
                 name
                 description
+                __typename
               }
               files {
                 data
@@ -11966,6 +13488,7 @@ export const getContentCollaborator = /* GraphQL */ `
                 caption
                 size
                 isBanner
+                __typename
               }
               date
               location {
@@ -11976,7 +13499,9 @@ export const getContentCollaborator = /* GraphQL */ `
                 position {
                   latitude
                   longitude
+                  __typename
                 }
+                __typename
               }
               colors
               views
@@ -11993,6 +13518,7 @@ export const getContentCollaborator = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -12001,6 +13527,7 @@ export const getContentCollaborator = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -12011,7 +13538,9 @@ export const getContentCollaborator = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -12025,9 +13554,11 @@ export const getContentCollaborator = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -12038,6 +13569,7 @@ export const getContentCollaborator = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -12049,9 +13581,11 @@ export const getContentCollaborator = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -12059,6 +13593,7 @@ export const getContentCollaborator = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   tag {
                     id
@@ -12073,24 +13608,29 @@ export const getContentCollaborator = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               Category {
                 id
@@ -12101,6 +13641,7 @@ export const getContentCollaborator = /* GraphQL */ `
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               Collaborators {
                 items {
@@ -12115,6 +13656,7 @@ export const getContentCollaborator = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -12123,6 +13665,7 @@ export const getContentCollaborator = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -12133,7 +13676,9 @@ export const getContentCollaborator = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -12147,9 +13692,11 @@ export const getContentCollaborator = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -12160,6 +13707,7 @@ export const getContentCollaborator = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -12171,9 +13719,11 @@ export const getContentCollaborator = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -12181,6 +13731,7 @@ export const getContentCollaborator = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   collaborator {
                     id
@@ -12191,6 +13742,7 @@ export const getContentCollaborator = /* GraphQL */ `
                       type
                       url
                       username
+                      __typename
                     }
                     fullName
                     photoUrl
@@ -12204,24 +13756,29 @@ export const getContentCollaborator = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               createdAt
               updatedAt
@@ -12229,6 +13786,7 @@ export const getContentCollaborator = /* GraphQL */ `
               _deleted
               _lastChangedAt
               contentCategoryId
+              __typename
             }
             tag {
               id
@@ -12246,6 +13804,7 @@ export const getContentCollaborator = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -12254,6 +13813,7 @@ export const getContentCollaborator = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -12264,7 +13824,9 @@ export const getContentCollaborator = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -12278,9 +13840,11 @@ export const getContentCollaborator = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -12291,6 +13855,7 @@ export const getContentCollaborator = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -12302,9 +13867,11 @@ export const getContentCollaborator = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -12312,6 +13879,7 @@ export const getContentCollaborator = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   tag {
                     id
@@ -12326,39 +13894,47 @@ export const getContentCollaborator = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             createdAt
             updatedAt
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         Category {
           id
@@ -12369,6 +13945,7 @@ export const getContentCollaborator = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         Collaborators {
           items {
@@ -12383,6 +13960,7 @@ export const getContentCollaborator = /* GraphQL */ `
               project {
                 name
                 description
+                __typename
               }
               files {
                 data
@@ -12391,6 +13969,7 @@ export const getContentCollaborator = /* GraphQL */ `
                 caption
                 size
                 isBanner
+                __typename
               }
               date
               location {
@@ -12401,7 +13980,9 @@ export const getContentCollaborator = /* GraphQL */ `
                 position {
                   latitude
                   longitude
+                  __typename
                 }
+                __typename
               }
               colors
               views
@@ -12418,6 +13999,7 @@ export const getContentCollaborator = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -12426,6 +14008,7 @@ export const getContentCollaborator = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -12436,7 +14019,9 @@ export const getContentCollaborator = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -12450,9 +14035,11 @@ export const getContentCollaborator = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -12463,6 +14050,7 @@ export const getContentCollaborator = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -12474,9 +14062,11 @@ export const getContentCollaborator = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -12484,6 +14074,7 @@ export const getContentCollaborator = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   tag {
                     id
@@ -12498,24 +14089,29 @@ export const getContentCollaborator = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               Category {
                 id
@@ -12526,6 +14122,7 @@ export const getContentCollaborator = /* GraphQL */ `
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               Collaborators {
                 items {
@@ -12540,6 +14137,7 @@ export const getContentCollaborator = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -12548,6 +14146,7 @@ export const getContentCollaborator = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -12558,7 +14157,9 @@ export const getContentCollaborator = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -12572,9 +14173,11 @@ export const getContentCollaborator = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -12585,6 +14188,7 @@ export const getContentCollaborator = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -12596,9 +14200,11 @@ export const getContentCollaborator = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -12606,6 +14212,7 @@ export const getContentCollaborator = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   collaborator {
                     id
@@ -12616,6 +14223,7 @@ export const getContentCollaborator = /* GraphQL */ `
                       type
                       url
                       username
+                      __typename
                     }
                     fullName
                     photoUrl
@@ -12629,24 +14237,29 @@ export const getContentCollaborator = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               createdAt
               updatedAt
@@ -12654,6 +14267,7 @@ export const getContentCollaborator = /* GraphQL */ `
               _deleted
               _lastChangedAt
               contentCategoryId
+              __typename
             }
             collaborator {
               id
@@ -12664,6 +14278,7 @@ export const getContentCollaborator = /* GraphQL */ `
                 type
                 url
                 username
+                __typename
               }
               fullName
               photoUrl
@@ -12680,6 +14295,7 @@ export const getContentCollaborator = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -12688,6 +14304,7 @@ export const getContentCollaborator = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -12698,7 +14315,9 @@ export const getContentCollaborator = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -12712,9 +14331,11 @@ export const getContentCollaborator = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -12725,6 +14346,7 @@ export const getContentCollaborator = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -12736,9 +14358,11 @@ export const getContentCollaborator = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -12746,6 +14370,7 @@ export const getContentCollaborator = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   collaborator {
                     id
@@ -12756,6 +14381,7 @@ export const getContentCollaborator = /* GraphQL */ `
                       type
                       url
                       username
+                      __typename
                     }
                     fullName
                     photoUrl
@@ -12769,39 +14395,47 @@ export const getContentCollaborator = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             createdAt
             updatedAt
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         createdAt
         updatedAt
@@ -12809,6 +14443,7 @@ export const getContentCollaborator = /* GraphQL */ `
         _deleted
         _lastChangedAt
         contentCategoryId
+        __typename
       }
       collaborator {
         id
@@ -12819,6 +14454,7 @@ export const getContentCollaborator = /* GraphQL */ `
           type
           url
           username
+          __typename
         }
         fullName
         photoUrl
@@ -12835,6 +14471,7 @@ export const getContentCollaborator = /* GraphQL */ `
               project {
                 name
                 description
+                __typename
               }
               files {
                 data
@@ -12843,6 +14480,7 @@ export const getContentCollaborator = /* GraphQL */ `
                 caption
                 size
                 isBanner
+                __typename
               }
               date
               location {
@@ -12853,7 +14491,9 @@ export const getContentCollaborator = /* GraphQL */ `
                 position {
                   latitude
                   longitude
+                  __typename
                 }
+                __typename
               }
               colors
               views
@@ -12870,6 +14510,7 @@ export const getContentCollaborator = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -12878,6 +14519,7 @@ export const getContentCollaborator = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -12888,7 +14530,9 @@ export const getContentCollaborator = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -12902,9 +14546,11 @@ export const getContentCollaborator = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -12915,6 +14561,7 @@ export const getContentCollaborator = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -12926,9 +14573,11 @@ export const getContentCollaborator = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -12936,6 +14585,7 @@ export const getContentCollaborator = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   tag {
                     id
@@ -12950,24 +14600,29 @@ export const getContentCollaborator = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               Category {
                 id
@@ -12978,6 +14633,7 @@ export const getContentCollaborator = /* GraphQL */ `
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               Collaborators {
                 items {
@@ -12992,6 +14648,7 @@ export const getContentCollaborator = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -13000,6 +14657,7 @@ export const getContentCollaborator = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -13010,7 +14668,9 @@ export const getContentCollaborator = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -13024,9 +14684,11 @@ export const getContentCollaborator = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -13037,6 +14699,7 @@ export const getContentCollaborator = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -13048,9 +14711,11 @@ export const getContentCollaborator = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -13058,6 +14723,7 @@ export const getContentCollaborator = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   collaborator {
                     id
@@ -13068,6 +14734,7 @@ export const getContentCollaborator = /* GraphQL */ `
                       type
                       url
                       username
+                      __typename
                     }
                     fullName
                     photoUrl
@@ -13081,24 +14748,29 @@ export const getContentCollaborator = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               createdAt
               updatedAt
@@ -13106,6 +14778,7 @@ export const getContentCollaborator = /* GraphQL */ `
               _deleted
               _lastChangedAt
               contentCategoryId
+              __typename
             }
             collaborator {
               id
@@ -13116,6 +14789,7 @@ export const getContentCollaborator = /* GraphQL */ `
                 type
                 url
                 username
+                __typename
               }
               fullName
               photoUrl
@@ -13132,6 +14806,7 @@ export const getContentCollaborator = /* GraphQL */ `
                     project {
                       name
                       description
+                      __typename
                     }
                     files {
                       data
@@ -13140,6 +14815,7 @@ export const getContentCollaborator = /* GraphQL */ `
                       caption
                       size
                       isBanner
+                      __typename
                     }
                     date
                     location {
@@ -13150,7 +14826,9 @@ export const getContentCollaborator = /* GraphQL */ `
                       position {
                         latitude
                         longitude
+                        __typename
                       }
+                      __typename
                     }
                     colors
                     views
@@ -13164,9 +14842,11 @@ export const getContentCollaborator = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     Category {
                       id
@@ -13177,6 +14857,7 @@ export const getContentCollaborator = /* GraphQL */ `
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     Collaborators {
                       items {
@@ -13188,9 +14869,11 @@ export const getContentCollaborator = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
@@ -13198,6 +14881,7 @@ export const getContentCollaborator = /* GraphQL */ `
                     _deleted
                     _lastChangedAt
                     contentCategoryId
+                    __typename
                   }
                   collaborator {
                     id
@@ -13208,6 +14892,7 @@ export const getContentCollaborator = /* GraphQL */ `
                       type
                       url
                       username
+                      __typename
                     }
                     fullName
                     photoUrl
@@ -13221,51 +14906,61 @@ export const getContentCollaborator = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       nextToken
                       startedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   createdAt
                   updatedAt
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 nextToken
                 startedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             createdAt
             updatedAt
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
+      __typename
     }
   }
 `;
@@ -13292,6 +14987,7 @@ export const listContentCollaborators = /* GraphQL */ `
           project {
             name
             description
+            __typename
           }
           files {
             data
@@ -13300,6 +14996,7 @@ export const listContentCollaborators = /* GraphQL */ `
             caption
             size
             isBanner
+            __typename
           }
           date
           location {
@@ -13310,7 +15007,9 @@ export const listContentCollaborators = /* GraphQL */ `
             position {
               latitude
               longitude
+              __typename
             }
+            __typename
           }
           colors
           views
@@ -13327,6 +15026,7 @@ export const listContentCollaborators = /* GraphQL */ `
                 project {
                   name
                   description
+                  __typename
                 }
                 files {
                   data
@@ -13335,6 +15035,7 @@ export const listContentCollaborators = /* GraphQL */ `
                   caption
                   size
                   isBanner
+                  __typename
                 }
                 date
                 location {
@@ -13345,7 +15046,9 @@ export const listContentCollaborators = /* GraphQL */ `
                   position {
                     latitude
                     longitude
+                    __typename
                   }
+                  __typename
                 }
                 colors
                 views
@@ -13362,6 +15065,7 @@ export const listContentCollaborators = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -13370,6 +15074,7 @@ export const listContentCollaborators = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -13377,12 +15082,14 @@ export const listContentCollaborators = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -13393,10 +15100,12 @@ export const listContentCollaborators = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -13404,6 +15113,7 @@ export const listContentCollaborators = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     tag {
                       id
@@ -13411,21 +15121,25 @@ export const listContentCollaborators = /* GraphQL */ `
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 Category {
                   id
@@ -13436,6 +15150,7 @@ export const listContentCollaborators = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 Collaborators {
                   items {
@@ -13450,6 +15165,7 @@ export const listContentCollaborators = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -13458,6 +15174,7 @@ export const listContentCollaborators = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -13465,12 +15182,14 @@ export const listContentCollaborators = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -13481,10 +15200,12 @@ export const listContentCollaborators = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -13492,6 +15213,7 @@ export const listContentCollaborators = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     collaborator {
                       id
@@ -13502,27 +15224,32 @@ export const listContentCollaborators = /* GraphQL */ `
                         type
                         url
                         username
+                        __typename
                       }
                       fullName
                       photoUrl
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
@@ -13530,6 +15257,7 @@ export const listContentCollaborators = /* GraphQL */ `
                 _deleted
                 _lastChangedAt
                 contentCategoryId
+                __typename
               }
               tag {
                 id
@@ -13547,6 +15275,7 @@ export const listContentCollaborators = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -13555,6 +15284,7 @@ export const listContentCollaborators = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -13562,12 +15292,14 @@ export const listContentCollaborators = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -13578,10 +15310,12 @@ export const listContentCollaborators = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -13589,6 +15323,7 @@ export const listContentCollaborators = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     tag {
                       id
@@ -13596,36 +15331,43 @@ export const listContentCollaborators = /* GraphQL */ `
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             nextToken
             startedAt
+            __typename
           }
           Category {
             id
@@ -13636,6 +15378,7 @@ export const listContentCollaborators = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           Collaborators {
             items {
@@ -13650,6 +15393,7 @@ export const listContentCollaborators = /* GraphQL */ `
                 project {
                   name
                   description
+                  __typename
                 }
                 files {
                   data
@@ -13658,6 +15402,7 @@ export const listContentCollaborators = /* GraphQL */ `
                   caption
                   size
                   isBanner
+                  __typename
                 }
                 date
                 location {
@@ -13668,7 +15413,9 @@ export const listContentCollaborators = /* GraphQL */ `
                   position {
                     latitude
                     longitude
+                    __typename
                   }
+                  __typename
                 }
                 colors
                 views
@@ -13685,6 +15432,7 @@ export const listContentCollaborators = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -13693,6 +15441,7 @@ export const listContentCollaborators = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -13700,12 +15449,14 @@ export const listContentCollaborators = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -13716,10 +15467,12 @@ export const listContentCollaborators = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -13727,6 +15480,7 @@ export const listContentCollaborators = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     tag {
                       id
@@ -13734,21 +15488,25 @@ export const listContentCollaborators = /* GraphQL */ `
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 Category {
                   id
@@ -13759,6 +15517,7 @@ export const listContentCollaborators = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 Collaborators {
                   items {
@@ -13773,6 +15532,7 @@ export const listContentCollaborators = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -13781,6 +15541,7 @@ export const listContentCollaborators = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -13788,12 +15549,14 @@ export const listContentCollaborators = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -13804,10 +15567,12 @@ export const listContentCollaborators = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -13815,6 +15580,7 @@ export const listContentCollaborators = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     collaborator {
                       id
@@ -13825,27 +15591,32 @@ export const listContentCollaborators = /* GraphQL */ `
                         type
                         url
                         username
+                        __typename
                       }
                       fullName
                       photoUrl
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
@@ -13853,6 +15624,7 @@ export const listContentCollaborators = /* GraphQL */ `
                 _deleted
                 _lastChangedAt
                 contentCategoryId
+                __typename
               }
               collaborator {
                 id
@@ -13863,6 +15635,7 @@ export const listContentCollaborators = /* GraphQL */ `
                   type
                   url
                   username
+                  __typename
                 }
                 fullName
                 photoUrl
@@ -13879,6 +15652,7 @@ export const listContentCollaborators = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -13887,6 +15661,7 @@ export const listContentCollaborators = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -13894,12 +15669,14 @@ export const listContentCollaborators = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -13910,10 +15687,12 @@ export const listContentCollaborators = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -13921,6 +15700,7 @@ export const listContentCollaborators = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     collaborator {
                       id
@@ -13931,42 +15711,50 @@ export const listContentCollaborators = /* GraphQL */ `
                         type
                         url
                         username
+                        __typename
                       }
                       fullName
                       photoUrl
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
@@ -13974,6 +15762,7 @@ export const listContentCollaborators = /* GraphQL */ `
           _deleted
           _lastChangedAt
           contentCategoryId
+          __typename
         }
         collaborator {
           id
@@ -13984,6 +15773,7 @@ export const listContentCollaborators = /* GraphQL */ `
             type
             url
             username
+            __typename
           }
           fullName
           photoUrl
@@ -14000,6 +15790,7 @@ export const listContentCollaborators = /* GraphQL */ `
                 project {
                   name
                   description
+                  __typename
                 }
                 files {
                   data
@@ -14008,6 +15799,7 @@ export const listContentCollaborators = /* GraphQL */ `
                   caption
                   size
                   isBanner
+                  __typename
                 }
                 date
                 location {
@@ -14018,7 +15810,9 @@ export const listContentCollaborators = /* GraphQL */ `
                   position {
                     latitude
                     longitude
+                    __typename
                   }
+                  __typename
                 }
                 colors
                 views
@@ -14035,6 +15829,7 @@ export const listContentCollaborators = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -14043,6 +15838,7 @@ export const listContentCollaborators = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -14050,12 +15846,14 @@ export const listContentCollaborators = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -14066,10 +15864,12 @@ export const listContentCollaborators = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -14077,6 +15877,7 @@ export const listContentCollaborators = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     tag {
                       id
@@ -14084,21 +15885,25 @@ export const listContentCollaborators = /* GraphQL */ `
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 Category {
                   id
@@ -14109,6 +15914,7 @@ export const listContentCollaborators = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 Collaborators {
                   items {
@@ -14123,6 +15929,7 @@ export const listContentCollaborators = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -14131,6 +15938,7 @@ export const listContentCollaborators = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -14138,12 +15946,14 @@ export const listContentCollaborators = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -14154,10 +15964,12 @@ export const listContentCollaborators = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -14165,6 +15977,7 @@ export const listContentCollaborators = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     collaborator {
                       id
@@ -14175,27 +15988,32 @@ export const listContentCollaborators = /* GraphQL */ `
                         type
                         url
                         username
+                        __typename
                       }
                       fullName
                       photoUrl
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
@@ -14203,6 +16021,7 @@ export const listContentCollaborators = /* GraphQL */ `
                 _deleted
                 _lastChangedAt
                 contentCategoryId
+                __typename
               }
               collaborator {
                 id
@@ -14213,6 +16032,7 @@ export const listContentCollaborators = /* GraphQL */ `
                   type
                   url
                   username
+                  __typename
                 }
                 fullName
                 photoUrl
@@ -14229,6 +16049,7 @@ export const listContentCollaborators = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -14237,6 +16058,7 @@ export const listContentCollaborators = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -14244,12 +16066,14 @@ export const listContentCollaborators = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -14260,10 +16084,12 @@ export const listContentCollaborators = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -14271,6 +16097,7 @@ export const listContentCollaborators = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     collaborator {
                       id
@@ -14281,57 +16108,68 @@ export const listContentCollaborators = /* GraphQL */ `
                         type
                         url
                         username
+                        __typename
                       }
                       fullName
                       photoUrl
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -14360,6 +16198,7 @@ export const syncContentCollaborators = /* GraphQL */ `
           project {
             name
             description
+            __typename
           }
           files {
             data
@@ -14368,6 +16207,7 @@ export const syncContentCollaborators = /* GraphQL */ `
             caption
             size
             isBanner
+            __typename
           }
           date
           location {
@@ -14378,7 +16218,9 @@ export const syncContentCollaborators = /* GraphQL */ `
             position {
               latitude
               longitude
+              __typename
             }
+            __typename
           }
           colors
           views
@@ -14395,6 +16237,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                 project {
                   name
                   description
+                  __typename
                 }
                 files {
                   data
@@ -14403,6 +16246,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                   caption
                   size
                   isBanner
+                  __typename
                 }
                 date
                 location {
@@ -14413,7 +16257,9 @@ export const syncContentCollaborators = /* GraphQL */ `
                   position {
                     latitude
                     longitude
+                    __typename
                   }
+                  __typename
                 }
                 colors
                 views
@@ -14430,6 +16276,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -14438,6 +16285,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -14445,12 +16293,14 @@ export const syncContentCollaborators = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -14461,10 +16311,12 @@ export const syncContentCollaborators = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -14472,6 +16324,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     tag {
                       id
@@ -14479,21 +16332,25 @@ export const syncContentCollaborators = /* GraphQL */ `
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 Category {
                   id
@@ -14504,6 +16361,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 Collaborators {
                   items {
@@ -14518,6 +16376,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -14526,6 +16385,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -14533,12 +16393,14 @@ export const syncContentCollaborators = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -14549,10 +16411,12 @@ export const syncContentCollaborators = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -14560,6 +16424,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     collaborator {
                       id
@@ -14570,27 +16435,32 @@ export const syncContentCollaborators = /* GraphQL */ `
                         type
                         url
                         username
+                        __typename
                       }
                       fullName
                       photoUrl
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
@@ -14598,6 +16468,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                 _deleted
                 _lastChangedAt
                 contentCategoryId
+                __typename
               }
               tag {
                 id
@@ -14615,6 +16486,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -14623,6 +16495,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -14630,12 +16503,14 @@ export const syncContentCollaborators = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -14646,10 +16521,12 @@ export const syncContentCollaborators = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -14657,6 +16534,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     tag {
                       id
@@ -14664,36 +16542,43 @@ export const syncContentCollaborators = /* GraphQL */ `
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             nextToken
             startedAt
+            __typename
           }
           Category {
             id
@@ -14704,6 +16589,7 @@ export const syncContentCollaborators = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           Collaborators {
             items {
@@ -14718,6 +16604,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                 project {
                   name
                   description
+                  __typename
                 }
                 files {
                   data
@@ -14726,6 +16613,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                   caption
                   size
                   isBanner
+                  __typename
                 }
                 date
                 location {
@@ -14736,7 +16624,9 @@ export const syncContentCollaborators = /* GraphQL */ `
                   position {
                     latitude
                     longitude
+                    __typename
                   }
+                  __typename
                 }
                 colors
                 views
@@ -14753,6 +16643,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -14761,6 +16652,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -14768,12 +16660,14 @@ export const syncContentCollaborators = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -14784,10 +16678,12 @@ export const syncContentCollaborators = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -14795,6 +16691,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     tag {
                       id
@@ -14802,21 +16699,25 @@ export const syncContentCollaborators = /* GraphQL */ `
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 Category {
                   id
@@ -14827,6 +16728,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 Collaborators {
                   items {
@@ -14841,6 +16743,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -14849,6 +16752,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -14856,12 +16760,14 @@ export const syncContentCollaborators = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -14872,10 +16778,12 @@ export const syncContentCollaborators = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -14883,6 +16791,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     collaborator {
                       id
@@ -14893,27 +16802,32 @@ export const syncContentCollaborators = /* GraphQL */ `
                         type
                         url
                         username
+                        __typename
                       }
                       fullName
                       photoUrl
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
@@ -14921,6 +16835,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                 _deleted
                 _lastChangedAt
                 contentCategoryId
+                __typename
               }
               collaborator {
                 id
@@ -14931,6 +16846,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                   type
                   url
                   username
+                  __typename
                 }
                 fullName
                 photoUrl
@@ -14947,6 +16863,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -14955,6 +16872,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -14962,12 +16880,14 @@ export const syncContentCollaborators = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -14978,10 +16898,12 @@ export const syncContentCollaborators = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -14989,6 +16911,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     collaborator {
                       id
@@ -14999,42 +16922,50 @@ export const syncContentCollaborators = /* GraphQL */ `
                         type
                         url
                         username
+                        __typename
                       }
                       fullName
                       photoUrl
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
@@ -15042,6 +16973,7 @@ export const syncContentCollaborators = /* GraphQL */ `
           _deleted
           _lastChangedAt
           contentCategoryId
+          __typename
         }
         collaborator {
           id
@@ -15052,6 +16984,7 @@ export const syncContentCollaborators = /* GraphQL */ `
             type
             url
             username
+            __typename
           }
           fullName
           photoUrl
@@ -15068,6 +17001,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                 project {
                   name
                   description
+                  __typename
                 }
                 files {
                   data
@@ -15076,6 +17010,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                   caption
                   size
                   isBanner
+                  __typename
                 }
                 date
                 location {
@@ -15086,7 +17021,9 @@ export const syncContentCollaborators = /* GraphQL */ `
                   position {
                     latitude
                     longitude
+                    __typename
                   }
+                  __typename
                 }
                 colors
                 views
@@ -15103,6 +17040,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -15111,6 +17049,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -15118,12 +17057,14 @@ export const syncContentCollaborators = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -15134,10 +17075,12 @@ export const syncContentCollaborators = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -15145,6 +17088,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     tag {
                       id
@@ -15152,21 +17096,25 @@ export const syncContentCollaborators = /* GraphQL */ `
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 Category {
                   id
@@ -15177,6 +17125,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 Collaborators {
                   items {
@@ -15191,6 +17140,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -15199,6 +17149,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -15206,12 +17157,14 @@ export const syncContentCollaborators = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -15222,10 +17175,12 @@ export const syncContentCollaborators = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -15233,6 +17188,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     collaborator {
                       id
@@ -15243,27 +17199,32 @@ export const syncContentCollaborators = /* GraphQL */ `
                         type
                         url
                         username
+                        __typename
                       }
                       fullName
                       photoUrl
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
@@ -15271,6 +17232,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                 _deleted
                 _lastChangedAt
                 contentCategoryId
+                __typename
               }
               collaborator {
                 id
@@ -15281,6 +17243,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                   type
                   url
                   username
+                  __typename
                 }
                 fullName
                 photoUrl
@@ -15297,6 +17260,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -15305,6 +17269,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -15312,12 +17277,14 @@ export const syncContentCollaborators = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -15328,10 +17295,12 @@ export const syncContentCollaborators = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -15339,6 +17308,7 @@ export const syncContentCollaborators = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     collaborator {
                       id
@@ -15349,57 +17319,68 @@ export const syncContentCollaborators = /* GraphQL */ `
                         type
                         url
                         username
+                        __typename
                       }
                       fullName
                       photoUrl
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -15430,6 +17411,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
           project {
             name
             description
+            __typename
           }
           files {
             data
@@ -15438,6 +17420,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
             caption
             size
             isBanner
+            __typename
           }
           date
           location {
@@ -15448,7 +17431,9 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
             position {
               latitude
               longitude
+              __typename
             }
+            __typename
           }
           colors
           views
@@ -15465,6 +17450,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                 project {
                   name
                   description
+                  __typename
                 }
                 files {
                   data
@@ -15473,6 +17459,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                   caption
                   size
                   isBanner
+                  __typename
                 }
                 date
                 location {
@@ -15483,7 +17470,9 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                   position {
                     latitude
                     longitude
+                    __typename
                   }
+                  __typename
                 }
                 colors
                 views
@@ -15500,6 +17489,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -15508,6 +17498,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -15515,12 +17506,14 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -15531,10 +17524,12 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -15542,6 +17537,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     tag {
                       id
@@ -15549,21 +17545,25 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 Category {
                   id
@@ -15574,6 +17574,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 Collaborators {
                   items {
@@ -15588,6 +17589,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -15596,6 +17598,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -15603,12 +17606,14 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -15619,10 +17624,12 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -15630,6 +17637,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     collaborator {
                       id
@@ -15640,27 +17648,32 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                         type
                         url
                         username
+                        __typename
                       }
                       fullName
                       photoUrl
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
@@ -15668,6 +17681,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                 _deleted
                 _lastChangedAt
                 contentCategoryId
+                __typename
               }
               tag {
                 id
@@ -15685,6 +17699,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -15693,6 +17708,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -15700,12 +17716,14 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -15716,10 +17734,12 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -15727,6 +17747,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     tag {
                       id
@@ -15734,36 +17755,43 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             nextToken
             startedAt
+            __typename
           }
           Category {
             id
@@ -15774,6 +17802,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           Collaborators {
             items {
@@ -15788,6 +17817,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                 project {
                   name
                   description
+                  __typename
                 }
                 files {
                   data
@@ -15796,6 +17826,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                   caption
                   size
                   isBanner
+                  __typename
                 }
                 date
                 location {
@@ -15806,7 +17837,9 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                   position {
                     latitude
                     longitude
+                    __typename
                   }
+                  __typename
                 }
                 colors
                 views
@@ -15823,6 +17856,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -15831,6 +17865,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -15838,12 +17873,14 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -15854,10 +17891,12 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -15865,6 +17904,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     tag {
                       id
@@ -15872,21 +17912,25 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 Category {
                   id
@@ -15897,6 +17941,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 Collaborators {
                   items {
@@ -15911,6 +17956,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -15919,6 +17965,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -15926,12 +17973,14 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -15942,10 +17991,12 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -15953,6 +18004,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     collaborator {
                       id
@@ -15963,27 +18015,32 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                         type
                         url
                         username
+                        __typename
                       }
                       fullName
                       photoUrl
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
@@ -15991,6 +18048,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                 _deleted
                 _lastChangedAt
                 contentCategoryId
+                __typename
               }
               collaborator {
                 id
@@ -16001,6 +18059,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                   type
                   url
                   username
+                  __typename
                 }
                 fullName
                 photoUrl
@@ -16017,6 +18076,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -16025,6 +18085,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -16032,12 +18093,14 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -16048,10 +18111,12 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -16059,6 +18124,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     collaborator {
                       id
@@ -16069,42 +18135,50 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                         type
                         url
                         username
+                        __typename
                       }
                       fullName
                       photoUrl
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
@@ -16112,6 +18186,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
           _deleted
           _lastChangedAt
           contentCategoryId
+          __typename
         }
         collaborator {
           id
@@ -16122,6 +18197,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
             type
             url
             username
+            __typename
           }
           fullName
           photoUrl
@@ -16138,6 +18214,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                 project {
                   name
                   description
+                  __typename
                 }
                 files {
                   data
@@ -16146,6 +18223,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                   caption
                   size
                   isBanner
+                  __typename
                 }
                 date
                 location {
@@ -16156,7 +18234,9 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                   position {
                     latitude
                     longitude
+                    __typename
                   }
+                  __typename
                 }
                 colors
                 views
@@ -16173,6 +18253,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -16181,6 +18262,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -16188,12 +18270,14 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -16204,10 +18288,12 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -16215,6 +18301,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     tag {
                       id
@@ -16222,21 +18309,25 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 Category {
                   id
@@ -16247,6 +18338,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 Collaborators {
                   items {
@@ -16261,6 +18353,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -16269,6 +18362,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -16276,12 +18370,14 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -16292,10 +18388,12 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -16303,6 +18401,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     collaborator {
                       id
@@ -16313,27 +18412,32 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                         type
                         url
                         username
+                        __typename
                       }
                       fullName
                       photoUrl
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
@@ -16341,6 +18445,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                 _deleted
                 _lastChangedAt
                 contentCategoryId
+                __typename
               }
               collaborator {
                 id
@@ -16351,6 +18456,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                   type
                   url
                   username
+                  __typename
                 }
                 fullName
                 photoUrl
@@ -16367,6 +18473,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -16375,6 +18482,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -16382,12 +18490,14 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -16398,10 +18508,12 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -16409,6 +18521,7 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     collaborator {
                       id
@@ -16419,57 +18532,68 @@ export const contentCollaboratorsByContentId = /* GraphQL */ `
                         type
                         url
                         username
+                        __typename
                       }
                       fullName
                       photoUrl
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -16500,6 +18624,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
           project {
             name
             description
+            __typename
           }
           files {
             data
@@ -16508,6 +18633,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
             caption
             size
             isBanner
+            __typename
           }
           date
           location {
@@ -16518,7 +18644,9 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
             position {
               latitude
               longitude
+              __typename
             }
+            __typename
           }
           colors
           views
@@ -16535,6 +18663,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                 project {
                   name
                   description
+                  __typename
                 }
                 files {
                   data
@@ -16543,6 +18672,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                   caption
                   size
                   isBanner
+                  __typename
                 }
                 date
                 location {
@@ -16553,7 +18683,9 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                   position {
                     latitude
                     longitude
+                    __typename
                   }
+                  __typename
                 }
                 colors
                 views
@@ -16570,6 +18702,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -16578,6 +18711,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -16585,12 +18719,14 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -16601,10 +18737,12 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -16612,6 +18750,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     tag {
                       id
@@ -16619,21 +18758,25 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 Category {
                   id
@@ -16644,6 +18787,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 Collaborators {
                   items {
@@ -16658,6 +18802,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -16666,6 +18811,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -16673,12 +18819,14 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -16689,10 +18837,12 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -16700,6 +18850,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     collaborator {
                       id
@@ -16710,27 +18861,32 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                         type
                         url
                         username
+                        __typename
                       }
                       fullName
                       photoUrl
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
@@ -16738,6 +18894,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                 _deleted
                 _lastChangedAt
                 contentCategoryId
+                __typename
               }
               tag {
                 id
@@ -16755,6 +18912,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -16763,6 +18921,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -16770,12 +18929,14 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -16786,10 +18947,12 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -16797,6 +18960,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     tag {
                       id
@@ -16804,36 +18968,43 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             nextToken
             startedAt
+            __typename
           }
           Category {
             id
@@ -16844,6 +19015,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           Collaborators {
             items {
@@ -16858,6 +19030,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                 project {
                   name
                   description
+                  __typename
                 }
                 files {
                   data
@@ -16866,6 +19039,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                   caption
                   size
                   isBanner
+                  __typename
                 }
                 date
                 location {
@@ -16876,7 +19050,9 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                   position {
                     latitude
                     longitude
+                    __typename
                   }
+                  __typename
                 }
                 colors
                 views
@@ -16893,6 +19069,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -16901,6 +19078,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -16908,12 +19086,14 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -16924,10 +19104,12 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -16935,6 +19117,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     tag {
                       id
@@ -16942,21 +19125,25 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 Category {
                   id
@@ -16967,6 +19154,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 Collaborators {
                   items {
@@ -16981,6 +19169,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -16989,6 +19178,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -16996,12 +19186,14 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -17012,10 +19204,12 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -17023,6 +19217,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     collaborator {
                       id
@@ -17033,27 +19228,32 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                         type
                         url
                         username
+                        __typename
                       }
                       fullName
                       photoUrl
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
@@ -17061,6 +19261,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                 _deleted
                 _lastChangedAt
                 contentCategoryId
+                __typename
               }
               collaborator {
                 id
@@ -17071,6 +19272,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                   type
                   url
                   username
+                  __typename
                 }
                 fullName
                 photoUrl
@@ -17087,6 +19289,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -17095,6 +19298,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -17102,12 +19306,14 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -17118,10 +19324,12 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -17129,6 +19337,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     collaborator {
                       id
@@ -17139,42 +19348,50 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                         type
                         url
                         username
+                        __typename
                       }
                       fullName
                       photoUrl
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
@@ -17182,6 +19399,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
           _deleted
           _lastChangedAt
           contentCategoryId
+          __typename
         }
         collaborator {
           id
@@ -17192,6 +19410,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
             type
             url
             username
+            __typename
           }
           fullName
           photoUrl
@@ -17208,6 +19427,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                 project {
                   name
                   description
+                  __typename
                 }
                 files {
                   data
@@ -17216,6 +19436,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                   caption
                   size
                   isBanner
+                  __typename
                 }
                 date
                 location {
@@ -17226,7 +19447,9 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                   position {
                     latitude
                     longitude
+                    __typename
                   }
+                  __typename
                 }
                 colors
                 views
@@ -17243,6 +19466,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -17251,6 +19475,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -17258,12 +19483,14 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -17274,10 +19501,12 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -17285,6 +19514,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     tag {
                       id
@@ -17292,21 +19522,25 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 Category {
                   id
@@ -17317,6 +19551,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                   _version
                   _deleted
                   _lastChangedAt
+                  __typename
                 }
                 Collaborators {
                   items {
@@ -17331,6 +19566,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -17339,6 +19575,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -17346,12 +19583,14 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -17362,10 +19601,12 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -17373,6 +19614,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     collaborator {
                       id
@@ -17383,27 +19625,32 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                         type
                         url
                         username
+                        __typename
                       }
                       fullName
                       photoUrl
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
@@ -17411,6 +19658,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                 _deleted
                 _lastChangedAt
                 contentCategoryId
+                __typename
               }
               collaborator {
                 id
@@ -17421,6 +19669,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                   type
                   url
                   username
+                  __typename
                 }
                 fullName
                 photoUrl
@@ -17437,6 +19686,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                       project {
                         name
                         description
+                        __typename
                       }
                       files {
                         data
@@ -17445,6 +19695,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                         caption
                         size
                         isBanner
+                        __typename
                       }
                       date
                       location {
@@ -17452,12 +19703,14 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                         state
                         city
                         street
+                        __typename
                       }
                       colors
                       views
                       Tags {
                         nextToken
                         startedAt
+                        __typename
                       }
                       Category {
                         id
@@ -17468,10 +19721,12 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                         _version
                         _deleted
                         _lastChangedAt
+                        __typename
                       }
                       Collaborators {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
@@ -17479,6 +19734,7 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                       _deleted
                       _lastChangedAt
                       contentCategoryId
+                      __typename
                     }
                     collaborator {
                       id
@@ -17489,57 +19745,68 @@ export const contentCollaboratorsByCollaboratorId = /* GraphQL */ `
                         type
                         url
                         username
+                        __typename
                       }
                       fullName
                       photoUrl
                       contents {
                         nextToken
                         startedAt
+                        __typename
                       }
                       createdAt
                       updatedAt
                       _version
                       _deleted
                       _lastChangedAt
+                      __typename
                     }
                     createdAt
                     updatedAt
                     _version
                     _deleted
                     _lastChangedAt
+                    __typename
                   }
                   nextToken
                   startedAt
+                  __typename
                 }
                 createdAt
                 updatedAt
                 _version
                 _deleted
                 _lastChangedAt
+                __typename
               }
               createdAt
               updatedAt
               _version
               _deleted
               _lastChangedAt
+              __typename
             }
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;

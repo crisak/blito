@@ -902,6 +902,6 @@ export const schema = {
             }
         }
     },
-    "codegenVersion": "3.3.6",
+    "codegenVersion": "3.4.4",
     "version": "7ce0819b45700658ad25bfade49af5d0"
 };

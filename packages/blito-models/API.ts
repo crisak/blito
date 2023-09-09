@@ -79,6 +79,7 @@ export type ModelContentConditionInput = {
   and?: Array< ModelContentConditionInput | null > | null,
   or?: Array< ModelContentConditionInput | null > | null,
   not?: ModelContentConditionInput | null,
+  _deleted?: ModelBooleanInput | null,
   contentCategoryId?: ModelIDInput | null,
 };
 
@@ -142,6 +143,13 @@ export type ModelSizeInput = {
   ge?: number | null,
   gt?: number | null,
   between?: Array< number | null > | null,
+};
+
+export type ModelBooleanInput = {
+  ne?: boolean | null,
+  eq?: boolean | null,
+  attributeExists?: boolean | null,
+  attributeType?: ModelAttributeTypes | null,
 };
 
 export type ModelIDInput = {
@@ -345,6 +353,7 @@ export type ModelTagConditionInput = {
   and?: Array< ModelTagConditionInput | null > | null,
   or?: Array< ModelTagConditionInput | null > | null,
   not?: ModelTagConditionInput | null,
+  _deleted?: ModelBooleanInput | null,
 };
 
 export type UpdateTagInput = {
@@ -384,6 +393,7 @@ export type ModelCollaboratorConditionInput = {
   and?: Array< ModelCollaboratorConditionInput | null > | null,
   or?: Array< ModelCollaboratorConditionInput | null > | null,
   not?: ModelCollaboratorConditionInput | null,
+  _deleted?: ModelBooleanInput | null,
 };
 
 export type UpdateCollaboratorInput = {
@@ -415,6 +425,7 @@ export type ModelCategoryConditionInput = {
   and?: Array< ModelCategoryConditionInput | null > | null,
   or?: Array< ModelCategoryConditionInput | null > | null,
   not?: ModelCategoryConditionInput | null,
+  _deleted?: ModelBooleanInput | null,
 };
 
 export type UpdateCategoryInput = {
@@ -442,6 +453,7 @@ export type ModelContentTagConditionInput = {
   and?: Array< ModelContentTagConditionInput | null > | null,
   or?: Array< ModelContentTagConditionInput | null > | null,
   not?: ModelContentTagConditionInput | null,
+  _deleted?: ModelBooleanInput | null,
 };
 
 export type UpdateContentTagInput = {
@@ -469,6 +481,7 @@ export type ModelContentCollaboratorConditionInput = {
   and?: Array< ModelContentCollaboratorConditionInput | null > | null,
   or?: Array< ModelContentCollaboratorConditionInput | null > | null,
   not?: ModelContentCollaboratorConditionInput | null,
+  _deleted?: ModelBooleanInput | null,
 };
 
 export type UpdateContentCollaboratorInput = {
@@ -494,6 +507,7 @@ export type ModelContentFilterInput = {
   and?: Array< ModelContentFilterInput | null > | null,
   or?: Array< ModelContentFilterInput | null > | null,
   not?: ModelContentFilterInput | null,
+  _deleted?: ModelBooleanInput | null,
   contentCategoryId?: ModelIDInput | null,
 };
 
@@ -510,6 +524,7 @@ export type ModelTagFilterInput = {
   and?: Array< ModelTagFilterInput | null > | null,
   or?: Array< ModelTagFilterInput | null > | null,
   not?: ModelTagFilterInput | null,
+  _deleted?: ModelBooleanInput | null,
 };
 
 export type ModelTagConnection = {
@@ -529,6 +544,7 @@ export type ModelCollaboratorFilterInput = {
   and?: Array< ModelCollaboratorFilterInput | null > | null,
   or?: Array< ModelCollaboratorFilterInput | null > | null,
   not?: ModelCollaboratorFilterInput | null,
+  _deleted?: ModelBooleanInput | null,
 };
 
 export type ModelCollaboratorConnection = {
@@ -545,6 +561,7 @@ export type ModelCategoryFilterInput = {
   and?: Array< ModelCategoryFilterInput | null > | null,
   or?: Array< ModelCategoryFilterInput | null > | null,
   not?: ModelCategoryFilterInput | null,
+  _deleted?: ModelBooleanInput | null,
 };
 
 export type ModelCategoryConnection = {
@@ -561,6 +578,7 @@ export type ModelContentTagFilterInput = {
   and?: Array< ModelContentTagFilterInput | null > | null,
   or?: Array< ModelContentTagFilterInput | null > | null,
   not?: ModelContentTagFilterInput | null,
+  _deleted?: ModelBooleanInput | null,
 };
 
 export enum ModelSortDirection {
@@ -576,6 +594,7 @@ export type ModelContentCollaboratorFilterInput = {
   and?: Array< ModelContentCollaboratorFilterInput | null > | null,
   or?: Array< ModelContentCollaboratorFilterInput | null > | null,
   not?: ModelContentCollaboratorFilterInput | null,
+  _deleted?: ModelBooleanInput | null,
 };
 
 export type ModelSubscriptionContentFilterInput = {
@@ -588,6 +607,7 @@ export type ModelSubscriptionContentFilterInput = {
   views?: ModelSubscriptionIntInput | null,
   and?: Array< ModelSubscriptionContentFilterInput | null > | null,
   or?: Array< ModelSubscriptionContentFilterInput | null > | null,
+  _deleted?: ModelBooleanInput | null,
 };
 
 export type ModelSubscriptionIDInput = {
@@ -637,6 +657,7 @@ export type ModelSubscriptionTagFilterInput = {
   name?: ModelSubscriptionStringInput | null,
   and?: Array< ModelSubscriptionTagFilterInput | null > | null,
   or?: Array< ModelSubscriptionTagFilterInput | null > | null,
+  _deleted?: ModelBooleanInput | null,
 };
 
 export type ModelSubscriptionCollaboratorFilterInput = {
@@ -648,6 +669,7 @@ export type ModelSubscriptionCollaboratorFilterInput = {
   photoUrl?: ModelSubscriptionStringInput | null,
   and?: Array< ModelSubscriptionCollaboratorFilterInput | null > | null,
   or?: Array< ModelSubscriptionCollaboratorFilterInput | null > | null,
+  _deleted?: ModelBooleanInput | null,
 };
 
 export type ModelSubscriptionCategoryFilterInput = {
@@ -656,6 +678,7 @@ export type ModelSubscriptionCategoryFilterInput = {
   description?: ModelSubscriptionStringInput | null,
   and?: Array< ModelSubscriptionCategoryFilterInput | null > | null,
   or?: Array< ModelSubscriptionCategoryFilterInput | null > | null,
+  _deleted?: ModelBooleanInput | null,
 };
 
 export type ModelSubscriptionContentTagFilterInput = {
@@ -664,6 +687,7 @@ export type ModelSubscriptionContentTagFilterInput = {
   tagId?: ModelSubscriptionIDInput | null,
   and?: Array< ModelSubscriptionContentTagFilterInput | null > | null,
   or?: Array< ModelSubscriptionContentTagFilterInput | null > | null,
+  _deleted?: ModelBooleanInput | null,
 };
 
 export type ModelSubscriptionContentCollaboratorFilterInput = {
@@ -672,6 +696,7 @@ export type ModelSubscriptionContentCollaboratorFilterInput = {
   collaboratorId?: ModelSubscriptionIDInput | null,
   and?: Array< ModelSubscriptionContentCollaboratorFilterInput | null > | null,
   or?: Array< ModelSubscriptionContentCollaboratorFilterInput | null > | null,
+  _deleted?: ModelBooleanInput | null,
 };
 
 export type CreateContentMutationVariables = {
