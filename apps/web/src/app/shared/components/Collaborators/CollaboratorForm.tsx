@@ -11,12 +11,12 @@ import {
   InputProps,
   Spacer
 } from '@nextui-org/react'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import {
   Controller,
   ControllerProps,
-  FieldErrors,
   SubmitHandler,
+  useFieldArray,
   useForm
 } from 'react-hook-form'
 import { LuContact } from 'react-icons/lu'
@@ -41,20 +41,6 @@ import {
 import { LiaUserCheckSolid } from 'react-icons/lia'
 import { VscAdd } from 'react-icons/vsc'
 import UploadFile from './UploadFile'
-
-// const initialFormData: ACollaborator = {
-//   id: '',
-//   username: '',
-//   email: '',
-//   phone: '',
-//   socials: [],
-//   fullName: '',
-//   photoUrl: '',
-//   createdAt: '',
-//   updatedAt: '',
-//   _version: 0,
-//   _deleted: false
-// }
 
 /** F = Form */
 
@@ -137,38 +123,20 @@ const classNamesIcons = (hasError?: unknown) =>
     'text-danger': Boolean(hasError)
   })
 
-function useInput<T extends Record<string, any>>({
-  errors
-}: {
-  errors: FieldErrors<T>
-}) {
-  return (keyField: keyof T): Partial<InputProps> => {
-    return {
-      fullWidth: true,
-      variant: 'bordered',
-      validationState: errors[keyField] ? 'invalid' : 'valid',
-      'aria-invalid': errors[keyField] ? 'true' : 'false',
-      errorMessage: errors[keyField] && String(errors[keyField]?.message)
-    }
-  }
-}
-
 const CollaboratorForm = ({
   collaborator: collaboratorEdit
 }: CollaboratorFormProps) => {
-  LogUtil.debug('collaboratorEdit', collaboratorEdit)
-
   const screenNavigation = ScreenPage.useScreenPage<MetadataScreens>()
   const {
-    register,
     handleSubmit,
     setValue: setFormData,
+    getValues: getFormData,
     watch: watchFormData,
     reset: resetFormData,
     control: controlFormData,
     formState: { errors, isValid: isValidForm }
   } = useForm<FACollaborator>({
-    values: !collaboratorEdit
+    defaultValues: !collaboratorEdit
       ? undefined
       : {
           ...collaboratorEdit,
@@ -179,8 +147,6 @@ const CollaboratorForm = ({
             })) || []
         }
   })
-
-  const inputProps = useInput<FACollaborator>({ errors })
 
   const [loading, create, update] = useCollaboratorStore((state) => [
     state.loading,
@@ -204,26 +170,24 @@ const CollaboratorForm = ({
       photoUrl: ''
     } as ACollaborator
 
+    LogUtil.debug('onSubmit.formData', result)
+
+    return
+
     if (profileImage) {
-      const extension = getExtension(profileImage.name)
+      const extension = getExtension(
+        profileImage ? profileImage?.name || '' : ''
+      )
       const name = `${getStr(result?.fullName)}-${getStr(
         result?.username
       )}.${extension}`
       const pathName = `avatar-images/${name}`
 
-      LogUtil.debug('Before upload', '...')
-
       const results3 = await Storage.put(pathName, profileImage, {
         level: 'public',
-        contentType: profileImage.type
+        contentType: profileImage?.type
       })
-
-      LogUtil.debug('results3', results3)
     }
-
-    LogUtil.debug('Result', result)
-
-    return
 
     /** Update */
     if (result.id) {
@@ -260,24 +224,6 @@ const CollaboratorForm = ({
 
   LogUtil.debug('currentSocialsWatch', currentSocials)
 
-  useEffect(() => {
-    if (collaboratorEdit?.photoUrl) {
-      const extension = getExtension(collaboratorEdit.photoUrl)
-      const name = `${getStr(collaboratorEdit?.fullName)}-${getStr(
-        collaboratorEdit?.username
-      )}.${extension}`
-
-      fetch(collaboratorEdit.photoUrl)
-        .then((response) => {
-          return response.arrayBuffer()
-        })
-        .then((buffer) => {
-          setProfileImage(new File([buffer], name))
-        })
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [collaboratorEdit?.photoUrl])
-
   return (
     <>
       <ScreenPage.Header
@@ -296,6 +242,7 @@ const CollaboratorForm = ({
               setProfileImage(file)
             }}
             file={profileImage}
+            defaultValue={collaboratorEdit?.photoUrl || ''}
           />
 
           <InputControl
@@ -359,155 +306,18 @@ const CollaboratorForm = ({
             />
           </div>
 
-          <div>
-            <Divider orientation="horizontal" />
-          </div>
+          {/* <div>
+            
+          </div> */}
+
+          <Divider orientation="horizontal" />
 
           {/* Component list */}
-          <section className="section-social">
-            <Controller
-              name="socials"
-              control={controlFormData}
-              defaultValue={[]}
-              render={({ field, fieldState, formState }) => {
-                LogUtil.debug('Fields full name', {
-                  field,
-                  fieldState,
-                  formState
-                })
-
-                const { value = [] } = field
-
-                const socialsValue = value
-
-                return (
-                  <>
-                    <div className="flex items-center justify-between">
-                      <label htmlFor="social">Redes sociales</label>
-                      <Button
-                        size="sm"
-                        isIconOnly
-                        variant="ghost"
-                        color="primary"
-                        onClick={() => {
-                          setFormData('socials', [
-                            ...socialsValue,
-                            {
-                              type: TypeSocialNetwork.FACEBOOK,
-                              username: '',
-                              url: '',
-                              id: Date.now().toString()
-                            }
-                          ])
-                        }}
-                      >
-                        <VscAdd className="font-bold" />
-                      </Button>
-                    </div>
-
-                    <div className="mt-unit-lg flex flex-col gap-unit-lg">
-                      {socialsValue.map((soc, socialIndex) => (
-                        <div
-                          className="flex items-center gap-unit-lg"
-                          key={soc.id}
-                        >
-                          <Dropdown radius="sm">
-                            <DropdownTrigger>
-                              <Button
-                                variant="bordered"
-                                isIconOnly={Boolean(soc.type)}
-                              >
-                                {soc?.type ? (
-                                  <IconSocial socialType={soc?.type} />
-                                ) : (
-                                  'Red social'
-                                )}
-                              </Button>
-                            </DropdownTrigger>
-                            <DropdownMenu
-                              variant="faded"
-                              aria-label="Dropdown menu with icons"
-                              disallowEmptySelection
-                              selectionMode="single"
-                              selectedKeys={new Set([soc.type])}
-                              onSelectionChange={(data) => {
-                                if (data instanceof Set) {
-                                  const value = Array.from(
-                                    data
-                                  )[0] as TypeSocialNetwork
-
-                                  setFormData(
-                                    'socials',
-                                    socialsValue.map((social) => {
-                                      if (soc.id === social.id) {
-                                        return {
-                                          ...social,
-                                          type: value
-                                        }
-                                      }
-                                      return social
-                                    })
-                                  )
-                                }
-                              }}
-                            >
-                              {optionsSocialNetwork.map(
-                                ({ key, icon: IconSocial, label }) => (
-                                  <DropdownItem
-                                    key={key}
-                                    startContent={
-                                      <IconSocial
-                                        className={iconSocialClasses}
-                                      />
-                                    }
-                                  >
-                                    {label}
-                                  </DropdownItem>
-                                )
-                              )}
-                            </DropdownMenu>
-                          </Dropdown>
-
-                          <InputControl
-                            isRequired
-                            size="sm"
-                            label="Nombre de usuario"
-                            control={controlFormData}
-                            name={`socials[${socialIndex}].username`}
-                          />
-
-                          <InputControl
-                            isRequired
-                            size="sm"
-                            label="URL"
-                            type="url"
-                            control={controlFormData}
-                            name={`socials[${socialIndex}].url`}
-                          />
-
-                          <Button
-                            isIconOnly
-                            color="danger"
-                            variant="light"
-                            onClick={() => {
-                              setFormData(
-                                'socials',
-                                socialsValue.filter((_) => {
-                                  return _.id !== soc.id
-                                })
-                              )
-                            }}
-                          >
-                            <VscTrash />
-                          </Button>
-                        </div>
-                      ))}
-                    </div>
-                  </>
-                )
-              }}
-            />
-          </section>
+          <ListSocialNetwork
+            control={controlFormData}
+            getValues={getFormData}
+            setValue={setFormData}
+          />
 
           <ScreenPage.Footer isSticky>
             <Box className="flex justify-end gap-unit-md">
@@ -556,8 +366,6 @@ const CollaboratorForm = ({
   )
 }
 
-// const controlForm: Control<FACollaborator, any>
-
 type InputControlProps = InputProps &
   Pick<ControllerProps, 'name' | 'rules' | 'defaultValue'> & {
     control: any
@@ -602,6 +410,147 @@ function InputControl({
         )
       }}
     />
+  )
+}
+
+type ListSocialNetworkProps = Partial<
+  ReturnType<typeof useForm<FACollaborator>>
+>
+
+function ListSocialNetwork({
+  control: controlFormData,
+  getValues,
+  setValue
+}: ListSocialNetworkProps) {
+  const {
+    fields: socials,
+    append,
+    remove: removeSocialItem
+    // prepend
+  } = useFieldArray({
+    control: controlFormData,
+    name: 'socials'
+  })
+
+  return (
+    <section className="flex flex-col gap-unit-lg">
+      <div className="form-red-social flex items-center justify-between">
+        <label htmlFor="social">Redes sociales</label>
+        <Button
+          size="sm"
+          isIconOnly
+          variant="ghost"
+          color="primary"
+          onClick={() => {
+            append({
+              type: TypeSocialNetwork.FACEBOOK,
+              username: '',
+              url: '',
+              id: Date.now().toString()
+            })
+          }}
+        >
+          <VscAdd className="font-bold" />
+        </Button>
+      </div>
+
+      {socials.length > 0 && (
+        <div className="list-red-socials flex flex-col gap-unit-md">
+          {socials.map((soc, socialIndex) => (
+            <div className="flex items-center gap-unit-lg" key={soc.id}>
+              <Controller
+                // @ts-ignore
+                name={`socials[${socialIndex}].type`}
+                control={controlFormData}
+                defaultValue={getValues ? getValues('socials') : []}
+                render={({ field }) => {
+                  const typeValue = field.value as TypeSocialNetwork
+
+                  return (
+                    <div {...field}>
+                      <Dropdown radius="sm">
+                        <DropdownTrigger>
+                          <Button
+                            variant="bordered"
+                            isIconOnly={Boolean(typeValue)}
+                          >
+                            {typeValue ? (
+                              <IconSocial socialType={typeValue} />
+                            ) : (
+                              'Red social'
+                            )}
+                          </Button>
+                        </DropdownTrigger>
+                        <DropdownMenu
+                          variant="faded"
+                          aria-label="Dropdown menu with icons"
+                          disallowEmptySelection
+                          selectionMode="single"
+                          selectedKeys={new Set([typeValue])}
+                          onSelectionChange={(data) => {
+                            if (data instanceof Set) {
+                              const value = Array.from(
+                                data
+                              )[0] as TypeSocialNetwork
+
+                              if (setValue) {
+                                // @ts-ignore
+                                setValue(`socials[${socialIndex}].type`, value)
+                              }
+                            }
+                          }}
+                        >
+                          {optionsSocialNetwork.map(
+                            ({ key, icon: IconSocial, label }) => (
+                              <DropdownItem
+                                key={key}
+                                startContent={
+                                  <IconSocial className={iconSocialClasses} />
+                                }
+                              >
+                                {label}
+                              </DropdownItem>
+                            )
+                          )}
+                        </DropdownMenu>
+                      </Dropdown>
+                    </div>
+                  )
+                }}
+              />
+
+              <InputControl
+                isRequired
+                size="sm"
+                label="Nombre de usuario"
+                control={controlFormData}
+                name={`socials[${socialIndex}].username`}
+              />
+
+              <InputControl
+                isRequired
+                size="sm"
+                label="URL"
+                type="url"
+                control={controlFormData}
+                name={`socials[${socialIndex}].url`}
+              />
+
+              <Button
+                isIconOnly
+                color="danger"
+                variant="light"
+                onClick={() => {
+                  removeSocialItem(socialIndex)
+                }}
+              >
+                <VscTrash />
+              </Button>
+            </div>
+          ))}
+        </div>
+      )}
+    </section>
   )
 }
 

@@ -18,10 +18,15 @@ const initialErrors = {
 type UploadFileProps = {
   onChange?: (file: File) => void
   file?: File | null
+  defaultValue?: string
 }
 
 /** https://www.npmjs.com/package/react-advanced-cropper */
-const UploadFile = ({ onChange, file: fileProp }: UploadFileProps) => {
+const UploadFile = ({
+  onChange,
+  file: fileProp,
+  defaultValue
+}: UploadFileProps) => {
   const [file, setFile] = useState<File | null>(fileProp || null)
   const [errors, setErrors] = useState(initialErrors)
 
@@ -67,7 +72,7 @@ const UploadFile = ({ onChange, file: fileProp }: UploadFileProps) => {
 
         <Avatar
           showFallback={Boolean(file)}
-          src={file ? URL.createObjectURL(file) : undefined}
+          src={defaultValue || (file ? URL.createObjectURL(file) : undefined)}
           className={clsx(
             'h-20 w-20 border-2 border-transparent text-large transition-all',
             {
