@@ -62,7 +62,11 @@
           "deploymentBucketName": "amplify-blito-prod-74327-deployment",
           "s3Key": "amplify-builds/BlitoPostConfirmation-68413630576165346855-build.zip"
         },
-        "s3blitostoragef45ca4aa": {}
+        "s3blitostoragef45ca4aa": {},
+        "TestCompanyRemove": {
+          "deploymentBucketName": "amplify-blito-prod-74327-deployment",
+          "s3Key": "amplify-builds/TestCompanyRemove-4942643338685a65745a-build.zip"
+        }
       },
       "api": {
         "Blito": {}

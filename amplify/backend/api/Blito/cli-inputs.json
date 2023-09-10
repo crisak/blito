@@ -10,9 +10,9 @@
     "additionalAuthTypes": [
       {
         "mode": "API_KEY",
-        "expirationTime": 150,
-        "apiKeyExpirationDate": "2023-09-18T06:37:53.892Z",
-        "keyDescription": "API key blito"
+        "expirationTime": 365,
+        "apiKeyExpirationDate": "2024-09-09T02:11:22.389Z",
+        "keyDescription": "API key of Blito to prod"
       },
       {
         "mode": "AWS_IAM"

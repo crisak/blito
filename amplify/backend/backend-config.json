@@ -15,9 +15,9 @@
           "additionalAuthenticationProviders": [
             {
               "apiKeyConfig": {
-                "apiKeyExpirationDate": "2023-09-18T06:37:53.892Z",
-                "apiKeyExpirationDays": 150,
-                "description": "API key blito"
+                "apiKeyExpirationDate": "2024-09-09T02:11:22.389Z",
+                "apiKeyExpirationDays": 365,
+                "description": "API key of Blito to prod"
               },
               "authenticationType": "API_KEY"
             },

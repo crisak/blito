@@ -6,3 +6,19 @@ Helpful resources:
 - Amplify CLI documentation: https://docs.amplify.aws/cli
 - More details on this folder & generated files: https://docs.amplify.aws/cli/reference/files
 - Join Amplify's community: https://amplify.aws/community/
+
+
+# Errors
+### Corregir error cuando el API Key vence
+*Error*
+```
+🛑 The following resources failed to deploy:
+Resource Name: GraphQLAPIDefaultApiKey215A6DD7 (AWS::AppSync::ApiKey)
+Event Type: update
+Reason: API key not found: da2-ghx56mrzfrcvfau4s4ioo7sy2a (Service: AWSAppSync; Status Code: 404; Error Code: NotFoundException; Request ID: 197e20ee-9038-44a6-ab5f-dcfa430b0f6f; Proxy: null)
+URL: https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/arn%3Aaws%3Acloudformation%3Aus-east-1%3A957950463642%3Astack%2Famplify-blito-prod-74327-apiBlito-1XPWVGVFXDT0R%2F0a99d4f0-c861-11ed-8726-0a45ed036615/events
+```
+*Solution*
+```
+https://github.com/aws-amplify/amplify-cli/issues/808#issuecomment-583861169
+```

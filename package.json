@@ -8,7 +8,7 @@
     "amplify/backend/function/**/lib"
   ],
   "scripts": {
-    "amplify:TestCompanyRemove": "cd amplify/backend/function/TestCompanyRemove && yarn build && cd -",
+    "amplify:TestCompanyRemove": "cd amplify/backend/function/TestCompanyRemove/lib && yarn build && cd -",
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
