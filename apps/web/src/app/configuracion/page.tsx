@@ -16,17 +16,17 @@ const SettingsPage = () => {
             <CardBody className="p-5">
               <Tags
                 classNames={{
-                  containerPages: 'h-unit-8xl'
+                  containerPages: 'h-unit-9xl'
                 }}
               />
             </CardBody>
           </Card>
 
-          <Card className="h-unit-8xl overflow-hidden lg:col-span-7">
+          <Card className="overflow-hidden lg:col-span-7">
             <CardBody className="p-5">
               <Collaborators
                 classNames={{
-                  containerPages: 'h-unit-8xl'
+                  containerPages: 'h-unit-9xl'
                 }}
               />
             </CardBody>

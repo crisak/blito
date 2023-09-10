@@ -1,11 +1,11 @@
 'use client'
 
 import { Box } from '@/app/shared/ui'
+import { Chip } from '@nextui-org/chip'
 import Link, { type LinkProps } from 'next/link'
+import { CgAwards, CgProfile } from 'react-icons/cg'
 import { CiSettings } from 'react-icons/ci'
 import { MdInsights } from 'react-icons/md'
-import { CgProfile, CgAwards } from 'react-icons/cg'
-import { Chip } from '@nextui-org/chip'
 
 import clsx from 'clsx'
 import { usePathname } from 'next/navigation'
@@ -40,7 +40,7 @@ const MenuLink = ({ className, active, ...props }: MenuLink) => (
 const Menu = ({ ...props }) => {
   const pathname = usePathname()
   return (
-    <Box>
+    <Box className="flex flex-row md:flex-col">
       <MenuLink active={pathname === '/configuracion'} href="/configuracion">
         <CiSettings size={25} />
         General
