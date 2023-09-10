@@ -213,7 +213,7 @@ const useCollaboratorStore = create<CollaboratorStore>((set, get) => {
 
       const extension = FilesUtil.getExtension(file.name)
       const fileIdUnique = Date.now().toString()
-      let pathFile = `${PATH_FILE_AVATAR}/${fileIdUnique}/${extension}`
+      let pathFile = `${PATH_FILE_AVATAR}/${fileIdUnique}.${extension}`
 
       if (id) {
         pathFile = `${PATH_FILE_AVATAR}/${id}.${extension}`
