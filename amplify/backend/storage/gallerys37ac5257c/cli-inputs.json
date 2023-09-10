@@ -1,0 +1,27 @@
+{
+  "resourceName": "gallerys37ac5257c",
+  "policyUUID": "7ac5257c",
+  "bucketName": "blitoa1669ad374a84249be178ad12241cd9b",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {
+    "Admin": [
+      "CREATE_AND_UPDATE",
+      "READ",
+      "DELETE"
+    ],
+    "SuperAdmin": [
+      "CREATE_AND_UPDATE",
+      "READ",
+      "DELETE"
+    ]
+  }
+}
