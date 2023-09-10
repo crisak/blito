@@ -65,7 +65,7 @@ class AuthService {
       email: auth.attributes.email
     } as AuthSession
 
-    const configAws = getAwsExports()
+    const configAws = getAwsExports(process.env.NEXT_PUBLIC_ENV)
 
     Amplify.configure({
       ...configAws,
@@ -75,6 +75,7 @@ class AuthService {
           return {
             'X-Blito-User-Id': userAuth.id,
             'Accept-Language': userAuth.locale,
+            'User-Auth-Custom': userAuth.id,
             'Cache-Control':
               'no-store' /** TODO - This not working, make test */
           }

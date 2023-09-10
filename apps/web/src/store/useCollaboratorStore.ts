@@ -3,6 +3,8 @@
 
 import { CollaboratorService } from '@/app/shared/services'
 import { ACollaborator, ARContentByCollaborator } from '@/models'
+import { FilesUtil, LogUtil } from '@/utils'
+import { Storage } from 'aws-amplify'
 import { CreateCollaboratorInput } from 'blito-models'
 import { create } from 'zustand'
 
@@ -36,50 +38,100 @@ const useCollaboratorStore = create<CollaboratorStore>((set, get) => {
         return
       }
       set({ loading: 'list' })
-      const newList = await collaboratorSrv
-        .getAll()
-        .finally(() => set({ loading: '' }))
 
-      set({ list: newList })
+      const newList = await collaboratorSrv.getAll().catch((err) => {
+        set({ loading: '' })
+        return Promise.reject(err)
+      })
+
+      const lsImageFilter = await Promise.all(
+        newList.map(async (collaborator) => {
+          if (!collaborator.photoUrl) {
+            return collaborator
+          }
+
+          const urlImage = await Storage.get(collaborator.photoUrl, {
+            level: 'public',
+            validateObjectExistence: true
+          }).catch(() => {
+            return ''
+          })
+
+          return {
+            ...collaborator,
+            photoUrl: urlImage
+          }
+        })
+      )
+
+      set({ list: lsImageFilter, loading: '' })
     },
 
     update: async (newTag) => {
       const { list } = get()
       set({ loading: 'update' })
 
+      const urlSinged = newTag.photoUrl
+      newTag.photoUrl = FilesUtil.getKey(urlSinged)
+
       const { _deleted, createdAt, updatedAt, ...restInput } = { ...newTag }
-      const resultTag = await collaboratorSrv
-        .update(restInput)
-        .finally(() => set({ loading: '' }))
+
+      const resultTag = await collaboratorSrv.update(restInput).catch((err) => {
+        set({ loading: '' })
+        return Promise.reject(err)
+      })
 
       const newList = list.map((tab) => {
         if (tab.id === newTag.id) {
-          return { ...tab, ...resultTag }
+          return { ...tab, ...resultTag, photoUrl: urlSinged }
         }
         return { ...tab }
       })
 
-      set({ list: newList })
+      set({ list: newList, loading: '' })
     },
 
     create: async (newTag) => {
       const { list } = get()
       set({ loading: 'create' })
 
+      const urlSinged = newTag.photoUrl
+      newTag.photoUrl = FilesUtil.getKey(urlSinged)
+
       const collaboratorResponse = await collaboratorSrv
         .create(newTag)
-        .finally(() => set({ loading: '' }))
+        .catch((err) => {
+          set({ loading: '' })
+          return Promise.reject(err)
+        })
 
-      const newList = [...list, collaboratorResponse]
+      const newList = [
+        ...list,
+        {
+          ...collaboratorResponse,
+          photoUrl: urlSinged
+        }
+      ]
 
-      set({ list: newList })
+      set({ list: newList, loading: '' })
     },
 
     remove: async (collaboratorRm: ACollaborator) => {
-      const { list, contentsByCollaborator: contentsByTag } = get()
+      const { contentsByCollaborator: contentsByTag } = get()
       set({ loading: 'delete' })
 
       const contentsTag = contentsByTag.get(collaboratorRm.id) || []
+
+      if (collaboratorRm.photoUrl) {
+        await Storage.remove(FilesUtil.getKey(collaboratorRm.photoUrl)).catch(
+          (err) => {
+            LogUtil.errorDetail('Error move avatar', err, {
+              pathFile: collaboratorRm.photoUrl
+            })
+            return
+          }
+        )
+      }
 
       await collaboratorSrv
         .deleteContentsRelation(

@@ -11,6 +11,7 @@ const ScreenPageFooter = ({
 }: ScreenPageFooterProps) => {
   return (
     <footer
+      key="screen-page-footer"
       style={{
         // color: 'red',
         // backgroundColor: isSticky ? 'blue' : undefined,

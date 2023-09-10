@@ -1,17 +1,16 @@
 'use client'
 
-import { BoxProps } from '@/app/shared/ui'
-import { motion } from 'framer-motion'
+import { motion, MotionProps } from 'framer-motion'
 import { Children, cloneElement, isValidElement } from 'react'
 import { type Child, type PageName } from './ScreenPageProvider'
 
-type ScreenPageContainerProps = Child &
-  BoxProps & {
-    isPreview?: boolean
-    page: PageName
-    index?: number
-    propsPage?: object
-  }
+type ScreenPageContainerProps = Child & {
+  isPreview?: boolean
+  page: PageName
+  index?: number
+  propsPage?: object
+} & Omit<React.ComponentPropsWithoutRef<'div'>, 'children'> &
+  MotionProps
 
 const variants = {
   positionStartFirstScreen: { transform: 'translateX(0%)', opacity: 0.8 },
@@ -27,12 +26,16 @@ const variants = {
 
 const ScreenPageContainer = ({
   isPreview,
-  children,
+  page,
   index,
-  propsPage
+  propsPage,
+  children,
+  ...divProps
 }: ScreenPageContainerProps) => {
   return (
     <motion.div
+      {...divProps}
+      key={page}
       variants={variants}
       className="page-container absolute left-0 top-0 h-full w-full overflow-y-auto overflow-x-hidden scroll-smooth bg-content1 text-foreground"
       /** Punto inicial de la animación */

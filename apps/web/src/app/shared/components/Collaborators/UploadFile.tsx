@@ -1,12 +1,14 @@
 'use client'
 
 import { Text } from '@/app/shared/ui'
-import { LogUtil } from '@/utils'
+import { FilesUtil, LogUtil } from '@/utils'
 import { Avatar, Button } from '@nextui-org/react'
+import { Storage } from 'aws-amplify'
 import clsx from 'clsx'
 import { useCallback, useState } from 'react'
 import { useDropzone } from 'react-dropzone'
 import { VscDeviceCamera, VscTrash } from 'react-icons/vsc'
+import { toast } from 'react-toastify'
 
 /** Tamaño máximo de archivo en bytes (100 KB) */
 const MAX_FILE_SIZE = 100 * 1024
@@ -16,21 +18,23 @@ const initialErrors = {
 }
 
 type UploadFileProps = {
-  onChange?: (file: File) => void
-  file?: File | null
+  onChange?: (file: string) => void
   defaultValue?: string
+  userId?: string
 }
 
+const pathFileAvatar = 'avatar-images'
+
 /** https://www.npmjs.com/package/react-advanced-cropper */
-const UploadFile = ({
-  onChange,
-  file: fileProp,
-  defaultValue
-}: UploadFileProps) => {
-  const [file, setFile] = useState<File | null>(fileProp || null)
+// const UploadFile = ({ onChange, defaultValue, value }: UploadFileProps) => {
+const fileId = Date.now().toString()
+
+const UploadFile = ({ defaultValue, onChange, userId }: UploadFileProps) => {
+  const [urlSigned, setUrlSigned] = useState<string>(defaultValue || '')
+  const [loading, setLoading] = useState(false)
   const [errors, setErrors] = useState(initialErrors)
 
-  const onDrop = useCallback((acceptedFiles: File[]) => {
+  const onDrop = useCallback(async (acceptedFiles: File[]) => {
     const file = acceptedFiles[0]
 
     LogUtil.debug('onDrop', file)
@@ -44,16 +48,76 @@ const UploadFile = ({
       return
     }
 
-    setErrors(initialErrors)
-    setFile(file)
-    if (typeof onChange === 'function') {
-      onChange(file)
+    setLoading(true)
+
+    const extension = getExtension(file.name)
+
+    const name = `${userId || fileId}.${extension}`
+    const pathFileName = `${pathFileAvatar}/${name}`
+
+    const result = await Storage.put(pathFileName, file, {
+      level: 'public',
+      contentType: file?.type
+    }).catch((error) => {
+      LogUtil.debug('Blob file', file)
+
+      LogUtil.errorDetail('Error upload to s3', error, {
+        pathName: pathFileName,
+        level: 'public',
+        contentType: file?.type
+      })
+
+      showToastError(error)
+      return { key: '' }
+    })
+
+    if (!result.key) {
+      setLoading(false)
+      return
     }
+
+    const urlSigned = await Storage.get(result.key, {
+      level: 'public',
+      validateObjectExistence: true
+    }).catch((error) => {
+      LogUtil.errorDetail('Error get url signed', error, {
+        key: result.key,
+        level: 'public'
+      })
+
+      return ''
+    })
+
+    setErrors(initialErrors)
+    setUrlSigned(urlSigned)
+
+    if (typeof onChange === 'function') {
+      onChange(urlSigned)
+    }
+
+    setLoading(false)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const removeFile = () => {
-    setFile(null)
+  const removeFile = async () => {
+    setLoading(true)
+
+    await Storage.remove(FilesUtil.getKey(urlSigned), {
+      level: 'public'
+    }).catch((error) => {
+      LogUtil.errorDetail('Error remove file', error, {
+        key: urlSigned,
+        level: 'public'
+      })
+
+      showToastError(error)
+    })
+
+    setLoading(false)
+    setUrlSigned('')
+    if (typeof onChange === 'function') {
+      onChange('')
+    }
   }
 
   const { getRootProps, getInputProps } = useDropzone({
@@ -62,7 +126,6 @@ const UploadFile = ({
       'image/png': ['.png', '.jpg', '.jpeg']
     },
     multiple: false
-    // noDrag: true
   })
 
   return (
@@ -71,14 +134,14 @@ const UploadFile = ({
         <input {...getInputProps()} />
 
         <Avatar
-          showFallback={Boolean(file)}
-          src={defaultValue || (file ? URL.createObjectURL(file) : undefined)}
+          showFallback={Boolean(!urlSigned)}
+          src={urlSigned}
           className={clsx(
             'h-20 w-20 border-2 border-transparent text-large transition-all',
             {
-              'border-primary': file,
+              'border-primary': urlSigned,
               'group-hover/upload-file:cursor-pointer group-hover/upload-file:border-primary':
-                !file
+                !urlSigned
             }
           )}
           fallback={
@@ -90,16 +153,17 @@ const UploadFile = ({
           }
         />
 
-        {file && (
+        {(urlSigned || loading) && (
           <Button
+            isLoading={loading}
             isIconOnly
             size="sm"
-            color="danger"
+            color={urlSigned ? 'danger' : 'primary'}
             radius="full"
             className="absolute -right-3 bottom-0 z-10"
             onClick={removeFile}
           >
-            <VscTrash />
+            {!loading && <VscTrash />}
           </Button>
         )}
       </div>
@@ -111,6 +175,30 @@ const UploadFile = ({
       )}
     </div>
   )
+}
+
+function getExtension(name: string) {
+  const partesDelNombre = name.split('.') || []
+  if (partesDelNombre.length > 1) {
+    return partesDelNombre.pop()?.toLowerCase()
+  } else {
+    return ''
+  }
+}
+
+function showToastError(error: unknown) {
+  if (error instanceof Error) {
+    toast(error?.message || '', {
+      type: 'warning',
+      autoClose: false
+    })
+    return
+  }
+
+  toast(`Error interno: ${JSON.stringify(error)}`, {
+    type: 'error',
+    autoClose: false
+  })
 }
 
 export default UploadFile

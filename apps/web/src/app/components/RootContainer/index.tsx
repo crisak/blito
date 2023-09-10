@@ -22,7 +22,7 @@ LogUtil.debug('Client App running in: ', process.env.NEXT_PUBLIC_ENV)
 
 /** This should be configured on Server side but not in the client(WEB) */
 Amplify.configure({
-  ...getAwsExports(),
+  ...getAwsExports(process.env.NEXT_PUBLIC_ENV),
   ssr: true,
   API: {
     graphql_headers: async () => {
@@ -43,6 +43,7 @@ interface RootContainerProps {
 function RootContainer({ children }: RootContainerProps): JSX.Element {
   const [splash, setSplash] = useState(true)
   const checkAuth = useAuthStore((state) => state.checkAuth)
+  const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
     let refTimeout: NodeJS.Timeout | null = null
@@ -73,41 +74,47 @@ function RootContainer({ children }: RootContainerProps): JSX.Element {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  if (!isClient) {
+    return <></>
+  }
+
   return (
-    <>
-      <NextUIProvider>
-        <NextThemesProvider>
-          <ToastProvider>
-            <ParallaxProvider>
-              <ReduxProvider store={store}>
-                <AlertProvider>
-                  {splash ? (
-                    <Splash />
-                  ) : (
-                    <Box
-                      className="body-container"
-                      css={{
-                        backgroundImage: `url(${BgBodyFigures.src})`,
-                        backgroundRepeat: 'no-repeat',
-                        backgroundAttachment: 'fixed',
-                        backgroundSize: 'cover',
-                        height: '100vh',
-                        overflow: 'auto',
-                        width: '100%'
-                      }}
-                    >
-                      <Navbar />
-                      <main>{children}</main>
-                      <Footer />
-                    </Box>
-                  )}
-                </AlertProvider>
-              </ReduxProvider>
-            </ParallaxProvider>
-          </ToastProvider>
-        </NextThemesProvider>
-      </NextUIProvider>
-    </>
+    <NextUIProvider>
+      <NextThemesProvider>
+        <ToastProvider>
+          <ParallaxProvider>
+            <ReduxProvider store={store}>
+              <AlertProvider>
+                {splash ? (
+                  <Splash />
+                ) : (
+                  <Box
+                    className="body-container"
+                    css={{
+                      backgroundImage: `url(${BgBodyFigures.src})`,
+                      backgroundRepeat: 'no-repeat',
+                      backgroundAttachment: 'fixed',
+                      backgroundSize: 'cover',
+                      height: '100vh',
+                      overflow: 'auto',
+                      width: '100%'
+                    }}
+                  >
+                    <Navbar />
+                    <main>{children}</main>
+                    <Footer />
+                  </Box>
+                )}
+              </AlertProvider>
+            </ReduxProvider>
+          </ParallaxProvider>
+        </ToastProvider>
+      </NextThemesProvider>
+    </NextUIProvider>
   )
 }
 export default RootContainer

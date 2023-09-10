@@ -1,4 +1,5 @@
 'use client'
+
 import { ACollaborator, ASocialNetwork } from '@/models'
 import {
   Button,
@@ -11,7 +12,6 @@ import {
   InputProps,
   Spacer
 } from '@nextui-org/react'
-import { useState } from 'react'
 import {
   Controller,
   ControllerProps,
@@ -26,10 +26,9 @@ import { MetadataScreens } from './Collaborator.constants'
 
 import { Box, ScreenPage } from '@/app/shared/ui'
 import { useCollaboratorStore } from '@/store'
-import { LogUtil } from '@/utils'
-import { Storage } from 'aws-amplify'
 import { TypeSocialNetwork } from 'blito-models'
 import clsx from 'clsx'
+import { useState } from 'react'
 import {
   BsFacebook,
   BsInstagram,
@@ -50,27 +49,12 @@ type FACollaborator = Omit<ACollaborator, 'socials'> & {
   socials: Array<FASocialNetwork>
 }
 
-const getStr = (str?: string | null) =>
-  (str || '')
-    .replace(/\s+/g, '') // Reemplaza espacios con guiones bajos
-    .replace(/\n+/g, '') // Reemplaza saltos de línea con guiones bajos
-    .toLowerCase() // Convierte todo a minúsculas
-
 const showToastSuccess = (
   message: string | React.ReactNode = 'Datos guardaos exitosamente'
 ) => {
   toast(message, {
     type: 'success'
   })
-}
-
-const getExtension = (name: string) => {
-  const partesDelNombre = name.split('.') || []
-  if (partesDelNombre.length > 1) {
-    return partesDelNombre.pop()?.toLowerCase()
-  } else {
-    return ''
-  }
 }
 
 const showToastError = (error: unknown) => {
@@ -131,7 +115,6 @@ const CollaboratorForm = ({
     handleSubmit,
     setValue: setFormData,
     getValues: getFormData,
-    watch: watchFormData,
     reset: resetFormData,
     control: controlFormData,
     formState: { errors, isValid: isValidForm }
@@ -154,40 +137,28 @@ const CollaboratorForm = ({
     state.update
   ])
 
-  const [profileImage, setProfileImage] = useState<File | null>(null)
+  const [urlSigned, setUrlSigned] = useState<string>(
+    collaboratorEdit?.photoUrl || ''
+  )
 
   const isUpdating = Boolean(collaboratorEdit?.id)
 
-  const onSubmit: SubmitHandler<FACollaborator> = async (formDataEvent) => {
+  const processData = async (
+    formDataEvent: FACollaborator,
+    options?: { updateOnlyFile?: boolean }
+  ) => {
     let response = null
     const { socials = [], ...formDataDB } = formDataEvent
 
-    /** Save file in S3 */
+    const photoUrl = options?.updateOnlyFile
+      ? formDataDB.photoUrl
+      : urlSigned || ''
 
     const result = {
       ...formDataDB,
       socials: socials.map(({ id: _, ...social }) => social),
-      photoUrl: ''
+      photoUrl
     } as ACollaborator
-
-    LogUtil.debug('onSubmit.formData', result)
-
-    return
-
-    if (profileImage) {
-      const extension = getExtension(
-        profileImage ? profileImage?.name || '' : ''
-      )
-      const name = `${getStr(result?.fullName)}-${getStr(
-        result?.username
-      )}.${extension}`
-      const pathName = `avatar-images/${name}`
-
-      const results3 = await Storage.put(pathName, profileImage, {
-        level: 'public',
-        contentType: profileImage?.type
-      })
-    }
 
     /** Update */
     if (result.id) {
@@ -210,19 +181,35 @@ const CollaboratorForm = ({
       return
     }
 
+    if (options?.updateOnlyFile) {
+      return
+    }
+
     resetFormData()
-    LogUtil.debug('onSubmit.formData', result)
     showToastSuccess()
     screenNavigation.pop()
+  }
+
+  const onSubmit: SubmitHandler<FACollaborator> = (formDataEvent) => {
+    processData(formDataEvent)
+  }
+
+  const handleUpdatePhoto = async (urlSigned: string) => {
+    setUrlSigned(urlSigned)
+    if (collaboratorEdit?.id) {
+      processData(
+        {
+          ...getFormData(),
+          photoUrl: urlSigned
+        },
+        { updateOnlyFile: true }
+      )
+    }
   }
 
   const handleCancel = () => {
     screenNavigation.pop()
   }
-
-  const currentSocials = watchFormData('socials') || []
-
-  LogUtil.debug('currentSocialsWatch', currentSocials)
 
   return (
     <>
@@ -238,11 +225,9 @@ const CollaboratorForm = ({
           className="flex flex-col gap-unit-xl pt-unit-lg"
         >
           <UploadFile
-            onChange={(file) => {
-              setProfileImage(file)
-            }}
-            file={profileImage}
-            defaultValue={collaboratorEdit?.photoUrl || ''}
+            onChange={handleUpdatePhoto}
+            defaultValue={urlSigned}
+            userId={collaboratorEdit?.id}
           />
 
           <InputControl

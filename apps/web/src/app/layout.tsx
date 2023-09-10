@@ -8,7 +8,9 @@ import { Amplify } from 'aws-amplify'
 import { getAwsExports } from 'blito-models'
 import { RootContainer } from './components'
 
-const configAws = getAwsExports()
+LogUtil.debug('Server App running in: ', process.env.NEXT_PUBLIC_ENV)
+
+const configAws = getAwsExports(process.env.NEXT_PUBLIC_ENV)
 
 /** This should be configured on Server side but not in the client(WEB) */
 Amplify.configure({
@@ -23,8 +25,6 @@ Amplify.configure({
     }
   }
 })
-
-LogUtil.debug('Server App running in: ', process.env.NEXT_PUBLIC_ENV)
 
 interface RootLayoutProps {
   children: React.ReactNode

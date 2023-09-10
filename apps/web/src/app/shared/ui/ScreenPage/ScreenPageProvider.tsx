@@ -1,6 +1,7 @@
 'use client'
 
 import { Box, BoxProps } from '@/app/shared/ui'
+import { LogUtil } from '@/utils'
 import clsx from 'clsx'
 import { AnimatePresence } from 'framer-motion'
 import {
@@ -113,6 +114,7 @@ const ScreenPageProvider = ({
       <Container className={className}>
         <AnimatePresence>
           {historyPage.map(({ page, component, props }, index) => {
+            LogUtil.debug('ScreenPageProvider.page', page)
             return (
               <ScreenPageContainer
                 isPreview={indexPreview >= 0 && indexPreview === index}

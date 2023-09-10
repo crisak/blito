@@ -1,4 +1,5 @@
 'use client'
+
 import { useAlert } from '@/app/shared/hooks'
 import { Box, ScreenPage, Text } from '@/app/shared/ui'
 import BlitoIconWhite from '@/assets/icons/blito-icon-white.png'
@@ -19,7 +20,6 @@ import {
   User
 } from '@nextui-org/react'
 
-import { LogUtil } from '@/utils'
 import { SocialNetwork, TypeSocialNetwork } from 'blito-models'
 import clsx from 'clsx'
 import { useEffect, useMemo, useState } from 'react'
@@ -164,7 +164,6 @@ const CollaboratorList = () => {
   }
 
   const handleEdit = (collaborator: ACollaborator) => {
-    LogUtil.debug('collaborator', collaborator)
     screenNavigation.push<{ collaborator: ACollaborator }>(
       SCREENS.formCollaborators,
       { collaborator }
@@ -440,25 +439,28 @@ const CollaboratorList = () => {
             }}
           </TableHeader>
           <TableBody
+            key="table-body"
             items={listFilter}
             isLoading={loading === 'list'}
             emptyContent={'No hay colaboradores'}
             loadingContent={<Spinner size="md" label="Cargando registros..." />}
           >
-            {(item: ACollaborator) => (
-              <TableRow>
-                {(columnKey: unknown) => {
-                  return (
-                    <TableCell>
-                      {renderCell(
-                        item,
-                        columnKey as keyof ACollaborator | 'actions'
-                      )}
-                    </TableCell>
-                  )
-                }}
-              </TableRow>
-            )}
+            {(item: ACollaborator) => {
+              return (
+                <TableRow key={item.id}>
+                  {(columnKey: unknown) => {
+                    return (
+                      <TableCell>
+                        {renderCell(
+                          item,
+                          columnKey as keyof ACollaborator | 'actions'
+                        )}
+                      </TableCell>
+                    )
+                  }}
+                </TableRow>
+              )
+            }}
           </TableBody>
         </Table>
       </ScreenPage.Body>

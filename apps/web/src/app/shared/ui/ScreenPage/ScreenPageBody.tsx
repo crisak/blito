@@ -1,9 +1,15 @@
-type ScreenPageBodyProps = {
-  children: React.ReactNode | React.ReactNode[]
-}
+import clsx from 'clsx'
 
-const ScreenPageBody = ({ children }: ScreenPageBodyProps) => {
-  return <div className="screen-body">{children}</div>
+type ScreenPageBodyProps = React.ComponentPropsWithRef<'div'>
+
+const ScreenPageBody = ({ className, ...props }: ScreenPageBodyProps) => {
+  return (
+    <div
+      key="screen-page-body"
+      className={clsx('screen-body', className)}
+      {...props}
+    />
+  )
 }
 
 export default ScreenPageBody
