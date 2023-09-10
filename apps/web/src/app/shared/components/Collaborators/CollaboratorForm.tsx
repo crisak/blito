@@ -1,6 +1,6 @@
 'use client'
 
-import { ACollaborator, ASocialNetwork } from '@/models'
+import { ACollaborator } from '@/models'
 import {
   Button,
   Divider,
@@ -39,15 +39,8 @@ import {
 } from 'react-icons/bs'
 import { LiaUserCheckSolid } from 'react-icons/lia'
 import { VscAdd } from 'react-icons/vsc'
+import { FACollaborator, FASocialNetwork } from './Collaborator.type'
 import UploadFile from './UploadFile'
-
-/** F = Form */
-
-type FASocialNetwork = ASocialNetwork & { id: string }
-
-type FACollaborator = Omit<ACollaborator, 'socials'> & {
-  socials: Array<FASocialNetwork>
-}
 
 const showToastSuccess = (
   message: string | React.ReactNode = 'Datos guardaos exitosamente'
@@ -143,16 +136,11 @@ const CollaboratorForm = ({
 
   const isUpdating = Boolean(collaboratorEdit?.id)
 
-  const processData = async (
-    formDataEvent: FACollaborator,
-    options?: { updateOnlyFile?: boolean }
-  ) => {
+  const processData = async (formDataEvent: FACollaborator) => {
     let response = null
     const { socials = [], ...formDataDB } = formDataEvent
 
-    const photoUrl = options?.updateOnlyFile
-      ? formDataDB.photoUrl
-      : urlSigned || ''
+    const photoUrl = urlSigned || formDataDB.photoUrl
 
     const result = {
       ...formDataDB,
@@ -181,10 +169,6 @@ const CollaboratorForm = ({
       return
     }
 
-    if (options?.updateOnlyFile) {
-      return
-    }
-
     resetFormData()
     showToastSuccess()
     screenNavigation.pop()
@@ -194,16 +178,10 @@ const CollaboratorForm = ({
     processData(formDataEvent)
   }
 
-  const handleUpdatePhoto = async (urlSigned: string) => {
+  const handleUpdatePhoto = async (urlSigned: string, _version?: number) => {
     setUrlSigned(urlSigned)
     if (collaboratorEdit?.id) {
-      processData(
-        {
-          ...getFormData(),
-          photoUrl: urlSigned
-        },
-        { updateOnlyFile: true }
-      )
+      setFormData('_version', _version || collaboratorEdit._version)
     }
   }
 
@@ -226,8 +204,7 @@ const CollaboratorForm = ({
         >
           <UploadFile
             onChange={handleUpdatePhoto}
-            defaultValue={urlSigned}
-            userId={collaboratorEdit?.id}
+            collaborator={collaboratorEdit}
           />
 
           <InputControl

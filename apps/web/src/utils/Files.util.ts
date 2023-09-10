@@ -22,4 +22,13 @@ export default class FilesUtil {
     )
     return keyFileName || ''
   }
+
+  static getExtension(filePath: string) {
+    const partesDelNombre = filePath.split('.') || []
+    if (partesDelNombre.length > 1) {
+      return partesDelNombre.pop()?.toLowerCase()
+    } else {
+      return ''
+    }
+  }
 }

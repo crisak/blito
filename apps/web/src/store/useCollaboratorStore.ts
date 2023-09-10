@@ -9,7 +9,14 @@ import { CreateCollaboratorInput } from 'blito-models'
 import { create } from 'zustand'
 
 interface CollaboratorStore {
-  loading: 'create' | 'update' | 'delete' | 'list' | 'previewDelete' | ''
+  loading:
+    | 'create'
+    | 'update'
+    | 'delete'
+    | 'list'
+    | 'previewDelete'
+    | 'photo'
+    | ''
   list: ACollaborator[]
   contentsByCollaborator: Map<ACollaborator['id'], ARContentByCollaborator[]>
 
@@ -20,8 +27,24 @@ interface CollaboratorStore {
   update: (collaborator: ACollaborator) => Promise<void>
   create: (collaborator: CreateCollaboratorInput) => Promise<void>
   remove: (collaborator: ACollaborator) => Promise<void>
+  updatePhoto: (collaborator: UpdatePhotoInput) => Promise<UpdatePhotoResult>
+  removePhoto: (collaborator: RmPhotoInput) => Promise<UpdatePhotoResult>
   reset: () => void
 }
+
+type UpdatePhotoInput = UpdatePhoto & {
+  file: File
+}
+
+type RmPhotoInput = UpdatePhoto & {
+  urlSigned: string
+}
+
+type UpdatePhotoResult = UpdatePhoto & { urlSigned: string }
+
+type UpdatePhoto = Partial<Pick<ACollaborator, 'id' | '_version'>>
+
+const PATH_FILE_AVATAR = 'avatar-images'
 
 const useCollaboratorStore = create<CollaboratorStore>((set, get) => {
   const collaboratorSrv = CollaboratorService.getInstance()
@@ -181,6 +204,150 @@ const useCollaboratorStore = create<CollaboratorStore>((set, get) => {
 
       set({ contentsByCollaborator: contentsByTag })
       return contents
+    },
+
+    updatePhoto: async (photoCollaborator) => {
+      set({ loading: 'photo' })
+
+      const { file, id, _version } = photoCollaborator
+
+      const extension = FilesUtil.getExtension(file.name)
+      const fileIdUnique = Date.now().toString()
+      let pathFile = `${PATH_FILE_AVATAR}/${fileIdUnique}/${extension}`
+
+      if (id) {
+        pathFile = `${PATH_FILE_AVATAR}/${id}.${extension}`
+      }
+
+      const result = await Storage.put(pathFile, file, {
+        level: 'public',
+        contentType: file?.type
+      }).catch((error) => {
+        LogUtil.errorDetail('Error upload to s3', error, {
+          pathFile,
+          level: 'public',
+          contentType: file?.type
+        })
+
+        set({ loading: '' })
+
+        return Promise.reject(error)
+      })
+
+      const urlSigned = await Storage.get(pathFile, {
+        level: 'public',
+        validateObjectExistence: true
+      }).catch((error) => {
+        LogUtil.errorDetail('Error get url signed', error, {
+          key: result.key,
+          level: 'public'
+        })
+
+        return ''
+      })
+
+      if (id) {
+        const resultCollaborator = await collaboratorSrv
+          .update({
+            id,
+            _version,
+            photoUrl: pathFile
+          })
+          .catch((err) => {
+            set({ loading: '' })
+            return Promise.reject(err)
+          })
+
+        set((state) => ({
+          list: state.list.map((collaborator) => {
+            if (collaborator.id === id) {
+              return {
+                ...collaborator,
+                photoUrl: urlSigned,
+                _version: resultCollaborator._version
+              }
+            }
+
+            return collaborator
+          }),
+          loading: ''
+        }))
+
+        return {
+          id: resultCollaborator.id,
+          urlSigned,
+          _version: resultCollaborator._version
+        }
+      }
+
+      set({ loading: '' })
+      return {
+        id: '',
+        urlSigned,
+        _version: 0
+      }
+    },
+
+    removePhoto: async (photoCollaborator) => {
+      set({ loading: 'photo' })
+
+      const { urlSigned, id, _version } = photoCollaborator
+
+      let pathFile = FilesUtil.getKey(urlSigned)
+
+      await Storage.remove(pathFile, {
+        level: 'public'
+      }).catch((error) => {
+        LogUtil.errorDetail('Error remove file in s3', error, {
+          pathFile,
+          level: 'public'
+        })
+
+        set({ loading: '' })
+
+        return Promise.reject(error)
+      })
+
+      if (id) {
+        const resultCollaborator = await collaboratorSrv
+          .update({
+            id,
+            _version,
+            photoUrl: ''
+          })
+          .catch((err) => {
+            set({ loading: '' })
+            return Promise.reject(err)
+          })
+
+        set((state) => ({
+          list: state.list.map((collaborator) => {
+            if (collaborator.id === id) {
+              return {
+                ...collaborator,
+                photoUrl: '',
+                _version: resultCollaborator._version
+              }
+            }
+
+            return collaborator
+          }),
+          loading: ''
+        }))
+
+        return {
+          id: resultCollaborator.id,
+          urlSigned: '',
+          _version: resultCollaborator._version
+        }
+      }
+
+      set({ loading: '' })
+      return {
+        id: '',
+        urlSigned: '',
+        _version: 0
+      }
     },
 
     reset: () => {

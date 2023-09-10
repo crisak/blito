@@ -1,9 +1,9 @@
 'use client'
 
 import { Text } from '@/app/shared/ui'
-import { FilesUtil, LogUtil } from '@/utils'
+import { ACollaborator } from '@/models'
+import { useCollaboratorStore } from '@/store'
 import { Avatar, Button } from '@nextui-org/react'
-import { Storage } from 'aws-amplify'
 import clsx from 'clsx'
 import { useCallback, useState } from 'react'
 import { useDropzone } from 'react-dropzone'
@@ -18,26 +18,28 @@ const initialErrors = {
 }
 
 type UploadFileProps = {
-  onChange?: (file: string) => void
-  defaultValue?: string
-  userId?: string
+  onChange?: (file: string, _version?: number) => void
+  collaborator?: ACollaborator
 }
 
-const pathFileAvatar = 'avatar-images'
-
 /** https://www.npmjs.com/package/react-advanced-cropper */
-// const UploadFile = ({ onChange, defaultValue, value }: UploadFileProps) => {
-const fileId = Date.now().toString()
 
-const UploadFile = ({ defaultValue, onChange, userId }: UploadFileProps) => {
-  const [urlSigned, setUrlSigned] = useState<string>(defaultValue || '')
+const UploadFile = ({
+  collaborator: collaboratorEdit,
+  onChange
+}: UploadFileProps) => {
+  const [urlSigned, setUrlSigned] = useState<string>(
+    collaboratorEdit?.photoUrl || ''
+  )
   const [loading, setLoading] = useState(false)
   const [errors, setErrors] = useState(initialErrors)
+  const [uploadFile, removePhoto] = useCollaboratorStore((state) => [
+    state.updatePhoto,
+    state.removePhoto
+  ])
 
   const onDrop = useCallback(async (acceptedFiles: File[]) => {
     const file = acceptedFiles[0]
-
-    LogUtil.debug('onDrop', file)
 
     if (file.size > MAX_FILE_SIZE) {
       setErrors((prev) => ({
@@ -49,50 +51,25 @@ const UploadFile = ({ defaultValue, onChange, userId }: UploadFileProps) => {
     }
 
     setLoading(true)
-
-    const extension = getExtension(file.name)
-
-    const name = `${userId || fileId}.${extension}`
-    const pathFileName = `${pathFileAvatar}/${name}`
-
-    const result = await Storage.put(pathFileName, file, {
-      level: 'public',
-      contentType: file?.type
+    const fileDetail = await uploadFile({
+      id: collaboratorEdit?.id || '',
+      _version: collaboratorEdit?._version || 0,
+      file
     }).catch((error) => {
-      LogUtil.debug('Blob file', file)
-
-      LogUtil.errorDetail('Error upload to s3', error, {
-        pathName: pathFileName,
-        level: 'public',
-        contentType: file?.type
-      })
-
       showToastError(error)
-      return { key: '' }
+      return null
     })
 
-    if (!result.key) {
+    if (!fileDetail) {
       setLoading(false)
       return
     }
 
-    const urlSigned = await Storage.get(result.key, {
-      level: 'public',
-      validateObjectExistence: true
-    }).catch((error) => {
-      LogUtil.errorDetail('Error get url signed', error, {
-        key: result.key,
-        level: 'public'
-      })
-
-      return ''
-    })
-
     setErrors(initialErrors)
-    setUrlSigned(urlSigned)
+    setUrlSigned(fileDetail.urlSigned)
 
     if (typeof onChange === 'function') {
-      onChange(urlSigned)
+      onChange(fileDetail.urlSigned || '', fileDetail?._version)
     }
 
     setLoading(false)
@@ -100,23 +77,23 @@ const UploadFile = ({ defaultValue, onChange, userId }: UploadFileProps) => {
   }, [])
 
   const removeFile = async () => {
-    setLoading(true)
+    try {
+      setLoading(true)
 
-    await Storage.remove(FilesUtil.getKey(urlSigned), {
-      level: 'public'
-    }).catch((error) => {
-      LogUtil.errorDetail('Error remove file', error, {
-        key: urlSigned,
-        level: 'public'
+      const result = await removePhoto({
+        urlSigned,
+        id: collaboratorEdit?.id || '',
+        _version: collaboratorEdit?._version || 0
       })
 
-      showToastError(error)
-    })
+      if (typeof onChange === 'function') {
+        onChange(result.urlSigned || '', result?._version)
+      }
 
-    setLoading(false)
-    setUrlSigned('')
-    if (typeof onChange === 'function') {
-      onChange('')
+      setLoading(false)
+      setUrlSigned('')
+    } catch (error) {
+      showToastError(error)
     }
   }
 
@@ -175,15 +152,6 @@ const UploadFile = ({ defaultValue, onChange, userId }: UploadFileProps) => {
       )}
     </div>
   )
-}
-
-function getExtension(name: string) {
-  const partesDelNombre = name.split('.') || []
-  if (partesDelNombre.length > 1) {
-    return partesDelNombre.pop()?.toLowerCase()
-  } else {
-    return ''
-  }
 }
 
 function showToastError(error: unknown) {
