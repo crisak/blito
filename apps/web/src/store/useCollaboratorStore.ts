@@ -23,7 +23,7 @@ interface CollaboratorStore {
   getContentsByCollaborator: (
     collaboratorId: ACollaborator['id']
   ) => Promise<ARContentByCollaborator[]>
-  getAll: () => Promise<void>
+  getAll: (options?: { refresh?: boolean }) => Promise<void>
   update: (collaborator: ACollaborator) => Promise<void>
   create: (collaborator: CreateCollaboratorInput) => Promise<void>
   remove: (collaborator: ACollaborator) => Promise<void>
@@ -54,12 +54,13 @@ const useCollaboratorStore = create<CollaboratorStore>((set, get) => {
     list: [],
     contentsByCollaborator: new Map(),
 
-    getAll: async () => {
+    getAll: async (opt) => {
       const { list } = get()
 
-      if (list.length > 0) {
+      if (!opt?.refresh && list.length > 0) {
         return
       }
+
       set({ loading: 'list' })
 
       const newList = await collaboratorSrv.getAll().catch((err) => {
@@ -76,7 +77,12 @@ const useCollaboratorStore = create<CollaboratorStore>((set, get) => {
           const urlImage = await Storage.get(collaborator.photoUrl, {
             level: 'public',
             validateObjectExistence: true
-          }).catch(() => {
+          }).catch((err) => {
+            LogUtil.warn('Fail load file', err, '\n🔎 Payload:', {
+              url: collaborator.photoUrl,
+              level: 'public',
+              validateObjectExistence: true
+            })
             return ''
           })
 

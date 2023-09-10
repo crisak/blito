@@ -18,7 +18,8 @@ const nextConfig = {
       'www.tu-moda-online.es' /** TODO - remove */,
       'www.okchicas.com' /** TODO - remove */,
       'scontent-bog1-1.xx.fbcdn.net', // facebook sources
-      'cdn.iconscout.com' /** TODO delete temporal profile image collaborator */
+      'cdn.iconscout.com' /** TODO delete temporal profile image collaborator */,
+      'blitoa1669ad374a84249be178ad12241cd9b133401-dev.s3.us-east-1.amazonaws.com'
     ]
   }
 }

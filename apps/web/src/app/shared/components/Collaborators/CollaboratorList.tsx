@@ -35,6 +35,7 @@ import {
   BsYoutube
 } from 'react-icons/bs'
 import { IoIosAdd } from 'react-icons/io'
+import { VscRefresh } from 'react-icons/vsc'
 import { toast } from 'react-toastify'
 import BodyModalError, {
   type CollaboratorsWithContents
@@ -354,6 +355,18 @@ const CollaboratorList = () => {
         }
         actionsContent={
           <div className="flex gap-3">
+            <Button
+              isLoading={loading === 'list'}
+              color="primary"
+              isIconOnly
+              size="sm"
+              variant="light"
+              onClick={() => {
+                getAll({ refresh: true })
+              }}
+            >
+              {!loading && <VscRefresh size={20} />}
+            </Button>
             {selectedKeys.size > 0 && (
               <Button
                 variant="light"

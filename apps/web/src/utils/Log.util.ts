@@ -9,6 +9,10 @@ export default class LogUtil {
     console.debug(`🧪 ${title}:`, ...options)
   }
 
+  static warn(title: string, ...options: unknown[]) {
+    console.warn(`🚧 ${title}:`, ...options)
+  }
+
   static error(title: string, ...options: unknown[]) {
     console.error(`🚨 ${title}: `, ...options)
   }
