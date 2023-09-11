@@ -1,3 +1,5 @@
+'use client'
+
 export type BoxProps = {
   css?: React.CSSProperties
 } & React.ComponentPropsWithoutRef<'div'>

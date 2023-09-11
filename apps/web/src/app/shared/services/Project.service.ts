@@ -1,8 +1,13 @@
-import { handleError, GraphQLUtil, LogUtil } from '@/utils'
 import { AContent, AFullContent } from '@/models/ModelsAdapter.model'
+import { GraphQLUtil, handleError, LogUtil } from '@/utils'
 import { GraphQLQuery, GRAPHQL_AUTH_MODE } from '@aws-amplify/api'
 
-import { ListContentsQuery, GetContentQuery } from 'blito-models'
+import {
+  GetContentQuery,
+  ListContentsQuery,
+  ListContentsQueryVariables,
+  ModelContentFilterInput
+} from 'blito-models'
 import GraphQLService from './GraphQL.Service'
 
 export default class ProjectService extends GraphQLService {
@@ -101,6 +106,94 @@ export default class ProjectService extends GraphQLService {
           payloadReq,
           { prettyError: true }
         )
+        throw response
+      }
+
+      return GraphQLUtil.removeDefaultPropsOfList<AContent>(
+        response.data.listContents.items
+      )
+    } catch (error) {
+      throw handleError(error)
+    }
+  }
+
+  async getAll({ nextToken = undefined } = {}): Promise<AContent[]> {
+    try {
+      const listContents = /* GraphQL */ `
+        query ListContents(
+          $filter: ModelContentFilterInput
+          $limit: Int
+          $nextToken: String
+        ) {
+          listContents(filter: $filter, limit: $limit, nextToken: $nextToken) {
+            items {
+              id
+              type
+              time
+              size
+              project {
+                name
+                description
+              }
+              files {
+                data
+                type
+                mimeType
+                caption
+                size
+                isBanner
+              }
+              date
+              location {
+                country
+                state
+                city
+                street
+                position {
+                  latitude
+                  longitude
+                }
+              }
+              colors
+              views
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              contentCategoryId
+            }
+            nextToken
+            startedAt
+          }
+        }
+      `
+
+      const payloadReq = {
+        query: listContents,
+        variables: {
+          filter: {} as ModelContentFilterInput
+          // nextToken
+        } as ListContentsQueryVariables,
+        authMode: GRAPHQL_AUTH_MODE.API_KEY
+      }
+
+      /**
+       * {Action}-{Name}-{Type}
+       *  Update  Content Mutation
+       */
+      const response = await this.getAPI()
+        .graphql<GraphQLQuery<ListContentsQuery>>(payloadReq)
+        .catch((err) => {
+          LogUtil.errorDetail('ProjectService.getAll', err, payloadReq, {
+            prettyError: err?.errors?.length
+          })
+          return Promise.reject(err)
+        })
+
+      if (!response || response?.errors || !response?.data?.listContents) {
+        LogUtil.errorDetail('ProjectService.getAll', response, payloadReq, {
+          prettyError: true
+        })
         throw response
       }
 

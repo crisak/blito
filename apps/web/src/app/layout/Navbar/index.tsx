@@ -27,7 +27,7 @@ const linksPublic = [
   },
   {
     label: 'Galerías',
-    route: '/galeria'
+    route: '/galerias'
   },
   {
     label: 'Contacto',

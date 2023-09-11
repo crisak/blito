@@ -3,7 +3,7 @@ import { Container } from '@/app/shared/ui'
 type GalleryLayoutProps = { children: React.ReactNode }
 
 const GalleryLayout = ({ children }: GalleryLayoutProps) => {
-  return <Container>{children}</Container>
+  return <Container className="pt-unit-lg">{children}</Container>
 }
 
 export default GalleryLayout
