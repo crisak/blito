@@ -93,6 +93,7 @@ function RootContainer({ children }: RootContainerProps): JSX.Element {
                   <Splash />
                 ) : (
                   <Box
+                    id="body-container"
                     className="body-container"
                     css={{
                       backgroundImage: `url(${BgBodyFigures.src})`,
