@@ -24,7 +24,7 @@ const GalleriesPage = async () => {
       <header>
         <Text as="h2">Galerías</Text>
       </header>
-      <section className="mx-auto grid auto-rows-[10px] grid-cols-[repeat(auto-fill,_180px)] justify-center sm:grid-cols-[repeat(auto-fill,_250px)]">
+      <section className="sm:px-unit-auto mx-auto grid auto-rows-[10px] grid-cols-[repeat(auto-fill,_183px)] justify-center px-unit-sm py-unit-lg sm:grid-cols-[repeat(auto-fill,_250px)]">
         {contents.map(({ files, id, project }, index) => {
           let mainFile = files.find((fil) => fil?.isBanner)
           mainFile =
@@ -63,8 +63,9 @@ const GalleriesPage = async () => {
             <div
               key={id}
               className={clsx(
-                'group/card-content relative mx-unit-md my-unit-lg flex items-center justify-center transition-background hover:cursor-pointer hover:bg-content1/50',
-                'overflow-hidden rounded-lg',
+                'group/card-content relative flex items-center justify-center transition-background hover:cursor-pointer hover:bg-content1/50',
+                'overflow-hidden rounded-2xl',
+                'mx-unit-1 my-unit-1 sm:mx-unit-md sm:my-unit-lg',
                 {
                   'backdrop-saturate-125 opacity-20 blur-[1.5px] backdrop-blur-sm':
                     !srcImage,
