@@ -13,7 +13,9 @@ const FilterGalleries = () => {
       <Input
         className="sm:max-w-[170px]"
         type="search"
+        size="lg"
         placeholder="Nombre de proyecto"
+        variant="underlined"
         isClearable
         startContent={
           <VscSearch className="pointer-events-none flex-shrink-0 text-2xl text-default-400" />
@@ -23,9 +25,9 @@ const FilterGalleries = () => {
       {/* <div className="filters-select flex w-full gap-unit-lg"> */}
       <Select
         label="Favorite Animal"
-        placeholder="Select an animal"
         selectionMode="multiple"
         className="sm:max-w-[170px]"
+        variant="underlined"
         fullWidth
       >
         {animals.map((animal) => (
@@ -37,9 +39,9 @@ const FilterGalleries = () => {
 
       <Select
         label="Favorite Animal"
-        placeholder="Select an animal"
         selectionMode="multiple"
         className="sm:max-w-[170px]"
+        variant="underlined"
         fullWidth
       >
         {animals.map((animal) => (
@@ -51,9 +53,9 @@ const FilterGalleries = () => {
 
       <Select
         label="Favorite Animal"
-        placeholder="Select an animal"
         selectionMode="multiple"
         className="sm:max-w-[170px]"
+        variant="underlined"
         fullWidth
       >
         {animals.map((animal) => (

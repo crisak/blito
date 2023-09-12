@@ -23,7 +23,7 @@ const HeaderGallery = () => {
     // top-h-navbar sticky
     <ScrollHeader
       scrollThreshold={200}
-      className="sticky top-h-navbar z-20 h-[72px] sm:h-[108px]"
+      className="sticky top-h-navbar z-20 h-[72px] sm:h-[60px]"
     >
       {(scrollTop, scrollThreshold, currentHeight) => {
         let heightHeaderDefault = 108
@@ -46,7 +46,7 @@ const HeaderGallery = () => {
                 exit="exitScreen"
                 transition={{ duration: 0.25, ease: 'easeInOut' }}
               >
-                <Container className="relative z-20 flex justify-between gap-unit-lg px-unit-md py-unit-md sm:py-unit-lg">
+                <Container className="relative z-20 flex justify-between gap-unit-lg px-unit-md py-unit-md sm:items-center sm:py-unit-lg">
                   <Text as="h2">Galerías</Text>
                   <div className="sm:hidden">
                     <Button
@@ -64,7 +64,7 @@ const HeaderGallery = () => {
                       'absolute right-0 top-[72px] w-full sm:relative sm:block md:top-auto',
                       {
                         hidden: !showFilter,
-                        'z-20 rounded-b-2xl bg-background/90 px-unit-md py-unit-2xl backdrop-blur-lg backdrop-saturate-150 transition-all':
+                        'z-20 rounded-b-2xl bg-content1/95 px-unit-md py-unit-2xl backdrop-blur-lg backdrop-saturate-150 transition-all':
                           showFilter
                       }
                     )}
