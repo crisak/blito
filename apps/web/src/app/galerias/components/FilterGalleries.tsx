@@ -7,25 +7,25 @@ import { animals } from './data'
 const FilterGalleries = () => {
   return (
     <ScrollShadow
-      className="filter-galleries flex w-full flex-row-reverse items-center gap-unit-lg"
+      className="filter-galleries flex flex-col items-center gap-unit-lg px-unit-0 sm:flex-row-reverse"
       hideScrollBar
-      orientation="horizontal"
     >
       <Input
-        className="mr-unit-1 max-w-xs"
+        className="sm:max-w-[170px]"
         type="search"
         placeholder="Nombre de proyecto"
         isClearable
         startContent={
           <VscSearch className="pointer-events-none flex-shrink-0 text-2xl text-default-400" />
         }
+        fullWidth
       />
       {/* <div className="filters-select flex w-full gap-unit-lg"> */}
       <Select
         label="Favorite Animal"
         placeholder="Select an animal"
         selectionMode="multiple"
-        className="max-w-[170px]"
+        className="sm:max-w-[170px]"
         fullWidth
       >
         {animals.map((animal) => (
@@ -39,7 +39,7 @@ const FilterGalleries = () => {
         label="Favorite Animal"
         placeholder="Select an animal"
         selectionMode="multiple"
-        className="max-w-[170px]"
+        className="sm:max-w-[170px]"
         fullWidth
       >
         {animals.map((animal) => (
@@ -53,7 +53,7 @@ const FilterGalleries = () => {
         label="Favorite Animal"
         placeholder="Select an animal"
         selectionMode="multiple"
-        className="max-w-[170px]"
+        className="sm:max-w-[170px]"
         fullWidth
       >
         {animals.map((animal) => (
