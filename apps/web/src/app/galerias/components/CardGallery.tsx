@@ -13,28 +13,17 @@ import { PiCopySimpleFill } from 'react-icons/pi'
 
 type CardGalleryProps = AContent & { index: number }
 
-const CardGallery = ({ files, id, project, index }: CardGalleryProps) => {
-  let mainFile = files.find((fil) => fil?.isBanner)
+const CardGallery = ({ index, ...gallery }: CardGalleryProps) => {
+  const [currentPreview, setCurrentPreview] = useState<
+    RmDefaultParameter<File_>
+  >(getFile(gallery))
 
-  if (!mainFile) {
-    mainFile = files.find((fil) => fil?.data)
-  }
-
-  /** By default is URL src */
-  let src = mainFile?.data
-
-  if (mainFile?.type === TypeFile.BASE64) {
-    src = `data:${mainFile?.mimeType};base64,${mainFile?.data}`
-  }
-
-  const defaultAltImage = project?.name || project?.description
-
-  const allFiles = files
-    .filter(
-      (fil) => fil?.data?.includes('http')
-      // fil?.type === TypeFile.IMAGE && fil.data?.includes('http')
-    )
-    .filter((fil) => fil?.data !== src)
+  // const allFiles = gallery.files
+  //   .filter(
+  //     (fil) => fil?.data?.includes('http')
+  //     // fil?.type === TypeFile.IMAGE && fil.data?.includes('http')
+  //   )
+  //   .filter((fil) => fil?.data !== currentPreview.data)
 
   const icon = <HiVideoCamera size={26} className="text-foreground-600" />
 
@@ -44,19 +33,20 @@ const CardGallery = ({ files, id, project, index }: CardGalleryProps) => {
 
   return (
     <div
-      key={id}
+      key={gallery.id}
       className={clsx(
-        'group/card-content relative flex items-center justify-center transition-background hover:cursor-pointer hover:bg-content1/50',
+        'group/card-content relative flex items-center justify-center transition-background',
         'overflow-hidden rounded-2xl',
         'mx-unit-1 my-unit-1 sm:mx-unit-md sm:my-unit-lg',
         {
           'backdrop-saturate-125 opacity-20 blur-[1.5px] backdrop-blur-sm':
-            !src,
+            !currentPreview.data,
           // TODO - Change validation add new property of Database
           'row-end-[span_22] sm:row-end-[span_26]':
-            mainFile?.type === TypeFile.VIDEO_YOUTUBE || !src, // small, for Video youtube
+            currentPreview?.type === TypeFile.VIDEO_YOUTUBE ||
+            !currentPreview.data, // small, for Video youtube
           'row-end-[span_30] sm:row-end-[span_37]':
-            mainFile?.type !== TypeFile.VIDEO_YOUTUBE // medium
+            currentPreview?.type !== TypeFile.VIDEO_YOUTUBE // medium
           // 'row-end-[span_45]': false // large
         }
       )}
@@ -65,50 +55,112 @@ const CardGallery = ({ files, id, project, index }: CardGalleryProps) => {
         {index % 2 === 0 ? icon : iconFile}
       </span>
       <PreviewFile
-        file={{
-          ...mainFile,
-          data: src || '',
-          type: mainFile?.type || TypeFile.IMAGE,
-          caption:
-            mainFile?.caption || `Galería del proyecto ${defaultAltImage}`,
-          mimeType: mainFile?.mimeType || ''
-        }}
+        file={getFile(gallery, currentPreview)}
         className={clsx(
-          'transition-all group-hover/card-content:brightness-50',
+          // hover:bg-content1/50
+          //group-hover/card-content:brightness-50
+          'transition-all group-hover/card-content:cursor-pointer ',
           {
-            'h-[400px] w-[213px] object-cover object-center': src,
-            'h-full w-full': !src
+            'h-[400px] w-[213px] object-cover object-center':
+              currentPreview.data,
+            'h-full w-full': !currentPreview.data
           }
         )}
       />
-      {src && allFiles.length > 0 && (
+      {currentPreview.data && gallery.files.length > 0 && (
         <ScrollShadow
           hideScrollBar
           orientation="horizontal"
-          className="absolute bottom-0 z-10 flex gap-unit-md bg-content1/50 p-unit-sm backdrop-blur-sm backdrop-saturate-50"
+          className="absolute bottom-0 z-20 flex h-[70px] w-full items-center gap-unit-sm bg-content1/50 px-unit-sm backdrop-blur-sm backdrop-saturate-50"
         >
-          {allFiles.map((fil) => (
-            <Image
-              className="rounded-lg"
-              src={fil?.data || ''}
-              alt={fil?.caption || ''}
-              width={50}
-              height={50}
-            />
-          ))}
+          {gallery.files.map((fil) => {
+            const fileFilter = getFile(gallery, fil)
+            const isActiveFile = isEqualFile(fileFilter, currentPreview)
+
+            return (
+              <PreviewFile
+                thumbnail
+                file={fileFilter}
+                onClick={() => setCurrentPreview(fileFilter)}
+                className={clsx(
+                  {
+                    'border-primary/50': isActiveFile,
+                    'border-transparent': !isActiveFile
+                  },
+                  'h-[50px] w-[50px] rounded-lg border-3 transition-all hover:cursor-pointer hover:brightness-50'
+                )}
+              />
+            )
+          })}
         </ScrollShadow>
       )}
     </div>
   )
 }
 
+function getFile(
+  gallery: AContent,
+  findFile?: RmDefaultParameter<File_> | null
+): RmDefaultParameter<File_> {
+  let mainFile = gallery.files.find((fil) => fil?.isBanner)
+
+  if (findFile) {
+    mainFile = gallery.files.find((fil) => isEqualFile(fil, findFile))
+  }
+
+  if (!mainFile && !findFile) {
+    mainFile = gallery.files.find((fil) => fil?.data)
+  }
+
+  /** By default is URL src */
+  let src = mainFile?.data
+
+  if (mainFile?.type === TypeFile.BASE64) {
+    src = `data:${mainFile?.mimeType};base64,${mainFile?.data}`
+  }
+
+  const defaultAltImage =
+    gallery?.project?.name || gallery?.project?.description
+
+  return {
+    ...mainFile,
+    data: src || '',
+    type: mainFile?.type || TypeFile.IMAGE,
+    caption: mainFile?.caption || `Galería del proyecto ${defaultAltImage}`,
+    mimeType: mainFile?.mimeType || ''
+  }
+}
+
+function isEqualFile(
+  file1: RmDefaultParameter<File_> | null,
+  file2: RmDefaultParameter<File_> | null
+) {
+  const file1_ = file1 || { data: '', type: '', mimeType: '' }
+  const file2_ = file2 || { data: '', type: '', mimeType: '' }
+
+  const keyFile1 = file1_?.data + file1_?.type + file1_?.mimeType
+  const keyFile2 = file2_?.data + file2_?.type + file2_?.mimeType
+
+  return keyFile1 === keyFile2
+}
+
 function PreviewFile({
   file,
-  className: commonClassNames
+  className: commonClassNames,
+  onClick,
+  thumbnail
 }: {
   file: RmDefaultParameter<File_>
   className?: string
+  thumbnail?: boolean
+  onClick?: () => void
 }) {
+  const handleClick = () => {
+    if (onClick) {
+      onClick()
+    }
+  }
+
   if (!file.data) {
     return (
       <Image
@@ -117,15 +169,22 @@ function PreviewFile({
         className={commonClassNames}
         width={213}
         height={400}
+        onClick={handleClick}
       />
     )
   }
 
-  if (file.type === TypeFile.VIDEO_YOUTUBE && file.data.includes('iframe')) {
+  const hasIframe = file.data.includes('iframe')
+
+  if ((file.type === TypeFile.VIDEO_YOUTUBE && hasIframe) || hasIframe) {
     let iframeString = file.data
-    /** Replace dimensions to Iframe, width=2400px18, height=220px */
-    iframeString = iframeString.replace(/width="\d+"/, '400px')
-    iframeString = iframeString.replace(/height="\d+"/, '220px')
+    /**
+     * Replace dimensions to Iframe, width=2400px18, height=220px
+     * <iframe width="1496" height="664" src="https://www.youtube.com/embed/BocyC81iaVg" title="La Logia Pururú Parará (Col) 3. Pedro Chapman" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+     */
+
+    iframeString = iframeString.replace(/width="([\d]+)"/, ' width="220"')
+    iframeString = iframeString.replace(/height="([\d]+)"/, 'height="220"')
 
     /**
      * Edit params to iframe set `rel` and `modestbranding`
@@ -137,16 +196,29 @@ function PreviewFile({
       'src="https://www.youtube.com/embed/$1?rel=0&modestbranding=1"'
     )
 
-    /** Add class to Iframe */
     iframeString = iframeString.replace(
       /<iframe /,
       '<iframe class="w-full h-[220px]"'
     )
 
+    /** Add class to Iframe */
+    if (thumbnail) {
+      iframeString = iframeString.replace(
+        /<iframe /,
+        '<iframe class="w-[50px] h-[50px]"'
+      )
+    }
+
+    console.log('Iframe:', iframeString)
+
     /** Render iframe string to React component */
     return (
       <div
+        onClick={handleClick}
         className={clsx(
+          {
+            [commonClassNames || '']: thumbnail
+          },
           'transition-all group-hover/card-content:brightness-50'
         )}
         dangerouslySetInnerHTML={{ __html: iframeString }}
@@ -157,6 +229,7 @@ function PreviewFile({
   if (file.mimeType.includes('image')) {
     return (
       <Image
+        onClick={handleClick}
         src={file.data}
         alt={file?.caption || ''}
         className={commonClassNames}
@@ -169,11 +242,10 @@ function PreviewFile({
   if (file.mimeType.includes('video')) {
     return (
       <VideoPreview
+        onClick={handleClick}
         src={file.data || ''}
         className={commonClassNames}
         type={file.mimeType}
-        width={213}
-        height={400}
         muted
         playsInline
       />
@@ -183,6 +255,7 @@ function PreviewFile({
   /** Default image */
   return (
     <Image
+      onClick={handleClick}
       src={ImageDefaultBlito.src}
       alt={file?.caption || ''}
       className={commonClassNames}
