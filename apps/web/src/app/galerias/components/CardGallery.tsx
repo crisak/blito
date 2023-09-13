@@ -87,7 +87,7 @@ const CardGallery = ({ index, ...gallery }: CardGalleryProps) => {
                     'border-primary/50': isActiveFile,
                     'border-transparent': !isActiveFile
                   },
-                  'h-[50px] w-[50px] rounded-lg border-3 transition-all hover:cursor-pointer hover:brightness-50'
+                  'aspect-square h-[50px] w-[50px] rounded-lg border-3 object-cover object-center transition-all hover:cursor-pointer hover:brightness-50'
                 )}
               />
             )
@@ -114,8 +114,9 @@ function getFile(
 
   /** By default is URL src */
   let src = mainFile?.data
+  const hasHttp = src?.includes('http')
 
-  if (mainFile?.type === TypeFile.BASE64) {
+  if (mainFile?.type === TypeFile.BASE64 && !hasHttp) {
     src = `data:${mainFile?.mimeType};base64,${mainFile?.data}`
   }
 
