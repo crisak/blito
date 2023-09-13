@@ -20,20 +20,26 @@ const variants = {
 const HeaderGallery = () => {
   const [showFilter, setShowFilter] = useState(false)
   return (
-    // top-h-navbar sticky
     <ScrollHeader
-      scrollThreshold={200}
-      className="sticky top-h-navbar z-20 h-[72px] sm:h-[60px]"
+      scrollThreshold={300}
+      className="sticky top-h-navbar z-20 h-[calc(theme(space.h-navbar)_+_10px)]"
     >
-      {(scrollTop, scrollThreshold, currentHeight) => {
+      {({ scrollThreshold, scrollTop, currentHeight }) => {
+        console.log({ scrollThreshold, scrollTop, currentHeight })
+
         let heightHeaderDefault = 108
-        let scrollTop_ = scrollTop
+        let scrollTop_ = scrollTop.current
 
         if (currentHeight < 20) {
           scrollTop_ += heightHeaderDefault
         }
 
-        const hideContainer = scrollTop_ >= scrollThreshold && !showFilter
+        let hideContainer = scrollTop_ >= scrollThreshold && !showFilter
+
+        if (scrollTop.previous > scrollTop.current) {
+          hideContainer = false
+        }
+
         return (
           <AnimatePresence>
             {hideContainer ? null : (
@@ -46,7 +52,7 @@ const HeaderGallery = () => {
                 exit="exitScreen"
                 transition={{ duration: 0.25, ease: 'easeInOut' }}
               >
-                <Container className="relative z-20 flex justify-between gap-unit-lg px-unit-md py-unit-md sm:items-center sm:py-unit-lg">
+                <Container className="relative z-20 flex h-h-navbar justify-between gap-unit-lg px-unit-md py-unit-md sm:items-center sm:py-unit-lg">
                   <Text as="h2">Galerías</Text>
                   <div className="sm:hidden">
                     <Button
@@ -61,7 +67,7 @@ const HeaderGallery = () => {
 
                   <div
                     className={clsx(
-                      'absolute right-0 top-[72px] w-full sm:relative sm:block md:top-auto',
+                      'absolute right-0 top-h-navbar w-full sm:relative sm:block md:top-auto',
                       {
                         hidden: !showFilter,
                         'z-20 rounded-b-2xl bg-content1/95 px-unit-md py-unit-2xl backdrop-blur-lg backdrop-saturate-150 transition-all':

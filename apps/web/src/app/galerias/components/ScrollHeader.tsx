@@ -31,11 +31,11 @@ type ScrollHeaderProps = Omit<
   'children'
 > & {
   scrollThreshold?: number
-  children: (
-    scrollTop: number,
-    scrollThreshold: number,
+  children: (value: {
+    scrollTop: { current: number; previous: number }
+    scrollThreshold: number
     currentHeight: number
-  ) => React.ReactNode
+  }) => React.ReactNode
 }
 
 const ScrollHeader = ({
@@ -43,7 +43,7 @@ const ScrollHeader = ({
   scrollThreshold = 500,
   ...headerProps
 }: ScrollHeaderProps) => {
-  const [scrollTop, setScrollTop] = useState(0)
+  const [scrollTop, setScrollTop] = useState({ current: 0, previous: 0 })
   const refHeader = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -52,7 +52,10 @@ const ScrollHeader = ({
       // @ts-ignore
       const scrollTop = event?.target?.scrollTop ?? 0
 
-      setScrollTop(scrollTop)
+      setScrollTop((prevValue) => ({
+        previous: prevValue.current,
+        current: scrollTop
+      }))
     }
 
     // apply debounce function to handleScrollHeaderGallery
@@ -82,7 +85,11 @@ const ScrollHeader = ({
 
   return (
     <header ref={refHeader} {...headerProps}>
-      {children(scrollTop, scrollThreshold, heightHeader)}
+      {children({
+        scrollTop,
+        scrollThreshold,
+        currentHeight: heightHeader
+      })}
     </header>
   )
 }

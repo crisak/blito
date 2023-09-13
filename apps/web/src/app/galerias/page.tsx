@@ -16,12 +16,20 @@ const contentSrv = ProjectService.getInstance()
 const GalleriesPage = async () => {
   const contents: Array<AContent> = await contentSrv.getAll()
 
+  const galleries: Array<AContent> = [
+    ...contents,
+    ...contents.map(({ id, ...rest }, index) => ({
+      ...rest,
+      id: id + Date.now() + index
+    }))
+  ]
+
   return (
     <>
       <HeaderGallery />
 
       <Container>
-        <ContainerListGalleries galleries={contents}>
+        <ContainerListGalleries galleries={galleries}>
           {(gallery, index) => (
             <CardGallery key={gallery.id} {...gallery} index={index} />
           )}
