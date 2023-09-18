@@ -6,7 +6,7 @@ import { Button } from '@nextui-org/react'
 import clsx from 'clsx'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
-import { VscFilter } from 'react-icons/vsc'
+import { VscFilter, VscFilterFilled } from 'react-icons/vsc'
 import FilterGalleries from './FilterGalleries'
 import ScrollHeader from './ScrollHeader'
 
@@ -22,7 +22,7 @@ const HeaderGallery = () => {
   return (
     <ScrollHeader
       scrollThreshold={300}
-      className="sticky top-h-navbar z-20 h-[calc(theme(space.h-navbar)_+_10px)]"
+      className="sticky top-h-navbar z-30 h-[calc(theme(space.h-navbar)_+_10px)]"
     >
       {({ scrollThreshold, scrollTop, currentHeight }) => {
         console.log({ scrollThreshold, scrollTop, currentHeight })
@@ -60,9 +60,12 @@ const HeaderGallery = () => {
                       onClick={() => setShowFilter(!showFilter)}
                       isIconOnly
                     >
-                      <VscFilter />
+                      {showFilter ? (
+                        <VscFilterFilled size={18} />
+                      ) : (
+                        <VscFilter size={18} />
+                      )}
                     </Button>
-                    {/* VscFilterFilled */}
                   </div>
 
                   <div

@@ -17,11 +17,12 @@ const GalleriesPage = async () => {
   const contents: Array<AContent> = await contentSrv.getAll()
 
   const galleries: Array<AContent> = [
-    ...contents,
-    ...contents.map(({ id, ...rest }, index) => ({
-      ...rest,
-      id: id + Date.now() + index
-    }))
+    ...contents
+    // ...contents.map(({ id, ...rest }, index) => ({
+    //   ...rest,
+    //   id: id + Date.now() + index
+    // })
+    // )
   ]
 
   return (
