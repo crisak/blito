@@ -1,22 +1,23 @@
-import { Text, Container, Box } from '@/app/shared/ui'
-import { FooterStyle } from './Footer.styles'
+import { Box, Container, Text } from '@/app/shared/ui'
 import BlitoFrontPage from '@/assets/images/home-blito_bg_white.png'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
+import { FooterStyle } from './Footer.styles'
 
-import {
-  BsInstagram,
-  BsFacebook,
-  BsYoutube,
-  BsMailbox,
-  BsWhatsapp
-} from 'react-icons/bs'
 import Link from 'next/link'
+import {
+  BsFacebook,
+  BsInstagram,
+  BsMailbox,
+  BsWhatsapp,
+  BsYoutube
+} from 'react-icons/bs'
 
 const LIST_ROUTERS_DISABLED = [
   '/configuracion',
   '/configuracion/perfil',
-  '/contacto'
+  '/contacto',
+  '/galerias/crear-galeria'
 ]
 
 const Footer = () => {

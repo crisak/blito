@@ -79,7 +79,9 @@ const NavbarComponent = () => {
           <NavbarItem key={label + route} isActive={pathname === route}>
             <Link
               className={clsx({
-                'text-primary': pathname === route
+                'text-primary':
+                  pathname === route ||
+                  (route === '/galerias' && /galerias\//.test(pathname))
               })}
               href={route}
               aria-current={pathname === route ? 'page' : 'false'}
